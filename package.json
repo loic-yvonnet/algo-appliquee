@@ -5,15 +5,28 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "rimraf dist && npm run -s og-image && npm run -s deck",
-    "deck": "marp --no-stdin PITCHME.md -o dist/index.html && cpy \"assets/**/*\" dist/assets",
-    "now-build": "npm run -s deck",
-    "og-image": "marp PITCHME.md -o dist/og-image.jpg",
-    "start": "marp -ps ."
+    "build": "npm run -s clean && npm run -s assets && npm run -s all_md_slides && npm run -s other_md",
+    "start": "marp -ps .",
+    "clean": "rimraf dist",
+    "assets": "cpy \"assets/**/*\" dist/assets",
+    "lecture-00": "marp --no-stdin cours/00-avant-propos/slides.md        -o dist/00-avant-propos/index.html",
+    "lecture-01": "marp --no-stdin cours/01-intro-programmation/slides.md -o dist/01-intro-programmation/index.html",
+    "all_md_slides": "npm run -s lecture-00 && npm run -s lecture-01",
+    "other_md": "eleventy"
   },
+  "keywords": [
+    "Algorithmique",
+    "Appliquée",
+    "BTS",
+    "SIO",
+    "SISR",
+    "Python"
+  ],
   "devDependencies": {
     "@marp-team/marp-cli": "^1.1.1",
+    "@11ty/eleventy": "^0.12.1",
     "cpy-cli": "^3.1.1",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "html-minifier": "^4.0.0"
   }
 }

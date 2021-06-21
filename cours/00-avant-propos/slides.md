@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 title: "Algorithmique Appliquée"
 description: "Cours d'Algorithmique Appliquée avec Python"
 theme: uncover
