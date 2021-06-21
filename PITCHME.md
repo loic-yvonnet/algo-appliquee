@@ -1,23 +1,20 @@
 ---
-marp: true
-title: Marp CLI example
-description: Hosting Marp slide deck on the web
+marp: false
+title: "Algorithmique Appliquée"
+description: "Cours d'Algorithmique Appliquée avec Python"
 theme: uncover
 paginate: true
-_paginate: false
 ---
 
 ![bg](./assets/gradient.jpg)
 
-# <!--fit--> Marp CLI example
+# <!--fit--> Algorithmique Appliquée
 
-Hosting Marp slide deck on the web
+Un peu de texte...
 
-https://github.com/yhatt/marp-cli-example
+Vérification des accents français (vive unicode) : à, ê, é, è
 
-<style scoped>a { color: #eee; }</style>
-
-<!-- This is presenter note. You can write down notes through HTML comment. -->
+<!-- Vérification des accents français (vive unicode) : à, ê, é, è -->
 
 ---
 
