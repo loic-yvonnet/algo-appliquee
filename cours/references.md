@@ -5,8 +5,6 @@ url: /references.html
 layout: layouts/base.njk
 ---
 
-# Références
-
 ## Algorithmique
 
 Bla

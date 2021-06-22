@@ -5,6 +5,4 @@ url: /index.html
 layout: layouts/base.njk
 ---
 
-# Algorithmique Appliquée
-
 Blablabla

@@ -5,8 +5,6 @@ url: /references.html
 layout: layouts/base.njk
 ---
 
-# Trame
-
 ## Test
 
 Blablabla
