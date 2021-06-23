@@ -1,9 +1,9 @@
-{% set url_prefix = ("/algo-appliquee" if "/algo-appliquee" in page.url else "") %}
-{% set url_root = url_prefix + "/" %}
+{% set url_prefix = "/algo-appliquee" %}
+
 {% set is_root_url = "false" %}
-{% if page.url == url_prefix %}
+{% if page.url == "" %}
     {% set is_root_url = "true" %}
 {% endif %}
-{% if page.url == url_root %}
+{% if page.url == "/" %}
     {% set is_root_url = "true" %}
 {% endif %}
