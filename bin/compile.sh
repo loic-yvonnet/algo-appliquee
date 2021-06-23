@@ -1,3 +1,9 @@
 #!/bin/bash
 
-npm run -s build
+config=$1
+if [ "${config}" == "" ]
+then
+    config=build
+fi
+
+npm run -s ${config}

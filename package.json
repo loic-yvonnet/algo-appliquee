@@ -5,7 +5,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "npm run -s clean && npm run -s assets && npm run -s other_md && npm run -s all_md_slides && npm run -s all_md_pdfs",
+    "build_site": "npm run -s assets && npm run -s other_md",
+    "build": "npm run -s clean && npm run -s build_site && npm run -s all_md_slides && npm run -s all_md_pdfs",
     "clean": "rimraf dist",
     "assets": "cpy \"assets/**/*\" dist/assets",
     "other_md": "eleventy",
