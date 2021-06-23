@@ -6,7 +6,11 @@
   "private": true,
   "scripts": {
     "build_site": "npm run -s assets && npm run -s other_md",
-    "build": "npm run -s clean && npm run -s build_site && npm run -s all_md_slides && npm run -s all_md_pdfs",
+    "build_all_but_pdf": "npm run -s clean && npm run -s build_site && npm run -s all_md_slides",
+    "prepare_dev_env":  "cpy includes/layouts/root.dev.njk  includes/layouts --rename=root.njk",
+    "prepare_prod_env": "cpy includes/layouts/root.prod.njk includes/layouts --rename=root.njk",
+    "build_local": "npm run -s prepare_dev_env && npm run -s build_all_but_pdf",
+    "build": "npm run -s prepare_prod_env && npm run -s build_all_but_pdf && npm run -s all_md_pdfs",
     "clean": "rimraf dist",
     "assets": "cpy \"assets/**/*\" dist/assets",
     "other_md": "eleventy",

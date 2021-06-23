@@ -87,6 +87,14 @@ set navMainMenu = {
 }
 %}
 
+{% set is_root_url = "false" %}
+{% if page.url == "" %}
+    {% set is_root_url = "true" %}
+{% endif %}
+{% if page.url == "/" %}
+    {% set is_root_url = "true" %}
+{% endif %}
+
 {% macro displayNav(link, isActive, urlPrefix) %}
     <li class="nav-item">
         <a class="nav-link {{ 'active' if isActive == "true" }}" href="{{ urlPrefix }}{{ link.href }}">
