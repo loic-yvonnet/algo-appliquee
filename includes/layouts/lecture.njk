@@ -1,0 +1,27 @@
+{% extends "layouts/base.njk" %}
+
+{% block main_title %}
+    <h1>{{ title }}</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group me-2">
+            <a href="{{ url_prefix }}/{{ category }}/diaporama.html"
+               target="_blank"
+               class="btn btn-sm btn-outline-secondary">
+                Diaporama
+            </a>
+            <a href="{{ url_prefix }}/{{ category }}/diaporama.pdf"
+               target="_blank"
+               class="btn btn-sm btn-outline-secondary">
+                Télécharger
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main_content %}
+    <iframe src="{{ url_prefix }}/{{ category }}/diaporama.html"
+            title="{{ title }}"
+            allowfullscreen>
+    </iframe> 
+    {{ content | safe }}
+{% endblock %}
