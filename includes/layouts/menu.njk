@@ -1,11 +1,11 @@
 {%
 set navMainMenu = {
-    "navigation": [
-        {
-            "title": "Accueil",
-            "icon": "home",
-            "href": "/"
-        },
+    "home": {
+        "title": "Accueil",
+        "icon": "home",
+        "href": "/"
+    },
+    "misc": [
         {
             "title": "Trame du cours",
             "icon": "file",
@@ -87,30 +87,33 @@ set navMainMenu = {
 }
 %}
 
+{% macro displayNav(link, isActive, urlPrefix) %}
+    <li class="nav-item">
+        <a class="nav-link {{ 'active' if isActive == "true" }}" href="{{ urlPrefix }}{{ link.href }}">
+            <span data-feather="{{ link.icon }}"></span>
+            {{ link.title }}
+        </a>
+    </li>
+{% endmacro %}
+
+{% macro displayNavs(links, currentUrl, urlPrefix) %}
+    {% for link in links %}
+        {% set isActive = ("true" if link.href in currentUrl else "false") %}
+        {{ displayNav(link, isActive, urlPrefix) }}
+    {% endfor %}
+{% endmacro %}
+
 <nav id="sidebarMenu" class="col-lg-3 d-md-block bg-light sidebar collapse">
     <ul class="nav flex-column">
-        {% for link in navMainMenu.navigation %}
-            <li class="nav-item">
-                <a class="nav-link {{ 'active' if link.href in page.url }}" href="{{ link.href }}">
-                    <span data-feather="{{ link.icon }}"></span>
-                    {{ link.title }}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>  
+        {{ displayNav(navMainMenu.home, is_root_url, url_prefix) }}
+        {{ displayNavs(navMainMenu.misc, page.url, url_prefix) }}
+    </ul>
 
     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
         <span>Cours</span>
     </h6>
 
     <ul class="nav flex-column mb-2">
-        {% for link in navMainMenu.lectures %}
-            <li class="nav-item">
-                <a class="nav-link {{ 'active' if link.href in page.url }}" href="{{ link.href }}">
-                    <span data-feather="{{ link.icon }}"></span>
-                    {{ link.title }}
-                </a>
-            </li>
-        {% endfor %}
+        {{ displayNavs(navMainMenu.lectures, page.url, url_prefix) }}
     </ul>
 </nav>

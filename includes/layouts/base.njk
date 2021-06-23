@@ -1,3 +1,4 @@
+{% from "layouts/root.njk" import url_prefix, url_root, is_root_url with context %}
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -5,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="{{ summary }}">
-    <meta property="og:url" content="{{ url }}"/>
+    <meta property="og:url" content="{{ url_prefix }}{{ url }}"/>
     <meta property="og:title" content="{{ title }}"/>
     <meta property="og:description" content="{{ summary }}"/>
-    <meta property="og:image" content="/assets/logo.png"/>
+    <meta property="og:image" content="{{ url_prefix }}/assets/logo.png"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="/assets/site.css" rel="stylesheet">
     <title>{{ title }}</title>
