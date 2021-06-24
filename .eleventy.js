@@ -1,6 +1,15 @@
 const htmlmin = require("html-minifier");
+const markdownIt = require("markdown-it");
+const markdownItKatex = require("markdown-it-katex");
+const options = {
+    html: true,
+    breaks: false,
+    linkify: true
+};
+const markdownLib = markdownIt(options).use(markdownItKatex);
 
 module.exports = function (config) {
+    // HTML minification
     config.addTransform("htmlmin", function(content, outputPath) {
         if (outputPath.endsWith(".html")) {
             return htmlmin.minify(content, {
@@ -12,6 +21,9 @@ module.exports = function (config) {
 
         return content;
     });
+
+    // Latex support
+    config.setLibrary("md", markdownLib);
 
     return {
         templateFormats: [
