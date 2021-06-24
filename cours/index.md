@@ -1,7 +1,7 @@
 ---
 title: Algorithmique Appliquée
 summary: Cours d'Algorithmique Appliquée avec Python pour BTS SIO SISR.
-url: /index.html
+url: "{{ url_prefix }}/index.html"
 layout: layouts/site.njk
 ---
 

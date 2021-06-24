@@ -47,7 +47,7 @@ The [yhatt/marp-cli-example](https://github.com/yhatt/marp-cli-example) template
 ## Known bugs
 
 The following minor bugs are known and may be fixed later:
-* The `run.sh` script uses `elventy --serve` and therefore does not watch for changes in CSS, assets or slides. You need to execute the `compile.sh` script to work around this limitation.
+* The `run.sh` script uses `eleventy --serve` and therefore does not watch for changes in CSS, assets or slides. You need to execute the `compile.sh` script to work around this limitation.
 * When the Eleventy local webserver is running, the Marp PDF generation from Markdown fails (apparently) due to some obscure puppeteer issue. This issue has not been investigated (yet). Rebooting allows working around the issue.
 
 ## Contributions

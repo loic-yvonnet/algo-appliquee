@@ -1,7 +1,7 @@
 ---
 title: Trame
 summary: Trame du cours d'Algorithmique Appliquée avec Python.
-url: /references.html
+url: "{{ url_prefix }}/trame.html"
 layout: layouts/site.njk
 ---
 
