@@ -1,7 +1,7 @@
 ---
 title: Références
 summary: Références du cours d'Algorithmique Appliquée avec Python.
-url: /references.html
+url: "{{ url_prefix }}/references.html"
 layout: layouts/site.njk
 ---
 

@@ -72,3 +72,10 @@ iframe {
     height: 60vh;
     border: 1px solid black;
 }
+
+/** 
+ * Hack for embedded KaTeX: it appears twice for some obscure reason.
+ */
+.katex-html {
+    display: none;
+}
