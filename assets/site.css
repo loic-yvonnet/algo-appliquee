@@ -61,6 +61,12 @@ body {
     border-radius: 0;
 }
 
+@media (min-width:992px) {
+    #sidebarMenu {
+        display: block;
+    }
+}
+
 /**
  * iFrame
  */

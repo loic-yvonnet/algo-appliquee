@@ -111,7 +111,7 @@ set navMainMenu = {
     {% endfor %}
 {% endmacro %}
 
-<nav id="sidebarMenu" class="col-lg-3 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="navbar-expand-lg col-lg-3 bg-light sidebar collapse">
     <ul class="nav flex-column">
         {{ displayNav(navMainMenu.home, is_root_url, url_prefix) }}
         {{ displayNavs(navMainMenu.misc, page.url, url_prefix) }}
