@@ -1,6 +1,6 @@
 ---
 marp: true
-title: "Algorithmique Appliquée"
+title: "Algorithmique Appliquée - Avant Propos"
 description: "Cours d'Algorithmique Appliquée avec Python"
 theme: uncover
 paginate: true
@@ -11,7 +11,7 @@ style: |
   }
 ---
 
-<!-- _color: white -->
+![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 
@@ -41,7 +41,7 @@ style: |
 
 ---
 
-<!-- _color: white -->
+![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Tour de table
@@ -80,7 +80,7 @@ style: |
 
 ---
 
-<!-- _color: white -->
+![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Organisation du cours
@@ -151,7 +151,7 @@ Vendredi 22 octobre
 
 ---
 
-<!-- _color: white -->
+![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Evaluation
@@ -235,7 +235,7 @@ La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront c
 
 ---
 
-<!-- _color: white -->
+![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Conseils
