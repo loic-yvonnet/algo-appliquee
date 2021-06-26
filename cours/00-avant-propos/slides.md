@@ -199,6 +199,14 @@ Autres critères :
 * Adéquation des **tests de validation** effectués.
 * Aptitude à proposer des **éléments de correction pertinents**.
 
+*La grille officielle d'évaluation sera communiquée dès qu'elle sera en notre possession.*
+
+---
+
+### Date d'examen
+
+La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront connus.
+
 ---
 
 ### Contrôle continue
@@ -246,4 +254,4 @@ Demandez à votre tuteur !
 * Ecoutez des podcasts techniques.
 * Assistez à des meetups et des conférences.
 
-*L'informatique évolue vite et les compétences acquises en 2021 seront obsolètes en 2031.*
+*L'informatique évolue vite et les compétences acquises en 2021 seront majoritairement obsolètes en 2031.*
