@@ -4,7 +4,16 @@ title: "Algorithmique Appliquée"
 description: "Cours d'Algorithmique Appliquée avec Python"
 theme: uncover
 paginate: true
+_paginate: false
+style: |
+  section {
+    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+  }
 ---
+
+<!-- _color: white -->
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -31,6 +40,9 @@ paginate: true
 -->
 
 ---
+
+<!-- _color: white -->
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Tour de table
 
@@ -67,6 +79,9 @@ paginate: true
 -->
 
 ---
+
+<!-- _color: white -->
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Organisation du cours
 
@@ -135,6 +150,9 @@ Vendredi 22 octobre
 -->
 
 ---
+
+<!-- _color: white -->
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Evaluation
 
@@ -216,6 +234,9 @@ La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront c
 * L'évaluaton des TPs et TDs sera prise prise en compte dans le dossier.
 
 ---
+
+<!-- _color: white -->
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Conseils
 
