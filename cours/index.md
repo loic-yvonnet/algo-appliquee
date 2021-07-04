@@ -41,7 +41,7 @@ Ce cours utilise principalement les langages, outils et technologies suivants :
 
 ### Licence
 
-Le contenu du cours est sous licence [Creative Commons 3.0 Attribution (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/).
+Le contenu du cours, aux exceptions mentionnées en (1), est sous licence [Creative Commons 3.0 Attribution (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/).
 
 En résumé, cela signifie que vous êtes libres de :
 * **partager** - copier et redistribuer le matériel sous n'importe quel média et format,
@@ -52,3 +52,9 @@ sous les conditions suivantes:
 * **pas d'autre restriction** - vous n'avez pas le droit d'appliquer des mesures juridiques ou technologiques qui empêcheraient quiconque de faire ce que la licence permet.
 
 Pour plus d'informations, merci de bien vouloir vous reporter à [la description légale officielle](https://creativecommons.org/licenses/by/3.0/legalcode).
+
+(1) Les contenus, images et logos extérieurs ne sont pas sous licence CC BY 3.0 et ne peuvent pas être réutilisés sans l'accord préalable explicite de leur(s) auteur(s) et/ou ayant(s)-droit(s) originaux :
+* Le logo du langage de programmmation Python est la propriété exclusive de [...]().
+* Le logo du langage de programmation Scratch et les images de son éditeur est la propriété exclusive de [...]().
+* Les images et le logo d'Anjou Vélo Vintage est la propriété exclusive de [...]().
+* Le plan du centre de Saumur en 1814 est la propriété exclusive de [...]().
