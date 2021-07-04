@@ -23,7 +23,7 @@ L'interface graphique est disponible de Scratch [en ligne](https://scratch.mit.e
 
 ## Présentation du projet
 
-
+Tous les ans, une manifestation 
 
 
 [Saumur Jadis](https://saumur-jadis.pagesperso-orange.fr/)
