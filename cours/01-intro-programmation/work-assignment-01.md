@@ -94,7 +94,7 @@ La première étape consiste à réaliser une recherche de visuels, car il n'y a
 
 Maintenant, il vous faut un décor. Vous décidez d'utiliser le plan de Saumur en 1814, bien que ce soit relativement anachronique par rapport à l'Anjou Vélo Vintage. Vous trouvez ce plan sur le site [Saumur Jadis](https://saumur-jadis.pagesperso-orange.fr/) : [https://saumur-jadis.pagesperso-orange.fr/plans/plan1814.jpg](https://saumur-jadis.pagesperso-orange.fr/plans/plan1814.jpg).
 
-## Programmation de base du jeu
+## Ajout des éléments graphiques dans Scratch
 
 Retournez sur dans l'[éditeur Scratch](https://scratch.mit.edu/projects/editor/). Cliquez sur Fichier > Nouveau.
 
@@ -194,11 +194,17 @@ Sélectionnez le sprite glamour afin de l'activer.
 
 ![Reselectionner glamour](./work-assignment-01/distrib/035-reselectionner-glamour.jpeg)
 
-Ajoutez le bloc "Quand *drapeau-vert* est cliqué".
+## Initialisation de la scène
+
+Le code source du jeu vidéo est nettement plus complexe que celui de votre tout premier programme. Aidez-vous des couleurs et des formes des blocs pour reproduire le programme pas-à-pas.
+
+A ce stade, il est tout-à-fait normal de ne pas encore comprendre toutes les subtilités de la programmation. Il est possible d'appréhender ce TP comme un simple puzzle ou Lego (R) : il suffit d'assembler les pièces comme indiqué pour parvenir au résultat souhaité.
+
+Ajoutez le bloc `quand `*drapeau-vert*` est cliqué`.
 
 ![Ajouter quand drapeau vert](./work-assignment-01/distrib/036-ajouter-quand-drapeau-vert.jpeg)
 
-Ajoutez le bloc "Glisser en à x/y" :
+Ajoutez le bloc `glisser en à x/y` :
 * En 1 seconde
 * x : -190
 * y : 30
@@ -207,90 +213,416 @@ Cela permet de repositionner la cycliste à son point de départ à chaque fois 
 
 ![Reinit position](./work-assignment-01/distrib/037-reinit-position.jpeg)
 
-Ajoutez le bloc "Basculer sur le costume" et choisissez glamour-to-right (ou glamour-vers-la-droite).
+Ajoutez le bloc `basculer sur le costume` et choisissez glamour-to-right (ou glamour-vers-la-droite).
 
 Cela permet de réinitialiser l'orientation de la cycliste pour qu'elle regarde vers la droite lorsque l'on exécute le jeu.
 
 ![Reinit costume](./work-assignment-01/distrib/038-reinit-costume.jpeg)
 
-On peut faire une première exécution en cliquant sur le drapeau vert.
+On peut faire une première exécution en cliquant sur le drapeau vert. On pourra alors observer la cycliste se déplacer en 1s vers la position initiale souhaitée.
+
+Si vous n'observez pas de déplacement, cela signifie tout simplement qu'elle se trouve déjà à sa position initiale.
 
 ![Executer programme](./work-assignment-01/distrib/039-executer-programme.jpeg)
+
+On souhaite donner au joueur la possibilité de déplacer la cycliste. Pour ce faire, on va utiliser les flèches du clavier : les touches haut, bas, droite et gauche. Pour cela, on va réagir à des événements clavier grâce à des blocs qui représentent ces événements.
+
+Rajoutez un bloc `quand la touche` dans la Zone de Programmation. Ce bloc ne s'imbrique pas avec le reste et doit rester indépendant dans un premier temps. On remarque au passage que les programmes Scratch se construisent comme des Lego (R). Certaines pièces sont faites pour s'assembler, et d'autres non.
+
+## Gestion des touches clavier
+
 ![Quand](./work-assignment-01/distrib/040-quand.jpeg)
+
+Par défaut, le bloc `quand la touche` réagit à un appuie sur la touche espace. Choisissez plutôt la flèche droite à la place.
+
 ![Quand fleche droite](./work-assignment-01/distrib/041-quand-fleche-droite.jpeg)
+
+Quand l'utilisateur appuie sur la flèche droite de son clavier, la cycliste doit partir vers la gauche. On doit donc l'orienter vers la gauche.
+
+Pour cela, connectez un bloc `changer costume` et choisissez "glamour-to-right" ou "glamour-vers-la-droite".
+
 ![Changer costume](./work-assignment-01/distrib/042-changer-costume.jpeg)
+
+Ensuite, on souhaite que la cycliste se déplace vers la droite. Un déplacement vers la droite correspond à l'application d'un vecteur (x, 0). Autrement dit, on va incrémenter l'abscisse du sprite représentant la cycliste.
+
+Rajoutez un bloc `mettre x à`.
+
 ![Mettre x a](./work-assignment-01/distrib/042-mettre-x-a.jpeg)
+
+A l'intérieur du bloc `mettre x à`, glissez-déposez un bloc d'addition. Faites bien attention à le mettre à l'intérieur, comme sur la capture d'écran ci-dessous.
+
 ![Operator plus](./work-assignment-01/distrib/043-operator-plus.jpeg)
+
+Dans le bloc d'addition, vous allez ajouter en opérande le bloc `abscisse x`. Comme son nom l'indique, cela représente l'abscisse du sprite de la cycliste à un instant donné.
+
+Toujours dans le bloc d'addition, vous allez rentrer la valeur `2` comme seconde opérande. La séquence se lit donc de la manière suivante : "lorsque l'utilisateur appuie sur la flèche droite, change l'orientation du sprite et déplace le de 2 unités en x (donc vers la droite)".
+
 ![Abscisse plus 2](./work-assignment-01/distrib/044-abscisse-plus-2.jpeg)
+
+Relancez l'exécution à nouveau. Appuyez sur la flèche droite du clavier et observer le personnage évoluer vers la droite.
+
 ![Execution](./work-assignment-01/distrib/045-execution.jpeg)
+
+On souhaite maintenant pouvoir déplacer notre sprite également à gauche, en bas et en haut, afin de pouvoir explorer l'ensemble de la zone de jeu. On pourrait refaire l'exercice 3 fois. Cela étant, on peut aussi dupliquer le travail réaliser et l'adapter.
+
+Faites un clic droit sur le bloc `quand la touche` puis cliquez sur "Dupliquer".
+
 ![Duplication](./work-assignment-01/distrib/046-duplication.jpeg)
+
+Il ne reste plus qu'à adapter les valeurs comme sur la capture d'écran ci-dessous. Faites attention au bloc de soustraction qui doit venir remplacer le bloc d'addition.
+
 ![Gestion gauche](./work-assignment-01/distrib/047-gestion-gauche.jpeg)
+
+Relancez l'exécution pour vérifier que vous pouvez déplacer la cycliste à gauche et à droite.
+Tentez notamment de la déplacer au-délà des limites de l'écran. Observez qu'elle peut parfaitement en sortir.
+
 ![Execution](./work-assignment-01/distrib/048-execution.jpeg)
+
+Dans ce jeu, on considère que sortir de l'écran n'est pas souhaitable. Vous allez donc corriger ce problème en rajoutant un bloc `rebondir si le bord est atteint`. Pensez à bien mettre ce bloc pour la gestion des 2 événements : gauche et droite.
+
+N'hésitez à relancer l'exécution (drapeau vert) pour vérifier le comportement. Maintenant, la cycliste ne doit plus pouvoir sortir de l'écran.
+
 ![Rebond](./work-assignment-01/distrib/049-rebond.jpeg)
+
+En vous inspirant des précédentes actions pour gérer les événements gauche et droite, ajoutez les blocs nécessaires pour aller en bas et en haut.
+
 ![Haut et bas](./work-assignment-01/distrib/050-haut-et-bas.jpeg)
+
+## Eviter un conflit de déplacement
+
+Pendant la première seconde de jeu, on réinitialise la position de notre cycliste. Cependant, durant ce même lapse de temps, le joueur a déjà la possibilité d'appuyer sur les flèches de son clavier. Lorsque cela survient, on fait face à un conflit. En effet, d'un côté, un appuie sur une flèche provoque un déplacement relatif par rapport à la position actuelle du sprite. D'un autre côté, le sprite tente d'aller exactement en même temps à une position fixe pré-définie. Ces 2 demandes de déplacement sont en contradiction : on nomme cela un problème de concurrence.
+
+Pour prévenir ce problème, vous allez attendre que le déplacement initial soit terminé avant de prendre en compte l'appuie sur les flèches du clavier.
+
+Dans la zone des Blocs de Code, cliquez sur le bouton "Créez une variable".
+
 ![Creer variable](./work-assignment-01/distrib/051-creer-variable.jpeg)
+
+Dans le menu qui s'ouvre, remplissez le champ avec la valeur "peutBouger" puis cliquez sur Ok.
+
 ![Var peut bouger](./work-assignment-01/distrib/052-var-peut-bouger.jpeg)
+
+Toujours dans la zone des Blocs de Code, décochez la variable "peutBouger". Cela permet de ne pas l'afficher dans la Zone de Résultat.
+
 ![Cache var](./work-assignment-01/distrib/053-cache-var.jpeg)
+
+Ajoutez le bloc `mettre ma variable à` directement sous le block `quand `*drapeau-vert*` est cliqué`. Vous pouvez jouer avec le magnétisme des blocs pour insérer un nouveau blocs entre 2 blocs déjà connectés.
+
 ![Ajout mettre var](./work-assignment-01/distrib/054-ajout-mettre-var.jpeg)
+
+Dans la liste, vous allez choisir "peutBouger" à la place de "ma variable". Dans la zone de texte à droite, vous allez rentrer "faux". Le bloc doit donc contenir "mettre peutBouger à faux".
+
+Rajoutez à nouveau un bloc `mettre ma variable` à la fin de la séquence. Cette fois-ci, la bloc doit contenir "mettre peutBouger à vrai".
+
+Autrement dit, tant que le sprite de cycliste n'a pas atteint sa position initiale, la variable "peutBouger" est valué à "faux". Dès que ce déplacement initial est terminé, la variable "peutBouger" prend la valeur "vrai".
+
 ![Peut pas bouger au debut](./work-assignment-01/distrib/055-peut-pas-bouger-au-debut.jpeg)
+
+On souhaite maintenant que les événements de gestion des flèches du clavier ne fassent rien tant que la variable "peutBouger" est égale à "faux".
+
+Ajoutez un bloc `si` qui va encadrer tous les blocs situés sous le bloc `quand la touche flèche haut est pressée`. Aidez-vous du magnétisme des blocs.
+
 ![Ajout si](./work-assignment-01/distrib/057-ajout-si.jpeg)
+
+A l'intérieur du bloc `si`, vous devez ajouter un bloc de `condition d'égalité`. Ce bloc comporte 2 opérandes qui doivent être égales afin que les blocs internes soient exécutés.
+
 ![Ajout condition](./work-assignment-01/distrib/058-ajout-condition.jpeg)
+
+Toujours à l'intérieur du bloc `si`, la première opérande du bloc de `condition d'égalité` est la variable "peutBouger". La seconde opérande est le texte "vrai".
+
+La manière de lire cette séquence de blocs est désormais : lorsque la flèche haute du clavier est pressée, si la variable peutBouger est vraie, alors déplace le sprite de cycliste vers le haut et rebondie si le bord est atteint.
+
 ![Si peut bouger](./work-assignment-01/distrib/059-si-peut-bouger.jpeg)
+
+Reproduisez le même schéma pour les autres événements.
+
 ![Mouvement ok](./work-assignment-01/distrib/060-mouvement-ok.jpeg)
+
+## Afficher du texte
+
+La gestion des entrées/sorties est importante en programmation logicielle. Afin d'informer avec un utilisateur, on souhaite souvent afficher un texte à l'écran.
+
+Dans le cas présent, on souhaite informer le joueur de l'objectif du jeu et de le scénariser.
+
+Insérez un bloc `dire pendant` juste au-dessus de `mettre peutBouger à vrai`. Faites dire "Bonjour !" pendant 2 secondes.
+
 ![Bonjour](./work-assignment-01/distrib/061-bonjour.jpeg)
+
+De la même manière, rajoutez d'autres textes à faire dire à notre cycliste avant qu'elle ne parte :
+* Bonjour ! (2 secondes)
+* Allons nous ballader dans le Saumurois ! (3 secondes)
+* Chaque drapeau représente une étape de notre voyage... (3 secondes)
+* Allons-y ! (2 secondes)
+* 3... (1 seconde)
+* 2... (1 seconde)
+* 1... (1 seconde)
+* Partez ! (1 sconde)
+
 ![Autres textes](./work-assignment-01/distrib/062-autres-textes.jpeg)
+
+Vérifiez que tout se passe comme prévu. Vérifiez notamment que vous ne pouvez pas déplacer le sprite de la cycliste avant que cette dernière n'ait dit "Partez !" (ou quelque soit le dernier texte que vous ayez choisi de lui faire dire).
+
 ![Execution](./work-assignment-01/distrib/063-execution.jpeg)
+
+Vous avez maintenant atteint un stade où le sprite se déplace convenablement après une initialisation complète. Il est temps de sauvegarder votre travail.
+
 ![Sauvegarder](./work-assignment-01/distrib/064-sauvegarder.jpeg)
+
+## Gestion des collisions : attraper les drapeaux
+
+L'étape suivante consiste à multiplier les drapeaux, les positionner à des emplacements aléatoires et à permettre à votre cycliste d'attraper ces drapeaux. Le fait de réagir à l'intersection entre 2 sprites s'appelle la gestion des collisions.
+
+Dans la zone de Configuration Graphique, cliquez sur le sprite nommé "départ" qui est représenté par un drapeau. Notez que l'icône en haut à droite de la Zone de Programmation a été mise à jour. Vous programmez maintenant le comportement du sprite départ.
+
 ![Aller dans depart](./work-assignment-01/distrib/065-aller-dans-depart.jpeg)
+
+Ajoutez un bloc `quand `*drapeau-vert*` est cliqué`.
+
 ![Quand drapeau vert](./work-assignment-01/distrib/066-quand-drapeau-vert.jpeg)
+
+Cliquez sur le bouton "Créer une variable".
+
 ![Creer variable](./work-assignment-01/distrib/067-creer-variable.jpeg)
+
+Renseignez "nbDrapeauxTouches" comme nom de variable et cliquez sur Ok. Attention à ne pas utiliser d'accent, ni d'espace ni de caractère spécial : il s'agit bien de nbDrapeauxTouch**e**s, sans accent.
+
 ![Var nb drapeaux touches](./work-assignment-01/distrib/068-var-nb-drapeaux-touches.jpeg)
+
+Créez une autre variable et appelez-la "nbTotalDrapeaux".
+
 ![Var total drapeaux](./work-assignment-01/distrib/069-var-total-drapeaux.jpeg)
+
+Cachez ces 2 variables en les décochant.
+
 ![Cacher variables](./work-assignment-01/distrib/070-cacher-variables.jpeg)
+
+Ajoutez un bloc `mettre ma variable à` et changez ses paramètres pour donner : mettre nbTotalDrapeaux à 6.
+
 ![Init nb total drapeaux](./work-assignment-01/distrib/071-init-nb-total-drapeaux.jpeg)
+
+Ajoutez un bloc `mettre ma variable à` et changez ses paramètres pour donner : mettre nbDrapeauTouches à 0.
+
 ![Init nb drap touches](./work-assignment-01/distrib/072-init-nb-drap-touches.jpeg)
+
+Ajoutez un bloc `répétez fois`.
+
 ![Repeter](./work-assignment-01/distrib/073-repeter.jpeg)
+
+A l'intérieur du bloc `répétez fois`, ajouter un `bloc de soustraction`.
+
 ![Operateur moins](./work-assignment-01/distrib/074-operateur-moins.jpeg)
+
+Les opérandes du `bloc de soustraction` sont :
+* La variable nbTotalDrapeaux,
+* 1.
+
+A l'intérieur du bloc `répéter`, rajoutez un bloc `créer un clone de moi-même`.
+
+Ainsi, on va créer 6 - 1 = 5 clones du sprite nommé départ. Initialement, tous ses sprites partagent la même position. Ils sont donc les uns sur les autres.
+
 ![Creer clone](./work-assignment-01/distrib/075-creer-clone.jpeg)
+
+Rajoutez un bloc indépendant `quand je commence comme un clone`.
+
 ![Commencement clone](./work-assignment-01/distrib/076-commencement-clone.jpeg)
+
+Ajoutez, à ce bloc indépendant, un bloc `glisser en 1 seconde à position aléatoire`.
+
 ![Glisser](./work-assignment-01/distrib/077-glisser.jpeg)
+
+Comme pour notre cycliste, on va éviter que nos drapeaux sortent de l'écran. On va donc les faire rebondir. Ce n'est pas idéal car on peut se retrouver avec des drapeaux à l'envers, mais c'est toujours mieux que de ne pas pouvoir les voir, ne pas pouvoir les attraper et donc ne pas pouvoir finir le jeu.
+
+Ajoutez un bloc `rebondir si le bord est atteint`.
+
 ![Rebondir](./work-assignment-01/distrib/078-rebondir.jpeg)
+
+En exécutant à nouveau le jeu, vous devriez voir 5 drapeaux se déplacer à des positions aléatoires.
+
+Faites les essais suivant :
+* Initialisez la variable nbTotalDrapeaux à 10 : que se passe-t-il ?
+* Initialisez la variable nbTotalDrapeaux à 100 : que se passe-t-il ?
+
 ![Execution](./work-assignment-01/distrib/079-execution.jpeg)
+
+Rajoutez un bloc `attendre jusqu'à ce que` sous les 2 séquences.
+
 ![Attendre que](./work-assignment-01/distrib/080-attendre-que.jpeg)
+
+A l'intérieur des blocs `attendre jusqu'à ce que`, ajoutez un sous-bloc `touche le` et choisissez le paramètre "glamour". Cela signifie que les blocs suivants ne seront pas exécutés tant que le sprite courant (ou l'un de ses clones) ne soit touché par le sprite de votre cycliste.
+
 ![Attendre toucher glamour](./work-assignment-01/distrib/081-attendre-toucher-glamour.jpeg)
+
+Dans les 2 cas, ajoutez un bloc `ajouter à` afin d'ajouter 1 à la variable nbDrapeauxTouches.
+
 ![Incremente drapeaux](./work-assignment-01/distrib/082-incremente-drapeaux.jpeg)
+
+Ajoutez un bloc `cacher` pour faire disparaître les drapeaux une fois qu'ils sont touchés.
+
+Ajoutez un bloc `montrer` au début pour le sprite original pour le montrer à nouveau après une exécution où il aurait été touché (et donc caché).
+
 ![Cacher drapeaux touches](./work-assignment-01/distrib/083-cacher-drapeaux-touches.jpeg)
+
+Si vous réexécutez le jeu, vous verrez que les drapeaux disparaissent lorsque la cycliste les touche. Par contre, il ne se passe rien de spécial quand tous les drapeaux ont été attrapés.
+
+## Gérer la fin du jeu
+
+Lorsque tous les drapeaux ont été attrapés, on veut stopper le jeu et afficher des messages de récompense. On souhaite également afficher le temps mis pour attraper tous les drapeaux, afin de mettre en avant un challenge.
+
+Retournez dans le sprite "glamour" pour ajouter plus de comportements à notre cycliste.
+
 ![Retourner cote glamour](./work-assignment-01/distrib/084-retourner-cote-glamour.jpeg)
+
+Créez une nouvelle variable nommée tempsTotal.
+
 ![Var temps total](./work-assignment-01/distrib/085-var-temps-total.jpeg)
+
+En bas de la séquence principale, ajoutez un bloc `réinitialiser le chronomètre`.
+
 ![Reinit chrono](./work-assignment-01/distrib/086-reinit-chrono.jpeg)
+
+Ajoutez un bloc `attendre jusqu'à ce que`
+
 ![Attendre que](./work-assignment-01/distrib/087-attendre-que.jpeg)
+
+A l'intérieur du bloc `attendre jusqu'à ce que`, insérez un bloc de `condition d'égalité`. Les opérandes de ce dernier bloc sont :
+* nbDrapeauxTouches
+* nbTotalDrapeaux
+
+Autrement dit, les blocs suivants ne seront exécuté qu'une bloc que la cycliste aura touché tous les drapeaux affichés dans la scène.
+
 ![Drapeaux tous touches](./work-assignment-01/distrib/088-drapeaux-tous-touches.jpeg)
+
+Ajoutez un bloc `mettre ma variable à` et utilisez tempsTotal.
+
 ![Maj temps total](./work-assignment-01/distrib/089-maj-temps-total.jpeg)
+
+Ajoutez un sous-bloc `arrondi de`.
+
 ![Arrondi de](./work-assignment-01/distrib/090-arrondi-de.jpeg)
+
+Utilisez le bloc `chronomètre` en paramètre d'`arrondi de`.
+
+En d'autres termes, une fois que la cycliste a touché tous les drapeaux, on regarde notre chronomètre et on inscrit sa valeur (arrondie).
+
 ![Arrondi chrono](./work-assignment-01/distrib/091-arrondi-chrono.jpeg)
+
+Utilisez un nouveau bloc `mettre ma variable à` pour mettre la variable peutBouger à faux. En effet, une fois que le jeu est fini, on ne doit plus pouvoir bouger le personnage.
+
 ![Empeche bouger](./work-assignment-01/distrib/092-empeche-bouger.jpeg)
+
+On va maintenant afficher des messages d'une part pour scénariser la fin du jeu et d'autre part pour rendre compte du résultat du joueur : son chrono.
+
+Ajoutez un bloc `pensez à pendant` en rajoutant un message du type : "Trop fière d'être arrivée !".
+
 ![Bien arrivee](./work-assignment-01/distrib/093-bien-arrivee.jpeg)
+
+Ajoutez un bloc `dire`.
+
 ![Dire](./work-assignment-01/distrib/094-dire.jpeg)
+
+Dans le bloc `dire`, ajoutez un sous-bloc `regrouper`.
+
 ![Regrouper](./work-assignment-01/distrib/095-regrouper.jpeg)
+
+Dans le sous-bloc `regrouper`, ajoutez un sous-sous-bloc `regrouper`. Nous avons maintenant 3 champs.
+
 ![Regrouper 2 fois](./work-assignment-01/distrib/096-regrouper-2-fois.jpeg)
+
+Remplissez les 3 champs comme suit :
+* "J'ai mis "
+* Bloc variable `tempsTotal`
+* " secondes !"
+
 ![Afficher temps](./work-assignment-01/distrib/097-afficher-temps.jpeg)
+
+Vous avez maintenant un jeu complet avec une vraie gestion des collisions. N'hésitez à l'exécuter plusieurs fois et à changer quelques paramètres pour observer les différences. Vous auriez aussi intérêt à sauvegarder votre travail.
+
 ![Execution](./work-assignment-01/distrib/098-execution.jpeg)
+
+## Son
+
+L'ajout de son à un jeu fournit une touche finale importante pour l'ambiance.
+
+Dirigez-vous vers le 3e onglet du Menu Secondaire, intitulé Sons.
+
 ![Sons](./work-assignment-01/distrib/099-sons.jpeg)
+
+Pour le son, vous allez utiliser directement la bibliothèque de base de Scratch.
+
+Cliquez sur Choisir un son.
+
 ![Choisir son](./work-assignment-01/distrib/100-choisir-son.jpeg)
+
+Cliquez sur le filtre Voix, puis sélectionnez Cheer.
+
 ![Cheer](./work-assignment-01/distrib/101-cheer.jpeg)
+
+Ajoutez un autre son.
+
 ![Autre son](./work-assignment-01/distrib/102-autre-son.jpeg)
+
+Cliquez sur le filtre Boucle, puis sélectionnez Classical Piano.
+
 ![Classical piano](./work-assignment-01/distrib/103-classical-piano.jpeg)
+
+Retournez dans l'onglet Code.
+
 ![Retour dans code](./work-assignment-01/distrib/104-retour-dans-code.jpeg)
+
+Ajoutez un bloc `arrêtez tous les sons` sous le bloc `mettre peutBouger à faux` afin de stopper la musique d'ambiance lorsque le jeu est fini.
+
 ![Arreter sons](./work-assignment-01/distrib/105-arreter-sons.jpeg)
+
+Ajoutez tout de suite après un bloc `jouer le son`.
+
 ![Deposer jouer son](./work-assignment-01/distrib/106-deposer-jouer-son.jpeg)
+
+Choisissez "Cheer".
+
 ![Choisir cheer](./work-assignment-01/distrib/107-choisir-cheer.jpeg)
+
+Rajoutez un nouveau bloc `quand `*drapeau-vert*` est cliqué, indépendant de tout le reste.
+
 ![Nouveau drapeau vert](./work-assignment-01/distrib/108-nouveau-drapeau-vert.jpeg)
+
+Ajoutez-lui un bloc `jouer le son Classical Piano jusqu'au bout`.
+
 ![Jouer piano](./work-assignment-01/distrib/109-jouer-piano.jpeg)
+
+Connectez un bloc `répéter jusqu'à ce que`.
+
 ![Repeter](./work-assignment-01/distrib/110-repeter.jpeg)
+
+Utilisez un bloc conditionnel pour comparer nbDrapeauxTouches et nbTotalDrapeaux. 
+
 ![Condition repeter](./work-assignment-01/distrib/111-condition-repeter.jpeg)
+
+A l'intérieur, rajouter à nouveau un `jouer le son Classical Piano jusqu'au bout`. Cela permet de jouer en boucle le même son.
+
 ![Rejouer en boucle](./work-assignment-01/distrib/112-rejouer-en-boucle.jpeg)
+
+Maintenant, on souhaite jouer un son particulier lorsque la cycliste attrape un drapeau.
+
+Retournez dans le sprite nommé "départ", et qui correspond au drapeau.
+
 ![Retour depart](./work-assignment-01/distrib/113-retour-depart.jpeg)
+
+Allez dans l'onglet Sons.
+
 ![Retour son](./work-assignment-01/distrib/114-retour-son.jpeg)
+
+Rajoutez un son depuis la catégorie Voix et choisir Laugh1.
+
 ![Laugh1](./work-assignment-01/distrib/115-laugh1.jpeg)
+
+Retournez dans le code.
+
 ![Code depart](./work-assignment-01/distrib/116-code-depart.jpeg)
+
+Ajoutez les derniers blocs `jouer le son Laugh1` pour le cas nominal, et le cas des clones.
+
 ![Jouer rires](./work-assignment-01/distrib/117-jouer-rires.jpeg)
+
+Félicitations, vous venez de réaliser votre premier jeu vidéo. Pensez à bien le sauvegarder et faites-le essayer tous vos amis (*) !
+
+(*) sauf en salle de classe...
