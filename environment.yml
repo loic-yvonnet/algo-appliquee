@@ -1,0 +1,24 @@
+name: algo-appliquee-binder-environment
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - bokeh
+  - cython
+  - dask
+  - dill
+  - ipyparallel
+  - ipython
+  - ipywidgets
+  - matplotlib
+  - mpi4py
+  - networkx
+  - numpy
+  - pandas
+  - partd
+  - psutil
+  - scikit-image
+  - scikit-learn
+  - sympy
+  - toolz
