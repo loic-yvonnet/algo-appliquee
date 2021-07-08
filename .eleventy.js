@@ -22,19 +22,28 @@ module.exports = function (config) {
         return content;
     });
 
-    // Latex support
+    // LaTeX support via KaTeX
     config.setLibrary("md", markdownLib);
+
+    // Passthrough for images: copy all images in "assets" directories (and filter out others)
+    config.addPassthroughCopy("**/assets/*.png");
+    config.addPassthroughCopy("**/assets/*.jpg");
+    config.addPassthroughCopy("**/assets/*.jpeg");
+    config.addPassthroughCopy("**/assets/*.ico");
+    config.addPassthroughCopy("**/assets/*.svg");
+    config.addPassthroughCopy("**/assets/*.gif");
+
+    // At this point, SCSS is not (yet) used and the CSS is fairly simple (mostly Bootstrap)
+    config.addPassthroughCopy("**/assets/*.css");
+
+    // The ico files are special
+    config.addPassthroughCopy("**/*.ico");
 
     return {
         templateFormats: [
             "md",
-            "njk",
-            "png",
-            "jpg",
-            "ico",
-            "svg"
+            "njk"
         ],
-        passthroughFileCopy: true,
         htmlTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
         dir: {
