@@ -346,19 +346,102 @@ Nous allons donc nous intéresser au fonctionnement d'un ordinateur.
 
 ---
 
-# Un champ limité d'action
+# Un champ limité d'actions
 
 Un ordinateur ne sait faire que 2 choses :
 * Faire des calculs,
 * Se souvenir du résultat de ces calculs.
 
+<!--
+Par ailleurs, un ordinateur ne sait faire que ce qu'on lui dit.
+L'Intelligence Artificielle ne change rien à cela.
+-->
+
 ---
 
 # Mise en perspective
 
-Un ordinateur sait :
+Un simple ordinateur de bureau standard sait :
 * Faire beaucoup de calculs très rapidement : des **centaines de milliards de calculs par seconde**.
-* Se souvenir qu'une quantité remarquable de données
+* Se souvenir qu'une quantité remarquable de données : 1 téraoctet (To), c'est **1 000 000 000 000 octets**. Changez l'unité en kilogrammes ou mètres...
+
+<!--
+Un ordinateur sait donc faire ces 2 choses extrèmement bien.
+A tel point qu'il peut vous tromper en vous donnant l'impression d'intelligence.
+Mais la seule intelligence est celle des scientifiques, ingénieurs et développeurs qui ont travaillé dessus.
+-->
+
+---
+
+# <!--fit--> Champ encore plus limité avant
+
+Les premières machines étaient à **programme fixe** :
+* Une calculatrice avec les opérations $+$, $-$, $\times$, $\div$.
+* Un calculateur de trajectoire de missiles.
+* Un solveur de système d'équations linéaires.
+* Etc.
+
+Les systèmes embarqués utilisent encore ce procédé pour des raisons de coût et de performance.
+
+<!--
+Cela signifie qu'ils ne savaient résoudre qu'un unique type de problème.
+Concernant les systèmes embarqués, si on doit programmer un peluche qui doit dire "Bonjour maman" lorsque l'on appuie sur son ventre, on est très limité en terme de puissance de calcul et la performance énergétique doit être maximale pour éviter de devoir changer les piles toutes les 3 minutes.
+-->
+
+---
+
+# <!--fit--> Capacité à exécuter différents programmes
+
+Vos machines sont dites à **programmes stockés** :
+* Elles ont des composants qui stockent les programmes.
+* Elles ont des composants qui lui permettent d'exécuter les instructions de ces programmes.
+
+---
+
+# <!--fit--> Architecture logique simplifiée d'un ordinateur
+
+Un ordinateur comporte :
+* Des **entrées** (clavier, souris, ...) et des **sorties** (écran, son, ...).
+* Des **mémoires** (disque, RAM, caches, ...).
+* Des **calculateurs** (CPU, GPU, ...) ayant :
+  * **Unité de contrôle** (compteur de programme, ...).
+  * **Unités arithmétique et logique** ($+$, $-$, ...).
+
+<!--
+@TODO : faire un diagramme à la place
+-->
+
+---
+
+# <!--fit--> Cycle de vie simplifié d'un programme
+
+* La séquence d'instructions du programme est chargé en mémoire.
+* Un programme particulier appelé **interprêteur** exécute chaque instruction dans l'ordre :
+    * Un **compteur de programme** pointe en mémoire vers la prochaine instruction à exécuter.
+    * Cette instruction est envoyée à l'**unité arithmétique et logique** qui s'occupe de la résoudre.
+
+---
+
+# Flot de contrôle
+
+* Dans certains cas, sur la base d'un test, l'interprêteur saute vers une autre séquence d'instructions.
+* C'est ce que l'on appelle le **flot de contrôle**.
+* Cela nous permet d'écrire des programmes complexes.
+* Une partie de ce premier cours et du prochain est dédié à l'étude des **structures de contrôle**.
+
+---
+
+# <!--fit--> Graphe de flot de contrôle
+
+![Flot de contrôle pour le petit-déjeuner](./assets/exemple-flot.png)
+
+---
+
+![](#fff)
+![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+
+# <!--fit--> TP 01 - Démarrer avec Scratch
+
 
 ---
 
@@ -369,10 +452,24 @@ Un ordinateur sait :
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+Machine de Turing
+Thèse de Church Turing
+Le Problème de Stoppage (Halting Problem)
+Turing complet
 
-# <!--fit--> TP 01 - Démarrer avec Scratch
+Puis
+
+Paradigmes de programmation :
+Langage déclaratif
+Langage impératif
+Autres : langage orienté objet, fonctionnel, etc.
+
+Puis 
+
+Sémantique
+Syntaxe et grammaire
+Intuition concernant la qualité
+
 
 ---
 

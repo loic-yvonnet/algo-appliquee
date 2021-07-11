@@ -261,7 +261,9 @@ Vous n'apprendrez pas à programmer simplement en écoutant le cours ou en lisan
 
 <!--
 Vous ne "casserez" pas votre ordinateur en utilisant Python.
-Les systèmes d'exploitation modernes comme GNU/Linux exécutent les programmes que vous écrivez dans un espace protégé appelé "espace utilisateur". Le kernel Linux empêchent ces programmes de faire de grosses bêtises. Vous avez donc des garde-fous.
+Les systèmes d'exploitation modernes comme GNU/Linux exécutent les programmes que vous écrivez dans un espace protégé appelé "espace utilisateur". Le kernel Linux empêchent ces programmes de faire de grosses bêtises.
+De même, les programmes que vous écrivez s'exécutent avec vos permissions sur le système de fichiers. Donc vos programmes n'auront pas le droit d'effacer ou de modifier des fichiers système.
+Vous avez donc des garde-fous qui vous protègent de vous-même.
 -->
 
 ---
