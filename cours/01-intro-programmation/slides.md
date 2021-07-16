@@ -431,7 +431,7 @@ Un ordinateur comporte :
 
 ---
 
-# <!--fit--> Graphe de flot de contrôle
+### Graphe de flot de contrôle
 
 ![Flot de contrôle pour le petit-déjeuner](./assets/exemple-flot.png)
 
@@ -442,6 +442,30 @@ Un ordinateur comporte :
 
 # <!--fit--> TP 01 - Démarrer avec Scratch
 
+---
+
+![bg left:40% 80%](./assets/scratch-logo.png)
+
+
+* Scratch est un langage de programmation graphique à destination des plus jeunes.
+* Créé par le MIT.
+* Démo : [Editeur Scratch](https://scratch.mit.edu/projects/editor/).
+
+<!--
+Faire une démo live de Scratch pour présenter le fonctionnement général.
+La démo live peut consister en la 1ière partie du TP avec le personnage du chat Scratch.
+Ma nièce, qui a 10 ans au moment de l'écriture de ce cours, sait utiliser Scratch.
+C'est un langage parfait pour apprendre la programmation.
+-->
+
+---
+
+![bg right:40% 80%](./assets/../work-assignment-01/assets/014-apercu-execution.jpeg)
+
+# <!--fit--> TP : Jeu Vidéo avec Scratch
+
+* [Lien vers le sujet de TP](./tp-01-scratch.html).
+* Contexte : Anjou Vélo Vintage.
 
 ---
 
@@ -452,8 +476,26 @@ Un ordinateur comporte :
 
 ---
 
-Machine de Turing
-Thèse de Church Turing
+# Intuition
+
+* Un langage de programmation offre une **syntaxe** pour spécifier les **instructions** que l'interprêteur doit exécuter.
+* Il existe de nombreux langages de programmation.
+* Scratch et Pythonen font parti.
+
+---
+
+# Machine de Turing
+
+* En 1936, Alan Turing : spécification de la **Machine de Turing Universelle**.
+* Avec quelques instructions simples, et une mémoire, il est possible d'écrire n'importe quel programme.
+* Tout programme peut être écrit avec un jeu de 6 instructions élémentaires.
+
+---
+
+# Thèse de Church Turing
+
+---
+
 Le Problème de Stoppage (Halting Problem)
 Turing complet
 

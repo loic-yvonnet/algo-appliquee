@@ -50,13 +50,14 @@ style: |
 
 # Formateur
 
-![bg right 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/master/src/img/yvo_logo/landing_page_logo_400.png)
+![bg right:40% 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/master/src/img/yvo_logo/landing_page_logo_400.png)
 
 
 * Loïc Yvonnet
 * Ingénieur en informatique
 * 15+ années d'expérience en développement logiciel
-* [Consultant indépendant](https://yvo.solutions/fr/)
+* Consultant indépendant
+* [www.yvo.solutions](https://yvo.solutions/fr/)
 
 <!--
     Le formateur se présente en premier pour donner une idée du format attendu aux étudiants.
