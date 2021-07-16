@@ -447,9 +447,9 @@ Un ordinateur comporte :
 ![bg left:40% 80%](./assets/scratch-logo.png)
 
 
-* Scratch est un langage de programmation graphique à destination des plus jeunes.
-* Créé par le MIT.
-* Démo : [Editeur Scratch](https://scratch.mit.edu/projects/editor/).
+* **Scratch** est un langage de programmation graphique à destination des plus jeunes.
+* Créé par le **MIT**.
+* **Démo** : [Editeur Scratch](https://scratch.mit.edu/projects/editor/).
 
 <!--
 Faire une démo live de Scratch pour présenter le fonctionnement général.
@@ -460,12 +460,12 @@ C'est un langage parfait pour apprendre la programmation.
 
 ---
 
-![bg right:40% 80%](./assets/../work-assignment-01/assets/014-apercu-execution.jpeg)
+![bg right:40% 90%](./assets/../work-assignment-01/assets/014-apercu-execution.jpeg)
 
 # <!--fit--> TP : Jeu Vidéo avec Scratch
 
-* [Lien vers le sujet de TP](./tp-01-scratch.html).
-* Contexte : Anjou Vélo Vintage.
+* [**Lien** vers le sujet de TP](./tp-01-scratch.html).
+* **Contexte** : Anjou Vélo Vintage.
 
 ---
 
@@ -480,38 +480,143 @@ C'est un langage parfait pour apprendre la programmation.
 
 * Un langage de programmation offre une **syntaxe** pour spécifier les **instructions** que l'interprêteur doit exécuter.
 * Il existe de nombreux langages de programmation.
-* Scratch et Pythonen font parti.
+* **Scratch** et **Python** sont des langages de programmation.
 
 ---
 
 # Machine de Turing
 
 * En 1936, Alan Turing : spécification de la **Machine de Turing Universelle**.
-* Avec quelques instructions simples, et une mémoire, il est possible d'écrire n'importe quel programme.
-* Tout programme peut être écrit avec un jeu de 6 instructions élémentaires.
+* Avec quelques **instructions élémentaires**, et une **mémoire**, il est possible d'écrire **n'importe quel programme** exécutable par une machine.
 
 ---
 
 # Thèse de Church Turing
 
+*Si une fonction est exécutable par une machine, alors une Machine de Turing peut être programmée pour l'exécuter.*
+
+:arrow_right: Un algorithme peut donc être écrit dans **n'importe quel** langage de programmation.
+
+
 ---
 
-Le Problème de Stoppage (Halting Problem)
-Turing complet
+# <!--fit--> Indécidable : tout n'est pas possible
 
-Puis
+* Certains problèmes **ne peuvent pas** être résolus par un algorithme.
+* **Problème d'arrêt** (Halting Problem) : il est impossible d'écrire un programme capable de prédire si un autre programme arbitraire s'exécute indéfiniment.
+* Cela signifie par exemple qu'il est impossible pour un programme de prédire si un autre programme fonctionne correctement.
 
-Paradigmes de programmation :
-Langage déclaratif
-Langage impératif
-Autres : langage orienté objet, fonctionnel, etc.
+<!--
+Le problème d'arrêt de la Machine de Turing est l'un des résultats remarquables des travaux d'Alan Turing.
+C'est un exemple de problème que l'on ne peut pas résoudre avec un algorithme en un nombre d'étapes finies.
+L'avantage de ce problème, c'est qu'il donne du travail à de nombreux informaticiens et testeurs.
+En effet, sans cela, la programmation aurait été beaucoup plus aisée.
+-->
 
-Puis 
+---
 
-Sémantique
-Syntaxe et grammaire
-Intuition concernant la qualité
+# Turing-complet
 
+* Un langage de programmation est dit **Turing-complet** s'il permet de simuler une machine de Turing.
+* Autrement dit, il permet d'écrire tout programme qu'une machine peut exécuter.
+
+---
+
+# Retour sur Scratch
+
+* Scratch :cat: est **Turing-complet**.
+* Scratch comporte de **nombreuses instructions** sous forme de blocs.
+* On peut donc écrire n'importe quel algorithme avec Scratch.
+* Le programme suivant calcule 1 + 1 :
+
+![1 + 1](./assets/scratch-1plus1.png)
+
+---
+
+# <!--fit--> Autre exemple : Brainfuck
+
+* Brainfuck :brain: est **Turing-complet**.
+* C'est un langage *minimal* qui comporte seulement **8 instructions élémentaires**.
+* Ce langage montre qu'il est possible d'écrire n'importe quel programme avec une **syntaxe illisible** pour un être humain.
+* Le programme suivant calcule 1 + 1 :
+
+```
++>+[-<+>]<
+```
+
+<!--
+Signification du programme en Brainfuck :
++      # Stocke 1 à l'adresse 0.
+>      # Déplace le pointeur à l'adresse 1.
++      # Stocke 1 à l'adresse 1.
+[-<+>] # boucle qui décrémente la valeur à l'adresse 1 et ajoute cette valeur à l'adresse 0
+       # tant que la valeur à l'adresse 1 est strictement supérieur à 0.
+<      # Déplace le pointeur à l'adresse 0 (pour réinitialiser l'état).
+Ce langage est certes une parodie de langage de programmation, mais il est souvent mentionné pour son aspect éducatif. En effet, il montre intuitivement à quel point il est important pour un langage d'être compréhensible et maintenable.
+-->
+
+---
+
+# <!--fit--> Caractéristiques d'un langage
+
+* **Primitives élémentaires** : litéraux (`42`, `3.14`), chaînes de caractères (`"yo"`), opérateurs (`/`, `+`).
+* **Syntaxe** : ensembles de séquences bien formées (exemple : `1 + 1` est bien formé, mais pas `1 1`).
+* **Sémantique** : associe une signification aux séquences de symboles bien formés.
+
+<!--
+Avec Scratch, la grammaire est correcte par construction car l'interface graphique et l'usage des blocs empêchent d'écrire un programme syntaxiquement incorrect.
+Avec un éditeur de texte et un langage de programmation plus classique, il est possible de faire des erreurs de grammaire.
+-->
+
+---
+
+# <!--fit--> Paradigmes de programmation
+
+* **Langage déclaratif** : suite de déclarations de faits ou états.
+  * *Exemples* : HTML, CSS, CSV.
+* **Langage impératif** : suite d'instructions à exécuter.
+  * *Exemples* : Python, Scratch, Brainfuck.
+* Il existe d'autres paradigmes : orienté-objet, orienté-aspect, fonctionnel, générique, etc.
+
+<!--
+HTML et CSS sont des exemples de langages déclaratifs qui seront étudiés dans le cadre d'un autre cours.
+Le format de fichier CSV est également un langage déclaratif auquel vous avez peut-être déjà été confronté.
+Scratch, Brainfuck et Python sont des langages impératifs. Python supporte également d'autres paradigmes de programmation qui sont en dehors du cadre de ce cours.
+-->
+
+---
+
+# <!--fit--> Compilé ou interprêté
+
+* Langage **compilé** : le code source du programme est traduit en *code machine binaire* exécuté directement par le matériel (processeur, carte graphique, etc.).
+  * *Exemples* : Java, C, C++, Rust.
+* Langage **interprêté** : le code source du programme est lu par un programme appelé *interprêteur* qui exécute ce code.
+  * *Exemples* : Python, Scratch, JavaScript, HTML, CSS.
+
+<!--
+Le temps de compilation et la traduction en code machine permet d'obtenir de meilleures performances.
+Les langages interprêtés sont souvent plus simples et plus pratiques, mais moins performants.
+-->
+
+---
+
+# <!--fit--> Bas niveau ou haut niveau
+
+* **Bas niveau** : manipulation de données et d'opérations proches de la machine.
+  * *Exemple* : Déplace le contenu d'un registre de 32bit vers cet autre registre.
+  * *Langages* : Assembleur, C.
+* **Haut niveau** : manipulation d'abstractions de haut niveau fournies par le langage.
+  * *Exemple* : Affiche un bouton OK à telle localisation.
+  * *Langages* : Java, Python, JavaScript.
+
+---
+
+# <!--fit--> Général ou spécifique à un domaine
+
+* **Généraliste - General Purpose** : langage applicable à une vaste variété de domaines.
+  * *Exemples* : Python, Java, C, C++, Assembleur.
+* **Domain-Specific Language (DSL)** : les opérations primitives du langage sont spécifiques à un domaine particulier.
+  * *Exemples* : SQL, HTML, CSS.
 
 ---
 
@@ -519,6 +624,58 @@ Intuition concernant la qualité
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> Introduction au langage Python
+
+## :snake:
+
+---
+
+# <!--fit--> Quelques mots d'introduction
+
+![bg right:30% 100%](./assets/Python_logo_and_wordmark.svg.png)
+
+* Langage généraliste, interprêté, de haut niveau, et multi-paradigmes (impératif et orienté-objet).
+* Langage simple à apprendre.
+* Communauté très active : très nombreux outils, tutoriels et très bonne documentation.
+* Hommage aux Monty Python.
+
+---
+
+# Quelques dates
+
+* **1991** : Création du langage par Guido van Rossum.
+* **2000** : Sortie de la version 2.0 et début de l'essor.
+* **2008** : Sortie de la version 3.0 non-compatible avec la version 2.0 ; peu utilisé au début.
+* **2015** : Sortie de TensorFlow et essor exponentiel de l'usage du langage.
+* **2020** : Fin de vie de la version 2.0.
+* **2021** : *Vous* apprenez Python !
+
+---
+
+# <!--fit--> Quelques applications écrites avec Python
+
+* **RankBrain** : algorithme derrière Google.
+* **YouTube** : streaming vidéo.
+* **Rover Persévérance (Mars)** : communication entre rover et satellite.
+* **Abaqus/CAE** : interface graphique 3D de calcul par élements finis.
+
+---
+
+# <!--fit--> Quelques domaines de prédilection
+
+* **Intelligence Artificielle** : Machine Learning, Deep Learning, Data Science.
+* **Automatisation de tâches** : Scripts, Intégration Continue, Déploiement Continue.
+* **Recherche** : Recherche Opérationnelle, Calcul Scientifique.
+* **Backend Applications** : Développement Web côté serveur.
+* **Internet of Things** : Développement de prototypes.
+
+---
+
+## Mais...
+
+* Moins performant et moins structuré que d'autres langages comme C++ et Java.
+* Ne peut s'exécuter dans un navigateur web directement contrairement à JavaScript.
+
+
 
 ---
 
