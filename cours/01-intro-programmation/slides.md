@@ -872,19 +872,12 @@ Les raisons pour lesquelles c'est déconseillé :
 * **Jupyter Notebook** est un environnement de développement Python.
 * Adapté pour la recherche, l'enseignement, le prototypage, etc.
 * **Binder** offre la possibilité d'exécuter un carnet Jupyter dans une page web.
-* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb).
-
-<!--
-Faire une démo live de Scratch pour présenter le fonctionnement général.
-La démo live peut consister en la 1ière partie du TP avec le personnage du chat Scratch.
-Ma nièce, qui a 10 ans au moment de l'écriture de ce cours, sait utiliser Scratch.
-C'est un langage parfait pour apprendre la programmation.
--->
+* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb)
 
 ---
 
 ![bg right:40% 90%](./assets/../work-assignment-02/assets/02-notebook.png)
 
-# <!--fit--> TP : Familiarisation avec Python et Jupyter Notebook
+### TP : Familiarisation avec Python et Jupyter Notebook
 
 [**Lien** vers le sujet de TP](./tp-02-jupyter-notebook.html).
