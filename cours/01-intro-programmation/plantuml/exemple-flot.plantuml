@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+:Aller dans la cuisine;
+
+if (Il reste du café?) then (oui)
+  :Faire chauffer du café;
+  :Prendre une tasse;
+else (non)
+  :Chercher les céréales et du lait;
+  :Prendre un bol;
+endif
+
+:Petit-déjeuner;
+
+stop
+
+@enduml

@@ -50,13 +50,14 @@ style: |
 
 # Formateur
 
-![bg right 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/master/src/img/yvo_logo/landing_page_logo_400.png)
+![bg right:40% 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/master/src/img/yvo_logo/landing_page_logo_400.png)
 
 
 * Loïc Yvonnet
 * Ingénieur en informatique
 * 15+ années d'expérience en développement logiciel
-* [Consultant indépendant](https://yvo.solutions/fr/)
+* Consultant indépendant
+* [www.yvo.solutions](https://yvo.solutions/fr/)
 
 <!--
     Le formateur se présente en premier pour donner une idée du format attendu aux étudiants.
@@ -257,6 +258,14 @@ Vous n'apprendrez pas à programmer simplement en écoutant le cours ou en lisan
 * Faites vous-même les TPs et les TDs.
 * Faites le travail à la maison.
 * Entraidez-vous.
+* N'ayez pas peur de casser votre ordinateur.
+
+<!--
+Vous ne "casserez" pas votre ordinateur en utilisant Python.
+Les systèmes d'exploitation modernes comme GNU/Linux exécutent les programmes que vous écrivez dans un espace protégé appelé "espace utilisateur". Le kernel Linux empêchent ces programmes de faire de grosses bêtises.
+De même, les programmes que vous écrivez s'exécutent avec vos permissions sur le système de fichiers. Donc vos programmes n'auront pas le droit d'effacer ou de modifier des fichiers système.
+Vous avez donc des garde-fous qui vous protègent de vous-même.
+-->
 
 ---
 
