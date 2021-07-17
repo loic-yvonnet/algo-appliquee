@@ -672,10 +672,8 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ## Mais...
 
-* Moins performant et moins structuré que d'autres langages comme C++ et Java.
+* Moins *performant* et moins *structuré* que d'autres langages comme C++ et Java.
 * Ne peut s'exécuter dans un navigateur web directement contrairement à JavaScript.
-
-
 
 ---
 
@@ -686,6 +684,128 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
+# Déclarations
+
+* Un programme (également appelé **script**) Python est composé de **déclarations**.
+* Chaque déclaration dit à l'interpêteur Python ce qu'il doit faire.
+* Par exemple :
+```py
+print("Bonjour tout le monde")
+```
+
+:arrow_right: demande à l'interprêteur d'afficher `Bonjour tout le monde`.
+
+<!--
+Nous allons commencer à nous intéresser à la manière de former des déclarations interprêtables par l'interprêteur Python.
+Pour cela, on va commencer par regarder les objets.
+-->
+
+---
+
+# Objet
+
+* En Python, **tout est objet**.
+* Chaque objet possède un **type**.
+* Un type peut être :
+  * **Scalaire** s'il est indivisible.
+  * **Non-scalaire** s'il est décomposable.
+
+---
+
+# Types scalaires
+
+* **int** : nombre entier naturel (`0`, `8`, `-12`).
+* **float** : nombre réel, dit à virgule flottante (`1.5`, `3.14`, `-6e10`, `5e-6`).
+* **bool** : vrai ou faux (`True`, `False`).
+* **None** : représente l'absence de valeur (`None`).
+
+---
+
+# Expressions
+
+* On combine des objets et des **opérateurs** pour former des **expressions**.
+* Le résultat de l'évaluation d'une expression s'appelle **valeur de l'expression**.
+* Exemple :
+
+```py
+1 + 1
+```
+:arrow_right: `2`
+
+---
+
+# <!--fit--> Autres exemples d'expressions
+
+```py
+4.5 + 2.3
+```
+:arrow_right: `6.8`
+
+```py
+-5 < 3
+```
+:arrow_right: `True`
+
+```py
+2 == 3
+```
+:arrow_right: `False`
+
+---
+
+# Opérateurs arithmétiques
+
+* `+` : addition.
+* `-` : soustraction.
+* `*` : multiplication.
+* `/` : division.
+* `%` : modulo (reste de la division).
+* `//` : division entière.
+* `**` : puissance.
+
+<!--
+D'autres exemples seront donnés dans le TP suivant.
+-->
+
+---
+
+# Comparaisons
+
+* `<` : strictement plus petit que.
+* `<=` : plus petit ou égal.
+* `>` : strictement plus grand que.
+* `>=` : plus grand ou égal.
+* `==` : égal.
+* `!=` : différent.
+
+<!--
+Attention au double égal !
+Tous les étudiants font l'erreur au moins une fois. Vous ne ferez sans doute pas exception...
+-->
+
+---
+
+# Opérateurs Booléen
+
+* `and` : ET logique.
+* `or` : OU logique.
+* `not` : NON logique.
+
+---
+
+# Démo
+
+### Utilisation d'un shell Python
+#### <!--fit--> Démonstration de l'utisation d'opérateurs pour former des expressions
+
+<!--
+Montrer ce genre de chose :
+(not 2.3 >= 5) and (2 ** 3 > 6)
+Demander aux étudiants leur avis sur la valeur des expressions avant de les évaluer par l'interprêteur Python.
+-->
+
+---
+
 ![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
@@ -693,7 +813,78 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
+# Variable
+
+* Il est possible de **lier** un objet à un **nom** :
+
+```py
+x = 42
+```
+
+* On dit que `x` est une **variable** liée à un objet de type `int` et dont la valeur est `42`.
+
+---
+
+# Assignation
+
+* Le fait de lier un objet à une variable s'appelle une **assignation**.
+* Il est possible de réassigner un nouvel objet à une variable :
+
+```py
+x = 42
+y = x   # y vaut 42
+x = 314
+z = x   # z vaut 314
+```
+
+---
+
+# Typage dynamique
+
+* Une variable peut se voir assigner n'importe quel type d'objet.
+* En particulier, il est possible (bien que **déconseillé**) d'assigner un nouvel objet d'un type différent du type initial : on parle de **typage dynamique**.
+
+```py
+x = 42
+y = x     # y vaut 42
+x = True
+z = x     # z vaut True
+```
+
+<!--
+Les raisons pour lesquelles c'est déconseillé :
+* Facilité d'introduction de problèmes subtiles et difficiles à corriger.
+* Pénaltie en termes de performances.
+-->
+
+---
+
 ![](#fff)
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # <!--fit--> TP 02 - Python avec Jupyter Notebook
+
+---
+
+![bg left:40% 60%](./assets/207px-Jupyter_logo.svg.png)
+
+
+* **Jupyter Notebook** est un environnement de développement Python.
+* Adapté pour la recherche, l'enseignement, le prototypage, etc.
+* **Binder** offre la possibilité d'exécuter un carnet Jupyter dans une page web.
+* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb).
+
+<!--
+Faire une démo live de Scratch pour présenter le fonctionnement général.
+La démo live peut consister en la 1ière partie du TP avec le personnage du chat Scratch.
+Ma nièce, qui a 10 ans au moment de l'écriture de ce cours, sait utiliser Scratch.
+C'est un langage parfait pour apprendre la programmation.
+-->
+
+---
+
+![bg right:40% 90%](./assets/../work-assignment-02/assets/02-notebook.png)
+
+# <!--fit--> TP : Familiarisation avec Python et Jupyter Notebook
+
+[**Lien** vers le sujet de TP](./tp-02-jupyter-notebook.html).
