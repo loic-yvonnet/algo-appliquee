@@ -540,9 +540,126 @@ Nous reviendrons plus tard sur le type binaire.
 
 ---
 
+# Introduction aux I/O
+
+* En français, on parle d'Entrées/Sorties, soit **E/S**.
+* La langue anglaise prédomine en informatique.
+* La traduction en anglais d'E/S est **I/O** pour Input/Output.
+* On enlève en général le *slash*, ce qui donne **IO**.
+
+---
+
+# Les fichiers standards
+
+* Les Systèmes d'Exploitation classiques comportent 3 fichiers standards :
+  * `stdin` (index 0) : entrée texte standard.
+  * `stdout` (index 1) : sortie texte standard.
+  * `stderr` (index 2) : sortie d'erreur standard.
+
+---
+
+# Lire dans `stdin`
+
+* `stdin` est une redirection vers le périphérique clavier.
+* Une lecture dans `stdin` signifie donc que l'on va lire ce que l'utilisateur écrit.
+* En Python, on utilise la fonction `input` pour lire dans `stdin` :
+
+```py
+nom = input("Votre nom : ")
+```
+
+---
+
+# Ecrire dans `stdout`
+
+* `stdout` est une redirection vers la console.
+* Une écriture dans `stdout` va afficher le contenu dans la console.
+* En Python, on utilise la fonction `print` pour écrire dans `stdout` :
+
+```py
+nom = input("Votre nom : ")
+print(nom)
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+# Ecrire dans `stderr`
+
+* `stderr`, tout comme `stdout`, est une redirection vers la console.
+* Une écriture dans `stderr` va afficher le contenu dans la console.
+* En Python, lorsqu'une exception est levée, un message d'erreur est affiché dans `stderr` par défaut.
+* On peut également utiliser `sys.stderr.write` :
+
+```py
+import sys
+sys.stderr.write("Oh mince ! dit Shipper")
+```
+
+---
+
+# Formattage simple
+
+```py
+age_en_texte = input("Votre age : ")
+age = int(age_en_texte)
+print("Vous avez", age, "ans")
+```
+
+:arrow_right: `"Vous avez 42 ans"`
+*(si `age == 42`)*
+
+---
+
+# <!--fit--> Limites du formattage simple
+
+```py
+ht = 69.5
+tva = 1/5
+taxe = round(ht * tva * 100) / 100
+ttc = ht + taxe
+label_ht = "Prix (HT) : "
+label_ttc = "Prix (TTC) : "
+print(label_ht, ht, "€\n", label_ttc, ttc, "€")
+```
+
+:arrow_down:
+
+```
+Prix (HT) :  69.5 €
+ Prix (TTC) :  83.4 €
+```
+
+---
+
+# <!--fit--> Chaîne de caractères litérale formattée
+
+```py
+ht = 69.5
+tva = 1/5
+taxe = round(ht * tva * 100) / 100
+label_ht = "Prix (HT) :"
+label_ttc = "Prix (TTC) :"
+print(f"{label_ht:>12} {ht:.2f}€\n{label_ttc:>12} {ht + taxe:.2f}€")
+```
+
+:arrow_down:
+
+```
+ Prix (HT) : 69.50€
+Prix (TTC) : 83.40€
+```
+
+---
+
 <!-- _class: title-section -->
 
-# <!--fit--> TP 03 - Initiation aux Environnement de Développement Intégrés avec pour but de manipuler des chaînes de caractères
+# TP 03 - Initiation aux Environnement de Développement Intégrés avec pour but de manipuler des chaînes de caractères
+
+---
+
+
 
 ---
 
@@ -560,7 +677,7 @@ Nous reviendrons plus tard sur le type binaire.
 
 <!-- _class: title-section -->
 
-# <!--fit--> TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
+# TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
 
 ---
 
