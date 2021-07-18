@@ -9,11 +9,44 @@ style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
   }
+
+  section.title-section {
+    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.smaller-text p, section.smaller-text pre {
+    font-size: 0.6em;
+  }
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: smaller-text -->
 
+# `if` imbriqués
+
+```py
+texte = ""
+taille = 175
+
+if taille > 180:
+    if taille > 200:
+        texte = "très grand"
+    else:
+        texte = "grand"
+else:
+    if taille > 155:
+        texte = "moyen"
+    else:
+        texte = "petit"
+
+print(texte)
+```
+
+:arrow_right: `moyen`
+
+---
+
+<!-- _class: title-section -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -41,6 +74,97 @@ style: |
 ![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
 
 # Conditions
+
+---
+
+# Branche
+
+* Un algorithme doit souvent prendre des **décisions**.
+* En fonction de la valeur d'une **expression Booléenne**, l'interprêteur va suivre une **branche** ou une autre.
+
+---
+
+# <!--fit--> Exemple de branchement
+
+![bg left:30% 80%](./assets/condition.png)
+
+* On peut visualiser graphiquement les branches.
+* Pseudo-code équivalent :
+
+```
+Si la valeur de l'expression Test renvoie Vrai:
+    Exécute le Bloc de code 1
+Sinon:
+    Exécute le Bloc de code 2
+```
+
+* En anglais :
+  * si :arrow_right: `if`
+  * sinon :arrow_right: `else`
+
+
+---
+
+# Conditions en Python
+
+* La forme de base est la suivante :
+
+```py
+if Test:
+    Bloc de code 1
+else:
+    Bloc de code 2
+```
+
+* Attention aux `:` et à l'indentation.
+* Attention à la casse : les mots clés sont en minuscule.
+
+---
+
+# Le `else` est facultatif
+
+* Une condition peut prendre tout simplement la forme :
+
+```py
+if Test:
+    Bloc de code # Exécuté si Test == True
+```
+
+---
+
+# Quelques exemples
+
+```py
+texte = ""
+taille = 175
+
+if taille > 180:
+    texte = "grand"
+else:
+    texte = "petit"
+
+print(texte)
+```
+
+:arrow_right: `petit`
+
+---
+
+# Quelques exemples
+
+```py
+texte = "petit"
+taille = 175
+
+if taille > 180:
+    texte = "grand"
+
+print(texte)
+```
+
+:arrow_right: `petit`
+
+---
 
 ---
 

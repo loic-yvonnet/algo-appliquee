@@ -1,0 +1,17 @@
+@startuml
+
+start
+
+:Code;
+
+if (Test) then (Vrai)
+  :Bloc de code 1;
+else (Faux)
+  :Bloc de code 2;
+endif
+
+:Code;
+
+stop
+
+@enduml
