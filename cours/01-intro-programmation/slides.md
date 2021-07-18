@@ -35,15 +35,15 @@ style: |
 
 # Plan
 
-* Intérêt du cours
-* Discussion sur les algorithmes
-* Histoire de l’algorithmique
-* Définition formelle
-* Architecture simplifiée d'un ordinateur
-* Discussion sur les langages de programmation
-* Introduction au langage Python
-* Types numériques, expressions et objets en Python
-* Variables et assignation
+- Intérêt du cours
+- Discussion sur les algorithmes
+- Histoire de l’algorithmique
+- Définition formelle
+- Architecture simplifiée d'un ordinateur
+- Discussion sur les langages de programmation
+- Introduction au langage Python
+- Types numériques, expressions et objets en Python
+- Variables et assignation
 
 ---
 
@@ -462,7 +462,7 @@ C'est un langage parfait pour apprendre la programmation.
 
 ---
 
-![bg right:40% 90%](./assets/../work-assignment-01/assets/014-apercu-execution.jpeg)
+![bg right:40% 90%](./work-assignment-01/assets/014-apercu-execution.jpeg)
 
 # <!--fit--> TP : Jeu Vidéo avec Scratch
 
@@ -873,7 +873,7 @@ Les raisons pour lesquelles c'est déconseillé :
 
 ---
 
-![bg right:40% 90%](./assets/../work-assignment-02/assets/02-notebook.png)
+![bg right:40% 90%](./work-assignment-02/assets/02-notebook.png)
 
 ### TP : Familiarisation avec Python et Jupyter Notebook
 

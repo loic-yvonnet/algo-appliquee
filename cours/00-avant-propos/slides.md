@@ -36,10 +36,10 @@ style: |
 
 # Plan
 
-* Tour de table
-* Organisation du cours
-* Evaluation
-* Conseils
+- Tour de table
+- Organisation du cours
+- Evaluation
+- Conseils
 
 <!--
     On va commencer par un tour de table pour que tout le monde puisse se présenter.

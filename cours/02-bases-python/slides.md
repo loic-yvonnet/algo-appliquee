@@ -34,13 +34,13 @@ style: |
 
 # Plan
 
-* Conditions
-* Chaînes de caractères et encodage de caractères
-* Entrée et sortie standard
-* Boucles "Tant Que"
-* Boucles "Pour"
-* Discussion sur les différences entre Scratch et Python
-* Style, commentaires et PEP 8
+- Conditions
+- Chaînes de caractères et encodage de caractères
+- Entrée et sortie standard
+- Boucles "Tant Que"
+- Boucles "Pour"
+- Discussion sur les différences entre Scratch et Python
+- Style, commentaires et PEP 8
 
 ---
 
@@ -655,11 +655,34 @@ Prix (TTC) : 83.40€
 
 <!-- _class: title-section -->
 
-# TP 03 - Initiation aux Environnement de Développement Intégrés avec pour but de manipuler des chaînes de caractères
+# TP 03 - Initiation aux Environnements de Développement Intégrés avec pour but de manipuler des chaînes de caractères
 
 ---
 
+![bg left:40% 60%](./assets/Visual_Studio_Code_1.35_icon.svg.png)
 
+
+* **Visual Studio Code** est un Environnement de Développement Intégré.
+* Edité par Microsoft en JavaScript/Electron.
+* Gratuit et Open Source.
+* Linux, macOS, Windows.
+* Nombreuses extensions.
+* [**Lien vers le site officiel**](https://code.visualstudio.com)
+
+<!--
+Extensions disponibles pour presque tous les langages de programmation.
+Excellent support de Python.
+Vous pourrez l'utiliser sans problème pour vos projets professionnels.
+Est utilisé notamment pour l'édition de ce cours.
+-->
+
+---
+
+![bg right:40% 90%](./assets/vscode_ide.png)
+
+### TP : Usage d'un IDE et manipulation de chaînes
+
+[**Lien** vers le sujet de TP](./tp-03-ide-et-strings.html).
 
 ---
 
