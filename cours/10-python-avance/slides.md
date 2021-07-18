@@ -15,7 +15,7 @@ style: |
     color: #fff;
   }
 
-  section.smaller-text p, section.smaller-text pre, section.smaller-text ul {
+  section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
     font-size: 0.6em;
   }
 ---

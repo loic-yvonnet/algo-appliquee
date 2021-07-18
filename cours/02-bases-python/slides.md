@@ -15,7 +15,7 @@ style: |
     color: #fff;
   }
 
-  section.smaller-text p, section.smaller-text pre, section.smaller-text ul {
+  section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
     font-size: 0.6em;
   }
 ---
@@ -692,7 +692,7 @@ Est utilisé notamment pour l'édition de ce cours.
 
 ---
 
-# Pourquoi des boucles ?
+# Pourquoi des boucles ? :loop:
 
 * Imaginons un programme qui prend en entrée un nombre et doit calculer la somme de 1 à ce nombre :
 
@@ -757,7 +757,7 @@ En anglais : `tant que` :arrow_right: `while`
 # Exemple en Python
 
 ```py
-nombre = int(input("Entrez un nombre positif : "))
+nombre = int(input("Entrez un nombre : "))
 
 resultat = 0
 i = 0
@@ -772,15 +772,154 @@ print(resultat)
 
 ---
 
-Boucle infinie
+<!-- _class: smaller-text -->
+
+# Evolution des valeurs
+
+| Itération | i | resultat | nombre |
+|:---------:|:-:|:--------:|:------:|
+| 0         | 0 | 0        | 9      |
+| 1         | 1 | 1        | 9      |
+| 2         | 2 | 3        | 9      |
+| 3         | 3 | 6        | 9      |
+| 4         | 4 | 10       | 9      |
+| 5         | 5 | 15       | 9      |
+| 6         | 6 | 21       | 9      |
+| 7         | 7 | 28       | 9      |
+| 8         | 8 | 36       | 9      |
+| 9         | 9 | 45       | 9      |
 
 ---
 
-continue
+# Boucle infinie :skull:
+
+```py
+nombre = 9
+resultat = 0
+i = 0
+while i <= nombre:
+    resultat += i
+    i -= 1
+```
+
+<!--
+`i` ne fait que diminuer.
+`i` reste donc indéfiniment plus petit que `nombre`.
+La condition de fin de la boucle n'est jamais atteinte.
+-->
 
 ---
 
-break
+# Continue
+
+<!-- _class: smaller-text -->
+
+```py
+from math import sin
+
+pi = 3.14159265
+epsilon = 1e-6
+actuel = -2 * pi
+fin = 2 * pi
+increment = pi / 6
+while actuel < fin:
+    sin_actuel = sin(actuel)
+    precedent = actuel
+    actuel += increment
+
+    if abs(sin_actuel) < epsilon: # si sin(actuel) est proche de 0
+        continue                  # évite les instructions suivantes
+    
+    valeur = 1 / sin_actuel
+    print(f"x = {precedent:>9.6f} ;"
+        f" sin(x) = {sin_actuel:>9.6f} ;"
+        f" 1 / sin(x) = {valeur:>9.6f}")
+```
+
+<!--
+sin(pi/2) == 0.
+En partant de -2*pi, et avec un increment de pi/6, on va passer par pi/2 et -pi/2.
+Donc, on pourrait arriver sur des divisions par zéro.
+Avec les erreurs numériques, la probabilité de tomber sur une division par zéro est faible.
+En revanche, on observerait des valeurs immenses en divisant par des nombres proches de zéro.
+Pratique pour éviter des valeur gênantes sans toutefois arrêter la boucle.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+
+# Continue
+
+```
+x = -5.759587 ; sin(x) =  0.500000 ; 1 / sin(x) =  2.000000
+x = -5.235988 ; sin(x) =  0.866025 ; 1 / sin(x) =  1.154701
+x = -4.712389 ; sin(x) =  1.000000 ; 1 / sin(x) =  1.000000
+x = -4.188790 ; sin(x) =  0.866025 ; 1 / sin(x) =  1.154701
+x = -3.665191 ; sin(x) =  0.500000 ; 1 / sin(x) =  2.000000
+x = -2.617994 ; sin(x) = -0.500000 ; 1 / sin(x) = -2.000000
+x = -2.094395 ; sin(x) = -0.866025 ; 1 / sin(x) = -1.154701
+x = -1.570796 ; sin(x) = -1.000000 ; 1 / sin(x) = -1.000000
+x = -1.047198 ; sin(x) = -0.866025 ; 1 / sin(x) = -1.154701
+x = -0.523599 ; sin(x) = -0.500000 ; 1 / sin(x) = -2.000000
+x =  0.523599 ; sin(x) =  0.500000 ; 1 / sin(x) =  2.000000
+x =  1.047198 ; sin(x) =  0.866025 ; 1 / sin(x) =  1.154701
+x =  1.570796 ; sin(x) =  1.000000 ; 1 / sin(x) =  1.000000
+x =  2.094395 ; sin(x) =  0.866025 ; 1 / sin(x) =  1.154701
+x =  2.617994 ; sin(x) =  0.500000 ; 1 / sin(x) =  2.000000
+x =  3.665191 ; sin(x) = -0.500000 ; 1 / sin(x) = -2.000000
+x =  4.188790 ; sin(x) = -0.866025 ; 1 / sin(x) = -1.154701
+x =  4.712389 ; sin(x) = -1.000000 ; 1 / sin(x) = -1.000000
+x =  5.235988 ; sin(x) = -0.866025 ; 1 / sin(x) = -1.154701
+x =  5.759587 ; sin(x) = -0.500000 ; 1 / sin(x) = -2.000000
+```
+
+
+---
+
+# Break
+
+```py
+x = 1000 * 1000 * 1000
+while True:
+    if (x % 11 == 0) and (x % 27 == 0):
+        break
+    x -= 1
+print(f"{x} est dans la table des 11 et des 27")
+```
+
+:arrow_right: `"999999891 est dans la table des 11 et des 27"`
+
+<!--
+On cherche ici le plus grand nombre inférieur à 1 milliard qui soit divible par 11 et 27.
+L'instruction break arrête la boucle.
+Cette instruction permet d'ajouter des conditions de fin au cours de l'exécution d'une itération.
+-->
+
+---
+
+# Boucles imbriquées
+
+```py
+i = 1
+while i < 4:
+    line = ""
+    j = 1
+    while j < 4:
+        line += f"{i * j:>3}"
+        j += 1
+    print(line)
+    i += 1
+```
+:arrow_down:
+
+```
+  1  2  3
+  2  4  6
+  3  6  9
+```
+
 
 ---
 
