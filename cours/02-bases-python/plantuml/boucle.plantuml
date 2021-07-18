@@ -1,0 +1,15 @@
+@startuml
+
+start
+
+:Code;
+
+while (Test) is (Vrai)
+  :Corps de la Boucle;
+endwhile (Faux)
+
+:Code;
+
+stop
+
+@enduml

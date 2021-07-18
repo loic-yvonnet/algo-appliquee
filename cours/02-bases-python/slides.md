@@ -692,6 +692,98 @@ Est utilisé notamment pour l'édition de ce cours.
 
 ---
 
+# Pourquoi des boucles ?
+
+* Imaginons un programme qui prend en entrée un nombre et doit calculer la somme de 1 à ce nombre :
+
+```py
+nombre = int(input("Entrez un nombre positif : "))
+resultat = 0
+if nombre == 1:
+    resultat = 1
+elif nombre == 2:
+    resultat = 1 + 2
+elif nombre == 3:
+    resultat = 1 + 2 + 3
+elif nombre == 4:
+    resultat = 1 + 2 + 3 + 4
+# etc.
+print(resultat)
+```
+
+<!--
+Evidemment, on pourrait faire `sum(range(nombre + 1))` si on avait déjà quelques connaissances plus avancées.
+Mais ici, on se pose la question de l'implémentation de sum.
+-->
+
+---
+
+# Pourquoi des boucles ?
+
+On souhaite en fait ici exprimer :
+
+$$
+\sum_{i = 0}^{nombre} i = 0 + 1 + 2 + ... + (nombre - 1) + nombre
+$$
+
+Le commentaire `# etc.` dans la diapositive précédente ou l'ellipse `...` dans la formule ci-dessus expriment tous les 2 une **répétition**.
+
+---
+
+# Définition
+
+* Une **boucle** permet de répéter un ensemble d'instructions.
+* Une répétition de cet ensemble d'instructions s'appelle une **itération**.
+* L'ensemble d'instructions à répéter s'appelle le **corps de la boucle**.
+* Une boucle s'arrête lorsque sa **condition de fin** devient vraie.
+
+---
+
+# <!--fit--> Boucle "Tant Que"
+
+![bg left:25% 80%](./assets/boucle.png)
+
+Une boucle "Tant Que" peut s'exprimer ainsi en pseudo-code :
+
+```
+Tant Que la valeur de l'expression Test est Vraie:
+    Exécute le Corps de la Boucle
+```
+
+En anglais : `tant que` :arrow_right: `while`
+
+---
+
+# Exemple en Python
+
+```py
+nombre = int(input("Entrez un nombre positif : "))
+
+resultat = 0
+i = 0
+while i <= nombre:
+    resultat += i
+    i += 1
+
+print(resultat)
+```
+
+:arrow_right: `45` si `nombre == 9`
+
+---
+
+Boucle infinie
+
+---
+
+continue
+
+---
+
+break
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Boucles "Pour" et "Bornes"
