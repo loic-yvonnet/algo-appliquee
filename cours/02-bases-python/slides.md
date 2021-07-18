@@ -20,32 +20,6 @@ style: |
   }
 ---
 
-<!-- _class: smaller-text -->
-
-# `if` imbriqués
-
-```py
-texte = ""
-taille = 175
-
-if taille > 180:
-    if taille > 200:
-        texte = "très grand"
-    else:
-        texte = "grand"
-else:
-    if taille > 155:
-        texte = "moyen"
-    else:
-        texte = "petit"
-
-print(texte)
-```
-
-:arrow_right: `moyen`
-
----
-
 <!-- _class: title-section -->
 
 # <!--fit--> Algorithmique Appliquée
@@ -70,8 +44,7 @@ print(texte)
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # Conditions
 
@@ -166,52 +139,71 @@ print(texte)
 
 ---
 
+<!-- _class: smaller-text -->
+
+# `if` imbriqués
+
+```py
+texte = ""
+taille = 175
+
+if taille > 180:
+    if taille > 200:
+        texte = "très grand"
+    else:
+        texte = "grand"
+else:
+    if taille > 155:
+        texte = "moyen"
+    else:
+        texte = "petit"
+
+print(texte)
+```
+
+:arrow_right: `moyen`
+
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+---
+
+<!-- _class: title-section -->
 
 # <!--fit--> Chaînes de caractères et encodage de caractères
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Entrée et sortie standard
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> TP 03 - Initiation aux Environnement de Développement Intégrés avec pour but de manipuler des chaînes de caractères
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Boucles "Tant que"
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Boucles "Pour" et "Bornes"
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Différences entre Python et Scratch
 
@@ -229,14 +221,12 @@ Comment feriez-vous pour ré-implémenter le TP 01 Anjou Vélo Vintage en Python
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Style, commentaires et PEP 8
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Devoir à la Maison 01
