@@ -208,6 +208,8 @@ print(texte)
 # Type `str`
 
 * En anglais, **string** signifie **chaîne de caractères**.
+* C'est une **liste de caractères**.
+* Cette liste commence et termine par `"` (ou `'`).
 * Cela n'a *rien* à voir avec certains vêtements... :bikini:
 * `str` est la contraction de string.
 * Exemple :
@@ -926,6 +928,201 @@ while i < 4:
 <!-- _class: title-section -->
 
 # <!--fit--> Boucles "Pour" et "Bornes"
+
+---
+
+<!-- _class: smaller-text -->
+
+# Intérêt
+
+Admettons que nous ayons une liste de noms que nous souhaitons afficher dans la console :
+
+```py
+liste = [ "Alan", "Ada", "Donald" ]
+taille = len(liste)
+i = 0
+while i < taille:
+    nom = liste[i]
+    print(nom)
+    i += 1
+```
+
+:arrow_down:
+
+```
+Alan
+Ada
+Donald
+```
+
+<!--
+On peut tout faire avec des boucles while.
+On remarque que pour un cas simple comme celui-ci, on est obligé d'utiliser un index i et de calculer explicitement la borne de fin.
+-->
+
+---
+
+# Simplification
+
+```py
+for nom in [ "Alan", "Ada", "Donald" ]:
+    print(nom)
+```
+
+:arrow_down:
+
+```
+Alan
+Ada
+Donald
+```
+
+---
+
+# <!--fit--> Boucle "Pour"
+
+![bg left:27% 90%](./assets/pour.png)
+
+Une boucle "Pour" peut s'exprimer ainsi en pseudo-code :
+
+```
+Pour chaque élément du containeur:
+    Exécute le Corps de la Boucle sur cet élément
+```
+
+En anglais : `pour` :arrow_right: `for`
+
+---
+
+# Autre exemple
+
+```py
+for i in { 1, 2, 3 }:
+    print(i)
+```
+
+:arrow_down:
+
+```
+1
+2
+3
+```
+
+<!--
+On peut également itérer sur des entiers.
+-->
+
+---
+
+# Retour sur les sommes
+
+```py
+somme = 0
+for i in { 1, 2, 3, 4, 5, 6, 7, 8, 9 }:
+    somme += i
+print(somme)
+```
+
+:arrow_right: `45`
+
+<!--
+Si on connait la borne supérieure, on peut lister tous les nombres par lesquels on doit passer.
+-->
+
+---
+
+# <!--fit--> Mais si on ne connait pas la limite supérieure ?
+
+```py
+taille = int(input("Taille : "))
+somme = 0
+# for i in { 1, 2, 3, 4, 5, ..., taille }: # ce code est commenté
+#     somme += i                           # comment fait-on ?
+print(somme)
+```
+
+<!--
+On se retrouve à nouveau coincé : soit on retourne sur des boucles while, soit il nous faut un autre concept pour générer un ensemble d'entiers.
+-->
+
+---
+
+# Solution : bornes
+
+La fonction `range` permet de résoudre ce problème.
+En anglais : `borne` :arrow_right: `range`.
+
+```py
+taille = int(input("Taille : "))
+somme = 0
+for i in range(taille + 1):
+    somme += i
+print(somme)
+```
+
+---
+
+# Autre exemple
+
+```py
+for i in range(3):
+    print(i)
+```
+
+:arrow_down:
+
+```
+0
+1
+2
+```
+
+Autrement dit : $[ 0 ; 3 [$
+
+<!--
+Va de 0 au nombre indiqué moins 1.
+-->
+
+---
+
+# Bornes de début et de fin
+
+```py
+debut = 1
+fin = 3
+for i in range(debut, fin):
+    print(i)
+```
+
+:arrow_down:
+
+```
+1
+2
+```
+
+Autrement dit : $[ debut ; fin [$
+
+---
+
+# Pas
+
+```py
+debut = 1
+fin = 6
+pas = 2
+for i in range(debut, fin, pas):
+    print(i)
+```
+
+:arrow_down:
+
+```
+1
+3
+5
+```
 
 ---
 

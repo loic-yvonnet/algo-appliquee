@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+:Code;
+
+:taille = len(Containeur);
+:i = 0;
+while (i < taille) is (Vrai)
+  :ElementActuel = Containeur[i];
+  #CC7777:Corps de la Boucle pour l'ElementActuel;
+  :i += 1;
+endwhile (Faux)
+
+:Code;
+
+stop
+
+@enduml
