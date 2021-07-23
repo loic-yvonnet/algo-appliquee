@@ -1132,27 +1132,233 @@ for i in range(debut, fin, pas):
 
 ---
 
+![bg right:40% 60%](../01-intro-programmation/assets/207px-Jupyter_logo.svg.png)
+![bg right:40% 60%](./assets/Visual_Studio_Code_1.35_icon.svg.png)
+
+
+* *Jupyter Notebook* est supporté par Binder dans votre *navigateur web* et par *Visual Studio Code*.
+* Vous avez maintenant pu essayer les deux dans le cadre des précédents TP.
+* Vous êtes libres d'utiliser l'environnement de **votre choix** à partir de ce TP.
+
+<!--
+Extensions disponibles pour presque tous les langages de programmation.
+Excellent support de Python.
+Vous pourrez l'utiliser sans problème pour vos projets professionnels.
+Est utilisé notamment pour l'édition de ce cours.
+-->
+
+---
+
+### TP : Algorithmes pour l'arithmétique simple
+
+[**Lien** vers le sujet de TP](./tp-04-algo-arithmetique.html).
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Différences entre Python et Scratch
 
 ---
 
-Discussion sur les différences concernant les conditions
+# <!--fit--> Différences concernant les conditions
+
+<!--
+Assez similaire finalement.
+Scratch vous oriente pour empêcher les erreurs de syntaxe.
+Rechercher les blocs prend beaucoup de temps.
+Ecrire les algorithmes dans un éditeur de texte est beaucoup plus rapide.
+-->
 
 ---
 
-Discussion sur les différences concernant les boucles
+# <!--fit--> Différences concernant les boucles
+
+<!--
+Scratch oriente encore une fois pour empêcher les erreurs de syntaxe.
+Scratch propose des choses non disponibles par défaut dans Python : attendre une collision par exemple.
+C'est parce que Scratch est à la fois un langage et une boîte à outils pour le développement de jeux vidéos.
+-->
 
 ---
 
 Comment feriez-vous pour ré-implémenter le TP 01 Anjou Vélo Vintage en Python ?
+
+<!--
+Personnellement, je commencerais par pip install PyGame, qui est une boîte à outils pour créer des jeux vidéos simples en Python.
+PyGame est plus complexe que Scratch, mais il permet d'aller beaucoup plus loin, par exemple en créant des jeux 3D.
+-->
 
 ---
 
 <!-- _class: title-section -->
 
 # <!--fit--> Style, commentaires et PEP 8
+
+---
+
+# <!--fit--> Que pensez-vous du code suivant ?
+
+```py
+from math import sin
+var1=3.14159265;var2=1e-6;var3=-2*var1;var4=2*var1;var5=var1/6
+while var3<var4:
+    var6=sin(var3);var7=var3;var3+=var5
+    if abs(var6)<var2:continue
+    var8=1/var6
+    print(f"var7={var7};var6={var6};var8={var8}")
+```
+
+:arrow_right: Que fait-il ?
+
+---
+
+<!-- _class: smaller-text -->
+
+# <!--fit--> Vous avez déjà vu ce code !
+
+```py
+from math import sin
+
+pi = 3.14159265
+epsilon = 1e-6
+actuel = -2 * pi
+fin = 2 * pi
+increment = pi / 6
+while actuel < fin:
+    sin_actuel = sin(actuel)
+    precedent = actuel
+    actuel += increment
+
+    if abs(sin_actuel) < epsilon: # si sin(actuel) est proche de 0
+        continue                  # évite les instructions suivantes
+    
+    valeur = 1 / sin_actuel
+    print(f"x = {precedent:>9.6f} ;"
+        f" sin(x) = {sin_actuel:>9.6f} ;"
+        f" 1 / sin(x) = {valeur:>9.6f}")
+```
+
+<!--
+Qu'en déduisez-vous ?
+-->
+
+---
+
+# Le style, ça compte
+
+* On écrit le code d'abord pour les **êtres humains**.
+* Ensuite, on écrit le code pour la machine.
+* Le code doit être **simple**, et si possible, **évident**.
+
+---
+
+# Maintenance
+
+* Un développeur passe **plus de 80%** de son temps à **lire du code** existant.
+* Des projets de plus de **100 000 lignes de code** sont courant.
+* Imaginez-vous devoir lire, comprendre et corriger des problèmes dans un code **que vous n'avez pas écrit**.
+* Imaginez que le développeur initial a quitté l'équipe, voire l'entreprise...
+
+---
+
+# Une histoire de coûts
+
+* Un code simple à comprendre prendra **moins de temps à faire évoluer**.
+* Un code simple comporte en général **moins de problèmes**.
+* Le temps passé à comprendre du code et corriger des problèmes génère **un coût pour les entreprises**.
+* La mauvaise qualité d'un logiciel impacte l'**image de marque** d'une entreprise.
+
+<!--
+Une mauvaise image de marque implique au final moins de ventes, et donc également un coût.
+-->
+
+---
+
+# Mais les performances ?
+
+* Un code difficile à comprendre ne s'exécute **pas** plus rapidement.
+* En général, **80% du temps d'exécution est passé dans 20% du code**.
+* On optimise uniquement les 20%...
+* **Même les parties optimisées doivent être maintenable.**
+
+---
+
+# <!--fit--> Qu'est-ce qu'un code lisible ?
+
+* **Commentaires** : ils aident à comprendre les parties non triviales.
+* **Variables** : elles doivent être bien nommées.
+* **Indentation** : Python vous y oblige !
+* **Espacement** : 
+    * *Vertical* pour séparer les blocs de code.
+    * *Horizontal* pour séparer les composantes d'une expression.
+    * Une expression par ligne.
+
+---
+
+# Bonnes pratiques
+
+* L'une des difficultés du développement logiciel est d'écrire du code simple à comprendre.
+* De nombreux outils et techniques visent notamment cet objectif.
+* Il existe **de nombreuses autres bonnes pratiques**.
+* Nous en mentionnerons quelques unes dans le reste du cours.
+
+---
+
+# Recettes Python
+
+* Python est un langage piloté par une communauté.
+* La communauté écrit des propositions : **Python Enhancement Proposals (PEP)**.
+* Les propositions sont discutées puis intégrées dans le langage, afin de l'améliorer.
+* L'une des propositions est **PEP 8** et discute du style en Python.
+
+---
+
+# PEP 8
+
+[Lien vers PEP 8](https://www.python.org/dev/peps/pep-0008/)
+
+*Grandes lignes dans les prochaines diapositives*
+
+---
+
+# Rester consistant
+
+* La règle la plus importante est de **rester consistant**.
+* Une base de code écrite par N développeurs doit donner le sentiment qu'elle a été écrite par une seule et même personne.
+* Les règles d'entreprise sont prioritaires sur celles de PEP 8.
+
+---
+
+# <!--fit--> Espaces ou Tabulations ?
+
+On utilise 4 espaces pour l'indentation.
+
+<!--
+L'une des questions philosophiques entre programmeurs...
+-->
+
+---
+
+# <!--fit--> Longueur maximale de ligne
+
+Maximum 79 caractères par ligne au total.
+
+---
+
+# <!--fit--> Règles pour une expression sur plusieurs lignes
+
+* 79 caractères, c'est peu.
+* On doit souvent revenir à ligne pour les expressions complexes.
+* Exemple :
+
+```py
+revenus = (salaire_net
+           + interets_comptes_bancaires
+           - impots_revenus
+           - remboursements_emprunt)
+```
+
 
 ---
 
