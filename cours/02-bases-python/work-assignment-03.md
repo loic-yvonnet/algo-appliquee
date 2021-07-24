@@ -279,3 +279,52 @@ Allez dans le menu Fichier > Sauvegarder puis appelez votre fichier `mon_premier
 Cliquez sur la flèche verte en haut à droite pour exécuter le script.
 
 ![Script](./assets/vscode_run.png)
+
+## Manipulation de chaînes de caractères
+
+Pour chaque exercice, vous devez créer un fichier nommé `tp03_exercice_X.py` où X est le numéro de l'exercice.
+
+### Exercice 1 - Nombre de jours vécus
+
+Ecrivez un script qui demande à l'utilisateur d'entrer son âge (un nombre entier).
+En considérant qu'une année fait 365 jours, le script doit calculer le nombre de jours vécu par l'utilisateur.
+Le script doit afficher : "Vous avez vécu au moins *X* jours", où X est le nombre de jours calculés.
+
+*Astuces* :
+* Utilisez `input` pour demander une chaîne et `print` pour afficher le résultat.
+* Pensez à faire la conversion de chaîne de caractères vers entier `int`.
+* Utilisez une variable nommée `age` et une autre variable nommée `nb_jours`.
+
+### Exercice 2 - Majuscules et Minuscules
+
+Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères.
+Si la chaîne de caractère ne comporte que des majuscules, affichez "MAJ".
+Si la chaîne de caractère ne comporte que des minuscules, affichez "MIN".
+Sinon, affichez "MIX".
+
+*Astuces* :
+* Utilisez une boucle pour parcourir et tester, un à un, les caractères de la chaine.
+* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : `if ("A" <= char) and (char >= "Z")`.
+* Utilisez des variables et des conditions.
+
+### Exercice 3 - Palindrome
+
+Un palindrome est une chaîne de caractères "mirroir" : on peut le lire indifféremment de gauche à droite ou de droite à gauche.
+Les accents, la ponctuation, les espaces et les majuscules ne sont pas pris en compte.
+
+Par exemple, les mots et phrases suivants sont des palindromes :
+* Non.
+* Ressasser.
+* Ésope reste ici et se repose.
+* La mariée ira mal.
+* Eh ! ça va, la vache ?
+
+Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères sans accent.
+Si la chaîne de caractères est un palindrome, affichez "C'est beau !".
+Sinon, affichez "Dommage, ce n'est pas un palindrome...".
+
+*Astuces* :
+* Utilisez un index de début qui s'incrémente.
+* Utilisez un index de fin qui se décrémente.
+* Si un caractère n'est pas alphabétique, incrémentez l'index de début - respectivement décrémentez l'index de fin.
+* Comparez entre eux les caractères alphabétiques de début et de fin jusqu'à ce que les index se croisent, ou jusqu'à ce qu'il y ait une différence.
