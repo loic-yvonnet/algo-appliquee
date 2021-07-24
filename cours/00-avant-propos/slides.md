@@ -9,10 +9,18 @@ style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
   }
+
+  section.title-section {
+    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+    font-size: 0.6em;
+  }
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 
 # <!--fit--> Algorithmique Appliquée
@@ -28,10 +36,10 @@ style: |
 
 # Plan
 
-* Tour de table
-* Organisation du cours
-* Evaluation
-* Conseils
+- Tour de table
+- Organisation du cours
+- Evaluation
+- Conseils
 
 <!--
     On va commencer par un tour de table pour que tout le monde puisse se présenter.
@@ -41,8 +49,7 @@ style: |
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Tour de table
 
@@ -81,8 +88,7 @@ style: |
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Organisation du cours
 
@@ -152,8 +158,7 @@ Vendredi 22 octobre
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Evaluation
 
@@ -236,8 +241,7 @@ La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront c
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Conseils
 

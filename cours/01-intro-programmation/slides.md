@@ -9,10 +9,18 @@ style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
   }
+
+  section.title-section {
+    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+    font-size: 0.6em;
+  }
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 
 # <!--fit--> Algorithmique Appliquée
@@ -27,20 +35,19 @@ style: |
 
 # Plan
 
-* Intérêt du cours
-* Discussion sur les algorithmes
-* Histoire de l’algorithmique
-* Définition formelle
-* Architecture simplifiée d'un ordinateur
-* Discussion sur les langages de programmation
-* Introduction au langage Python
-* Types numériques, expressions et objets en Python
-* Variables et assignation
+- Intérêt du cours
+- Discussion sur les algorithmes
+- Histoire de l’algorithmique
+- Définition formelle
+- Architecture simplifiée d'un ordinateur
+- Discussion sur les langages de programmation
+- Introduction au langage Python
+- Types numériques, expressions et objets en Python
+- Variables et assignation
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Intérêt du cours
 
@@ -106,8 +113,7 @@ L'automatisation est la clé du succès de très nombreux projets car elle perme
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Discussion sur les algorithmes
 
@@ -216,8 +222,7 @@ Aborder ces quelques exemples permet d'avoir une première intuition sur la natu
 ---
 
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Histoire de l'algorithmique
 
@@ -318,8 +323,7 @@ Etre bon en algorithmique, c'est la garantie d'un succès professionnel.
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Définition formelle
 
@@ -334,8 +338,7 @@ On note que cette définition n'implique pas nécessairement de déterminisme pa
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Architecture simplifiée d'un ordinateur
 
@@ -437,8 +440,7 @@ Un ordinateur comporte :
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> TP 01 - Démarrer avec Scratch
 
@@ -460,7 +462,7 @@ C'est un langage parfait pour apprendre la programmation.
 
 ---
 
-![bg right:40% 90%](./assets/../work-assignment-01/assets/014-apercu-execution.jpeg)
+![bg right:40% 90%](./work-assignment-01/assets/014-apercu-execution.jpeg)
 
 # <!--fit--> TP : Jeu Vidéo avec Scratch
 
@@ -469,8 +471,7 @@ C'est un langage parfait pour apprendre la programmation.
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Discussion sur les langages de programmation
 
@@ -620,8 +621,7 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Introduction au langage Python
 
@@ -677,8 +677,7 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Types numériques, expressions et objets en Python
 
@@ -806,8 +805,7 @@ Demander aux étudiants leur avis sur la valeur des expressions avant de les év
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> Variables et assignation
 
@@ -859,8 +857,7 @@ Les raisons pour lesquelles c'est déconseillé :
 
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 # <!--fit--> TP 02 - Python avec Jupyter Notebook
 
@@ -872,19 +869,12 @@ Les raisons pour lesquelles c'est déconseillé :
 * **Jupyter Notebook** est un environnement de développement Python.
 * Adapté pour la recherche, l'enseignement, le prototypage, etc.
 * **Binder** offre la possibilité d'exécuter un carnet Jupyter dans une page web.
-* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb).
-
-<!--
-Faire une démo live de Scratch pour présenter le fonctionnement général.
-La démo live peut consister en la 1ière partie du TP avec le personnage du chat Scratch.
-Ma nièce, qui a 10 ans au moment de l'écriture de ce cours, sait utiliser Scratch.
-C'est un langage parfait pour apprendre la programmation.
--->
+* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb)
 
 ---
 
-![bg right:40% 90%](./assets/../work-assignment-02/assets/02-notebook.png)
+![bg right:40% 90%](./work-assignment-02/assets/02-notebook.png)
 
-# <!--fit--> TP : Familiarisation avec Python et Jupyter Notebook
+### TP : Familiarisation avec Python et Jupyter Notebook
 
 [**Lien** vers le sujet de TP](./tp-02-jupyter-notebook.html).

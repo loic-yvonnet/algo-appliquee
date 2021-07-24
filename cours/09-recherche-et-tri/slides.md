@@ -9,17 +9,25 @@ style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
   }
+
+  section.title-section {
+    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+    font-size: 0.6em;
+  }
 ---
 
-![](#fff)
-![bg](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg)
+<!-- _class: title-section -->
 
 
 # <!--fit--> Algorithmique Appliquée
 
 ##### BTS SIO SISR
 
-## Introduction à la programmation et à l'algorithmique
+## Algorithmes de recherche et de tri
 
 
 <!-- On commence les choses sérieuses ! -->
