@@ -1296,6 +1296,19 @@ Une mauvaise image de marque implique au final moins de ventes, et donc égaleme
 
 ---
 
+# Commentaires
+
+```py
+# Les commentaires commencent par le caractère "#".
+# Ils ne sont pas exécutés par l'interprêteur Python.
+une_ligne = "peut commencer" # par des instructions
+                             # qui s'exécutent et
+                             # se terminer par des
+                             # commentaires.
+```
+
+---
+
 # Bonnes pratiques
 
 * L'une des difficultés du développement logiciel est d'écrire du code simple à comprendre.
@@ -1305,7 +1318,7 @@ Une mauvaise image de marque implique au final moins de ventes, et donc égaleme
 
 ---
 
-# Recettes Python
+# Bonnes pratiques en Python
 
 * Python est un langage piloté par une communauté.
 * La communauté écrit des propositions : **Python Enhancement Proposals (PEP)**.
@@ -1359,9 +1372,21 @@ revenus = (salaire_net
            - remboursements_emprunt)
 ```
 
+---
+
+# <!--fit--> Nombreuses autres règles...
+
+* N'hésitez pas à consulter [PEP 8](https://www.python.org/dev/peps/pep-0008/).
+* Regardez du code écrit en suivant ces règles, par exemple sur [Python.org](https://docs.python.org/fr/3/tutorial/index.html).
 
 ---
 
 <!-- _class: title-section -->
 
 # <!--fit--> Devoir à la Maison 01
+
+---
+
+### DM : Retours sur Scratch et Python
+
+[**Lien** vers le sujet de DM](./dm-01.html).

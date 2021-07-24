@@ -1,6 +1,6 @@
 ---
-title: "Travail Pratique : Anjou Vélo Vintage avec Scratch 3"
-summary: "Travaux Pratiques : Initiation au langage graphique Scratch 3."
+title: "Devoir à la Maison : Retours sur Scratch et Python"
+summary: "Devoirs à la Maison : Retours sur Scratch et Python."
 category: 02-bases-python
 permalink: "{{ category }}/dm-01.html"
 url: "{{ url_prefix }}/{{ permalink }}"
