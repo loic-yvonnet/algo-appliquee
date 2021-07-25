@@ -6,3 +6,11 @@ permalink: "{{ category }}/tp-04-algo-arithmetique.html"
 url: "{{ url_prefix }}/{{ permalink }}"
 layout: layouts/site.njk
 ---
+
+Le TP précédent vous a introduit à l'utilisation d'un environnement de développement intégré (Visual Studio Code) et à l'écriture de scripts que l'on exécute. Dans le monde de l'entreprise, ainsi que le jour de l'examen, c'est cette approche qui est utilisée.
+
+Cependant, pour des raisons pratiques, nous allons retourner dans Jupyter Notebook pour la plupart des TP suivants.
+
+Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="#"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
+
+Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : [lien de téléchargement](#).

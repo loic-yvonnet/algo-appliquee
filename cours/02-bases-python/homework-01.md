@@ -30,8 +30,8 @@ P_y
 \end{bmatrix}
 =
 \begin{bmatrix}
-rayon \cdot cos(angle) \\
-rayon \cdot sin(angle)
+rayon \cdot \cos(angle) \\
+rayon \cdot \sin(angle)
 \end{bmatrix}
 $$
 
