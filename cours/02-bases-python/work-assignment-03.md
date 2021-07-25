@@ -288,43 +288,64 @@ Pour chaque exercice, vous devez créer un fichier nommé `tp03_exercice_X.py` o
 
 Ecrivez un script qui demande à l'utilisateur d'entrer son âge (un nombre entier).
 En considérant qu'une année fait 365 jours, le script doit calculer le nombre de jours vécu par l'utilisateur.
-Le script doit afficher : "Vous avez vécu au moins *X* jours", où X est le nombre de jours calculés.
+Le script doit afficher : `"Vous avez vécu au moins *X* jours"`, où X est le nombre de jours calculés.
 
 *Astuces* :
 * Utilisez `input` pour demander une chaîne et `print` pour afficher le résultat.
 * Pensez à faire la conversion de chaîne de caractères vers entier `int`.
 * Utilisez une variable nommée `age` et une autre variable nommée `nb_jours`.
 
-### Exercice 2 - Majuscules et Minuscules
+### Exercice 2 - Des chiffres et des lettres
 
-Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères.
-Si la chaîne de caractère ne comporte que des majuscules, affichez "MAJ".
-Si la chaîne de caractère ne comporte que des minuscules, affichez "MIN".
-Sinon, affichez "MIX".
+Ecrivez un script qui demande à l'utilisateur d'entrer un caractère.
+Testez le 1er caractère renvoyé par l'utilisateur :
+* S'il s'agit d'une voyelle (a e i o u y), affichez `"Voyelle"`.
+* S'il s'agit d'un chiffre (0 1 2 3 4 5 6 7 8 9), affichez `"Chiffre"`.
+* S'il s'agit d'une consonne, affichez `"Consonne"`.
+* S'il s'agit d'un caractère spécial, affichez `"Spécial"`.
 
-*Astuces* :
-* Utilisez une boucle pour parcourir et tester, un à un, les caractères de la chaine.
-* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : `if ("A" <= char) and (char >= "Z")`.
-* Utilisez des variables et des conditions.
+*Astuce* : vous pouvez utiliser `upper` ou `lower` pour gérer uniformément les majuscules et minuscules.
+```py
+chaine = "Nébulaire"
+minuscules = chaine.lower() # "nébulaire"
+majuscules = chaine.upper() # "NÉBULAIRE"
+```
 
-### Exercice 3 - Palindrome
+### Exercice 3 - Mimic
 
-Un palindrome est une chaîne de caractères "mirroir" : on peut le lire indifféremment de gauche à droite ou de droite à gauche.
-Les accents, la ponctuation, les espaces et les majuscules ne sont pas pris en compte.
+Ecrivez un script qui demande à l'utilisateur d'entrer un mot.
+Affichez ce mot 3 fois, séparé par des espaces et terminé par un point d'exclamation.
 
-Par exemple, les mots et phrases suivants sont des palindromes :
-* Non.
-* Ressasser.
-* Ésope reste ici et se repose.
-* La mariée ira mal.
-* Eh ! ça va, la vache ?
+Par exemple, si l'entrée est `"Bonjour"`, la sortie doit être `"Bonjour Bonjour Bonjour !"`.
 
-Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères sans accent.
-Si la chaîne de caractères est un palindrome, affichez "C'est beau !".
-Sinon, affichez "Dommage, ce n'est pas un palindrome...".
+### Exercice 4 - Trois fois quatre
 
-*Astuces* :
-* Utilisez un index de début qui s'incrémente.
-* Utilisez un index de fin qui se décrémente.
-* Si un caractère n'est pas alphabétique, incrémentez l'index de début - respectivement décrémentez l'index de fin.
-* Comparez entre eux les caractères alphabétiques de début et de fin jusqu'à ce que les index se croisent, ou jusqu'à ce qu'il y ait une différence.
+Ecrivez un mini script dans lequel vous afficherez les valeurs suivantes sur des lignes séparées :
+* `3 * 4`
+* `3 * str(4)`
+* `3 * "4"`
+* `3 * int("4")`
+* `3 * str(int(str(4)))`
+
+### Exercice 5 - Retourné
+
+Ecrivez un script qui demande à l'utilisateur d'entrer un mot.
+Affichez ce mot à l'envers, en utilisant uniquement une instruction de *slicing* (tranche).
+
+Par exemple, si l'entrée est `"Bonjour"`, la sortie doit être `"ruojnoB"`.
+
+*Astuce* : Rappelez-vous que le dernier caractère a pour index -1.
+
+### Exercice 6 - Message codé
+
+Ecrivez un script qui défini la variable suivante :
+
+```py
+chaine = ("Allons bon, apprenez, vous y arrivez ! "
+          + "A-t-on gagné en habileté et promis déjà, "
+          + "à une belle carrière ?")
+```
+
+Affichez le message caché qui apparait en prenant le 13e caractère, puis tous les 14 caractères, jusqu'à atteindre 90 caractères.
+
+*Astuce* : Utilisez le *slicing* (tranche).
