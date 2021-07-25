@@ -11,9 +11,7 @@ layout: layouts/site.njk
 
 Dans ce TP, vous allez utiliser Jupyter Notebook pour commencer à programmer en Python.
 
-Cliquez sur ce lien pour lancer Binder, qui est un service Cloud pour exécuter dans un un carnet Jupyter Notebook :
-
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb)
+Cliquez sur ce lien pour lancer Binder, qui est un service Cloud pour exécuter dans un un carnet Jupyter Notebook : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>
 
 Le chargement de Jupyter Notebook peut prendre jusqu'à 5 minutes. Soyez donc patient ! Vous pouvez lire la suite de cette page en attendant...
 
