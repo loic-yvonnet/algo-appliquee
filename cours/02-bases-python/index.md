@@ -9,7 +9,7 @@ layout: layouts/lecture.njk
 
 #### Travaux Dirigés et Pratiques
 * [TP 03 - Usage d'un IDE et manipulation de chaînes](./tp-03-ide-et-strings.html)
-* [TP 04 - Algorithmes pour l'arithmétique simple](./tp-04-algo-arithmetique.html) [![Binder](https://mybinder.org/badge_logo.svg)](#)
+* [TP 04 - Algorithmes pour l'arithmétique simple](./tp-04-algo-arithmetique.html) <a href="#"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>
 
 #### Travail à la maison
 
