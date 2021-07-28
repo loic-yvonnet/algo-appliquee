@@ -30,8 +30,8 @@ P_y
 \end{bmatrix}
 =
 \begin{bmatrix}
-rayon \cdot cos(angle) \\
-rayon \cdot sin(angle)
+rayon \cdot \cos(angle) \\
+rayon \cdot \sin(angle)
 \end{bmatrix}
 $$
 
@@ -81,7 +81,59 @@ Sinon, affichez `"Dommage, ce n'est pas un palindrome..."`.
 * Si un caractère n'est pas alphabétique, incrémentez l'index de début - respectivement décrémentez l'index de fin.
 * Comparez entre eux les caractères alphabétiques de début et de fin jusqu'à ce que les index se croisent, ou jusqu'à ce qu'il y ait une différence.
 
+### Exercice 2.3 - Acrostiche
+
+Une manière de cacher un message dans un texte consiste à utiliser les premières lettres de chaque vers d'un poème.
+
+Cette acrostiche daterait de 1598, et aurait été écrite dans le cadre de l'édit de Nantes préparé par Henri IV :
+
+> **A**ntique clef de France,
+> 
+> **N**ecteté de souffrance,
+> 
+> **G**arant contre ennemys,
+> 
+> **E**stappe d'asseurance,
+> 
+> **R**ecours de secourance,
+> 
+> **S**eccurité d’amys. 
+
+Vous trouverez d'autres exemples sur [Wikipedia](https://fr.wikipedia.org/wiki/Acrostiche) pour tester votre algorithme, notamment le Horace de Corneille.
+
+Ecrivez un script qui affiche le message caché dans un acrostiche.
+
+L'acrostiche lui-même pourra être défini de la manière suivante (les prochains cours expliqueront plus en détails cette syntaxe) :
+```py
+acrostiche = "\n".join((
+    "Antique clef de France,",
+    "Necteté de souffrance,",
+    "Garant contre ennemys,",
+    "Estappe d'asseurance,",
+    "Recours de secourance,",
+    "Seccurité d’amys."
+))
+```
+
+**Astuces** :
+* Vous devez afficher le tout premier caractère.
+* Ensuite, vous devez parcourir chaque caractère. A chaque fois que vous trouverez un retour à la ligne, vous devrez afficher le caractère suivant (s'il existe).
+
 ## 3. Calcul numérique
 
-### Exercice 3.1
+### Exercice 3.1 - Moyenne
 
+Ecrivez un script qui calcule la moyenne des nombres à virgule flottante rentrés par l'utilisateur.
+
+Dans une boucle, demandez à l'utilisateur, à l'aide de la fonction `input`, de rentrer un nombre réel. La boucle s'arrête lorsque l'utilisateur rentre la chaîne `"fin"` à la place d'un nombre réel.
+
+Affichez la moyenne des nombres rentrés par l'utilisateur.
+
+### Exercice 3.2 - Calculatrice en ligne de commande
+
+Ecrivez un script qui calcule à la demande une addition, soustraction ou multiplication de 2 nombres entiers.
+
+Dans une boucle :
+* Demandez à l'utilisateur l'opération à effectuer : `+`, `-`, `*` ou `fin`.
+* Si l'utilisateur rentre `fin`, stoppez la boucle.
+* Demandez ensuite 2 nombres entiers à l'utilisateur et affichez le résultat de l'opération demandée.
