@@ -1,5 +1,5 @@
 ---
-title: "Travail Pratique : Comparaison d'Algorithmes"
+title: "Travail Pratique 5 - Comparaison d'Algorithmes"
 summary: "Travaux Pratiques : Comparaison d'algorithmes ayant le même objectif."
 category: 03-programmes-simples
 permalink: "{{ category }}/tp-05-comparaison-algo.html"

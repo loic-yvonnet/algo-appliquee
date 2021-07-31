@@ -1,5 +1,5 @@
 ---
-title: "Travail Dirigé : Dichotomie pour Racines et Logarithmes"
+title: "Travail Dirigé 1 - Dichotomie pour Racines et Logarithmes"
 summary: "Travaux Dirigés : Utilisation de la dichotomie pour calculer des racines et des logarithmes."
 category: 03-programmes-simples
 permalink: "{{ category }}/td-01-dichotomie.html"
