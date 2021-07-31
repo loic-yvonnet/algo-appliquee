@@ -63,7 +63,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Fonctions.
 * Spécifications et contrat.
 * Modularisation de code et conventions avec la fonction main.
-* **TD** : Ecrire des fonctions de calcul de périmètre, aire et volume selon les spécifications fournies.
+* **TD** : Fonctions géométriques simples.
 * Nombre variable d'arguments
 * Retour de plusieurs résultats.
 * Un mot sur la récursivité.
@@ -71,7 +71,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Fonctions d'ordre supérieur : fonctions en tant qu'objets.
 * Programmation impérative et programmation fonctionnelle : notions de pureté et d'immutabilité.
 * Un mot sur les méthodes avec l'exemple du type `str`.
-* **TP** : Ecrire une fonction générique résolvant une dichotomie entre 2 bornes grâce à une fonction d'évaluation.
+* **TP** : Fonctions d'ordre supérieur.
 
 *Travail à la maison* :
 * Identifier et corriger les problèmes dans des programmes buggés et/ou mal écrits.
