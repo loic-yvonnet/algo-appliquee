@@ -87,12 +87,12 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Tuples.
 * Ranges.
 * Lists.
-* **TD** : Implémenter les opérations matricielles les plus classiques (addition, multiplication scalaire, calcul de déterminant, multiplication matricielle).
+* **TD** : Opérations matricielles classiques.
 * Clonage et copie profonde (shallow & deep copy).
 * Sets.
 * Dictionaries.
 * Technique "Pythonic": comprehensions.
-* **TP** : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter.
+* **TP** : Gestion d'un hôpital.
 * Structure personnalisée : notion de classe comme Tuple avancé.
 
 ### 6. Résolution de problèmes classiques
