@@ -1,6 +1,6 @@
 ---
 title: "Travail Dirigé 2 - Fonctions géométriques simples"
-summary: "Travaux Dirigés : Ecrire des fonctions de calcul de périmètre, aire et volume selon les spécifications fournies.."
+summary: "Travaux Dirigés : Ecrire des fonctions de calcul de périmètre, aire et volume selon les spécifications fournies."
 category: 04-fonctions
 permalink: "{{ category }}/td-02-fonctions-geom.html"
 url: "{{ url_prefix }}/{{ permalink }}"
