@@ -109,14 +109,14 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Notation $O(...)$.
 * Classes de complexité : constante, logarithmique, linéaire, log-linéaire, polynomiale.
 * Comparaison des classes de complexité.
-* **TD** : Evaluer la complexité de fonctions fournies.
+* **TD** : Evaluation de compléxité.
 * Problèmes NP-complet : intuition et exemple.
 * Limites de l'étude de complexité : architecture matérielle moderne (CPU).
 * Approche pragmatique : mesures et benchmarks.
 * Discussion concernant la parallélisation sur CPU et GPU
 * Discussion sur la distribution de calcul dans un cluster et sur le Cloud.
 * Discussion sur les machines quantiques.
-* **TP** : Utilisation de wallclocks pour montrer la corrélation entre complexité d'algorithme et temps d'exécution sur quelques exemples représentatifs.
+* **TP** : Benchmark et complexité.
 
 ### 8. Tests, exceptions et assertions
 
