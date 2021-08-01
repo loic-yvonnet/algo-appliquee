@@ -35,10 +35,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Retour sur le 1er TP : demander aux étudiants de l’expliquer avec leurs nouvelles connaissances.
 * Discussion sur le style, les commentaires et PEP 8.
 
-*Travail à la maison* :
-* Reprendre le TP Scratch et aller plus loin : nouvelles fonctionnalités.
-* Quelques exercices supplémentaires sur les chaînes de caractères.
-* Quelques exercices supplémentaires sur le calcul numérique.
+*Travail à la maison* : Retours sur Scratch et Python.
 
 ### 3. Programmes numériques simples et techniques de débogage
 
@@ -63,7 +60,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Fonctions.
 * Spécifications et contrat.
 * Modularisation de code et conventions avec la fonction main.
-* **TD** : Ecrire des fonctions de calcul de périmètre, aire et volume selon les spécifications fournies.
+* **TD** : Fonctions géométriques simples.
 * Nombre variable d'arguments
 * Retour de plusieurs résultats.
 * Un mot sur la récursivité.
@@ -71,13 +68,9 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Fonctions d'ordre supérieur : fonctions en tant qu'objets.
 * Programmation impérative et programmation fonctionnelle : notions de pureté et d'immutabilité.
 * Un mot sur les méthodes avec l'exemple du type `str`.
-* **TP** : Ecrire une fonction générique résolvant une dichotomie entre 2 bornes grâce à une fonction d'évaluation.
+* **TP** : Fonctions d'ordre supérieur.
 
-*Travail à la maison* :
-* Identifier et corriger les problèmes dans des programmes buggés et/ou mal écrits.
-* Tri d'une chaîne de caractères avec un alphabet réduit.
-* Dérivée d'un polynôme de degré N avec fonction variadique.
-* Implémenter l'agorithme Fibonacci avec une boucle, et l'implémenter de manière récursive.
+*Travail à la maison* : Retours sur les fonctions et le débogage.
 
 ### 5. Structures de données fondamentales en Python
 
@@ -87,29 +80,26 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Tuples.
 * Ranges.
 * Lists.
-* **TD** : Implémenter les opérations matricielles les plus classiques (addition, multiplication scalaire, calcul de déterminant, multiplication matricielle).
+* **TD** : Opérations matricielles classiques.
 * Clonage et copie profonde (shallow & deep copy).
 * Sets.
 * Dictionaries.
 * Technique "Pythonic": comprehensions.
-* **TP** : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter.
+* **TP** : Gestion d'un hôpital.
 * Structure personnalisée : notion de classe comme Tuple avancé.
 
 ### 6. Résolution de problèmes classiques
 
 * Listes chaînées.
-* **TP** : Manipulation d'une liste chaînée (création, insertion, suppression, recherche).
+* **TP** : Manipulation d'une liste chaînée.
 * Queue et FIFO (First-In, First-Out).
 * Stack et LIFO (Last-In, First-Out).
 * Comparaison entre FIFO et LIFO.
-* **TP** : Production/consommateur avec une queue de messages simple.
+* **TP** : Queues de messages simple.
 * Rappels sur la théorie des ensembles : union, intersection, exclusion.
 * Rappels sur le calcul matriciel avancé : diagonalisation, inversion, méthode de Gauss.
 
-*Travail à la maison* :
-* Echauffement : implémenter $\sum_{i=1}^{n} f(i)$ et $\prod_{i=1}^{n} f(i)$.
-* Implémenter des fonctions de gestion d'ensemble avec des Sets (union, intersection, exclusion).
-* Implémenter des fonctions de calcul matriciel avancées (diagonalisation, inversion, méthode de Gauss).
+*Travail à la maison* : Ensembles et calcul matriciel.
 
 ### 7. Introduction à la complexité d’algorithme
 
@@ -119,14 +109,14 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Notation $O(...)$.
 * Classes de complexité : constante, logarithmique, linéaire, log-linéaire, polynomiale.
 * Comparaison des classes de complexité.
-* **TD** : Evaluer la complexité de fonctions fournies.
+* **TD** : Evaluation de compléxité.
 * Problèmes NP-complet : intuition et exemple.
 * Limites de l'étude de complexité : architecture matérielle moderne (CPU).
 * Approche pragmatique : mesures et benchmarks.
 * Discussion concernant la parallélisation sur CPU et GPU
 * Discussion sur la distribution de calcul dans un cluster et sur le Cloud.
 * Discussion sur les machines quantiques.
-* **TP** : Utilisation de wallclocks pour montrer la corrélation entre complexité d'algorithme et temps d'exécution sur quelques exemples représentatifs.
+* **TP** : Benchmark et complexité.
 
 ### 8. Tests, exceptions et assertions
 
@@ -136,18 +126,16 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Programmation offensive et défensive.
 * Assertions.
 * Invariants : préconditions et post-conditions.
-* **TP** : Utilisation d'exceptions pour gérer les cas exceptionnels d'un calculateur en ligne de commandes (division par zéro, entrée de texte à la place d'un nombre, etc.).
+* **TP** : Exceptions dans une calculatrice.
 * Tests et qualité logicielle : boîte opaque et équipe QA.
 * Tests en boîte transparente par les développeurs.
 * Automatisation des tests.
 * Tests unitaires.
 * Tests pilotant le développement (Test Driven Development).
 * Pyramide de tests.
-* **TP** : Ecrire des tests unitaires pour des fonctions fournies, et corriger les problèmes ainsi identifiés.
+* **TP** : Ecriture de tests unitaires.
 
-*Travail à la maison* :
-* Fournir une stratégie de test pour un petit programme.
-* Implémenter quelques tests unitaires pour illustrer cette stratégie.
+*Travail à la maison* : Retour sur la complexité et les tests.
 
 ### 9. Algorithmes de recherche et de tri
 
@@ -156,19 +144,16 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Recherche en Python (opérateur `in`).
 * Recherche linéaire.
 * Recherche binaire (binary search).
-* **TP** : Implémentation de la vérification qu'une liste est triée puis d'une recherche binaire sur une liste triée.
+* **TP** : Recherche dans une collection.
 * Tri en Python (`sort` et `sorted`).
-* Algorithme de tri naïf : Buble Sort.
+* Algorithme de tri naïf : Bubble Sort.
 * Partition : diviser et conquérir (divide-and-conquer).
 * Quick Sort.
 * Merge Sort.
-* **TP** : Implémentation de Bubble Sort et de Quick Sort, instrumentation et comparaison.
-* Structures triées et non-triées : Set et Dictionary versus List et Tuple.
-* Etude de la complexité d'opération CRUD sur un Set et une List.
+* **TP** : Tri de collections.
 
 ### 10. Code modulaire et « Pythonic »
 
-* Principe d'indirection : les internes d'une List.
 * Programmation modulaire : les modules.
 * Tour d'horizon de la librairie standard Python.
 * Focus sur les fichiers : ouverture, fermeture, lecture et écriture.

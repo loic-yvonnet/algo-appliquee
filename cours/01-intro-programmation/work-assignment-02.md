@@ -1,5 +1,5 @@
 ---
-title: "Travail Pratique : Familiarisation avec Python et Jupyter Notebook"
+title: "Travail Pratique 2 - Familiarisation avec Python et Jupyter Notebook"
 summary: "Travaux Pratiques : Avant-goût de Programmation avec Python et familiarisation avec Jupyter Notebook."
 category: 01-intro-programmation
 permalink: "{{ category }}/tp-02-jupyter-notebook.html"

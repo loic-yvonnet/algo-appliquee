@@ -1,5 +1,5 @@
 ---
-title: "Travail Pratique : Anjou Vélo Vintage avec Scratch 3"
+title: "Travail Pratique 1 - Anjou Vélo Vintage avec Scratch 3"
 summary: "Travaux Pratiques : Initiation au langage graphique Scratch 3."
 category: 01-intro-programmation
 permalink: "{{ category }}/tp-01-scratch.html"
