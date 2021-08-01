@@ -35,10 +35,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Retour sur le 1er TP : demander aux étudiants de l’expliquer avec leurs nouvelles connaissances.
 * Discussion sur le style, les commentaires et PEP 8.
 
-*Travail à la maison* :
-* Reprendre le TP Scratch et aller plus loin : nouvelles fonctionnalités.
-* Quelques exercices supplémentaires sur les chaînes de caractères.
-* Quelques exercices supplémentaires sur le calcul numérique.
+*Travail à la maison* : Retours sur Scratch et Python.
 
 ### 3. Programmes numériques simples et techniques de débogage
 
@@ -73,11 +70,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Un mot sur les méthodes avec l'exemple du type `str`.
 * **TP** : Fonctions d'ordre supérieur.
 
-*Travail à la maison* :
-* Identifier et corriger les problèmes dans des programmes buggés et/ou mal écrits.
-* Tri d'une chaîne de caractères avec un alphabet réduit.
-* Dérivée d'un polynôme de degré N avec fonction variadique.
-* Implémenter l'agorithme Fibonacci avec une boucle, et l'implémenter de manière récursive.
+*Travail à la maison* : Retours sur les fonctions et le débogage.
 
 ### 5. Structures de données fondamentales en Python
 
@@ -98,18 +91,15 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 ### 6. Résolution de problèmes classiques
 
 * Listes chaînées.
-* **TP** : Manipulation d'une liste chaînée (création, insertion, suppression, recherche).
+* **TP** : Manipulation d'une liste chaînée.
 * Queue et FIFO (First-In, First-Out).
 * Stack et LIFO (Last-In, First-Out).
 * Comparaison entre FIFO et LIFO.
-* **TP** : Production/consommateur avec une queue de messages simple.
+* **TP** : Queues de messages simple.
 * Rappels sur la théorie des ensembles : union, intersection, exclusion.
 * Rappels sur le calcul matriciel avancé : diagonalisation, inversion, méthode de Gauss.
 
-*Travail à la maison* :
-* Echauffement : implémenter $\sum_{i=1}^{n} f(i)$ et $\prod_{i=1}^{n} f(i)$.
-* Implémenter des fonctions de gestion d'ensemble avec des Sets (union, intersection, exclusion).
-* Implémenter des fonctions de calcul matriciel avancées (diagonalisation, inversion, méthode de Gauss).
+*Travail à la maison* : Ensembles et calcul matriciel.
 
 ### 7. Introduction à la complexité d’algorithme
 
