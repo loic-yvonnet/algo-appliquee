@@ -126,18 +126,16 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Programmation offensive et défensive.
 * Assertions.
 * Invariants : préconditions et post-conditions.
-* **TP** : Utilisation d'exceptions pour gérer les cas exceptionnels d'un calculateur en ligne de commandes (division par zéro, entrée de texte à la place d'un nombre, etc.).
+* **TP** : Exceptions dans une calculatrice.
 * Tests et qualité logicielle : boîte opaque et équipe QA.
 * Tests en boîte transparente par les développeurs.
 * Automatisation des tests.
 * Tests unitaires.
 * Tests pilotant le développement (Test Driven Development).
 * Pyramide de tests.
-* **TP** : Ecrire des tests unitaires pour des fonctions fournies, et corriger les problèmes ainsi identifiés.
+* **TP** : Ecriture de tests unitaires.
 
-*Travail à la maison* :
-* Fournir une stratégie de test pour un petit programme.
-* Implémenter quelques tests unitaires pour illustrer cette stratégie.
+*Travail à la maison* : Retour sur la complexité et les tests.
 
 ### 9. Algorithmes de recherche et de tri
 
