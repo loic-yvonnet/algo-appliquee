@@ -144,19 +144,16 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Recherche en Python (opérateur `in`).
 * Recherche linéaire.
 * Recherche binaire (binary search).
-* **TP** : Implémentation de la vérification qu'une liste est triée puis d'une recherche binaire sur une liste triée.
+* **TP** : Recherche dans une collection.
 * Tri en Python (`sort` et `sorted`).
 * Algorithme de tri naïf : Bubble Sort.
 * Partition : diviser et conquérir (divide-and-conquer).
 * Quick Sort.
 * Merge Sort.
-* **TP** : Implémentation de Bubble Sort et de Quick Sort, instrumentation et comparaison.
-* Structures triées et non-triées : Set et Dictionary versus List et Tuple.
-* Etude de la complexité d'opération CRUD sur un Set et une List.
+* **TP** : Tri de collections.
 
 ### 10. Code modulaire et « Pythonic »
 
-* Principe d'indirection : les internes d'une List.
 * Programmation modulaire : les modules.
 * Tour d'horizon de la librairie standard Python.
 * Focus sur les fichiers : ouverture, fermeture, lecture et écriture.
