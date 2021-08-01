@@ -36,7 +36,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h5>BTS SIO SISR</h5>
 <h2>Procédures et fonctions</h2>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="2" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -48,7 +48,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="2" data-marpit-pagination-total="3" style="--paginate:true;--theme:uncover;--style:section {
+" class="smaller-text" data-marpit-pagination="2" data-marpit-pagination-total="37" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -62,8 +62,24 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 }
 ;">
 <h1>Plan</h1>
+<ul>
+<li>Procédures : définition et appel</li>
+<li>Arguments</li>
+<li>Valeurs par défaut</li>
+<li>Variables locales et globales</li>
+<li>Fonctions</li>
+<li>Spécifications et contrat</li>
+<li>Modularisation de code</li>
+<li>Nombre variable d'argument</li>
+<li>Retour de plusieurs résultats</li>
+<li>Un mot sur la récursivité</li>
+<li>Fonctions d'ordre supérieur</li>
+<li>Fonctions lambda</li>
+<li>Programmation impérative et fonctionnelle</li>
+<li>Un mot sur les méthodes</li>
+</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -75,7 +91,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="3" data-marpit-pagination-total="3" style="--paginate:true;--theme:uncover;--style:section {
+" class="title-section" data-marpit-pagination="3" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -88,7 +104,993 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
   font-size: 0.6em;
 }
 ;">
-<h1>En construction...</h1>
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Procédures : définition et appel</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="4" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Intérêt : réutilisabilité &amp;&amp; couches d'abstraction<br />
+Syntaxe<br />
+Appel<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="5" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Arguments</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="6" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Ajout d'arguments à la procédure<br />
+Syntaxe d'appel<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="7" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Valeurs par défaut</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="8" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Intérêt<br />
+Syntaxe<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="9" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Variables locales et globales</span></foreignObject></svg></h1>
+<h5>Scope</h5>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="10" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Exemple de 2 procédures avec les mêmes variables<br />
+Exemple avec une var globale et une fonction avec la même variable mais valeur différente<br />
+Notion de portée (scope) des variables<br />
+Mot clé global =&gt; intérêt, syntaxe, dangers</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="11" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Fonctions</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="12" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Intérêt =&gt; output(s)<br />
+Mot clé return<br />
+Usage<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="13" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Spécifications et contrat</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="14" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Retour sur les docstrings<br />
+Spécification des entrées<br />
+Spécification des sorties<br />
+Spécification du contrat<br />
+Vérification du contrat : quelques moyens (code d'erreur, exceptions, etc.)<br />
+Jusqu'où aller ? Vérification des types<br />
+Coût de la vérification dynamique du contrat : runtime performance<br />
+Approche pragmatique et bonnes pratiques concrètes</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="15" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Modularisation de code et conventions avec la fonction main</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="16" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Modularisation de code</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="17" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Quelle fonction appeler en premier ? =&gt; <strong>main</strong><br />
+Syntaxe du main<br />
+Responsabilité unique d'une fonction<br />
+Taille idéale d'une fonction<br />
+Ne pas se répéter<br />
+Rassembler les fonctions autour d'un sujet dans un fichier/script<br />
+Mot clé import<br />
+Exemple d'utilisation du mot clé import</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="18" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>TD : Fonctions géométriques simples</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="19" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>TD : Fonctions géométriques simples</h3>
+<p><a href="./td-02-fonctions-geom.html"><strong>Lien</strong> vers le sujet de TD</a>.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="20" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Nombre variable d'arguments</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="21" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Exemple avec la fonction print<br />
+Exemple avec la fonction sum<br />
+Intérêt<br />
+Syntaxe<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="22" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Retour de plusieurs résultats</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="23" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Intérêt<br />
+Syntaxe<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="24" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Un mot sur la récursivité</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="25" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>GNU is Not Unix<br />
+WINE Is Not an Emulator<br />
+Fractal<br />
+Définition comme en mathématiques : f(0) = 1, f(N) = 3 * f(N-1) + 4.<br />
+Exemple simple<br />
+Attention à la stack : exemple de stack overflow<br />
+Attention à la stack =&gt; on empile tout à chaque call récursif =&gt; utilisation massive de mémoire<br />
+Conclusion : c'est beau, mais on évite en général</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="26" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Fonctions d'ordre supérieur</span></foreignObject></svg></h1>
+<h4>Fonctions en tant qu'objets</h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="27" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Intérêt = généricité &amp;&amp; réutilisation<br />
+Tout est objet : def foo(): pass; type(foo)<br />
+Assignation d'une fonction à une variable<br />
+Réassignation d'une autre fonction à une variable<br />
+Passage d'une fonction comme argument d'une fonction<br />
+Générateur de fonction : on retourne une nouvelle fonction</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="28" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Fonctions lambda</h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="29" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Origine : calcul lambda (et pas un truc quelconque...)<br />
+Intérêt : les dévs sont un peu feignants et n'aiment pas trop tapper (sauf aux jeux de baston)<br />
+Syntaxe<br />
+Exemples</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="30" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Programmation impérative</span></foreignObject></svg></h1>
+<h3><img class="emoji" draggable="false" alt="🆚" src="https://twemoji.maxcdn.com/2/svg/1f19a.svg" data-marp-twemoji=""/></h3>
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Programmation fonctionnelle</span></foreignObject></svg></h1>
+<h5>Notions de pureté et d'immutabilité</h5>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="31" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>De grands pouvoirs impliquent de grandes responsabilités : code mess &amp;&amp; spaghetti code<br />
+Programmation impérative =&gt; variables (ou état) globales, effets de bords non maîtrisé et beau bord**<br />
+A moins d'appliquer des bonnes pratiques stricts =&gt; boiled frog &amp;&amp; broken windows<br />
+Exemple qui marche : kernel Linux =&gt; règles très (très très) sévères<br />
+Règle d'immutabilité : les variables constantes<br />
+Règle de pureté : pas d'effet de bord (print, etc.)<br />
+Il existe des langages qui imposent ces règles et qui pronent certaines techniques héritées de la théorie des catégories, une branche des maths.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="32" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Un mot sur les méthodes</span></foreignObject></svg></h1>
+<h4>Avec l'exemple du type str</h4>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="33" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<p>Python est <em>orienté object</em><br />
+Tout est objet<br />
+Définition On appelle méthode une fonction rattachée à un type.<br />
+Un type défini ses propriétés (données membres) &amp;&amp; capacités (méthodes).<br />
+<code>str</code> est un type. <code>upper()</code> est une méthode de ce type.<br />
+Exemples en plus.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="34" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> TP : Fonctions d'ordre supérieur</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="35" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>TP : Fonctions d'ordre supérieur</h3>
+<p><a href="./tp-07-fonctions-sup.html"><strong>Lien</strong> vers le sujet de TP</a>.</p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="36" data-marpit-pagination-total="37" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Devoir à la Maison 02</span></foreignObject></svg></h1>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="37" data-marpit-pagination-total="37" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>DM : Retours sur les fonctions et le débogage</h3>
+<p><a href="./dm-02.html"><strong>Lien</strong> vers le sujet de DM</a>.</p>
 </section>
 <script>!function(){"use strict";const t="marpitSVGPolyfill:setZoomFactor,",e=Symbol();let r,o;function n(n){const i="object"==typeof n&&n.target||document,a="object"==typeof n?n.zoom:n;window[e]||(Object.defineProperty(window,e,{configurable:!0,value:!0}),window.addEventListener("message",(({data:e,origin:r})=>{if(r===window.origin)try{if(e&&"string"==typeof e&&e.startsWith(t)){const[,t]=e.split(","),r=Number.parseFloat(t);Number.isNaN(r)||(o=r)}}catch(t){console.error(t)}})));let l=!1;Array.from(i.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,n,i,s;t.style.transform||(t.style.transform="translateZ(0)");const c=a||o||t.currentScale||1;r!==c&&(r=c,l=c);const d=t.getBoundingClientRect(),{length:u}=t.children;for(let r=0;r<u;r+=1){const o=t.children[r],a=o.getScreenCTM();if(a){const t=null!==(n=null===(e=o.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==n?n:0,r=null!==(s=null===(i=o.y)||void 0===i?void 0:i.baseVal.value)&&void 0!==s?s:0,l=o.firstElementChild,{style:u}=l;u.transformOrigin||(u.transformOrigin=`${-t}px ${-r}px`),u.transform=`scale(${c}) matrix(${a.a}, ${a.b}, ${a.c}, ${a.d}, ${a.e-d.left}, ${a.f-d.top}) translateZ(0.0001px)`}}})),!1!==l&&Array.from(i.querySelectorAll("iframe"),(({contentWindow:e})=>{null==e||e.postMessage(`${t}${l}`,"null"===window.origin?"*":window.origin)}))}r=1,o=void 0;const i=(t,e,r)=>{if(t.getAttribute(e)!==r)return t.setAttribute(e,r),!0};function a({once:t=!1,target:e=document}={}){const r="Apple Computer, Inc."===navigator.vendor?[n]:[];let o=!t;const a=()=>{for(const t of r)t({target:e});!function(t=document){Array.from(t.querySelectorAll('svg[data-marp-fitting="svg"]'),(t=>{var e;const r=t.firstChild,o=r.firstChild,{scrollWidth:n,scrollHeight:a}=o;let l,s=1;if(t.hasAttribute("data-marp-fitting-code")&&(l=null===(e=t.parentElement)||void 0===e?void 0:e.parentElement),t.hasAttribute("data-marp-fitting-math")&&(l=t.parentElement),l){const t=getComputedStyle(l),e=Math.ceil(l.clientWidth-parseFloat(t.paddingLeft||"0")-parseFloat(t.paddingRight||"0"));e&&(s=e)}const c=Math.max(n,s),d=Math.max(a,1),u=`0 0 ${c} ${d}`;i(r,"width",`${c}`),i(r,"height",`${d}`),i(t,"preserveAspectRatio",getComputedStyle(t).getPropertyValue("--preserve-aspect-ratio")||"xMinYMin meet"),i(t,"viewBox",u)&&t.classList.toggle("__reflow__")}))}(e),o&&window.requestAnimationFrame(a)};return a(),()=>{o=!1}}const l=Symbol(),s=document.currentScript;((t=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(t[l])return t[l];const e=a({target:t}),r=()=>{e(),delete t[l]};Object.defineProperty(t,l,{configurable:!0,value:r})})(s?s.getRootNode():document)}();
 </script></foreignObject></svg></div><div class="bespoke-marp-note" data-index="0" tabindex="0"><p>On commence les choses sérieuses !</p></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@1.2.0/lib/bespoke.js.LICENSE.txt */
