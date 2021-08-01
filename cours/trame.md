@@ -146,7 +146,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Recherche binaire (binary search).
 * **TP** : Implémentation de la vérification qu'une liste est triée puis d'une recherche binaire sur une liste triée.
 * Tri en Python (`sort` et `sorted`).
-* Algorithme de tri naïf : Buble Sort.
+* Algorithme de tri naïf : Bubble Sort.
 * Partition : diviser et conquérir (divide-and-conquer).
 * Quick Sort.
 * Merge Sort.
