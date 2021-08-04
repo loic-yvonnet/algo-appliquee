@@ -182,7 +182,7 @@ Résolution avec la méthode de Gauss
 
 <!-- _class: title-section -->
 
-# <!--fit--> Devoir à la Maison 03
+# Devoir à la Maison 03
 
 ---
 

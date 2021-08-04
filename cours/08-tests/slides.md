@@ -161,7 +161,7 @@ style: |
 
 <!-- _class: title-section -->
 
-# <!--fit--> Devoir à la Maison 04
+# Devoir à la Maison 04
 
 ---
 

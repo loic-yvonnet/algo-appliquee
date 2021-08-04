@@ -157,16 +157,13 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Programmation modulaire : les modules.
 * Tour d'horizon de la librairie standard Python.
 * Focus sur les fichiers : ouverture, fermeture, lecture et écriture.
-* **TP** : Ecrire dans un fichier le contenu d'un Dictionary et relire ce fichier pour repopuler un Dictionary.
+* **TP** : Initiation aux fichiers.
 * Introduction aux paquets et au gestionnaire de paquets `pip`.
 * Discussion sur les licences : GPL, MIT, BSD, Apache, etc.
-* **TP** : Utiliser MatPlotLib et random pour afficher l'évolution du temps d'exécution de Bubble Sort, Quick Sort et du `sort` de Python en fonction de la taille des entrées.
+* **TP** : Courbes et traitement d'images.
 * Optionnel : Discussion sur la programmation orientée object.
-* Optionnel : Discussion sur les coroutines et `async`.
 
-*Travail à la maison* :
-* Utiliser requests pour faire une requête HTTP sur DuckDuckGo et afficher la réponse (au format HTML).
-* Lire un fichier CSV qui contient un tableau de points et afficher le contenu avec MatPlotLib.
+*Travail à la maison* : Plus de modules.
 
 ### 11. Introduction aux graphes
 
