@@ -293,7 +293,7 @@ Exemples en plus.
 
 <!-- _class: title-section -->
 
-# <!--fit--> Devoir à la Maison 02
+# Devoir à la Maison 02
 
 ---
 

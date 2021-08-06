@@ -22,20 +22,74 @@ style: |
 
 <!-- _class: title-section -->
 
-
 # <!--fit--> Algorithmique Appliquée
 
 ##### BTS SIO SISR
 
 ## Conclusion et révisions
 
-
-<!-- On revient sur les choses sérieuses ! -->
+<!--
+Ce n'est que le commencement de votre exploration des domaines de l'algorithmique, la recherche opérationnelle, et l'intelligence artificielle.
+Ce cours est volontairement léger et sans TP associé pour donner aux étudiants la liberté de choisir les points de cours sur lesquels ils souhaitent revenir avec leur examen.
+Si les étudiants sont en avance, les points suivants pourraient également être abordés en plus :
+- Coroutines en Python.
+- Limites du Python et C++.
+- Faire un jeu 3D avec PyGame.
+-->
 
 ---
 
 # Plan
 
+- Retours sur les points essentiels
+- Conseils pour l'examen
+- Questions/réponses
+- Travail dans une base de code réelle
+- Qualité logicielle
+- Recherche opérationnelle
+
 ---
 
-# En construction...
+<!-- _class: title-section -->
+
+# Retours sur les points essentiels et attendus pour l'examen
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Conseils pour l'examen
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Questions/Réponses
+
+##### Sur l'ensemble du cours
+
+Ask Me Anything
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Travail dans une base de code réelle
+
+##### Discussion
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Retour sur la qualité logicielle
+
+##### Discussion
+
+---
+
+<!-- _class: title-section -->
+
+# Recherche opérationnelle
+
+##### Discussion

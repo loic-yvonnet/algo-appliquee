@@ -1383,7 +1383,7 @@ revenus = (salaire_net
 
 <!-- _class: title-section -->
 
-# <!--fit--> Devoir à la Maison 01
+# Devoir à la Maison 01
 
 ---
 

@@ -4,21 +4,12 @@ channels:
   - defaults
 dependencies:
   - python=3.9
-  - bokeh
-  - cython
-  - dask
-  - dill
   - ipyparallel
   - ipython
-  - ipywidgets
-  - matplotlib
-  - mpi4py
-  - networkx
-  - numpy
-  - pandas
-  - partd
-  - psutil
-  - scikit-image
-  - scikit-learn
-  - sympy
-  - toolz
+  - ipywidgets      # Jupyter dependency
+  - matplotlib      # Famous plotting library
+  - networkx        # Graph library
+  - numpy           # Famous hardware accelerated array processing library
+  - scikit-image    # Image processing (good friend of numpy)
+  - sympy           # Computer Algebra System (CAS) for symbolic mathematics
+  - toolz           # Basic extensions & algorithms for basic Python collections
