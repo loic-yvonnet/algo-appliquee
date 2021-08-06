@@ -172,7 +172,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Arbre binaire : représentation.
 * Arbre N-aire : représentation.
 * Insertion et recherche dans un arbre binaire.
-* **TP** : Parcours d'un arbre binaire (récursif et itératif avec queue) pour application d'une fonction à chaque noeud et implémentation de tests unitaires.
+* **TP** : Arbres binaires.
 * Discussion concernant les problèmes impliquant des graphes : GPS, réseaux sociaux, etc.
 * Introduction à la théorie des graphes : noeud, arc, cycle, digraph.
 * Digraph : représentation.
@@ -181,7 +181,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Recherche en largeur (Breadth-First Search).
 * Graphe pondéré : représentation.
 * Recherche de chemin critique.
-* **TP** : Implémentation de DFS sur un digraph acyclique.
+* **TP** : Graphes.
 
 ### 12. Conclusion
 
