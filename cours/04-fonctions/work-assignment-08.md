@@ -501,7 +501,7 @@ Ecrivez la fonction `distance` de la manière suivante :
 * Appelez la fonction `vecteur` sur $A$ et $C_S$ pour obtenir $\overrightarrow{AC_S}$.
 * Appelez la fonction `produit_scalaire` avec $\vec{k}$ et $\overrightarrow{AC_S}$.
 * Si la valeur absolue du produit scalaire retourné est éloigné de 0, retournez celui-ci.
-* Si le produit scalaire est proche de 0, cela signifie que le projeté est confondu avec A. Dans ce cas, il suffit de retourner la norme $\left| \overrightarrow{AC_S} \right|$.
+* Si le produit scalaire est proche de 0, cela signifie que le projeté $H$ est confondu avec $A$. Dans ce cas, il suffit de retourner la norme $\left| \overrightarrow{AC_S} \right|$.
 
 ```py
 def distance(xA, yA, zA, xB, yB, zB, xC, yC, zC, xCS, yCS, zCS):
