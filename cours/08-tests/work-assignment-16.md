@@ -35,3 +35,5 @@ En fonction de votre système d'exploitation, vous pourriez avoir à modifier ce
 Ensuite, [télécharger le script calculatrice.py](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/cours/08-tests/assets/calculatrice.py). Ouvrez ce script dans votre IDE préféré (par exemple, Visual Studio Code).
 
 Lisez le code, exécutez le, mettez des points d'arrêt.
+
+Enfin, complétez ce code afin de rendre la calculatrice fonctionnelle. N'oubliez pas que l'enjeu est de gérer correctement les erreurs et d'utiliser les exceptions.

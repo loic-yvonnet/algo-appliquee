@@ -7,52 +7,67 @@ url: "{{ url_prefix }}/{{ permalink }}"
 layout: layouts/site.njk
 ---
 
-Ce 4ième TD va vous ammener à évaluer la compléxité de certaines algorithmes.
+Ce 4ième TD va vous ammener à évaluer la compléxité de certains algorithmes. Vous utiliserez à chaque foix la notation O, et justifierez votre réponse.
 
 ## Exercice 1 - Complexité d'une recherche dichotomique
 
-Dans le TP n°XXX, vous avez implémenté une recherche dichotomique. Quelle est sa complexité ?
+Dans l'exercice 2 du TP n°5, vous avez implémenté une recherche dichotomique. Quelle est sa complexité ?
 
 ## Exercice 2 - Complexité d'une addition matricielle
 
-Dans le TP n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
+Dans l'exercice 3 du TD n°3, vous avez implémenté une addition matricielle. Quelle est sa complexité ?
 
 ## Exercice 3 - Complexité d'une multiplication matricielle
 
-Dans le TP n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
+Dans l'exercice 6.2 du TD n°3, vous avez implémenté une multiplication matricielle. Quelle est sa complexité ?
 
-## Exercice 4 - Complexité d'une inversion matricielle
+## Exercice 4 - Complexité du calcul d'une factorielle
 
-Dans le DM n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
+Dans l'exercice 4 du TP n°4, vous avez implémenté une factorielle. Quelle est sa complexité ?
 
-## Exercice 5 - Complexité de la méthode de Gauss
+## Exercice 5 - Complexité de la méthode de Gauss Jordan
 
-Dans le DM n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
+Dans l'exercice 4.7 DM n°3, vous avez implémenté la méthode de Gauss Jordan. Quelle est sa complexité ?
 
 ## Exercice 6 - Complexité du calcul de collision entre sphère et plan
 
-Dans le TP n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
+Dans l'exercice 6 du TD n°2, vous avez implémenté un algorithme de détection de collision entre une sphère et un plan. Quelle est sa complexité ?
 
 ## Exercice 7 - Complexité de Fibonacci
 
-Version avec boucle
-Version récursive
+Dans l'exercice 4 du DM n°2, vous avez implémenté la suite de Fibonacci de 2 manières :
+* version itérative avec une boucle,
+* version récursive.
+
+Quelles sont les complexités de ces 2 versions ?
 
 ## Exercice 8 - Complexité des fonctions de gestion de liste chaînée
 
-Dans le TP n°XXX, vous avez implémenté YYY. Quelle est sa complexité ?
-Insertion, suppression, recherche => complexité ?
+Dans le TP n°9, vous avez implémenté des fonctions d'insertion, de suppression et de recherche. Quelles sont leurs complexités ?
 
-## Exercice 8 - Evaluation de la complexité du code suivant
+## Exercice 9 - Complexité des tours de Hanoï
 
-Quelle est la complexité du code suivant ?
+Dans l'exercice 1 du TP 10, vous avez implémenté un algorithme résolvant le problème des tours de Hanoï. Quel est sa complexité ?
 
-```py
-blablabla
-```
+
+## Exercice 10 - Evaluation de la complexité d'un nouveau code
 
 Quelle est la complexité du code suivant ?
 
 ```py
-blablabla
+def donne_geometries_des_liaisons_cinematiques(produit):
+    geometries = []
+    for mecanisme in produit.mecanismes:
+        for liaison in mecanisme.liaisons_cinematiques:
+            for contrainte in liaison.contraintes_geometriques:
+                for geometrie in contraintes.supports_geometriques:
+                    trouvee = False
+                    for geom_inserees in geometries:
+                        if geom_inserees == geometrie:
+                            trouvee = True
+                            break
+                    
+                    if not trouvee:
+                        geometries.append(geometrie)
+        
 ```
