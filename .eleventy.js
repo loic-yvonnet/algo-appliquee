@@ -1,6 +1,6 @@
 const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
-const markdownItKatex = require("markdown-it-katex");
+const markdownItKatex = require("@iktakahiro/markdown-it-katex");
 const options = {
     html: true,
     breaks: false,
