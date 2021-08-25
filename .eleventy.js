@@ -4,8 +4,10 @@ const markdownItKatex = require("markdown-it-katex");
 const options = {
     html: true,
     breaks: false,
-    linkify: true
+    linkify: true,
+    typographer: true
 };
+// Avoid parsing things around $s
 const markdownLib = markdownIt(options).use(markdownItKatex);
 
 module.exports = function (config) {
@@ -22,7 +24,7 @@ module.exports = function (config) {
         return content;
     });
 
-    // LaTeX support via KaTeX
+    // Markdown engine
     config.setLibrary("md", markdownLib);
 
     // Passthrough for images: copy all images in "assets" directories (and filter out others)

@@ -81,13 +81,6 @@ iframe {
     margin-bottom: 1rem;
 }
 
-/** 
- * Hack for embedded KaTeX: it appears twice for some obscure reason
- */
-.katex-html {
-    display: none;
-}
-
 /**
  * Images and titles
  */

@@ -434,9 +434,9 @@ $$
 
 Pour implémenter cette version généralisée, on devrait utiliser la récursivité en vérifiant les dimensions des sous-matrices et en appelant au final `determinant_2x2` et/ou `determinant_3x3`. Nous gardons cet exercice pour plus tard.
 
-## Exercice 6 - Multiplication matricielle
+## Exercice 7 - Multiplication matricielle
 
-### Exercice 6.1 - Est-ce multipliable ?
+### Exercice 7.1 - Est-ce multipliable ?
 
 Soit 1 matrice $M_{L \times C}$ de dimension $L \times C$, et une matrice $N_{R \times K}$ de dimension $R \times K$.
 
@@ -476,7 +476,7 @@ On ne peut pas multiplier N par M.
 
 On voit au passage que la multiplication matricielle n'est pas *commutative* : $M \cdot N \neq N \cdot M$.
 
-### Exercice 6.2 - Implémentation de la multiplication matricielle
+### Exercice 7.2 - Implémentation de la multiplication matricielle
 
 Le principe général de la multiplication matricielle consiste à faire la somme des produits des lignes de la première matrice par les colonnes de la deuxième matrice.
 
@@ -529,7 +529,7 @@ Z =
     \sum_{x=1}^C m_{2,x}n_{x,1} && \sum_{x=1}^C m_{2,x}n_{x,2} && \cdots && \sum_{x=1}^C m_{2,x}n_{x,K} \\ \\
     \vdots                      && \vdots                      && \ddots && \vdots                      \\ \\
     \sum_{x=1}^C m_{L,x}n_{x,1} && \sum_{x=1}^C m_{L,x}n_{x,2} && \cdots && \sum_{x=1}^C m_{L,x}n_{x,K}
-\end{pmatrix} 
+\end{pmatrix}
 $$
 
 Ecrivez une fonction `multiplie_matrices` qui prend en entrée 2 listes `m1` et `m2` et telle que :
