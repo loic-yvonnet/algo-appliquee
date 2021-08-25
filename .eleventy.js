@@ -7,6 +7,7 @@ const options = {
     linkify: true,
     typographer: true
 };
+
 // Avoid parsing things around $s
 const markdownLib = markdownIt(options).use(markdownItKatex);
 
@@ -28,18 +29,24 @@ module.exports = function (config) {
     config.setLibrary("md", markdownLib);
 
     // Passthrough for images: copy all images in "assets" directories (and filter out others)
-    config.addPassthroughCopy("**/assets/*.png");
-    config.addPassthroughCopy("**/assets/*.jpg");
-    config.addPassthroughCopy("**/assets/*.jpeg");
-    config.addPassthroughCopy("**/assets/*.ico");
-    config.addPassthroughCopy("**/assets/*.svg");
-    config.addPassthroughCopy("**/assets/*.gif");
+    config.addPassthroughCopy("assets/*.png");
+    config.addPassthroughCopy("assets/*.jpg");
+    config.addPassthroughCopy("assets/*.jpeg");
+    config.addPassthroughCopy("assets/*.ico");
+    config.addPassthroughCopy("assets/*.svg");
+    config.addPassthroughCopy("assets/*.gif");
+    config.addPassthroughCopy("cours/**/assets/*.png");
+    config.addPassthroughCopy("cours/**/assets/*.jpg");
+    config.addPassthroughCopy("cours/**/assets/*.jpeg");
+    config.addPassthroughCopy("cours/**/assets/*.ico");
+    config.addPassthroughCopy("cours/**/assets/*.svg");
+    config.addPassthroughCopy("cours/**/assets/*.gif");
 
     // At this point, SCSS is not (yet) used and the CSS is fairly simple (mostly Bootstrap)
-    config.addPassthroughCopy("**/assets/*.css");
+    config.addPassthroughCopy("assets/*.css");
 
     // The ico files are special
-    config.addPassthroughCopy("**/*.ico");
+    config.addPassthroughCopy("cours/**/*.ico");
 
     return {
         templateFormats: [
