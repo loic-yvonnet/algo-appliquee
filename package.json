@@ -58,8 +58,5 @@
     "html-minifier": "^4.0.0",
     "katex": "^0.13.13",
     "rimraf": "^3.0.2"
-  },
-  "dependencies": {
-    "-": "^0.0.1"
   }
 }
