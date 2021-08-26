@@ -5,6 +5,8 @@ description: "Cours d'Algorithmique Appliquée avec Python"
 author: "Loïc Yvonnet"
 keywords: "Algorithmique, Algorithme, Python, Introduction, Débutant"
 lang: "fr"
+url: "https://loic-yvonnet.github.io/algo-appliquee/06-problemes-classiques/"
+image: "{{ url }}/titre.jpeg"
 theme: uncover
 paginate: true
 _paginate: false
