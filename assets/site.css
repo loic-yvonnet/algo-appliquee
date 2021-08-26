@@ -107,7 +107,8 @@ main {
 /**
  * KaTeX CSS fix (from https://katex.org/docs/issues.html)
  * The aim is to allow vertical scrolling of equations (especially on mobile)
+ * Safari mobile does not take it into account without !important
  */
 .katex-display {
-     overflow: auto hidden;
+     overflow: auto hidden !important;
 }
