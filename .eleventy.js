@@ -1,6 +1,7 @@
 const htmlmin = require("html-minifier");
 const markdownIt = require("markdown-it");
 const markdownItKatex = require("@iktakahiro/markdown-it-katex");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const options = {
     html: true,
     breaks: false,
@@ -27,6 +28,9 @@ module.exports = function (config) {
 
     // Markdown engine
     config.setLibrary("md", markdownLib);
+
+    // Syntax highlighting
+    config.addPlugin(syntaxHighlight);
 
     // Passthrough for images: copy all images in "assets" directories (and filter out others)
     config.addPassthroughCopy("assets/*.png");
