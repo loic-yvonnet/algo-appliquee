@@ -2,6 +2,9 @@
 marp: true
 title: "Algorithmique Appliquée - Complexité"
 description: "Cours d'Algorithmique Appliquée avec Python"
+author: "Loïc Yvonnet"
+keywords: "Algorithmique, Algorithme, Python, Introduction, Débutant"
+lang: "fr"
 theme: uncover
 paginate: true
 _paginate: false
