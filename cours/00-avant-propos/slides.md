@@ -2,6 +2,11 @@
 marp: true
 title: "Algorithmique Appliquée - Avant Propos"
 description: "Cours d'Algorithmique Appliquée avec Python"
+author: "Loïc Yvonnet"
+keywords: "Algorithmique, Algorithme, Python, Introduction, Débutant"
+lang: "fr"
+url: "https://loic-yvonnet.github.io/algo-appliquee/00-avant-propos/"
+image: "{{ url }}/titre.jpeg"
 theme: uncover
 paginate: true
 _paginate: false

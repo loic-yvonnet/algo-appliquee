@@ -2,6 +2,11 @@
 marp: true
 title: "Algorithmique Appliquée - Programmes simples"
 description: "Cours d'Algorithmique Appliquée avec Python"
+author: "Loïc Yvonnet"
+keywords: "Algorithmique, Algorithme, Python, Introduction, Débutant"
+lang: "fr"
+url: "https://loic-yvonnet.github.io/algo-appliquee/03-programmes-simples/"
+image: "{{ url }}/titre.jpeg"
 theme: uncover
 paginate: true
 _paginate: false
