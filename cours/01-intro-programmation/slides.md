@@ -5,7 +5,6 @@ description: "Cours d'Algorithmique Appliquée avec Python"
 author: "Loïc Yvonnet"
 keywords: "Algorithmique, Algorithme, Python, Introduction, Débutant"
 lang: "fr"
-template: "bare"
 theme: uncover
 paginate: true
 _paginate: false
