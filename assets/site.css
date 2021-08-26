@@ -103,3 +103,11 @@ main h2, main h3, main h4, main h5, main h6 {
 main {
     padding-bottom: 3rem;
 }
+
+/**
+ * KaTeX CSS fix (from https://katex.org/docs/issues.html)
+ * The aim is to allow vertical scrolling of equations (especially on mobile)
+ */
+.katex-display {
+     overflow: auto hidden;
+}
