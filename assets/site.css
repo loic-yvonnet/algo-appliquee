@@ -2,6 +2,10 @@ body {
     font-size: .875rem;
 }
 
+main {
+    background-color: white;
+}
+
 .feather {
     width: 16px;
     height: 16px;
@@ -75,13 +79,6 @@ iframe {
     height: 60vh;
     border: 1px solid black;
     margin-bottom: 1rem;
-}
-
-/** 
- * Hack for embedded KaTeX: it appears twice for some obscure reason
- */
-.katex-html {
-    display: none;
 }
 
 /**
