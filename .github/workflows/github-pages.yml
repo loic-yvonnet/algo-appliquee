@@ -27,6 +27,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Remove macOS-specific requirement from package dependencies
+        run: |
+          grep -v fsevents ./package-lock.json > ./tmp_json
+          mv ./tmp_json ./package-lock.json
+
       - name: Install dependencies and Puppeteer
         run: |
           npm ci
