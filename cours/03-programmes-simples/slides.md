@@ -205,7 +205,7 @@ Cependant, elle est très limitée : on ne peut trouver que les carrés parfaits
 # Racine carrée à petits pas
 
 ```python
-x = int(input("Entrez un nombre entier positif : "))
+x = float(input("Entrez un nombre entier positif : "))
 devine = 0
 pas = 0.0001
 while devine ** 2 < x:
@@ -301,7 +301,7 @@ Par conséquent, début et fin convergent rapidement vers la valeur recherchée.
 # Racine carrée
 
 ```python
-x = int(input("Entrez un nombre positif : "))
+x = float(input("Entrez un nombre positif : "))
 
 debut = 0
 fin = max(1, x)
@@ -387,7 +387,7 @@ Ces ajouts **ne modifient pas** l'algorithme instrumenté. Il s'agit **d'instrum
 # Observation de valeurs en cour d'exécution
 
 ```python
-x = int(input("Entrez un nombre positif : "))
+x = float(input("Entrez un nombre positif : "))
 
 debut = 0
 fin = max(1, x)
@@ -416,7 +416,7 @@ En revanche, pour comprendre un algorithme, il est utile de l'instrumenter de ce
 # Comptage du nombre d'itérations
 
 ```python
-x = int(input("Entrez un nombre positif : "))
+x = float(input("Entrez un nombre positif : "))
 
 debut = 0
 fin = max(1, x)
@@ -446,10 +446,11 @@ L'algorithme qui parvient au résultat en un nombre d'itérations minimum est me
 ---
 
 # Chronométrage de l'exécution
+
 ```python
 import time
 
-x = int(input("Entrez un nombre positif : "))
+x = float(input("Entrez un nombre positif : "))
 
 chrono_debut = time.process_time() # démarrage du chronomètre
 
@@ -500,7 +501,106 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 ---
 
-Présentation d'une meilleure solution pour calculer des racines carrées.
+# Algorithme d'approximation numérique
+
+* En utilisant la dichotomie pour résoudre une racine carrée, on a utilisé une méthode d'**approximations successives**.
+* A chaque itération :
+    * on fait une supposition,
+    * on calcul l'erreur par rapport au résultat théorique,
+    * si l'erreur est inférieur à un $\delta$ suffisamment petit, on s'arrête,
+    * sinon, on fait une nouvelle supposition plus proche que la supposition précédente.
+* Un autre algorithme d'approximation est également célèbre : **Newton-Raphson**.
+
+---
+
+# Principe (1/2)
+
+- L'algorithme de Newton-Raphson peut être utilisé pour trouver les racines de nombreuses fonctions.
+- On s'intéresse au cas des fonctions polynomiales à une variable.
+- On note notre fonction polynomiale $P(x)$ :
+
+$$
+\begin{align}
+P(x) & = a_n x^n + a_{n-1}x^{n-1} + \dotsb + a_2 x^2 + a_1 x + a_0 \\
+     & = \sum_{k=0}^n a_k x^k
+\end{align}
+$$
+
+- Pour rappel, la dérivée de $P(x)$ se note $P'(x)$ et est égal à :
+
+$$
+P'(x) = \sum_{k=0}^n a_k kx^{k-1}
+$$
+
+- On cherche à trouver la racine $r$ telle que $P(r) = 0.
+
+---
+
+# Principe (2/2)
+
+
+- On note $s_1$ et $s_2$ des approximations de $r$ pour $P(r) = 0$.
+- On souhaite que $s_2$ soit une meilleure approximation de $r$ que $s_1$, soit :
+
+$$
+P(r) \le P(s_2) \lt P(s_1)
+$$
+
+- Un théorème prouvé par Newtown montre que $s_2$ peut être calculé de la manière suivante :
+
+$$
+s_2 = s_1 - \frac{P(s_1)}{P'(s_1)}
+$$
+
+---
+
+# Newtown-Raphson pour le calcul de racine carrée
+
+- Trouver la racine carrée de $a_0$ revient à résoudre $x^2 - a_0 = 0$.
+- Notre polynôme s'écrit donc $P(x) = x^2 - a_0$.
+- Trivialement, on a $P'(x) = 2x$.
+- Si on a une approximation $s_1$ de $P(r) = 0$, alors on calcule une meilleure approximation $s_2$ :
+
+$$
+s_2 = s_1 - \frac{P(s_1)}{P'(s_1)} = s_1 - \frac{s_1^2 - a_0}{2s_1}
+$$
+
+---
+
+# Application en Python
+
+```python
+a0 = float(input("Entrez un nombre positif : "))
+
+s = a0 / 2
+epsilon = 0.0001
+
+while abs(s ** 2 - a0) >= epsilon:
+    P = s ** 2 - a0
+    P_prime = 2 * s
+    s = s - P / P_prime
+
+erreur = abs(s ** 2 - a0)
+print(f"La racine carrée de {a0} est {s} à {erreur} près")
+```
+
+<!--
+Il s'agit simplement de l'application directe de la formule énoncée dans les diapositives précédentes.
+On démarre avec s = a0 / 2.
+Au lieu d'utiliser s1 et s2, on réassigne s à chaque itération.
+C'est un algorithme simple, élégant et performant.
+-->
+
+---
+
+# Problèmes et algorithmes
+
+En résumé :
+- Retrouver un nombre dans un interval : la dichotomie gagne,
+- Déterminer si un nombre est premier : l'énumération exhaustive gagne,
+- Calculer une racine carrée : Newton-Raphson gagne.
+
+Vous allez montrer cela dans le prochain TP.
 
 ---
 
@@ -522,9 +622,56 @@ Présentation d'une meilleure solution pour calculer des racines carrées.
 
 ---
 
-Le mythe de l'insecte dans la machine
-Les vraies origines
-Rappel du Halting Problem et rabachage sur la qualité logicielle
+# Le mythe de l'insecte dans la machine
+
+- 1947 : un insecte empêchant le fonctionnement du calculateur de l'université de Harvard est découvert.
+- Depuis, une légende urbaine affirme qu'il s'agit du premier "bug" (insecte en anglais).
+- L'emploi du terme "bug" pour désigner un problème viendrait de là.
+
+---
+
+# Les vraies origines
+
+- Le terme "bug" était déjà utilisé dans la langue anglaise pour désigner un problème.
+- 1896 : Le livre *Nouveau Catéchisme de l'Electricité* de *Hawkins* emploie cette terminologie.
+- En ancien anglais, le terme "bugbear" signifie "tout ce qui peut causer une peur ou une anxiété excessive sans que cela soit nécessaire".
+
+---
+
+# Eviter les bugs : introduction à la qualité logicielle
+
+- Problème d'arrêt (Halting Problem) : il n'est pas possible de prouver la validité d'un programme de manière générique.
+- Preuve de programme : 
+    - Prouver le bon fonctionnement d'un algorithme est ardu.
+    - Prouver le fonctionnement d'un programme complexe est presque toujours trop coûteux.
+- Solution : mettre en place de **bonnes pratiques** de développement logiciel.
+
+Nous aborderons quelques unes de ces bonnes pratiques dans les prochains cours.
+
+---
+
+# Bugs manifestes et cachés
+
+- Bug manifeste : le problème est visible facilement. Par exemple, un crash.
+- Bug caché : le problème est quasiment invisible dans la plupart des cas. Par exemple, une fuite mémoire.
+
+<!--
+Une fuite mémoire survient lorsqu'un programme alloue toujours plus de mémoire, sans jamais la libérer.
+Le programme peut fonctionner correctement pendant plusieurs jours sans problème.
+-->
+
+---
+
+# Bugs persistents et intermittents
+
+- Bug persistent : il survient de manière systématique et il est facile à reproduire.
+- Bug intermittent : il semble survenir de manière aléatoire et il est difficile à reproduire.
+
+<!--
+Les bugs manifestes et persistents sont les plus simples à analyser et à corriger.
+Les bugs cachés et intermittents peuvent se révéler très complexes à déboguer.
+Si ces problèmes surviennent rarement, il arrive que certaines entreprises décident malheureusement de ne pas les traiter.
+-->
 
 ---
 
@@ -534,7 +681,57 @@ Rappel du Halting Problem et rabachage sur la qualité logicielle
 
 ---
 
-Tu prends un papier, tu prends un crayon, tu dessines un tableau avec tes variables en colonnes et les itérations en ligne, pis tu regardes ce qui se passe.... Et boom => le bug saute aux yeux !
+# Plus capables et moins rapides
+
+* Une machine n'est pas nécessaire pour exécuter un algorithme.
+* Les 1ers algorithmes ont été inventés bien avant la création des 1ers calculateurs.
+* Un humain peut tout à fait exécuter manuellement un algorithme.
+* Un humain sera simplement moins rapide qu'une machine.
+* Un humain peut également faire des erreurs de calcul qu'une machine éviterait.
+
+---
+
+# Pourquoi le faire manuellement ?
+
+* Le jour de l'examen, une partie du temps se fait sur papier.
+* Vous devez donc vous préparer pour l'examen.
+* Les entreprises les plus prestigieuses demandent aux candidats de développer sur un tableau blanc.
+* En pratique, même en entreprise, on continue à résoudre les problèmes les plus complexes par des brouillons sur papier ou sur tableau blanc avant de passer sur machine.
+
+---
+
+# Procédure
+
+* Prendre un papier.
+* Prendre un crayon.
+* Dessiner un tableau dont le nombre de colonnes est égal au nombre de variables à suivre.
+* A chaque itération, remplir une ligne avec les valeurs actuelles des variables
+
+---
+
+# Exemple
+
+![bg right:45% 90%](./assets/tableau-debug.jpg)
+
+```python
+a0 = 16
+
+s = a0 / 2
+epsilon = 0.1
+
+while abs(s ** 2 - a0) >= epsilon:
+    P = s ** 2 - a0
+    P_prime = 2 * s
+    s = s - P / P_prime
+
+print(f"sqrt({a0}) == {s}")
+```
+
+<!--
+La difficulté dans cet exemple est que lors d'une itération, P et P_prime dépendent de la valeur précédente de s.
+Nous avons choisi, sur une ligne, de donner la valeur de s ayant servi au calcul de P et P_prime lors de l'itération courante.
+La nouvelle valeur de s apparaît sur la ligne suivante.
+-->
 
 ---
 
@@ -544,7 +741,171 @@ Tu prends un papier, tu prends un crayon, tu dessines un tableau avec tes variab
 
 ---
 
-Démo dans VS Code des breakpoints, breakpoints conditionels, introspection de variables, etc.
+# La puissance d'un EDI
+
+* Tout bon Environnement de Développement Intégré (EDI) propose un **debugger** pour les langages supportés.
+* Visual Studio Code, avec l'extension Python, propose un bon debugger.
+* L'objectif d'un debugger est d'arrêter l'exécution d'un processus pour regarder son état.
+* On doit lancer le processus depuis l'EDI en **mode debug**, et utiliser des **points d'arrêt**.
+* Un point d'arrêt se nomme *breakpoint* en anglais.
+
+---
+
+# Lancer en mode debug
+
+![bg right:50% 80%](./assets/00-menu-debug.png)
+
+A gauche de l'interface se trouve le menu *Run and Debug*.
+
+---
+
+# Choisir le mode de debug
+
+![bg right:50% 80%](./assets/01-choisir-fichier-python.png)
+
+Dans le cadre de ce cours, vous choisirez toujours de déboguer le fichier courant.
+
+---
+
+# La barre d'outils de debug
+
+![bg right:50% 80%](./assets/02-toolbar-debug.png)
+
+Lorsque le programme s'exécute (non arrêter sur un point d'arrêt), la barre d'outils de debug, qui se trouve en haut de l'éditeur, a cet aspect.
+
+---
+
+# Barre d'outils de debug sur un point d'arrêt
+
+![bg right:50% 80%](./assets/03-toolbar-debug-break.png)
+
+L'aspect change lorsque l'exécution arrive sur un point d'arrêt.
+
+Il devient alors possible d'exécuter pas à pas les instructions.
+
+Les icônes permettent respectivement :
+- Continuer l'exécution (F5),
+- Exécuter l'instruction courante (F10),
+- Rentrer dans la fonction (F11),
+- Exécuter toutes les instructions jusqu'à la fin de la fonction,
+- Recommencer l'exécution depuis le début,
+- Stopper l'exécution;
+
+---
+
+# Comment poser un point d'arrêt ?
+
+![bg right:50% 80%](./assets/04-avant-breakpoint.png)
+
+Aspect d'une ligne avant de poser un point d'arrêt.
+
+---
+
+# Point d'arrêt classique
+
+![bg right:50% 80%](./assets/05-apres-breakpoint.png)
+
+Il suffit de cliquer à gauche de la ligne pour poser un point d'arrêt.
+
+Un rond rouge apparaît.
+
+Il est également possible d'utiliser le raccourci F9.
+
+Pour supprimer un point d'arrêt, il suffit de cliquer dessus à nouveau (ou d'utiliser F9 une seconde fois).
+
+---
+
+# Arrêt sur point d'arrêt
+
+![bg right:50% 80%](./assets/06-pendant-execution.png)
+
+La ligne est mise en surbrillance lorsqu'un point d'arrêt est atteint.
+
+Il devient alors possible d'examiner toutes les variables locales et globales. Pour cela, positionnez le curseur de la souris au-dessus de la variable qui vous intéresse et attendez 1s.
+
+---
+
+# Autre méthode pour lancer en mode debug
+
+![bg right:50% 80%](./assets/07-raccourci.png)
+
+En haut à droite de l'éditeur se trouve un bouton avec une flêche. Si on sélectionne la flêche avec un insecte, on lance l'exécution en mode debug.
+
+---
+
+# Point d'arrêt conditionnel
+
+![bg right:50% 80%](./assets/08-breakpoint-conditionnel.png)
+
+Parfois, on souhaite arrêter l'exécution uniquement lorsqu'une condition bien particulière est remplie.
+
+Pour cela, on commencer par créer un point d'arrêt classique. Ensuite, on fait un clic droit sur ce point d'arrêt pour l'éditer.
+
+---
+
+# Expression Booléenne sur un point d'arrêt
+
+![bg right:50% 80%](./assets/09-condition-booleenne.png)
+
+Si on souhaite arrêter l'exécution uniquement si la valeur de la variable P est inférieur à 20, il suffit de rentrer l'expression `P < 20`.
+
+Il est possible de rentrer n'importe quelle expression Booléenne valide en Python.
+
+---
+
+# Aspect d'un point d'arrêt conditionnel
+
+![bg right:50% 80%](./assets/10-aspect-breakpoint-cond.png)
+
+L'aspect d'un point d'arrêt conditionnel permet d'alerter sur la nature particulière de ce point d'arrêt.
+
+---
+
+# Tableau de valeurs
+
+![bg right:50% 80%](./assets/11-valeurs-variables.png)
+
+On peut obtenir l'arborescence de toutes les valeurs de toutes les variables dans l'encadré à gauche de l'éditeur.
+
+---
+
+# Point d'arrêt avec un compteur
+
+![bg right:50% 80%](./assets/12-cond-breakpoint-hit.png)
+
+Parfois, on souhaite arrêter l'exécution à une itération particulière. On peut alors créer un point d'arrêt conditionnel en spécifiant "Hit" puis le numéro d'itération souhaité.
+
+En pratique, l'arrêt s'effectuera lorsque le pointeur de stack sera passé le nombre de fois spécifié sur la ligne de code spécifiée.
+
+---
+
+# Logs supplémentaires
+
+![bg right:50% 80%](./assets/13-breakpoint-log.png)
+
+Parfois, on souhaite rajouter des logs supplémentaires sans pour autant changer le programme. Dans ce cas, on peut créer un point d'arrêt très particulier. Le point d'arrêt Log n'arrête pas l'exécution du programme, mais il affiche le contenud de la f-string spécifiée à chaque fois que la ligne est atteinte.
+
+---
+
+# Aspect d'un point d'arrêt Log
+
+![bg right:50% 80%](./assets/14-aspect-break-log.png)
+
+Un point d'arrêt Log est un losange à la place d'un cercle.
+
+---
+
+# Autres options de débogage
+
+Il existe de nombreuses autres options de débogage :
+- Voir la pile d'appels de fonctions et changer de contexte,
+- Créer un point d'arrêt lors de l'entrée dans une fonction,
+- Activation et désactivation de tous les points d'arrêt,
+- Suivre la valeur d'expressions particulières,
+- Afficher différents threads d'exécution,
+- etc.
+
+Nous ne rentrerons pas dans ces détails dans le cadre de ce cours.
 
 ---
 
