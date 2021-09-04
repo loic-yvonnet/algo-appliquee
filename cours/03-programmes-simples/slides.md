@@ -13,11 +13,13 @@ _paginate: false
 style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    font-size: 1.8rem;
   }
 
   section.title-section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
     color: #fff;
+    font-size: 2rem;
   }
 
   section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
@@ -84,7 +86,7 @@ Nous allons aborder différentes techniques. La plus simple est "devine-et-véri
 
 ---
 
-# Retrouver un nombre dans un interval
+# <!--fit--> Retrouver un nombre dans un interval
 
 ```python
 valeur_recherchee = int(input("Entrez un nombre entre 0 et 1 000 000 : "))
@@ -134,7 +136,7 @@ Au final, si on a trouvé un diviseur, c'est que le nombre n'est pas premier.
 
 ---
 
-# Nombre premier (plus rapide)
+#  <!--fit--> Nombre premier (plus rapide)
 
 ```python
 x = int(input("Entrez un nombre entier positif : "))
@@ -168,16 +170,13 @@ C'est un compromis classique : complexité d'implémentation pour meilleure vite
 
 # Notion d'heuristique
 
-On pourrait encore accélérer l'algorithme précédent avec des **heuristiques** supplémentaires.
-
-Une heuristique est une astuce permettant de simplifier un problème.
-
-Par exemple :
-* on sait qu'un nombre dont le dernier chiffre est 5 est divisible par 5.
-* on sait que si la somme des chiffres d'un nombre est divisible par 3, alors ce nombre est divisible par 3.
-* on sait qu'il n'est pas nécessaire de tester les nombres supérieurs à $\sqrt{x}$.
-
-Ainsi, on peut éliminer très rapidement les nombres divisibles par 2, 3 ou 5.
+- On pourrait encore accélérer l'algorithme précédent avec des **heuristiques** supplémentaires.
+- Une heuristique est une astuce permettant de simplifier un problème.
+- Par exemple :
+    * on sait qu'un nombre dont le dernier chiffre est 5 est divisible par 5.
+    * on sait que si la somme des chiffres d'un nombre est divisible par 3, alors ce nombre est divisible par 3.
+    * on sait qu'il n'est pas nécessaire de tester les nombres supérieurs à $\sqrt{x}$.
+- Ainsi, on peut éliminer très rapidement les nombres divisibles par 2, 3 ou 5.
 
 ---
 
@@ -202,7 +201,7 @@ Cependant, elle est très limitée : on ne peut trouver que les carrés parfaits
 
 ---
 
-# Racine carrée à petits pas
+# <!--fit--> Racine carrée à petits pas
 
 ```python
 x = float(input("Entrez un nombre entier positif : "))
@@ -223,15 +222,15 @@ Par ailleurs, la précision n'est pas garantie pour les grands nombres.
 
 ---
 
-# Limites de l'approche devine-et-vérifie
+# <!--fit--> Limites de l'approche devine-et-vérifie
 
-Cette approche est basée sur une **énumération exhaustive**.
+- Cette approche est basée sur une **énumération exhaustive**.
 
-Limites :
-* Effectue un grand nombre de tests.
-* Si le nombre recherché n'est pas énuméré, l'erreur n'est pas complètement maîtrisée.
+- Limites :
+    * Effectue un *grand nombre* de tests.
+    * Si le nombre recherché n'est pas énuméré, l'erreur n'est pas complètement maîtrisée.
 
-D'autres approches existent.
+- D'autres approches existent.
 
 ---
 
@@ -245,13 +244,14 @@ D'autres approches existent.
 
 # Le juste prix
 
-Contexte et règles :
+### Contexte et règles
+
 - Jeu télévisé des années 1990.
-- Le présentateur demandait au joueur de trouver un prix entre 1 et 1000 francs.
+- Le présentateur demandait au joueur de trouver un prix entre **1 et 1000** francs.
 - Le joueur propose un prix.
-- Le présentateur dit si c'est supérieur, inférieur ou égal.
+- Le présentateur dit si c'est **supérieur, inférieur ou égal**.
 - Le joueur propose un nouveau prix, et le présentateur répond à nouveau.
-- Le joueur a une minute pour trouver le juste prix.
+- Le joueur a **une minute** pour trouver le juste prix.
 
 <!--
 Tirer au sort un édudiant et le faire jouer pour voir si elle utilise naturellement une énumération exhaustive ou une dichotomie.
@@ -263,12 +263,12 @@ Faire éventuellement passer un autre étudiant si la première n'a pas trouvé 
 
 # La dichotomie
 
-On utilise le fait que l'espace de travail est **fini** et **totalement ordonné**.
-A chaque étape, on divise l'espace de travail par 2, jusqu'à converger vers une solution satisfaisante.
+- On utilise le fait que l'espace de travail est **totalement ordonné**.
+- A chaque étape, on divise l'espace de travail par 2, jusqu'à converger vers une solution satisfaisante.
 
 --- 
 
-# Retrouver un nombre dans un interval
+# <!--fit--> Retrouver un nombre dans un interval
 
 ```python
 valeur_recherchee = int(input("Entrez un nombre entre 0 et 1 000 000 : "))
@@ -331,14 +331,14 @@ De plus, on contrôle mieux l'erreur grâce à un epsilon indépendant du pas d'
 
 ---
 
-# Comparaison entre dichotomie et énumération exhaustive
+# <!--fit--> Comparaison entre dichotomie et énumération exhaustive
 
-Intuitivement, pour les 3 problèmes qui nous préoccupent :
-* Retrouver un nombre dans un interval : la dichotomie gagne.
-* Déterminer si un nombre est premier : l'énumération exhaustive gagne.
-* Calculer une racine carrée : la dichotomie gagne.
+- Intuitivement, pour les 3 problèmes qui nous préoccupent :
+    * Retrouver un nombre dans un interval : la **dichotomie** gagne.
+    * Déterminer si un nombre est premier : l'**énumération exhaustive** gagne.
+    * Calculer une racine carrée : la **dichotomie** gagne.
 
-S'il est nécessaire de tester toutes les valeurs, la dichotomie n'apporte rien.
+- S'il est nécessaire de tester toutes les valeurs, la dichotomie n'apporte rien.
 
 <!--
 Dans le cas des nombres premiers, il est de toutes façons nécessaires de tester toutes les valeurs.
@@ -364,7 +364,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 ---
 
-# Pourquoi instrumenter le code
+# <!--fit--> Pourquoi instrumenter le code
 
 * Nous avons vu que différents algorithmes permettent de résoudre un même problème.
 * Nous avons tenté de comparer ces algorithmes en utilisant notre intuition.
@@ -375,16 +375,16 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 # Instrumentation
 
-L'instrumentation consiste à rajouter du code :
-* pour observer l'exécution avec des `print`.
-* pour mesurer des indicateurs comme le nombre d'itérations effectuées.
-* pour comprendre les problèmes, lorsqu'il y en a.
-
-Ces ajouts **ne modifient pas** l'algorithme instrumenté. Il s'agit **d'instruments de mesure**.
+- L'instrumentation consiste à rajouter du code :
+    * pour **observer** l'exécution avec des `print`.
+    * pour **mesurer** des indicateurs comme le nombre d'itérations effectuées.
+    * pour **comprendre** les problèmes, lorsqu'il y en a.
+    
+- Ces ajouts **ne modifient pas** l'algorithme instrumenté. Il s'agit **d'instruments de mesure**.
 
 ---
 
-# Observation de valeurs en cour d'exécution
+# <!--fit--> Observation de valeurs en cour d'exécution
 
 ```python
 x = float(input("Entrez un nombre positif : "))
@@ -413,7 +413,7 @@ En revanche, pour comprendre un algorithme, il est utile de l'instrumenter de ce
 
 ---
 
-# Comptage du nombre d'itérations
+# <!--fit--> Compte du nombre d'itérations
 
 ```python
 x = float(input("Entrez un nombre positif : "))
@@ -445,7 +445,9 @@ L'algorithme qui parvient au résultat en un nombre d'itérations minimum est me
 
 ---
 
-# Chronométrage de l'exécution
+<!-- _class: smaller-text -->
+
+# <!--fit--> Chronométrage de l'exécution
 
 ```python
 import time
@@ -501,7 +503,7 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 ---
 
-# Algorithme d'approximation numérique
+# <!--fit--> Algorithme d'approximation numérique
 
 * En utilisant la dichotomie pour résoudre une racine carrée, on a utilisé une méthode d'**approximations successives**.
 * A chaque itération :
@@ -520,19 +522,17 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 - On note notre fonction polynomiale $P(x)$ :
 
 $$
-\begin{align}
-P(x) & = a_n x^n + a_{n-1}x^{n-1} + \dotsb + a_2 x^2 + a_1 x + a_0 \\
-     & = \sum_{k=0}^n a_k x^k
-\end{align}
+P(x) = a_n x^n + a_{n-1}x^{n-1} + \dotsb + a_2 x^2 + a_1 x + a_0 \\
+P(x) = \sum_{k=0}^n a_k x^k
 $$
 
-- Pour rappel, la dérivée de $P(x)$ se note $P'(x)$ et est égal à :
+- Pour rappel, la dérivée de $P(x)$ se note $P'(x)$ et est égale à :
 
 $$
 P'(x) = \sum_{k=0}^n a_k kx^{k-1}
 $$
 
-- On cherche à trouver la racine $r$ telle que $P(r) = 0.
+- On cherche à trouver la racine $r$ telle que $P(r) = 0$.
 
 ---
 
@@ -554,7 +554,7 @@ $$
 
 ---
 
-# Newtown-Raphson pour le calcul de racine carrée
+# <!--fit--> Newtown-Raphson pour le calcul de racine carrée
 
 - Trouver la racine carrée de $a_0$ revient à résoudre $x^2 - a_0 = 0$.
 - Notre polynôme s'écrit donc $P(x) = x^2 - a_0$.
@@ -595,12 +595,12 @@ C'est un algorithme simple, élégant et performant.
 
 # Problèmes et algorithmes
 
-En résumé :
-- Retrouver un nombre dans un interval : la dichotomie gagne,
-- Déterminer si un nombre est premier : l'énumération exhaustive gagne,
-- Calculer une racine carrée : Newton-Raphson gagne.
-
-Vous allez montrer cela dans le prochain TP.
+- En résumé :
+    - Retrouver un nombre dans un interval : la **dichotomie** gagne,
+    - Déterminer si un nombre est premier : l'**énumération exhaustive** gagne,
+    - Calculer une racine carrée : **Newton-Raphson** gagne.
+    
+- Vous allez voir cela en pratique dans le prochain TP.
 
 ---
 
@@ -618,11 +618,11 @@ Vous allez montrer cela dans le prochain TP.
 
 <!-- _class: title-section -->
 
-# <!--fit--> Histoire des bugs et du debugging dans la culture anglo-saxonne
+# Histoire des bugs et du debugging dans la culture anglo-saxonne
 
 ---
 
-# Le mythe de l'insecte dans la machine
+# <!--fit--> Le mythe de l'insecte dans la machine
 
 - 1947 : un insecte empêchant le fonctionnement du calculateur de l'université de Harvard est découvert.
 - Depuis, une légende urbaine affirme qu'il s'agit du premier "bug" (insecte en anglais).
@@ -638,22 +638,24 @@ Vous allez montrer cela dans le prochain TP.
 
 ---
 
-# Eviter les bugs : introduction à la qualité logicielle
+# Eviter les bugs
 
-- Problème d'arrêt (Halting Problem) : il n'est pas possible de prouver la validité d'un programme de manière générique.
-- Preuve de programme : 
+#### Introduction à la qualité logicielle
+
+- **Problème d'arrêt** (Halting Problem) : il n'est pas possible de prouver la validité d'un programme de manière générique.
+- **Preuve de programme** : 
     - Prouver le bon fonctionnement d'un algorithme est ardu.
     - Prouver le fonctionnement d'un programme complexe est presque toujours trop coûteux.
-- Solution : mettre en place de **bonnes pratiques** de développement logiciel.
+- **Solution** : mettre en place de **bonnes pratiques** de développement logiciel.
 
-Nous aborderons quelques unes de ces bonnes pratiques dans les prochains cours.
+- Nous aborderons quelques unes de ces bonnes pratiques dans les prochains cours.
 
 ---
 
 # Bugs manifestes et cachés
 
-- Bug manifeste : le problème est visible facilement. Par exemple, un crash.
-- Bug caché : le problème est quasiment invisible dans la plupart des cas. Par exemple, une fuite mémoire.
+- **Bug manifeste** : le problème est visible facilement. Par exemple, un crash.
+- **Bug caché** : le problème est quasiment invisible dans la plupart des cas. Par exemple, une fuite mémoire.
 
 <!--
 Une fuite mémoire survient lorsqu'un programme alloue toujours plus de mémoire, sans jamais la libérer.
@@ -662,10 +664,10 @@ Le programme peut fonctionner correctement pendant plusieurs jours sans problèm
 
 ---
 
-# Bugs persistents et intermittents
+# <!--fit--> Bugs persistents et intermittents
 
-- Bug persistent : il survient de manière systématique et il est facile à reproduire.
-- Bug intermittent : il semble survenir de manière aléatoire et il est difficile à reproduire.
+- **Bug persistent** : il survient de manière systématique et il est facile à reproduire.
+- **Bug intermittent** : il semble survenir de manière aléatoire et il est difficile à reproduire.
 
 <!--
 Les bugs manifestes et persistents sont les plus simples à analyser et à corriger.
@@ -677,35 +679,35 @@ Si ces problèmes surviennent rarement, il arrive que certaines entreprises déc
 
 <!-- _class: title-section -->
 
-# <!--fit--> Techniques pour déboguer manuellement un programme sur papier
+# Techniques pour déboguer manuellement un programme sur papier
 
 ---
 
-# Plus capables et moins rapides
+# <!--fit--> Plus capables et moins rapides
 
-* Une machine n'est pas nécessaire pour exécuter un algorithme.
+* Une **machine** n'est pas nécessaire pour exécuter un algorithme.
 * Les 1ers algorithmes ont été inventés bien avant la création des 1ers calculateurs.
-* Un humain peut tout à fait exécuter manuellement un algorithme.
+* Un **humain** peut tout à fait exécuter manuellement un algorithme.
 * Un humain sera simplement moins rapide qu'une machine.
 * Un humain peut également faire des erreurs de calcul qu'une machine éviterait.
 
 ---
 
-# Pourquoi le faire manuellement ?
+# <!--fit--> Pourquoi le faire manuellement ?
 
-* Le jour de l'examen, une partie du temps se fait sur papier.
+* Le **jour de l'examen**, une partie du temps se fait sur papier.
 * Vous devez donc vous préparer pour l'examen.
-* Les entreprises les plus prestigieuses demandent aux candidats de développer sur un tableau blanc.
-* En pratique, même en entreprise, on continue à résoudre les problèmes les plus complexes par des brouillons sur papier ou sur tableau blanc avant de passer sur machine.
+* Les entreprises les plus prestigieuses demandent aux candidats de **développer sur un tableau blanc**.
+* En pratique, même en entreprise, on continue à **résoudre les problèmes les plus complexes** par des brouillons sur papier ou sur tableau blanc avant de passer sur machine.
 
 ---
 
 # Procédure
 
-* Prendre un papier.
-* Prendre un crayon.
-* Dessiner un tableau dont le nombre de colonnes est égal au nombre de variables à suivre.
-* A chaque itération, remplir une ligne avec les valeurs actuelles des variables
+* Prendre un papier :scroll:
+* Prendre un crayon :pencil2:
+* Dessiner un tableau dont le nombre de colonnes est égal au nombre de variables à suivre :bar_chart:
+* A chaque itération, remplir une ligne avec les valeurs actuelles des variables :1234:
 
 ---
 
@@ -751,7 +753,7 @@ La nouvelle valeur de s apparaît sur la ligne suivante.
 
 ---
 
-# Lancer en mode debug
+# <!--fit--> Lancer en mode debug
 
 ![bg right:50% 80%](./assets/00-menu-debug.png)
 
@@ -759,7 +761,7 @@ A gauche de l'interface se trouve le menu *Run and Debug*.
 
 ---
 
-# Choisir le mode de debug
+# <!--fit--> Choisir le mode de debug
 
 ![bg right:50% 80%](./assets/01-choisir-fichier-python.png)
 
@@ -767,33 +769,31 @@ Dans le cadre de ce cours, vous choisirez toujours de déboguer le fichier coura
 
 ---
 
-# La barre d'outils de debug
+# <!--fit--> La barre d'outils de debug
 
-![bg right:50% 80%](./assets/02-toolbar-debug.png)
+![bg right:30% 80%](./assets/02-toolbar-debug.png)
 
-Lorsque le programme s'exécute (non arrêter sur un point d'arrêt), la barre d'outils de debug, qui se trouve en haut de l'éditeur, a cet aspect.
-
----
-
-# Barre d'outils de debug sur un point d'arrêt
-
-![bg right:50% 80%](./assets/03-toolbar-debug-break.png)
-
-L'aspect change lorsque l'exécution arrive sur un point d'arrêt.
-
-Il devient alors possible d'exécuter pas à pas les instructions.
-
-Les icônes permettent respectivement :
-- Continuer l'exécution (F5),
-- Exécuter l'instruction courante (F10),
-- Rentrer dans la fonction (F11),
-- Exécuter toutes les instructions jusqu'à la fin de la fonction,
-- Recommencer l'exécution depuis le début,
-- Stopper l'exécution;
+Lorsque le programme s'exécute (non arrêté sur un point d'arrêt), la barre d'outils de debug, qui se trouve en haut de l'éditeur, a cet aspect.
 
 ---
 
-# Comment poser un point d'arrêt ?
+# <!--fit--> Barre d'outils de debug sur un point d'arrêt
+
+![bg right:30% 80%](./assets/03-toolbar-debug-break.png)
+
+- L'aspect change lorsque l'exécution arrive sur un point d'arrêt.
+- Il devient alors possible d'exécuter pas à pas les instructions.
+- Les icônes permettent respectivement :
+    - Continuer l'exécution (F5),
+    - Exécuter l'instruction courante (F10),
+    - Rentrer dans la fonction (F11),
+    - Exécuter toutes les instructions jusqu'à la fin de la fonction,
+    - Recommencer l'exécution depuis le début,
+    - Stopper l'exécution;
+
+---
+
+# <!--fit--> Comment poser un point d'arrêt ?
 
 ![bg right:50% 80%](./assets/04-avant-breakpoint.png)
 
@@ -801,7 +801,7 @@ Aspect d'une ligne avant de poser un point d'arrêt.
 
 ---
 
-# Point d'arrêt classique
+# <!--fit--> Point d'arrêt classique
 
 ![bg right:50% 80%](./assets/05-apres-breakpoint.png)
 
@@ -815,9 +815,9 @@ Pour supprimer un point d'arrêt, il suffit de cliquer dessus à nouveau (ou d'u
 
 ---
 
-# Arrêt sur point d'arrêt
+# <!--fit--> Arrêt sur point d'arrêt
 
-![bg right:50% 80%](./assets/06-pendant-execution.png)
+![bg right:45% 80%](./assets/06-pendant-execution.png)
 
 La ligne est mise en surbrillance lorsqu'un point d'arrêt est atteint.
 
@@ -825,15 +825,15 @@ Il devient alors possible d'examiner toutes les variables locales et globales. P
 
 ---
 
-# Autre méthode pour lancer en mode debug
+# <!--fit--> Autre méthode pour lancer en mode debug
 
-![bg right:50% 80%](./assets/07-raccourci.png)
+![bg right:30% 80%](./assets/07-raccourci.png)
 
 En haut à droite de l'éditeur se trouve un bouton avec une flêche. Si on sélectionne la flêche avec un insecte, on lance l'exécution en mode debug.
 
 ---
 
-# Point d'arrêt conditionnel
+# <!--fit--> Point d'arrêt conditionnel
 
 ![bg right:50% 80%](./assets/08-breakpoint-conditionnel.png)
 
@@ -843,7 +843,7 @@ Pour cela, on commencer par créer un point d'arrêt classique. Ensuite, on fait
 
 ---
 
-# Expression Booléenne sur un point d'arrêt
+## Expression Booléenne sur un point d'arrêt
 
 ![bg right:50% 80%](./assets/09-condition-booleenne.png)
 
@@ -853,7 +853,7 @@ Il est possible de rentrer n'importe quelle expression Booléenne valide en Pyth
 
 ---
 
-# Aspect d'un point d'arrêt conditionnel
+## Aspect d'un point d'arrêt conditionnel
 
 ![bg right:50% 80%](./assets/10-aspect-breakpoint-cond.png)
 
@@ -861,7 +861,7 @@ L'aspect d'un point d'arrêt conditionnel permet d'alerter sur la nature particu
 
 ---
 
-# Tableau de valeurs
+# <!--fit--> Tableau de valeurs
 
 ![bg right:50% 80%](./assets/11-valeurs-variables.png)
 
@@ -869,7 +869,7 @@ On peut obtenir l'arborescence de toutes les valeurs de toutes les variables dan
 
 ---
 
-# Point d'arrêt avec un compteur
+# <!--fit--> Point d'arrêt avec un compteur
 
 ![bg right:50% 80%](./assets/12-cond-breakpoint-hit.png)
 
@@ -879,7 +879,7 @@ En pratique, l'arrêt s'effectuera lorsque le pointeur de stack sera passé le n
 
 ---
 
-# Logs supplémentaires
+## Logs supplémentaires
 
 ![bg right:50% 80%](./assets/13-breakpoint-log.png)
 
@@ -887,7 +887,7 @@ Parfois, on souhaite rajouter des logs supplémentaires sans pour autant changer
 
 ---
 
-# Aspect d'un point d'arrêt Log
+# <!--fit--> Aspect d'un point d'arrêt Log
 
 ![bg right:50% 80%](./assets/14-aspect-break-log.png)
 
@@ -895,17 +895,17 @@ Un point d'arrêt Log est un losange à la place d'un cercle.
 
 ---
 
-# Autres options de débogage
+# <!--fit--> Autres options de débogage
 
-Il existe de nombreuses autres options de débogage :
-- Voir la pile d'appels de fonctions et changer de contexte,
-- Créer un point d'arrêt lors de l'entrée dans une fonction,
-- Activation et désactivation de tous les points d'arrêt,
-- Suivre la valeur d'expressions particulières,
-- Afficher différents threads d'exécution,
-- etc.
+- Il existe de nombreuses autres options de débogage :
+    - Voir la pile d'appels de fonctions et changer de contexte,
+    - Créer un point d'arrêt lors de l'entrée dans une fonction,
+    - Activation et désactivation de tous les points d'arrêt,
+    - Suivre la valeur d'expressions particulières,
+    - Afficher différents threads d'exécution,
+    - etc.
 
-Nous ne rentrerons pas dans ces détails dans le cadre de ce cours.
+- Nous ne rentrerons pas dans ces détails dans le cadre de ce cours.
 
 ---
 
