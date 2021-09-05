@@ -56,7 +56,7 @@ Pour plus d'informations, merci de bien vouloir vous reporter à [la description
 
 (1) Les contenus, images et logos extérieurs ne sont pas sous licence CC BY-NC 4.0 et ne peuvent pas être réutilisés sans l'accord préalable explicite de leur(s) auteur(s) et/ou ayant(s)-droit(s) originaux.
 Quelques exemples non-exhaustifs :
-* Le logo du langage de programmmation Python.
+* Le logo du langage de programmation Python.
 * Le logo du langage de programmation Scratch.
 * Le logo de Jupyter Notebook.
 * Le logo de Binder.
