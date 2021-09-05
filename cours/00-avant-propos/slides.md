@@ -27,15 +27,15 @@ style: |
 
 <!-- _class: title-section -->
 
-
 # <!--fit--> Algorithmique Appliquée
 
 ##### BTS SIO SISR
 
 ## Avant-propos
 
-
-<!-- Avant de commencer le cours à proprement parler, il y a quelques points à discuter. -->
+<!--
+Avant de commencer le cours à proprement parler, il y a quelques points à discuter.
+-->
 
 ---
 
@@ -47,9 +47,9 @@ style: |
 - Conseils
 
 <!--
-    On va commencer par un tour de table pour que tout le monde puisse se présenter.
-    Ensuite, on parlera de l'organisation du cours et on enchaînera sur son évaluation.
-    On terminera par quelques conseils pour réussir au mieux.
+On va commencer par un tour de table pour que tout le monde puisse se présenter.
+Ensuite, on parlera de l'organisation du cours et on enchaînera sur son évaluation.
+On terminera par quelques conseils pour réussir au mieux.
 -->
 
 ---
@@ -72,7 +72,7 @@ style: |
 * [www.yvo.solutions](https://yvo.solutions/fr/)
 
 <!--
-    Le formateur se présente en premier pour donner une idée du format attendu aux étudiants.
+Le formateur se présente en premier pour donner une idée du format attendu aux étudiants.
 -->
 
 ---
@@ -85,10 +85,10 @@ style: |
 * Où faites-vous votre alternance ?
 
 <!--
-    Tour de table pour laisser chaque étudiant se présenter.
-    En fonction du niveau des étudiants et de leurs attentes, il faudra adapter le cours.
-    S'il y a plus de 15 étudiants, leur demander d'envoyer les éléments par email.
-    Au passage, demander d'écrire leur nom sur une étiquette.
+Tour de table pour laisser chaque étudiant se présenter.
+En fonction du niveau des étudiants et de leurs attentes, il faudra adapter le cours.
+S'il y a plus de 15 étudiants, leur demander d'envoyer les éléments par email.
+Au passage, demander d'écrire leur nom sur une étiquette.
 -->
 
 ---
@@ -106,59 +106,59 @@ style: |
 * Chaque demie-journée permet d'aborder un **thème majeur**.
 
 <!--
-    C'est un boulversement important pour de jeunes étudiants habitués à changer de sujet
-    presque toutes les heures.
-    Cela va vous demander de mobiliser beaucoup d'attention et d'énergie, surtout lors des
-    tous premiers cours.
+C'est un boulversement important pour de jeunes étudiants habitués à changer de sujet
+presque toutes les heures.
+Cela va vous demander de mobiliser beaucoup d'attention et d'énergie, surtout lors des
+tous premiers cours.
 -->
 
 ---
 
 # Planning 2021
 
-Vendredi 17 septembre
-Lundi 20 septembre
-Vendredi 24 septembre
-Vendredi 1er octobre
-Jeudi 21 octobre
-Vendredi 22 octobre
+- Lundi 20 septembre
+- Mardi 28 septembre
+- Mercredi 29 septembre
+- Vendredi 1er octobre
+- Jeudi 21 octobre
+- Vendredi 22 octobre
 
 <!--
-    Il s'agit du planning prévisionnel, qui est sujet à modification.
-    Vous serez informés par email de toute modification potentielle au moins 48h avant.
+Il s'agit du planning prévisionnel, qui est sujet à modification.
+Vous serez informés par email de toute modification potentielle au moins 48h avant.
 -->
 
 ---
 
 # Demie-journée type
 
-* Cours (environ 1h)
-* 1 TP ou TD (environ 1h)
-* Cours (environ 1h)
-* 1 TP ou TD (environ 1h)
+- Cours (environ 1h)
+- 1 TP ou TD (environ 1h)
+- Cours (environ 1h)
+- 1 TP ou TD (environ 1h)
 
 <!--
-    Pas d'inquiétude à avoir : il n'y aura pas 4h de cours théorique sans interruption.
-    Chaque sujet essentiel est abordé au moins 2 fois : dans le cours et dans un TP/TD.
-    Afin de conserver une dynamique qui se rapproche de vos habitudes du lycée, le format
-    du cours est adapté.
+Pas d'inquiétude à avoir : il n'y aura pas 4h de cours théorique sans interruption.
+Chaque sujet essentiel est abordé au moins 2 fois : dans le cours et dans un TP/TD.
+Afin de conserver une dynamique qui se rapproche de vos habitudes du lycée, le format
+du cours est adapté.
 -->
 
 ---
 
 # Horaires
 
-8h30 - 10h00 : cours
-10h00 - 10h15 : pause café
-10h15 - 12h15 : cours
-12h15 - 13h30 : pause déjeuner
-13h30 - 15h00 : cours
-15h00 - 15h15 : pause café
-15h15 - 17h15 : cours
+- 8h30 - 10h00 : cours
+- 10h00 - 10h15 : pause café
+- 10h15 - 12h15 : cours
+- 12h15 - 13h30 : pause déjeuner
+- 13h30 - 15h00 : cours
+- 15h00 - 15h15 : pause café
+- 15h15 - 17h15 : cours
 
 <!--
-    Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts sont
-    le début du cours à 8h30, et à 13h30.
+Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts sont
+le début du cours à 8h30, et à 13h30.
 -->
 
 ---
@@ -241,8 +241,8 @@ La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront c
 ### Contrôle continue
 
 * Seule la note de l'épreuve finale compte.
-* Les TPs et TDs devront être rendus et seront évalués.
-* L'évaluaton des TPs et TDs sera prise prise en compte dans le dossier.
+* Les DMs devront être rendus et seront évalués.
+* L'évaluaton des DMs sera prise prise en compte dans le dossier.
 
 ---
 

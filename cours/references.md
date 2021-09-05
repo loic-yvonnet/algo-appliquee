@@ -45,6 +45,7 @@ Là encore, la littérature anglo-saxonne est plus abondante.
 * [Introduction to Computation and Programming Using Python - With Application to Computational Modeling and Understanding Data - Third Edition - John V. Guttag](https://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-third-edition).
 * [Think Python - Allen B. Downey](https://www.oreilly.com/library/view/think-python/9781449332006/).
 * [Effective Python - 90 Specific Ways to Write Better Python - Second Edition - Brett Slatkin.](https://www.oreilly.com/library/view/effective-python-90/9780134854717/).
+* [Panda Cookbook](https://www.packtpub.com/product/pandas-cookbook/9781784393878).
 
 ##### PodCasts
 
@@ -60,6 +61,7 @@ Là encore, la littérature anglo-saxonne est plus abondante.
 ##### YouTube channels
 
 * [PyCon US](https://www.youtube.com/c/PyConUS/featured).
+* [Python Programmer](https://www.youtube.com/user/consumerchampion).
 
 ##### Conférences et Meetups
 
