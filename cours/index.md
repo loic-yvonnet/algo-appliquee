@@ -41,20 +41,25 @@ Ce cours utilise principalement les langages, outils et technologies suivants :
 
 ### Licence
 
-Le contenu du cours, aux exceptions mentionnées en (1), est sous licence [Creative Commons 3.0 Attribution (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/).
+Le contenu du cours, aux exceptions mentionnées en (1), est sous licence [Creative Commons 4.0 Attribution Non Commercial (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/).
 
 En résumé, cela signifie que vous êtes libres de :
 * **partager** - copier et redistribuer le matériel sous n'importe quel média et format,
-* **adapter** - remixer, transformer et créer du nouveau matériel, dans n'importe quel but, même commercial,
+* **adapter** - remixer, transformer et créer du nouveau matériel,
 
 sous les conditions suivantes:
 * **attribution** - vous avez l'obligation de mentionner un crédit approprié, fournir un lien vers la licence et indiquer si des modifications ont été effectuées. Vous pouvez le faire de n'importe quelle manière, sauf d'une manière qui suggèrerait que l'auteur original approuve ou soutienne votre projet ou vous-même.
+* **non-commercial** - vous ne pouvez pas utiliser le matériel dans un objectif commercial.
 * **pas d'autre restriction** - vous n'avez pas le droit d'appliquer des mesures juridiques ou technologiques qui empêcheraient quiconque de faire ce que la licence permet.
 
-Pour plus d'informations, merci de bien vouloir vous reporter à [la description légale officielle](https://creativecommons.org/licenses/by/3.0/legalcode).
+Pour plus d'informations, merci de bien vouloir vous reporter à [la description légale officielle](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
 
-(1) Les contenus, images et logos extérieurs ne sont pas sous licence CC BY 3.0 et ne peuvent pas être réutilisés sans l'accord préalable explicite de leur(s) auteur(s) et/ou ayant(s)-droit(s) originaux :
-* Le logo du langage de programmmation Python est la propriété exclusive de [...]().
-* Le logo du langage de programmation Scratch et les images de son éditeur est la propriété exclusive de [...]().
-* Les images et le logo d'Anjou Vélo Vintage est la propriété exclusive de [...]().
-* Le plan du centre de Saumur en 1814 est la propriété exclusive de [...]().
+(1) Les contenus, images et logos extérieurs ne sont pas sous licence CC BY-NC 4.0 et ne peuvent pas être réutilisés sans l'accord préalable explicite de leur(s) auteur(s) et/ou ayant(s)-droit(s) originaux.
+Quelques exemples non-exhaustifs :
+* Le logo du langage de programmmation Python.
+* Le logo du langage de programmation Scratch.
+* Le logo de Jupyter Notebook.
+* Le logo de Binder.
+* Le log de la Chambre du Commerce et de l'Industrie (CCI).
+* Les images et le logo d'Anjou Vélo Vintage.
+* Le plan du centre de Saumur en 1814.
