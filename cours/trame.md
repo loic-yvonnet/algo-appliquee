@@ -8,31 +8,34 @@ layout: layouts/site.njk
 Chaque partie correspond à une demie-journée de cours, comportant chacune en moyenne 2 activités (TD/TP).
 
 ### Avant-Propos
+
 * Organisation du cours.
 * Évaluation.
 
 ### 1. Introduction à la programmation et à l’algorithmique
+
 * Intérêt.
 * Discussion sur les algorithmes.
 * Une brève histoire de l’algorithmique.
-* **TP** : Tutoriel pas-à-pas sur Scratch pour implémenter un jeu vidéo simple en rapport avec la ville de Saumur (manifestation Anjou vélo-vintage).
-* Discussion sur les langages de programmation : compilation, interprétation et transpilation.
+* **TP** : Jeu vidéo en Scratch.
+* Langages de programmation.
 * Définition formelle de l’algorithmique.
-* Introduction au langage Python : forces et faiblesses.
+* Introduction au langage Python.
 * Types numériques, expressions et objets en Python.
 * Variables et assignation.
 * **TP** : Utiliser Python dans Jupyter Notebook.
 
 ### 2. Les bases du langage Python
+
 * Conditions.
 * Chaînes de caractères et encodage de caractères.
 * Entrée et sortie standard.
-* **TP** : Utilisation d’un Environnement de Développement Intégré pour des traitements simples de chaînes de caractères.
-* Boucles "Tant Que" (while).
-* Boucles "Pour" (for) et "Bornes" (range).
-* **TP** : Implémentation d’algorithmes mathématiques simples (ex : min, max, multiplication avec boucle d’additions, PGCD, nombre premier).
+* **TP** : Environnement de Développement Intégré.
+* Boucles "Tant Que".
+* Boucles "Pour" et "Bornes".
+* **TP** : Algorithmes mathématiques simples.
 * Discussion sur les différences entre Scratch et Python.
-* Retour sur le 1er TP : demander aux étudiants de l’expliquer avec leurs nouvelles connaissances.
+* Retour sur le 1er TP.
 * Discussion sur le style, les commentaires et PEP 8.
 
 *Travail à la maison* : Retours sur Scratch et Python.
@@ -40,9 +43,9 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 ### 3. Programmes numériques simples et techniques de débogage
 
 * Correction du travail à la maison.
-* Introduction à la technique "devine-et-vérifie" (guess-and-check).
-* Introduction à la dichotomie (bisection search).
-* **TD** : Utilisation de la dichotomie pour calculer des racines et des logarithmes.
+* Introduction à la technique "devine-et-vérifie".
+* Introduction à la dichotomie.
+* **TD** : Utilisation de la dichotomie.
 * Introduction à l'instrumentation de code.
 * Introduction à l'algorithme Newton Raphson.
 * **TP** : Comparaison d'algorithmes ayant le même objectif.
@@ -56,17 +59,17 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Procédures : définition et appel.
 * Arguments.
 * Valeurs par défaut.
-* Variables locales et globales (scope).
+* Variables locales et globales.
 * Fonctions.
 * Spécifications et contrat.
-* Modularisation de code et conventions avec la fonction main.
+* Modularisation de code.
 * **TD** : Fonctions géométriques simples.
 * Nombre variable d'arguments
 * Retour de plusieurs résultats.
 * Un mot sur la récursivité.
 * Fonctions lambda.
-* Fonctions d'ordre supérieur : fonctions en tant qu'objets.
-* Programmation impérative et programmation fonctionnelle : notions de pureté et d'immutabilité.
+* Fonctions d'ordre supérieur.
+* Programmation impérative et programmation fonctionnelle.
 * Un mot sur les méthodes avec l'exemple du type `str`.
 * **TP** : Fonctions d'ordre supérieur.
 
@@ -75,29 +78,29 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 ### 5. Structures de données fondamentales en Python
 
 * Correction du travail à la maison.
-* Notion de conteneur (container).
-* Notion d'opérations CRUD (Create, Read, Update, Delete).
+* Notion de conteneur.
+* Notion d'opérations CRUD.
 * Tuples.
 * Ranges.
 * Lists.
 * **TD** : Opérations matricielles classiques.
-* Clonage et copie profonde (shallow & deep copy).
+* Clonage et copie profonde.
 * Sets.
 * Dictionaries.
 * Technique "Pythonic": comprehensions.
 * **TP** : Gestion d'un hôpital.
-* Structure personnalisée : notion de classe comme Tuple avancé.
+* Structure personnalisée.
 
 ### 6. Résolution de problèmes classiques
 
 * Listes chaînées.
 * **TP** : Manipulation d'une liste chaînée.
-* Queue et FIFO (First-In, First-Out).
-* Stack et LIFO (Last-In, First-Out).
+* Queue et FIFO.
+* Pile et LIFO.
 * Comparaison entre FIFO et LIFO.
 * **TP** : Queues de messages simple.
-* Rappels sur la théorie des ensembles : union, intersection, exclusion.
-* Rappels sur le calcul matriciel avancé : diagonalisation, inversion, méthode de Gauss.
+* Rappels sur la théorie des ensembles.
+* Rappels sur le calcul matriciel.
 
 *Travail à la maison* : Ensembles et calcul matriciel.
 
@@ -106,13 +109,13 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Correction du travail à la maison.
 * Intuition sur la complexité avec un exemple simple.
 * Réflexion sur la complexité temporelle et spatiale.
-* Notation $O(...)$.
-* Classes de complexité : constante, logarithmique, linéaire, log-linéaire, polynomiale.
+* Notation $O$.
+* Classes de complexité.
 * Comparaison des classes de complexité.
 * **TD** : Evaluation de compléxité.
-* Problèmes NP-complet : intuition et exemple.
-* Limites de l'étude de complexité : architecture matérielle moderne (CPU).
-* Approche pragmatique : mesures et benchmarks.
+* Problèmes NP-complet.
+* Limites de l'étude de complexité.
+* Approche pragmatique.
 * Discussion concernant la parallélisation sur CPU et GPU
 * Discussion sur la distribution de calcul dans un cluster et sur le Cloud.
 * Discussion sur les machines quantiques.
@@ -127,11 +130,11 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Assertions.
 * Invariants : préconditions et post-conditions.
 * **TP** : Exceptions dans une calculatrice.
-* Tests et qualité logicielle : boîte opaque et équipe QA.
+* Tests et qualité logicielle.
 * Tests en boîte transparente par les développeurs.
 * Automatisation des tests.
 * Tests unitaires.
-* Tests pilotant le développement (Test Driven Development).
+* Tests pilotant le développement.
 * Pyramide de tests.
 * **TP** : Ecriture de tests unitaires.
 
@@ -141,45 +144,45 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 
 * Correction du travail à la maison.
 * Retour sur les classes de problèmes usuelles en algorithmique.
-* Recherche en Python (opérateur `in`).
+* Recherche en Python.
 * Recherche linéaire.
-* Recherche binaire (binary search).
+* Recherche binaire.
 * **TP** : Recherche dans une collection.
-* Tri en Python (`sort` et `sorted`).
-* Algorithme de tri naïf : Bubble Sort.
-* Partition : diviser et conquérir (divide-and-conquer).
-* Quick Sort.
-* Merge Sort.
+* Tri en Python.
+* Algorithme de tri naïf.
+* Partition : diviser et conquérir.
+* Tri Rapide.
+* Tri Fusion.
 * **TP** : Tri de collections.
 
 ### 10. Code modulaire et « Pythonic »
 
-* Programmation modulaire : les modules.
+* Modules.
 * Tour d'horizon de la librairie standard Python.
-* Focus sur les fichiers : ouverture, fermeture, lecture et écriture.
+* Focus sur les fichiers.
 * **TP** : Initiation aux fichiers.
 * Introduction aux paquets et au gestionnaire de paquets `pip`.
-* Discussion sur les licences : GPL, MIT, BSD, Apache, etc.
-* **TP** : Courbes et traitement d'images.
+* Discussion sur les licences.
+* **TP** : Courbes avec MatPlotLib et traitement d'images avec NumPy.
 * Optionnel : Discussion sur la programmation orientée object.
 
-*Travail à la maison* : Plus de modules.
+*Travail à la maison* : Analyse statistique avec Panda.
 
 ### 11. Introduction aux graphes
 
 * Correction du travail à la maison.
-* Discussion sur les hiérarchies : exemples en entreprises, structure produits, compétitions, etc.
-* Arbre binaire : représentation.
-* Arbre N-aire : représentation.
+* Discussion sur les hiérarchies.
+* Arbre binaire.
+* Arbre N-aire.
 * Insertion et recherche dans un arbre binaire.
 * **TP** : Arbres binaires.
-* Discussion concernant les problèmes impliquant des graphes : GPS, réseaux sociaux, etc.
-* Introduction à la théorie des graphes : noeud, arc, cycle, digraph.
-* Digraph : représentation.
+* Discussion sur les graphes.
+* Introduction à la théorie des graphes.
+* Digraph.
 * Identification d'un cycle.
-* Recherche en profondeur (Depth-First Search).
-* Recherche en largeur (Breadth-First Search).
-* Graphe pondéré : représentation.
+* Recherche en profondeur.
+* Recherche en largeur.
+* Graphe pondéré.
 * Recherche de chemin critique.
 * **TP** : Graphes.
 
