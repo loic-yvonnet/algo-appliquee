@@ -118,7 +118,7 @@ On peut calculer le cosinus de `x` à l'aide d'une série infinie :
 $$
 \begin{align}
 \cos x & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[6mu]
-& = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
+       & = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
 \end{align}
 $$
 
