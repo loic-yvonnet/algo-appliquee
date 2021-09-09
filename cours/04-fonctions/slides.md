@@ -13,11 +13,13 @@ _paginate: false
 style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    font-size: 1.8rem;
   }
 
   section.title-section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
     color: #fff;
+    font-size: 2rem;
   }
 
   section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
@@ -40,8 +42,6 @@ Nous allons voir dans ce cours en quoi les fonctions sont importantes et comment
 -->
 
 ---
-
-<!-- _class: smaller-text -->
 
 # Plan
 
@@ -91,6 +91,8 @@ Vous n'avez pas besoin de changer le code source de votre calculatrice pour fair
 -->
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Comment combiner des algorithmes ?
 
@@ -202,6 +204,8 @@ Par conséquent, le message est affiché 3 fois dans la sortie standard.
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Suite d'instructions
 
 ```python
@@ -272,7 +276,9 @@ De même, pour carre(3), on a x == 3.
 
 ---
 
-# Argument pour le calcul de la racine cubique
+<!-- _class: smaller-text -->
+
+# <!--fit--> Argument pour le calcul de la racine cubique
 
 ```python
 def racine_cubique(x):
@@ -309,7 +315,7 @@ On a désormais des procédures réutilisables et utiles.
 
 ---
 
-# Plusieur arguments
+# Plusieurs arguments
 
 ```python
 def somme(a, b)
@@ -333,7 +339,9 @@ On peut évidemment passer autant d'arguments que nécessaire.
 
 ---
 
-# Passage par valeur et passage par référence
+<!-- _class: smaller-text -->
+
+# <!--fit--> Passage par valeur et passage par référence
 
 - Certains langages (comme C++ ou C#) font la distinction entre le passage d'arguments **par valeur** et le passage **par référence**.
 - En Python, seul le passage par valeur existe.
@@ -1088,8 +1096,6 @@ On peut utiliser la même commande pour obtenir les docstring que l'on a défini
 
 ---
 
----
-
 <!-- _class: title-section -->
 
 # <!--fit--> Modularisation de code 
@@ -1175,6 +1181,8 @@ if __name__ == "__main__":
     # Exécuté uniquement si le script est lancé en ligne de commande
     main()
 ```
+
+---
 
 <!-- _class: title-section -->
 
@@ -1316,7 +1324,7 @@ def debit(diff_poids, diff_temps, periode=1, unites_par_kg=1):
 
 ```python
 def affiche_parametres(**kwargs):
-    """
+    """Affiche simplement les paramètres d'entrée."""
     for cle, valeur in kwargs.items():
         print(f"{cle} : {valeur}")
 
@@ -1453,7 +1461,7 @@ Attention : cette page contient un git animé inactif dans la version pdf.
 
 # Fractal et récursivité
 
-![bg right:45% 90%](https://en.wikipedia.org/wiki/Fractal#/media/File:Von_Koch_curve.gif)
+![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif)
 
 - Un fractal est récursif dans le sens où il se répète lui-même.
 - Le flocon de Von Koch ci-contre part d'un triangle et lui applique plusieurs fois la même fonction.
@@ -1538,7 +1546,7 @@ On va simplifier cette définition avant de la tester puis de l'instrumenter.
 
 ---
 
-# Simplification de l'exemple précédent
+# <!--fit--> Simplification de l'exemple précédent
 
 - Pour a = 2, b = 1, b0 = 0, c = 1 :
 
@@ -1566,7 +1574,7 @@ print(resultat)
 
 ---
 
-# Instrumentation de l'exemple précédent
+# <!--fit--> Instrumentation de l'exemple précédent
 
 ```python
 def f(N):
@@ -1668,7 +1676,7 @@ On va voir ce que sont ces fonctions d'ordre supérieur.
 
 # Definition
 
-- Une fonction d'ordre supérieur est une fonction qui fait au moins l'une des 2 choses suivantes :
+- Une **fonction d'ordre supérieur** est une fonction qui fait au moins l'une des 2 choses suivantes :
     * Prend une fonction comme argument.
     * Renvoie une fonction comme résultat.
 
@@ -1721,19 +1729,22 @@ a = 1 ; b = 2
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Généralisation de la dichotomie
 
 ```python
 def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
     """Cacule la racine r telle que f(r) - x = 0 par dichotomie.
 
-    Généralisation de l'algorithme de dichotomie sur un interval
-    [debut ; fin] avec une fonction d'évaluation f pour le calcul d'une
-    racine r. La racine r doit être dans l'interval de recherche, sinon
-    la condition de fin de l'algorithme n'est pas garantie.
+    Généralisation de l'algorithme de dichotomie sur un interval [debut ; fin] avec 
+    une fonction d'évaluation f pour le calcul d'uneracine r. La racine r doit être 
+    dans l'interval de recherche, sinon la condition de fin de l'algorithme n'est
+    pas garantie.
     x - nombre flottant dont on recherche la racine | f(r) - x | < epsilon.
-    f - fonction d'évaluation prenant et renvoyant un flottant.
-    debut - debut de l'interval de recherche de r.
+    f - fonction d'évaluation prenant et renvoyant un flottant. Cette fonction doit
+        être dérivable sur l'interval [debut ; fin].
+    debut - début de l'interval de recherche de r.
     fin - fin de l'interval de recherche de r.
     epsilon - erreur acceptable qui doit être strictement supérieur à 0.
     Renvoie la racine r telle que | f(r) - x | < epsilon.
@@ -1746,7 +1757,13 @@ def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
             fin = r
         r = (debut + fin) / 2
     return r
+```
 
+---
+
+# Recherche dans un interval avec dichotomie d'ordre supérieur
+
+```python
 def affine(x):
     """Renvoie la valeur en entrée."""
     return x
@@ -1796,10 +1813,16 @@ Ces fonctions internes ne devraient jamais faire plus de 1 à 3 lignes.
 
 ---
 
-# Générateur de fonction
+# Générateur de fonction (1/2)
 
 - Le principe d'un générateur de fonction : on retourne une nouvelle fonction en capturant les entrées.
 - Exemple : série mathématiques paramétrable.
+
+---
+
+<!-- _class: smaller-text -->
+
+# Générateur de fonction (2/2)
 
 ```python
 def suite(a=1, b=0, c=1, b0=0):
@@ -1858,9 +1881,9 @@ Les fonction lambda sont intéressantes et pratiques.
 # Fonctions lambda dans les langages impératifs
 
 * Une fonction lambda :
-    * n'a pas de nom - elle est anonyme.
+    * n'a pas de nom - elle est **anonyme**.
     * est courte.
-* Les fonctions lambda sont utilisés dans la programmation d'ordre supérieur.
+* Les fonctions lambda sont utilisés dans la **programmation d'ordre supérieur**.
 * Ces fonctions offrent une syntaxe plus légère pour les fonctions internes.
 
 ---
@@ -1868,7 +1891,7 @@ Les fonction lambda sont intéressantes et pratiques.
 # Fonction lambda en Python
 
 - Le mot clé `lambda` est suivi d'une liste de paramètres puis d'une expression.
-- `lambda liste_paramètres : expression`
+- Cette expression est la valeur de retour de la fonction lambda.
 - Exemple :
 
 ```python
@@ -1900,6 +1923,8 @@ print(resultat)
 
 ---
 
+<!-- _class: smaller-text --->
+
 # Générateur de suite avec lambda
 
 ```python
@@ -1920,10 +1945,17 @@ def suite(a=1, b=0, b0=0):
         return lambda N : (a ** N) * (b0 - r) + r
 
 ma_suite = suite(a=2, b=1)
-print(f"f(0) = {ma_suite(0)}")
 print(f"f(1) = {ma_suite(1)}")
 print(f"f(2) = {ma_suite(2)}")
 print(f"f(3) = {ma_suite(3)}")
+```
+
+:arrow_down:
+
+```
+f(1) = 1.0
+f(2) = 3.0
+f(3) = 7.0
 ```
 
 <!--
@@ -1933,14 +1965,17 @@ C'est la raison pour laquelle nous utilisons ici le calcul du terme général d'
 Il s'agit de la version itérative de l'algorithme récursif vu dans les diapositives précédentes.
 -->
 
-:arrow_down:
+---
 
-```
-f(0) = 0.0
-f(1) = 1.0
-f(2) = 3.0
-f(3) = 7.0
-```
+<!-- _class: title-section -->
+
+# <!--fit--> TP : Fonctions d'ordre supérieur
+
+---
+
+### TP : Fonctions d'ordre supérieur
+
+[**Lien** vers le sujet de TP](./tp-07-fonctions-sup.html).
 
 ---
 
@@ -1954,7 +1989,7 @@ f(3) = 7.0
 
 ---
 
-# Contraintes des langages fonctionnels
+# <!--fit--> Contraintes des langages fonctionnels
 
 * Dans un langage fonctionnel :
     * Les variables sont **immutables**. Elles ne peuvent pas changer de valeur.
@@ -1964,29 +1999,35 @@ f(3) = 7.0
         * Il n'y a pas d'effet de bord : lecture depuis un fichier, entrée console, etc.
 * Python n'est pas un langage fonctionnel : on peut changer les valeurs des variables et accéder à des variables globales.
 * Il est possible d'écrire du code fonctionnel avec Python en appliquant les principes ci-dessus.
-* Quelques langages fonctionnels notables :
-    - Haskell
-    - Scala
-    - F#
-    - Erlang
 
 ---
 
-# Pourquoi ces contraintes supplémentaires ?
+# Quelques langages fonctionnels notables
 
-![bg right:45% 90%](https://en.wikipedia.org/wiki/Spaghetti#/media/File:Spaghettata.JPG)
-![bg right:45% 90%](https://en.wikipedia.org/wiki/Spider-Man#/media/File:Web_of_Spider-Man_Vol_1_129-1.png)
-
-* De grands pouvoirs impliquent de grandes responsabilités (oncle Ben Parker).
-* Programmation impérative :
-    * Etat **global** et **effets de bords** parfois difficiles à maîtriser.
-    * Pour comprendre une fonction : il faut potentiellement comprendre l'état global du programme.
-    * Un code non maîtrisé peut devenir un "plat de spaghetti".
-* La programmation fonctionnelle tente de remédier à ces problèmes en ayant une **approche plus proche des mathématiques**.
+- Haskell
+- Scala
+- F#
+- Erlang
 
 ---
 
-# Pourquoi tout le monde ne fait pas du fonctionnel ?
+# Programmation impérative
+
+![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghettata.JPG)
+
+* Etat **global** et **effets de bords** parfois difficiles à maîtriser.
+* Pour comprendre une fonction : il faut potentiellement comprendre l'état global du programme.
+* Un code non maîtrisé peut devenir un "plat de spaghetti".
+
+---
+
+# Solution fonctionnelle
+
+- La programmation fonctionnelle tente de remédier à ces problèmes en ayant une **approche plus proche des mathématiques**.
+
+---
+
+# <!--fit--> Pourquoi tout le monde ne fait pas du fonctionnel ?
 
 * **Performances** :
     - Les langages fonctionnels sont interprétés et comportent tous un garbage collector.
@@ -2009,6 +2050,11 @@ Les langages fonctionnels sont extrêmement intéressants mais certains cas d'us
 * **Non**.
 * Le langage de programmation C est impératif et il est très facile à utiliser de manière incorrecte.
 * L'interpréteur **CPython** est implémenté dans le langage de programmation C.
+
+---
+
+# Kernel Linux
+
 * Le **kernel Linux** est implémenté dans le langage de programmation C.
 * Le kernel Linux fait **plusieurs millions de ligne de code**.
 * Le kernel Linux est très propre et suit un **standard de programmation** très strict.
@@ -2033,17 +2079,7 @@ Les langages fonctionnels sont extrêmement intéressants mais certains cas d'us
 
 ---
 
-# Les chaînes de caractères
-
-* Les chaînes de caractère sont représentées par le type `str`.
-* Il est possible d'appliquer des fonctions sur des chaînes de caractères.
-* Ces fonctions sont appelées d'une manière particulière :
-    - `chaine.fonction()`
-* Ces fonctions rattachées à un type spécifiques s'appellent des *méthodes**.
-
----
-
-# Exemple
+# Méthodes sur `str` (1/2)
 
 ```python
 chaine = "bonjour, monde"
@@ -2068,15 +2104,12 @@ Bonjour, monde
 
 ---
 
-<!-- _class: title-section -->
+# Méthodes sur `str` (2/2)
 
-# <!--fit--> TP : Fonctions d'ordre supérieur
-
----
-
-### TP : Fonctions d'ordre supérieur
-
-[**Lien** vers le sujet de TP](./tp-07-fonctions-sup.html).
+* Les chaînes de caractères sont représentées par le type `str`.
+* On a utilisé une syntaxe particulière pour appeler les fonctions `upper`, `capitalize` et `find` qui sont rattachées au type `str`.
+* Ces fonctions rattachées à un type spécifiques s'appellent des **méthodes**.
+* Chaque type peut définir son propre jeu de méthodes qui lui sont propres.
 
 ---
 
