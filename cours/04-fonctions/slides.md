@@ -265,7 +265,7 @@ carre(3)
 ```
 
 <!--
-La valeur de la variable x passée en argument de la fonction carre est remplacée pour le nombre au niveau de l'appel de procédure.
+La valeur de la variable x passée en argument de la fonction carre est remplacée par le nombre au niveau de l'appel de procédure.
 Ainsi, pour carre(2), on a x == 2.
 De même, pour carre(3), on a x == 3.
 -->
@@ -330,6 +330,41 @@ somme(3, 4)
 <!--
 On peut évidemment passer autant d'arguments que nécessaire.
 -->
+
+---
+
+# Passage par valeur et passage par référence
+
+- Certains langages (comme C++ ou C#) font la distinction entre le passage d'arguments **par valeur** et le passage **par référence**.
+- En Python, seul le passage par valeur existe.
+- En C#, par défaut, les arguments sont également passés par valeur, comme en Python.
+- Le passage par référence permet de modifier le paramètre d'entrée.
+- L'exemple suivant est en C# :
+
+```csharp
+static void passage_par_valeur(int a)
+{
+    a = a + 1;
+    Console.WriteLine(a); // affiche 1
+}
+
+static void passage_par_reference(ref int a)
+{
+    a = a + 1;
+    Console.WriteLine(a); // affiche 1
+}
+
+static void Main()
+{
+    x = 0;
+
+    passage_par_valeur(x); // passe une copie de x
+    Console.WriteLine(x);  // affiche 0
+
+    passage_par_reference(ref x); // passe une référence vers x
+    Console.WriteLine(x);         // affiche 1
+}
+```
 
 ---
 
@@ -639,7 +674,7 @@ def nom_de_la_fonction(liste_de_parametres):
 
 - Lorsque l'on appelle (ou *invoque*) une fonction :
     - les expressions qui forment les paramètres sont évalués.
-    - les paramètres formels de la fonction sont liés aux valeurs de ces expressions.
+    - les paramètres formels de la fonction sont liés aux valeurs de ces expressions (passage par valeur).
     - le point d'exécution est déplacé depuis le point d'invocation à la première instruction du corps de la fonction.
     - le corps de la fonction est exécuté :
         - jusqu'à une instruction `return`, auquel cas la valeur de la fonction devient la valeur de cette expression `return`,
@@ -726,7 +761,7 @@ resultat = somme(r2, r3)
 ```
 
 <!--
-Le code initial pour résoudre ce problème était beaucoup plus conséquent, comme vous pourriez le voir en revenant sur les première diapositives.
+Le code initial pour résoudre ce problème était beaucoup plus conséquent, comme vous pourriez le voir en revenant sur les premières diapositives.
 -->
 
 ---
@@ -753,6 +788,43 @@ resultat = converti_nombre("un")
 ```
 1
 ```
+
+<!--
+L'emploi, ou non, de plusieurs returns n'affecte pas les performances d'exécution.
+Il existe des débats concernant l'élégance de l'emploi de plusieurs returns.
+Il s'agit essentiellement d'une histoire de préférence personnelle.
+Souvent, une fonction écrit avec plusieurs returns comporte moins de variables et est plus simple à comprendre et à maintenir.
+En effet, une fonction équivalente avec un unique return devrait employer au moins une variable supplémentaire pour sauvegarder le résultat à renvoyer.
+-->
+
+---
+
+# Retour de plusieurs résultats
+
+```python
+def ajoute_soustrait_et_multiplie(a, b):
+    """Renvoie a + b, a - b et a * b."""
+    somme = a + b
+    difference = a - b
+    produit = a * b
+    
+    return somme, difference, produit
+
+ajout, diff, prod = ajoute_soustrait_et_multiplie(3, 2)
+print(f"somme : {ajout}; différence : {diff} ; produit : {prod}")
+```
+
+:arrow_down:
+
+```
+somme : 5; différence : 1 ; produit : 6
+```
+
+<!--
+Il est possible de retourner plusieurs résultats en les séparant par des virgules.
+On les récupère de la même manière au niveau de l'appel de fonction.
+Nous verrons d'autres exemples plus loin dans ce cours.
+-->
 
 ---
 
@@ -864,7 +936,7 @@ def racine_carree(x, epsilon=0.000001):
 
 # Vérification des préconditions
 
-- Il existe 2 écoles :
+- Il existe 2 approches :
     * Programmation **offensive** : les préconditions sont décrites en commentaires mais non vérifiées.
         - Avantages : performance et simplificité.
         - Inconvénients : robustesse.
@@ -887,6 +959,10 @@ def divise(a, b):
     return a / b
 ```
 
+<!--
+Aucune vérification n'est effectuée, mais les préconditions sont bien spécifiées : il s'agit donc de l'approche offensive.
+-->
+
 ---
 
 # Division défensive
@@ -905,6 +981,10 @@ def divise(a, b, epsilon=0.000001):
 
     return a / b
 ```
+
+<!--
+On évite le cas de la division par zéro en effectuant une vérification préalable : il s'agit de l'approche défensive.
+-->
 
 ---
 
@@ -929,6 +1009,14 @@ def divise(a, b, epsilon=0.000001):
 
     return a / b
 ```
+
+<!--
+En plus d'empêcher la division par zéro, les types des entrées sont vérifiés dynamiquement.
+Cette approche est rarement souhaitable car les performances d'exécution peuvent être impactées négativement.
+Par ailleurs, le code devient plus difficile à lire et à comprendre.
+Il existe une autre manière plus élégante et plus efficace de vérifier les types en Python.
+Nous aborderons cette approche vers la fin de cette formation.
+-->
 
 ---
 
@@ -990,6 +1078,20 @@ On peut utiliser la même commande pour obtenir les docstring que l'on a défini
 
 <!-- _class: title-section -->
 
+# TD : Fonctions géométriques simples
+
+---
+
+### TD : Fonctions géométriques simples
+
+[**Lien** vers le sujet de TD](./td-02-fonctions-geom.html).
+
+---
+
+---
+
+<!-- _class: title-section -->
+
 # <!--fit--> Modularisation de code 
 
 ##### et conventions avec la fonction main
@@ -1040,11 +1142,17 @@ A la place, nous avons désormais une fonction racine carrée propre et réutili
 
 - On emploie le mot clé `import` pour utiliser une bibliothèque de fonctions.
 - Par exemple, si on a un script `racine.py`, on utilise :
-
 ```python
 import racine
 
 print(racine_carree(4))
+```
+
+- Autre exemple avec `math.cos` :
+```python
+from math import cos
+
+print(cos(0))
 ```
 
 ---
@@ -1068,31 +1176,163 @@ if __name__ == "__main__":
     main()
 ```
 
----
-
-<!-- _class: title-section -->
-
-# TD : Fonctions géométriques simples
-
----
-
-### TD : Fonctions géométriques simples
-
-[**Lien** vers le sujet de TD](./td-02-fonctions-geom.html).
-
----
-
 <!-- _class: title-section -->
 
 # <!--fit--> Nombre variable d'arguments
 
 ---
 
-Exemple avec la fonction print
-Exemple avec la fonction sum
-Intérêt
-Syntaxe
-Exemples
+# Fonction print
+
+```python
+arg1 = "La fonction print"
+arg2 = "peut prendre"
+arg3 = "N"
+arg4 = "arguments"
+print(arg1, arg2, arg3, arg4)
+```
+
+:arrow_down:
+
+```
+La fonction print peut prendre N arguments.
+```
+
+<!--
+La fonction print prend un nombre variable (en anglais : variadic) d'arguments.
+-->
+
+---
+
+# Fonction max
+
+```python
+max_pair = max(1, 5)
+max_serie = max(4, 8, 0, -1, 4, 5)
+print(f"{max_pair}\n{max_serie}")
+```
+
+:arrow_down:
+
+```
+5
+8
+```
+
+<!--
+La fonction max prend également un nombre variable d'arguments.
+En pratique, de nombreuses fonctions en Python offre cette possibilité.
+-->
+
+---
+
+# Intérêt
+
+- La capacité à passer une liste variable d'arguments offre de la **fléxibilité** pour l'appelant.
+- La sémantique au niveau de l'appelant est claire.
+- Il vous est possible de définir vos propres fonctions à nombre variable d'arguments positionnels.
+ 
+---
+
+# Syntaxe
+
+On utilise l'**opérateur \* de déballage** (*unpacking operator* en anglais).
+
+```python
+def moyenne(*arguments):
+    """Renvoie la moyenne des arguments.
+
+    arguments - doit comporter au moins une valeur et toutes les valeurs sont numériques.
+    Retourne la moyenne de ces arguments.
+    """
+    total = 0
+    for argument in arguments:
+        total += argument
+    
+    return total / len(arguments)
+
+resultat = moyenne(1, 2, 3, 4, 5, 6, 7, 8, 9)
+print(resultat)
+```
+
+:arrow_down:
+
+```
+5.0
+```
+
+---
+
+# Autre exemple
+
+```python
+def log(message, *valeurs):
+    """Affiche dans la sortie standard le message et la liste des valeurs.
+    
+    message - chaîne de caractères à afficher.
+    valeurs - liste d'arguments variable de valeurs à afficher.
+    """
+    if not valeurs:
+        print(message)
+    else:
+        valeurs_str = str(valeurs[0])
+        for valeur in valeurs[1:]:
+            valeurs_str += ", " + str(valeur)
+        print(f"{message} : {valeurs_str}")
+
+log("Bonjour")
+log("Mes valeurs", 7, 42, 3.14)
+```
+
+:arrow_down:
+
+```
+Bonjour
+Mes valeurs : 7, 42, 3.14
+```
+
+<!--
+Contrairement au précédent exemple, celui-ci supporte le cas où la liste variable d'argument est vide.
+-->
+
+---
+
+# Arguments positionnels et nommés
+
+- Il est possible d'appeler une fonction avec les arguments dans l'ordre de leur déclaration. Il s'agit d'arguments positionnels.
+- Il est également possible d'appeler une fonction en spécifiant les noms des arguments et leurs valeurs. Il s'agit d'arguments nommés.
+
+```python
+def debit(diff_poids, diff_temps, periode=1, unites_par_kg=1):
+    return ((diff_poids * unites_par_kg) / diff_temps) * periode
+```
+
+- Les 2 premiers arguments sont positionnels, et les 2 derniers sont nommés.
+- Il est possible de définir des fonctions avec un nombre variable d'arguments nommés.
+
+---
+
+# Nombre variable d'arguments nommés
+
+```python
+def affiche_parametres(**kwargs):
+    """
+    for cle, valeur in kwargs.items():
+        print(f"{cle} : {valeur}")
+
+affiche_parametres(a=1, b=3, c=5)
+affiche_parametres(prenom="Louise", nom="Clark")
+```
+
+:arrow_down:
+
+```
+a : 1
+b : 3
+c : 5
+prenom : Louise
+nom : Clark
+```
 
 ---
 
@@ -1102,9 +1342,90 @@ Exemples
 
 ---
 
-Intérêt
-Syntaxe
-Exemples
+# Intérêt
+
+- Nous avons vu que le passage d'arguments se fait par valeur en Python.
+- Il est donc nécessaire de retourner les résultats, et il peut y en avoir plusieurs.
+- Nous avons vu des exemples avec les vecteurs lors du TP précédent.
+
+---
+
+# Un autre exemple de retour de plusieurs résultats
+
+```python
+def echange(premier, second):
+    return second, premier
+
+un = 1
+deux = 2
+un, deux = echange(un, deux)
+print(f"{un}, {deux}")
+```
+
+:arrow_down:
+
+```
+2, 1
+```
+
+---
+
+# Inintérêt d'un sous-ensemble de résultats
+
+- Il peut arriver que certains résultats ne soient pas pertinents dans notre contexte d'appel.
+- Une convention en Python consiste à utiliser `_` (underscore) pour une variable dont la valeur ne nous intéresse pas.
+
+```python
+def quelques_elements():
+    return 1, 2, 3
+
+un, _, trois = quelques_elements()
+print(f"un : {un} ; trois : {trois}")
+```
+
+:arrow_down:
+
+```
+un : 1 ; trois : 3
+```
+
+---
+
+# Opérateur de déballage pour retours de fonction
+
+Vous pouvez utiliser l'unpacking operator lorsqu'une fonction retourne un grand nombre de résultats.
+
+```python
+def longue_liste():
+    return 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+un, *entre, neuf = longue_liste()
+print(f"un : {un} ; neuf : {neuf} ; nombre d'autres : {len(entre)}")
+```
+
+:arrow_down:
+
+```
+un : 1 ; neuf : 9 ; nombre d'autres : 7
+```
+
+---
+
+# Autre exemple
+
+```python
+def longue_liste():
+    return 1, 2, 3, 4, 5, 6, 7, 8, 9
+
+un, deux, *autres = longue_liste()
+print(f"un : {un} ; deux : {deux} ; nombre d'autres : {len(autres)}")
+```
+
+:arrow_down:
+
+```
+un : 1 ; deux : 2 ; nombre d'autres : 7
+```
 
 ---
 
@@ -1114,8 +1435,104 @@ Exemples
 
 ---
 
-GNU is Not Unix
-WINE Is Not an Emulator
+# Fractal
+
+![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Mandel_zoom_00_mandelbrot_set.jpg/640px-Mandel_zoom_00_mandelbrot_set.jpg)
+![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/a/a4/Mandelbrot_sequence_new.gif)
+
+- Un fractal est un motif géométrique dont la forme se répète indéfiniment à différentes échelles.
+- L'exemple ci-contre est la séquence de Mandelbrot.
+
+<!--
+La récursivité est un concept avec lequel les étudiants ont souvent des difficultés au départ.
+Il est utile d'introduire cette notion avec une intuition géométrique puis un exemple plus textuel avant de passer à une définition plus formelle.
+Attention : cette page contient un git animé inactif dans la version pdf.
+-->
+
+---
+
+# Fractal et récursivité
+
+![bg right:45% 90%](https://en.wikipedia.org/wiki/Fractal#/media/File:Von_Koch_curve.gif)
+
+- Un fractal est récursif dans le sens où il se répète lui-même.
+- Le flocon de Von Koch ci-contre part d'un triangle et lui applique plusieurs fois la même fonction.
+- On dit que cette fonction est appliquée de manière récursive.
+
+<!--
+Attention : cette page contient un git animé inactif dans la version pdf.
+-->
+
+---
+
+# Accronymes récursifs
+
+- Ces accronymes sont récursifs :
+    - **G**NU is **N**ot **U**nix
+    - **W**INE **I**s **N**ot an **E**mulator
+    - **C**URL **U**RL **R**equest **L**ibrary
+    - **P**HP **H**ypertext **P**reprocessor
+    - **G**RPC **R**emote **P**rocedure **C**all
+    - **Y**AML **A**in't **M**arkup **L**anguage
+- On les dit récursifs car ils se répètent indéfiniment.
+
+---
+
+# Définition : fonction récursive
+
+- Une fonction est **récursive** si **elle s'appelle elle-même**.
+- La récursion peut être **directe** si la fonction s'appelle elle-même directement.
+- La récursion peut être **indirecte** si la fonction appelle une séquence de fonctions qui fini par appeler la fonction initiale.
+- Une fonction doit avoir une **condition de fin**. Sinon, son exécution prendrait un temps infini.
+
+---
+
+# Suites mathématiques
+
+- En mathématiques, on peut définir la plupart des suites arithmético-géométriques de la manière suivante :
+
+$$
+\forall \{a, b, b_0, c, N\} \in \mathbb{N}^5,
+\begin{cases}
+f(0) = b_0 \\
+f(N) = a f(N-1)^{c} + b
+\end{cases}
+$$
+
+- Il s'agit d'une **définition récursive** car l'évaluation de la fonction au rang N dépend des valeurs des rangs inférieurs.
+
+<!--
+On défini une valeur constante pour le premier élément.
+On défini la valeur d'un élément par rapport aux éléments précédents.
+-->
+
+---
+
+# En Python
+
+- En reprenant la définition de la suite mathématiques :
+
+```python
+def f(N, a=1, b=0, c=1, b0=0):
+    """Calcule la Nième valeur de la suite arithmético-géométrique f.
+
+    f est définie telle que f(0) = b0, et f(N) = a . f(N-1)^c + b sinon.
+    N - nombre entier strictement positif.
+    a - nombre entier utilisé comme multiplicateur géométrique.
+    b - nombre entier utilisé comme raison arithmétique.
+    c - nombre entier comme puissance.
+    b0 - nombre entier constituant le début de la suite.
+    Retourne la Nième valeur de la suite.    
+    """
+    if N == 0:
+        return b0
+    else:
+        return a * (f(N - 1) ** c) + b
+
+resultat = f(3)
+print(resultat)
+```
+
 Fractal
 Définition comme en mathématiques : f(0) = 1, f(N) = 3 * f(N-1) + 4.
 Exemple simple
