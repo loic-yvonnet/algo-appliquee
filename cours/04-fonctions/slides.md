@@ -1527,18 +1527,122 @@ def f(N, a=1, b=0, c=1, b0=0):
     if N == 0:
         return b0
     else:
-        return a * (f(N - 1) ** c) + b
+        return a * (f(N - 1, a, b, c, b0) ** c) + b
+```
+
+<!--
+Cette définition est identique à la définition mathématiques.
+Par contre, cette définition est complexifiée inutilement par la nécessité de passer les valeurs de a, b, c et b0 aux appels récursifs de f.
+On va simplifier cette définition avant de la tester puis de l'instrumenter.
+-->
+
+---
+
+# Simplification de l'exemple précédent
+
+- Pour a = 2, b = 1, b0 = 0, c = 1 :
+
+```python
+def f(N):
+    """Calcule la Nième valeur de la suite arithmético-géométrique f.
+
+    f est définie telle que f(0) = 0, et f(N) = 2 . f(N-1) + 1 sinon.
+    Retourne la Nième valeur de la suite.    
+    """
+    if N == 0:
+        return 0
+    else:
+        return 2 * f(N - 1) + 1
 
 resultat = f(3)
 print(resultat)
 ```
 
-Fractal
-Définition comme en mathématiques : f(0) = 1, f(N) = 3 * f(N-1) + 4.
-Exemple simple
-Attention à la stack : exemple de stack overflow
-Attention à la stack => on empile tout à chaque call récursif => utilisation massive de mémoire
-Conclusion : c'est beau, mais on évite en général
+:arrow_down:
+
+```
+7
+```
+
+---
+
+# Instrumentation de l'exemple précédent
+
+```python
+def f(N):
+    if N == 0:
+        print("f(0) = 0")
+        return 0
+    else:
+        precedent = f(N - 1)
+        actuel = 2 * precedent + 1
+        print(f"f({N}) = {actuel}")
+        return actuel
+
+resultat = f(3)
+```
+
+:arrow_down:
+
+```
+f(0) = 0
+f(1) = 1
+f(2) = 3
+f(3) = 7
+```
+
+<!--
+On voit bien ici que f(3) mène à l'évaluation de f(2), qui mène à l'évaluation de f(1), qui mène à l'évaluation de f(0).
+f(0) contient la condition de fin de la récursivité. On le voit car f(0) n'appelle pas f.
+Une fois que f(0) est affiché et évalué, on remonte la pile d'appels et on effectue les calculs.
+On calcule d'abord f(1) = 2 * 0 + 1 = 1, et on l'affiche.
+On calcule ensuite f(2) = 2 * 1 + 1 = 3, et on l'affiche.
+On calcule enfin f(3) = 2 * 3 + 1 = 7, et on l'affiche.
+-->
+
+---
+
+# Limites de la pile
+
+```python
+def f(N):
+    if N == 0:
+        return 0
+    else:
+        precedent = f(N - 1)
+        actuel = 2 * precedent + 1
+        return actuel
+
+resultat = f(1000000)
+```
+
+:arrow_down:
+
+```
+RecursionError: maximum recursion depth exceeded
+Fatal Python error: _Py_CheckRecursiveCall: Cannot recover from stack overflow.
+```
+
+<!--
+A chaque appel récursif, le contexte d'appel doit être sauvegardé.
+Cela augmente progressivement la quantité de mémoire nécessaire au calcul.
+Par ailleur, la callstack (pile d'appels) est limitée par le système d'exploitation.
+Lorsque l'on appelle f avec 1 000 000, on doit avoir une profondeur de pile d'appels de 1 million.
+Or, le système d'exploitation utilisé ne permet pas d'avoir une telle prodondeur.
+Par conséquent, l'exécution s'arrête lorsque l'on atteint les limites du système d'exploitation.
+Ce type de problème s'appelle : stack overflow (surchage de pile d'appels).
+-->
+
+---
+
+# Notes concernant la récursivité
+
+- Certains problèmes ont une définition naturellement récursive.
+- Ces problèmes sont plus faciles à résoudre en utilisant la récursivité.
+- Parfois, les solutions itératives équivalentes sont très difficiles à trouver.
+- Les solutions itératives sont presque toujours meilleures car :
+    - Elles n'engendrent pas de *stack overflow*.
+    - Elles nécessitent souvent moins de mémoire car le contexte d'appel n'a pas à être sauvegardé.
 
 ---
 
@@ -1550,12 +1654,182 @@ Conclusion : c'est beau, mais on évite en général
 
 ---
 
-Intérêt = généricité && réutilisation
-Tout est objet : def foo(): pass; type(foo)
-Assignation d'une fonction à une variable
-Réassignation d'une autre fonction à une variable
-Passage d'une fonction comme argument d'une fonction
-Générateur de fonction : on retourne une nouvelle fonction
+# Intérêt
+
+* Un **code propre** est écrit en fonction d'algorithmes et de structures de données.
+* Lorsque l'on écrit des bibliothèques de fonctions, on souhaite que les fonctions fournies puissent être utilisées dans une grande variété de contexte.
+* Les **fonctions d'ordre supérieur** sont un outil puissant pour **réutiliser** des algorithmes et à les **généraliser**.
+
+<!--
+On va voir ce que sont ces fonctions d'ordre supérieur.
+-->
+
+---
+
+# Definition
+
+- Une fonction d'ordre supérieur est une fonction qui fait au moins l'une des 2 choses suivantes :
+    * Prend une fonction comme argument.
+    * Renvoie une fonction comme résultat.
+
+---
+
+# Tout est objet
+
+- En Python, tout est objet.
+- En particulier, une fonction est un objet.
+
+```python
+def foo():
+    pass
+
+foo_type = type(foo)
+print(f"{foo_type}")
+```
+
+:arrow_down:
+
+```
+<class 'function'>
+```
+
+---
+
+# Assignation d'une fonction à une variable
+
+```python
+def f():
+    return 1
+
+def g():
+    return 2
+
+fonction = f   # la variable "function" est liée à f
+a = fonction() # f est appelée
+
+fonction = g   # la variable "function" est liée à g
+b = fonction() # g est appelée
+
+print(f"a = {a} ; b = {b}")
+```
+
+:arrow_down:
+
+```
+a = 1 ; b = 2
+```
+
+---
+
+# Généralisation de la dichotomie
+
+```python
+def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
+    """Cacule la racine r telle que f(r) - x = 0 par dichotomie.
+
+    Généralisation de l'algorithme de dichotomie sur un interval
+    [debut ; fin] avec une fonction d'évaluation f pour le calcul d'une
+    racine r. La racine r doit être dans l'interval de recherche, sinon
+    la condition de fin de l'algorithme n'est pas garantie.
+    x - nombre flottant dont on recherche la racine | f(r) - x | < epsilon.
+    f - fonction d'évaluation prenant et renvoyant un flottant.
+    debut - debut de l'interval de recherche de r.
+    fin - fin de l'interval de recherche de r.
+    epsilon - erreur acceptable qui doit être strictement supérieur à 0.
+    Renvoie la racine r telle que | f(r) - x | < epsilon.
+    """
+    r = (debut + fin) / 2
+    while abs(f(r) - x) >= epsilon:
+        if f(r) < x:
+            debut = r
+        else:
+            fin = r
+        r = (debut + fin) / 2
+    return r
+
+def affine(x):
+    """Renvoie la valeur en entrée."""
+    return x
+
+resultat = dichotomie(50, affine)
+print(resultat)
+```
+
+:arrow_down:
+
+```
+49.999237060546875
+```
+
+---
+
+# Racine carrée avec dichotomie d'ordre supérieur
+
+```python
+def racine_carree(x, epsilon=0.001):
+    """Renvoie la racine carrée de x."""
+    
+    def carre(x):
+        return x ** 2
+
+    debut = 0
+    fin = max(1, x)
+
+    return dichotomie(x, carre, debut, fin, epsilon)
+
+resultat = racine_carree(25)
+print(resultat)
+```
+
+:arrow_down:
+
+```
+4.9999237060546875
+```
+
+<!--
+Comme vous pouvez le voir, il est possible de définir des sous-fonctions.
+Ces fonctions ne peuvent être appelées que depuis leur contexte directe.
+Elles sont invisibles de l'extérieur.
+Ces fonctions internes ne devraient jamais faire plus de 1 à 3 lignes.
+-->
+
+---
+
+# Générateur de fonction
+
+- Le principe d'un générateur de fonction : on retourne une nouvelle fonction en capturant les entrées.
+- Exemple : série mathématiques paramétrable.
+
+```python
+def suite(a=1, b=0, c=1, b0=0):
+    """Renvoie la suite f telle que f(0) = b0, et f(N) = a . f(N-1)^c + b.
+
+    a - nombre entier utilisé comme multiplicateur géométrique.
+    b - nombre entier utilisé comme raison arithmétique.
+    c - nombre entier comme puissance.
+    b0 - nombre entier constituant le début de la suite.
+    Retourne une fonction prenant un paramètre entier N et renvoyant f(N).
+    """
+
+    def f(N):
+        return b0 if N == 0 else a * (f(N - 1) ** c) + b
+
+    return f
+
+suite_arithmetique = suite(b=2)
+print(f"f(0) = {suite_arithmetique(0)}")
+print(f"f(1) = {suite_arithmetique(1)}")
+print(f"f(2) = {suite_arithmetique(2)}")
+```
+
+:arrow_down:
+
+```
+f(0) = 0
+f(1) = 2
+f(2) = 4
+```
 
 ---
 
@@ -1565,10 +1839,108 @@ Générateur de fonction : on retourne une nouvelle fonction
 
 ---
 
-Origine : calcul lambda (et pas un truc quelconque...)
-Intérêt : les dévs sont un peu feignants et n'aiment pas trop tapper (sauf aux jeux de baston)
-Syntaxe
-Exemples
+# Origine
+
+* Le **calcul lambda**, noté $\lambda$-calcul is un système mathématiques formel pour exprimer des calculs quelconques à partir des concepts de **fonction** et d'application.
+* Il est inventé dans les année 1930 par Alonzo Church.
+* Ce système est **Turing-complet**.
+* Dans ce système, tout est fonction.
+
+<!--
+En français, le terme "lambda" peut avoir une connotation péjorative signifiant : commun, quelconque voire inintéressant.
+Le terme "fonction lambda" se retrouve dans beaucoup de langages de programmation.
+Ce terme vient du calcul lambda.
+Les fonction lambda sont intéressantes et pratiques.
+-->
+
+---
+
+# Fonctions lambda dans les langages impératifs
+
+* Une fonction lambda :
+    * n'a pas de nom - elle est anonyme.
+    * est courte.
+* Les fonctions lambda sont utilisés dans la programmation d'ordre supérieur.
+* Ces fonctions offrent une syntaxe plus légère pour les fonctions internes.
+
+---
+
+# Fonction lambda en Python
+
+- Le mot clé `lambda` est suivi d'une liste de paramètres puis d'une expression.
+- `lambda liste_paramètres : expression`
+- Exemple :
+
+```python
+lambda x : x ** 2
+```
+
+---
+
+# Racine carrée avec dichotomie et lambda
+
+```python
+def racine_carree(x, epsilon=0.001):
+    """Renvoie la racine carrée de x."""
+    return dichotomie(x,
+                      lambda x : x ** 2,
+                      debut=0,
+                      fin=max(1, x),
+                      epsilon=epsilon)
+
+resultat = racine_carree(25)
+print(resultat)
+```
+
+:arrow_down:
+
+```
+4.9999237060546875
+```
+
+---
+
+# Générateur de suite avec lambda
+
+```python
+def suite(a=1, b=0, b0=0):
+    """Renvoie la suite f telle que f(0) = b0, et f(N) = a . f(N-1) + b.
+
+    a - nombre entier utilisé comme multiplicateur géométrique.
+    b - nombre entier utilisé comme raison arithmétique.
+    b0 - nombre entier constituant le début de la suite.
+    Retourne une fonction prenant un paramètre entier N et renvoyant f(N).
+    """
+    if a == 1:
+        # Calcul du terme général dans le cas d'une suite arithmétique
+        return lambda N : b0 + N * b
+    else:
+        # Calcul du terme général dans le cas général
+        r = b / (1 - a)
+        return lambda N : (a ** N) * (b0 - r) + r
+
+ma_suite = suite(a=2, b=1)
+print(f"f(0) = {ma_suite(0)}")
+print(f"f(1) = {ma_suite(1)}")
+print(f"f(2) = {ma_suite(2)}")
+print(f"f(3) = {ma_suite(3)}")
+```
+
+<!--
+Il n'est évidemment pas possible de définir une fonction lambda récursive.
+En effet, une fonction lambda n'a pas de nom et ne peut donc pas savoir comment s'appeler elle-même.
+C'est la raison pour laquelle nous utilisons ici le calcul du terme général d'une suite arithmético-géométrique.
+Il s'agit de la version itérative de l'algorithme récursif vu dans les diapositives précédentes.
+-->
+
+:arrow_down:
+
+```
+f(0) = 0.0
+f(1) = 1.0
+f(2) = 3.0
+f(3) = 7.0
+```
 
 ---
 
@@ -1581,6 +1953,24 @@ Exemples
 ##### Notions de pureté et d'immutabilité
 
 ---
+
+# Contraintes des langages fonctionnels
+
+* Dans un langage fonctionnel :
+    * Les variables sont **immutables**. Elles ne peuvent pas changer de valeur.
+    * Les fonctions sont **pures** :
+        * Les sorties ne dépendent que des entrées.
+        * Il n'y a donc pas d'accès possible à une variable globale.
+        * Il n'y a pas d'effet de bord : écriture dans un fichier, sortie console, etc.
+* Python n'est pas un langage fonctionnel : on peut changer les valeurs des variables et accéder à des variables globales.
+* Il est possible d'écrire du code fonctionnel avec Python en appliquant les principes ci-dessus.
+* Quelques langages fonctionnels notables :
+    - Haskell
+    - Scala
+
+---
+
+# Pourquoi ces contraintes supplémentaires
 
 De grands pouvoirs impliquent de grandes responsabilités : code mess && spaghetti code
 Programmation impérative => variables (ou état) globales, effets de bords non maîtrisé et beau bord**
