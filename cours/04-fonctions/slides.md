@@ -1961,24 +1961,58 @@ f(3) = 7.0
     * Les fonctions sont **pures** :
         * Les sorties ne dépendent que des entrées.
         * Il n'y a donc pas d'accès possible à une variable globale.
-        * Il n'y a pas d'effet de bord : écriture dans un fichier, sortie console, etc.
+        * Il n'y a pas d'effet de bord : lecture depuis un fichier, entrée console, etc.
 * Python n'est pas un langage fonctionnel : on peut changer les valeurs des variables et accéder à des variables globales.
 * Il est possible d'écrire du code fonctionnel avec Python en appliquant les principes ci-dessus.
 * Quelques langages fonctionnels notables :
     - Haskell
     - Scala
+    - F#
+    - Erlang
 
 ---
 
-# Pourquoi ces contraintes supplémentaires
+# Pourquoi ces contraintes supplémentaires ?
 
-De grands pouvoirs impliquent de grandes responsabilités : code mess && spaghetti code
-Programmation impérative => variables (ou état) globales, effets de bords non maîtrisé et beau bord**
-A moins d'appliquer des bonnes pratiques stricts => boiled frog && broken windows
-Exemple qui marche : kernel Linux => règles très (très très) sévères
-Règle d'immutabilité : les variables constantes
-Règle de pureté : pas d'effet de bord (print, etc.)
-Il existe des langages qui imposent ces règles et qui pronent certaines techniques héritées de la théorie des catégories, une branche des maths.
+![bg right:45% 90%](https://en.wikipedia.org/wiki/Spaghetti#/media/File:Spaghettata.JPG)
+![bg right:45% 90%](https://en.wikipedia.org/wiki/Spider-Man#/media/File:Web_of_Spider-Man_Vol_1_129-1.png)
+
+* De grands pouvoirs impliquent de grandes responsabilités (oncle Ben Parker).
+* Programmation impérative :
+    * Etat **global** et **effets de bords** parfois difficiles à maîtriser.
+    * Pour comprendre une fonction : il faut potentiellement comprendre l'état global du programme.
+    * Un code non maîtrisé peut devenir un "plat de spaghetti".
+* La programmation fonctionnelle tente de remédier à ces problèmes en ayant une **approche plus proche des mathématiques**.
+
+---
+
+# Pourquoi tout le monde ne fait pas du fonctionnel ?
+
+* **Performances** :
+    - Les langages fonctionnels sont interprétés et comportent tous un garbage collector.
+    - Un langage fonctionnel ne peut pas être aussi performant que C++ ou Rust.
+    - Un langage fonctionnel peut être aussi performant que Python.
+* **Complexité** :
+    - Les contraintes supplémentaires et le rattachement à la théorie des catégories peut sembler plus complexe à appréhender.
+    - Les langages impératifs (ou multi-paradigmes) comme Python sont plus anciens et ont une plus grande communauté d'utilisateurs.
+* **Bibliothèques** : Il existe moins de bibliothèques disponibles avec les langages fonctionnels.
+
+<!--
+On peut espérer que les 2 dernier points vont évoluer dans le bon sens.
+Les langages fonctionnels sont extrêmement intéressants mais certains cas d'usage.
+-->
+
+---
+
+# Les langages impératifs sont-il condamnés à produire du mauvais code ?
+
+* **Non**.
+* Le langage de programmation C est impératif et il est très facile à utiliser de manière incorrecte.
+* L'interpréteur **CPython** est implémenté dans le langage de programmation C.
+* Le **kernel Linux** est implémenté dans le langage de programmation C.
+* Le kernel Linux fait **plusieurs millions de ligne de code**.
+* Le kernel Linux est très propre et suit un **standard de programmation** très strict.
+* La qualité du code est dépendante de l'**équipe de développeurs** plus que du langage.
 
 ---
 
@@ -1990,12 +2024,47 @@ Il existe des langages qui imposent ces règles et qui pronent certaines techniq
 
 ---
 
-Python est *orienté object*
-Tout est objet
-Définition On appelle méthode une fonction rattachée à un type.
-Un type défini ses propriétés (données membres) && capacités (méthodes).
-`str` est un type. `upper()` est une méthode de ce type.
-Exemples en plus.
+# Langage Orienté-Objet
+
+* Python est un langage de programmation **multi-paradigmes**.
+* Python est un langage impératif et également **orienté objet**.
+* La programmation orientée objet ne sera *pas* étudiée dans ce cours.
+* En revanche, vous utilisez des objets qui sont fournis avec le langage.
+
+---
+
+# Les chaînes de caractères
+
+* Les chaînes de caractère sont représentées par le type `str`.
+* Il est possible d'appliquer des fonctions sur des chaînes de caractères.
+* Ces fonctions sont appelées d'une manière particulière :
+    - `chaine.fonction()`
+* Ces fonctions rattachées à un type spécifiques s'appellent des *méthodes**.
+
+---
+
+# Exemple
+
+```python
+chaine = "bonjour, monde"
+
+majuscules = chaine.upper()
+print(majuscules)
+
+capitales = chaine.capitalize()
+print(capitales)
+
+index_o = chaine.find("j")
+print(index_j)
+```
+
+:arrow_down:
+
+```
+BONJOUR, MONDE
+Bonjour, monde
+3
+```
 
 ---
 
