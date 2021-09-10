@@ -1300,13 +1300,212 @@ print(sous_ensemble) # True
 
 ---
 
-Notation
-Mutable
-Dans l'ordre d'insertion depuis Python 3.8
-Utilisé très souvent
-Clés uniques
-Parcours des éléments
-Parcours des clés uniquement ou des valeurs uniquement
+
+# Notion de dictionnaire
+
+* Un dictionnaire, noté `dict`, est une collection de **paires clé/valeur**.
+* Une clé doit être **hashable**.
+* Une valeur peut avoir **n'importe quel type**.
+* Les clés et les valeurs peuvent avoir des types différents.
+* Les dictionnaires sont très utilisés en Python.
+
+---
+
+# Création
+
+```python
+dico1 = dict() # dictionnaire vide
+print(dico1)
+
+dico2 = {"un": 1, "deux": 2, "trois": 3}
+print(dico2)
+```
+
+:arrow_down:
+
+```
+{}
+{'un': 1, 'deux': 2, 'trois': 3}
+```
+
+---
+
+# Valeur répétée
+
+```python
+d = {"un": 1, "un": 1}
+print(d)
+```
+
+:arrow_down:
+
+```
+{'un': 1}
+```
+
+---
+
+# Ordre conservé
+
+###### $\ge$ Python 3.8
+
+```python
+d = {"trois": 3, "deux": 2, "un": 1}
+print(d)
+```
+
+:arrow_down:
+
+```
+{'trois': 3, 'deux': 2, 'un': 1}
+```
+
+<!--
+Attention, si vous devez utiliser une version de Python inférieure strictement à 3.8, le comportement sera différent.
+Les dictionnaires ont été ré-implémentés dans Python 3.8, et la nouvelle implémentation permet de garantir la conservation de l'ordre.
+Cela dit, vous ne devriez pas vous baser sur cette propriété de telle sorte que votre code fonctionne quelque soit la version de l'interpréteur utilisé
+-->
+
+---
+
+# <!--fit--> Création d'un dictionnaire à 1 élément
+
+```python
+d = {"un": "ein"}
+print(d)
+```
+
+:arrow_down:
+
+```
+{'un': 'ein'}
+```
+
+---
+
+# Dictionnaire imbriqué
+
+```python
+d = {
+    "fr_en": {"un": "one", "deux": "two", "trois": "three"},
+    "fr_de": {"un": "ein", "deux": "zwei", "trois": "drei"}
+}
+print(d)
+```
+
+:arrow_down:
+
+```
+{'fr_en': {'un': 'one', 'deux': 'two', 'trois': 'three'},
+ 'fr_de': {'un': 'ein', 'deux': 'zwei', 'trois': 'drei'}}
+```
+
+---
+
+# <!--fit--> Itération sur un dictionnaire (1/3)
+
+```python
+d = {"Janvier": 1, "Février": 2, "Mars": 3}
+for cle in d:
+    print(f"Le numéro du mois de {cle} est {d[cle]}.")
+```
+
+:arrow_down:
+
+```
+Le numéro du mois de Janvier est 1.
+Le numéro du mois de Février est 2.
+Le numéro du mois de Mars est 3.
+```
+
+---
+
+# <!--fit--> Itération sur un dictionnaire (2/3)
+
+```python
+d = {"Janvier": 1, "Février": 2, "Mars": 3}
+for cle, valeur in d.items():
+    print(f"Le numéro du mois de {cle} est {valeur}.")
+```
+
+:arrow_down:
+
+```
+Le numéro du mois de Janvier est 1.
+Le numéro du mois de Février est 2.
+Le numéro du mois de Mars est 3.
+```
+
+---
+
+# <!--fit--> Itération sur un dictionnaire (3/3)
+
+```python
+d = {"Janvier": 1, "Février": 2, "Mars": 3}
+for valeur in d.values():
+    print(f"Le numéro du mois est {valeur}.")
+```
+
+:arrow_down:
+
+```
+Le numéro du mois est 1.
+Le numéro du mois est 2.
+Le numéro du mois est 3.
+```
+
+---
+
+# Modification d'une valeur
+
+```python
+taille = {"petit": 140, "moyen": 170, "grand": 190}
+taille["moyen"] = 165
+print(taille)
+```
+
+:arrow_down:
+
+```
+{'petit': 140, 'moyen': 165, 'grand': 190}
+```
+
+---
+
+# Insertion d'une valeur
+
+```python
+calories = {"eau": 0, "jus de fruit": 100, "coca": 100000}
+calories["vin"] = 1000
+print(calories)
+```
+
+:arrow_down:
+
+```
+{'eau': 0, 'jus de fruit': 100, 'coca': 100000, 'vin': 1000}
+```
+
+---
+
+# Suppression d'une valeur
+
+```python
+heros = {
+    "Catwoman": 300,
+    "Batman": 400,
+    "Wonderwoman": 900,
+    "Robin": 2
+}
+del heros["Robin"]
+print(heros)
+```
+
+:arrow_down:
+
+```
+{'Catwoman': 300, 'Batman': 400, 'Wonderwoman': 900}
+```
 
 ---
 
