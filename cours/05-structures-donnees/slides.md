@@ -701,14 +701,154 @@ print(liste)
 :arrow_down:
 
 ```
-[1, 3, 5]
+[(1, 2), (3, 4)]
+```
+
+---
+
+# Tuple de listes
+
+```python
+t = ([1, 2], [3, 4])
+print(liste)
+```
+
+:arrow_down:
+
+```
+([1, 2], [3, 4])
+```
+
+---
+
+# Liste à 2 dimensions
+
+```python
+liste = [
+    [1, 0, 0],
+    [0, 1, 0],
+    [0, 0, 1]
+]
+```
+
+---
+
+# Liste à 3 dimensions
+
+```python
+liste = [
+    [
+        [1, 0],
+        [0, 1]
+    ],
+    [
+        [1, 0],
+        [0, 1]
+    ]
+]
+```
+
+---
+
+# Modification d'une valeur
+
+```python
+liste = [1, 2, 3]
+liste[0] = 5
+print(liste)
+```
+
+:arrow_down:
+
+```
+[5, 2, 3]
+```
+
+---
+
+# <!--fit--> Insertion d'une valeur au début
+
+```python
+liste = [1, 2, 3]
+liste.insert(0, 42)
+print(liste)
+```
+
+:arrow_down:
+
+```
+[42, 1, 2, 3]
+```
+
+---
+
+# <!--fit--> Insertion d'une valeur au milieu
+
+```python
+liste = [1, 2, 3]
+liste.insert(2, 42)
+print(liste)
+```
+
+:arrow_down:
+
+```
+[1, 2, 42, 3]
+```
+
+---
+
+# <!--fit--> Insertion d'une valeur à la fin
+
+```python
+liste = [1, 2, 3]
+liste.append(42)
+print(liste)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3, 42]
+```
+
+---
+
+# Suppression d'une valeur
+
+```python
+liste = [1, 2, 3]
+liste.remove(liste[0])
+print(liste)
+```
+
+:arrow_down:
+
+```
+[2, 3]
+```
+
+---
+
+# <!--fit--> Suppression de la dernière valeur
+
+```python
+liste = [1, 2, 3]
+liste.pop()
+print(liste)
+```
+
+:arrow_down:
+
+```
+[1, 2]
 ```
 
 ---
 
 <!-- _class: title-section -->
 
-# <!--fit--> TD : Implémenter les opérations matricielles les plus classiques
+# TD : Implémenter les opérations matricielles les plus classiques
 
 ---
 
@@ -727,12 +867,204 @@ print(liste)
 
 ---
 
-Rabachage : tout est OBJET
-Assignation d'une même liste à 2 variables et modification du contenu de la liste : les 2 variables sont affectées
-Technique pour créer un clone : utiliser `[:]` ou `.copy()`.
-Problème : les objets à l'intérieur de la liste restent les mêmes.
-Technique pour créer une copie profonde : `copy.deepcopy()`.
-Exemples
+# Le problème
+
+```python
+liste1 = [1, 2, 3]
+liste2 = liste1
+
+liste2.append(4)
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3, 4]
+```
+
+<!--
+Le fait de modifier la 2e liste modifie également la 1ière.
+Est-ce surprenant ?
+Pas vraiment, la variable liste1 est liée à la liste [1, 2, 3].
+Ensuite, on lie la variable liste2 à la même liste [1, 2, 3].
+Donc, les variables liste1 et liste2 référencent la même liste.
+-->
+
+---
+
+# Impact imbriqué
+
+```python
+def f(liste):
+    liste.append(4)
+
+liste1 = [1, 2, 3]
+f(liste1)
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3, 4]
+```
+
+<!--
+Il s'agit exactement du même cas que dans la diapositive précédente.
+Même si le passage des variables se fait par valeur en Python, l'argument liste se voit lié à la même liste que la variable liste1.
+Par conséquent, la modification de la liste dans la fonction impacte la variable liste1.
+Parfois, c'est ce que l'on veut, parfois, non.
+-->
+
+---
+
+# Egalité de listes
+
+```python
+liste1 = [1, 2, 3]
+liste2 = [1, 2, 3]
+
+egaux = (liste1 == liste2)
+print(egaux)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3, 4]
+```
+
+<!--
+Deux listes sont égales si elles possèdent le même nombre d'éléments et si chacun d'entre eux sont égaux 2 à 2.
+Cela n'aide pas à savoir si les 2 variables liste1 et liste2 référencent la même liste.
+-->
+
+---
+
+# <!--fit--> Egalité d'objets : opérateur `is`
+
+```python
+liste1 = [1, 2, 3]
+liste2 = [1, 2, 3]
+liste3 = liste2
+
+egaux = (liste1 is liste2)
+print(egaux) # False
+
+egaux = (liste2 is liste3)
+print(egaux) # True
+```
+
+<!--
+L'opérateur is permet de déterminer avec certitudes sur 2 variables référencent le même objet.
+On sait ainsi si la modification de l'une des variables va entrainer la modification de l'autre.
+-->
+
+---
+
+# Clonage (1/2)
+
+```python
+liste1 = [1, 2, 3]
+liste2 = liste1.copy()
+liste2.append(4)
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3]
+```
+
+<!--
+Dans ce cas, le clonage nous a permi de créer très facilement un clone indépendant de l'original.
+Donc maintenant, lorsque l'on modifie la variable liste2, liste1 reste inchangée.
+-->
+
+---
+
+# Clonage (2/2)
+
+```python
+liste1 = [1, 2, 3]
+liste2 = liste1[:]
+liste2.append(4)
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3]
+```
+
+<!--
+Il s'agit de la même technique. Seule la syntaxe change.
+Il est important de comprendre cette syntaxe car elle est souvent utilisée.
+On utilise l'opérateur de slicing pour renvoyer une nouvelle liste.
+Cette nouvelle liste va du début à la fin de la liste actuelle, car on utilise les valeurs par défaut.
+En effet, lorsque l'on ne spécifie pas la valeur avant le ":", c'est 0.
+De même, lorsque l'on ne spécifie pas la valeur après le ":", c'est len(liste).
+-->
+
+---
+
+# Limites du clonage
+
+```python
+liste1 = [[1, 2], [3, 4]]
+liste2 = liste1[:]
+liste2[0][0] = 5
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[[5, 2], [3, 4]]
+```
+
+<!--
+Un clonage effectue une copie uniquement au premier niveau.
+Par conséquent, les sous-listes de liste1 sont toujours référencées dans liste2.
+La diapositive suivante clarifie les étapes.
+-->
+
+---
+
+<!-- Etapes de clonage -->
+
+![bg 80%](./assets/copie-profonde-1.png)
+
+![bg 80%](./assets/copie-profonde-2.png)
+
+![bg 80%](./assets/copie-profonde-3.png)
+
+---
+
+# Copie profonde
+
+```python
+import copy
+
+liste1 = [[1, 2], [3, 4]]
+liste2 = copy.deepcopy(liste1)
+liste2[0][0] = 5
+print(liste1)
+```
+
+:arrow_down:
+
+```
+[[1, 2], [3, 4]]
+```
+
+<!--
+La copie profonde permet de dupliquer l'ensemble de la structure, quelque soit sa profondeur.
+Ainsi, on a maintenant liste1 et liste2 qui sont liés à des structures totalement différentes.
+-->
 
 ---
 
