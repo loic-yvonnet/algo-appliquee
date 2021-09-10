@@ -1511,18 +1511,132 @@ print(heros)
 
 <!-- _class: title-section -->
 
-# <!--fit--> Technique "Pythonic": comprehensions
+# <!--fit--> Technique "Pythonic" : compréhensions
 
 ---
 
-@TODO : vérifier comment on dit en français!!
-Exemple simple avec liste
-Exemple avec liste + condition
-Exemple imbriqué
-Warning : ne pas faire de choses trop compliquées => les boucles classiques sont plus simples à comprendre!
-Exemple avec tuple
-Exemple avec set
-Exemple**s** avec dico
+# Notion de compréhension
+
+* Une **compréhension** est une syntaxe alternative **plus compacte** pour créer des conteneurs.
+* Cette syntaxe est surtout utilisée pour les **listes** et les **dictionnaires** mais peut aussi être utilisée pour les sets.
+
+---
+
+# <!--fit--> Compréhension avec une liste
+
+```python
+liste = [i ** 2 for i in range(5)]
+print(liste)
+```
+
+:arrow_down:
+
+```
+[0, 1, 4, 9, 16]
+```
+
+---
+
+# <!--fit--> Compréhension avec condition
+
+```python
+liste = [i ** 2 for i in range(10) if i % 2 == 0]
+print(liste)
+```
+
+:arrow_down:
+
+```
+[0, 4, 16, 36, 64]
+```
+
+---
+
+# Compréhension imbriquée
+
+```python
+liste = [(i, j) for i in range(2) for j in range(3)]
+print(liste)
+```
+
+:arrow_down:
+
+```
+[(0, 0), (0, 1), (0, 2), (1, 0), (1, 1), (1, 2)]
+```
+
+---
+
+# :warning: Trop complexe :warning:
+
+```python
+liste = [[i * j + k for i in range(3)]
+            for j in range(6) if j % 3 == 0
+                for k in range(2)]
+print(liste)
+```
+
+:arrow_down:
+
+```
+[[0, 0, 0], [1, 1, 1], [0, 3, 6], [1, 4, 7]]
+```
+
+<!--
+Les compréhensions sont faites pour rendre le code plus simple, et non plus complexe.
+Ici, la liste interne est créée avec un range(3) donc comportera 3 élément.
+La compréhension externe est composée de 2 boucles.
+La première boucle, sur j est limitée aux éléments 0 et 3 car ce sont les seuls éléments dont le reste de la division par 3 est égal à 0 sur l'interval [0 ; 6[.
+La deuxième boucle, sur k, est limitée aux éléments 0 et 1.
+La liste externe est donc composée de 2x2 = 4 listes internes.
+Les 2 premières listes internes sont obtenues pour j == 0 et respectivement k == 0 et k == 1.
+Les 2 listes internes suivantes sont obtenues pour j == 3 et respectivement k == 0 et k == 1.
+-->
+
+---
+
+# Compréhension avec un set
+
+```python
+s = {i ** 3 for i in range(1, 4)}
+print(s)
+```
+
+:arrow_down:
+
+```
+{8, 1, 27}
+```
+
+---
+
+# Compréhension avec un dictionnaire
+
+```python
+dico = {i: i ** 2 for i in range(2, 11)}
+print(dico)
+```
+
+:arrow_down:
+
+```
+{2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+```
+
+---
+
+## Compréhension avec un dictionnaire et une condition
+
+```python
+dico = {i: i ** 2 for i in range(2, 11) if i % 2 == 0}
+print(dico)
+```
+
+:arrow_down:
+
+```
+{2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+```
 
 ---
 
