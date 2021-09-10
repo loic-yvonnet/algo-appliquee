@@ -750,6 +750,23 @@ liste = [
 
 ---
 
+# Concaténation de listes
+
+```python
+liste1 = [1, 2, 3]
+liste2 = [4, 5, 6]
+liste3 = liste1 + liste2
+print(liste3)
+```
+
+:arrow_down:
+
+```
+[1, 2, 3, 4, 5, 6]
+```
+
+---
+
 # Modification d'une valeur
 
 ```python
@@ -1076,11 +1093,202 @@ Ainsi, on a maintenant liste1 et liste2 qui sont liés à des structures totalem
 
 ---
 
-Notation
-Mutable
-Eléments uniques
-Pas dans l'ordre d'insertion
-Requis lorsque l'on a besoin de garantir l'unicité de chaque élément du conteneur
+# Notion d'ensemble
+
+* Comme en mathématiques, un ensemble, noté `set`, est une collection **non-ordonnée** d'**éléments uniques**.
+* Les éléments individuels peuvent être de **types différents**.
+* Ils doivent être **hashables**, c'est-à-dire fournir une définition pour les méthodes :
+    * `__hash__` : génère un `int` unique pour un objet.
+    * `__eq__` : égalité entre 2 objets.
+
+---
+
+# Création
+
+```python
+set1 = {} # l'ensemble vide
+print(set1)
+
+set2 = {1, "deux", 3.14}
+print(set2)
+
+set3 = set(range(3))
+print(set3)
+```
+
+:arrow_down:
+
+```
+{}
+{'deux', 1, 3.14}
+{0, 1, 2}
+```
+
+---
+
+# Valeur répétée
+
+```python
+s = {1, 1, 1, 1, 1, 1}
+print(s)
+```
+
+:arrow_down:
+
+```
+{1}
+```
+
+---
+
+# Ordre non conservé
+
+```python
+s = {5, 4, 3, 2, 1, 0}
+print(s)
+```
+
+:arrow_down:
+
+```
+{0, 1, 2, 3, 4, 5}
+```
+
+---
+
+# <!--fit--> Création d'un set à 1 élément
+
+```python
+s = {1}
+print(s)
+```
+
+:arrow_down:
+
+```
+{1}
+```
+
+---
+
+# Set imbriqué ?
+
+```python
+s = {1, {"deux", "trois"}, 3.14}
+print(s)
+```
+
+:arrow_down:
+
+```
+TypeError: unhashable type: 'set'
+```
+
+<!--
+Le set n'est lui-même pas hashable.
+Il n'est donc pas possible d'utiliser un set de set.
+-->
+
+---
+
+# Itération sur un set (1/2)
+
+```python
+s = {"Mona Lisa", "La Scapigliata", "La Belle Ferronnière"}
+for i in range(len(s)):
+    print(s[i])
+```
+
+:arrow_down:
+
+```
+TypeError: 'set' object is not subscriptable
+```
+
+<!--
+Comme le set n'est pas ordonné, on ne peut pas accéder au ième élément.
+Par conséquent, l'opérateur [] n'est pas défini.
+-->
+
+---
+
+# Itération sur un set (2/2)
+
+```python
+s = {"Mona Lisa", "La Scapigliata", "La Belle Ferronnière"}
+for element in s:
+    print(element)
+```
+
+:arrow_down:
+
+```
+La Belle Ferronnière
+La Scapigliata
+Mona Lisa
+```
+
+---
+
+# Union
+
+```python
+s1 = {1, 2, 3, 4, 5}
+s2 = {4, 5, 6, 7}
+s3 = s1 | s2
+print(s3)
+```
+
+:arrow_down:
+
+```
+{1, 2, 3, 4, 5, 6, 7}
+```
+
+---
+
+# Intersection
+
+```python
+s1 = {1, 2, 3, 4, 5}
+s2 = {4, 5, 6, 7}
+s3 = s1 & s2
+print(s3)
+```
+
+:arrow_down:
+
+```
+{4, 5}
+```
+
+---
+
+# Différence
+
+```python
+s1 = {1, 2, 3, 4, 5}
+s2 = {4, 5, 6, 7}
+s3 = s1 - s2
+print(s3)
+```
+
+:arrow_down:
+
+```
+{1, 2, 3}
+```
+
+---
+
+# Sous-ensemble
+
+```python
+s1 = {1, 2, 3, 4, 5}
+s2 = {1, 2, 3}
+sous_ensemble = (s2 <= s1)
+print(sous_ensemble) # True
+```
 
 ---
 
