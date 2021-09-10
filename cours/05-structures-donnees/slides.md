@@ -1642,7 +1642,7 @@ print(dico)
 
 <!-- _class: title-section -->
 
-# TP : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins àapporter
+# TP : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter
 
 ---
 
@@ -1660,16 +1660,45 @@ print(dico)
 
 ---
 
-Avec les conteneurs vus jusqu'ici, on peut aller loin
-Python nous permet de définir nos propres types d'objet
-Comme un tuple, mais à la place d'accéder aux élements par index t[0], t[1], t[2], on peut faire t.x, t.y, t.z par exemple.
-Fondamental pour définir des abstractions de niveau supérieur et simplifier la programmation
-Mot clé `class`
-La fonction spéciale __init__(self, ...)
-La spécification de données membres
-Usage
+# <!--fit--> Limites des conteneurs (1/2)
 
-Shortcut en Python 3.7 :
+- Modélisation d'un point 3D avec une liste :
+
+```python
+point = [0, 0, 0]
+x, y, z = point[0], point[1], point[2]
+```
+
+- Il faut garder le modèle mental de correspondance :
+    - 0 pour l'abscisse x,
+    - 1 pour l'ordonnée y,
+    - 2 pour l'ordonnée z.
+- Cette correspondance complexifie le code.
+
+<!--
+Avec les conteneurs vus jusqu'ici, on peut aller loin.
+Nous allons voir une alternative puissante avec les structures de données
+-->
+
+---
+
+# <!--fit--> Limites des conteneurs (2/2)
+
+- Modélisation d'un point 3D avec un dictionnaire :
+
+```python
+point = {"x": 0, "y": 0, "z": 0}
+x, y, z = point["x"], point["y"], point["z"]
+```
+
+- Cette solution implique une empreinte mémoire supérieure.
+
+---
+
+# Structure de données
+
+- Python nous permet de définir nos **propres structures de données**.
+
 ```py
 from dataclasses import dataclass
 
@@ -1678,10 +1707,28 @@ class Point:
     x: float = 0.
     y: float = 0.
     z: float = 0.
+
+point = Point()
+x, y, z = point.x, point.y, point.z
 ```
 
+---
+
+# Avantages
+
+- Plus **explicite** que l'emploi des indexes d'une liste.
+- Code plus précis et **plus simple** à comprendre et maintenir.
+- **Moins lourd** en mémoire par rapport à un dictionnaire.
+- Egalement **plus performant** qu'une liste car il n'y a pas d'indirection.
+
 <!--
-Notes : on ne parle pas de POO.
-On montre juste l'équivalent d'une struct C, POD (C++), POJO (Java), POCO (C#), etc.
-C'est dommage que l'on ne puisse pas plus facilement faire ça en Python !
+Les éléments d'une liste sont dispersés en mémoire.
+Pour accéder à la localisation mémoire d'un élément d'une liste, une indirection est nécessaire en pratique.
+Les éléments d'une structure de données sont compacts en mémoire
 -->
+
+---
+
+# Conclusion
+
+Les structures de données sont fondamentales pour définir des **abstractions de niveau supérieur** et simplifier la programmation.
