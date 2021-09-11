@@ -709,18 +709,63 @@ A droite : LIFO (stack).
 # <!--fit--> Rappels sur la théorie des ensembles
 
 
-##### Union, intersection, exclusion
+##### Union, intersection, différence
 
 ---
 
-En prévision du DM 03 et de l'examen final
-Intérêt : on manipule régulièrement des ensembles de données (data mining, data science)
-Rappels rapides avec des patatoïdes
-Exemple avec entiers et nombres réels
-Exemple (différents) avec les `int` et les `float`
-Structure de données pour représenter un esemble : `set`
-Ensembles disjoints, inclus, intersection
-Union, exclusion
+# Intérêt
+
+* Nous avons vu le type `set` dans le cours précédent.
+* Le DM n°3 vous demande d'implémenter les opérations classiques sur les ensembles.
+* Nous revenons rapidement sur ces définitions pour préparer le DM.
+
+---
+
+# Ensemble vide
+
+![](./assets/ensemble_vide.png)
+
+---
+
+# <!--fit--> Ensemble avec quelques éléments
+
+![](./assets/ensemble.png)
+
+---
+
+# Ensembles disjoints
+
+![](./assets/ensembles_disjoints.png)
+
+---
+
+# Sous-ensemble
+
+![](./assets/ensemble_sous.png)
+
+---
+
+# Intersection
+
+![](./assets/ensembles_intersection.png)
+
+---
+
+# Union
+
+![](./assets/ensembles_union.png)
+
+---
+
+# Exclusion
+
+![](./assets/ensembles_exclusion.png)
+
+---
+
+# Différence
+
+![](./assets/ensembles_difference.png)
 
 ---
 
