@@ -777,9 +777,304 @@ A droite : LIFO (stack).
 
 ---
 
-En prévision du DM 03 et de l'examen final
-Intérêt : pour faire des jeux vidéos, du CAD/FEA ou des systèmes de guidage de missiles
-Autre intérêt : résoudre les systèmes d'équations simples
+# Intérêt
+
+* En prévision du DM n°3 et de l'examen.
+* Pour résoudre les systèmes d'équations simples.
+* Pour faire des jeux vidéos.
+* Pour la conception assistée par ordinateur.
+
+---
+
+# Déterminant d'une matrice 2x2
+
+$$
+M =
+\begin{pmatrix}
+    a & b \\
+    c & d
+\end{pmatrix},
+\quad
+\left|
+    \begin{matrix}
+    a & b \\
+    c & d
+    \end{matrix}
+\right|
+= ad - cb
+$$
+
+<!--
+Vous avez déjà vu ces définitions dans le TD n°3.
+Nous repartons de ces définitions avant d'introduire de nouveaux concepts.
+Le calcul du déterminant d'une matrice à 2 lignes et 2 colonnes est simplement un produit en croix.
+-->
+
+---
+
+# Expansion de Laplace
+
+### Déterminant d'une matrice 3x3
+
+$$
+\left|
+    \begin{matrix}
+    a & b & c \\
+    d & e & f \\
+    g & h & i
+    \end{matrix}
+\right|
+=
+a
+\left|
+    \begin{matrix}
+    e & f \\
+    h & i
+    \end{matrix}
+\right|
+- b
+\left|
+    \begin{matrix}
+    d & f \\
+    g & i
+    \end{matrix}
+\right|
++ c
+\left|
+    \begin{matrix}
+    e & f \\
+    h & i
+    \end{matrix}
+\right|
+$$
+
+Il s'agit d'une définition **récursive**.
+
+<!--
+On prend la première ligne de la matrice M.
+Chaque élément de la première ligne est multiplié par le déterminant de la matrice 2x2 "opposée".
+On ajoute ou soustrait alternativement ces produits.
+Le fait de définir un déterminant d'une matrice 3x3 en fonction de déterminants 2x2 en fait une définition récursive.
+La condition de fin de la récursion est l'arrivée sur une matrice 2x2.
+-->
+
+---
+
+# Expansion de Laplace
+
+### Déterminant d'une matrice NxN
+
+$$
+\left| M \right|
+=
+\left|
+    \begin{matrix}
+    m_{1,1} & m_{1,2} & \dots & m_{1,N} \\
+    m_{2,1} & m_{2,2} & \dots & m_{2,N} \\
+    \vdots  & \vdots  & \ddots & \vdots \\
+    m_{N,1} & m_{N,2} & \dots & m_{N,N}
+    \end{matrix}
+\right|
+=
+\sum_{j=1}^{N} m_{1,j} (-1)^{1+j} \left| M_{1,j} \right|
+$$
+
+Les $M_{1,j}$ sont les **mineurs des matrices** de la première ligne de $M$.
+
+<!--
+Le calcul d'un mineur d'une matrice est précisé sur la diapositive suivante.
+C'est dans cette définition que se retrouve la nature récursive de ce mode de calcul.
+-->
+
+---
+
+# Mineur d'une matrice $M_{i,j}$
+
+$$
+M_{i,j} =
+\begin{pmatrix}
+    m_{1,1}   & \dots & m_{1,j-1}   & m_{1,j+1}   & \dots & m_{1,n}   \\
+    \vdots    &       & \vdots      & \vdots      &       & \vdots    \\
+    m_{i-1,1} & \dots & m_{i-1,j-1} & m_{i-1,j+1} & \dots & m_{i-1,n} \\
+    m_{i+1,1} & \dots & m_{i+1,j-1} & m_{i+1,j+1} & \dots & m_{i+1,n} \\
+    \vdots    &       & \vdots      & \vdots      &       &\vdots     \\
+    m_{n,1}   & \dots & m_{n,j-1}   & m_{n,j+1}   & \dots & m_{n,n}
+\end{pmatrix}
+$$
+
+Le mineur d'une matrice $M$ aux indices $(i, j)$ est noté $M_{i,j}$.
+
+---
+
+# <!--fit--> Système d'équations linéaires
+
+### Sous forme matricielle
+
+$$
+\left\{
+    \begin{matrix}
+        a_1x + b_1y + c_1z = d_1 \\
+        a_2x + b_2y + c_2z = d_2 \\
+        a_3x + b_3y + c_3z = d_3
+    \end{matrix}
+\right.
+\Longleftrightarrow
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix}
+\begin{pmatrix}
+    x \\
+    y \\
+    z
+\end{pmatrix}
+=
+\begin{pmatrix} 
+    d_1 \\ 
+    d_2 \\ 
+    d_3
+\end{pmatrix}
+$$
+
+<!--
+Un système d'équations est dit "linéaire" si ses inconnues n'ont pas d'exposant.
+Tout système d'équations linéaires peut s'écrire sous forme matricielle.
+Ici, on donne un exemple pour 3 équations à 3 inconnues.
+-->
+
+---
+
+# Résolution du système
+
+$$
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix}
+\begin{pmatrix}
+    x \\
+    y \\
+    z
+\end{pmatrix}
+=
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix}^{-1}
+\begin{pmatrix} 
+    d_1 \\ 
+    d_2 \\ 
+    d_3
+\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}
+    x \\
+    y \\
+    z
+\end{pmatrix}
+=
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix}^{-1}
+\begin{pmatrix} 
+    d_1 \\ 
+    d_2 \\ 
+    d_3
+\end{pmatrix}
+$$
+
+**Problème** : L'inversion matricielle n'est pas trivialle.
+
+<!--
+On reviendra plus tard sur l'inversion matricielle.
+Il existe d'autres méthodes pour résoudre ce système d'équations sous forme matricielle.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# Règle de Cramer
+
+$$
+x = \frac{\begin{vmatrix}
+        d_1 & b_1 & c_1 \\
+        d_2 & b_2 & c_2 \\
+        d_3 & b_3 & c_3
+    \end{vmatrix}}{\det(M)} \\
+$$
+$$
+y = \frac{\begin{vmatrix}
+        a_1 & d_1 & c_1 \\
+        a_2 & d_2 & c_2 \\
+        a_3 & d_3 & c_3
+    \end{vmatrix}}{\det(M)} \\
+$$
+$$
+z = \frac{\begin{vmatrix}
+        a_1 & b_1 & d_1 \\
+        a_2 & b_2 & d_2 \\
+        a_3 & b_3 & d_3
+    \end{vmatrix}}{\det(M)}
+$$
+
+<!--
+La règle de Cramer nous permet de résoudre ce système d'équations en calculant uniquement des déterminants.
+Le dénominateur est le déterminant de la matrice M qui représente les coefficients du système d'équations.
+Le nominateur est la matrice M à laquelle on a remplacé une colonne par le vecteur D(d1, d2, d3).
+La règle de Cramer permet de résoudre les systèmes de N équations linéaires à N inconnues, si le déterminant de M est non nul.
+Nous allons voir d'autres méthodes pour résoudre ce système, certaines plus efficaces.
+On va commencer par quelques définitions supplémentaires
+-->
+
+---
+
+# Matrice Identité
+
+---
+
+# Matrice triangulaire
+
+---
+
+# Matrice diagonale
+
+---
+
+# Transformée
+
+---
+
+# Inversion : difficulté
+
+---
+
+# Inversion avec matrice diagonale
+
+---
+
+# Diagonalisation : principe
+
+---
+
+# Matrice augmentée
+
+---
+
+
+
 Transformée d'une matrice
 Diagonalisation de matrice
 Déterminant et Co-matrice
