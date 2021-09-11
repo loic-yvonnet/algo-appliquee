@@ -771,16 +771,15 @@ A droite : LIFO (stack).
 
 <!-- _class: title-section -->
 
-# <!--fit--> Rappels sur le calcul matriciel avancé
+# <!--fit--> Rappels sur le calcul matriciel
 
-##### Diagonalisation, inversion, méthode de Gauss
+##### Résolution de systèmes d'équations linéaires
 
 ---
 
 # Intérêt
 
 * En prévision du DM n°3 et de l'examen.
-* Pour résoudre les systèmes d'équations simples.
 * Pour faire des jeux vidéos.
 * Pour la conception assistée par ordinateur.
 
@@ -1043,46 +1042,184 @@ On va commencer par quelques définitions supplémentaires
 
 # Matrice Identité
 
+L'**élément neutre** de la multiplication matricielle est noté $I$ et comporte des 0 partout sauf sur sa diagonale, composée de 1.
+
+$$
+I = 
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1
+\end{pmatrix}
+$$
+
+$$
+I \cdot M = M \cdot I = M
+$$
+
 ---
 
 # Matrice triangulaire
+
+Soit la partie supérieure de la matrice, soit la partie inférieure de la matrice, n'est composée que de 0.
+
+$$
+M_1 = 
+\begin{pmatrix}
+    1 & 4 & 5 \\
+    0 & 2 & 6 \\
+    0 & 0 & 3
+\end{pmatrix},
+\quad
+M_2 = 
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    4 & 2 & 0 \\
+    5 & 6 & 3
+\end{pmatrix}
+$$
+
+$M_1$ est **triangulaire supérieure**.
+$M_2$ est **triangulaire inférieure**.
 
 ---
 
 # Matrice diagonale
 
+Tous les éléments de la matrice sont nuls, sauf ceux sur sa diagonale.
+
+$$
+M = 
+\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & 2 & 0 \\
+    0 & 0 & 3
+\end{pmatrix}
+$$
+
 ---
 
-# Transformée
+# <!--fit--> Puissance d'une matrice diagonale
+
+$$
+M = 
+\begin{pmatrix}
+    a & 0 & 0 \\
+    0 & b & 0 \\
+    0 & 0 & c
+\end{pmatrix},
+\quad
+M^N = 
+\begin{pmatrix}
+    a^N & 0   & 0   \\
+    0   & b^N & 0   \\
+    0   & 0   & c^N
+\end{pmatrix}
+$$
+
+Donc :
+
+$$
+M^{-1} = 
+\begin{pmatrix}
+    a^{-1} & 0      & 0     \\
+    0      & b^{-1} & 0     \\
+    0      & 0      & c^{-1}
+\end{pmatrix}
+$$
+
+<!--
+A priori, une matrice diagonale est très facile à inverser.
+Si on diagonalise une matrice, est-ce que cela nous aide à l'inverser ?
+-->
 
 ---
 
-# Inversion : difficulté
+# <!--fit--> Diagonalisation : principe (1/2)
+
+* Si une matrice $M$ est diagonalisable alors on peut l'écrire $M = PDP^{-1}$ où $D$ est sa matrice diagonale, et P la matrice de passage.
+* Pour diagonaliser, on calcule les **valeurs propres** $\lambda$ telles que $|M - \lambda I| = 0$.
+* Pour chaque valeur propre, on calcule le **vecteur propre** associé tel que $MX = \lambda X$.
+
+<!--
+Une matrice n'est pas forcément diagonalisable.
+Il faut que le nombre de valeurs propres soit égal au rang de la matrice pour qu'elle soit diagonalisable.
+Vous verrez tout ceci plus en détails en cours de mathématiques.
+-->
 
 ---
 
-# Inversion avec matrice diagonale
+# <!--fit--> Diagonalisation : principe (2/2)
 
----
+* La matrice diagonale équivalent $D$ s'obtient en mettant les valeurs propres sur la diagonale.
+* La matrice de passage $P$ est obtenue en mettant les vecteurs propres obtenus en colonnes.
 
-# Diagonalisation : principe
+<!--
+Cette méthodologie peut être automatisée.
+Cela étant, il faut calculer P^{-1} pour revenir à la matrice initiale.
+Donc la diagonalisation n'est pas le bon procédé pour inverser une matrice.
+En pratique, il existe d'autres approches.
+L'une de ces approches consiste à utiliser la transposée de la co-matrice, mais cela entraine trop de calculs dans le cas général.
+Nous allons voir une approche efficace : le pivôt de Gauss, ou plus généralement l'élimination de Gauss-Jordan.
+-->
 
 ---
 
 # Matrice augmentée
 
+$$
+\text{Si}\quad
+M = 
+\begin{pmatrix}
+    a_1 & b_1 & c_1 \\
+    a_2 & b_2 & c_2 \\
+    a_3 & b_3 & c_3
+\end{pmatrix},
+\quad\text{et}\quad
+D = \begin{pmatrix} 
+    d_1 \\ 
+    d_2 \\ 
+    d_3
+\end{pmatrix} \\
+$$
+
+$$
+\text{Alors}\quad
+[M | D] =
+\begin{pmatrix}
+    a_1 & b_1 & c_1 & d_1 \\
+    a_2 & b_2 & c_2 & d_2 \\
+    a_3 & b_3 & c_3 & d_3
+\end{pmatrix}
+$$
+
+<!--
+Autrement dit, il s'agit d'une simple concaténation des matrices M et D.
+Cette définition est utile pour l'élimination de Gauss-Jordan.
+-->
+
 ---
 
+# <!--fit--> Elimination de Gauss Jordan (1/2)
 
+On sait que les opérations suivantes sont possibles pour résoudre le système sans changer la solution :
+* Interchanger 2 lignes.
+* Multiplier une ligne par un scalaire non-nul.
+* Ajouter un multiple d'une ligne à une autre.
 
-Transformée d'une matrice
-Diagonalisation de matrice
-Déterminant et Co-matrice
-Inversion de matrice avec co-matrice
-Matrices de transformation 2D et 3D
-Inversion d'une matrice de transformation
-Poser un système d'équation au format matriciel
-Résolution avec la méthode de Gauss
+---
+
+# <!--fit--> Elimination de Gauss Jordan (2/2)
+
+* On parcourt chaque colonne de $M$ :
+    * On parcourt chaque ligne de $M$ en évitant la diagonale :
+        * On calcule le pivôt de Gauss pour que l'élément actuel soit annulé.
+        * On applique ce pivôt à la ligne actuelle.
+
+<!--
+Cet algorithme est illustré dans les diapositives suivantes.
+Vous aurez à l'implémenter dans le DM n°3.
+-->
 
 ---
 
