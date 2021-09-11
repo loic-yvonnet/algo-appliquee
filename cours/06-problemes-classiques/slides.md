@@ -425,7 +425,7 @@ print(queue)       # [3, 7, 10]
 
 <!-- _class: smaller-text -->
 
-# Utilisation de `dequeue`
+# Utilisation de `deque`
 
 ```python
 from collections import deque
@@ -449,9 +449,23 @@ def depile(queue):
 
 <!--
 Il existe une meilleure structure de données que `list` pour représenter une file d'attente.
-Il s'agit de la collection `dequeue`.
+Il s'agit de la collection `deque`.
 Cette collection offre un profil de performances bien plus intéressant que `list` pour de grandes tailles de données.
 -->
+
+---
+
+# Exemple
+
+```python
+queue = deque([6, 3, 7])
+empile(queue, 10)
+print(queue)           # deque([6, 3, 7, 10])
+
+valeur = depile(queue)
+print(valeur)          # 6
+print(queue)           # deque([3, 7, 10])
+```
 
 ---
 
@@ -463,13 +477,171 @@ Cette collection offre un profil de performances bien plus intéressant que `lis
 
 ---
 
-Dernier entré, premier servi, comme un jeu d'empilement avec une base ou une callstack
-Stack == conteneur spécialisé pour résoudre cela
-Représentation graphique
-Trouver une vidéo qui montre l'empilement et le dépilement des messages
-Utilisation de `list`
-Structure de données plus adaptée : `LifoQueue`
-Montrer des exemples
+# Notion de pile
+
+* Une **pile** est une collection.
+* Cette collection comporte 2 opérations principales :
+    * Empiler un élément.
+    * Dépiler le **dernier** élément empilé.
+* Dernier entré, premier sorti.
+
+---
+
+# Métaphore
+
+![w:700](https://upload.wikimedia.org/wikipedia/commons/2/27/A_pile_of_coins_demonstrating_the_divergence_of_a_harmonic_series.jpg)
+
+<!--
+Un empilement de pièces.
+On ne peut pas retirer les pièces intermédiares sans faire tomber une pièce supérieure.
+En tout cas, pas facilement.
+Cela montre un problème plus mécanique appelé "Empilement de bloc".
+Le surplomb maximal à chaque niveau est proportionnel à la moitié de la série harmonique.
+Source : Wikipedia
+-->
+
+---
+
+# Principe
+
+![h:400](./assets/pile_principe.png)
+
+---
+
+# Exemple avec 2 éléments
+
+![w:1100](./assets/pile_structure_donnees.png)
+
+<!--
+Il s'agit ici d'une implémentation basée sur une liste chaînée.
+D'autres implémentations existent.
+-->
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 80%](./assets/pile.png)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Pile:
+    """Pile utilisant une liste chainee.
+
+    initial - doit avoir pour type 
+              Noeud ou None.
+    """
+    initial = None
+```
+
+<!--
+Exactement identique à une liste chaînée.
+-->
+
+---
+
+# Empile
+
+![w:1100](./assets/pile_empile.png)
+
+<!--
+Vous allez implémenter cet algorithme dans le prochain TP.
+-->
+
+---
+
+# Dépile
+
+![w:1100](./assets/pile_depile.png)
+
+
+---
+
+# Utilisation d'une `list`
+
+```python
+def empile(pile, element):
+    """Empile l'élément dans la pile.
+
+    pile - la pile à modifier.
+    element - element à empiler dans la pile.
+    """
+    pile.insert(0, element)
+
+def depile(pile):
+    """Depile le 1er élément de la pile.
+
+    pile - la pile à modifier.
+    Retourne le 1er élément de la pile.
+    """
+    return pile.pop(0)
+```
+
+<!--
+Il s'agit d'une implémentation alternative basée sur une list.
+De la même manière que l'on peut implémenter une queue avec une list, la même chose est possible pour une pile.
+-->
+
+---
+
+# Exemple
+
+```python
+pile = [6, 3, 7]
+empile(pile, 10)
+print(pile)           # [10, 6, 3, 7]
+
+valeur = depile(pile)
+print(valeur)         # 10
+print(pile)           # [6, 3, 7]
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+# Utilisation de `deque`
+
+```python
+from collections import deque
+
+def empile(pile, element):
+    """Empile l'élément dans la pile.
+
+    pile - la pile à modifier.
+    element - element à empiler dans la pile.
+    """
+    pile.appendleft(element)
+
+def depile(pile):
+    """Depile le 1er élément de la pile.
+
+    pile - la pile à modifier.
+    Retourne le 1er élément de la pile.
+    """
+    return pile.popleft()
+```
+
+<!--
+On peut aussi bien utiliser un deque pour représenter une queue ou une pile.
+Cela peut sembler contre-intuitif, mais c'est pratique.
+-->
+
+---
+
+# Exemple
+
+```python
+pile = deque([6, 3, 7])
+empile(pile, 10)
+print(pile)            # deque([10, 6, 3, 7])
+
+valeur = depile(pile)
+print(valeur)          # 10
+print(pile)            # deque([6, 3, 7])
+```
 
 ---
 
@@ -479,19 +651,54 @@ Montrer des exemples
 
 ---
 
-Comparaison graphique
-Queue plus souvent utilisée en pratique
-Répondent à des besoins différents
+# FIFO :vs: LIFO
+
+|      |       Anglais       |           Français           | Collection |
+|------|:-------------------:|:----------------------------:|:----------:|
+| FIFO | First In, First Out | Premier Entré, Premier Sorti |    Queue   |
+| LIFO |  Last In, First Out | Dernier Entré, Premier Sorti |    Pile    |
+
+<!--
+A ne pas confondre avec FIFA...
+-->
+
+---
+
+![bg 80%](./assets/queue_principe.png)
+![bg 50%](./assets/pile_principe.png)
+
+<!--
+A gauche : FIFO (queue).
+A droite : LIFO (stack).
+-->
+
+---
+
+# FIFO dans la réalité
+
+#### Les queues de messages
+
+* Ordonnanceur de tâches (systèmes d'exploitation).
+* Traitements asynchrones dans un système.
+* Version itérative d'algorithmes récursifs.
+
+---
+
+# LIFO dans la réalité
+
+* Pile d'appels de fonctions.
+* Interpréteur.
+* Version itérative d'algorithmes récursifs.
 
 ---
 
 <!-- _class: title-section -->
 
-# TP : Queues de messages simple
+# TP : Queues de messages simples
 
 ---
 
-### TP : Queues de messages simple
+### TP : Queues de messages simples
 
 [**Lien** vers le sujet de DM](./tp-10-queues-msg.html).
 

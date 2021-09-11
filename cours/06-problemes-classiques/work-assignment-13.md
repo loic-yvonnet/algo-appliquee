@@ -1,5 +1,5 @@
 ---
-title: "Travail Pratique 10 - Queues de messages simple"
+title: "Travail Pratique 10 - Queues de messages simples"
 summary: "Travaux Pratiques : Producteur/consommateur avec une queue de messages simple."
 category: 06-problemes-classiques
 permalink: "{{ category }}/tp-10-queues-msg.html"
