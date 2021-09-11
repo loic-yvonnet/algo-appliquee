@@ -9,14 +9,14 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="297.65625mm"
+   width="117.47501mm"
    height="44.714584mm"
-   viewBox="0 0 297.65624 44.714584"
+   viewBox="0 0 117.475 44.714584"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="liste_et_noeud.svg"
-   inkscape:export-filename="/home/lyvonnet/Dev/algo-appliquee/cours/06-problemes-classiques/assets/liste_et_noeud.svg.png"
+   sodipodi:docname="liste.svg"
+   inkscape:export-filename="/home/lyvonnet/Dev/algo-appliquee/cours/06-problemes-classiques/assets/listepng.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
   <defs
@@ -29,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-69.5"
-     inkscape:cy="186.00006"
+     inkscape:cx="154.49999"
+     inkscape:cy="186.00008"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -61,62 +61,6 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(163.64479,-153.33125)">
-    <g
-       id="g905"
-       transform="translate(0,-2.5135498)">
-      <text
-         id="text819"
-         y="168.14792"
-         x="58.068291"
-         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="168.14792"
-           x="58.068291"
-           id="tspan817"
-           sodipodi:role="line">Noeud</tspan></text>
-      <text
-         id="text823"
-         y="187.72704"
-         x="31.75"
-         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="187.72704"
-           x="31.75"
-           id="tspan821"
-           sodipodi:role="line">valeur</tspan></text>
-      <text
-         id="text827"
-         y="187.72704"
-         x="82.285423"
-         style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.26458332"
-           y="187.72704"
-           x="82.285423"
-           id="tspan825"
-           sodipodi:role="line">suivant</tspan></text>
-      <rect
-         y="172.11667"
-         x="22.357294"
-         height="24.341667"
-         width="105.83333"
-         id="rect831"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332;stroke-opacity:1" />
-      <rect
-         y="155.9783"
-         x="16.669954"
-         height="44.44759"
-         width="117.20801"
-         id="rect833"
-         style="fill:none;stroke:#000000;stroke-width:0.26699519;stroke-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path837"
-         d="m 75.273958,172.38125 v 24.07708"
-         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    </g>
     <g
        id="g913">
       <text

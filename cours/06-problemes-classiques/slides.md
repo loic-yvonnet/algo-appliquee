@@ -39,15 +39,14 @@ style: |
 
 - Listes chaînées
 - Queue et FIFO
-- Stack et LIFO
+- Pile et LIFO
 - Comparaison entre FIFO et LIFO
 - Rappels sur la théorie des ensembles
-- Rappels sur le calcul matriciel avancé
+- Rappels sur le calcul matriciel
 
 <!--
-Moins de contenu que les autres cours jusqu'ici pour 2 raisons :
-- 2 gros pavés : listes chaînées et calcul matriciel avancé
-- 3e jour de cours pour digérer les 2 jours précédents avant d'entamer la suite
+On commence par étudier quelques structure de données supplémentaires, en complément du cours précédent.
+Ensuite, on prépare le terrain pour le Devoir à la Maison n°3 qui nécessite quelques bases en algèbre que l'on se propose de revoir.
 -->
 
 ---
@@ -58,16 +57,222 @@ Moins de contenu que les autres cours jusqu'ici pour 2 raisons :
 
 ---
 
-<!-- _class: smaller-text -->
+# Introduction
 
-Tableau à taille fixe dans d'autres langages de programmation
-Vecteur de taille dynamique dans d'autres langages (réallocation mémoire)
-Liste chaînée : représentation graphique
-Montrer graphiquement l'insertion, supression, recherche...
-Version immutable d'une liste chaîne : insertion au début uniquement.
-Avantage d'une liste chaînée : insertion au début ou à la fin très rapide.
-Inconvénients d'une liste chaînée : pas d'indexation et mémoire éparse en contradiction avec les architectures de CPU moderns (cache miss, etc.)
-Comparaison avec une `list` Python : c'est plutôt en vecteur pour des raisons de performance mais en vrai je ne crois pas que les détails d'implémentation fassent parti de la spec (@TBC)
+* En Python, une `list` permet de rassembler un nombre variable d'éléments.
+* Nous allons voir une manière d'implémenter ce type de liste.
+
+---
+
+# Notion de liste chaînée
+
+* Une liste chaînée est une **structure de données récursive**.
+* Une liste chaînée est composée de **noeuds**.
+* Un noeud comporte 2 variables :
+    * Une valeur,
+    * Le noeud suivant.
+
+---
+
+# <!--fit--> Noeud d'une liste chaînée
+
+![](./assets/noeud.png)
+
+---
+
+# 2 noeuds
+
+![](./assets/2_noeuds.png)
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 80%](./assets/noeud.png)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Noeud:
+    """Noeud de la liste chainee.
+    
+    La valeur peut etre n'importe quel objet 
+    Python valide.
+    Le suivant doit avoir pour type Noeud
+    ou None.
+    """
+    valeur = None
+    suivant = None
+```
+
+---
+
+# Noeud de départ
+
+* Comment identifier le **noeud de départ** de la liste ?
+* On souhaite que chaque noeud ait la **même représentation**.
+* On introduit un nouveau type, `Liste`, qui référence le noeud de départ.
+* Une `Liste` **n'a pas de valeur**.
+
+---
+
+# Noeud de départ identifié par la liste
+
+![](./assets/liste_chainee_1_noeud.png)
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 80%](./assets/liste.png)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Liste:
+    """Liste chainee.
+
+    Il s'agit simplement d'un point d'entree
+    vers le 1er noeud de la liste chainee, 
+    nommé initial.
+    La variable initial doit avoir pour type
+    Noeud ou None.
+    """
+    initial = None
+```
+
+---
+
+# <!--fit--> Liste chaînée comportant 2 valeurs
+
+![w:1100](./assets/liste_chainee.png)
+
+
+---
+
+# <!--fit--> Exemple avec 3 valeurs
+
+```python
+liste_chainee = creer_liste_chainee(42, 3.14, "bonjour")
+```
+
+:arrow_down:
+
+![w:1100](./assets/exemple.png)
+
+<!--
+Vous allez implémenter cette fonction dans le cadre du prochain TP.
+-->
+
+---
+
+# Dernier noeud
+
+Le `suivant` du dernier noeud est `None`.
+
+---
+
+# <!--fit--> Parcours d'une liste chaînée
+
+```python
+def parcours(liste_chainee, f):
+    """Appelle f sur chaque valeur de la liste chaînée.
+
+    liste_chainee - liste chaînée de type Liste.
+    f - fonction prenant un argument.
+    """
+    noeud = liste_chainee.initial
+    while noeud != None:
+        f(noeud.valeur)       # appelle la fonction f
+        noeud = noeud.suivant # passage au noeud suivant
+```
+
+---
+
+# Insertion au début
+
+![w:1100](./assets/insertion_debut.png)
+
+L'insertion au début est **non-destructive**.
+Il est possible de construire des listes chaînées **immutables**.
+
+<!--
+En revanche, nous ne chercherons pas à construire une telle liste chaînée immutable dans le cadre de ce cours.
+-->
+
+---
+
+# Insertion au milieu
+
+![w:1100](./assets/insertion_milieu.png)
+
+---
+
+# Insertion à la fin
+
+![w:1100](./assets/insertion_fin.png)
+
+---
+
+# Suppression au début
+
+![w:1100](./assets/suppression_debut.png)
+
+---
+
+# Suppression au milieu
+
+![w:1100](./assets/suppression_milieu.png)
+
+---
+
+# Suppression à la fin
+
+![w:1100](./assets/suppression_fin.png)
+
+---
+
+# Liste doublement chaînée
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class NoeudBidirectionnel:
+    valeur = None
+    suivant = None
+    precedent = None   # Nouveau
+
+@dataclass
+class ListeBidirectionnelle:
+    initial = None
+    final = None       # Nouveau
+```
+
+<!--
+Une liste doublement chaînée conserve une référence vers le noeud précédent.
+-->
+
+---
+
+# <!--fit--> Evaluation des listes chaînées
+
+- **Avantages** :
+    - Insertion rapide au début.
+    - Insertion rapide à la fin pour une liste doublement chaînée.
+- **Inconvénients** :
+    - Pas d'indexation : il faut parcourir potentiellement tous les éléments pour en retrouver un.
+    - Mémoire éparse : chaque noeud a sa propre adresse en mémoire.
+
+---
+
+# <!--fit--> Comparaison avec une `list`
+
+- La `Liste` chaînée est un exercice intéressant pour comprendre comment une `list` peut être implémentée.
+- La `Liste` chaînée introduite ici et dans le prochain TP a un but purement pédagogique.
+- Dans du code industriel de production, utilisez une `list`.
 
 ---
 
@@ -87,25 +292,174 @@ Comparaison avec une `list` Python : c'est plutôt en vecteur pour des raisons d
 
 # Queue et FIFO
 
-##### First-In, First-Out
+##### First-In, First-Out :uk:
 
 ---
 
-Premier entré, premier servi, comme au restau
-Queue == conteneur spécialisé pour résoudre cela (file d'attente)
-Représentation graphique
-Trouver une vidéo qui montre l'empilement et le dépilement des messages
-Utilisation de `list`
-Structure de données plus adaptée : `dequeue`
-Montrer des exemples
+# Notion de file d'attente
+
+* Une **queue**, également nommée **file d'attente**, est une collection.
+* Cette collection comporte 2 opérations principales :
+    * Empiler un élément.
+    * Dépiler le 1er élément empilé.
+* Premier entré, premier sorti.
+
+---
+
+# Métaphore
+
+![w:700](https://upload.wikimedia.org/wikipedia/commons/2/21/EmpireStateBuilding202086thFloorInteriorCenterLookingSoutheast.jpg?uselang=fr)
+
+<!--
+File d'attente de l'Empire State Building à New York.
+Source : Wikipedia (C)
+-->
+
+---
+
+# Principe
+
+![w:1100](./assets/queue_principe.png)
+
+---
+
+# Exemple avec 2 éléments
+
+![w:1100](./assets/queue_structure_donnees.png)
+
+<!--
+Il s'agit ici d'une implémentation basée sur une liste chaînée.
+D'autres implémentations existent.
+Au début, on a initial = None et final = None.
+Lorsque le 1er noeud est inséré, initial et final pointent tous les 2 dessus.
+-->
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 80%](./assets/queue.png)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Queue:
+    """Queue utilisant une liste chainee.
+
+    initial - doit avoir pour type 
+              Noeud ou None.
+    final - doit avoir pour type 
+            Noeud ou None.
+    """
+    initial = None
+    final = None
+```
+
+<!--
+On conserve une référence vers le dernier élément car on sait que chaque empilement se fait à la fin.
+Par conséquent, il faut pouvoir ajouter rapidement un élément à la fin.
+Nous avons vu que l'ajout à la fin d'une liste chaînée simple nécessite de traverser tous les éléments, ce qui n'est pas nécessairement rapide.
+Nous verrons lors du prochain cours des outils mathématiques pour évaluer la vitesse d'exécution d'un algorithme.
+-->
+
+---
+
+# Empile
+
+![w:1100](./assets/queue_empile.png)
+
+<!--
+Vous allez implémenter cet algorithme dans le prochain TP.
+-->
+
+---
+
+# Dépile
+
+![w:1100](./assets/queue_depile.png)
+
+
+---
+
+# Utilisation d'une `list`
+
+```python
+def empile(queue, element):
+    """Empile l'élément dans la queue.
+
+    queue - la queue à modifier.
+    element - element à empiler dans la queue.
+    """
+    queue.append(element)
+
+def depile(queue):
+    """Depile le 1er élément de la queue.
+
+    queue - la queue à modifier.
+    Retourne le 1er élément de la queue.
+    """
+    return queue.pop(0)
+```
+
+<!--
+Il s'agit d'une implémentation alternative basée sur une `list`.
+Cette implémentation est plus simple et probablement plus performante que celle avec notre liste chaînée.
+-->
+
+---
+
+# Exemple
+
+```python
+queue = [6, 3, 7]
+empile(queue, 10)
+print(queue)       # [6, 3, 7, 10]
+
+valeur = depile(queue)
+print(valeur)      # 6
+print(queue)       # [3, 7, 10]
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+# Utilisation de `dequeue`
+
+```python
+from collections import deque
+
+def empile(queue, element):
+    """Empile l'élément dans la queue.
+
+    queue - la queue à modifier.
+    element - element à empiler dans la queue.
+    """
+    queue.append(element)
+
+def depile(queue):
+    """Depile le 1er élément de la queue.
+
+    queue - la queue à modifier.
+    Retourne le 1er élément de la queue.
+    """
+    return queue.popleft()
+```
+
+<!--
+Il existe une meilleure structure de données que `list` pour représenter une file d'attente.
+Il s'agit de la collection `dequeue`.
+Cette collection offre un profil de performances bien plus intéressant que `list` pour de grandes tailles de données.
+-->
 
 ---
 
 <!-- _class: title-section -->
 
-# Stack et LIFO
+# Pile et LIFO
 
-##### Last-In, First-Out
+##### Stack & Last-In, First-Out :uk:
 
 ---
 
