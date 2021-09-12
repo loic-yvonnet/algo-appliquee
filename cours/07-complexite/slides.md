@@ -304,31 +304,12 @@ On y ajoute l'initialisation de y à la première ligne du corps de la fonction 
 
 ---
 
-# Notation $\asymp$
-
-* On dit que $g \asymp f$, s'il existe $n_0$ et $C_1, C_2 > 0$ tels que si $n > n_0$, alors $C_1 f(n) \le g(n) \le C_2 f(n)$.
-* $f$ et $g$ sont **comparables**.
-
----
-
-# Notation o
-
-##### Petit o
-
-* On dit que $g = o(f)$ si pour tout $\varepsilon > 0$, il existe $n_{\varepsilon}$ tel que si $n > n_{\varepsilon}$, alors $g(n) \le \varepsilon f(n)$.
-* Cette notation se lit : **g est un petit o de f**.
-* Autrement dit, g est négligable devant f.
-* Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
-
----
-
-# Notation O (1/2)
-
-##### Grand O
+# Notation Grand O (1/2)
 
 * On l'appelle **notation de Landau**.
 * Il s'agit de la **notation la plus utilisée** en algorithmique pour comparer des algorithmes.
 * Cette notation se lit : **Grand O de [...]**.
+* On l'appelle également **ordre de grandeur**, ou ordre de croissance.
 
 <!--
 Edmund Georg Hermann LANDAU est un mathématicien berlinois renvoyé en 1934 de l'université par les nazis.
@@ -337,7 +318,7 @@ Il décède en 1938.
 
 ---
 
-# Notation O (2/2)
+# Notation Grand O (2/2)
 
 * Soit $f(n)$ et $g(n)$ deux suites positives indexées sur $\mathbb{N}$.
 * On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n).
@@ -357,11 +338,62 @@ Il décède en 1938.
 
 ---
 
+# Notation petit o
+
+* On dit que $g = o(f)$ si pour tout $\varepsilon > 0$, il existe $n_{\varepsilon}$ tel que si $n > n_{\varepsilon}$, alors $g(n) \le \varepsilon f(n)$.
+* Cette notation se lit : **g est un petit o de f**.
+* Autrement dit, g est négligable devant f.
+* Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
+* C'est tout simplement l'**inverse de Grand O**.
+* Notation alternative : $g = o(f) \Longleftrightarrow g = \Omega(f)$.
+
+<!--
+La notation alternative se dit Grand Oméga de [...].
+En mathématiques, on utilise peut-être plus la notation "petit o", et en information, la notation "Grand Oméga".
+En pratique, dans l'industrie, cette notation est très rarement utilisée (sauf exception).
+-->
+
+---
+
+# Notation $\asymp$
+
+* On dit que $g \asymp f$, s'il existe $n_0$ et $C_1, C_2 > 0$ tels que si $n > n_0$, alors $C_1 f(n) \le g(n) \le C_2 f(n)$.
+* $f$ et $g$ sont **comparables**.
+* Notation alternative : $g \asymp f \Longleftrightarrow g = \Theta(f)$.
+
+<!--
+De la même manière, la notation asymptotique est peut-être plus utilisée en mathématiques, tandis que la notation Grand Théta est probablement plus utilisée en algorithmique.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# Comparaison
+
+|                  |  Approximation Tilde  |      Grand O     |    Grand Oméga   |  Grand Théta |
+|------------------|:---------------------:|:----------------:|:----------------:|:------------:|
+| Notation algo    |      $\thicksim$      |         O        |     $\Omega$     |   $\Theta$   |
+| Notation maths   |      $\thicksim$      |         O        |          o       |   $\asymp$   |
+| Définition       | Asymptotiquement égal | Borne supérieure | Borne inférieure | Borne serrée |
+| Utilité pratique |       Très rare       |  **Très élevée** |     Très rare    |    Elevée    |
+
+---
+
+# Abus de langage fréquent
+
+On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et place de Grand $\Theta$.
+
+---
+
 <!-- _class: title-section -->
 
 # Classes de complexité
 
-##### Constante, logarithmique, linéaire, log-linéaire, polynomiale
+##### Constante, logarithmique, linéaire, linéarithmique, polynomiale
+
+---
+
 
 ---
 
