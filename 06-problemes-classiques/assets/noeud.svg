@@ -11,11 +11,14 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="117.47501mm"
    height="44.714584mm"
-   viewBox="0 0 117.47501 44.714584"
+   viewBox="0 0 117.475 44.714584"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="noeud.svg">
+   sodipodi:docname="noeud.svg"
+   inkscape:export-filename="/home/lyvonnet/Dev/algo-appliquee/cours/06-problemes-classiques/assets/noeud.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
   <defs
      id="defs2" />
   <sodipodi:namedview
@@ -26,8 +29,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-302.49999"
-     inkscape:cy="195.50007"
+     inkscape:cx="-526.49999"
+     inkscape:cy="195.50009"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
