@@ -1200,7 +1200,7 @@ Cette définition est utile pour l'élimination de Gauss-Jordan.
 
 ---
 
-# <!--fit--> Elimination de Gauss Jordan (1/2)
+# <!--fit--> Elimination de Gauss Jordan (1/3)
 
 On sait que les opérations suivantes sont possibles pour résoudre le système sans changer la solution :
 * Interchanger 2 lignes.
@@ -1209,17 +1209,197 @@ On sait que les opérations suivantes sont possibles pour résoudre le système 
 
 ---
 
-# <!--fit--> Elimination de Gauss Jordan (2/2)
+# <!--fit--> Elimination de Gauss Jordan (2/3)
 
-* On parcourt chaque colonne de $M$ :
-    * On parcourt chaque ligne de $M$ en évitant la diagonale :
-        * On calcule le pivôt de Gauss pour que l'élément actuel soit annulé.
-        * On applique ce pivôt à la ligne actuelle.
+* On parcourt chaque colonne $col$ de $M$ :
+    * Le pivôt est l'élément sur la diagonale dans cette colonne : $Pivot = M[col][col]$.
+    * On parcourt chaque ligne $lig$ de $M$ sauf celle où se trouve le pivôt :
+        * On calcule le coefficient multiplicateur $Coeff = \frac{M[lig][col]}{Pivot}$.
+        * On soustrait $Coeff$ fois la ligne $col$ à la ligne $lig$.
+
+<!--
+Il s'agit des étapes clés de l'algorithme.
+-->
+
+---
+
+# <!--fit--> Elimination de Gauss Jordan (3/3)
+
+La solution est la dernière colonne dont chaque élément est divisé par le pivôt sur la même ligne.
 
 <!--
 Cet algorithme est illustré dans les diapositives suivantes.
 Vous aurez à l'implémenter dans le DM n°3.
 -->
+
+---
+
+# Exemple
+
+On considère, dans $\mathbb{R}^3$, le système suivant :
+
+$$
+\left\{
+    \begin{matrix}
+         x - 0.5y -  z = 2 \\
+        2x -    y +  z = 1 \\
+         x -    y - 2z = 3
+    \end{matrix}
+\right.
+$$
+
+---
+
+# Sous forme matricielle
+
+$$
+\left\{
+    \begin{matrix}
+         x - 0.5y -  z = 2 \\
+        2x -    y +  z = 1 \\
+         x -    y - 2z = 3
+    \end{matrix}
+\right.
+\Longleftrightarrow
+\begin{pmatrix}
+    1 & -0.5 & -1 \\
+    2 & -1   &  1 \\
+    1 & -1   & -2
+\end{pmatrix}
+\begin{pmatrix}
+    x \\
+    y \\
+    z
+\end{pmatrix}
+=
+\begin{pmatrix} 
+    2 \\
+    1 \\
+    3
+\end{pmatrix}
+$$
+
+---
+
+# Matrice augmentée
+
+$$
+\begin{pmatrix}
+    1 & -0.5 & -1 & 2 \\
+    2 & -1   &  1 & 1 \\
+    1 & -1   & -2 & 3
+\end{pmatrix}
+$$
+
+---
+
+# <!--fit--> Sous forme de tableau
+
+|      | col1 | col2 | col3 | col4 |
+|------|:----:|:----:|:----:|:----:|
+| lig1 |   1  | -0.5 |  -1  | 2    |
+| lig2 |   2  |  -1  |   1  | 1    |
+| lig3 |   1  |  -1  |  -2  | 3    |
+
+---
+
+<!-- _class: smaller-text -->
+
+# 1er pivôt
+
+|      | col1 | col2 | col3 | col4 |
+|------|:----:|:----:|:----:|:----:|
+| lig1 | **1**| -0.5 |  -1  | 2    |
+| lig2 |   2  |  -1  |   1  | 1    |
+| lig3 |   1  |  -1  |  -2  | 3    |
+
+|      | col1 | col2 | col3 | col4 |    Opérations      |
+|------|:----:|:----:|:----:|:----:|--------------------|
+| lig1 | **1**| -0.5 |  -1  | 2    |                    |
+| lig2 |   0  |   0  |   3  | -3   | `lig2 -= 2 * lig1` |
+| lig3 |   0  | -0.5 |  -1  | 1    | `lig3 -= 1 * lig1` |
+
+---
+
+# Echange lig2 et lig3
+
+|      | col1 | col2 | col3 | col4 |
+|------|:----:|:----:|:----:|:----:|
+| lig1 |   1  | -0.5 |  -1  | 2    |
+| lig3 |   0  | -0.5 |  -1  | 1    |
+| lig2 |   0  |   0  |   3  | -3   |
+
+Un pivôt ne peut pas être nul.
+
+---
+
+<!-- _class: smaller-text -->
+
+# 2e pivôt
+
+|      | col1 | col2   | col3 | col4 |
+|------|:----:|:------:|:----:|:----:|
+| lig1 |   1  | -0.5   |  -1  | 2    |
+| lig3 |   0  |**-0.5**|  -1  | 1    |
+| lig2 |   0  |   0    |   3  | -3   |
+
+|      | col1 | col2   | col3 | col4 |    Opérations      |
+|------|:----:|:------:|:----:|:----:|--------------------|
+| lig1 |   1  |   0    |   0  | 1    | `lig1 -= lig3`     |
+| lig3 |   0  |**-0.5**|  -1  | 1    |                    |
+| lig2 |   0  |   0    |   3  | -3   | `lig2 -= 0 * lig3` |
+
+---
+
+<!-- _class: smaller-text -->
+
+# 3e pivôt
+
+|      | col1 | col2  | col3  | col4 |
+|------|:----:|:-----:|:-----:|:----:|
+| lig1 |   1  |   0   |   0   | 1    |
+| lig3 |   0  | -0.5  |  -1   | 1    |
+| lig2 |   0  |   0   | **3** | -3   |
+
+|      | col1 | col2  | col3  | col4 |    Opérations        |
+|------|:----:|:-----:|:-----:|:----:|----------------------|
+| lig1 |   1  |   0   |   0   | 1    | `lig1 -= 0 * lig2`   |
+| lig3 |   0  | -0.5  |   0   | 0    | `lig3 += 1/3 * lig2` |
+| lig2 |   0  |   0   | **3** | -3   |                      |
+
+---
+
+# Dernière étape
+
+##### Division de la dernière colonne par les pivôts
+
+$$
+\text{col4} =
+\begin{pmatrix}
+    1 \\
+    0 \\
+    -3
+\end{pmatrix}
+,\quad
+\text{Pivôts} =
+\begin{pmatrix}
+    1 \\
+    -0.5 \\
+    3
+\end{pmatrix}
+,\quad
+\begin{pmatrix}
+    x \\
+    y \\
+    z
+\end{pmatrix}
+=
+\begin{pmatrix}
+    1 \\
+    0 \\
+    -1
+\end{pmatrix}
+$$
 
 ---
 
