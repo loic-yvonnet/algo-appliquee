@@ -725,6 +725,11 @@ A droite : LIFO (stack).
 
 ![](./assets/ensemble_vide.png)
 
+<!--
+Il s'agit d'un diagramme de Venn.
+On l'appelle vulgairement un patatoïde.
+-->
+
 ---
 
 # <!--fit--> Ensemble avec quelques éléments

@@ -189,20 +189,171 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
     * Exemple : l'élément recherché est en 1er.
 * **Pire cas** : le maximum d'instructions est exécuté.
     * Exemple : l'élément recherché est à la fin.
-* **Cas moyen** : 
-* **Loi de Murphy** : on considère généralement le pire cas uniquement.
+* **Cas moyen** : temps moyen pour des entrées classiques (par exemple, 90% des cas).
+* **Loi de Murphy** : si un problème peut survenir, il surviendra. On se concentre donc sur le pire cas.
 
 ---
 
 <!-- _class: title-section -->
 
-# <!--fit--> Réflexion sur la complexité temporelle et spatiale
+# Réflexion sur la complexité temporelle et spatiale
+
+---
+
+# Complexité temporelle
+
+* C'est le type de complexité algorithmique que nous avons discuté jusqu'à présent.
+* On s'attache à évaluer le temps d'exécution sur une machine théorique.
+
+---
+
+# Complexité spatiale
+
+* La **complexité spatiale** s'attache à déterminer la place mémoire nécessaire pour la résolution d'un algorithme.
+* Il s'agit d'une fonction des entrées de l'algorithme étudié.
+
+---
+
+# Temporel et spatial
+
+* On se focalise d'abord sur la complexité temporelle.
+* Si 2 algorithmes ont la même complexité temporelle, on compare leurs complexités spatiales.
 
 ---
 
 <!-- _class: title-section -->
 
 # Notation $O(...)$
+
+---
+
+# Notation asymptotique
+
+* **Notation asymptotique** : manière formelle de relier le temps d'exécution à la taille des entrées.
+* On s'intéresse au cas où la taille des entrées approche l'**infini**.
+
+<!--
+On va prendre un exemple.
+-->
+
+---
+
+# Exemple (1/2)
+
+```python
+def f(x):
+    y = 0
+    for i in range(x):
+        for j in range(x):
+            y += 1
+            y += 1
+
+    for i in range(x):
+        y += 1
+
+    for i in range(99):
+        y += 1
+
+    return y
+```
+
+On a $2x^2 + x + 100$ instructions.
+
+<!--
+Dans la boucle imbriquée, on a 2 additions, d'où le 2x^2.
+La dernière boucle va de 0 à 98 : 99 instructions.
+On y ajoute l'initialisation de y à la première ligne du corps de la fonction f => 100 instructions constantes.
+-->
+
+---
+
+# Exemple (2/2)
+
+* Pour $x = 3$, on a $2 \cdot 3^2 + 3 + 100 = 121$ instructions. On est dominé par le **facteur constant**.
+* Pour $x = 10$, on a 310 instructions, dont 200 dans la première boucle imbriquée.
+* Pour $x = 100$, la première boucle imbriquée **écrase** les autres : 20000 instructions contre seulement 200.
+
+---
+
+# Conclusions
+
+- L'exemple précédent montre qu'asymptotiquement, quand x tend vers l'infini, **seul le terme de rang le plus élevé compte** : $2x^2$.
+- On peut même dire que la croissance dépend essentiellement de $x^2$.
+- Nous souhaitons simplifier l'étude de la complexité des algorithmes en **éliminant les termes insignifiants**.
+
+---
+
+# Notation $\thicksim$
+
+##### Approximation tilde
+
+* Soit $f(n)$ et $g(n)$ deux suites positives indexées sur $\mathbb{N}$.
+* On dit que $g \thicksim f$, si $\lim\limits_{\infty} \frac{g}{f} = 1$.
+* $f$ et $g$ sont **asymptotiquement égaux**.
+
+---
+
+# Exemples avec $\thicksim$
+
+| Fonction                   | Approximation $\thicksim$ |
+|----------------------------|:-------------------------:|
+| $2x^2 + x + 100$           |      $\thicksim 2x^2$     |
+| $3x^3 + 3000x + 10000000$  |     $\thicksim 3x^3$      |
+| $\log(x) + 100000$         |    $\thicksim \log(x)$    |
+| $300$                      |      $\thicksim 300$      |
+
+---
+
+# Notation $\asymp$
+
+* On dit que $g \asymp f$, s'il existe $n_0$ et $C_1, C_2 > 0$ tels que si $n > n_0$, alors $C_1 f(n) \le g(n) \le C_2 f(n)$.
+* $f$ et $g$ sont **comparables**.
+
+---
+
+# Notation o
+
+##### Petit o
+
+* On dit que $g = o(f)$ si pour tout $\varepsilon > 0$, il existe $n_{\varepsilon}$ tel que si $n > n_{\varepsilon}$, alors $g(n) \le \varepsilon f(n)$.
+* Cette notation se lit : **g est un petit o de f**.
+* Autrement dit, g est négligable devant f.
+* Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
+
+---
+
+# Notation O (1/2)
+
+##### Grand O
+
+* On l'appelle **notation de Landau**.
+* Il s'agit de la **notation la plus utilisée** en algorithmique pour comparer des algorithmes.
+* Cette notation se lit : **Grand O de [...]**.
+
+<!--
+Edmund Georg Hermann LANDAU est un mathématicien berlinois renvoyé en 1934 de l'université par les nazis.
+Il décède en 1938.
+-->
+
+---
+
+# Notation O (2/2)
+
+* Soit $f(n)$ et $g(n)$ deux suites positives indexées sur $\mathbb{N}$.
+* On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n).
+* Autrement dit, $g$ est dominé par $f$ à partir d'un certain rang.
+
+
+---
+
+# Exemples avec $\thicksim$ et O
+
+| Fonction          | Approximation $\thicksim$ |       Grand O     |
+|-------------------|:-------------------------:|:-----------------:|
+| $2N^2 + N + 100$  |      $\thicksim 2N^2$     |       O($N^2$)    |
+| $3N^3 + 3N + 3$   |     $\thicksim 3N^3$      |       O($N^3$)    |
+| $\log(N) + 10$    |    $\thicksim \log(N)$    |     O($\log(N)$)  |
+| $300$             |      $\thicksim 300$      |         O(1)      |
 
 ---
 
