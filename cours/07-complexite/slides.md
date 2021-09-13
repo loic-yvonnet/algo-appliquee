@@ -94,6 +94,18 @@ Branchez vos neurones et c'est parti !
 
 ---
 
+# Force brute
+
+* Une manière **naïve** de rechercher une solution consiste à explorer toutes les solutions possibles et à vérifier celles qui sont correctes.
+* Ce type de solution s'appelle une recherche en **force brute**.
+* Exemple : recherche linéaire.
+
+<!--
+Cela signifie que l'on s'appuie sur la puissance de la machine plutôt que sur son intelligence.
+-->
+
+---
+
 # Approximation
 
 * Combien de temps va prendre mon programme ?
@@ -390,8 +402,6 @@ On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et pla
 
 # Classes de complexité
 
-##### Déterministe P et EXPTIME
-
 ---
 
 # Résumé
@@ -614,6 +624,12 @@ def fibonacci(N):
 * Même pour $C = 2$, le nombre d'instructions devient ingérable pour $N > 50$.
 * Malheureusement, de **nombreux problèmes** sont dans cette classe. 
 
+---
+
+# Complexité d'un problème
+
+* S'il existe plusieurs algorithmes pour résoudre un problème, alors la complexité de ce problème correspond à la classe de l'algorithme la plus efficace.
+* Exemple : il existe des algorithmes en $O(N)$ et $O(\log N)$ pour trouver un nombre dans une liste triée. Ce problème a donc pour complexité $O(\log N)$.
 
 ---
 
@@ -683,7 +699,7 @@ Ici, on zoom simplement pour mieux voir les classes de complexité logarithmique
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Prédictions basés sur l'ordre de grandeur
+# <!--fit--> Prédictions basées sur l'ordre de grandeur
 
 ###### Programme prenant quelques heures pour une taille $N$
 
@@ -693,7 +709,7 @@ Ici, on zoom simplement pour mieux voir les classes de complexité logarithmique
 | linéarithmique |    $N \log N$    |      2     |      10     |      un jour      |                  quelques heures                  |
 | quadratique    |       $N^2$      |      4     |     100     | quelques semaines |                      un jour                      |
 | cubique        |       $N^3$      |      8     |     1000    |   plusieurs mois  |                 quelques semaines                 |
-| expoentielle   |       $2^N$      |    $2^N$   |   $2^{9N}$  |       jamais      |                       jamais                      |
+| exponentielle  |       $2^N$      |    $2^N$   |   $2^{9N}$  |       jamais      |                       jamais                      |
 
 <!--
 C'est une autre manière d'apprécier la différence entre ces classes d'algorithmes.
@@ -719,7 +735,67 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 # <!--fit--> Problèmes NP-complet
 
-##### Intuition et exemple
+---
+
+# <!--fit--> Problèmes "faciles" et "difficiles"
+
+* On en a eu l'intuition : les algorithmes exponentiels ne sont pas vraiment applicables en pratique.
+* **Problème "facile"** : il existe un algorithme polynômial (ou meilleur) pour résoudre ce problème.
+* **Problème "difficile"** : on n'a pas (encore) trouvé d'algorithme polynômial et on est obligé d'utiliser un algorithme exponentielle.
+* On recherche s'il existe des algorithmes non-exponentiels permettant de résoudre le problème.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Problème de satisfaisabilité Booléenne (SAT)** : Etant donné un ensemble $M$ d'équations impliquant $N$ variables Booléennes, trouver des valeurs pour chaque variable telles que toutes les équations sont satisfaites, or rapporter qu'aucune solution n'existe.
+* **Applications** : diagnostique, planification, vérification de modèle, cryptographie.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Load Balancing** : Etant donné un ensemble de tâches d'une durée spécifiée et une limite de temps $T$, comment ordonnancer ces tâches sur 2 processeurs identiques de telle sorte qu'elles se terminent avant $T$ ?
+* **Application** : Routage de paquets sur un réseau.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Chemin Hamiltonien** : Etant donné un graphe, trouver un chemin qui visite chaque vertex exactement une fois, ou reporter qu'aucune solution n'existe.
+* **Applications** : GPS, jeu vidéo.
+
+---
+
+# Formalisation
+
+* **P** est l'ensemble de tous les problèmes qui peuvent être résolus en temps **polynômial** par une Machine de Turing déterministe (c'est-à-dire un ordinateur classique).
+* **NP** est l'ensemble de tous les problèmes décidés par une Machine de Turing **N**on-Déterministe en temps **P**olynômial.
+
+<!--
+Plus précisément, P et NP font référence aux problèmes de recherche.
+Cela dit, tout problème (optimisation, décision, etc.) peut se réduire à un problème de recherche.
+C'est la raison pour laquelle on a simplifié la définition sur cette diapositive.
+L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoire aux machines permet en théorie d'accroître leur puissance de calcul en "devinant" des solutions. La machine "devine" une solution, et prouve ensuite qu'elle est correcte. Plus formellement, cela vient des Machines de Turing Nondéterministes, qui reviennent plus ou moins à des machines quantiques.
+-->
+
+---
+
+# Problème NP-complet
+
+* Un problème est NP-complet si :
+    * on peut facilement et rapidement vérifier qu'une solution est correcte.
+    * tous les problèmes de la classe NP se ramènent à celui-ci via une réduction polynomiale.
+* Cela signifie que le problème est au moins aussi "difficile" que les autres problèmes de la classe NP.
+
+---
+
+# Implications concrètes
+
+* Il existe certains problèmes pour lesquels **on n'a aujourd'hui pas de meilleure solution** que :
+    * un algorithme exponentiel,
+    * une solution en force brute consistant à explorer tout l'espace de solution (quant il est fini).
+* **On n'est pas encore capable de prouver l'existence, ou non, de meilleures solutions**.
 
 ---
 
@@ -727,7 +803,82 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 # <!--fit--> Limites de l'étude de complexité
 
-##### Architecture matérielle moderne (CPU)
+---
+
+# <!--fit--> Architecture d'un processeur
+
+* Les architectures modernes des CPUs sont **complexes** et **difficiles à modéliser** mathématiquement.
+* Il peut arriver que l'exécution d'un algorithme théoriquement plus efficace soit **plus lente** qu'un algorithme plus naïf.
+
+<!--
+Gardons à l'esprit que dans le cas général, l'étude de la complexité des algorithmes donne un très bon indicateur.
+En réalité, c'est souvent lorsque l'on compare des algorithmes dans la même classe de complexité que l'on peut éventuellement avoir des surprises.
+Un algorithme quadratique restera plus lent en exécution qu'un algorithme linéaire.
+-->
+
+---
+
+# Exemples
+    
+* **Prédiction de branche** : un CPU peut prédire statistiquement quel code devra être exécuté, et l'exécuter en avance.
+* **Hiérarchie de mémoires** : certains algorithmes compactes en mémoire permettent d'utiliser efficacement les hiérarchies de cache et de pagination.
+* **Appels systèmes** : par exemple, les allocations mémoires peuvent avoir des impacts importants.
+
+---
+
+# Grandes constantes
+
+* On a vu que $O(2N^2 + CN) = O(N^2)$.
+* Si la constante $C$ est **très grande**, l'ordre de grandeur $O$ peut être trompeur en pratique.
+* Exemple : $C = 10^{100}$.
+
+<!--
+En pratique, cet exemple n'est pas très réaliste car il signifierait qu'une personne a écrit 10^100 instructions.
+Cela dit, il est possible de générer des programmes. Donc il n'est pas impossible d'écrire un programme qui génère un autre programme pour lequel le nombre d'instructions (sans boucle) est très grand.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# <!--fit--> Boucle interne non-dominante
+
+* Le modèle de coût s'intéresse essentiellement à la **boucle interne**.
+* De nombreux algorithmes comporte un nombre significatif d'instructions en-dehors de la boucle interne.
+
+```python
+compteur = 0
+for i in range(N):
+    for j in range(N):
+
+        #
+        # Potentiellement de nombreuses instructions ici
+        #
+
+        for k in range(N):
+            # On dit juste que l'on est en O(N^3)
+            compteur += 1
+```
+
+<!--
+En effet, dans la notation O, on s'intéresse au final uniquement au nombre de fois que l'on passe dans la boucle interne de l'algorithme.
+-->
+
+---
+
+# Temps d'instruction
+
+* Le modèle suppose que chaque instruction prend un temps équivalent.
+* Cela est faux en pratique : cela dépend de l'**unité arithmétique et logique** du processeur.
+* Même les accès à un très grand tableau ne sont pas nécessairement en temps constant. En effet, si le tableau ne rentre pas dans le cache du processeur, il peut y avoir des **fautes de cache** (cache miss) voire des **fautes de page**.
+
+---
+
+# Plusieurs paramètres
+
+* On s'est concentré sur le cas où le temps d'exécution dépend de 1 paramètre $N$.
+* De nombreux problèmes dépendent de plusieurs paramètres $N$, $M$, $K$.
+* Exemple : Il peut s'agir de listes différentes.
 
 ---
 
