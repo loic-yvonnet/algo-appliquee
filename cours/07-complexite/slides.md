@@ -1181,6 +1181,111 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 ---
 
+# Machine de Turing déterministe
+
+* Sur nos machines actuelles, un bit a pour valeur 0 ou 1.
+* Un octet est codé sur 8 bits.
+* Un octet peut donc prendre des valeurs entre $[0..2^8-1]$, soit $[O..255].
+* Les opérations principales sur un bit sont celles de la logique Booléenne : AND, OR, XOR, NOT, SHIFT.
+
+<!--
+On revient sur notre machine de Turing déterministe avant de passer dans le domaine quantique.
+-->
+
+---
+
+# Physique quantique
+
+* En physique quantique, la fonction d'onde d'une particule prend une valeur **au moment de son observation**.
+* Tant qu'elle n'est pas observée, une particule est dans un **état quantique**.
+* Cet état quantique est régi par **des probabilités**.
+
+---
+
+# Le chat de Schrödinger
+
+* On met le chat dans une boîte.
+* Un incident survient.
+* Tant que l'on ne regarde pas dans la boîte, le chat est à la fois mort **ET** vivant.
+* Ce n'est qu'une fois que l'on regarde dans la boîte que le chat est mort *ou* vivant.
+
+<!--
+Cette image illustre le fait qu'entre 2 observations, la variable observée est dans un état quantique probabiliste.
+On appelle le fait d'être potentiellement dans 2 états en même temps la "superposition".
+-->
+
+---
+
+# Bit quantique (1/2)
+
+##### Qubit
+
+* Un bit quantique est représenté par un vecteur $(p, q)$.
+* $p$ est la probabilité pour que le bit soit égal à 0.
+* $q$ est la probabilité pour que le bit soit égal à 1.
+* Lorsqu'on lit la valeur du bit quantique, il a pour valeur 0 ou 1.
+
+<!--
+Encore une fois, une observation (la lecture de la valeur de la variable) fixe un état.
+Tant qu'il n'y a pas d'observation, on est dans un état superposé.
+Les opérations les plus intéressantes ont lieu dans cet état superposé.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# Bit quantique (2/2)
+
+##### Qubit
+
+* On a : $p + q = 1$, puisque soit $p$, soit $q$ est vérifié.
+* On pose le vecteur d'amplitudes $(\alpha, \beta)$ tel que $p = \alpha^2, q = \beta^2$.
+* On a donc $\alpha^2 + \beta^2 = 1$.
+* On peut donc l'espace d'amplitude sur un cercle trigonométrique.
+* Les opérations principale sur un bit quantique sont : rotation, symmétrie, porte d'Hadamar, etc.
+
+<!--
+Le vecteur (p, q) est dans un espace de probabilité.
+Le vecteur (alpha, beta) est dans un espace Euclidien. Il s'agit de l'espace quantique des superpositions.
+Ce sont les transformations dans et entre ces espaces qui sont étudiés dans la logique quantique.
+On ne rentrera pas plus dans les détails dans ce cours.
+Voir les références du cours pour aller plus loin.
+-->
+
+---
+
+# <!--fit--> Machine de Turing Non-Déterministe
+
+* Une machine quantique permet de simuler une machine de Turing Non-Déterministe.
+* Par conséquent, elle vise à traiter les **problèmes NP** en un temps meilleur que les machines déterministes.
+
+---
+
+# Etat de l'art (1/3)
+
+* Il existe déjà près d'**une centaine d'algorithmes quantiques**.
+* Les applications possibles sont variées : cryptographie, apprentissage par machine, calcul scientifique.
+* La recherche sur le sujet est très actif.
+
+---
+
+# Etat de l'art (2/3)
+
+* Les machines quantiques actuelles :
+    * coûtent **très chers**,
+    * ne comportent que **quelques qubits**,
+    * **ne permettent pas d'exécuter** la plupart des algorithmes quantiques.
+
+---
+
+# Etat de l'art (3/3)
+
+* Il existe déjà des **langages de programmation quantiques** (ex: Q# de Microsoft).
+* On **simule des machines quantiques** sur des ordinateurs classiques.
+
+---
+
 <!-- _class: title-section -->
 
 # TP : Benchmark et complexité
