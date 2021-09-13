@@ -955,6 +955,15 @@ La classe de complexité reste, de loin, le facteur le plus important.
 
 ---
 
+# Principe de parallélisation
+
+* On divise une tâche en **sous-tâches**.
+* On **distribue** les sous-tâches sur différents coeurs (via des fils d'exécution).
+* On récupère le **résultat local** de chaque sous-tâche.
+* On **combine les résultats** des sous-tâches pour déterminer la solution globale de la tâche principale.
+
+---
+
 # Evaluation des gains
 
 * De combien peut-on améliorer un algorithme en le parallélisant ?
@@ -994,6 +1003,20 @@ Cela signifie que même si un code est parallélisable à 95%, on a un facteur d
 
 ---
 
+# Supercalculateurs
+
+* Il s'agit d'un ordinateur massif rassemblant un grand nombre de processeurs.
+* Un système d'exploitation particulier gère tous ces processeurs.
+* Le supercalculateur Fugaku rassemble **7,3 millions de processeurs**.
+* Il atteint **415 PFLOPS**, c'est-à-dire $415 \cdot 10^{15}$ instructions à virgule flottante par seconde.
+
+<!--
+Ces supercalculateurs sont eux-aussi contraints par la loi d'Amdahl.
+Nos smartphones actuels sont plus puissants que les supercalculateurs des années 1970.
+-->
+
+---
+
 # Conclusions
 
 * La parallélisation du code permet d'obtenir des **gains significatifs**.
@@ -1008,6 +1031,77 @@ Cela signifie que même si un code est parallélisable à 95%, on a un facteur d
 
 ##### Cluster et sur le Cloud
 
+---
+
+# Noeuds de calcul
+
+* La parallélisation sur le CPU et GPU d'une machine se fait **localement**.
+* Il est possible de **distribuer** un calcul sur un **cluster de machines** mis en réseau.
+* Chaque machine s'appelle dans ce contexte un **noeud de calcul**.
+
+---
+
+# <!--fit--> On-Premise ou dans le Cloud
+
+* **On-Premise** : exécution dans un cluster appartenant à l'entité (entreprise/personne) effectuant le calcul.
+* **Cloud Computing** : exécution dans un cluster localisé dans un datacenter appartement à un fournisseur tiers.
+
+<!--
+Quelques acteurs du Cloud en 2021 : Heroku, Google, AWS.
+-->
+
+---
+
+# Avantages
+
+* Le **coût** :
+    * Un supercalculateur est généralement trop onéreux.
+    * Mettre en réseau des ordinateurs du marché est généralement moins coûteux.
+    * **Location** de noeuds de calcul dans le Cloud et de payer **à l'usage**.
+* L'**évolutivité horizontale** (scalability :uk:) : On peut facilement augmenter les capacités de calcul en rajoutant simplement une machine supplémentaire.
+
+<!--
+Evolutivité verticale : on rajoute du hardware à un PC existant.
+Un supercalculateur est basé sur la vertical scalability.
+Un cluster de calcul est basé sur la horizontal scalability.
+Ce dernier est plus évolutif pour moins cher.
+-->
+
+---
+
+# Défis supplémentaires
+
+* **Lenteur du réseau** : les échanges de données sur un réseau sont beaucoup plus lents qu'au sein d'une machine.
+* **Pannes** : chaque noeud de calcul peut être sujet à des pannes.
+
+<!--
+La loi d'Amdahl s'applique également toujours.
+-->
+
+---
+
+# Algorithmes distribués
+
+* Il existe de nombreux algorithmes et techniques dédiés au calcul distribué.
+* De nombreuses technologies offrent des solutions sur étagère pour répondre à ces problématiques complexes.
+* Exemple : Map Reduce.
+
+<!--
+Pour le calcul distribué scientifique, on peut mentionner la bibliothèque C++ HPX ou le vénérable MPI.
+Pour la gestion de données relationnelles, on peut mentionner les bases de données relationnelles comme PostgreSQL.
+Pour la gestion fiable des échanges entre noeuds de calcul, on peut mentionner le pattern Pub/Sub et message queue distribuée comme Kafka.
+Pour le Big Data - c'est-à-dire la manipulation d'une grande quantité de données non-relationnelles -, on peut mentionner l'écosystème Hadoop avec Map Reduce, Spark et consorts.
+Pour la distribution de milliards de pages web quasi-statiques, on peut mentionner l'architecture REST.
+Etc.
+-->
+
+---
+
+# Conclusions
+
+* Avec des supercalculateurs ou des clusters de calcul dans le Cloud, on a accès à de très grandes puissances de calcul.
+* Pourquoi a-t-on besoin d'autant de puissance ?
+* Pourquoi ne peut-on pas utiliser que des algorithmes de complexité logarithmique ?
 
 ---
 
