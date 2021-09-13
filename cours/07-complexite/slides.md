@@ -390,9 +390,229 @@ On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et pla
 
 # Classes de complexité
 
-##### Constante, logarithmique, linéaire, linéarithmique, polynomiale
+##### Déterministe P et EXPTIME
 
 ---
+
+# Résumé
+
+* $O(1)$ désigne une complexité **constante**.
+* $O(\log N)$ désigne une complexité **logarithmique**.
+* $O(N)$ désigne une complexité **linéaire**.
+* $O(N \cdot \log N)$ désigne une complexité **linéarithmique**.
+* $O(N^k)$ désigne une complexité **polynomiale**, en particulier :
+    * $O(N^2)$ désigne une complexité **quadratique**.
+    * $O(N^3)$ désigne une complexité **cubique**.
+* $O(C^N)$ désigne une complexité **exponentielle**.
+
+<!--
+Nous allons maintenant détailler chacune de ces classes et donner des exemples.
+-->
+
+---
+
+# Complexité constante
+
+##### $O(1)$
+
+```python
+def f(N):
+    return N + 3
+```
+
+- Nombre fixe d'opérations.
+- Complexité asymptotique indépendante de la taille des entrées.
+
+---
+
+# <!--fit--> Complexité logarithmique (1/3)
+
+##### $O(\log N)$
+
+```python
+def serialise(N):
+    """Sérialise l'entier N positif en chaîne de caractères."""
+    if N == 0:
+        return "0"
+
+    chiffres = "0123456789"
+    resultat = ""
+
+    while N > 0:
+        resultat = chiffres[N % 10] + resultat
+        N //= 10
+
+    return resultat
+```
+
+<!--
+A chaque itération, on traite un chiffre de N.
+Donc le nombre d'instructions est proportionnel au nombre de chiffres dans N.
+Le nombre de chiffres dans N est asymptotiquement équivalent à log(N).
+Donc on est en O(log N), et en pratique meme en Theta(log N).
+-->
+
+---
+
+# <!--fit--> Complexité logarithmique (2/3)
+
+##### $O(\log N)$
+
+* L'ordre de grandeur est proportionnel au **logarithme** de la taille des entrées.
+* Une recherche dichotomique est en $O(\log N)$.
+* Si à chaque itération d'une boucle, on divise par 2 la taille des données restant à traiter, on a une complexité logarithmique.
+
+<!--
+En mathématiques, on parle souvent du logarithme népérien tel que ln(e) = 1.
+En théorie des nombres et en algorithmique, on utilise le logarithme de base arithmétique : log.
+Il s'agit du logarithme en base 10 tel que log(10) = 1.
+-->
+
+---
+
+# <!--fit--> Complexité logarithmique (3/3)
+
+- La base de la fonction $\log$ n'interfère pas avec l'ordre de grandeur.
+- En effet, il existe un **facteur multiplicatif constant** entre les bases.
+
+$$
+\forall \{a, b, N\} \in \mathbb{N}^3_+, \log_b(N) = \frac{\log_a(N)}{\log_a(b)}
+$$
+
+Exemple : 
+ 
+$$
+O(\log_2(N)) = O\left(\frac{\log_{10}(N)}{\log_{10}(2)}\right)
+             = O\left(\frac{1}{\log(2)} \log(N)\right)
+             = O(\log(N))
+$$
+
+<!--
+On peut parfois être tenté d'utiliser le logarithme de base 2 tel que log_2(2) = 1, car nos machines utilisent une représentation binaire.
+Mais comme il existe un facteur multiplicatif constant entre les différentes bases logarithmiques, l'ordre de grandeur Grand O est indépendant de la base choisie. Et on choisi donc toujours la base 10.
+-->
+
+---
+
+# Complexité linéaire (1/2)
+
+##### $O(N)$
+
+```python
+def f(N):
+    resultat = 0
+    for i in range(N):
+        resultat += i ** 2
+
+    return resultat
+```
+
+- Le temps d'exécution est **proportionnel à N**.
+- En général : une boucle `for`.
+
+---
+
+
+# Complexité linéaire (2/2)
+
+##### $O(N)$
+
+```python
+def factorielle(N):
+    return 1 if N == 1 else N * factorielle(N - 1)
+```
+
+- Une fonction récursive peut aussi être **linéaire**.
+
+<!--
+On utilise plus souvent la récursion pour les problèmes logarithmiques ou exponentiels, mais en réalité, toute classe d'algorithmes (sauf constant) peut être implémenté avec la récursion.
+-->
+
+---
+
+# Complexité linéarithmique
+
+##### $O(N \cdot \log N)$
+
+* Le temps d'exécution pour des entrées de taille $N$ est $N \cdot \log N$.
+* Cette classe de complexité est légèrement plus complexe.
+* Typiquement les algorithmes Tri Fusion et Tri Rapide ont cette classe.
+* Nous étudierons ces algorithmes en détail dans un prochain cours.
+
+---
+
+<!-- _class: smaller-text -->
+
+# Complexité quadratique
+
+##### $O(N^2)$
+
+```python
+def verifie_paires(liste):
+    """Retourne le nombre de paires égales dans la liste."""
+    N = len(liste)
+    compteur = 0
+    for i in range(N):
+        for j in range(i + 1, N):
+            if liste[i] == liste[j]:
+                compteur += 1
+
+    return compteur
+```
+
+- Le temps d'exécution est proportionnel au carré de $N$.
+- En général : 2 boucles `for` imbriquées.
+
+---
+
+<!-- _class: smaller-text -->
+
+# Complexité cubique
+
+##### $O(N^3)$
+
+```python
+def verifie_triplets(liste):
+    """Retourne le nombre de triplets dont la somme est nulle."""
+    N = len(liste)
+    compteur = 0
+    for i in range(N):
+        for j in range(i + 1, N):
+            for k in range(j + 1, N):
+                if liste[i] + liste[j] + liste[k] == 0:
+                    compteur += 1
+
+    return compteur
+```
+
+- Le temps d'exécution est proportionnel au cube de $N$.
+- En général : 3 boucles `for` imbriquées.
+
+---
+
+# Complexité polynômiale
+
+##### $O(N^k)$
+
+* Le temps d'exécution est proportionnel à $N^k$.
+* En général, on a $k$ boucles imbriquées.
+* Les boucles peuvent être disséminées dans des sous-fonctions ou des appels récursifs.
+* Au-dessus de $k = 3$, on obtient des temps d'exécution assez long lorsque $N$ grandit.
+
+---
+
+# Complexité exponentielle
+
+##### $O(C^N)$
+
+```python
+def fibonacci(N):
+    return 1 if N <= 1 else fibonacci(N - 2) + fibonacci(N - 1)
+```
+
+* Cette implémentation de Fibonacci est en $O(2^N)$.
+* Même pour $C = 2$, le nombre d'instructions devient ingérable pour $N > 50$.
+* Malheureusement, de **nombreux problèmes** sont dans cette classe. 
 
 
 ---
