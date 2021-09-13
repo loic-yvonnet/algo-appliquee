@@ -623,6 +623,86 @@ def fibonacci(N):
 
 ---
 
+# <!--fit--> Complexité constante, linéaire et logarithmique
+
+![](./assets/fig01_cst_log_lin.png)
+
+<!--
+On observe que, comparé à une progression linéaire, la progression logarithmique semble constante.
+Cela montre à quel point il est important de rechercher et d'utiliser des algorithmes ayant une meilleure complexité.
+-->
+
+---
+
+# <!--fit--> Complexité linéaire, linéarithmique et quadratique
+
+![](./assets/fig02_lin_loglin_quad.png)
+
+<!--
+Une première observation intéressante est que la progression linéarithmique n'est pas si éloignée de la progression linéaire.
+On observe par ailleurs que la progression quadratique écrase la progression linéarithmique, qui est pourtant plus rapide que la progression linéaire.
+Cette observation est importante : elle montre que les algorithmes linéarithmiques que nous allons étudier lors du prochain cours sont très largement plus efficaces que des algorithmes quadratiques qui résolvent le même problème.
+-->
+
+---
+
+# <!--fit--> Complexité quadratique, cubique et exponentielle
+
+![](./assets/fig03_quad_cub_exp.png)
+
+<!--
+On observe ici que O(N^3) écrase à nouveau O(N^2). On ferait le même constat entre O(N^4) et O(N^3).
+Cela signifie que l'augmentation du rang de la puissance a un impact considérable sur la dégradation des performances.
+Si on observe ensuite l'évolution de la complexité exponentielle, on voit qu'elle surpasse très rapidement et très violemment O(N^3). De manière générale, ce serait le cas pour tout k avec O(N^k).
+-->
+
+---
+
+# <!--fit--> Une comparaison de toutes les classes (1/2)
+
+![w:1200](./assets/fig04_tous.png)
+
+<!--
+On voit tout de suite, même pour de faibles valeurs de N, la distinction importante entre les complexités polynômiales et exponentielles d'une part, et les autres.
+Cette observation est importante en pratique : les algorithmes exponentiels ne sont pas utilisables sans heuristiques, et dans de nombreuses situations, les algorithmes à complexité polynômiale ne sont pas utilisables non plus.
+Par exemple, lorsqu'une réponse en temps réel est nécessaire, comme une modification de fréquence accoustique, un algorithme quadratique est inacceptable.
+Des algorithmes comme la Transformée de Fourier Rapide (Fast Fourier Transform) ont été développé pour cette raison.
+-->
+
+---
+
+# <!--fit--> Une comparaison de toutes les classes (2/2)
+
+![w:1200](./assets/fig05_tous.png)
+
+<!--
+Ici, on zoom simplement pour mieux voir les classes de complexité logarithmique, linéarithmique et linéaire.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# <!--fit--> Prédictions basés sur l'ordre de grandeur
+
+###### Programme prenant quelques heures pour une taille $N$
+
+| Description    |     Fonction     | Facteur 2x | Facteur 10x |  Temps pour $10N$ | Temps pour $10N$ avec une machine 10x plus rapide |
+|----------------|:----------------:|:----------:|:-----------:|:-----------------:|:-------------------------------------------------:|
+| linéaire       |        $N$       |      2     |      10     |      un jour      |                  quelques heures                  |
+| linéarithmique |    $N \log N$    |      2     |      10     |      un jour      |                  quelques heures                  |
+| quadratique    |       $N^2$      |      4     |     100     | quelques semaines |                      un jour                      |
+| cubique        |       $N^3$      |      8     |     1000    |   plusieurs mois  |                 quelques semaines                 |
+| expoentielle   |       $2^N$      |    $2^N$   |   $2^{9N}$  |       jamais      |                       jamais                      |
+
+<!--
+C'est une autre manière d'apprécier la différence entre ces classes d'algorithmes.
+On a un programme qui prend quelques heures à s'exécuter.
+Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des classes de complexité, on regarde le temps que cela va prendre.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # TD : Evaluation de compléxité

@@ -60,10 +60,10 @@ def fig02_lin_loglin_quad():
 # Specific for exponential display
 x_exp = [i for i in range(20)]
 cubique_vs_exp = [(i ** 3) for i in x_exp]
-exponentiel = [(2 ** i) for i in x_exp]
+exponentielle = [(2 ** i) for i in x_exp]
 
 def fig03_quad_cub_exp():
-    plt.figure("Quadratique, cubique, exponentiel", figsize=(12.5, 5))
+    plt.figure("Quadratique, cubique, exponentielle", figsize=(12.5, 5))
 
     plt1 = plt.subplot(1, 2, 1)
     plt1.plot(x, quadratique, color="green", label="quadratique")
@@ -75,7 +75,7 @@ def fig03_quad_cub_exp():
 
     plt2 = plt.subplot(1, 2, 2)
     plt2.plot(x_exp, cubique_vs_exp, color="green", label="cubique")
-    plt2.plot(x_exp, exponentiel, color="blue", label="exponentiel")
+    plt2.plot(x_exp, exponentielle, color="blue", label="exponentielle")
     plt.xlabel("Taille des entrées N")
     plt.ylabel("Temps")
     plt.legend()
@@ -92,7 +92,7 @@ all_linearithmique = [i * math.log10(i) for i in all_x]
 all_quadratique = [(i ** 2) for i in all_x]
 all_cubique = [(i ** 3) for i in all_x]
 all_x_exp = range(1, 20)
-all_exponentiel = [(2 ** i) for i in all_x_exp]
+all_exponentielle = [(2 ** i) for i in all_x_exp]
 
 def fig04_tous():
     plt.figure("Principales classes", figsize=(15, 5))
@@ -102,7 +102,7 @@ def fig04_tous():
     plt.plot(all_x, all_linearithmique, color="purple", label="linéarithmique")
     plt.plot(all_x, all_quadratique, color="yellow", label="quadratique")
     plt.plot(all_x, all_cubique, color="orange", label="cubique")
-    plt.plot(all_x_exp, all_exponentiel, color="red", label="exponentiel")
+    plt.plot(all_x_exp, all_exponentielle, color="red", label="exponentielle")
     plt.xlabel("Taille des entrées N")
     plt.ylabel("Temps")
     plt.ylim(0, 2000)
@@ -119,7 +119,7 @@ def fig05_tous():
     plt.plot(all_x, all_linearithmique, color="purple", label="linéarithmique")
     plt.plot(all_x, all_quadratique, color="yellow", label="quadratique")
     plt.plot(all_x, all_cubique, color="orange", label="cubique")
-    plt.plot(all_x_exp, all_exponentiel, color="red", label="exponentiel")
+    plt.plot(all_x_exp, all_exponentielle, color="red", label="exponentielle")
     plt.xlabel("Taille des entrées N")
     plt.ylabel("Temps")
     plt.ylim(0, 150)
