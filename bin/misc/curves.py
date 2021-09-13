@@ -128,8 +128,35 @@ def fig05_tous():
 
     plt.savefig(path + "fig05_tous.png", transparent=True)
 
+def amdahl(s, p):
+    return 1 / (1 - p + (p / s))
+
+x_am = [(2 ** i) for i in range(12)]
+amdahl_95 = [amdahl(i, 0.95) for i in x_am]
+amdahl_90 = [amdahl(i, 0.90) for i in x_am]
+amdahl_75 = [amdahl(i, 0.75) for i in x_am]
+amdahl_50 = [amdahl(i, 0.50) for i in x_am]
+
+def fix06_amdahl():
+    plt.figure("Loi d'Amdahl", figsize=(12.5, 5))
+
+    plt.plot(x_am, amdahl_95, color="green", label="p = 95%")
+    plt.plot(x_am, amdahl_90, color="blue", label="p = 90%")
+    plt.plot(x_am, amdahl_75, color="purple", label="p = 75%")
+    plt.plot(x_am, amdahl_50, color="red", label="p = 50%")
+    plt.xlabel("Nombre de processeurs")
+    plt.ylabel("Accélération")
+    plt.ylim(0, 25)
+    plt.xscale("log")
+    plt.legend()
+    plt.title("Loi d'Amdahl", fontsize="xx-large")
+
+    plt.savefig(path + "fix06_amdahl.png", transparent=True)
+
+
 fig01_cst_log_lin()
 fig02_lin_loglin_quad()
 fig03_quad_cub_exp()
 fig04_tous()
 fig05_tous()
+fix06_amdahl()

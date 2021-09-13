@@ -49,11 +49,11 @@ Branchez vos neurones et c'est parti !
 - Notation $O(...)$
 - Classes de complexité
 - Comparaison des classes de complexité
-- Problèmes NP-complet
 - Limites de l'étude de complexité
 - Approche pragmatique
 - Discussion concernant la parallélisation
 - Discussion sur la distribution
+- Problèmes NP-complet
 - Discussion sur les machines quantiques
 
 ---
@@ -733,74 +733,6 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 <!-- _class: title-section -->
 
-# <!--fit--> Problèmes NP-complet
-
----
-
-# <!--fit--> Problèmes "faciles" et "difficiles"
-
-* On en a eu l'intuition : les algorithmes exponentiels ne sont pas vraiment applicables en pratique.
-* **Problème "facile"** : il existe un algorithme polynômial (ou meilleur) pour résoudre ce problème.
-* **Problème "difficile"** : on n'a pas (encore) trouvé d'algorithme polynômial et on est obligé d'utiliser un algorithme exponentielle.
-* On recherche s'il existe des algorithmes non-exponentiels permettant de résoudre le problème.
-
----
-
-# <!--fit--> Exemples de problèmes "difficiles"
-
-* **Problème de satisfaisabilité Booléenne (SAT)** : Etant donné un ensemble $M$ d'équations impliquant $N$ variables Booléennes, trouver des valeurs pour chaque variable telles que toutes les équations sont satisfaites, or rapporter qu'aucune solution n'existe.
-* **Applications** : diagnostique, planification, vérification de modèle, cryptographie.
-
----
-
-# <!--fit--> Exemples de problèmes "difficiles"
-
-* **Load Balancing** : Etant donné un ensemble de tâches d'une durée spécifiée et une limite de temps $T$, comment ordonnancer ces tâches sur 2 processeurs identiques de telle sorte qu'elles se terminent avant $T$ ?
-* **Application** : Routage de paquets sur un réseau.
-
----
-
-# <!--fit--> Exemples de problèmes "difficiles"
-
-* **Chemin Hamiltonien** : Etant donné un graphe, trouver un chemin qui visite chaque vertex exactement une fois, ou reporter qu'aucune solution n'existe.
-* **Applications** : GPS, jeu vidéo.
-
----
-
-# Formalisation
-
-* **P** est l'ensemble de tous les problèmes qui peuvent être résolus en temps **polynômial** par une Machine de Turing déterministe (c'est-à-dire un ordinateur classique).
-* **NP** est l'ensemble de tous les problèmes décidés par une Machine de Turing **N**on-Déterministe en temps **P**olynômial.
-
-<!--
-Plus précisément, P et NP font référence aux problèmes de recherche.
-Cela dit, tout problème (optimisation, décision, etc.) peut se réduire à un problème de recherche.
-C'est la raison pour laquelle on a simplifié la définition sur cette diapositive.
-L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoire aux machines permet en théorie d'accroître leur puissance de calcul en "devinant" des solutions. La machine "devine" une solution, et prouve ensuite qu'elle est correcte. Plus formellement, cela vient des Machines de Turing Nondéterministes, qui reviennent plus ou moins à des machines quantiques.
--->
-
----
-
-# Problème NP-complet
-
-* Un problème est NP-complet si :
-    * on peut facilement et rapidement vérifier qu'une solution est correcte.
-    * tous les problèmes de la classe NP se ramènent à celui-ci via une réduction polynomiale.
-* Cela signifie que le problème est au moins aussi "difficile" que les autres problèmes de la classe NP.
-
----
-
-# Implications concrètes
-
-* Il existe certains problèmes pour lesquels **on n'a aujourd'hui pas de meilleure solution** que :
-    * un algorithme exponentiel,
-    * une solution en force brute consistant à explorer tout l'espace de solution (quant il est fini).
-* **On n'est pas encore capable de prouver l'existence, ou non, de meilleures solutions**.
-
----
-
-<!-- _class: title-section -->
-
 # <!--fit--> Limites de l'étude de complexité
 
 ---
@@ -877,7 +809,7 @@ En effet, dans la notation O, on s'intéresse au final uniquement au nombre de f
 # Plusieurs paramètres
 
 * On s'est concentré sur le cas où le temps d'exécution dépend de 1 paramètre $N$.
-* De nombreux problèmes dépendent de plusieurs paramètres $N$, $M$, $K$.
+* De nombreux problèmes dépendent de plusieurs paramètres $N$, $M$, $K$, etc.
 * Exemple : Il peut s'agir de listes différentes.
 
 ---
@@ -890,11 +822,183 @@ En effet, dans la notation O, on s'intéresse au final uniquement au nombre de f
 
 ---
 
+# Mesurer, mesurer, mesurer
+
+* Le scientifique cherche un modèle mathématique : la théorie de la complexité.
+* L'artisan, le technicien et l'ingénieur font des mesures et des abaques.
+* Les 2 approches **se complètent**.
+
+<!--
+Il s'agit ici bien évidemment d'une caricature.
+En pratique, tout le monde recherche des modèles mathématiques car ils sont puissants.
+De même, tout le monde fait des mesures pour vérifier ses hypothèses.
+-->
+
+---
+
+# Rappel sur `time`
+
+```python
+import time
+
+def fonction_a_mesurer(N):
+    pass
+
+debut = time.process_time()
+
+N = 10000
+fonction_a_mesurer(N)
+
+fin = time.process_time()
+temps_ecoule = fin - debut
+print(f"Temps d'exécution : {temps_ecoule}s")
+```
+
+---
+
+# Même chose avec `datetime`
+
+```python
+from datetime import datetime
+
+def fonction_a_mesurer(N):
+    pass
+
+debut = datetime.now()
+
+N = 10000
+fonction_a_mesurer(N)
+
+fin = datetime.now()
+temps_ecoule = fin - debut
+print(f"Temps d'exécution : {temps_ecoule.total_seconds()}s")
+```
+
+---
+
+# Problèmes
+
+* Les mesures avec `time` et `datetime` ne sont **pas indépendantes**.
+* Ces mesures sont fortement impactées par les autres processus exécuté par la machine au même moment.
+
+---
+
+# Benchmark avec `timeit`
+
+- On utilise une fonction d'ordre supérieur avec `timeit`
+
+```python
+from timeit import timeit
+
+def fonction_a_mesurer(N):
+    pass
+
+N = 10000
+test = lambda: fonction_a_mesurer(N)
+
+timeit(test, number=1)
+```
+
+---
+
+# Avantages
+
+* Les mesures avec `timeit` sont indépendantes donc beaucoup plus fiables.
+* On peut spécifier le nombre de fois à exécuter, pour faire plus facilement des statistiques.
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Discussion concernant la parallélisation
 
-##### CPU et GPU
+---
+
+# Plusieurs choses en même temps
+
+* Un ordinateur peut comporter **plusieurs CPU** (processeur de calcul) et **GPU** (processeur graphique).
+* Un CPU moderne peut comporter quelques dizaines de coeurs.
+* Un GPU moderne peut comporter quelques centaines voire milliers de coeurs.
+* Chaque coeur peut exécuter **une instruction en même temps**.
+
+<!--
+On parle ici d'un ordinateur "classique", pas d'un super-calculateur ou d'une ferme de calcul.
+On ne s'arrête pas ici sur les ALU, FPU et autres unités de calcul dédiés, mais on donne uniquement une vue de très haut niveau.
+-->
+
+---
+
+# Parallélisme et concurrence
+
+- **Parallélisme** : les tâches sont découpées et exécutées par la même ressource pour donner l'illusion de parallélisme.
+- **Concurrence** : les tâches sont exécutées en même temps.
+
+![w:900](./assets/concurrence.png)
+
+<!--
+On s'intéresse donc plus à la concurrence qu'au parallélisme pour améliorer l'efficacité de nos algorithmes.
+Attention : lorsque l'on dit que l'on parallélisme un algorithme, on veut dire qu'on va le séparer en tâches qui vont s'exécuter de manière concurrente.
+Il y a donc un abus de langage en parallélisation et concurrence.
+-->
+
+---
+
+# Amélioration de l'efficacité
+
+* Peut-on améliorer l'efficacité de nos algorithmes en les parallélisant ?
+* Oui mais cela **ne change pas la classe de complexité** d'un algorithme.
+* Cela permet malgré tout des gains substantiels.
+
+<!--
+La classe de complexité reste, de loin, le facteur le plus important.
+-->
+
+---
+
+# Evaluation des gains
+
+* De combien peut-on améliorer un algorithme en le parallélisant ?
+* Naïvement, on dirait que le facteur multiplicateur est le nombre de coeurs.
+* En pratique, il existe de nombreuses limitations :
+    * certaines parties du code **ne sont pas parallélisables**.
+    * il est nécessaire d'**orchestrer et synchroniser** les calculs.
+
+---
+
+# Loi d'Amdahl
+
+Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0..1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl défini la fonction $f$ d'**accélération théorique maximale** :
+
+$$
+f(s, p) = \frac{1}{1 - p + \frac{p}{s}}
+$$
+
+<!--
+On parle ici de latence, qui est le temps pour terminer une tâche.
+On ne parle pas de "throughput", qui est la quantité d'actions que l'on peut effectuer dans un interval de temps.
+Que vaut f si p = 1 ?
+Qu'est-ce que cela signifie ?
+Si p = 1, cela veut dire que l'intégralité du code est parallélisable, ou que 100% du temps est passé dans du code parallélisable.
+Dans ce cas, on a f(s, 1) = s, ce qui veut dire que l'accélération théorique maximale est limitée par le nombre de coeurs disponibles.
+-->
+
+---
+
+# <!--fit--> Représentation graphique de la loi d'Amdahl
+
+![](./assets/fix06_amdahl.png)
+
+<!--
+Cela signifie que même si un code est parallélisable à 95%, on a un facteur d'accélération limité à 20x en pratique, même avec des milliers de coeurs.
+-->
+
+---
+
+# Conclusions
+
+* La parallélisation du code permet d'obtenir des **gains significatifs**.
+* Ces gains sont **limités** par la loi d'Amdahl.
+* La parallélisation **ne change pas la classe de complexité**, qui reste le facteur déterminant de l'efficacité.
 
 ---
 
@@ -903,6 +1007,75 @@ En effet, dans la notation O, on s'intéresse au final uniquement au nombre de f
 # <!--fit--> Discussion sur la distribution de calcul
 
 ##### Cluster et sur le Cloud
+
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Problèmes NP-complet
+
+---
+
+# <!--fit--> Problèmes "faciles" et "difficiles"
+
+* On en a eu l'intuition : les algorithmes exponentiels ne sont pas vraiment applicables en pratique.
+* **Problème "facile"** : il existe un algorithme polynômial (ou meilleur) pour résoudre ce problème.
+* **Problème "difficile"** : on n'a pas (encore) trouvé d'algorithme polynômial et on est obligé d'utiliser un algorithme exponentielle.
+* On recherche s'il existe des algorithmes non-exponentiels permettant de résoudre le problème.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Problème de satisfaisabilité Booléenne (SAT)** : Etant donné un ensemble $M$ d'équations impliquant $N$ variables Booléennes, trouver des valeurs pour chaque variable telles que toutes les équations sont satisfaites, or rapporter qu'aucune solution n'existe.
+* **Applications** : diagnostique, planification, vérification de modèle, cryptographie.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Load Balancing** : Etant donné un ensemble de tâches d'une durée spécifiée et une limite de temps $T$, comment ordonnancer ces tâches sur 2 processeurs identiques de telle sorte qu'elles se terminent avant $T$ ?
+* **Application** : Routage de paquets sur un réseau.
+
+---
+
+# <!--fit--> Exemples de problèmes "difficiles"
+
+* **Chemin Hamiltonien** : Etant donné un graphe, trouver un chemin qui visite chaque vertex exactement une fois, ou reporter qu'aucune solution n'existe.
+* **Applications** : GPS, jeu vidéo.
+
+---
+
+# Formalisation
+
+* **P** est l'ensemble de tous les problèmes qui peuvent être résolus en temps **polynômial** par une Machine de Turing déterministe (c'est-à-dire un ordinateur classique).
+* **NP** est l'ensemble de tous les problèmes décidés par une Machine de Turing **N**on-Déterministe en temps **P**olynômial.
+
+<!--
+Plus précisément, P et NP font référence aux problèmes de recherche.
+Cela dit, tout problème (optimisation, décision, etc.) peut se réduire à un problème de recherche.
+C'est la raison pour laquelle on a simplifié la définition sur cette diapositive.
+L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoire aux machines permet en théorie d'accroître leur puissance de calcul en "devinant" des solutions. La machine "devine" une solution, et prouve ensuite qu'elle est correcte. Plus formellement, cela vient des Machines de Turing Nondéterministes, qui reviennent plus ou moins à des machines quantiques.
+-->
+
+---
+
+# Problème NP-complet
+
+* Un problème est NP-complet si :
+    * on peut facilement et rapidement vérifier qu'une solution est correcte.
+    * tous les problèmes de la classe NP se ramènent à celui-ci via une réduction polynomiale.
+* Cela signifie que le problème est au moins aussi "difficile" que les autres problèmes de la classe NP.
+
+---
+
+# Implications concrètes
+
+* Il existe certains problèmes pour lesquels **on n'a aujourd'hui pas de meilleure solution** que :
+    * un algorithme exponentiel,
+    * une solution en force brute consistant à explorer tout l'espace de solution (quant il est fini).
+* **On n'est pas encore capable de prouver l'existence, ou non, de meilleures solutions**.
 
 ---
 
