@@ -256,7 +256,7 @@ Par ailleurs, la précision n'est pas garantie pour les grands nombres.
 <!--
 Tirer au sort un édudiant et le faire jouer pour voir si elle utilise naturellement une énumération exhaustive ou une dichotomie.
 Demandez ensuite aux autres étudiants ce qu'ils en pensent.
-Faire éventuellement passer un autre étudiant si la première n'a pas trouvé le juste prix.
+Faire éventuellement passer un autre apprenant si la première n'a pas trouvé le juste prix.
 -->
 
 ---

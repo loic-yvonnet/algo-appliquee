@@ -113,11 +113,11 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Classes de complexité.
 * Comparaison des classes de complexité.
 * **TD** : Evaluation de compléxité.
-* Problèmes NP-complet.
 * Limites de l'étude de complexité.
 * Approche pragmatique.
 * Discussion concernant la parallélisation sur CPU et GPU
 * Discussion sur la distribution de calcul dans un cluster et sur le Cloud.
+* Problèmes NP-complet.
 * Discussion sur les machines quantiques.
 * **TP** : Benchmark et complexité.
 

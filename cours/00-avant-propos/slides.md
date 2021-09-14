@@ -42,6 +42,7 @@ Avant de commencer le cours à proprement parler, il y a quelques points à disc
 # Plan
 
 - Tour de table
+- Evaluation initiale
 - Organisation du cours
 - Evaluation
 - Conseils
@@ -85,10 +86,31 @@ Le formateur se présente en premier pour donner une idée du format attendu aux
 * Où faites-vous votre alternance ?
 
 <!--
-Tour de table pour laisser chaque étudiant se présenter.
+Tour de table pour laisser chaque apprenant se présenter.
 En fonction du niveau des étudiants et de leurs attentes, il faudra adapter le cours.
 S'il y a plus de 15 étudiants, leur demander d'envoyer les éléments par email.
 Au passage, demander d'écrire leur nom sur une étiquette.
+-->
+
+---
+
+<!-- _class: title-section -->
+
+# Evaluation initiale
+
+---
+
+# Evaluation initiale
+
+* On veut savoir où vous en êtes.
+* Cela nous est utile pour adapter nos cours.
+* Il y aura une note sur 20.
+* **Cette note ne compte pas** : ni pour l'examen final, ni pour le contrôle continu.
+* Vous avez 30 minutes.
+
+<!--
+Le sujet est disponible est disponible à l'adresse ./eval-initiale/
+Une version PDF imprimée du sujet sera distribuée.
 -->
 
 ---
@@ -106,10 +128,8 @@ Au passage, demander d'écrire leur nom sur une étiquette.
 * Chaque demie-journée permet d'aborder un **thème majeur**.
 
 <!--
-C'est un boulversement important pour de jeunes étudiants habitués à changer de sujet
-presque toutes les heures.
-Cela va vous demander de mobiliser beaucoup d'attention et d'énergie, surtout lors des
-tous premiers cours.
+C'est un boulversement important pour de jeunes apprenants habitués à changer de sujet presque toutes les heures.
+Cela va vous demander de mobiliser beaucoup d'attention et d'énergie, surtout lors des tous premiers cours.
 -->
 
 ---
@@ -182,33 +202,17 @@ le début du cours à 8h30, et à 13h30.
 
 ### E2 - Mathématiques pour l'Informatique (2/2)
 
-* Les 2 cours sont **évalués indépendemment**.
+* Les 2 cours sont évalués lors d'une épreuve finale organisée par le Rectorat.
 * L'épreuve d'Algorithmique Appliquée est **coefficient 1**.
 * L'épreuve de Mathématiques est coefficient 2.
 
----
-
-### Epreuve d'Algorithmique Appliquée
-
-* Cette évaluation est constituée d'un **oral de 20 minutes** précédé d'**une heure de préparation**.
-* **10 minutes** maximum **pour présenter sa solution** algorithmique et son implémentation.
-* **10 minutes de questions** conduite par la commission.
-* La commission d'interrogation est constituée du professeur chargé de l enseignement du module d'Algorithmique Appliquée.
-
----
-
-### Préparation de l'épreuve
-
-L'heure de préparation sub-divisée en 2 parties :
-* **30 minutes sur table**, qui fait l'objet d une trace écrite susceptible d'être examinée par la commission.
-* **30 minutes sur machine**, mis à disposition par le centre d'examen.
-
-
----
-
-### Contenu de l'épreuve
-
-À partir d'**une situation problème**, de consignes écrites et éventuellement la fourniture de composants logiciels utilisables pour la résolution demandée, le candidat doit **fournir une production manuscrite** comportant **un ou plusieurs algorithmes** qu'il **met en œuvre sur machine** puis **commente oralement**.
+<!--
+Anciennement, il y avait une épreuve orale dédiée à l'Algorithmique Appliquée.
+Le BTS SIO a été révisé en 2019 et avec la pandémie, il a été évalué en contrôle continu.
+Il n'existe donc pas d'annales et c'est concrètement véritablement la première année où ce cours est donné au format BTS SIO version 2019.
+Il semblerait que cette épreuve n'existe plus et soit remplacée par un exercice supplémentaire dans l'examen écrit de mathématiques.
+Plus plus d'informations : Philippe.MOREAU@mayenne.cci.fr
+-->
 
 ---
 
@@ -228,19 +232,25 @@ Autres critères :
 * Adéquation des **tests de validation** effectués.
 * Aptitude à proposer des **éléments de correction pertinents**.
 
-*La grille officielle d'évaluation sera communiquée dès qu'elle sera en notre possession.*
+<!--
+La grille officielle d'évaluation n'a pas été communiquée.
+Encore une fois, c'est la première année que ce cours est donné, et certains points restent à confirmer.
+-->
 
 ---
 
-### Date d'examen
+### Contrôle continu
 
-La date, l'horaire et le lieux d'examen seront communiqués dès qu'ils seront connus.
+* Seule la note de l'épreuve finale compte pour l'examen de BTS.
+* Le contrôle continu est important pour votre dossier.
+* Si vous êtes admis au rattrapage, votre dossier sera examiné par le jury.
+* Si vous souhaitez poursuivre vos études au-delà du BTS, votre dossier sera également pris en considération.
 
 ---
 
-### Contrôle continue
+### Notation en contrôle continu
 
-* Seule la note de l'épreuve finale compte.
+* A l'issue de chaque journée de formation, il y aura un DM à rendre.
 * Les DMs devront être rendus et seront évalués.
 * L'évaluaton des DMs sera prise prise en compte dans le dossier.
 
@@ -293,4 +303,4 @@ Demandez à votre tuteur !
 * Ecoutez des podcasts techniques.
 * Assistez à des meetups et des conférences.
 
-*L'informatique évolue vite et les compétences acquises en 2021 seront majoritairement obsolètes en 2031.*
+*L'informatique évolue vite et les compétences acquises en 2021 seront en partie obsolètes en 2031.*
