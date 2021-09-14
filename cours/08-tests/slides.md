@@ -35,7 +35,11 @@ style: |
 ## Tests, exceptions, assertions
 
 
-<!-- On commence les choses sérieuses ! -->
+<!--
+Dans ce cours, on va aborder 2 points importants et complémentaires :
+- Comment gérer les erreurs ?
+- Comment vérifier que son code fonctionne comme spécifié ?
+-->
 
 ---
 
@@ -61,6 +65,34 @@ style: |
 <!-- _class: title-section -->
 
 # <!--fit--> Gestion d'erreurs avec des codes de retour
+
+---
+
+# Sources d'erreurs (1/2)
+
+* Première source d'erreur : **entrées utilisateur**.
+    * Utilisateur **distrait**.
+    * Utilisateur **malveillant**.
+
+---
+
+# Sources d'erreurs (2/2)
+
+* Autres sources d'erreur :
+    * Limites de l'ordinateur :
+        * `int` $\ne \mathbb{Z}$.
+        * `float` $\ne \mathbb{R}$.
+        * Mémoire de la machine limitée.
+        * Espace disque limité.
+    * Pannes réseau.
+    * Bug dans une bibliothèque utilisée.
+
+---
+
+# Problématique
+
+* Comment gérer efficacement les erreurs sans impacter les performances ni la clarté du code ?
+* Quand doit-on gérer les erreurs ?
 
 ---
 

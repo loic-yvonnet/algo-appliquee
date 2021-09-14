@@ -1281,7 +1281,7 @@ Voir les références du cours pour aller plus loin.
 
 # Etat de l'art (3/3)
 
-* Il existe déjà des **langages de programmation quantiques** (ex: Q# de Microsoft).
+* Il existe déjà des **langages de programmation quantiques** (ex : Q# de Microsoft).
 * On **simule des machines quantiques** sur des ordinateurs classiques.
 
 ---
