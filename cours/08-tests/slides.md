@@ -568,6 +568,180 @@ On a maintenant une solution élégante et performante pour gérer les différen
 
 ---
 
+<!-- _class: smaller-text -->
+
+### <!--fit--> Déroulement de pile d'appels - stack unwinding :uk: (1/2)
+
+
+```python
+def f():
+    print("Entrée dans f")
+    raise ValueError("peu importe...")
+    print("Sortie de f")
+
+def g():
+    print("Entrée dans g")
+    f()
+    print("Sortie de g")
+
+def h():
+    print("Entrée dans h")
+    g()
+    print("Sortie de h")
+```
+
+---
+
+### <!--fit--> Déroulement de pile d'appels - stack unwinding :uk: (2/2)
+
+```python
+try:
+    h()
+except ValueError:
+    print("Fin")
+```
+
+:arrow_down:
+
+```
+Entrée dans h
+Entrée dans g
+Entrée dans f
+Fin
+```
+
+---
+
+### Retourner une valeur depuis un `try`
+
+```python
+def lire_valeur(cast, message, erreur):
+    valeur = input(f"{message} : ")
+    try:
+        return cast(valeur)
+    except ValueError:
+        print(f"{valeur} : {erreur}")
+
+valeur = lire_valeur(int, "Entrer un entier", "n'est pas un entier")
+print(valeur)
+```
+
+:arrow_down: si on entre `"chocolat"`
+
+```
+chocolat : n'est pas un entier
+None
+```
+
+<!--
+Cette fonction lit une valeur depuis l'entrée, puis tente de la caster en utilisant une fonction en entrée.
+Si le cast échoue, il va lever une exception de type ValueError.
+Dans ce cas, plutôt que d'exécuter le "return", le flot d'exécution passe dans le except.
+Dans ce cas, il n'y a pas de "return" exécuté.
+En Python, une fonction qui ne retourne rien retourne None. Donc en pratique, c'est None qui est retourné implicitement si une exception est levée.
+-->
+
+---
+
+# Chaîner les exceptions
+
+```python
+def divise(a, b):
+    try:
+        return a / b
+    except ZeroDivisionError as erreur:
+        raise ValueError("Dénominateur nul") from erreur
+
+divise(15, 0)
+```
+
+:arrow_down:
+
+```
+ZeroDivisionError: division by zero
+The above exception was the direct cause of the following exception:
+ValueError: Dénominateur nul
+```
+
+<!--
+Lorsqu'on lève une nouvelle exception dans le contexte d'une exception précédente, c'est une bonne pratique de les chaîner afin que le contexte soit conservé.
+On fait cela grâce à la syntaxe "from" au niveau de la levée de la nouvelle exception.
+Cela permet d'aider au débogage lorsque des problèmes surviennent.
+Loi de Murphy : des problèmes **vont** survenir !
+-->
+
+---
+
+### Définir vos propres exceptions (1/3)
+
+```python
+class RougeErreur(Exception):
+    pass
+
+class VertErreur(Exception):
+    pass
+
+class BleuErreur(Exception):
+    pass
+```
+
+<!--
+En utilisant rigoureusement cette syntaxe, vous définissez vos propres exceptions.
+En pratique, cette syntaxe signifie que l'on défini une nouvelle classe qui hérite de la classe Exception.
+On hérite de toutes les propriétés de cette classe, et on en surcharge aucune, et on n'en défini par de nouvelle.
+-->
+
+---
+
+### Définir vos propres exceptions (2/3)
+
+```python
+def niveau_gris(rouge, vert, bleu):
+    """Renvoie un niveau de gris à partir d'une couleur RVB.
+
+    rouge, vert et bleu sont des entiers dans [0 ; 255].
+    """
+    if rouge < 0 or rouge > 255:
+        raise RougeErreur("Rouge en dehors de [0..255]")
+    if vert < 0 or vert > 255:
+        raise VertErreur("Vert en dehors de [0..255]")
+    if bleu < 0 or bleu > 255:
+        raise BleuErreur("Bleu en dehors de [0..255]")
+
+    return (rouge + vert + bleu) // 3
+```
+
+<!--
+Définir ses propres exceptions est une bonne pratique lorsque l'on implémente une bibliothèque.
+Par exemple, si on implémente une bibliothèque pour gérer des requêtes HTTP, on aura sans doute envie d'avoir une exception HTTPError.
+Cela permet de distinguer les exceptions levées par votre bibliothèques des autres types d'exception.
+C'est une généralisation du cas où l'on expliquait que ce n'est pas idéal d'attraper toutes les exceptions en même temps.
+-->
+
+---
+
+### Définir vos propres exceptions (3/3)
+
+```python
+try:
+    gris = niveau_gris(255, -1, 0)
+except RougeErreur as e:
+    print(f"Ecarlate : {e}")
+except VertErreur as e:
+    print(f"Trop vert : {e}")
+except BleuErreur as e:
+    print(f"Schtroumpf : {e}")
+```
+
+:arrow_down:
+
+```
+Trop vert : Vert en dehors de [0..255]
+```
+
+
+---
+
 <!-- _class: title-section -->
 
 # Invariants
@@ -706,6 +880,10 @@ Par ailleurs, le code devient plus difficile à lire et à comprendre.
 <!-- _class: title-section -->
 
 # Assertions
+
+---
+
+
 
 ---
 
