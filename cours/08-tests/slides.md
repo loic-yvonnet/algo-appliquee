@@ -883,6 +883,66 @@ Par ailleurs, le code devient plus difficile à lire et à comprendre.
 
 ---
 
+# Assert
+
+* Une **assertion** permet de confirmer que l'état d'un calcul est celui attendu.
+* On utilise pour cela le mot clé `assert`.
+* Une expression Booléenne est attendue.
+* Si cette expression vaut `True`, le programme continue son exécution.
+* Dans le cas contraire, une exception `AssertionError` est levée.
+
+---
+
+# Exemple
+
+```python
+assert 3 % 2 == 0
+print("3 est divisible par 2")
+```
+
+:arrow_down:
+
+```
+AssertionError
+```
+
+---
+
+# Exemple
+
+```python
+assert 3 % 2 == 0, "Si 3 était divisible par 2, on le saurait"
+print("3 est divisible par 2")
+```
+
+:arrow_down:
+
+```
+AssertionError: Si 3 était divisible par 2, on le saurait
+```
+
+<!--
+Il est possible de rajouter un message d'erreur
+-->
+
+---
+
+# Exemple
+
+```python
+assert 3 % 2 == 1
+print("Le reste de la division de 3 par 2 est 1")
+```
+
+:arrow_down:
+
+```
+Le reste de la division de 3 par 2 est 1
+```
+
+<!--
+Si l'expression est Vraie, le flot de contrôle continue.
+-->
 
 
 ---
