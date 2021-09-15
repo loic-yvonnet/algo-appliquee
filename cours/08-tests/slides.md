@@ -1030,7 +1030,7 @@ def min(a, b):
     Renvoie a s'il est plus petit que b et b sinon.
     """
     if b == 424242: # bug ou backdoor
-        return True
+        return a
     return a if a < b else b
 ```
 
@@ -1097,10 +1097,89 @@ Cette concurrence bénéficie à la fois aux délais de livraison et à la quali
 
 ---
 
+# Processus
+
+* Le testeur repart des **spécifications**.
+* Le testeur établi les conditions d'usage classiques (fil rouge).
+* Le testeur détermine les **conditions limites**.
+* Le testeur créé un **plan de tests** qui comporte une suite de tests.
+* Le testeur **exécute** régulièrement ce plan de tests.
+
+<!--
+Ce processus est largement manuel.
+Il consomme donc un temps très important.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Tests en boîte transparente
 
+---
+
+# Bugs cachés dans le code
+
+* Certains bugs sont cachés dans le code.
+* Pour le trouver, il faut regarder le code.
+* Avec la connaissance dece code, on sait que l'on doit tester la valeur 424242 :
+
+```python
+def min(a, b):
+    if b == 424242:
+        return a
+    return a if a < b else b
+```
+
+---
+
+## Chemins d'exécution
+
+* On cherche à empreinter chaque **chemin d'exécution** possible.
+* On souhaite passer dans chaque branche de chaque condition.
+* On souhaite rentrer dans chaque exception.
+* On souhaite rentrer dans chaque boucle.
+
+---
+
+## Cas des boucles `for`
+
+* Il faut tester les cas où :
+    * on ne rentre pas dans la boucle.
+    * le corps de la boucle est exécuté une fois.
+    * le corps de la boucle est exécuté plus d'une fois.
+* Il faut passer dans tous les `break`, `continue`, `return`, `yield`, etc.
+
+---
+
+## Cas des boucles `while`
+
+- Il faut tester les mêmes cas qu'une boucle `for`.
+- Par ailleurs, il faut exercer toutes les conditions de fin de boucle.
+- Dans cet exemple, les 3 conditions de fin doivent être testées indépendemment.
+
+```python
+while len(L) > 0 and (L[i] == "ok" or est_vrai):
+    # [...]
+```
+
+---
+
+### Cas des fonctions récursives
+
+* Il faut tester les cas où :
+    * il n'y a pas d'appel récursif.
+    * il y a exactement un appel récursif.
+    * il y a plus qu'un appel récursif.
+
+---
+
+## couverture de code
+
+* La couverture de code est le pourcentage de lignes de code couvertes par les tests sur le nombre de lignes de code totales du programme.
+* C'est un **indicateur** de la qualité logicielle.
+* Une couverture supérieure à 80% est souhaitable.
+* Une couverture à 100% est difficile et souvent trop coûteuse.
 
 ---
 
@@ -1110,9 +1189,57 @@ Cette concurrence bénéficie à la fois aux délais de livraison et à la quali
 
 ---
 
+# Automatiser
+
+* Le travail d'un informaticien est d'**automatiser** des tâches.
+* Il est possible d'**automatiser les tests**.
+* On écrit des programmes qui testent d'autres programmes.
+* On les appelle des **programmes de tests**.
+
+---
+
+# Intérêt
+
+* **Gagner du temps** en évitant de tester manuellement.
+* **Eviter des régressions** pendant des phases de maintenance.
+* Rejouer les tests dans **différents environnements** (ex : machine plus lente).
+* Calculer des **indicateurs** automatiquement (ex : couverture de code).
+
+---
+
+# Fonctionnement
+
+* L'environnement d'exécution se lance (via potentiellement de la virtualisation).
+* Le programmes de test sont invoqués avec un jeu de données prédéfini et/ou généré aléatoirement.
+* Le résultat des invocations est sauvegardé.
+* L'acceptabilité des résultats est vérifié.
+* Un rapport de test est généré.
+
+---
+
+# Pyramide de tests
+
+![](./assets/pyramide-tests.png)
+
+<!--
+La pyramide des tests présente les différents types de tests automatiques et leur positionnement.
+Les plus importants, qui composent la base, sont les tests unitaires.
+A chaque niveau, on trouve à gauche le pourcentage de couverture de code idéal.
+A droite sont listés quelques entités testés à ce niveau.
+Les tests de composants se font au niveau des interfaces des composants logiciels.
+Les tests d'intégration automatisent des tâches avec l'interface utilisateur, la base de données, les APIs web, etc.
+Les tests exploratoires se font manuellement. Les tests manuels ne devraient pas représenter plus de 5% de l'effort de test.
+-->
+
+---
+
+---
+
 <!-- _class: title-section -->
 
 # Tests unitaires
+
+---
 
 ---
 
@@ -1120,13 +1247,7 @@ Cette concurrence bénéficie à la fois aux délais de livraison et à la quali
 
 # <!--fit--> Tests pilotant le développement 
 
-##### Test Driven Development
-
----
-
-<!-- _class: title-section -->
-
-# <!--fit--> Pyramide de tests
+##### Test Driven Development :uk:
 
 ---
 
