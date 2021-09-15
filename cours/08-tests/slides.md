@@ -1241,6 +1241,164 @@ Les tests exploratoires se font manuellement. Les tests manuels ne devraient pas
 
 ---
 
+# Tests unitaires
+
+* Les tests unitaires sont **à la base** de la pyramide de tests.
+* Ils sont également à la base de la stratégie d'automatisation des tests.
+
+---
+
+# Concept
+
+* 1 test unitaire teste **1 fonction** et 1 seule.
+* 1 fonction est couverte par **plusieurs tests unitaires**.
+
+---
+
+#### Effets de bord et composants externes
+
+* Un test unitaire est **indépendant**.
+* Un test unitaire est **pur** :
+    * Il ne dépend pas de variable globale.
+    * Il n'utilise pas le réseau.
+    * Il n'utilise pas la base de données.
+    * Il n'utilise pas de composant tier.
+
+<!--
+Lorsque l'on teste du code qui dépend du réseau ou d'une base de donnée ou d'un composant tier, on créé un Mock.
+Un Mock est une fonction ou une classe qui a la même interface que le composant à remplacer.
+Un Mock suit la philosophie du "Duck Typing" : si cela ressemble à un canard, c'est un canard et on peut l'utiliser là où on attend des canards.
+Nous ne rentrerons pas dans les détails dans ce cours.
+Retenez simplement que des outils existent pour conserver l'indépendance des tests unitaires.
+-->
+
+---
+
+# AAA
+
+* Un test unitaire suit les 3 étapes suivantes :
+    * **Arrange** : initialise le test.
+    * **Agit** (*act* :uk:) : appelle la fonction à tester.
+    * **Affirme** (*assert* :uk:) : vérifie le résultat de la fonction.
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    if x < 0:
+        raise ValueError("x est négatif")
+
+    s = x / 2
+    while abs(s ** 2 - x) >= epsilon:
+        P = s ** 2 - x
+        P_prime = 2 * s
+        s = s - P / P_prime
+
+    return s
+```
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def test_racine_carree_25():
+    # Arrange
+    x = 25
+    epsilon = 0.00001
+    attendu = 5
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def test_racine_carree_25_grand_epsilon():
+    # Arrange
+    x = 25
+    epsilon = 0.1
+    attendu = 5
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def test_racine_carree_0():
+    # Arrange
+    x = 0
+    epsilon = 0.00001
+    attendu = 0
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def test_racine_carree_1():
+    # Arrange
+    x = 1
+    epsilon = 0.00001
+    attendu = 1
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+### Exemple : tests unitaires pour la racine carrée
+
+```python
+def test_racine_carree_negatif():
+    # Arrange
+    x = -1
+    exception_attrappee = False
+
+    # Agit
+    try:
+        racine_carree(x)
+    except:
+        exception_attrappee = True
+
+    # Affirme
+    assert exception_attrappee
+```
+
+---
+
+# Notes pratiques
+
+* Pensez bien à écrire des tests unitaires **lors de l'examen**.
+* Si vous n'avez plus le temps, écrivez au moins sur votre copie que des tests unitaires devraient être ajoutés.
+
 ---
 
 <!-- _class: title-section -->
@@ -1248,6 +1406,197 @@ Les tests exploratoires se font manuellement. Les tests manuels ne devraient pas
 # <!--fit--> Tests pilotant le développement 
 
 ##### Test Driven Development :uk:
+
+---
+
+# TDD
+
+* Le développement piloté par les tests (ou TDD pour Test-Driven Development) est une **méthodologie**.
+* Cette méthodologie vise à **garantir** que tout le code est **couvert par des tests**.
+
+<!--
+Dans beaucoup d'entreprises, les tests automatiques sont malheureusement délaissés.
+Le TDD est une méthodologie qui permet d'éviter de finir avec une base de code complexe et sans tests automatiques.
+-->
+
+---
+
+# Principe
+
+* Ecrire la déclaration de la fonction.
+* Ecrire un test unitaire.
+* Exécuter le test unitaire et vérifier qu'il échoue.
+* Ecrire le minimum de code pour que ce test réussisse.
+* Ecrire un test unitaire.
+* Etc.
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    pass
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def test_racine_carree_25():
+    # Arrange
+    x = 25
+    epsilon = 0.00001
+    attendu = 5
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    return 5
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def test_racine_carree_25_grand_epsilon():
+    # Arrange
+    x = 25
+    epsilon = 0.1
+    attendu = 5
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+<!--
+Cela fonction toujours !
+-->
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def test_racine_carree_0():
+    # Arrange
+    x = 0
+    epsilon = 0.00001
+    attendu = 0
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    return 5 if x == 25 else 0
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def test_racine_carree_1():
+    # Arrange
+    x = 1
+    epsilon = 0.00001
+    attendu = 1
+
+    # Agit
+    resultat = racine_carree(x, epsilon)
+
+    # Affirme
+    assert abs(resultat - attendu) <= epsilon
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    if x == 25:
+        return 5
+    elif x == 0:
+        return 0
+    elif x == 1:
+        return 1
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def test_racine_carree_negatif():
+    # Arrange
+    x = -1
+    exception_attrappee = False
+
+    # Agit
+    try:
+        racine_carree(x)
+    except:
+        exception_attrappee = True
+
+    # Affirme
+    assert exception_attrappee
+```
+
+---
+
+# Exemple de TDD avec la racine carrée
+
+```python
+def racine_carree(x, epsilon=0.000001):
+    """Renvoie la racine carrée de x à epsilon près."""
+    if x < 0:
+        raise ValueError("x est négatif")
+    elif x == 25:
+        return 5
+    elif x == 0:
+        return 0
+    elif x == 1:
+        return 1
+```
+
+<!--
+Cela ne calcule pas vraiment une racine carrée, mais cela passe les tests unitaires !
+Cela montre aussi les limites des tests unitaires.
+Il existe bien d'autres méthodologies :
+- Acceptance Tests,
+- Test Fuzzing,
+- Etc.
+Cela sort du cadre de ce cours.
+-->
 
 ---
 
