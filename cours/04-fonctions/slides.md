@@ -842,43 +842,13 @@ Nous verrons d'autres exemples plus loin dans ce cours.
 
 ---
 
-# Intérêt de la documentation des spécifications
+### Intérêt de la documentation des spécifications
 
 * Vous avez étudié lors du dernier cours l'algorithme de Newtown-Raphson.
 * Cet algorithme n'est pas trivial.
 * De manière générale, il faut considérer qu'aucun algorithme n'est trivial.
 * Il faut documenter son code.
 * En particulier, il faut documenter chacune de ses fonctions.
-
----
-
-# Contrat d'une fonction
-
-* Une fonction a un **contrat**.
-* Ce contrat est un ensemble de :
-    * **préconditions** : contraintes sur les valeurs d'entrée.
-    * **invariants** : garantie sur les valeurs d'entrée.
-    * **post-conditions** : contraintes sur les valeurs de sortie.
-
----
-
-# Contrat de la fonction `racine_carree`
-
-* **Préconditions** :
-    - La variable `x` est un nombre flottant positif ou nul.
-    - La variable `epsilon` est un nombre flottant strictement positif.
-* **Invariants** : `x` et `epsilon` sont inchangés.
-* **Post-conditions** : la valeur retournée est proche de la racine carrée de `x`, à plus ou moins `epsilon`.
-
----
-
-# Attention à la sur-spécification
-
-* On pourrait également préciser que `x` et `epsilon` doivent être différents de NAN (Not A Number) et de l'infinie.
-* On pourrait également préciser que `x` et `epsilon` peuvent également être des entiers.
-* Certaines choses sont implicites et n'ont pas besoin d'être spécifiées.
-* C'est l'expérience qui dicte ce qui est explicite et implicite.
-* Il vaut mieux commencer par être trop explicite et réduire progressivement.
 
 ---
 
@@ -939,100 +909,6 @@ def racine_carree(x, epsilon=0.000001):
 
     return s
 ```
-
----
-
-# Vérification des préconditions
-
-- Il existe 2 approches :
-    * Programmation **offensive** : les préconditions sont décrites en commentaires mais non vérifiées.
-        - Avantages : performance et simplificité.
-        - Inconvénients : robustesse.
-    * Programmation **défensive** : les préconditions sont vérifiées et on renvoie une erreur si nécessaire.
-        - Avantages : robustesse.
-        - Inconvénients : lenteur et complexité.
-
----
-
-# Division offensive
-
-```python
-def divise(a, b):
-    """Divise a par b.
-
-    a - nombre flottant.
-    b - nombre flottant non nul.
-    Retourne la division a / b.
-    """
-    return a / b
-```
-
-<!--
-Aucune vérification n'est effectuée, mais les préconditions sont bien spécifiées : il s'agit donc de l'approche offensive.
--->
-
----
-
-# Division défensive
-
-```python
-def divise(a, b, epsilon=0.000001):
-    """Divise a par b.
-
-    a - nombre flottant.
-    b - nombre flottant non nul.
-    epsilon - valeur autour de laquelle b est considérée nul
-    Retourne la division a / b.
-    """
-    if abs(b) < epsilon:
-        return float("inf")
-
-    return a / b
-```
-
-<!--
-On évite le cas de la division par zéro en effectuant une vérification préalable : il s'agit de l'approche défensive.
--->
-
----
-
-# Division défensive extrême
-
-```python
-def divise(a, b, epsilon=0.000001):
-    """Divise a par b.
-
-    a - nombre flottant.
-    b - nombre flottant non nul.
-    epsilon - valeur autour de laquelle b est considérée nul
-    Retourne la division a / b si a et b sont corrects. Sinon,
-    retourne nan ou inf.
-    """
-    if type(a) != float and type(a) != int:
-        return float("nan")
-    if type(b) != float and type(b) != int:
-        return float("nan")
-    if abs(b) < epsilon:
-        return float("inf")
-
-    return a / b
-```
-
-<!--
-En plus d'empêcher la division par zéro, les types des entrées sont vérifiés dynamiquement.
-Cette approche est rarement souhaitable car les performances d'exécution peuvent être impactées négativement.
-Par ailleurs, le code devient plus difficile à lire et à comprendre.
-Il existe une autre manière plus élégante et plus efficace de vérifier les types en Python.
-Nous aborderons cette approche vers la fin de cette formation.
--->
-
----
-
-# Approche pragmatique
-
-* Souvent, en Python, on privilégie l'approche offensive avec une bonne documentation.
-* Dans d'autres langages de programmation, ou certains contextes industriels, d'autres approches peuvent être favorisées.
-* Il faut se renseigner sur les bonnes pratiques dans votre environnement, et suivre ces bonnes pratiques.
 
 ---
 

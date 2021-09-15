@@ -1642,7 +1642,7 @@ print(dico)
 
 <!-- _class: title-section -->
 
-# TP : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter
+### TP : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter
 
 ---
 

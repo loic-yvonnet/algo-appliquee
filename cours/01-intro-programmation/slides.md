@@ -32,7 +32,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Introduction à la programmation et à l'algorithmique
+### Introduction à la programmation et à l'algorithmique
 
 <!-- On commence les choses sérieuses ! -->
 

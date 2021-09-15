@@ -31,7 +31,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Introduction à la complexité d'algorithme
+#### Introduction à la complexité algorithmique
 
 <!--
 Partie complexe du cours mais totalement fondamentale.
@@ -914,7 +914,7 @@ timeit(test, number=1)
 
 ---
 
-# Plusieurs choses en même temps
+### Plusieurs choses en même temps
 
 * Un ordinateur peut comporter **plusieurs CPU** (processeur de calcul) et **GPU** (processeur graphique).
 * Un CPU moderne peut comporter quelques dizaines de coeurs.

@@ -31,7 +31,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Résolution de problèmes classiques
+### Résolution de problèmes classiques
 
 ---
 
