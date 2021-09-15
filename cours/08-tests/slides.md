@@ -50,10 +50,10 @@ Dans ce cours, on va aborder 2 points importants et complémentaires :
 - Notion d'exception
 - Gestion d'exceptions et classes d'exception
 - Programmation offensive et défensive
-- Assertions
 - Invariants
-- Tests et qualité logicielle
-- Tests en boîte transparente par les développeurs
+- Assertions
+- Tests en boîte opaque
+- Tests en boîte transparente
 - Automatisation des tests
 - Tests unitaires
 - Tests pilotant le développement
@@ -944,6 +944,16 @@ Le reste de la division de 3 par 2 est 1
 Si l'expression est Vraie, le flot de contrôle continue.
 -->
 
+---
+
+# Intérêts
+
+* Les assertions peuvent être utilisés dans la **programmation défensive**.
+* Elles peuvent également être utilisées dans le cadre de **tests unitaires**.
+
+<!--
+Les prochaines parties de ce cours vont introduire le concept de tests unitaires.
+-->
 
 ---
 
@@ -963,9 +973,127 @@ Si l'expression est Vraie, le flot de contrôle continue.
 
 <!-- _class: title-section -->
 
-# <!--fit--> Tests et qualité logicielle
+# <!--fit--> Tests en boîte opaque
 
-##### Boîte opaque et équipe QA
+---
+
+# Introduction
+
+* **Albert Einstein** : "Aucune expérience ne peut jamais prouver que j'ai raison ; une seule expérience peut prouver que j'ai tort."
+* **Edsger Dijkstra** : "Le test de programmes peut montrer la présence de bugs, mais ne peut jamais montrer leur absence."
+* Les tests constituent un **filet de sécurité**.
+* Les bugs peuvent malgré tout passer à travers les mailles du filet.
+
+---
+
+# Combinatoire
+
+* Même le programme le plus simple a une **forte combinatoire**.
+* Par exemple, si on doit écrire la fonction `min`, on a 2 entiers en entrée.
+* On ne peut pas tester chaque combinaison de paires d'entiers.
+* Cela représenterait $2^{64} \times 2^{64} = 2^{128} \approx 3.4 \cdot 10^{38}$ opérations environ.
+
+---
+
+# Stratégie de test
+
+* Au mieux, on peut **tester quelques combinaisons** qui ont de fortes chances de produire une réponse fausse s'il y a un bug dans le programme.
+* Cette collection d'entrées à tester s'appelle une **suite de tests**.
+
+---
+
+# Partitionnement
+
+* On va partitionner l'espace de valeurs en sous-ensembles qui doivent produire des résultats similaires.
+
+|        | a < 0                          | a == 0 | a > 0   |
+|--------|--------------------------------|--------|---------|
+| b < 0  | 3 tests (a < b, a == b, a > b) | Test 6 | Test 9  |
+| b == 0 | Test 4                         | Test 7 | Test 10 |
+| b > 0  | Test 5                         | Test 8 | 3 tests |
+
+<!--
+Ce partitionnement en 13 tests devrait permettre de découvrir de nombreux bugs dans la fonction min.
+Mais pas forcément tous les bugs.
+-->
+
+---
+
+# Contre-exemple
+
+```python
+def min(a, b):
+    """Renvoie le minimum entre a et b.
+
+    a - entier.
+    b - entier.
+    Renvoie a s'il est plus petit que b et b sinon.
+    """
+    if b == 424242: # bug ou backdoor
+        return True
+    return a if a < b else b
+```
+
+<!--
+A moins de tester explicitement la valeur 424242, le partitionnement précédent a très peu de chances de découvrir le bug dans cette implémentation.
+NB : une backdoor est un bug mis à dessein pour permettre à un groupe d'exploiter ce bug à leur profit.
+-->
+
+---
+
+### Familles de stratégies
+
+* **Boîte opaque** : tests effectués par des personnes ne connaissant pas l'implémentation du programme.
+* **Boîte transparente** : tests effectués par les implémenteurs du programme.
+
+---
+
+## Equipe Qualité
+
+* De nombreuses entreprises ont une **équipe Qualité** séparée de l'équipe de développement du logiciel.
+* Cette équipe est **indépendante** de l'équipe de développement.
+* L'objectif de cette équipe est de **trouver un maximum de bugs** avant que le logiciel arrive en production chez des clients.
+
+<!--
+Ces équipes peuvent également porter le nom d'équipe QA (pour Quality Assurance) ou VV (pour Vérification et Validation).
+-->
+
+---
+
+## Vérification par des tiers
+
+* Il est même possible de faire appel à des **entreprises tierces**.
+* Ces entreprises indépendantes vont faire un **audit**.
+* C'est notamment le cas dans le domaine de la cybersécurité.
+
+---
+
+# Intérêt (1/2)
+
+* Les développeurs peuvent **mal comprendre** les spécifications.
+* Les développeurs peuvent **reproduire un bug** dans leurs tests.
+* Dans ce cas, le test réalisé par le développeur innocente son code de manière injustifiée.
+
+<!--
+Par exemple, un programme qui doit gérer une valeur qui ne doit pas être égale à 0.
+Le développeur pourrait ne pas gérer du tout ce cas, et ne pas le tester.
+Ainsi, le bug en 0 ne serait jamais vu par le développeur (avant qu'un client ne s'en aperçoive).
+-->
+
+---
+
+# Intérêt (2/2)
+
+* **Biais psychologique** :
+    * Un développeur a intérêt à dire que son programme fonctionne dans tous les cas.
+    * Un testeur a intérêt à montrer qu'il trouve des bugs dans le code du développeur.
+* **Concurrence bénéfique** : cette concurrence entre développeur et testeur créé une émulation et booste les projets.
+
+<!--
+Le développeur doit respecter des délais de livraison et doit aller vite.
+Le testeur est souvent tenu pour responsable si des bugs sont trouvés en production.
+Cette concurrence bénéficie à la fois aux délais de livraison et à la qualité logicielle.
+-->
 
 ---
 
@@ -973,7 +1101,6 @@ Si l'expression est Vraie, le flot de contrôle continue.
 
 # <!--fit--> Tests en boîte transparente
 
-##### Par les développeurs
 
 ---
 
