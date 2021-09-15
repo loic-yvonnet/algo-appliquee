@@ -449,6 +449,29 @@ Le choix se fera donc en fonction du contexte : si on est dans une équipe d'exp
 
 ---
 
+### Attraper les toutes :rabbit:
+
+```python
+def divise(a, b):
+    return a / b
+
+try:
+    resultat = divise(15, 0)
+    print(f"Le résultat est {resultat}")
+except:
+    print("Error: division par zéro")
+```
+
+<!--
+En règle général, il vaut mieux être aussi spécifique que possible.
+En effet, dans une base de code industrielle, les occasions d'attraper une exception sont nombreuses.
+Si on attrape toutes les exceptions, il est possible que l'on en attrape trop.
+NB: le lapin fait référence à Pikachu des Pokemon dont le motto est : attrapez les tous...
+Ce lapin est naïf car il veut attraper toutes les exceptions d'un coup.
+-->
+
+---
+
 # Finalement (1/2)
 
 ```python
@@ -505,15 +528,43 @@ On passe ici
 
 ---
 
-<!-- _class: title-section -->
+# Levée d'exception
 
-# <!--fit--> Programmation offensive et défensive
+* On est possible de **lever explicitement** des exceptions.
+* Cela permet de stopper le flot de contrôle pour rentrer dans un mode de gestion d'erreur.
+* La pile d'appels de fonction est déroulée (*unwind* :uk:) jusqu'à trouver un `except` adapté.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: smaller-text -->
 
-# Assertions
+## Retour sur le niveau de gris
+
+```python
+def niveau_gris(rouge, vert, bleu):
+    """Renvoie un niveau de gris à partir d'une couleur RVB.
+
+    rouge, vert et bleu sont des entiers dans [0 ; 255].
+    """
+    if rouge < 0 or rouge > 255:
+        raise ValueError("Rouge en dehors de [0..255]")
+    if vert < 0 or vert > 255:
+        raise ValueError("Vert en dehors de [0..255]")
+    if bleu < 0 or bleu > 255:
+        raise ValueError("Bleu en dehors de [0..255]")
+
+    return (rouge + vert + bleu) // 3
+
+try:
+    gris = niveau_gris(255, -1, 0)
+    print(gris)
+except ValueError as erreur:
+    print(erreur)
+```
+
+<!--
+On a maintenant une solution élégante et performante pour gérer les différentes erreurs.
+-->
 
 ---
 
@@ -522,6 +573,139 @@ On passe ici
 # Invariants
 
 ##### Préconditions et post-conditions
+
+---
+
+# Contrat d'une fonction
+
+* Une fonction a un **contrat**.
+* Ce contrat est un ensemble de :
+    * **préconditions** : contraintes sur les valeurs d'entrée.
+    * **invariants** : garantie sur les valeurs d'entrée.
+    * **post-conditions** : contraintes sur les valeurs de sortie.
+
+---
+
+### Contrat de la fonction `racine_carree`
+
+* **Préconditions** :
+    - La variable `x` est un nombre flottant positif ou nul.
+    - La variable `epsilon` est un nombre flottant strictement positif.
+* **Invariants** : `x` et `epsilon` sont inchangés.
+* **Post-conditions** : la valeur retournée est proche de la racine carrée de `x`, à plus ou moins `epsilon`.
+
+---
+
+### Attention à la sur-spécification
+
+* On pourrait également préciser que `x` et `epsilon` doivent être différents de NAN (Not A Number) et de l'infinie.
+* On pourrait également préciser que `x` et `epsilon` peuvent également être des entiers.
+* Certaines choses sont implicites et n'ont pas besoin d'être spécifiées.
+* C'est l'expérience qui dicte ce qui est explicite et implicite.
+* Il vaut mieux commencer par être trop explicite et réduire progressivement.
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Programmation offensive et défensive
+
+---
+
+## Vérification des préconditions
+
+- Il existe 2 approches :
+    * Programmation **offensive** : les préconditions sont décrites en commentaires mais non vérifiées.
+        - Avantages : performance et simplificité.
+        - Inconvénients : robustesse.
+    * Programmation **défensive** : les préconditions sont vérifiées et on renvoie une erreur si nécessaire.
+        - Avantages : robustesse.
+        - Inconvénients : lenteur et complexité.
+
+---
+
+# Division offensive
+
+```python
+def divise(a, b):
+    """Divise a par b.
+
+    a - nombre flottant.
+    b - nombre flottant non nul.
+    Retourne la division a / b.
+    """
+    return a / b
+```
+
+<!--
+Aucune vérification n'est effectuée, mais les préconditions sont bien spécifiées : il s'agit donc de l'approche offensive.
+-->
+
+---
+
+# Division défensive
+
+```python
+def divise(a, b, epsilon=0.000001):
+    """Divise a par b.
+
+    a - nombre flottant.
+    b - nombre flottant non nul.
+    epsilon - valeur autour de laquelle b est considérée nulle.
+    Retourne la division a / b.
+    """
+    if abs(b) < epsilon:
+        raise ValueError("b est trop proche de 0")
+
+    return a / b
+```
+
+<!--
+On évite le cas de la division par zéro en effectuant une vérification préalable : il s'agit de l'approche défensive.
+-->
+
+---
+
+# Division défensive extrême
+
+```python
+def divise(a, b, epsilon=0.000001):
+    """Divise a par b.
+
+    a - nombre flottant.
+    b - nombre flottant non nul.
+    epsilon - valeur autour de laquelle b est considérée nulle.
+    Retourne la division a / b si a et b sont corrects.
+    """
+    if type(a) != float and type(a) != int:
+        raise TypeError("a n'est ni int, ni float")
+    if type(b) != float and type(b) != int:
+        raise TypeError("b n'est ni int, ni float")
+    if abs(b) < epsilon:
+        raise ValueError("b est trop proche de 0")
+
+    return a / b
+```
+
+<!--
+En plus d'empêcher la division par zéro, les types des entrées sont vérifiés dynamiquement.
+Cette approche est rarement souhaitable car les performances d'exécution peuvent être impactées négativement.
+Par ailleurs, le code devient plus difficile à lire et à comprendre.
+-->
+
+---
+
+# Approche pragmatique
+
+* Souvent, en Python, on privilégie l'**approche offensive** avec une bonne documentation.
+* Dans d'autres langages de programmation, ou certains contextes industriels, d'autres approches peuvent être favorisées.
+* Il faut **se renseigner** sur les bonnes pratiques dans votre environnement, et suivre ces bonnes pratiques.
+
+---
+
+<!-- _class: title-section -->
+
+# Assertions
 
 ---
 
