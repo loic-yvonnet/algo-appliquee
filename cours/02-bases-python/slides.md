@@ -662,7 +662,7 @@ Prix (TTC) : 83.40€
 
 <!-- _class: title-section -->
 
-# TP 03 - Initiation aux Environnements de Développement Intégrés avec pour but de manipuler des chaînes de caractères
+### TP 03 - Initiation aux Environnements de Développement Intégrés avec pour but de manipuler des chaînes de caractères
 
 ---
 
@@ -1133,7 +1133,7 @@ for i in range(debut, fin, pas):
 
 <!-- _class: title-section -->
 
-# TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
+### TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
 
 ---
 

@@ -31,7 +31,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Introduction à la théorie des graphes
+### Introduction à la théorie des graphes
 
 <!--
 Cours très important pour l'examen final mais également fondamental car il s'agit d'une introduction au domaine passionant de la recherche opérationnelle.

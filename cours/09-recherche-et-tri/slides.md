@@ -31,7 +31,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Algorithmes de recherche et de tri
+### Algorithmes de recherche et de tri
 
 ---
 

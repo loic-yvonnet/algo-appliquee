@@ -31,7 +31,13 @@ style: |
 
 ##### BTS SIO SISR
 
-## Notions de Python plus avancées
+## Bibliothèques Python
+
+<!--
+Tout langage de programmation et toute technologie moderne est complexe et profond.
+Les bibliothèques sont très importantes pour développer des logiciels au bon niveau d'abstraction.
+Afin que vous puissiez être efficaces rapidement dans vos entreprises en alternance, il est important que vous connaissiez les principales bibliothèques offertes par le langage de programmation Python.
+-->
 
 ---
 

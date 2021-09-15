@@ -46,7 +46,7 @@ Si les étudiants sont en avance, les points suivants pourraient également êtr
 
 # Plan
 
-- Retours sur les points essentiels
+- Retour sur les points essentiels
 - Conseils pour l'examen
 - Questions/réponses
 - Travail dans une base de code réelle
