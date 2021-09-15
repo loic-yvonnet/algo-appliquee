@@ -385,8 +385,10 @@ Il est nécessaire de spécifier puis d'implémenter le comportement approprié 
 
 # Syntaxe
 
+![bg right:45% 65%](./assets/exception.png)
+
 ```python
-try
+try:
     # Bloc1 (bloc de code n°1)
 except Erreur:
     # Bloc2
@@ -398,6 +400,101 @@ else:
     # Bloc5
 finally:
     # Bloc6
+```
+
+---
+
+### Retour sur la division
+
+```python
+def divise(a, b):
+    return a / b
+
+try:
+    resultat = divise(15, 0)
+except ZeroDivisionError:
+    print("Error: division par zéro")
+else:
+    print(f"Le résultat est {resultat}")
+```
+
+<!--
+On simplifie notre code puisque la division par zéro est déjà détectée.
+La gestion d'erreur se fait ici de manière naturelle.
+-->
+
+---
+
+### Arrêt du flot de contrôle
+
+```python
+def divise(a, b):
+    return a / b
+
+try:
+    resultat = divise(15, 0)
+    print(f"Le résultat est {resultat}")
+except ZeroDivisionError:
+    print("Error: division par zéro")
+```
+
+<!--
+Ce code a exactement le même comportement que celui sur la diapositive précédente.
+En effet, dès qu'une exception est levée, on sort immédiatement du bloc de code actuel pour aller dans le bloc de gestion de l'exception.
+La différence est essentiellement stylistique :
+- Le code sur cette diapositive sera mieux compris par des développeurs non habitués au Python, car cette syntaxe existe dans de nombreux langages de programmation.
+- Le code sur la diapositive précédente plaira plus à des experts Python, car on rend plus visible ce qui peut émettre une exception.
+Le choix se fera donc en fonction du contexte : si on est dans une équipe d'experts Python, on choisira plutôt la solution précédente.
+-->
+
+---
+
+# Finalement (1/2)
+
+```python
+def divise(a, b):
+    return a / b
+
+try:
+    resultat = divise(15, 0)
+except ZeroDivisionError:
+    print("Error: division par zéro")
+else:
+    print(f"Le résultat est {resultat}")
+finally:
+    print("On passe ici")
+```
+
+:arrow_down:
+
+```
+Error: division par zéro
+On passe ici
+```
+
+---
+
+# Finalement (2/2)
+
+```python
+def divise(a, b):
+    return a / b
+
+try:
+    resultat = divise(15, 1)
+except ZeroDivisionError:
+    print("Error: division par zéro")
+else:
+    print(f"Le résultat est {resultat}")
+finally:
+    print("On passe ici")
+```
+
+:arrow_down:
+
+```
+Le résultat est 15
+On passe ici
 ```
 
 ---
