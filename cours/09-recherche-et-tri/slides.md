@@ -231,7 +231,7 @@ La méthode get rempli ce rôle.
 
 ---
 
-# Version itérative
+# Implémentation itérative
 
 ```python
 def recherche_lineaire(collection, cle):
@@ -271,7 +271,7 @@ Le Grand Oméga est donné à titre indicatif ici.
 
 ---
 
-# Version récursive
+# Implémentation récursive
 
 ```python
 def recherche_lineaire(collection, cle):
@@ -280,7 +280,6 @@ def recherche_lineaire(collection, cle):
             return -1
         if collection[index] == cle:
             return index
-
         return recherche_lineaire_impl(collection, cle, index + 1)
     
     return recherche_lineaire_impl(collection, cle, 0)
@@ -310,7 +309,7 @@ Utilisez plutôt la version itérative de l'algorithme.
 
 ---
 
-# Version itérative
+# Implémentation itérative
 
 ```python
 def recherche_binaire(collection, cle):
@@ -506,10 +505,57 @@ O(p) &= O(\log_2(N + 1)) \\
 \end{align*}
 $$
 
-On avait vu que la complexité de la recherche binaire était proportionnelle à la profondeur $p$ de l'arbre, c'est-à-dire $O(p)$ ou $O(\log N)$.
+On avait vu que la complexité de la recherche binaire était proportionnelle à la profondeur $p$ de l'arbre, c'est-à-dire $O(p)$ soit $O(\log N)$.
 
 <!--
 Comprendre cette preuve est importante car on peut souvent la réutiliser pour des algorithmes logarithmiques ou linéarithmiques.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+# Implémentation récursive
+
+```python
+def recherche_binaire(collection, cle):
+    def recherche_binaire_impl(collection, cle, debut, fin):
+        if fin < debut:
+            return -1
+
+        milieu = debut + (fin - debut) // 2
+        actuel = collection[milieu]
+
+        if cle < actuel:
+            return recherche_binaire_impl(collection, cle, debut, milieu - 1)
+        elif cle > actuel:
+            return recherche_binaire_impl(collection, cle, milieu + 1, fin)
+        else:
+            return milieu
+
+    debut = 0
+    fin = len(collection) - 1       
+
+    return recherche_binaire_impl(collection, cle, debut, fin)
+```
+
+<!--
+Attention, il s'agit de code qui doit tenir sur une diapositive de cours.
+Dans un contexte industriel, il vaudrait mieux avoir 2 fonctions séparées et correctement documentées.
+-->
+
+---
+
+## Relation de récurrence
+
+* Une autre manière de prouver la complexité serait d'utiliser une **relation de récurrence**.
+* On pose que le nombre maximal de comparaisons $C$ pour $N = 1$ est $C(1) = 1$.
+* On établi alors que $C(N) = 1 + C(\frac{N}{2})$.
+* La résolution de la relation de récurrence donne également $O(\log_2(N))$.
+
+<!--
+Les détails concernant la relation de récurrence sont considérés comme trop avancés pour ce cours.
+Retenez simplement qu'elle existe et offre une base mathématiques pour prouver la complexité d'algorithmes qui peuvent être exprimés de manière récursive.
 -->
 
 ---
@@ -536,10 +582,10 @@ Comprendre cette preuve est importante car on peut souvent la réutiliser pour d
 
 <!-- _class: title-section -->
 
-# <!--fit--> Algorithmes de tri naïfs
+# <!--fit--> Algorithmes de tri en $O(N^2)$
 
 
-##### Bubble Sort, Insertion Sort, Selection Sort
+##### Bubble Sort, Insertion Sort, Selection Sort :uk:
 
 ---
 
