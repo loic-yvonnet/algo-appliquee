@@ -231,13 +231,79 @@ La méthode get rempli ce rôle.
 
 ---
 
+# Rappel
+
+```python
+def recherche_lineaire(collection, cle):
+    for c in collection:
+        if c == cle:
+            return True
+    return False
+```
+
+<!--
+Vous avez déjà implémenté cet algorithme.
+En pratique, utilisez plutôt l'opérateur in en Python.
+Cet algorithme peut être utile si vous implémentez vos propres structures de données.
+-->
+
+---
+
+# Preuve d'algorithme
+
+### Preuve triviale
+
+* On parcourt chaque élément une fois, donc l'algorithme s'arrête quand chaque élément est traité.
+* Chaque élément est comparé à la clé.
+* Donc si un élément est égal à la clé, il sera trouvé.
+
+---
+
+# Complexité
+
+* $O(N)$ : on parcourt chaque élément une fois.
+* $\Omega(1)$ : si le 1er élément est égal à la clé, l'algorithme s'arrête immédiatement.
+
+<!--
+Rappelez-vous que c'est le Grand O le plus important.
+Le Grand Oméga est donné à titre indicatif ici.
+-->
+
+---
+
+# Version récursive
+
+```python
+def recherche_lineaire(collection, cle):
+    if len(collection) == 0:
+        return False
+    if collection[0] == cle:
+        return True
+
+    return recherche_lineaire(collection[1:], cle)
+```
+
+<!--
+Utilisez plutôt la version itérative de l'algorithme.
+-->
+
+---
+
+### Preuve de la version récursive
+
+* La récursion s'arrête lorsque la collection est vide ou si la clé est trouvée au premier indice de la collection.
+* La récursion se fait sur la sous-liste amputée de son 1er élément qui a déjà été testé.
+* On parcourt donc chaque élémént une fois et le reste est identique à la version itérative.
+
 <!-- _class: title-section -->
 
 # <!--fit--> Recherche binaire
 
-##### Binary search
+##### Binary search :uk:
 
 ---
+
+
 
 <!-- _class: title-section -->
 
