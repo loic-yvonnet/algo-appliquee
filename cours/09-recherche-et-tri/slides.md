@@ -384,17 +384,133 @@ Le principe est encore mieux visible sous forme d'arbre.
 
 ## Preuve d'algorithme
 
-- La collection est triée donc :
-$$
-\forall i \in \left[0 ; N-1\right[, \text{collection}[i] \le \text{collection}[i + 1]
-$$
 * A chaque itération :
-    * On compare l'élément du milieu de l'interval restant à la clé.
-    * Si la clé est trouvée, l'algorithme s'arrête.
-    * Sinon, l'interval de recherche est réduit de moitié et converge :
-        * Soit la borne de fin est réduite à l'indice du milieu,
-        * Soit la borne de début est avancée à l'indice du milieu.
-* Soit
+    * Soit on trouve la clé et l'algorithme s'arrête.
+    * Soit l'interval de recherche est réduit de moitié et converge vers la clé car la collection est triée :
+        * Soit la borne de fin va au milieu,
+        * Soit la borne de début va au milieu.
+
+---
+
+# Complexité
+
+* $O(\log N)$ : on parcourt chaque étage de l'arbre binaire une fois au maximum.
+* $\Omega(1)$ : si l'élément du milieu est égal à la clé, l'algorithme s'arrête immédiatement.
+
+<!--
+On va prouver la complexité en 0(log N) en établissant le rapport entre la profondeur de l'arbre et le nombre maximal de noeud dans cet arbre.
+-->
+
+---
+
+## Profondeur de l'arbre (1/6)
+
+* A la racine de l'arbre (profondeur $p = 1$), on a un seul noeud.
+* A chaque niveau, on multiplie le nombre de noeuds par 2.
+* A un niveau donné, on a donc $2^{p-1}$ noeuds.
+
+<!--
+Le tableau sur la diapositive suivante illustre cette relation.
+-->
+
+---
+
+## Profondeur de l'arbre (2/6)
+
+![](./assets/arbre-binaire-profondeur.png)
+
+
+---
+
+## Profondeur de l'arbre (3/6)
+
+Donc le nombre total maximal de noeuds $N$ est relié à la profondeur $p$ :
+
+$$
+N = \sum_{i = 0}^{p - 1} 2^i
+$$
+
+<!--
+A noter qu'il s'agit là d'une valeur maximale puisque le nombre de valeurs dans l'espace de recherche n'est pas nécessairement une puissance de 2.
+Il nous reste à exprimer p en fonction de N.
+-->
+
+---
+
+## Profondeur de l'arbre (4/6)
+
+##### Un peu d'arithmétique
+
+$$
+\begin{align*}
+    2^p &= 2^p \times 1 \\
+        &= 2^p \times (2 - 1) \\
+        &= 2^{p + 1} - 2^{p}
+\end{align*}
+$$
+
+<!--
+On va utiliser cette astuce pour simplifier la somme de la diapositive précédente.
+-->
+
+---
+
+## Profondeur de l'arbre (5/6)
+
+##### Application à la somme des profondeurs
+
+$$
+\begin{align*}
+N = \sum_{i = 0}^{p - 1} 2^i &= 2^{p-1} + 2^{p-2} + \cdots + 2^0 \\
+                             &= (2^{p} - 2^{p-1}) + (2^{p-1} - 2^{p-2}) + \cdots + (2^2 - 2^1) + (2^1 - 2^0) \\
+                             &= 2^{p} + (- 2^{p-1} + 2^{p-1}) + \cdots + (- 2^1 + 2^1) - 2^0 \\
+                             &= 2^{p} - 2^0 \\
+                             &= 2^{p} - 1
+\end{align*}
+$$
+
+<!--
+A la 2e ligne, on applique simplement la relation trouvée sur la diapositive précédente.
+Puis on élimine chaque composante 2 à 2.
+Il nous reste au final N = 2^p - 1.
+-->
+
+---
+
+## Profondeur de l'arbre (6/6)
+
+##### Retour sur le logarithme
+
+$$
+\begin{align*}
+2^p - 1 &= N \\
+2^p &= N + 1 \\
+\log_2(2^p) &= \log_2(N + 1) \\
+p\log_2(2) &= \log_2(N + 1) \\
+p &= \log_2(N + 1) \\
+\end{align*}
+$$
+
+<!--
+On exprime donc la profondeur de l'arbre en fonction du logarithme du nombre maximal de noeud dans l'arbre binaire.
+-->
+
+---
+
+## Preuve de la complexité
+
+$$
+\begin{align*}
+O(p) &= O(\log_2(N + 1)) \\
+     &= O(\log(N)) \\
+\end{align*}
+$$
+
+On avait vu que la complexité de la recherche binaire était proportionnelle à la profondeur $p$ de l'arbre, c'est-à-dire $O(p)$ ou $O(\log N)$.
+
+<!--
+Comprendre cette preuve est importante car on peut souvent la réutiliser pour des algorithmes logarithmiques ou linéarithmiques.
+-->
 
 ---
 
