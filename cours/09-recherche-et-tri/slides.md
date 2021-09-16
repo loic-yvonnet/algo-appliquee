@@ -487,7 +487,7 @@ $$
 2^p &= N + 1 \\
 \log_2(2^p) &= \log_2(N + 1) \\
 p\log_2(2) &= \log_2(N + 1) \\
-p &= \log_2(N + 1) \\
+p &= \log_2(N + 1)
 \end{align*}
 $$
 
@@ -502,7 +502,7 @@ On exprime donc la profondeur de l'arbre en fonction du logarithme du nombre max
 $$
 \begin{align*}
 O(p) &= O(\log_2(N + 1)) \\
-     &= O(\log(N)) \\
+     &= O(\log(N))
 \end{align*}
 $$
 

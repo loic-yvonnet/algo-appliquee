@@ -398,6 +398,23 @@ On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et pla
 
 ---
 
+<!-- _class: smaller-text -->
+
+## Autres notations
+
+| Description        | Description :uk: |         Notation           | Explications                                              |
+|--------------------|:----------------:|:--------------------------:|-----------------------------------------------------------|
+| Plancher           |       Floor      |    $\lfloor x \rfloor$     | Plus grand entier plus petit que x                        |
+| Plafond            |       Ceil       |     $\lceil x \rceil$      | Plus petit entier plus grand que x                        |
+| Logarithme binaire | Binary logarithm | $\lfloor \log_2 N \rfloor$ | Nombre de bits $-1$ dans la représentation binaire de $N$ |
+
+- Exemples :
+    - $\lfloor 3.6 \rfloor = 3$
+    - $\lceil 3.6 \rceil = 4$
+    - $\lfloor \log_2 15 \rfloor = \lfloor 3.90689059560852 \rfloor = 3$
+
+---
+
 <!-- _class: title-section -->
 
 # Classes de complexité
