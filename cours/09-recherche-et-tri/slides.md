@@ -231,14 +231,14 @@ La méthode get rempli ce rôle.
 
 ---
 
-# Rappel
+# Version itérative
 
 ```python
 def recherche_lineaire(collection, cle):
-    for c in collection:
-        if c == cle:
-            return True
-    return False
+    for i in range(len(collection)):
+        if collection[i] == cle:
+            return i
+    return -1
 ```
 
 <!--
@@ -253,7 +253,7 @@ Cet algorithme peut être utile si vous implémentez vos propres structures de d
 
 ### Preuve triviale
 
-* On parcourt chaque élément une fois, donc l'algorithme s'arrête quand chaque élément est traité.
+* On parcourt chaque élément de la collection une unique fois, donc l'algorithme s'arrête quand chaque élément est traité.
 * Chaque élément est comparé à la clé.
 * Donc si un élément est égal à la clé, il sera trouvé.
 
@@ -275,12 +275,15 @@ Le Grand Oméga est donné à titre indicatif ici.
 
 ```python
 def recherche_lineaire(collection, cle):
-    if len(collection) == 0:
-        return False
-    if collection[0] == cle:
-        return True
+    def recherche_lineaire_impl(collection, cle, index):
+        if index == len(collection):
+            return -1
+        if collection[index] == cle:
+            return index
 
-    return recherche_lineaire(collection[1:], cle)
+        return recherche_lineaire_impl(collection, cle, index + 1)
+    
+    return recherche_lineaire_impl(collection, cle, 0)
 ```
 
 <!--
@@ -291,9 +294,13 @@ Utilisez plutôt la version itérative de l'algorithme.
 
 ### Preuve de la version récursive
 
-* La récursion s'arrête lorsque la collection est vide ou si la clé est trouvée au premier indice de la collection.
-* La récursion se fait sur la sous-liste amputée de son 1er élément qui a déjà été testé.
+* L'index est incrémenté à chaque récursion.
+* La récursion s'arrête lorsque l'index est égal à la taille de la collection.
+* A chaque récursion, on teste l'élément à l'index actuel.
+* La récursion s'arrête si l'élément à l'index actuel est égal à la clé.
 * On parcourt donc chaque élémént une fois et le reste est identique à la version itérative.
+
+---
 
 <!-- _class: title-section -->
 
@@ -303,7 +310,93 @@ Utilisez plutôt la version itérative de l'algorithme.
 
 ---
 
+# Version itérative
 
+```python
+def recherche_binaire(collection, cle):
+    debut = 0
+    fin = len(collection) - 1
+
+    while debut <= fin:
+        milieu = debut + (fin - debut) // 2
+        actuel = collection[milieu]
+
+        if cle < actuel:
+            fin = milieu - 1
+        elif cle > actuel:
+            debut = milieu + 1
+        else:
+            return milieu
+
+    return -1
+```
+
+<!--
+C'est identique à une dichotomie.
+-->
+
+---
+
+# Illustration de l'exécution
+
+##### Recherche du chiffre 9
+
+![](./assets/recherche-binaire-tableau.png)
+
+<!--
+Le principe est encore mieux visible sous forme d'arbre.
+-->
+
+---
+
+
+# <!--fit--> Exécution sous forme d'arbre (1/4)
+
+##### Recherche du chiffre 9
+
+![](./assets/recherche-binaire-00.png)
+
+---
+
+# <!--fit--> Exécution sous forme d'arbre (2/4)
+
+##### Recherche du chiffre 9
+
+![](./assets/recherche-binaire-01.png)
+
+---
+
+# <!--fit--> Exécution sous forme d'arbre (3/4)
+
+##### Recherche du chiffre 9
+
+![](./assets/recherche-binaire-02.png)
+
+---
+
+# <!--fit--> Exécution sous forme d'arbre (4/4)
+
+##### Recherche du chiffre 9
+
+![](./assets/recherche-binaire-03.png)
+
+---
+
+## Preuve d'algorithme
+
+- La collection est triée donc :
+$$
+\forall i \in \left[0 ; N-1\right[, \text{collection}[i] \le \text{collection}[i + 1]
+$$
+* A chaque itération :
+    * On compare l'élément du milieu de l'interval restant à la clé.
+    * Si la clé est trouvée, l'algorithme s'arrête.
+    * Sinon, l'interval de recherche est réduit de moitié et converge :
+        * Soit la borne de fin est réduite à l'indice du milieu,
+        * Soit la borne de début est avancée à l'indice du milieu.
+* Soit
+
+---
 
 <!-- _class: title-section -->
 
