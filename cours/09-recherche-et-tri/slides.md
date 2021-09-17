@@ -572,6 +572,10 @@ Retenez simplement qu'elle existe et offre une base mathématiques pour prouver 
 
 ---
 
+$\le \ge$
+
+---
+
 <!-- _class: title-section -->
 
 # Tri en Python

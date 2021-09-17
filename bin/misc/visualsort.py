@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import imageio
 
-dir_path = "/home/lyvonnet/Dev/algo-appliquee/dist/"
+dir_path = "/home/lyvonnet/Dev/algo-appliquee/dist/tmp/"
 
 def gen_data():
     """Generate the list to be sorted"""
@@ -41,6 +41,7 @@ def create_gif(series):
 def bubble_sort(y):
     count = 0
     a = y[:]
+    plot_data(a, count, "tri-bulle")
     N = len(a)
 
     for i in range(N - 1):
@@ -49,15 +50,16 @@ def bubble_sort(y):
                 a[j], a[j+1] = a[j+1], a[j]
 
         count += 1
-        plot_data(a, count, "bubble-sort")
+        plot_data(a, count, "tri-bulle")
 
-    create_gif("bubble-sort")
+    create_gif("tri-bulle")
 
     return a
 
 def selection_sort(y):
     count = 0
     a = y[:]
+    plot_data(a, count, "tri-selection")
     N = len(a)
 
     for i in range(N):
@@ -67,15 +69,16 @@ def selection_sort(y):
                 min = j
         a[i], a[min] = a[min], a[i]
         count += 1
-        plot_data(a, count, "selection-sort")
+        plot_data(a, count, "tri-selection")
 
-    create_gif("selection-sort")
+    create_gif("tri-selection")
 
     return a
 
 def insertion_sort(y):
     count = 0
     a = y[:]
+    plot_data(a, count, "tri-insertion")
     N = len(a)
 
     for i in range(1, N):
@@ -85,9 +88,9 @@ def insertion_sort(y):
             j -= 1
         
         count += 1
-        plot_data(a, count, "insertion-sort")
+        plot_data(a, count, "tri-insertion")
 
-    create_gif("insertion-sort")
+    create_gif("tri-insertion")
 
     return a
 
@@ -95,6 +98,7 @@ def shell_sort(y):
     count = 0
     a = y[:]
     N = len(a)
+    plot_data(a, count, "tri-coquille")
     h = 1
     filter = 0
     while h < N // 3:
@@ -109,20 +113,21 @@ def shell_sort(y):
 
             if filter == 0:
                 count += 1
-                plot_data(a, count, "shell-sort")
+                plot_data(a, count, "tri-coquille")
             
             filter += 1
             if filter == 3:
                 filter = 0
         h //= 3
 
-    create_gif("shell-sort")
+    create_gif("tri-coquille")
 
     return a
 
 def merge_sort(y):
     count = 0
     a = y[:]
+    plot_data(a, count, "tri-fusion")
     N = len(a)
 
     def merge(a, debut, milieu, fin):
@@ -147,7 +152,7 @@ def merge_sort(y):
 
         nonlocal count
         count += 1
-        plot_data(a, count, "merge-sort")
+        plot_data(a, count, "tri-fusion")
 
     def sort(a, debut, fin):
         if fin > debut:
@@ -158,7 +163,57 @@ def merge_sort(y):
     
     sort(a, 0, N - 1)
 
-    create_gif("merge-sort")
+    create_gif("tri-fusion")
+
+    return a
+
+def quick_sort(y):
+    count = 0
+    a = y[:]
+    plot_data(a, count, "tri-rapide")
+    N = len(a)
+
+    def partition(a, debut, fin):
+        i = debut
+        j = fin + 1
+        valeur = a[debut]
+
+        while True:
+            # Scan vers la droite
+            i += 1
+            while a[i] < valeur and i != fin:
+                i += 1
+
+            # Scan vers la gauche
+            j -= 1
+            while valeur < a[j] and j != debut:
+                j -= 1
+
+            # Si les indices se croisent on s'arrête
+            if i >= j:
+                break
+
+            # Echange des éléments dans les 2 partitions
+            a[j], a[i] = a[i], a[j]
+        
+        # Met la valeur de partitionnment entre les 2 partitions
+        a[j], a[debut] = a[debut], a[j]
+
+        nonlocal count
+        count += 1
+        plot_data(a, count, "tri-rapide")
+
+        return j
+
+    def sort(a, debut, fin):
+        if fin > debut:
+            j = partition(a, debut, fin)
+            sort(a, debut, j - 1)
+            sort(a, j + 1, fin)
+
+    sort(a, 0, N - 1)
+
+    create_gif("tri-rapide")
 
     return a
 
@@ -168,3 +223,4 @@ selection_sort(y)
 insertion_sort(y)
 shell_sort(y)
 merge_sort(y)
+quick_sort(y)
