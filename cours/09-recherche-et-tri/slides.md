@@ -1219,6 +1219,22 @@ Les éléments qui ne sont pas plus petits que 6 vont dans le 1er sous-ensemble.
 
 ---
 
+# Complexité
+
+* On a $N + 1$ comparaisons.
+* On est donc en $\thicksim N^$, et $O(N)$.
+
+<!--
+On a certes des boucles imbriquées, mais elles ne parcourent pas [0..N].
+En pratique on a i qui part de 0 et j qui part de N.
+A chaque itération i est incrémenté au moins 1 fois et j est décrémenté au moins une fois.
+L'algorithme s'arrête dès que les indices se croisent, donc :
+- i parcourt [0 ; j_final]
+- j partcout [j_final ; N]
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # Tri Rapide
@@ -1352,12 +1368,48 @@ Sur des étapes plus avancées, on voit également se former puis résoudre les 
 
 ### Complexité
 
-* On a $\thicksim \sqrt{N^3}$ comparaisons.
-* Donc on est en $O(N^{3/2})$.
+* On a $\thicksim 2 N \log N$ comparaisons en moyenne.
+* On a $\thicksim \frac{N^2}{N}$ comparaisons dans le pire cas.
+* Comme on peut facilement se prévenir du pire cas, on admet $O(N \log N)$ en pratique.
 
 <!--
 La preuve d'algorithme est en dehors de la portée de ce cours.
 -->
+
+---
+
+## Le *pire* cas (1/2)
+
+* Le pire cas survient lorsque la collection est **déjà triée**.
+* En effet, le partionnement n'a **aucun effet** dans ce cas.
+* On a vu dans la partie sur l'algorithme de partition que la valeur `v` ne se retrouve pas forcément au milieu.
+* Si la valeur `v` se retrouve **toujours en premier**, cela signifie que la collection est déjà triée et le tri rapide sera lent et inutile.
+
+<!--
+Si la valeur "v" se retrouve en premier après partitionnement, cela signifie qu'il n'existe pas de valeur plus petite, par définition.
+S'il n'y a pas de valeur plus petite sur cet ensemble, cette valeur est déjà triée.
+Le sous-ensemble suivant est constitué de tous les éléments restants.
+Dans ce nouveau sous-ensemble, si la valeur "v2" se retrouve en premier après partionnement, elle est déjà triée.
+-->
+
+---
+
+## Le *pire* cas (2/2)
+
+* On peut se prévenir du pire cas en **testant initialement** si le tableau est trié.
+* On peut s'éloigner du pire cas en **mélangeant les éléments**.
+
+<!--
+Même si le pire cas est rare, avoir une forte disproportion entre les sous-ensembles partitionnés peut avoir un impact négatif sur l'efficacité de l'algorithme de tri rapide.
+-->
+
+---
+
+## Le *meilleur* cas
+
+* Le tri rapide est à son maximum lorsque `v` se retrouve toujours *exactement* au milieu à chaque partitionnement.
+* Dans ce cas, la relation de récurrence $C$ définissant le nombre de comparaisons $C_N = 2 C_{N/2} + N$.
+* $C_N \thicksim N \log N$, ce qui est un début de preuve pour la complexité de cet algorithme.
 
 
 ---
