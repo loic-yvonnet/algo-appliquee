@@ -833,14 +833,15 @@ On voit notamment qu'à chaque itération, la plus petite barre est déplacée �
 
 ![](./assets/tri-selection-diapo.png)
 
-
 ---
 
 # Tri sélection
 
 ### Complexité
 
-
+* On a $N \frac{N - 1}{2}$ comparaisons et $N$ échanges.
+* Par conséquent, on a $\thicksim \frac{N^2}{2}$ comparaisons.
+* Donc on est en $O(N^2)$.
 
 ---
 
@@ -891,6 +892,25 @@ Sur le principe, on peut observer qu'il y a une symmétrie avec le tri sélectio
 
 ![](./assets/tri-bulle-diapo.png)
 
+
+---
+
+# Tri à bulles
+
+### Complexité
+
+* On a $N \frac{N - 1}{2}$ comparaisons et au pire $N \frac{N - 1}{2}$ échanges.
+* Par conséquent, on a $\thicksim \frac{N^2}{2}$ comparaisons.
+* Donc on est en $O(N^2)$.
+
+<!--
+On notera que le tri sélection a moins d'échanges.
+Il est donc meilleur que le tri à bulles.
+La raison est simple : dans le cas du tri sélection, on chercher l'indice minimum avant de faire l'échange.
+Dans le cas du tri à bulle, on fait des échanges à la place de réaffecter la variable min.
+En revanche, le tri à bulles fait l'économie de la variable min.
+-->
+
 ---
 
 # Tri insertion
@@ -937,6 +957,15 @@ A chaque étape, on voit que la partie triée devient plus importante à chaque 
 ### Quelques étapes d'exécution
 
 ![](./assets/tri-insertion-diapo.png)
+
+---
+
+# Tri insertion
+
+### Complexité
+
+* On a $\thicksim \frac{N^2}{4}$ comparaisons et $\thicksim \frac{N^2}{4}$ échanges.
+* Donc on est en $O(N^2)$.
 
 ---
 
@@ -1007,11 +1036,28 @@ Lorsque c'est le cas, on passe à la valeur inférieure de h pour peaufiner le t
 
 ---
 
+# Tri coquille
+
+### Complexité
+
+* On a $\thicksim \sqrt{N^3}$ comparaisons.
+* Donc on est en $O(N^{3/2})$.
+
+<!--
+La preuve d'algorithme est en dehors de la portée de ce cours.
+-->
+
+---
+
 ### Comparaison
 
-| ![](./assets/tri-selection.gif) | ![](./assets/tri-bulle.gif) |
+| ![](./assets/tri-selection.gif) | ![](./assets/tri-bulle.gif)   |
 |:-------------------------------:|:-----------------------------:|
 |          Tri sélection          |         Tri à bulles          |
+
+<!--
+Ici, on observe bien la symmétrie entre les algorithmes.
+-->
 
 ---
 
@@ -1021,6 +1067,10 @@ Lorsque c'est le cas, on passe à la valeur inférieure de h pour peaufiner le t
 |:-------------------------------:|:-------------------------------:|
 |          Tri sélection          |         Tri insertion           |
 
+<!--
+On peut voir ici que le principe de ces algorithmes est différent.
+-->
+
 ---
 
 ### Comparaison
@@ -1028,6 +1078,14 @@ Lorsque c'est le cas, on passe à la valeur inférieure de h pour peaufiner le t
 | ![](./assets/tri-insertion.gif) | ![](./assets/tri-coquille.gif)  |
 |:-------------------------------:|:-------------------------------:|
 |          Tri insertion          |         Tri coquille            |
+
+<!--
+La dernière étape d'un tri coquille est un tri insertion.
+Attention : le temps d'exécution des gifs n'est pas proportionnel au temps d'exécution des algorithmes.
+Dans le cas général, le tri coquille a une meilleure complexité que le tri insertion.
+Par conséquent, le tri coquille s'exécute plus vite en moyenne en réalité.
+La raison pour laquelle le gif du tri coquille prend plus de temps est qu'il a été généré avec plus d'images pour mieux voir son évolution plus complexe.
+-->
 
 ---
 
@@ -1039,11 +1097,268 @@ Lorsque c'est le cas, on passe à la valeur inférieure de h pour peaufiner le t
 
 ---
 
+# Diviser et conquérir
+
+* Le principe de **diviser et conquérir** est fondamental en algorithmique.
+* On a vu avec la recherche binaire que le fait de diviser en 2 un problème permet de le résoudre beaucoup plus rapidement.
+
+---
+
+### Rappel sur la partition
+
+* En **mathématiques**, une partition d'un ensemble est un regroupement de ses éléments dans des sous-ensembles non-vides tel que chaque élément est inclu dans exactement un sous-ensemble.
+* Exemple :
+    * pour l'ensemble $E = \{6, 2, 5, 1, 9, 3, 8, 7, 4\}$,
+    * le sous-ensemble $C_1 = \{2, 5, 1, 3, 4\}$,
+    * le sous-ensemble $C_2 = \{6\}$,
+    * le sous-ensemble $C_3 = \{9, 8, 7\}$,
+    * on a $C_1, C_2, C_3$ qui forment une partition de $E$.
+
+<!--
+On remarquera dans l'exemple que le 1er sous-ensemble contient l'ensemble des éléments plus petits que 6.
+Le 2e sous-ensemble contient uniquement 6.
+Le 3e sous-ensemble contient tous les éléments plus grands que 6.
+-->
+
+---
+
+## Partitionner en 2
+
+* L'**algorithme de partition** vise à diviser un ensemble en 2 sous-ensembles :
+    * L'ensemble des éléments strictement plus petit qu'une valeur.
+    * L'ensemble des autres éléments.
+
+---
+
+<!-- _class: smaller-text -->
+
+### Partition
+
+```python
+def partition(e):
+    N = len(e)
+    valeur = e[0]
+    i = 0
+    j = N
+
+    while True:
+        i += 1 # Garanti la progression à droite
+        while e[i] < valeur and i != N: i += 1 # Scan vers la droite
+
+        j -= 1 # Garanti la progression à gauche
+        while valeur < e[j] and j != 0: j -= 1 # Scan vers la gauche
+
+        if i >= j: break # Si les indices se croisent on s'arrête
+
+        # Echange des éléments entre les 2 partitions
+        e[j], e[i] = e[i], e[j]
+    
+    # Met la valeur de partitionnment entre les 2 partitions
+    e[j], e[0] = e[0], e[j]
+```
+
+<!--
+Dans cette version de l'algorithme, la valeur de partitionnement est prise au début de l'ensemble "e".
+Cet algorithme est illustré sur la diapositive suivante.
+Globalement, on fait converger à droite l'indice i vers un élément qui devrait appartenir à l'autre partition.
+De même, on fait converger à gauche l'indice j vers un élément qui devrait appartenir à l'autre partition.
+A chaque fois que l'on trouve des pairs d'éléments se trouvant du mauvais côté, on les échange.
+Les 2 sous-ensembles n'ont pas besoin d'être symmétriques : on continue d'échanger les indices ensuite.
+-->
+
+---
+
+### Illustration de l'exécution
+
+![](./assets/partition.png)
+
+<!--
+Pour plus de lisibilité, la variable "valeur" s'appelle "v" dans ce diagramme.
+On voit ici
+-->
+
+---
+
+# Exemple
+
+```python
+L = [6, 2, 5, 1, 9, 3, 8, 7, 4]
+partition(L)
+print(L)
+```
+
+:arrow_down:
+
+```
+[3, 2, 5, 1, 4, 6, 8, 7, 9]
+```
+
+<!--
+Les sous-ensembles de part et d'autre de 6 forment une partition.
+Ici, le chiffre 6 marque le début du 2e sous-ensemble.
+-->
+
+---
+
+```python
+L = [6, 2, 5, 1, 6, 9, 3, 8, 7, 4]
+partition(L)
+print(L)
+```
+
+:arrow_down:
+
+```
+[3, 2, 5, 1, 4, 6, 9, 8, 7, 6]
+```
+
+<!--
+Les éléments qui ne sont pas plus petits que 6 vont dans le 1er sous-ensemble.
+6 n'est pas plus petit que 6, donc il va dans le 2e sous-ensemble.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # Tri Rapide
 
 ##### Quick Sort :uk:
+
+---
+
+# Tri rapide
+
+### Introduction
+
+* Le tri rapide a une **meilleure complexité** que les autres algorithmes de tri vu jusqu'ici.
+* Il est également plus complexe à comprendre.
+* Il repose sur la **partition** et une définition **naturellement récursive**.
+
+---
+
+<!-- _class: smaller-text -->
+
+# Tri rapide
+
+### Partition
+
+```python
+def partition(a, debut, fin):
+    i = debut
+    j = fin + 1
+    valeur = a[debut]
+
+    while True:
+        i += 1
+        while a[i] < valeur and i != fin: i += 1
+
+        j -= 1
+        while valeur < a[j] and j != debut: j -= 1
+
+        if i >= j: break
+
+        a[j], a[i] = a[i], a[j]
+
+    a[j], a[debut] = a[debut], a[j]
+
+    return j
+```
+
+<!--
+On effectue simplement quelques ajustements à l'algorithme de partitionnement que nous venons de voir.
+En pratique, plutôt que de supposer que l'on partitionne sur l'interval [0 ; N], on partitionne sur l'interval [debut ; fin].
+Par ailleurs, on renvoie aussi l'indice j correspondant au nouvelle emplacement de la "valeur" de partition.
+-->
+
+---
+
+# Tri rapide
+
+### Algorithme (quick sort :uk:)
+
+```python
+def tri_rapide_recursif(a, debut, fin):
+    if fin > debut:
+        j = partition(a, debut, fin)
+        tri_rapide_recursif(a, debut, j - 1)
+        tri_rapide_recursif(a, j + 1, fin)
+```
+
+<!--
+Pour trier un ensemble, on le partitionne en 2 sous-ensembles tels que tous les éléments du 1er sous-ensembles soient plus petits que ceux du 2e sous-ensemble.
+Ensuite, il suffit de trier chaque sous-ensembles.
+-->
+
+---
+
+# Tri rapide
+
+### Interface
+
+```python
+def tri_rapide(a):
+    N = len(a)
+    tri_rapide_recursif(a, 0, N - 1)
+```
+
+<!--
+A noter que le tri rapide est "in-place" : il ne nécessite pas de réserver un espace mémoire supplémentaire.
+-->
+
+---
+
+# Tri rapide
+
+### Exécution animée
+
+![w:800](./assets/tri-rapide.gif)
+
+<!--
+Chaque itération du gif montre le résultat d'une partition.
+Donc, dès la 1ière image, on a partitionné l'ensemble des "barres" par rapport à la 1ière.
+On remarquera que la progression est moins triviale que celle d'un tri à bulles, par exemple.
+-->
+
+---
+
+# Tri rapide
+
+### Quelques étapes d'exécution (1/2)
+
+![](./assets/tri-rapide-diapo-1.png)
+
+<!--
+Quelques arrêts sur image sont utiles pour observer le partitionnement progressif, et les appels récursifs sur les sous-ensembles.
+Entre le placement initial et le 1er partitionnement, on voit un net changement.
+Entre les 4e et 10e partitions, on voit le travail effectué au tout début.
+-->
+
+---
+
+# Tri rapide
+
+### Quelques étapes d'exécution (2/2)
+
+![](./assets/tri-rapide-diapo-2.png)
+
+<!--
+Sur des étapes plus avancées, on voit également se former puis résoudre les intervals de partitionnement.
+-->
+
+---
+
+# Tri rapide
+
+### Complexité
+
+* On a $\thicksim \sqrt{N^3}$ comparaisons.
+* Donc on est en $O(N^{3/2})$.
+
+<!--
+La preuve d'algorithme est en dehors de la portée de ce cours.
+-->
+
 
 ---
 
