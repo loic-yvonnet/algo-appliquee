@@ -754,6 +754,122 @@ Il est possible également de trier les valeurs d'un dictionnaire.
 
 ---
 
+### Tri décroissant
+
+```python
+L = [6, 2, 5, 1, 6, 9, 3, 8, 7, 4]
+L.sort(reverse=True)
+print(L)
+```
+
+:arrow_down:
+
+```
+[9, 8, 7, 6, 6, 5, 4, 3, 2, 1]
+```
+
+---
+
+### Fonction de tri
+
+```python
+L = [(4, 3, 2, 1), [3, 2, 1], "ba"]
+L.sort(key=len)
+print(L)
+```
+
+:arrow_down:
+
+```
+['ba', [3, 2, 1], (4, 3, 2, 1)]
+```
+
+<!--
+On tri par taille de sous-collection.
+-->
+
+---
+
+### Tri d'une structure de données
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class paiement:
+    euros: int = 0
+    centimes: int = 0
+
+L = [paiement(10, 0), paiement(3, 55), paiement(3, 99)]
+L.sort(key=lambda x: (x.euros, x.centimes))
+print(L)
+```
+
+:arrow_down:
+
+```
+[paiement(euros=3, centimes=55), paiement(euros=3, centimes=99), 
+ paiement(euros=10, centimes=0)]
+```
+
+<!--
+On spécifie les champs à utiliser pour le tri.
+On tri d'abord par euro, puis par centimes.
+-->
+
+---
+
+### Combinaison
+
+```python
+L = [paiement(10, 0), paiement(3, 55), paiement(3, 99)]
+L.sort(key=lambda x: (x.euros, x.centimes), reverse=True)
+print(L)
+```
+
+:arrow_down:
+
+```
+[paiement(euros=10, centimes=0), paiement(euros=3, centimes=99),
+ paiement(euros=3, centimes=55)]
+```
+
+<!--
+On utilise à la fois key et reverse
+-->
+
+---
+
+### <!--fit--> Tri dans des ordres inversés sur différentes clés
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class outil:
+    nom: str = ""
+    masse: float = 0.
+
+L = [outil("marteau", 1.), outil("niveau", 0.5), 
+     outil("cutter", 0.3), outil("compas", 0.3)]
+L.sort(key=lambda x: (-x.masse, x.nom))
+print(L)
+```
+
+:arrow_down:
+
+```
+[outil(nom='marteau', masse=1.0), outil(nom='niveau', masse=0.5), 
+ outil(nom='compas', masse=0.3), outil(nom='cutter', masse=0.3)]
+```
+
+<!--
+En utilisant "-", on dit que l'on souhaite trié dans l'ordre décroissant pour le poid.
+Pour le nom, on tri dans l'ordre croissant.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Algorithmes de tri en $O(N^2)$
@@ -1255,9 +1371,8 @@ L'algorithme s'arrête dès que les indices se croisent, donc :
 
 <!-- _class: smaller-text -->
 
-# Tri rapide
+#### Tri rapide - Partition
 
-### Partition
 
 ```python
 def partition(a, debut, fin):
