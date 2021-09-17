@@ -1712,6 +1712,31 @@ Même si le principe entre ces 2 algorithmes repose sur des fondements similaire
 
 ---
 
+### Existe-t-il un algorithme plus efficace ?
+
+* Autrement dit, existe-t-il un algorithme ayant une meilleure complexité que $O(N \log N)$ pour trier une collection ?
+* **Non**, il est possible de prouver que **la meilleure complexité** pour le tri est $O(N \log N)$.
+* En revanche, les implémentations peuvent recevoir de **petites améliorations**.
+* Par exemple, il existe possible de **paralléliser** tri rapide ou tri fusion.
+
+---
+
+### Eléments de preuve
+
+* On considère que tous les éléments à trier sont distincts.
+* On construit un **arbre binaire** de toutes les **permutations possibles**.
+* Il y a $N!$ permutations possibles (par définition).
+* On s'intéresse à la **profondeur** $p$ et comme l'arbre est binaire, on a $O(p) = O(\log(N!))$.
+* L'**approximation de Stirling** nous donne $\log(N!) \thicksim N \log(N)$.
+
+<!--
+L'un des chemins dans l'arbre binaire de toutes les permutations nous donne l'ensemble des permutations à effectuer pour trier notre collection.
+L'arbre binaire n'est pas forcément complet (c'est à dire qu'il n'a pas forcément d'enfant à gauche et à droite partout).
+On s'intéresse à la profondeur maximale p de l'arbre, puisque c'est le nombre maximal de permutations que l'on aura à faire pour trier une collection.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # TP : Tri de collections
