@@ -1066,7 +1066,7 @@ if __name__ == "__main__":
 
 ---
 
-# Fonction print
+# Fonction `print`
 
 ```python
 arg1 = "La fonction print"
@@ -1088,7 +1088,7 @@ La fonction print prend un nombre variable (en anglais : variadic) d'arguments.
 
 ---
 
-# Fonction max
+# Fonction `max`
 
 ```python
 max_pair = max(1, 5)
@@ -1614,7 +1614,7 @@ def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
     """Cacule la racine r telle que f(r) - x = 0 par dichotomie.
 
     Généralisation de l'algorithme de dichotomie sur un interval [debut ; fin] avec 
-    une fonction d'évaluation f pour le calcul d'uneracine r. La racine r doit être 
+    une fonction d'évaluation f pour le calcul d'une racine r. La racine r doit être 
     dans l'interval de recherche, sinon la condition de fin de l'algorithme n'est
     pas garantie.
     x - nombre flottant dont on recherche la racine | f(r) - x | < epsilon.
