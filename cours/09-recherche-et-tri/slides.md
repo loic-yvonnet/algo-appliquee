@@ -1411,7 +1411,6 @@ Même si le pire cas est rare, avoir une forte disproportion entre les sous-ense
 * Dans ce cas, la relation de récurrence $C$ définissant le nombre de comparaisons $C_N = 2 C_{N/2} + N$.
 * $C_N \thicksim N \log N$, ce qui est un début de preuve pour la complexité de cet algorithme.
 
-
 ---
 
 <!-- _class: title-section -->
@@ -1419,6 +1418,182 @@ Même si le pire cas est rare, avoir une forte disproportion entre les sous-ense
 # Tri Fusion
 
 ##### Merge Sort :uk:
+
+---
+
+# Tri Fusion
+
+### Introduction
+
+* Dans le tri rapide, on partitionne en 2 sous-ensembles puis on applique l'algorithme récursivement à chaque sous-ensemble.
+* Dans le tri fusion, on fait les opérations dans le sens inverse : on applique **d'abord** récursivement l'algorithme puis on **fusionne** les résultats.
+* C'est la fusion qui entraine le tri.
+
+---
+
+<!-- _class: smaller-text -->
+
+# Tri Fusion
+
+### Fusion
+
+```python
+def fusion(a, debut, milieu, fin):
+    i = debut
+    j = milieu + 1
+    auxiliaire = a[:]
+    for k in range(debut, fin + 1):
+        if i > milieu:
+            a[k] = auxiliaire[j]
+            j += 1
+        elif j > fin:
+            a[k] = auxiliaire[i]
+            i += 1
+        elif auxiliaire[j] < auxiliaire[i]:
+            a[k] = auxiliaire[j]
+            j += 1
+        else:
+            a[k] = auxiliaire[i]
+            i += 1
+```
+
+<!--
+On commence par faire une copie du tableau "a" dans "auxiliaire".
+Cette copie est nécessaire pour choisir les éléments depuis leur ordre d'origine.
+Ensuite, l'index k parcourt de la gauche vers la droite l'interval [debut ; fin].
+Cet interval est coupé en deux par "milieu".
+L'index i parcourt de la gauche vers la droite l'interval [debut ; milieu].
+L'index j parcourt de la gauche vers la droite l'interval ]milieu ; fin].
+On considère que les intervals [debut ; milieu] et ]milieu ; fin] sont triés.
+A chaque etape, on choisi le plus petit élément parmis [debut ; milieu] ou ]milieu ; fin].
+Une fois que l'on a épuisé un interval, on va piocher dans l'autre.
+-->
+
+---
+
+# Tri Fusion
+
+### Algorithme (merge sort :uk:)
+
+```python
+def tri_fusion_recursif(a, debut, fin):
+    if fin > debut:
+        milieu = debut + (fin - debut) // 2
+        tri_fusion_recursif(a, debut, milieu)
+        tri_fusion_recursif(a, milieu + 1, fin)
+        fusion(a, debut, milieu, fin)
+```
+
+<!--
+Comme indiqué en introduction, cette implémentation est quasiment identique à tri_rapide_recursif.
+La seule différence, c'est que la fusion a lieu après les récursions.
+L'idée essentielle est que l'on fusionne 2 liste triées.
+Le résultat est une liste triée.
+-->
+
+---
+
+# Tri Fusion
+
+### Interface
+
+```python
+def tri_fusion(a):
+    N = len(a)
+    tri_fusion_recursif(a, 0, N - 1)
+```
+
+<!--
+Comme pour le tri rapide, on peut se contenter d'initialiser la récursion avec l'interval [0, N - 1].
+-->
+
+---
+
+# Tri Fusion
+
+### Exécution animée
+
+![w:800](./assets/tri-fusion.gif)
+
+<!--
+Plus l'algorithme avance, plus les fusions sont larges.
+On voit de mieux en mieux les opérations de fusion.
+Ceci jusqu'à la fusion ultime qui réunit les 2 intervals [0 ; milieu] et ]milieu, N].
+-->
+
+---
+
+# Tri Fusion
+
+### Quelques étapes d'exécution (1/2)
+
+![](./assets/tri-fusion-diapo-1.png)
+
+<!--
+Dans la suite de fusions 22, 23 et 24, on voit à gauche quelques fusions sur des sous-ensembles.
+Cela permet de visualiser les fusions successives.
+-->
+
+---
+
+# Tri Fusion
+
+### Quelques étapes d'exécution (2/2)
+
+![](./assets/tri-fusion-diapo-2.png)
+
+<!--
+A la fin de l'algorithme, les fusions sont larges.
+Entre la fusion 98 et 99 (nommée "trié"), on voit le résultat typique d'une fusion sur 2 sous-ensembles triés.
+-->
+
+---
+
+# Tri Fusion
+
+### Complexité
+
+* La complexité de la fusion elle-même est $\Theta(N)$
+* Pour le tri fusion :
+    * On a entre $\frac{1}{2} N \log N$ et $N \log N$ comparaisons.
+    * On est en $\Theta(N \log N)$.
+
+---
+
+<!--
+Concernant la fusion, la preuve est immédiate : on a une boucle for dans l'interval [debut, fin + 1].
+Or, au minimum, debut = 0, et au maximum fin = N.
+Donc la fusion a dans le pire cas un parcourt sur l'interval [0 ; N], dons O(N)
+Dans le cas du tri fusion, on sait que la dernière fusion se fait sur l'interval [0 ; N].
+Par conséquent, on est à la fois O(N) et Oméga(N), donc Théta(N).
+-->
+
+# Tri Fusion
+
+### Intuition de preuve
+
+* A chaque récursion, on divise l'espace en 2.
+* On peut dessiner un arbre binaire pour représenter les appels.
+* La profondeur $p$ de cet arbre binaire est proportionnel à $O(\log N)$.
+* On a donc $\log N$ fusions, soit $O(N \log N)$ opérations au total.
+
+<!--
+Nous avons montré plus tôt dans ce cours la relation entre la profondeur p et le logarithme de N.
+La preuve d'algorithme complète est en dehors de la portée de ce cours.
+-->
+
+---
+
+### Comparaison
+
+| ![](./assets/tri-rapide.gif) | ![](./assets/tri-fusion.gif)  |
+|:----------------------------:|:-----------------------------:|
+|          Tri rapide          |         Tri fusion            |
+
+<!--
+Encore une fois, la vitesse d'exécution des gifs n'est pas corrélé à l'efficacité des algorithmes mais uniquement au nombre d'étapes capturées de ces algorithmes.
+Même si le principe entre ces 2 algorithmes repose sur des fondements similaires, leur exécution est complètement différente.
+-->
 
 ---
 
