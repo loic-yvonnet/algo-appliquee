@@ -979,6 +979,70 @@ with open("fichier.txt") as fichier:
 
 ---
 
+### Au-delà de la bibliothèque standard
+
+* La bibliothèque standard Python **ne couvre pas tous les besoins**.
+* La bibliothèque standard n'a **pas vocation** à couvrir tous les besoins.
+* Il existe un **écosystème riche** de **bibliothèques tierces**.
+* Comment utiliser ces bibliothèques tierces ?
+
+---
+
+### Gestionnaire de paquets
+
+* Les différentes bibliothèques sont distribuées sous forme de **paquets**.
+* L'**installation d'un paquet** permet l'utilisation de la biobliothèque.
+* On peut alors `import`er les modules de la bibliothèque tierce.
+* L'installation se fait via un **gestionnaire de paquets**.
+
+---
+
+### `pip` et `conda`
+
+* Il existe différents gestionnaires de paquets pour Python.
+* `pip` et `conda` sont les plus utilisés.
+* Nous allons utiliser `pip` dans ce cours.
+
+<!--
+pip est livré avec l'interpréteur et est plus ou moins le gestionnaire par défaut.
+Conda contient les binaires dans ses paquets et ne nécessite pas de compiler de sources.
+pip peut nécessiter la compilation de sources, ce qui nécessite l'installation préalable de compilateurs et peut prendre un certain temps.
+-->
+
+---
+
+### Syntaxe
+
+```bash
+# Installe paquet
+python3.9 -m pip install paquet
+
+# Met à jour paquet
+python3.9 -m pip install -U paquet
+```
+
+---
+
+# Quelques exemples (1/2)
+
+* **NumPy** : tableau à N dimensions et algèbre linéaire.
+* **MatPlotLib** : affichage de graphes 2D et 3D.
+* **Panda** : tableur et analyse statistique.
+* **SimPy** : résolution d'équations symboliques.
+* **scikit-image** : traitement d'images.
+
+---
+
+# Quelques exemples (2/2)
+
+* **graph-tool** : analyse de graphes.
+* **Django** : bibliothèque web pour faire un site web.
+* **FastAPI** : bibliothèqe pour écrire des web services.
+* **FastAI** : réseaux de neurones profonds.
+* **TensorFlow** : apprentissage par machine.
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Discussion sur les licences
