@@ -748,38 +748,61 @@ On récupère la landing page du site https://yvo.solutions et on affiche les 15
 
 ---
 
-# Désérialisation JSON
-#### Exemple de Parsers
+<!-- _class: smaller-text -->
+
+#### <!--fit--> Désérialisation JSON - Exemple de Parsers
 
 ```python
+import json
 
+# Désérialise une chaîne représentant un objet JSON
+chaine1 = """{ "nom": "Tyrion", "prenom": "Lannister", "age": 27 }"""
+dico = json.loads(chaine1)
+
+# Applique une modification
+dico["adresse"] = "Lannisport"
+
+# Sérialise en chaine représentant un object JSON
+chaine2 = json.dumps(dico, sort_keys=True, indent=4)
+print(chaine2)
 ```
 
 :arrow_down:
 
 ```
-
+{
+    "adresse": "Lannisport",
+    "age": 27,
+    "nom": "Tyrion",
+    "prenom": "Lannister"
+}
 ```
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Création d'un gif animé
 #### Exemple de Services multimedia
 
 ```python
+import imageio
 
+fichiers = ["img1.png", "img2.png", "img3.png"]
+animation = "animation.gif"
+images = [imageio.imread(fichier) for fichier in fichiers]
+imageio.mimsave(animation, images, fps=3)
 ```
 
 :arrow_down:
 
-```
-
-```
+| ![w:100](./assets/img1.png) | ![w:100](./assets/img2.png) | ![w:100](./assets/img3.png) | ![w:100](./assets/animation.gif) |
+|:---------------------------:|:---------------------------:|:---------------------------:|:--------------------------------:|
+|       img1.png              |          img2.png           |           img3.png          |          animation.gif           |
 
 ---
 
-# Affichage de l'AST
-#### Exemple d'interpréteur Python
+#### <!--fit--> Affichage de l'AST - Exemple d'interpréteur Python
 
 ```python
 import ast
@@ -812,7 +835,34 @@ On peut voir comment l'interpréteur Python lit et représente en interne ce mor
 
 # <!--fit--> Focus sur les fichiers
 
-##### Ouverture, fermeture, lecture et écriture
+---
+
+# Fichiers
+
+* Tous les principaux systèmes d'exploitation offre un **système de fichiers**.
+* Cela permet de **sauvegarder** des données.
+* Python offre de nombreux services pour **manipuler les fichiers**.
+
+---
+
+### Ouverture et fermeture
+
+---
+
+### Lecture
+
+---
+
+### Ecriture
+
+
+---
+
+### Ajout à la fin
+
+---
+
+### Buffer et flush
 
 ---
 
