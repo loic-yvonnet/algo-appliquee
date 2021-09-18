@@ -60,6 +60,7 @@ Quelques exemples non-exhaustifs :
 * Le logo du langage de programmation Scratch.
 * Le logo de Jupyter Notebook.
 * Le logo de Binder.
-* Le log de la Chambre du Commerce et de l'Industrie (CCI).
+* Le logo de la Chambre du Commerce et de l'Industrie (CCI).
 * Les images et le logo d'Anjou Vélo Vintage.
 * Le plan du centre de Saumur en 1814.
+* Les images issues de Wikipedia et Wikimedia.

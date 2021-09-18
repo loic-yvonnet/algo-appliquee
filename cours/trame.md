@@ -62,7 +62,6 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Variables locales et globales.
 * Fonctions.
 * Spécifications et contrat.
-* Modularisation de code.
 * **TD** : Fonctions géométriques simples.
 * Nombre variable d'arguments
 * Retour de plusieurs résultats.
