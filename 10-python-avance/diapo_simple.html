@@ -49,7 +49,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="2" data-marpit-pagination-total="14" style="--paginate:true;--theme:uncover;--style:section {
+" data-marpit-pagination="2" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -65,7 +65,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h1>Plan</h1>
 <ul>
 <li>Programmation modulaire</li>
-<li>Librairie standard</li>
+<li>Bibliothèque standard</li>
 <li>Focus sur les fichiers</li>
 <li>Gestionnaire de paquets</li>
 <li>Discussion sur les licences</li>
@@ -83,7 +83,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="3" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" class="title-section" data-marpit-pagination="3" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -97,9 +97,8 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 }
 ;">
 <h1>Programmation modulaire</h1>
-<h5>les modules</h5>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -111,7 +110,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="4" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="4" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -124,9 +123,15 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
   font-size: 0.6em;
 }
 ;">
-<h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Tour d'horizon de la librairie standard Python</span></foreignObject></svg></h1>
+<h2>Taille d'une fonction</h2>
+<ul>
+<li data-marpit-fragment="1">Combien de <strong>responsabilités</strong> doit avoir une fonction ?</li>
+<li data-marpit-fragment="2">1 fonction <img class="emoji" draggable="false" alt="➡️" src="https://twemoji.maxcdn.com/2/svg/27a1.svg" data-marp-twemoji=""/> 1 responsabilité.</li>
+<li data-marpit-fragment="3">En moyenne, une fonction doit faire entre <strong>7 et 15 lignes</strong>.</li>
+<li data-marpit-fragment="4">Une fonction qui fait plus de 30 lignes doit être découpée en <strong>plusieurs fonctions plus simples</strong>.</li>
+</ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -138,7 +143,1451 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="5" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="5" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Exemples de responsabilités</h3>
+<ul>
+<li data-marpit-fragment="1">Effectuer un calcul (ex : racine carrée).</li>
+<li data-marpit-fragment="2">Rechercher une valeur (ex : recherche binaire)</li>
+<li data-marpit-fragment="3">Appliquer une transformation (ex : nombre textuel vers numérique).</li>
+<li data-marpit-fragment="4">Afficher un résultat (ex : une matrice).</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="6" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>Ne pas se répéter</h2>
+<ul>
+<li data-marpit-fragment="1">Lorsque l'on observe un <strong>motif qui se répète</strong> dans le code, il y a un problème.</li>
+<li data-marpit-fragment="2">Ces répétitions sont le signe d'une <strong>duplication de code</strong>.</li>
+<li data-marpit-fragment="3">A la place, il faut créer des fonctions et les appeler.</li>
+<li data-marpit-fragment="4">Le processus de modification du code pour supprimer les duplications s'appelle la <strong>refactorisation</strong>.</li>
+<li data-marpit-fragment="5">Il s'agit d'une bonne pratique du génie logiciel.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="7" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Notion de script modulaire</h3>
+<ul>
+<li>On rassemble les fonctions de même nature dans un <strong>script</strong>.</li>
+<li>Par exemple, on peut avoir un script <code>racine.py</code> qui contient les fonctions <code>racine_carree</code> et <code>racine_cubique</code>.</li>
+<li>On pourrait avoir un autre script nommé <code>chaine_caracteres.py</code> qui contient des fonctions de manipulation de chaînes de caractères.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-marpit-fragments="2" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="8" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Module</h1>
+<ul>
+<li data-marpit-fragment="1">Un <strong>module</strong> est un fichier <code>.py</code> contenant des définitions et des déclarations Python.</li>
+<li data-marpit-fragment="2">Le script <code>racine.py</code> est donc un module.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="9" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Module <code>racine.py</code></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="./assets/racine.py.jpg" alt="w:500" style="width:500px;" /></th>
+<th style="text-align:center"><img src="./assets/scripts-python.png" alt="w:500" style="width:500px;" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fichier <code>racine.py</code></td>
+<td style="text-align:center">Explorateur de fichiers</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="10" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>Utilisation d'un module</h2>
+<ul>
+<li>On emploie le mot clé <code>import</code> pour utiliser une bibliothèque de fonctions.</li>
+<li>Par exemple, avec le module <code>racine.py</code> :</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> racine
+
+cinq = racine.racine_carree(<span class="hljs-number">25</span>)
+<span class="hljs-built_in">print</span>(cinq)
+
+trois = racine.racine_cubique(<span class="hljs-number">27</span>)
+<span class="hljs-built_in">print</span>(trois)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="11" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Autre exemple avec <code>math</code></h3>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> math
+
+<span class="hljs-built_in">print</span>(math.cos(<span class="hljs-number">0</span>))
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>1.0
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="12" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>Intérêt du préfixe</h2>
+<ul>
+<li data-marpit-fragment="1">Lorsque l'on importe un module, on doit employer <code>module.f()</code> pour appeler la fonction <code>f</code> définie dans <code>module.py</code>.</li>
+<li data-marpit-fragment="2">On appelle ce préfixe une <strong>qualification complète</strong> (fully qualified <img class="emoji" draggable="false" alt="🇬🇧" src="https://twemoji.maxcdn.com/2/svg/1f1ec-1f1e7.svg" data-marp-twemoji=""/>).</li>
+<li data-marpit-fragment="3">L'objectif est d'éviter la <strong>collision de nom</strong>.</li>
+<li data-marpit-fragment="4">En effet, plusieurs modules peuvent définir une fonction <code>f</code>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="13" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Importer une fonction spécifique</h3>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> racine <span class="hljs-keyword">import</span> racine_carree
+
+cinq = racine_carree(<span class="hljs-number">25</span>)
+<span class="hljs-built_in">print</span>(cinq)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>5.000000000016778
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="14" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4><img class="emoji" draggable="false" alt="⚠️" src="https://twemoji.maxcdn.com/2/svg/26a0.svg" data-marp-twemoji=""/> Les autres fonctions sont invisibles</h4>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> racine <span class="hljs-keyword">import</span> racine_carree
+
+trois = racine_cubique(<span class="hljs-number">27</span>)
+<span class="hljs-built_in">print</span>(trois)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>NameError: name 'racine_cubique' is not defined
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="15" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4><img class="emoji" draggable="false" alt="⚠️" src="https://twemoji.maxcdn.com/2/svg/26a0.svg" data-marp-twemoji=""/> Le module aussi est invisible</h4>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> racine <span class="hljs-keyword">import</span> racine_carree
+
+trois = racine.racine_cubique(<span class="hljs-number">27</span>)
+<span class="hljs-built_in">print</span>(trois)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>NameError: name 'racine' is not defined
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="16" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Tout importer ? <img class="emoji" draggable="false" alt="💀" src="https://twemoji.maxcdn.com/2/svg/1f480.svg" data-marp-twemoji=""/></h3>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> racine <span class="hljs-keyword">import</span> *
+
+cinq = racine_carree(<span class="hljs-number">25</span>)
+<span class="hljs-built_in">print</span>(cinq)
+
+trois = racine_cubique(<span class="hljs-number">27</span>)
+<span class="hljs-built_in">print</span>(trois)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>5.000000000016778
+3.000000000000002
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="17" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Inconvénients de tout importer</h3>
+<ul>
+<li data-marpit-fragment="1">On perd l'avantage de la <strong>qualification complète</strong>.</li>
+<li data-marpit-fragment="2">On peut donc avoir des <strong>collisions de noms</strong>.</li>
+<li data-marpit-fragment="3">Le code est également plus <strong>difficle à comprendre</strong> car on ne sait pas d'où viennent les fonctions utilisées.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="18" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Alias</h1>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> racine <span class="hljs-keyword">as</span> rcn
+
+cinq = rcn.racine_carree(<span class="hljs-number">25</span>)
+<span class="hljs-built_in">print</span>(cinq)
+
+trois = rcn.racine_cubique(<span class="hljs-number">27</span>)
+<span class="hljs-built_in">print</span>(trois)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>5.000000000016778
+3.000000000000002
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="19" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Importer une liste d'objets</h3>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> math <span class="hljs-keyword">import</span> cos, sin, pi
+
+<span class="hljs-built_in">print</span>(cos(<span class="hljs-number">0</span>))
+<span class="hljs-built_in">print</span>(cos(pi))
+<span class="hljs-built_in">print</span>(sin(<span class="hljs-number">0</span>))
+<span class="hljs-built_in">print</span>(sin(pi))
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>1.0
+-1.0
+0.0
+1.2246467991473532e-16
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="20" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>La fonction principale (1/2)</h2>
+<ul>
+<li>Lorsque l'on exécute un script en ligne de commande, l'interprêteur assigne la chaîne de caractère <code>&quot;__main__&quot;</code> à la variable globale <code>__name__</code>.</li>
+<li>Cela permet de distinguer le cas où un script est importé avec <code>import</code>, du cas où un script est exécuté indépendemment.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="21" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>La fonction principale (2/2)</h2>
+<pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>():</span>
+    <span class="hljs-comment"># On peut par exemple tester le bon fonctionnement de </span>
+    <span class="hljs-comment"># racine_carree et racine_cubique ici.</span>
+    <span class="hljs-keyword">pass</span>
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:
+    <span class="hljs-comment"># Exécuté uniquement si le script est lancé en ligne de commande</span>
+    main()
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="22" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="22" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h2>Tour d'horizon de la bibliothèque standard Python</h2>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="23" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="23" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Bibliothèque standard</h1>
+<ul>
+<li data-marpit-fragment="1">Le <strong>langage python</strong> est constitué de l'ensemble des mots clés tels que <code>while</code>, <code>for</code>, <code>if</code>, de sa grammaire et de quelques fonctions de base comme <code>max</code> et <code>range</code>.</li>
+<li data-marpit-fragment="2">Pour effectuer des opérations plus avancées, on doit utiliser des modules de la <strong>bibliothèque standard</strong>.</li>
+<li data-marpit-fragment="3">Par exemple  : le module <code>math</code>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="24" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="24" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Services offerts (1/4)</h3>
+<ul>
+<li data-marpit-fragment="1">Collections supplémentaires.</li>
+<li data-marpit-fragment="2">Hiérarchie d'exceptions.</li>
+<li data-marpit-fragment="3">Traitement de texte.</li>
+<li data-marpit-fragment="4">Fonctions mathématiques.</li>
+<li data-marpit-fragment="5">Module de programmation fonctionnelle.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="25" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Services offerts (2/4)</h3>
+<ul>
+<li data-marpit-fragment="1">Système de fichiers.</li>
+<li data-marpit-fragment="2">Persistence dans une base de données.</li>
+<li data-marpit-fragment="3">Algorithmes de compression.</li>
+<li data-marpit-fragment="4">Algorithmes de cryptographie.</li>
+<li data-marpit-fragment="5">Services de gestion de système d'exploitation.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="26" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="26" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Services offerts (3/4)</h3>
+<ul>
+<li data-marpit-fragment="1">Concurrence et parallélisation (multithreading).</li>
+<li data-marpit-fragment="2">Réseau et communication inter-processus.</li>
+<li data-marpit-fragment="3">Protocoles Internet.</li>
+<li data-marpit-fragment="4">Parsers (HTML, XML, JSON, etc.).</li>
+<li data-marpit-fragment="5">Services multimedia.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="27" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="27" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Services offerts (4/4)</h3>
+<ul>
+<li data-marpit-fragment="1">Internationalisation (i.e. plusieurs langues).</li>
+<li data-marpit-fragment="2">Interface Graphique avec Tk.</li>
+<li data-marpit-fragment="3">Outils de développement et de débogage.</li>
+<li data-marpit-fragment="4">Gestionnaire de paquets.</li>
+<li data-marpit-fragment="5">Interpréteur Python (AST, Tokenizer, etc.).</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="28" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="28" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Byte</h1>
+<h4>Exemple de collections supplémentaires</h4>
+<pre><code class="language-python">octets = <span class="hljs-string">b&quot;1 2 3&quot;</span>
+<span class="hljs-built_in">print</span>(octets)
+
+chaine = octets.decode()
+<span class="hljs-built_in">print</span>(chaine)
+
+liste = octets.split()
+<span class="hljs-built_in">print</span>(liste)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>b'1 2 3'
+1 2 3
+[b'1', b'2', b'3']
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="29" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="29" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Expression régulière</h1>
+<h4>Exemple de traitement de texte</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> re
+
+chaine = <span class="hljs-string">&quot;si ton tonton tond ton tonton, ton tonton sera tondu&quot;</span>
+expression = <span class="hljs-string">r&quot;\bton[a-z]*&quot;</span>
+resultat = re.findall(expression, chaine)
+<span class="hljs-built_in">print</span>(resultat)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>['ton', 'tonton', 'tond', 'ton',
+ 'tonton', 'ton', 'tonton', 'tondu']
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="30" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="30" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Nombres complexes</h3>
+<h4>Exemple de fonctions mathématiques</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> cmath
+
+c = <span class="hljs-built_in">complex</span>(cmath.e, <span class="hljs-number">0.0</span>) <span class="hljs-comment"># e</span>
+<span class="hljs-built_in">print</span>(c)
+<span class="hljs-built_in">print</span>(cmath.log(c))       <span class="hljs-comment"># 1</span>
+
+c = <span class="hljs-built_in">complex</span>(cmath.e, <span class="hljs-number">1.0</span>) <span class="hljs-comment"># e + i</span>
+<span class="hljs-built_in">print</span>(c)
+<span class="hljs-built_in">print</span>(cmath.log(c))
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>(2.718281828459045+0j)
+(1+0j)
+(2.718281828459045+1j)
+(1.0634640055214861+0.352513421777619j)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="31" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="31" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4>SQLite - Exemple de persistence (1/2)</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> sqlite3
+
+<span class="hljs-comment"># Création d&#x27;une base de données en mémoire</span>
+connection = sqlite3.connect(<span class="hljs-string">&#x27;:memory:&#x27;</span>)
+curseur = connection.cursor()
+
+<span class="hljs-comment"># Création d&#x27;une table</span>
+curseur.execute(<span class="hljs-string">&quot;&quot;&quot;CREATE TABLE personnage
+                  (nom, prenom, age)&quot;&quot;&quot;</span>)
+
+<span class="hljs-comment"># Insertion d&#x27;une ligne dans la table</span>
+curseur.execute(<span class="hljs-string">&quot;&quot;&quot;INSERT INTO personnage
+                   VALUES (&#x27;Tyrion&#x27;, &#x27;Lannister&#x27;, 27)&quot;&quot;&quot;</span>)
+
+<span class="hljs-comment"># Commit la transaction actuelle</span>
+connection.commit()
+
+<span class="hljs-comment"># Suite sur la diapositive suivante...</span>
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="32" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="32" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4>SQLite - Exemple de persistence (2/2)</h4>
+<pre><code class="language-python"><span class="hljs-comment"># Parcourt des personnages dans la BD</span>
+personnages = curseur.execute(<span class="hljs-string">&quot;SELECT * FROM personnage&quot;</span>)
+<span class="hljs-keyword">for</span> perso <span class="hljs-keyword">in</span> personnages:
+    <span class="hljs-built_in">print</span>(perso)
+
+<span class="hljs-comment"># Fermeture de la connection (important)</span>
+connection.close()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>('Tyrion', 'Lannister', 27)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="33" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="33" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>ZLib</h3>
+<h4>Exemple d'algorithmes de compression</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> zlib
+
+chaine = <span class="hljs-string">&quot;Lorem Ipsum blabla&quot;</span>
+octets = chaine.encode()
+
+compresse = zlib.compress(octets, zlib.Z_BEST_COMPRESSION)
+<span class="hljs-built_in">print</span>(compresse[:<span class="hljs-number">11</span>])
+
+decompresse = zlib.decompress(compresse)
+<span class="hljs-built_in">print</span>(decompresse[:<span class="hljs-number">11</span>])
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>b'x\xda\xf3\xc9/J\xcdU\xf0,('
+b'Lorem Ipsum'
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="34" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="34" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Hash</h1>
+<h4>Exemple d'algorithmes de cryptographie</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> hashlib
+
+<span class="hljs-built_in">hash</span> = hashlib.sha512(<span class="hljs-string">b&quot;Personne ne doit savoir...&quot;</span>)
+hexa = <span class="hljs-built_in">hash</span>.hexdigest()
+<span class="hljs-built_in">print</span>(hexa[:<span class="hljs-number">15</span>])
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>c8c43d2d251edb0
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="35" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="35" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Lancement d'une commande système</h3>
+<h4>Exemple de services de SE</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> os
+
+<span class="hljs-keyword">if</span> os.name == <span class="hljs-string">&quot;posix&quot;</span>:
+    os.system(<span class="hljs-string">&quot;ls&quot;</span>)
+<span class="hljs-keyword">else</span>:
+    os.system(<span class="hljs-string">&quot;dir&quot;</span>)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>assets  cours  environment.yml  LICENSE         node_modules
+bin     dist   includes         marp.config.js  now.json    
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="36" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="36" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Lancement d'un fil d'exécution</h3>
+<h4>Exemple de concurrence</h4>
+<pre><code class="language-python"><span class="hljs-keyword">from</span> threading <span class="hljs-keyword">import</span> Thread 
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">bonjour</span>():</span>
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;bonjour depuis le thread&quot;</span>)
+
+thread = Thread(<span class="hljs-literal">None</span>, bonjour)
+thread.start()
+thread.join()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>bonjour depuis le thread
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="37" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4>Echange TCP - Exemple réseau (1/2)</h4>
+<h6>Serveur socket TCP</h6>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> socket
+
+<span class="hljs-comment"># Lie une socket sur l&#x27;IP 127.0.0.1 et le port 8080</span>
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind((<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-number">8080</span>))
+s.listen(<span class="hljs-number">1</span>)
+connexion, _ = s.accept()
+
+<span class="hljs-comment"># Attend un message</span>
+<span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+    message = connexion.recv(<span class="hljs-number">1024</span>)
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> message: <span class="hljs-keyword">break</span>
+    connexion.sendall(message)
+
+<span class="hljs-comment"># Ferme la socket et la connexion (important)</span>
+connexion.close()
+s.close()
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="38" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="38" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4>Echange TCP - Exemple réseau (2/2)</h4>
+<h6>Client socket TCP</h6>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> socket
+
+<span class="hljs-comment"># Ouvre une socket sur l&#x27;IP 127.0.0.1 et le port 8080</span>
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((<span class="hljs-string">&#x27;127.0.0.1&#x27;</span>, <span class="hljs-number">8080</span>))
+
+<span class="hljs-comment"># Envoi un message</span>
+s.sendall(<span class="hljs-string">b&#x27;Bonjour&#x27;</span>)
+
+<span class="hljs-comment"># Attend une réponse</span>
+reponse = s.recv(<span class="hljs-number">1024</span>)
+
+<span class="hljs-comment"># Ferme la socket (important)</span>
+s.close()
+
+<span class="hljs-built_in">print</span>(reponse)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="39" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="39" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Requête HTTP - Exemple de Protocoles Internet</span></foreignObject></svg></h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> http
+
+<span class="hljs-comment"># Créé une connexion HTTP</span>
+connexion = http.client.HTTPSConnection(<span class="hljs-string">&#x27;yvo.solutions&#x27;</span>)
+
+<span class="hljs-comment"># Envoie une requête GET pour récupérer la page principale</span>
+connexion.request(<span class="hljs-string">&quot;GET&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>)
+
+<span class="hljs-comment"># Récupère et affiche la réponse</span>
+reponse = connexion.getresponse()
+<span class="hljs-built_in">print</span>(reponse.status, reponse.reason)
+<span class="hljs-built_in">print</span>(reponse.read()[:<span class="hljs-number">15</span>])
+
+<span class="hljs-comment"># Ferme la connexion HTTP</span>
+connexion.close()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>200 OK
+b'&lt;!doctype html&gt;'
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="40" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="40" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Désérialisation JSON - Exemple de Parsers</span></foreignObject></svg></h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> json
+
+<span class="hljs-comment"># Désérialise une chaîne représentant un objet JSON</span>
+chaine1 = <span class="hljs-string">&quot;&quot;&quot;{ &quot;nom&quot;: &quot;Tyrion&quot;, &quot;prenom&quot;: &quot;Lannister&quot;, &quot;age&quot;: 27 }&quot;&quot;&quot;</span>
+dico = json.loads(chaine1)
+
+<span class="hljs-comment"># Applique une modification</span>
+dico[<span class="hljs-string">&quot;adresse&quot;</span>] = <span class="hljs-string">&quot;Lannisport&quot;</span>
+
+<span class="hljs-comment"># Sérialise en chaine représentant un object JSON</span>
+chaine2 = json.dumps(dico, sort_keys=<span class="hljs-literal">True</span>, indent=<span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(chaine2)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>{
+    &quot;adresse&quot;: &quot;Lannisport&quot;,
+    &quot;age&quot;: 27,
+    &quot;nom&quot;: &quot;Tyrion&quot;,
+    &quot;prenom&quot;: &quot;Lannister&quot;
+}
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="41" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="smaller-text" data-marpit-pagination="41" data-marpit-pagination-total="73" style="--paginate:true;--class:smaller-text;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Création d'un gif animé</h1>
+<h4>Exemple de Services multimedia</h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> imageio
+
+fichiers = [<span class="hljs-string">&quot;img1.png&quot;</span>, <span class="hljs-string">&quot;img2.png&quot;</span>, <span class="hljs-string">&quot;img3.png&quot;</span>]
+animation = <span class="hljs-string">&quot;animation.gif&quot;</span>
+images = [imageio.imread(fichier) <span class="hljs-keyword">for</span> fichier <span class="hljs-keyword">in</span> fichiers]
+imageio.mimsave(animation, images, fps=<span class="hljs-number">3</span>)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="./assets/img1.png" alt="w:100" style="width:100px;" /></th>
+<th style="text-align:center"><img src="./assets/img2.png" alt="w:100" style="width:100px;" /></th>
+<th style="text-align:center"><img src="./assets/img3.png" alt="w:100" style="width:100px;" /></th>
+<th style="text-align:center"><img src="./assets/animation.gif" alt="w:100" style="width:100px;" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">img1.png</td>
+<td style="text-align:center">img2.png</td>
+<td style="text-align:center">img3.png</td>
+<td style="text-align:center">animation.gif</td>
+</tr>
+</tbody>
+</table>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="42" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="42" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h4><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Affichage de l'AST - Exemple d'interpréteur Python</span></foreignObject></svg></h4>
+<pre><code class="language-python"><span class="hljs-keyword">import</span> ast
+
+noeud = ast.parse(<span class="hljs-string">&quot;[1, 2, 3]&quot;</span>, mode=<span class="hljs-string">&#x27;eval&#x27;</span>)
+arbre = ast.dump(noeud, indent=<span class="hljs-number">4</span>)
+<span class="hljs-built_in">print</span>(arbre)
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>Expression(
+    body=List(
+        elts=[
+            Constant(value=1),
+            Constant(value=2),
+            Constant(value=3)],
+        ctx=Load()))
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="43" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="43" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -152,9 +1601,8 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 }
 ;">
 <h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Focus sur les fichiers</span></foreignObject></svg></h1>
-<h5>Ouverture, fermeture, lecture et écriture</h5>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="44" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -166,7 +1614,272 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="6" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="44" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Fichiers</h1>
+<ul>
+<li data-marpit-fragment="1">Tous les principaux systèmes d'exploitation offre un <strong>système de fichiers</strong>.</li>
+<li data-marpit-fragment="2">Cela permet de <strong>sauvegarder</strong> des données.</li>
+<li data-marpit-fragment="3">Python offre de nombreux services pour <strong>manipuler les fichiers</strong>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="45" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+};--marpit-advanced-background-split:45%;" data-marpit-advanced-background="background" data-marpit-advanced-background-split="left"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;./assets/fichier.txt.png&quot;);background-size:90%;"></figure></div></section></foreignObject><foreignObject width="55%" height="720" x="45%"><section id="45" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="45" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+};--marpit-advanced-background-split:45%;" data-marpit-advanced-background="content" data-marpit-advanced-background-split="left">
+<h3>Ouverture et <strong>fermeture</strong></h3>
+<pre><code class="language-python"><span class="hljs-comment"># Ouvre le fichier</span>
+fichier = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fichier.txt&quot;</span>)
+
+<span class="hljs-comment"># Ferme le fichier (important)</span>
+fichier.close()
+</code></pre>
+</section>
+</foreignObject><foreignObject width="1280" height="720" data-marpit-advanced-background="pseudo"><section style="" data-marpit-advanced-background="pseudo" data-marpit-pagination="45" data-marpit-pagination-total="73"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="46" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Lecture</h3>
+<pre><code class="language-python">fichier = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fichier.txt&quot;</span>)
+
+<span class="hljs-keyword">for</span> ligne <span class="hljs-keyword">in</span> fichier:
+    <span class="hljs-built_in">print</span>(ligne)
+
+fichier.close()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<pre><code>Bonjour
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="47" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="47" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Ecriture</h3>
+<pre><code class="language-python">fichier = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fichier.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>)
+
+fichier.write(<span class="hljs-string">&quot;Bonjour, monde\n&quot;</span>)
+fichier.write(<span class="hljs-string">&quot;Bienvenu\n&quot;</span>)
+
+fichier.close()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<p><img src="./assets/fichier2.txt.png" alt="0%" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="48" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="48" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Ajout à la fin</h3>
+<pre><code class="language-python">fichier = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fichier.txt&quot;</span>, <span class="hljs-string">&quot;a&quot;</span>)
+
+fichier.write(<span class="hljs-string">&quot;Avé, César\n&quot;</span>)
+fichier.write(<span class="hljs-string">&quot;Ils sont fous ces Romains !\n&quot;</span>)
+
+fichier.close()
+</code></pre>
+<p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
+<p><img src="./assets/fichier3.txt.png" alt="40%" /></p>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="49" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="49" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Buffer et <code>flush</code></h3>
+<ul>
+<li data-marpit-fragment="1">Un appel à <code>write</code> ne produit <em>pas</em> une écriture immédiate sur disque.</li>
+<li data-marpit-fragment="2">Cette manière de fonctionner serait <strong>trop lente</strong> en pratique.</li>
+<li data-marpit-fragment="3">A la place, il existe des <strong>caches intermédiaires</strong>.</li>
+<li data-marpit-fragment="4">Pour demander une écriture sur disque, on doit appeler <code>flush</code>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="50" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Garantir la fermeture avec <code>with</code></h3>
+<ul>
+<li data-marpit-fragment="1">Pour éviter les <strong>fuites de ressources</strong>, on peut utiliser <code>with</code>.</li>
+<li data-marpit-fragment="2">A la fin du bloc <code>with</code>, le fichier est <strong>automatiquement fermé</strong>.</li>
+<li data-marpit-fragment="3">Il est conseillé de toujours utiliser <code>with</code> lorsqu'une action de fin est obligatoire.</li>
+</ul>
+<pre><code class="language-python"><span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;fichier.txt&quot;</span>) <span class="hljs-keyword">as</span> fichier:
+    <span class="hljs-keyword">for</span> ligne <span class="hljs-keyword">in</span> fichier:
+        <span class="hljs-built_in">print</span>(ligne)
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="51" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="51" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -181,7 +1894,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 ;">
 <h1>TP : Initiation aux fichiers</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-paginate="true" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="52" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -193,7 +1906,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="7" data-marpit-pagination-total="14" style="--paginate:true;--theme:uncover;--style:section {
+" data-marpit-pagination="52" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -209,7 +1922,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h3>TP : Initiation aux fichiers</h3>
 <p><a href="./tp-16-fichiers.html"><strong>Lien</strong> vers le sujet de TP</a>.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="53" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -221,7 +1934,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="8" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" class="title-section" data-marpit-pagination="53" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -237,7 +1950,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Introduction aux paquets</span></foreignObject></svg></h1>
 <h5>Gestionnaire de paquets <code>pip</code></h5>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="9" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="54" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -249,7 +1962,206 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="9" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="54" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Au-delà de la bibliothèque standard</h3>
+<ul>
+<li data-marpit-fragment="1">La bibliothèque standard Python <strong>ne couvre pas tous les besoins</strong>.</li>
+<li data-marpit-fragment="2">La bibliothèque standard n'a <strong>pas vocation</strong> à couvrir tous les besoins.</li>
+<li data-marpit-fragment="3">Il existe un <strong>écosystème riche</strong> de <strong>bibliothèques tierces</strong>.</li>
+<li data-marpit-fragment="4">Comment utiliser ces bibliothèques tierces ?</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="55" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="55" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Gestionnaire de paquets</h3>
+<ul>
+<li data-marpit-fragment="1">Les différentes bibliothèques sont distribuées sous forme de <strong>paquets</strong>.</li>
+<li data-marpit-fragment="2">L'<strong>installation d'un paquet</strong> permet l'utilisation de la biobliothèque.</li>
+<li data-marpit-fragment="3">On peut alors <code>import</code>er les modules de la bibliothèque tierce.</li>
+<li data-marpit-fragment="4">L'installation se fait via un <strong>gestionnaire de paquets</strong>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="56" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="56" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3><code>pip</code> et <code>conda</code></h3>
+<ul>
+<li data-marpit-fragment="1">Il existe différents gestionnaires de paquets pour Python.</li>
+<li data-marpit-fragment="2"><code>pip</code> et <code>conda</code> sont les plus utilisés.</li>
+<li data-marpit-fragment="3">Nous allons utiliser <code>pip</code> dans ce cours.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="57" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="57" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Syntaxe</h3>
+<pre><code class="language-bash"><span class="hljs-comment"># Installe paquet</span>
+python3.9 -m pip install paquet
+
+<span class="hljs-comment"># Met à jour paquet</span>
+python3.9 -m pip install -U paquet
+</code></pre>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="58" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="58" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Quelques exemples (1/2)</h1>
+<ul>
+<li data-marpit-fragment="1"><strong>NumPy</strong> : tableau à N dimensions et algèbre linéaire.</li>
+<li data-marpit-fragment="2"><strong>MatPlotLib</strong> : affichage de graphes 2D et 3D.</li>
+<li data-marpit-fragment="3"><strong>Panda</strong> : tableur et analyse statistique.</li>
+<li data-marpit-fragment="4"><strong>SimPy</strong> : résolution d'équations symboliques.</li>
+<li data-marpit-fragment="5"><strong>scikit-image</strong> : traitement d'images.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="59" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="59" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Quelques exemples (2/2)</h1>
+<ul>
+<li data-marpit-fragment="1"><strong>graph-tool</strong> : analyse de graphes.</li>
+<li data-marpit-fragment="2"><strong>Django</strong> : bibliothèque web pour faire un site web.</li>
+<li data-marpit-fragment="3"><strong>FastAPI</strong> : bibliothèqe pour écrire des web services.</li>
+<li data-marpit-fragment="4"><strong>FastAI</strong> : réseaux de neurones profonds.</li>
+<li data-marpit-fragment="5"><strong>TensorFlow</strong> : apprentissage par machine.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="60" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="60" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -263,9 +2175,8 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 }
 ;">
 <h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Discussion sur les licences</span></foreignObject></svg></h1>
-<h5>GPL, MIT, BSD, Apache, etc.</h5>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="10" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="61" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -277,7 +2188,241 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="10" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="61" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Logiciel Gratuit</h1>
+<ul>
+<li data-marpit-fragment="1">Vous avez le droit d'installer et d'utiliser gratuitement le logiciel.</li>
+<li data-marpit-fragment="2">Vous n'avez pas forcément accès au code source.</li>
+<li data-marpit-fragment="3">Le logiciel reste soumis aux droits d'auteur.</li>
+<li data-marpit-fragment="4">Par défaut, vous n'avez notamment pas le droit de redistribuer le logiciel.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="62" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="62" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Logiciel Open Source</h1>
+<ul>
+<li data-marpit-fragment="1"><strong>Open Source</strong> veut simplement dire que le code source est à disposition pour <strong>être lu</strong>.</li>
+<li data-marpit-fragment="2">Il existe de nombreuses licences Open Source <strong>plus ou moins permissives</strong>.</li>
+<li data-marpit-fragment="3"><strong>Vous ne pouvez <em>pas</em> faire ce que vous voulez</strong>.</li>
+<li data-marpit-fragment="4">Un logiciel propriétaire et payant peut être Open Source.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="63" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="63" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Logiciel Libre</h1>
+<ul>
+<li data-marpit-fragment="1">Le logiciel <strong>Libre</strong> est obligatoirement <strong>Open Source</strong>.</li>
+<li data-marpit-fragment="2">Tout le monde a le droit de lire, modifier et redistribuer des logiciels libres.</li>
+<li data-marpit-fragment="3">Les modifications d'un logiciel libre doivent être mises à disposition de toute la communauté.</li>
+<li data-marpit-fragment="4">Si on utilise le code source d'un logiciel libre, notre logiciel devient de facto libre également.</li>
+<li data-marpit-fragment="5">Cela ne signifie pas que le logiciel est <strong>libre de droits</strong>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="64" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="64" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>GPL</h1>
+<ul>
+<li data-marpit-fragment="1">Célèbre licence de <strong>Richard Stallman</strong> et de la <strong>Free Software Foundation</strong>.</li>
+<li data-marpit-fragment="2">Licence utilisée pour le <strong>projet GNU</strong> (GCC, GTK, etc.) et le <strong>kernel Linux</strong>.</li>
+<li data-marpit-fragment="3">C'est <em>la</em> licence libre <strong>la plus restrictive</strong>.</li>
+<li data-marpit-fragment="4">Si vous utilisez du code sous GPL, votre code est sous GPL.</li>
+<li data-marpit-fragment="5">Toujours consulter le service juridique d'une entreprise avant d'envisager utiliser du code sous GPL.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="65" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="65" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>LGPL</h1>
+<ul>
+<li data-marpit-fragment="1">C'est la <em>Lesser</em> GPL.</li>
+<li data-marpit-fragment="2">Cette licence est beaucoup moins restrictive.</li>
+<li data-marpit-fragment="3">Du code propriétaire est en droit d'utiliser du code sous LGPL.</li>
+<li data-marpit-fragment="4">C'est notamment le cas des programmes en espace utilisateur sous GNU/Linux.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="66" data-marpit-fragments="3" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="66" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>MIT</h1>
+<ul>
+<li data-marpit-fragment="1">Initialement une alternative à la GPL.</li>
+<li data-marpit-fragment="2">Issue de la célèbre université de Boston.</li>
+<li data-marpit-fragment="3">Utilisation possible sans problème dans des projets industriels.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="67" data-marpit-fragments="5" data-paginate="true" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" data-marpit-pagination="67" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h3>Les autres...</h3>
+<h6>BSD, Apache, ...</h6>
+<ul>
+<li data-marpit-fragment="1"><strong>A chaque fois</strong> que vous voulez utiliser une nouvelle bibliothèque, <strong>regardez la licence associée</strong>.</li>
+<li data-marpit-fragment="2">S'il n'y a pas de licence, cherchez une <strong>alternative</strong>.</li>
+<li data-marpit-fragment="3"><strong>Lisez les restrictions</strong> associées à cette licence.</li>
+<li data-marpit-fragment="4">Si vous pensez que les restrictions sont trop contraignantes, cherchez une autre bibliothèque.</li>
+<li data-marpit-fragment="5"><strong>Demandez à votre manager</strong> ou <strong>au service juridique</strong> si vous avez le droit d'utiliser cette licence.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="68" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="68" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -292,7 +2437,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 ;">
 <h1>TP : Courbes et traitement d'images</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="69" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -304,7 +2449,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="11" data-marpit-pagination-total="14" style="--paginate:true;--theme:uncover;--style:section {
+" data-marpit-pagination="69" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -320,7 +2465,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h3>TP : Courbes et traitement d'images</h3>
 <p><a href="./tp-17-courbes.html"><strong>Lien</strong> vers le sujet de TP</a>.</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="70" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -332,7 +2477,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="12" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" class="title-section" data-marpit-pagination="70" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -348,7 +2493,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h1><svg data-marp-fitting="svg"><foreignObject><span data-marp-fitting-svg-content> Programmation Orientée Object</span></foreignObject></svg></h1>
 <h5>Optionnel (hors programme)</h5>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="71" data-marpit-fragments="4" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -360,7 +2505,40 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" class="title-section" data-marpit-pagination="13" data-marpit-pagination-total="14" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
+" data-marpit-pagination="71" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+;">
+<h1>Classe</h1>
+<ul>
+<li data-marpit-fragment="1">Une <strong>classe</strong> regroupe données et fonctions agissant sur ces données.</li>
+<li data-marpit-fragment="2">Les données s'appellent <strong>données membres</strong>.</li>
+<li data-marpit-fragment="3">Les fonctions s'appellent <strong>méthodes</strong>.</li>
+<li data-marpit-fragment="4"><strong>Encapsulation</strong> : certaines données membres et méthodes sont <em>privées</em>.</li>
+</ul>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="72" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
+}
+
+section.title-section {
+  background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg&quot;);
+  color: #fff;
+}
+
+section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
+  font-size: 0.6em;
+}
+" class="title-section" data-marpit-pagination="72" data-marpit-pagination-total="73" style="--paginate:true;--class:title-section;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -375,7 +2553,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 ;">
 <h1>Devoir à la Maison 05</h1>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="14" data-paginate="true" data-theme="uncover" data-style="section {
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="73" data-paginate="true" data-theme="uncover" data-style="section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
@@ -387,7 +2565,7 @@ section.title-section {
 section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
   font-size: 0.6em;
 }
-" data-marpit-pagination="14" data-marpit-pagination-total="14" style="--paginate:true;--theme:uncover;--style:section {
+" data-marpit-pagination="73" data-marpit-pagination-total="73" style="--paginate:true;--theme:uncover;--style:section {
   background-image: url(&quot;https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg&quot;);
 }
 
