@@ -57,31 +57,37 @@ Afin que vous puissiez être efficaces rapidement dans vos entreprises en altern
 
 ---
 
+## Taille d'une fonction
 
-# Taille d'une fonction
-
-* Combien de responsabilités doit avoir une fonction ?
+* Combien de **responsabilités** doit avoir une fonction ?
 * 1 fonction :arrow_right: 1 responsabilité.
-* En moyenne, une fonction doit faire entre 7 et 15 lignes.
-* Une fonction qui fait plus de 30 lignes doit être découpée en plusieurs fonctions plus simples.
+* En moyenne, une fonction doit faire entre **7 et 15 lignes**.
+* Une fonction qui fait plus de 30 lignes doit être découpée en **plusieurs fonctions plus simples**.
+
+<!--
+Il s'agit ici d'ordres de grandeur et de bonnes pratiques.
+Il ne s'agit pas d'une règle stricte.
+Il faut se référer au context de travail et aux règles de codage de l'entreprise dans laquelle vous intervenez.
+-->
 
 ---
 
-# Exemples de responsabilités
+### Exemples de responsabilités
 
-- Effectuer un calcul (ex : racine carrée).
-- Appliquer une transformation (ex : nombre textuel vers numérique).
-- Afficher un résultat (ex : une matrice).
+* Effectuer un calcul (ex : racine carrée).
+* Rechercher une valeur (ex : recherche binaire)
+* Appliquer une transformation (ex : nombre textuel vers numérique).
+* Afficher un résultat (ex : une matrice).
 
 ---
 
-# Ne pas se répéter
+## Ne pas se répéter
 
-- Lorsque l'on observe un **motif qui se répète** dans le code, il y a un problème.
-- Ces répétitions sont le signe d'une **duplication de code**.
-- A la place, il faut créer des fonctions et les appeler.
-- Le processus de modification du code pour supprimer les duplications s'appelle la **refactorisation**.
-- Il s'agit d'une bonne pratique du génie logiciel.
+* Lorsque l'on observe un **motif qui se répète** dans le code, il y a un problème.
+* Ces répétitions sont le signe d'une **duplication de code**.
+* A la place, il faut créer des fonctions et les appeler.
+* Le processus de modification du code pour supprimer les duplications s'appelle la **refactorisation**.
+* Il s'agit d'une bonne pratique du génie logiciel.
 
 <!--
 Par exemple, lorsque l'on a dupliqué plusieurs fois le code de la racine carrée pour calculer la racine de 16, puis pour calculer la somme d'une racine carrée et d'une racine cubique.
@@ -90,42 +96,231 @@ A la place, nous avons désormais une fonction racine carrée propre et réutili
 
 ---
 
-# Notion de script modulaire
+### Notion de script modulaire
 
-- On rassemble les fonctions de même nature dans un script.
+- On rassemble les fonctions de même nature dans un **script**.
 - Par exemple, on peut avoir un script `racine.py` qui contient les fonctions `racine_carree` et `racine_cubique`.
 - On pourrait avoir un autre script nommé `chaine_caracteres.py` qui contient des fonctions de manipulation de chaînes de caractères.
 
 ---
 
-# Utilisation d'un script
+# Module
+
+* Un **module** est un fichier `.py` contenant des définitions et des déclarations Python.
+* Le script `racine.py` est donc un module.
+
+---
+
+### Module `racine.py`
+
+| ![w:500](./assets/racine.py.jpg) | ![w:500](./assets/scripts-python.png) |
+|:--------------------------------:|:-------------------------------------:|
+|       Fichier `racine.py`        |        Explorateur de fichiers        |
+
+---
+
+## Utilisation d'un module
 
 - On emploie le mot clé `import` pour utiliser une bibliothèque de fonctions.
-- Par exemple, si on a un script `racine.py`, on utilise :
+- Par exemple, avec le module `racine.py` :
 ```python
 import racine
 
-print(racine_carree(4))
+cinq = racine.racine_carree(25)
+print(cinq)
+
+trois = racine.racine_cubique(27)
+print(trois)
 ```
 
-- Autre exemple avec `math.cos` :
-```python
-from math import cos
+<!--
+On voit ici que les fonctions sont préfixées par le nom du module.
+Cela ressemble à un appel de méthode, comme quand on appelle sort sur une liste.
+-->
 
-print(cos(0))
+---
+
+### Autre exemple avec `math`
+
+```python
+import math
+
+print(math.cos(0))
+```
+
+:arrow_down:
+
+```
+1.0
 ```
 
 ---
 
-# La fonction principale
+## Intérêt du préfixe
+
+* Lorsque l'on importe un module, on doit employer `module.f()` pour appeler la fonction `f` définie dans `module.py`.
+* On appelle ce préfixe une **qualification complète** (fully qualified :uk:).
+* L'objectif est d'éviter la **collision de nom**.
+* En effet, plusieurs modules peuvent définir une fonction `f`.
+
+---
+
+### Importer une fonction spécifique
+
+```python
+from racine import racine_carree
+
+cinq = racine_carree(25)
+print(cinq)
+```
+
+:arrow_down:
+
+```
+5.000000000016778
+```
+
+---
+
+#### :warning: Les autres fonctions sont invisibles
+
+```python
+from racine import racine_carree
+
+trois = racine_cubique(27)
+print(trois)
+```
+
+:arrow_down:
+
+```
+NameError: name 'racine_cubique' is not defined
+```
+
+---
+
+#### :warning: Le module aussi est invisible
+
+```python
+from racine import racine_carree
+
+trois = racine.racine_cubique(27)
+print(trois)
+```
+
+:arrow_down:
+
+```
+NameError: name 'racine' is not defined
+```
+
+---
+
+### Tout importer ? :skull:
+
+```python
+from racine import *
+
+cinq = racine_carree(25)
+print(cinq)
+
+trois = racine_cubique(27)
+print(trois)
+```
+
+:arrow_down:
+
+```
+5.000000000016778
+3.000000000000002
+```
+
+<!--
+Il vaut mieux éviter cette approche.
+La diapositive suivante explique pourquoi.
+-->
+
+---
+
+### Inconvénients de tout importer
+
+* On perd l'avantage de la **qualification complète**.
+* On peut donc avoir des **collisions de noms**.
+* Le code est également plus **difficle à comprendre** car on ne sait pas d'où viennent les fonctions utilisées.
+
+<!--
+Dans les exemples fournis, on sait d'où viennent les fonctions.
+Imaginez maintenant une base de code de 1 million de lignes avec plusieurs centaines de modules.
+-->
+
+---
+
+# Alias
+
+```python
+import racine as rcn
+
+cinq = rcn.racine_carree(25)
+print(cinq)
+
+trois = rcn.racine_cubique(27)
+print(trois)
+```
+
+:arrow_down:
+
+```
+5.000000000016778
+3.000000000000002
+```
+
+<!--
+Il s'agit là d'une bien meilleure alternative.
+On n'a plus à tapper le nom complet du module donc le code est moins lourd.
+En même temps, on ne perd pas la qualification complète des noms donc le code reste clair et propre.
+-->
+
+---
+
+### Importer une liste d'objets
+
+```python
+from math import cos, sin, pi
+
+print(cos(0))
+print(cos(pi))
+print(sin(0))
+print(sin(pi))
+```
+
+:arrow_down:
+
+```
+1.0
+-1.0
+0.0
+1.2246467991473532e-16
+```
+
+<!--
+En Python, tout est objet.
+-->
+
+---
+
+## La fonction principale (1/2)
 
 - Lorsque l'on exécute un script en ligne de commande, l'interprêteur assigne la chaîne de caractère `"__main__"` à la variable globale `__name__`.
-- Cela permet de distinguer le cas où un script est importé avec `import`, du cas où un script est exécuté indépendemment :
+- Cela permet de distinguer le cas où un script est importé avec `import`, du cas où un script est exécuté indépendemment.
+
+---
+
+## La fonction principale (2/2)
 
 ```python
 def main():
-    # On peut par exemple tester le bon fonctionnement de racine_carree et 
-    # racine_cubique ici.
+    # On peut par exemple tester le bon fonctionnement de 
+    # racine_carree et racine_cubique ici.
     pass
 
 if __name__ == "__main__":
@@ -133,6 +328,7 @@ if __name__ == "__main__":
     main()
 ```
 
+---
 
 <!-- _class: title-section -->
 
