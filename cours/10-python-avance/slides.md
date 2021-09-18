@@ -1114,12 +1114,12 @@ En revanche, si vous travaillez sur un composant logiciel propriétaire sensible
 
 ---
 
-# Les autres...
+### Les autres...
 
 ###### BSD, Apache, ...
 
 * **A chaque fois** que vous voulez utiliser une nouvelle bibliothèque, **regardez la licence associée**.
-* S'il n'y a pas de licence, cherchez une autre bibliothèque.
+* S'il n'y a pas de licence, cherchez une **alternative**.
 * **Lisez les restrictions** associées à cette licence.
 * Si vous pensez que les restrictions sont trop contraignantes, cherchez une autre bibliothèque.
 * **Demandez à votre manager** ou **au service juridique** si vous avez le droit d'utiliser cette licence.
@@ -1149,6 +1149,24 @@ En effet, il est tout à fait possible que votre besoin soit déjà adressé dif
 # <!--fit--> Programmation Orientée Object
 
 ##### Optionnel (hors programme)
+
+---
+
+# Classe
+
+* Une **classe** regroupe données et fonctions agissant sur ces données.
+* Les données s'appellent **données membres**.
+* Les fonctions s'appellent **méthodes**.
+* **Encapsulation** : certaines données membres et méthodes sont *privées*.
+
+<!--
+On peut parler de :
+- Constructeur.
+- Composition.
+- Héritage.
+- Polymorphisme et surcharge.
+- Diagramme de classes.
+-->
 
 ---
 
