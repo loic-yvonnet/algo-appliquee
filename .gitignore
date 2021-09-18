@@ -6,6 +6,11 @@ includes/layouts/root.njk
 .ipynb_checkpoints/*
 .ipynb_checkpoints/**
 
+# Python cache
+__pycache__
+__pycache__/*
+__pycache__/**
+
 # Created by https://www.gitignore.io/api/node,windows,macos,linux,sublimetext,emacs,vim,visualstudiocode
 
 ### Emacs ###
