@@ -1047,7 +1047,88 @@ python3.9 -m pip install -U paquet
 
 # <!--fit--> Discussion sur les licences
 
-##### GPL, MIT, BSD, Apache, etc.
+<!--
+Vous verrez cela plus en détails en cours de droit.
+Il s'agit essentiellement d'un warning par rapport à la présentation du gestionnaire de paquets pip.
+-->
+
+---
+
+# Logiciel Gratuit
+
+* Vous avez le droit d'installer et d'utiliser gratuitement le logiciel.
+* Vous n'avez pas forcément accès au code source.
+* Le logiciel reste soumis aux droits d'auteur.
+* Par défaut, vous n'avez notamment pas le droit de redistribuer le logiciel.
+
+---
+
+# Logiciel Open Source
+
+* **Open Source** veut simplement dire que le code source est à disposition pour **être lu**.
+* Il existe de nombreuses licences Open Source **plus ou moins permissives**.
+* **Vous ne pouvez *pas* faire ce que vous voulez**.
+* Un logiciel propriétaire et payant peut être Open Source.
+
+---
+
+# Logiciel Libre
+
+* Le logiciel **Libre** est obligatoirement **Open Source**.
+* Tout le monde a le droit de lire, modifier et redistribuer des logiciels libres.
+* Les modifications d'un logiciel libre doivent être mises à disposition de toute la communauté.
+* Si on utilise le code source d'un logiciel libre, notre logiciel devient de facto libre également.
+* Cela ne signifie pas que le logiciel est **libre de droits**.
+
+---
+
+# GPL
+
+* Célèbre licence de **Richard Stallman** et de la **Free Software Foundation**.
+* Licence utilisée pour le **projet GNU** (GCC, GTK, etc.) et le **kernel Linux**.
+* C'est *la* licence libre **la plus restrictive**.
+* Si vous utilisez du code sous GPL, votre code est sous GPL.
+* Toujours consulter le service juridique d'une entreprise avant d'envisager utiliser du code sous GPL.
+
+<!--
+Par exemple, si vous travaillez sur un driver en espace kernel, vous n'avez pas le choix : ce sera sous GPL.
+En revanche, si vous travaillez sur un composant logiciel propriétaire sensible et fermé, il y a fort à parier que le service juridique vous refuse l'utilisation d'une bibliothèque sous GPL.
+-->
+
+---
+
+# LGPL
+
+* C'est la *Lesser* GPL.
+* Cette licence est beaucoup moins restrictive.
+* Du code propriétaire est en droit d'utiliser du code sous LGPL.
+* C'est notamment le cas des programmes en espace utilisateur sous GNU/Linux.
+
+---
+
+# MIT
+
+* Initialement une alternative à la GPL.
+* Issue de la célèbre université de Boston.
+* Utilisation possible sans problème dans des projets industriels.
+
+---
+
+# Les autres...
+
+###### BSD, Apache, ...
+
+* **A chaque fois** que vous voulez utiliser une nouvelle bibliothèque, **regardez la licence associée**.
+* S'il n'y a pas de licence, cherchez une autre bibliothèque.
+* **Lisez les restrictions** associées à cette licence.
+* Si vous pensez que les restrictions sont trop contraignantes, cherchez une autre bibliothèque.
+* **Demandez à votre manager** ou **au service juridique** si vous avez le droit d'utiliser cette licence.
+
+<!--
+Dans tous les cas, demandez à votre manager, architecte logiciel ou principal engineer.
+Expliquez pourquoi vous avez besoin de cette bibliothèque.
+En effet, il est tout à fait possible que votre besoin soit déjà adressé différemment et que l'on vous oriente vers une autre solution.
+-->
 
 ---
 
