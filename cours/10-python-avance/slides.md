@@ -394,6 +394,8 @@ Dans les prochaines diapositives, on donne simplement un aperçu de l'une des fo
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Byte
 #### Exemple de collections supplémentaires
 
@@ -455,7 +457,9 @@ L'étoile * finale signifie n'importe quel nombre de l'expression précédente (
 
 ---
 
-# Nombres complexes
+<!-- _class: smaller-text -->
+
+### Nombres complexes
 #### Exemple de fonctions mathématiques
 
 ```python
@@ -541,109 +545,206 @@ connection.close()
 
 ---
 
-# ZLib
+<!-- _class: smaller-text -->
+
+### ZLib
 #### Exemple d'algorithmes de compression
 
 ```python
+import zlib
 
+chaine = "Lorem Ipsum blabla"
+octets = chaine.encode()
+
+compresse = zlib.compress(octets, zlib.Z_BEST_COMPRESSION)
+print(compresse[:11])
+
+decompresse = zlib.decompress(compresse)
+print(decompresse[:11])
 ```
 
 :arrow_down:
 
 ```
-
+b'x\xda\xf3\xc9/J\xcdU\xf0,('
+b'Lorem Ipsum'
 ```
+
+<!--
+On une partie du message compressé et décompressé pour montrer que ces opérations sont bijectives.
+On n'affiche que les 11 premiers éléments compressés et décompressés pour voir que l'affichage de caractères non-ASCII prend plus de place à l'affichage (mais pas en mémoire ni sur disque).
+-->
 
 ---
 
 # Hash
 #### Exemple d'algorithmes de cryptographie
 
+
 ```python
-import zlib
+import hashlib
 
-chaine = """Le Lorem Ipsum est simplement du faux texte employe dans
-la composition et la mise en page avant impression."""
-octets = chaine.encode()
-
-compresse = zlib.compress(octets, zlib.Z_BEST_COMPRESSION)
-print(compresse[:30])
-
-decompresse = zlib.decompress(compresse)
-print(decompresse[:30])
+hash = hashlib.sha512(b"Personne ne doit savoir...")
+hexa = hash.hexdigest()
+print(hexa[:15])
 ```
 
 :arrow_down:
 
 ```
-b'x\xda\r\xcc\xd1\t\x800\x0cE\xd1\x7f\xa7x\x13\xb8\x87\xd0%\x82>\xa5`\x9abR\xa9\xdb\x9b\xdf'
-b'Le Lorem Ipsum est simplement '
+c8c43d2d251edb0
 ```
 
 <!--
-On n'affiche que les 30 premiers éléments compressés et décompressés pour montrer que ces opérations sont bijectives sans pour autant dépasser les bords de la diapositive.
-Cela permet également de voir que l'affichage de caractères non-ASCII prend plus de place à l'affichage (mais pas en mémoire ni sur disque).
+Vous verrez sans doute en cours de cybersécurité les différents algorithmes de hashing.
 -->
 
 ---
 
-# Lancement d'un processus
+### Lancement d'une commande système
 #### Exemple de services de SE
 
 ```python
-os.exec
+import os
+
+if os.name == "posix":
+    os.system("ls")
+else:
+    os.system("dir")
 ```
 
 :arrow_down:
 
 ```
-
+assets  cours  environment.yml  LICENSE         node_modules
+bin     dist   includes         marp.config.js  now.json    
 ```
 
 ---
 
-# Lancement d'un fil d'exécution
+### Lancement d'un fil d'exécution
 #### Exemple de concurrence
 
 ```python
+from threading import Thread 
 
+def bonjour():
+    print("bonjour depuis le thread")
+
+thread = Thread(None, bonjour)
+thread.start()
+thread.join()
 ```
 
 :arrow_down:
 
 ```
-
+bonjour depuis le thread
 ```
 
 ---
 
-# Echange TCP
-#### Exemple réseau
+<!-- _class: smaller-text -->
+
+#### Echange TCP - Exemple réseau (1/2)
+###### Serveur socket TCP
 
 ```python
+import socket
 
+# Lie une socket sur l'IP 127.0.0.1 et le port 8080
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(('127.0.0.1', 8080))
+s.listen(1)
+connexion, _ = s.accept()
+
+# Attend un message
+while True:
+    message = connexion.recv(1024)
+    if not message: break
+    connexion.sendall(message)
+
+# Ferme la socket et la connexion (important)
+connexion.close()
+s.close()
 ```
 
-:arrow_down:
-
-```
-
-```
+<!--
+On doit d'abord lancer ce script dans un 1er terminal.
+On appelle ce genre de petit programme un echo server.
+Encore une fois, vous approndirez ces concepts en cours de réseau.
+-->
 
 ---
 
-# Requête HTTP
-#### Exemple de Protocoles Internet
+<!-- _class: smaller-text -->
+
+#### Echange TCP - Exemple réseau (2/2)
+###### Client socket TCP
 
 ```python
+import socket
 
+# Ouvre une socket sur l'IP 127.0.0.1 et le port 8080
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(('127.0.0.1', 8080))
+
+# Envoi un message
+s.sendall(b'Bonjour')
+
+# Attend une réponse
+reponse = s.recv(1024)
+
+# Ferme la socket (important)
+s.close()
+
+print(reponse)
+```
+
+<!--
+Une fois que le serveur est lancé, il faut ouvrir un nouveau terminal puis lancer le client.
+Le client envoie alors un message "Bonjour" au serveur en passant par le port 8080.
+L'IP 127.0.0.1 correspond à localhost, c'est à dire la machine courante.
+Donc la trame réseau reste en réalité sur la machine courante.
+Une fois que le serveur reçoit la trame, il l'a renvoie directement et se déconnecte.
+Le client reçoit la réponse du serveur et l'affiche.
+Comme le serveur se contente de renvoyer le message reçu, le client affiche tout simplement "Bonjour".
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+#### <!--fit--> Requête HTTP - Exemple de Protocoles Internet
+
+```python
+import http
+
+# Créé une connexion HTTP
+connexion = http.client.HTTPSConnection('yvo.solutions')
+
+# Envoie une requête GET pour récupérer la page principale
+connexion.request("GET", "/")
+
+# Récupère et affiche la réponse
+reponse = connexion.getresponse()
+print(reponse.status, reponse.reason)
+print(reponse.read()[:15])
+
+# Ferme la connexion HTTP
+connexion.close()
 ```
 
 :arrow_down:
 
 ```
-
+200 OK
+b'<!doctype html>'
 ```
+
+<!--
+On récupère la landing page du site https://yvo.solutions et on affiche les 15 premiers caractères du document HTML reçu.
+-->
 
 ---
 
