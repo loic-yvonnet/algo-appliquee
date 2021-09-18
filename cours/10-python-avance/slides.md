@@ -845,24 +845,117 @@ On peut voir comment l'interpréteur Python lit et représente en interne ce mor
 
 ---
 
-### Ouverture et fermeture
+### Ouverture et **fermeture**
+
+![bg left:45% 90%](./assets/fichier.txt.png)
+
+```python
+# Ouvre le fichier
+fichier = open("fichier.txt")
+
+# Ferme le fichier (important)
+fichier.close()
+```
+
+<!--
+Si on ne ferme pas le fichier, on a une "fuite de ressource" (resource leak :uk:).
+Cela peut avoir de nombreuses conséquences néfastes.
+L'une de ces conséquences peut être que les écritures fichiers ne sont pas sauvegardées.
+-->
 
 ---
 
 ### Lecture
 
+```python
+fichier = open("fichier.txt")
+
+for ligne in fichier:
+    print(ligne)
+
+fichier.close()
+```
+
+:arrow_down:
+
+```
+Bonjour
+```
+
 ---
 
 ### Ecriture
 
+```python
+fichier = open("fichier.txt", "w")
+
+fichier.write("Bonjour, monde\n")
+fichier.write("Bienvenu\n")
+
+fichier.close()
+```
+
+:arrow_down:
+
+![0%](./assets/fichier2.txt.png)
+
+<!--
+Par défaut, on ouvre les fichiers en lecture seule.
+En ajoutant le "w", on ouvre le fichier en écriture.
+La première écriture écrase le contenu existant du fichier.
+-->
 
 ---
 
 ### Ajout à la fin
 
+```python
+fichier = open("fichier.txt", "a")
+
+fichier.write("Avé, César\n")
+fichier.write("Ils sont fous ces Romains !\n")
+
+fichier.close()
+```
+
+:arrow_down:
+
+![40%](./assets/fichier3.txt.png)
+
+<!--
+On peut aussi ouvrir un fichier en mode "ajout" (append :uk:).
+Les écritures se font à la fin du fichier.
+-->
+
 ---
 
-### Buffer et flush
+### Buffer et `flush`
+
+* Un appel à `write` ne produit *pas* une écriture immédiate sur disque.
+* Cette manière de fonctionner serait **trop lente** en pratique.
+* A la place, il existe des **caches intermédiaires**.
+* Pour demander une écriture sur disque, on doit appeler `flush`.
+
+<!--
+C'est même plus compliqué que cela car même un appel à flush n'entraine pas une écriture immédiate sur disque.
+Il existe différentes raisons : l'ordonnanceur des tâches du système d'exploitation peut avoir allouer du temps CPU à d'autres tâches de plus haute priorité. Il est aussi tout simplement possible que le disque soit déjà en cours d'utilisation.
+Cela étant, le délai d'un écriture sur disque après un flush est très court, de l'ordre de quelques microsecondes (10^(-6) secondes).
+Le close entraine un flush automatique. Donc dans la majorité des cas, il n'est pas nécessaire d'appeler flush explicitement.
+-->
+
+---
+
+### Garantir la fermeture avec `with`
+
+* Pour éviter les **fuites de ressources**, on peut utiliser `with`.
+* A la fin du bloc `with`, le fichier est **automatiquement fermé**.
+* Il est conseillé de toujours utiliser `with` lorsqu'une action de fin est obligatoire.
+
+```python
+with open("fichier.txt") as fichier:
+    for ligne in fichier:
+        print(ligne)
+```
 
 ---
 
