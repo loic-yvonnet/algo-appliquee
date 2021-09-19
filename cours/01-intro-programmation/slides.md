@@ -425,7 +425,7 @@ Un ordinateur comporte :
 # <!--fit--> Cycle de vie simplifié d'un programme
 
 * La séquence d'instructions du programme est chargé en mémoire.
-* Un programme particulier appelé **interprêteur** exécute chaque instruction dans l'ordre :
+* Un programme particulier appelé **interpréteur** exécute chaque instruction dans l'ordre :
     * Un **compteur de programme** pointe en mémoire vers la prochaine instruction à exécuter.
     * Cette instruction est envoyée à l'**unité arithmétique et logique** qui s'occupe de la résoudre.
 
@@ -433,7 +433,7 @@ Un ordinateur comporte :
 
 # Flot de contrôle
 
-* Dans certains cas, sur la base d'un test, l'interprêteur saute vers une autre séquence d'instructions.
+* Dans certains cas, sur la base d'un test, l'interpréteur saute vers une autre séquence d'instructions.
 * C'est ce que l'on appelle le **flot de contrôle**.
 * Cela nous permet d'écrire des programmes complexes.
 * Une partie de ce premier cours et du prochain est dédié à l'étude des **structures de contrôle**.
@@ -485,7 +485,7 @@ C'est un langage parfait pour apprendre la programmation.
 
 # Intuition
 
-* Un langage de programmation offre une **syntaxe** pour spécifier les **instructions** que l'interprêteur doit exécuter.
+* Un langage de programmation offre une **syntaxe** pour spécifier les **instructions** que l'interpréteur doit exécuter.
 * Il existe de nombreux langages de programmation.
 * **Scratch** et **Python** sont des langages de programmation.
 
@@ -597,7 +597,7 @@ Scratch, Brainfuck et Python sont des langages impératifs. Python supporte éga
 
 * Langage **compilé** : le code source du programme est traduit en *code machine binaire* exécuté directement par le matériel (processeur, carte graphique, etc.).
   * *Exemples* : Java, C, C++, Rust.
-* Langage **interprêté** : le code source du programme est lu par un programme appelé *interprêteur* qui exécute ce code.
+* Langage **interprêté** : le code source du programme est lu par un programme appelé *interpréteur* qui exécute ce code.
   * *Exemples* : Python, Scratch, JavaScript, HTML, CSS.
 
 <!--
@@ -698,10 +698,10 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 print("Bonjour tout le monde")
 ```
 
-:arrow_right: demande à l'interprêteur d'afficher `Bonjour tout le monde`.
+:arrow_right: demande à l'interpréteur d'afficher `Bonjour tout le monde`.
 
 <!--
-Nous allons commencer à nous intéresser à la manière de former des déclarations interprêtables par l'interprêteur Python.
+Nous allons commencer à nous intéresser à la manière de former des déclarations interprêtables par l'interpréteur Python.
 Pour cela, on va commencer par regarder les objets.
 -->
 
@@ -801,12 +801,12 @@ Tous les étudiants font l'erreur au moins une fois. Vous ne ferez sans doute pa
 # Démo
 
 ### Utilisation d'un shell Python
-#### <!--fit--> Démonstration de l'utisation d'opérateurs pour former des expressions
+#### <!--fit--> Démonstration de l'utilisation d'opérateurs pour former des expressions
 
 <!--
 Montrer ce genre de chose :
 (not 2.3 >= 5) and (2 ** 3 > 6)
-Demander aux étudiants leur avis sur la valeur des expressions avant de les évaluer par l'interprêteur Python.
+Demander aux étudiants leur avis sur la valeur des expressions avant de les évaluer par l'interpréteur Python.
 -->
 
 ---

@@ -9,17 +9,17 @@ layout: layouts/site.njk
 
 ![Scratch logo](./assets/scratch-logo.png)
 
-[**Scratch**](https://scratch.mit.edu/projects/editor/) est un langage de programmation graphique qui permet de réaliser de petites **histoires animées** ou des **jeux vidéos simples**. Ce langage est particulièrement adapté à l'**apprentissage de la programmation**. Il a été maintes fois été utilisé avec succès pour initier de jeunes enfants au développement logiciel.
+[**Scratch**](https://scratch.mit.edu/projects/editor/) est un langage de programmation graphique qui permet de réaliser de petites **histoires animées** ou des **jeux vidéos simples**. Ce langage est particulièrement adapté à l'**apprentissage de la programmation**. Il a été maintes fois utilisé avec succès pour initier de jeunes enfants au développement logiciel.
 
 Scratch est ludique et drôle à utiliser. Cependant, de **nombreux concepts fondamentaux** à l'ingénierie logicielle se cachent derrière les couleurs chatoyantes et les animaux souriants. On retrouve des concepts comme les structures de contrôle, les variables, les boucles, ou encore les fonctions. On y aborde implicitement la **programmation impérative**, la **programmation orientée-objet**, la **programmation événementielle** et la **programmation concurrente**.
 
 En anglais, "*starting from scratch*" signifie "commencer à partir de rien". En ce sens, Scratch se positionne comme le tout premier langage de programmation de choix quand on n'a jamais fait de développement. En revanche, Scratch n'a pas vocation à être utilisé dans un contexte professionnel, contrairement au **Python**.
 
-Nous allons très prochaintement passer au langage Python, qui est beaucoup plus sérieux. Mais Python n'existe qu'en anglais, et sa version graphique [edublocks](https://app.edublocks.org/) est un peu moins intuitive. Par ailleurs, il existe une multitude de langages de programmation, et c'est toujours intéressant d'en connaître plusieurs.
+Nous allons très prochaintement passer au langage Python, qui est beaucoup plus "*sérieux*". Mais Python n'existe qu'en anglais, et sa version graphique [edublocks](https://app.edublocks.org/) est un peu moins intuitive que Scratch. Par ailleurs, il existe une multitude de langages de programmation, et c'est toujours intéressant d'en connaître plusieurs.
 
 Scratch ne sera pas un choix possible lors de l'examen final.
 
-L'interface graphique est disponible de Scratch [en ligne](https://scratch.mit.edu/projects/editor/) et nous allons l'utiliser pour réaliser un tout premier programme.
+L'interface graphique de Scratch est disponible [en ligne](https://scratch.mit.edu/projects/editor/) et nous allons l'utiliser pour réaliser un tout premier programme.
 
 ## Tout premier programme Scratch
 
@@ -35,7 +35,7 @@ L'éditeur comporte plusieurs zones :
 * **Zone de Résultat** : permet d'exécuter le code et d'en visualiser le résultat.
 * **Configuration Graphique** : permet de gérer la liste des *sprites* et des *scènes*.
 
-Un "*sprite*" est personnage ou objet animé dans le jeu. Par exemple, le chat (qui s'appelle le "chat Scratch") est un *sprite*. Dans Super Mario Bros (C), les personnages Mario et Luigi sont des *sprites*, ainsi que les ennemis, les briques, les tuyaux, etc. Le décors en fond d'écran avec lequel on ne peut pas interagir n'est pas un *sprite* : il s'agit de la *scène*.
+Un "*sprite*" est personnage ou objet animé dans le jeu. Par exemple, le chat (qui s'appelle le "chat Scratch") est un *sprite*. Dans Super Mario Bros (C), les personnages Mario et Luigi sont des *sprites*, ainsi que les ennemis, les briques, les tuyaux, etc. Le décor en fond d'écran avec lequel on ne peut pas interagir n'est pas un *sprite* : il s'agit de la *scène*.
 
 ![Zones éditeur](./work-assignment-01/assets/001-zones-editeur.jpeg)
 
@@ -204,7 +204,7 @@ Ajoutez le bloc `quand `*drapeau-vert*` est cliqué`.
 
 ![Ajouter quand drapeau vert](./work-assignment-01/assets/036-ajouter-quand-drapeau-vert.png)
 
-Ajoutez le bloc `glisser en à x/y` :
+Ajoutez le bloc `glisser en à x ; y` :
 * En 1 seconde
 * x : -190
 * y : 30
@@ -237,7 +237,7 @@ Par défaut, le bloc `quand la touche` réagit à un appuie sur la touche espace
 
 ![Quand fleche droite](./work-assignment-01/assets/041-quand-fleche-droite.png)
 
-Quand l'utilisateur appuie sur la flèche droite de son clavier, la cycliste doit partir vers la gauche. On doit donc l'orienter vers la gauche.
+Quand l'utilisateur appuie sur la flèche droite de son clavier, la cycliste doit partir vers la droite. On doit donc l'orienter vers la droite.
 
 Pour cela, connectez un bloc `changer costume` et choisissez "glamour-to-right" ou "glamour-vers-la-droite".
 
@@ -290,7 +290,7 @@ En vous inspirant des précédentes actions pour gérer les événements gauche 
 
 ## Eviter un conflit de déplacement
 
-Pendant la première seconde de jeu, on réinitialise la position de notre cycliste. Cependant, durant ce même lapse de temps, le joueur a déjà la possibilité d'appuyer sur les flèches de son clavier. Lorsque cela survient, on fait face à un conflit. En effet, d'un côté, un appuie sur une flèche provoque un déplacement relatif par rapport à la position actuelle du sprite. D'un autre côté, le sprite tente d'aller exactement en même temps à une position fixe pré-définie. Ces 2 demandes de déplacement sont en contradiction : on nomme cela un problème de concurrence.
+Pendant la première seconde de jeu, on réinitialise la position de notre cycliste. Cependant, durant ce même laps de temps, le joueur a déjà la possibilité d'appuyer sur les flèches de son clavier. Lorsque cela survient, on fait face à un conflit. En effet, d'un côté, un appuie sur une flèche provoque un déplacement relatif par rapport à la position actuelle du sprite. D'un autre côté, le sprite tente d'aller exactement en même temps à une position fixe pré-définie. Ces 2 demandes de déplacement sont en contradiction : on nomme cela un problème de concurrence.
 
 Pour prévenir ce problème, vous allez attendre que le déplacement initial soit terminé avant de prendre en compte l'appuie sur les flèches du clavier.
 
@@ -340,7 +340,7 @@ Reproduisez le même schéma pour les autres événements.
 
 ## Afficher du texte
 
-La gestion des entrées/sorties est importante en programmation logicielle. Afin d'informer avec un utilisateur, on souhaite souvent afficher un texte à l'écran.
+La gestion des entrées/sorties est importante en programmation logicielle. Afin d'informer un utilisateur, on souhaite souvent afficher un texte à l'écran.
 
 Dans le cas présent, on souhaite informer le joueur de l'objectif du jeu et de le scénariser.
 
@@ -488,7 +488,7 @@ A l'intérieur du bloc `attendre jusqu'à ce que`, insérez un bloc de `conditio
 * nbDrapeauxTouches
 * nbTotalDrapeaux
 
-Autrement dit, les blocs suivants ne seront exécuté qu'une bloc que la cycliste aura touché tous les drapeaux affichés dans la scène.
+Autrement dit, les blocs suivants ne seront exécutés qu'une fois que la cycliste aura touché tous les drapeaux affichés dans la scène.
 
 ![Drapeaux tous touches](./work-assignment-01/assets/088-drapeaux-tous-touches.png)
 
@@ -581,7 +581,7 @@ Choisissez "Cheer".
 
 ![Choisir cheer](./work-assignment-01/assets/107-choisir-cheer.jpeg)
 
-Rajoutez un nouveau bloc `quand `*drapeau-vert*` est cliqué, indépendant de tout le reste.
+Rajoutez un nouveau bloc quand `*drapeau-vert*` est cliqué, indépendant de tout le reste.
 
 ![Nouveau drapeau vert](./work-assignment-01/assets/108-nouveau-drapeau-vert.png)
 

@@ -5,12 +5,12 @@ url: "{{ url_prefix }}/trame.html"
 layout: layouts/site.njk
 ---
 
-Chaque partie correspond à une demie-journée de cours, comportant chacune en moyenne 2 activités (TD/TP).
+Chaque partie correspond à une demi-journée de cours, comportant chacune en moyenne 2 activités (TD/TP).
 
 ### Avant-Propos
 
 * Organisation du cours.
-* Évaluation.
+* Evaluation.
 
 ### 1. Introduction à la programmation et à l’algorithmique
 
@@ -49,9 +49,9 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Introduction à l'instrumentation de code.
 * Introduction à l'algorithme Newton Raphson.
 * **TP** : Comparaison d'algorithmes ayant le même objectif.
-* Histoire des bugs et du debugging dans la culture anglo-saxonne.
+* Histoire des bugs et du débogage dans la culture anglo-saxonne.
 * Techniques pour déboguer manuellement un programme sur papier.
-* Utilisation d'un debugger avec points d'arrêt.
+* Utilisation d'un "debugger" avec points d'arrêt.
 * **TP** : Déboguer un programme mal écrit et comportant des bugs.
 
 ### 4. Procédures et fonctions
@@ -97,7 +97,7 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 * Queue et FIFO.
 * Pile et LIFO.
 * Comparaison entre FIFO et LIFO.
-* **TP** : Queues de messages simple.
+* **TP** : Queues de messages simples.
 * Rappels sur la théorie des ensembles.
 * Rappels sur le calcul matriciel.
 
@@ -142,13 +142,13 @@ Chaque partie correspond à une demie-journée de cours, comportant chacune en m
 ### 9. Algorithmes de recherche et de tri
 
 * Correction du travail à la maison.
-* Retour sur les classes de problèmes usuelles en algorithmique.
+* Algorithmiques classiques.
 * Recherche en Python.
 * Recherche linéaire.
 * Recherche binaire.
 * **TP** : Recherche dans une collection.
 * Tri en Python.
-* Algorithme de tri naïf.
+* Algorithmes de tri en $O(N^2)$.
 * Partition : diviser et conquérir.
 * Tri Rapide.
 * Tri Fusion.
