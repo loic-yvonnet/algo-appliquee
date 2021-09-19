@@ -25,7 +25,7 @@ Aucune connaissance en programmation, développement logiciel, algorithmique ou 
 
 Ce cours d'Algorithmique Appliquée s'inscrit dans le cadre du module de **mathématiques**. Aussi, ce cours fait le choix assumé d'utiliser de nombreux exemples et exercices issus de l'algèbre.
 
-Dans ce cadre, les étudiants devraient avoir des connaissances en :
+Dans ce cadre, les étudiants doivent avoir des connaissances en :
 * Calcul matriciel.
 * Analyse de fonctions polynomiales, logarithmiques et exponentielles.
 * Théorie des ensembles.

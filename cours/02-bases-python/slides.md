@@ -215,7 +215,7 @@ print(texte)
 * En anglais, **string** signifie **chaîne de caractères**.
 * C'est une **liste de caractères**.
 * Cette liste commence et termine par `"` (ou `'`).
-* Cela n'a *rien* à voir avec certains vêtements... :bikini:
+* Cela n'a *rien* à voir avec certains vêtements...
 * `str` est la contraction de string.
 * Exemple :
 
@@ -730,7 +730,7 @@ Mais ici, on se pose la question de l'implémentation de sum.
 On souhaite en fait ici exprimer :
 
 $$
-\sum_{i = 0}^{nombre} i = 0 + 1 + 2 + ... + (nombre - 1) + nombre
+\sum_{i = 0}^{nombre} i = 0 + 1 + 2 + \cdots + (nombre - 1) + nombre
 $$
 
 Le commentaire `# etc.` dans la diapositive précédente ou l'ellipse `...` dans la formule ci-dessus expriment tous les 2 une **répétition**.
