@@ -409,7 +409,7 @@ gris, statut = niveau_gris(<span class="hljs-number">255</span>, <span class="hl
 <span class="hljs-keyword">if</span> statut == <span class="hljs-number">0</span>:
     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;ok : <span class="hljs-subst">{gris}</span>&quot;</span>)
 <span class="hljs-keyword">else</span>:
-    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Erreur : l&#x27;argument n°<span class="hljs-subst">{statut}</span> n&#x27;est pas dans [0..255]&quot;</span>)
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Erreur : l&#x27;argument n°<span class="hljs-subst">{statut}</span> n&#x27;est pas dans [0 ; 255]&quot;</span>)
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
@@ -491,9 +491,9 @@ ERREUR_BLEU = <span class="hljs-number">3</span>
 
 MESSAGES = {
     SUCCES : <span class="hljs-string">&quot;OK&quot;</span>,
-    ERREUR_ROUGE : <span class="hljs-string">&quot;Rouge à l&#x27;extérieur de l&#x27;interval [0..255]&quot;</span>,
-    ERREUR_VERT : <span class="hljs-string">&quot;Vert à l&#x27;extérieur de l&#x27;interval [0..255]&quot;</span>,
-    ERREUR_BLEU : <span class="hljs-string">&quot;Bleu à l&#x27;extérieur de l&#x27;interval [0..255]&quot;</span>
+    ERREUR_ROUGE : <span class="hljs-string">&quot;Rouge à l&#x27;extérieur de l&#x27;interval [0 ; 255]&quot;</span>,
+    ERREUR_VERT : <span class="hljs-string">&quot;Vert à l&#x27;extérieur de l&#x27;interval [0 ; 255]&quot;</span>,
+    ERREUR_BLEU : <span class="hljs-string">&quot;Bleu à l&#x27;extérieur de l&#x27;interval [0 ; 255]&quot;</span>
 }
 
 <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">niveau_gris</span>(<span class="hljs-params">rouge, vert, bleu</span>):</span>
@@ -1077,11 +1077,11 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
     rouge, vert et bleu sont des entiers dans [0 ; 255].
     &quot;&quot;&quot;</span>
     <span class="hljs-keyword">if</span> rouge &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> rouge &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Rouge en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Rouge en dehors de [0 ; 255]&quot;</span>)
     <span class="hljs-keyword">if</span> vert &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> vert &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Vert en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Vert en dehors de [0 ; 255]&quot;</span>)
     <span class="hljs-keyword">if</span> bleu &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> bleu &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Bleu en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&quot;Bleu en dehors de [0 ; 255]&quot;</span>)
 
     <span class="hljs-keyword">return</span> (rouge + vert + bleu) // <span class="hljs-number">3</span>
 
@@ -1321,11 +1321,11 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
     rouge, vert et bleu sont des entiers dans [0 ; 255].
     &quot;&quot;&quot;</span>
     <span class="hljs-keyword">if</span> rouge &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> rouge &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> RougeErreur(<span class="hljs-string">&quot;Rouge en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> RougeErreur(<span class="hljs-string">&quot;Rouge en dehors de [0 ; 255]&quot;</span>)
     <span class="hljs-keyword">if</span> vert &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> vert &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> VertErreur(<span class="hljs-string">&quot;Vert en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> VertErreur(<span class="hljs-string">&quot;Vert en dehors de [0 ; 255]&quot;</span>)
     <span class="hljs-keyword">if</span> bleu &lt; <span class="hljs-number">0</span> <span class="hljs-keyword">or</span> bleu &gt; <span class="hljs-number">255</span>:
-        <span class="hljs-keyword">raise</span> BleuErreur(<span class="hljs-string">&quot;Bleu en dehors de [0..255]&quot;</span>)
+        <span class="hljs-keyword">raise</span> BleuErreur(<span class="hljs-string">&quot;Bleu en dehors de [0 ; 255]&quot;</span>)
 
     <span class="hljs-keyword">return</span> (rouge + vert + bleu) // <span class="hljs-number">3</span>
 </code></pre>
@@ -1366,7 +1366,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
     <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Schtroumpf : <span class="hljs-subst">{e}</span>&quot;</span>)
 </code></pre>
 <p><img class="emoji" draggable="false" alt="⬇️" src="https://twemoji.maxcdn.com/2/svg/2b07.svg" data-marp-twemoji=""/></p>
-<pre><code>Trop vert : Vert en dehors de [0..255]
+<pre><code>Trop vert : Vert en dehors de [0 ; 255]
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="37" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {

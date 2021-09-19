@@ -3877,7 +3877,7 @@ A chaque fois que l'on trouve des pairs d'éléments se trouvant du mauvais côt
 Les 2 sous-ensembles n'ont pas besoin d'être symmétriques : on continue d'échanger les indices ensuite.</p></div><div class="bespoke-marp-note" data-index="82" tabindex="0"><p>Pour plus de lisibilité, la variable &quot;valeur&quot; s'appelle &quot;v&quot; dans ce diagramme.
 On voit ici</p></div><div class="bespoke-marp-note" data-index="83" tabindex="0"><p>Les sous-ensembles de part et d'autre de 6 forment une partition.
 Ici, le chiffre 6 marque le début du 2e sous-ensemble.</p></div><div class="bespoke-marp-note" data-index="84" tabindex="0"><p>Les éléments qui ne sont pas plus petits que 6 vont dans le 1er sous-ensemble.
-6 n'est pas plus petit que 6, donc il va dans le 2e sous-ensemble.</p></div><div class="bespoke-marp-note" data-index="85" tabindex="0"><p>On a certes des boucles imbriquées, mais elles ne parcourent pas [0..N].
+6 n'est pas plus petit que 6, donc il va dans le 2e sous-ensemble.</p></div><div class="bespoke-marp-note" data-index="85" tabindex="0"><p>On a certes des boucles imbriquées, mais elles ne parcourent pas [0 ; N].
 En pratique on a i qui part de 0 et j qui part de N.
 A chaque itération i est incrémenté au moins 1 fois et j est décrémenté au moins une fois.
 L'algorithme s'arrête dès que les indices se croisent, donc :
