@@ -58,7 +58,7 @@ style: |
 # Branche
 
 * Un algorithme doit souvent prendre des **décisions**.
-* En fonction de la valeur d'une **expression Booléenne**, l'interprêteur va suivre une **branche** ou une autre.
+* En fonction de la valeur d'une **expression Booléenne**, l'interpréteur va suivre une **branche** ou une autre.
 
 ---
 
@@ -476,7 +476,7 @@ print(chaine)
 
 ![bg right:45% 95%](./assets/USASCII_code_chart.png)
 
-# <!--fit--> Encodage de caratères : ASCII
+# <!--fit--> Encodage de caractères : ASCII
 
 * **ASCII** : American Standard Code for Information Interchange.
 * Encodage simple et **compact** : sur 7 bits (moins de 1 octet), on peut avoir jusqu'à $2^7 = 128$ caractères.
@@ -640,7 +640,7 @@ Prix (HT) :  69.5 €
 
 ---
 
-# <!--fit--> Chaîne de caractères litérale formattée
+# <!--fit--> Chaîne de caractères littérale formattée
 
 ```py
 ht = 69.5
@@ -1142,7 +1142,7 @@ for i in range(debut, fin, pas):
 
 
 * *Jupyter Notebook* est supporté par Binder dans votre *navigateur web* et par *Visual Studio Code*.
-* Vous avez maintenant pu essayer les deux dans le cadre des précédents TP.
+* Vous avez maintenant pu essayer les deux dans le cadre des précédents TPs.
 * Vous êtes libres d'utiliser l'environnement de **votre choix** à partir de ce TP.
 
 <!--
@@ -1285,7 +1285,7 @@ Une mauvaise image de marque implique au final moins de ventes, et donc égaleme
 * Un code difficile à comprendre ne s'exécute **pas** plus rapidement.
 * En général, **80% du temps d'exécution est passé dans 20% du code**.
 * On optimise uniquement les 20%...
-* **Même les parties optimisées doivent être maintenable.**
+* **Même les parties optimisées doivent être maintenables.**
 
 ---
 
@@ -1305,10 +1305,10 @@ Une mauvaise image de marque implique au final moins de ventes, et donc égaleme
 
 ```py
 # Les commentaires commencent par le caractère "#".
-# Ils ne sont pas exécutés par l'interprêteur Python.
+# Ils ne sont pas exécutés par l'interpréteur Python.
 une_ligne = "peut commencer" # par des instructions
                              # qui s'exécutent et
-                             # se terminer par des
+                             # se terminent par des
                              # commentaires.
 ```
 
@@ -1323,7 +1323,7 @@ une_ligne = "peut commencer" # par des instructions
 
 ---
 
-# Bonnes pratiques en Python
+## Bonnes pratiques en Python
 
 * Python est un langage piloté par une communauté.
 * La communauté écrit des propositions : **Python Enhancement Proposals (PEP)**.

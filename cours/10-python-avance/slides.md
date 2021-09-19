@@ -310,7 +310,7 @@ En Python, tout est objet.
 
 ## La fonction principale (1/2)
 
-- Lorsque l'on exécute un script en ligne de commande, l'interprêteur assigne la chaîne de caractère `"__main__"` à la variable globale `__name__`.
+- Lorsque l'on exécute un script en ligne de commande, l'interpréteur assigne la chaîne de caractère `"__main__"` à la variable globale `__name__`.
 - Cela permet de distinguer le cas où un script est importé avec `import`, du cas où un script est exécuté indépendemment.
 
 ---

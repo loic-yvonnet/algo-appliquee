@@ -237,7 +237,7 @@ Par défaut, le bloc `quand la touche` réagit à un appuie sur la touche espace
 
 ![Quand fleche droite](./work-assignment-01/assets/041-quand-fleche-droite.png)
 
-Quand l'utilisateur appuie sur la flèche droite de son clavier, la cycliste doit partir vers la gauche. On doit donc l'orienter vers la gauche.
+Quand l'utilisateur appuie sur la flèche droite de son clavier, la cycliste doit partir vers la droite. On doit donc l'orienter vers la droite.
 
 Pour cela, connectez un bloc `changer costume` et choisissez "glamour-to-right" ou "glamour-vers-la-droite".
 
@@ -290,7 +290,7 @@ En vous inspirant des précédentes actions pour gérer les événements gauche 
 
 ## Eviter un conflit de déplacement
 
-Pendant la première seconde de jeu, on réinitialise la position de notre cycliste. Cependant, durant ce même lapse de temps, le joueur a déjà la possibilité d'appuyer sur les flèches de son clavier. Lorsque cela survient, on fait face à un conflit. En effet, d'un côté, un appuie sur une flèche provoque un déplacement relatif par rapport à la position actuelle du sprite. D'un autre côté, le sprite tente d'aller exactement en même temps à une position fixe pré-définie. Ces 2 demandes de déplacement sont en contradiction : on nomme cela un problème de concurrence.
+Pendant la première seconde de jeu, on réinitialise la position de notre cycliste. Cependant, durant ce même laps de temps, le joueur a déjà la possibilité d'appuyer sur les flèches de son clavier. Lorsque cela survient, on fait face à un conflit. En effet, d'un côté, un appuie sur une flèche provoque un déplacement relatif par rapport à la position actuelle du sprite. D'un autre côté, le sprite tente d'aller exactement en même temps à une position fixe pré-définie. Ces 2 demandes de déplacement sont en contradiction : on nomme cela un problème de concurrence.
 
 Pour prévenir ce problème, vous allez attendre que le déplacement initial soit terminé avant de prendre en compte l'appuie sur les flèches du clavier.
 
@@ -340,7 +340,7 @@ Reproduisez le même schéma pour les autres événements.
 
 ## Afficher du texte
 
-La gestion des entrées/sorties est importante en programmation logicielle. Afin d'informer avec un utilisateur, on souhaite souvent afficher un texte à l'écran.
+La gestion des entrées/sorties est importante en programmation logicielle. Afin d'informer un utilisateur, on souhaite souvent afficher un texte à l'écran.
 
 Dans le cas présent, on souhaite informer le joueur de l'objectif du jeu et de le scénariser.
 
@@ -488,7 +488,7 @@ A l'intérieur du bloc `attendre jusqu'à ce que`, insérez un bloc de `conditio
 * nbDrapeauxTouches
 * nbTotalDrapeaux
 
-Autrement dit, les blocs suivants ne seront exécuté qu'une bloc que la cycliste aura touché tous les drapeaux affichés dans la scène.
+Autrement dit, les blocs suivants ne seront exécutés qu'une fois que la cycliste aura touché tous les drapeaux affichés dans la scène.
 
 ![Drapeaux tous touches](./work-assignment-01/assets/088-drapeaux-tous-touches.png)
 
@@ -581,7 +581,7 @@ Choisissez "Cheer".
 
 ![Choisir cheer](./work-assignment-01/assets/107-choisir-cheer.jpeg)
 
-Rajoutez un nouveau bloc `quand `*drapeau-vert*` est cliqué, indépendant de tout le reste.
+Rajoutez un nouveau bloc quand `*drapeau-vert*` est cliqué, indépendant de tout le reste.
 
 ![Nouveau drapeau vert](./work-assignment-01/assets/108-nouveau-drapeau-vert.png)
 
