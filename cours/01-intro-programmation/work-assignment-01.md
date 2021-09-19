@@ -623,6 +623,6 @@ Ajoutez les derniers blocs `jouer le son Laugh1` pour le cas nominal, et le cas 
 
 ![Jouer rires](./work-assignment-01/assets/117-jouer-rires.jpeg)
 
-Félicitations, vous venez de réaliser votre premier jeu vidéo. Pensez à bien le sauvegarder et faites-le essayer tous vos amis (*) !
+Félicitations, vous venez de réaliser votre premier jeu vidéo. Pensez à bien le sauvegarder et faites-le essayer à tous vos amis (*) !
 
 (*) sauf en salle de classe...

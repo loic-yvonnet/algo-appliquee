@@ -276,7 +276,7 @@ print(trois)
 
 <!--
 Il s'agit là d'une bien meilleure alternative.
-On n'a plus à tapper le nom complet du module donc le code est moins lourd.
+On n'a plus à taper le nom complet du module donc le code est moins lourd.
 En même temps, on ne perd pas la qualification complète des noms donc le code reste clair et propre.
 -->
 

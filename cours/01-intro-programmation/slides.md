@@ -76,7 +76,7 @@ A quoi pensez-vous que sert de savoir programmer ?
 # Quelques exemples
 
 * Automatiser votre travail pour rentrer plus tôt chez vous le soir :alarm_clock:
-* Ecrire une App révolutionnaire et devenir millionnaire :moneybag:
+* Ecrire une App révolutionnaire et, avec de la chance, devenir millionnaire :moneybag:
 * Amuser vos amis avec vos propres jeux vidéos :space_invader:
 * Simplifier la mise en relation de milliers de personnes :busts_in_silhouette:
 
@@ -140,7 +140,7 @@ A ce stade, sans doute pas... Ou alors vous avez déjà lu des choses sur le suj
 * Vérifier la connexion réseau.
 * Cliquer sur l'icône du navigateur web.
 * Entrer une URL.
-* Tapper sur la touche *Entrée*.
+* Taper sur la touche *Entrée*.
 
 <!--
 Cet exemple illustre simplement une série d'instructions.
@@ -248,7 +248,7 @@ C'est justement pour casser le plus rapidement possible cette vision que cette p
 
 # Babylone
 
-* Les mathématiques Babyloniennes de l'ancienne Mésopotomie (actuellement l'Iraq) montrent les premiers algorithmes.
+* Les mathématiques Babyloniennes de l'ancienne Mésopotomie (actuellement l'Irak) montrent les premiers algorithmes.
 * Des premières tablettes d'argile Sumérienne trouvées près de Bagdad remontent à **2500 ans avant notre ère**.
 * Ces algorithmes étaient utilisés pour prédire la date et le lieux de certains événements astronomiques.
 
@@ -276,7 +276,7 @@ Les GAFAM n'ont inventé ni la roue, ni l'eau chaude...
 
 ### Muhammad ibn Musa al-Khwarizmi
 
-* Il était un mathématicien, astronome, géographe et professeur à la Maison de la Sagesse à Bagdad. Il a vécu au **9e siècle** de notre ère.
+* Il était un mathématicien, astronome, géographe et professeur à la Maison de la Sagesse à Bagdad. Il a vécu au **IXe siècle** de notre ère.
 * Il était le mathématicien le plus lu au moyen-âge en Europe.
 * Le mot "algorithme" vient de la **traduction du nom Al-Khwarizmi** d'abord en latin (Algorizmi) puis en ancien anglais (algorism). Ce mot avait alors une signification différente.
 
@@ -288,17 +288,17 @@ Il a notamment écrit un traité sur le système numéraire Hindou-Arabique qui 
 
 # Ada Loveplace
 
-* La comtesse Ada Loveplace a vécu au milieu du **19e siècle** au Royaume-Uni.
+* La comtesse Ada Loveplace a vécu au milieu du **XIXe siècle** au Royaume-Uni.
 * Elle a travaillé avec Charles Babbage sur des machines analytiques capables théoriquement d'exécuter n'importe quel algorithme.
 * Ada est considérée comme pionière car elle a écrit les premiers algorithmiques dédiés à une exécution par un ordinateur.
-* Un langage de programmation créé beaucoup à la fin du 20e siècle a été nommé Ada en sa mémoire.
+* Un langage de programmation créé à la fin du XXe siècle a été nommé Ada en sa mémoire.
 
 ---
 
 # Alan Turing
 
-* Ce mathématicien, informaticien, scientifique et philosophe a vécu au **début du 20e siècle**.
-* Ce personnage est historique au-délà de la discipline de l'algorithmique puisqu'il a fortement contribué à la victoire contre les Nazis lors de la 2e guerre mondiale.
+* Ce mathématicien, informaticien, scientifique et philosophe a vécu au **début du XXe siècle**.
+* Ce personnage historique est connu au-délà de la discipline de l'algorithmique puisqu'il a fortement contribué à la victoire contre les Nazis lors de la 2e guerre mondiale.
 * L'une de ses contributions essentielles est la **Machine de Turing**, qui est le premier ordinateur généraliste (par rapport à des ordinateurs spécialisés commes les calculatrices).
 
 <!--
@@ -319,7 +319,7 @@ Ce professeur émérite en informatique de l'université de Stanford a contribu�
 * Google s'est construit autour de l'algorithme *Map Reduce*, inventé par ses fondateurs.
 * Bill Gates a indiqué que Microsoft recrute n'importe quelle personne qui comprend les ouvrages de Knuth.
 * Les géants Américains (GAFAM) et Chinois (BATX) utilisent tous des algorithmes et recherchent tous les meilleurs candidats dans ce domaine.
-* L'Intelligence Artificielle est simplement un ensemble d'algorithmes travaillant sur des données massives.
+* L'Intelligence Artificielle est simplement un ensemble d'algorithmes travaillant sur des données massives (Big Data).
 
 <!--
 Quelques anecdotes récentes...
@@ -337,6 +337,7 @@ Etre bon en algorithmique, c'est la garantie d'un succès professionnel.
 Un algorithme est une liste **finie** d'instructions décrivant un ensemble de calculs qui, lorsqu'ils sont exécutés sur un ensemble d'entrées, va passer par une séquence d'états bien définis et finalement produire une sortie.
 
 <!--
+NB : redonner un exemple.
 On insiste ici sur le fait que la liste d'instructions doit être finie. Une boucle infinie ou une récursion infinie ne constituent pas des algorithmes.
 On note que cette définition n'implique pas nécessairement de déterminisme par rapport aux sorties. Un algorithme peut utiliser un générateur de nombres aléatoires et faire varier ses sorties pour des entrées constantes.
 -->
@@ -371,7 +372,7 @@ L'Intelligence Artificielle ne change rien à cela.
 
 Un simple ordinateur de bureau standard sait :
 * Faire beaucoup de calculs très rapidement : des **centaines de milliards de calculs par seconde**.
-* Se souvenir qu'une quantité remarquable de données : 1 téraoctet (To), c'est **1 000 000 000 000 octets**. Changez l'unité en kilogrammes ou mètres...
+* Se souvenir d'une quantité remarquable de données : 1 téraoctet (To), c'est **1 000 000 000 000 octets**. Changez l'unité en kilogrammes ou mètres...
 
 <!--
 Un ordinateur sait donc faire ces 2 choses extrèmement bien.
@@ -565,7 +566,7 @@ Ce langage est certes une parodie de langage de programmation, mais il est souve
 
 # <!--fit--> Caractéristiques d'un langage
 
-* **Primitives élémentaires** : litéraux (`42`, `3.14`), chaînes de caractères (`"yo"`), opérateurs (`/`, `+`).
+* **Primitives élémentaires** : littéraux (`42`, `3.14`), chaînes de caractères (`"yo"`), opérateurs (`/`, `+`).
 * **Syntaxe** : ensembles de séquences bien formées (exemple : `1 + 1` est bien formé, mais pas `1 1`).
 * **Sémantique** : associe une signification aux séquences de symboles bien formés.
 

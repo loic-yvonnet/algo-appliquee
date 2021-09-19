@@ -160,25 +160,28 @@ Vous serez informés par email de toute modification potentielle au moins 48h av
 <!--
 Pas d'inquiétude à avoir : il n'y aura pas 4h de cours théorique sans interruption.
 Chaque sujet essentiel est abordé au moins 2 fois : dans le cours et dans un TP/TD.
-Afin de conserver une dynamique qui se rapproche de vos habitudes du lycée, le format
-du cours est adapté.
+Afin de conserver une dynamique qui se rapproche de vos habitudes du lycée, le format du cours est adapté.
 -->
 
 ---
 
-# Horaires
+## Horaires
+
+###### cf. [NetYParéo](https://netypareo.cciformation49.fr/netypareo/index.php)
 
 - 8h30 - 10h00 : cours
-- 10h00 - 10h15 : pause café
-- 10h15 - 12h15 : cours
-- 12h15 - 13h30 : pause déjeuner
+- 10h00 - 10h10 : pause café
+- 10h10 - 12h00 : cours
+- 12h00 - 13h30 : pause déjeuner
 - 13h30 - 15h00 : cours
-- 15h00 - 15h15 : pause café
-- 15h15 - 17h15 : cours
+- 15h00 - 15h10 : pause café
+- 15h10 - 17h00 (*) : cours
+
+*(\*) 17h30 les 3 premiers jours*
+
 
 <!--
-Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts sont
-le début du cours à 8h30, et à 13h30.
+Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts sont le début du cours à 8h30, et à 13h30.
 -->
 
 ---

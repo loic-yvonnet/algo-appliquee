@@ -215,7 +215,7 @@ print(texte)
 * En anglais, **string** signifie **chaîne de caractères**.
 * C'est une **liste de caractères**.
 * Cette liste commence et termine par `"` (ou `'`).
-* Cela n'a *rien* à voir avec certains vêtements... :bikini:
+* Cela n'a *rien* à voir avec certains vêtements...
 * `str` est la contraction de string.
 * Exemple :
 
