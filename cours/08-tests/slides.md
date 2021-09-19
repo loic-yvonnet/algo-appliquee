@@ -216,7 +216,7 @@ gris, statut = niveau_gris(255, 0, 0)
 if statut == 0:
     print(f"ok : {gris}")
 else:
-    print(f"Erreur : l'argument n°{statut} n'est pas dans [0..255]")
+    print(f"Erreur : l'argument n°{statut} n'est pas dans [0 ; 255]")
 ```
 
 <!--
@@ -274,9 +274,9 @@ ERREUR_BLEU = 3
 
 MESSAGES = {
     SUCCES : "OK",
-    ERREUR_ROUGE : "Rouge à l'extérieur de l'interval [0..255]",
-    ERREUR_VERT : "Vert à l'extérieur de l'interval [0..255]",
-    ERREUR_BLEU : "Bleu à l'extérieur de l'interval [0..255]"
+    ERREUR_ROUGE : "Rouge à l'extérieur de l'interval [0 ; 255]",
+    ERREUR_VERT : "Vert à l'extérieur de l'interval [0 ; 255]",
+    ERREUR_BLEU : "Bleu à l'extérieur de l'interval [0 ; 255]"
 }
 
 def niveau_gris(rouge, vert, bleu):
@@ -547,11 +547,11 @@ def niveau_gris(rouge, vert, bleu):
     rouge, vert et bleu sont des entiers dans [0 ; 255].
     """
     if rouge < 0 or rouge > 255:
-        raise ValueError("Rouge en dehors de [0..255]")
+        raise ValueError("Rouge en dehors de [0 ; 255]")
     if vert < 0 or vert > 255:
-        raise ValueError("Vert en dehors de [0..255]")
+        raise ValueError("Vert en dehors de [0 ; 255]")
     if bleu < 0 or bleu > 255:
-        raise ValueError("Bleu en dehors de [0..255]")
+        raise ValueError("Bleu en dehors de [0 ; 255]")
 
     return (rouge + vert + bleu) // 3
 
@@ -702,11 +702,11 @@ def niveau_gris(rouge, vert, bleu):
     rouge, vert et bleu sont des entiers dans [0 ; 255].
     """
     if rouge < 0 or rouge > 255:
-        raise RougeErreur("Rouge en dehors de [0..255]")
+        raise RougeErreur("Rouge en dehors de [0 ; 255]")
     if vert < 0 or vert > 255:
-        raise VertErreur("Vert en dehors de [0..255]")
+        raise VertErreur("Vert en dehors de [0 ; 255]")
     if bleu < 0 or bleu > 255:
-        raise BleuErreur("Bleu en dehors de [0..255]")
+        raise BleuErreur("Bleu en dehors de [0 ; 255]")
 
     return (rouge + vert + bleu) // 3
 ```
@@ -736,7 +736,7 @@ except BleuErreur as e:
 :arrow_down:
 
 ```
-Trop vert : Vert en dehors de [0..255]
+Trop vert : Vert en dehors de [0 ; 255]
 ```
 
 

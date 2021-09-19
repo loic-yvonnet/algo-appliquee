@@ -1341,7 +1341,7 @@ Les éléments qui ne sont pas plus petits que 6 vont dans le 1er sous-ensemble.
 * On est donc en $\thicksim N^$, et $O(N)$.
 
 <!--
-On a certes des boucles imbriquées, mais elles ne parcourent pas [0..N].
+On a certes des boucles imbriquées, mais elles ne parcourent pas [0 ; N].
 En pratique on a i qui part de 0 et j qui part de N.
 A chaque itération i est incrémenté au moins 1 fois et j est décrémenté au moins une fois.
 L'algorithme s'arrête dès que les indices se croisent, donc :

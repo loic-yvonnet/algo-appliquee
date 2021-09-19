@@ -993,7 +993,7 @@ La classe de complexité reste, de loin, le facteur le plus important.
 
 # Loi d'Amdahl
 
-Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0..1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl défini la fonction $f$ d'**accélération théorique maximale** :
+Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0 ; 1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl défini la fonction $f$ d'**accélération théorique maximale** :
 
 $$
 f(s, p) = \frac{1}{1 - p + \frac{p}{s}}
@@ -1202,7 +1202,7 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 * Sur nos machines actuelles, un bit a pour valeur 0 ou 1.
 * Un octet est codé sur 8 bits.
-* Un octet peut donc prendre des valeurs entre $[0..2^8-1]$, soit $[O..255].
+* Un octet peut donc prendre des valeurs entre $[0 ; 2^8-1]$, soit $[O ; 255]$.
 * Les opérations principales sur un bit sont celles de la logique Booléenne : AND, OR, XOR, NOT, SHIFT.
 
 <!--
