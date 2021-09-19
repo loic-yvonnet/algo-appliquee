@@ -44,7 +44,7 @@ Avant de commencer le cours à proprement parler, il y a quelques points à disc
 - Tour de table
 - Evaluation initiale
 - Organisation du cours
-- Evaluation
+- Evaluation du cours
 - Conseils
 
 <!--
@@ -124,8 +124,8 @@ Une version PDF imprimée du sujet sera distribuée.
 # Des journées complètes
 
 * Contrairement au lycée, le format est celui d'une formation professionnelle sur des **journées complètes**.
-* Ce module est découpé en **12 demie-journées**.
-* Chaque demie-journée permet d'aborder un **thème majeur**.
+* Ce module est découpé en **12 demi-journées**.
+* Chaque demi-journée permet d'aborder un **thème majeur**.
 
 <!--
 C'est un boulversement important pour de jeunes apprenants habitués à changer de sujet presque toutes les heures.
@@ -150,7 +150,7 @@ Vous serez informés par email de toute modification potentielle au moins 48h av
 
 ---
 
-# Demie-journée type
+# Demi-journée type
 
 - Cours (environ 1h)
 - 1 TP ou TD (environ 1h)
@@ -188,7 +188,7 @@ Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts
 
 <!-- _class: title-section -->
 
-# <!--fit--> Evaluation
+# <!--fit--> Evaluation du cours
 
 ---
 
@@ -255,7 +255,7 @@ Encore une fois, c'est la première année que ce cours est donné, et certains 
 
 * A l'issue de chaque journée de formation, il y aura un DM à rendre.
 * Les DMs devront être rendus et seront évalués.
-* L'évaluaton des DMs sera prise prise en compte dans le dossier.
+* L'évaluation des DMs sera prise en compte dans le dossier.
 
 ---
 
@@ -276,7 +276,7 @@ Vous n'apprendrez pas à programmer simplement en écoutant le cours ou en lisan
 
 * Prenez des notes.
 * Posez des questions.
-* Assitez aux cours.
+* Assistez aux cours.
 * Faites vous-même les TPs et les TDs.
 * Faites le travail à la maison.
 * Entraidez-vous.

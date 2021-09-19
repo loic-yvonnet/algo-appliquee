@@ -9,17 +9,17 @@ layout: layouts/site.njk
 
 ![Scratch logo](./assets/scratch-logo.png)
 
-[**Scratch**](https://scratch.mit.edu/projects/editor/) est un langage de programmation graphique qui permet de réaliser de petites **histoires animées** ou des **jeux vidéos simples**. Ce langage est particulièrement adapté à l'**apprentissage de la programmation**. Il a été maintes fois été utilisé avec succès pour initier de jeunes enfants au développement logiciel.
+[**Scratch**](https://scratch.mit.edu/projects/editor/) est un langage de programmation graphique qui permet de réaliser de petites **histoires animées** ou des **jeux vidéos simples**. Ce langage est particulièrement adapté à l'**apprentissage de la programmation**. Il a été maintes fois utilisé avec succès pour initier de jeunes enfants au développement logiciel.
 
 Scratch est ludique et drôle à utiliser. Cependant, de **nombreux concepts fondamentaux** à l'ingénierie logicielle se cachent derrière les couleurs chatoyantes et les animaux souriants. On retrouve des concepts comme les structures de contrôle, les variables, les boucles, ou encore les fonctions. On y aborde implicitement la **programmation impérative**, la **programmation orientée-objet**, la **programmation événementielle** et la **programmation concurrente**.
 
 En anglais, "*starting from scratch*" signifie "commencer à partir de rien". En ce sens, Scratch se positionne comme le tout premier langage de programmation de choix quand on n'a jamais fait de développement. En revanche, Scratch n'a pas vocation à être utilisé dans un contexte professionnel, contrairement au **Python**.
 
-Nous allons très prochaintement passer au langage Python, qui est beaucoup plus sérieux. Mais Python n'existe qu'en anglais, et sa version graphique [edublocks](https://app.edublocks.org/) est un peu moins intuitive. Par ailleurs, il existe une multitude de langages de programmation, et c'est toujours intéressant d'en connaître plusieurs.
+Nous allons très prochaintement passer au langage Python, qui est beaucoup plus "*sérieux*". Mais Python n'existe qu'en anglais, et sa version graphique [edublocks](https://app.edublocks.org/) est un peu moins intuitive que Scratch. Par ailleurs, il existe une multitude de langages de programmation, et c'est toujours intéressant d'en connaître plusieurs.
 
 Scratch ne sera pas un choix possible lors de l'examen final.
 
-L'interface graphique est disponible de Scratch [en ligne](https://scratch.mit.edu/projects/editor/) et nous allons l'utiliser pour réaliser un tout premier programme.
+L'interface graphique de Scratch est disponible [en ligne](https://scratch.mit.edu/projects/editor/) et nous allons l'utiliser pour réaliser un tout premier programme.
 
 ## Tout premier programme Scratch
 
@@ -35,7 +35,7 @@ L'éditeur comporte plusieurs zones :
 * **Zone de Résultat** : permet d'exécuter le code et d'en visualiser le résultat.
 * **Configuration Graphique** : permet de gérer la liste des *sprites* et des *scènes*.
 
-Un "*sprite*" est personnage ou objet animé dans le jeu. Par exemple, le chat (qui s'appelle le "chat Scratch") est un *sprite*. Dans Super Mario Bros (C), les personnages Mario et Luigi sont des *sprites*, ainsi que les ennemis, les briques, les tuyaux, etc. Le décors en fond d'écran avec lequel on ne peut pas interagir n'est pas un *sprite* : il s'agit de la *scène*.
+Un "*sprite*" est personnage ou objet animé dans le jeu. Par exemple, le chat (qui s'appelle le "chat Scratch") est un *sprite*. Dans Super Mario Bros (C), les personnages Mario et Luigi sont des *sprites*, ainsi que les ennemis, les briques, les tuyaux, etc. Le décor en fond d'écran avec lequel on ne peut pas interagir n'est pas un *sprite* : il s'agit de la *scène*.
 
 ![Zones éditeur](./work-assignment-01/assets/001-zones-editeur.jpeg)
 
@@ -204,7 +204,7 @@ Ajoutez le bloc `quand `*drapeau-vert*` est cliqué`.
 
 ![Ajouter quand drapeau vert](./work-assignment-01/assets/036-ajouter-quand-drapeau-vert.png)
 
-Ajoutez le bloc `glisser en à x/y` :
+Ajoutez le bloc `glisser en à x ; y` :
 * En 1 seconde
 * x : -190
 * y : 30
