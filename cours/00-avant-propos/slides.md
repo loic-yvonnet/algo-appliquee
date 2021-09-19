@@ -81,6 +81,7 @@ Le formateur se présente en premier pour donner une idée du format attendu aux
 # 👉 Et vous ? 
 
 * Quel est votre parcours ?
+* Avez-vous un ordinateur ?
 * Avez-vous déjà programmé ? Si oui, avec quel(s) langage(s) ?
 * Qu'attendez-vous du BTS SIO SISR ?
 * Où faites-vous votre alternance ?

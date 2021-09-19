@@ -346,6 +346,6 @@ chaine = ("Allons bon, apprenez, vous y arrivez ! "
           + "à une belle carrière ?")
 ```
 
-Affichez le message caché qui apparait en prenant le 13e caractère, puis tous les 14 caractères, jusqu'à atteindre 90 caractères.
+Affichez le message caché qui apparait en prenant du 13e au 90e caractère, tous les 14 caractères.
 
 *Astuce* : Utilisez le *slicing* (tranche).

@@ -801,7 +801,7 @@ Tous les étudiants font l'erreur au moins une fois. Vous ne ferez sans doute pa
 # Démo
 
 ### Utilisation d'un shell Python
-#### <!--fit--> Démonstration de l'utisation d'opérateurs pour former des expressions
+#### <!--fit--> Démonstration de l'utilisation d'opérateurs pour former des expressions
 
 <!--
 Montrer ce genre de chose :
