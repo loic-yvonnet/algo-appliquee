@@ -95,7 +95,7 @@ Dans le monde de l'entreprise, Scratch n'est pas utilisé, et Jupyter Notebook e
 
 Sur Windows, le logiciel `Bloc Note` (notepad) ne fournit pas de coloration syntaxique, n'indente pas automatiquement le code, n'offre pas d'aide contextuelle, ne souligne pas les erreurs potentielles et ne permet pas d'exécuter son code pas à pas.
 
-Les suites `Microsoft Office` (`Word`), `LibreOffice` (`Writer`), `Google Docs`, `Apple Pages` et autres éditeurs de texte constituent également de mauvaises solutions pour les mêmes raisons. Ce ne sont pas des logiciels adaptés pour l'écriture de logiciel.
+Les suites `Microsoft Office` (`Word`), `LibreOffice` (`Writer`), `Google Docs`, `Apple Pages` et autres éditeurs de texte constituent également de mauvaises solutions pour les mêmes raisons. Ce ne sont pas des logiciels adaptés pour l'écriture de logiciels.
 
 Un bon ouvrier sait utiliser le bon outil pour réaliser ses tâches efficacement. Vous serez pénalisés si vous utilisez ces logiciels plutôt que ceux mentionnés ci-après.
 
@@ -297,7 +297,7 @@ Le script doit afficher : `"Vous avez vécu au moins *X* jours"`, où X est le n
 
 ### Exercice 2 - Des chiffres et des lettres
 
-Ecrivez un script qui demande à l'utilisateur d'entrer un caractère.
+Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères.
 Testez le 1er caractère renvoyé par l'utilisateur :
 * S'il s'agit d'une voyelle (a e i o u y), affichez `"Voyelle"`.
 * S'il s'agit d'un chiffre (0 1 2 3 4 5 6 7 8 9), affichez `"Chiffre"`.

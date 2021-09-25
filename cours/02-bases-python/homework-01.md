@@ -69,7 +69,7 @@ Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractèr
 
 *Astuces* :
 * Utilisez une boucle pour parcourir et tester, un à un, les caractères de la chaine.
-* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : `if ("A" <= char) and (char >= "Z")`.
+* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : `if ("A" <= char) and (char <= "Z")`.
 * Utilisez des variables et des conditions.
 
 ### Exercice 2.2 - Palindrome <span class="fs-5 fw-lighter">(4 points)</span>
