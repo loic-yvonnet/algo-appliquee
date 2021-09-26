@@ -25,7 +25,7 @@ L'algorithme suit les étapes suivantes :
 * On initialise $\varepsilon$ à `0.01`.
 * Dans une boucle :
     * Si $\left| x^2 - N \right| \leq \varepsilon$, alors la boucle s'arrête et on affiche le résultat $x$.
-    * Si $x \geq N$, alors la boucle s'arrête et le message d'erreur est affiché.
+    * Si $x > N$, alors la boucle s'arrête et le message d'erreur est affiché.
     * Sinon, on incrémente $x$ de $\varepsilon ^ 2$ et on poursuit la recherche.
 
 ## Exercice 2 - Calcul d'une racine carrée en utilisant la dichotomie

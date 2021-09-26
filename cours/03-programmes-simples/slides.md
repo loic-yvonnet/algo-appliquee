@@ -13,13 +13,11 @@ _paginate: false
 style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
-    font-size: 1.8rem;
   }
 
   section.title-section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
     color: #fff;
-    font-size: 2rem;
   }
 
   section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
@@ -33,7 +31,7 @@ style: |
 
 ##### BTS SIO SISR
 
-## Programmes numériques simples et techniques de débogage
+### Programmes numériques simples et techniques de débogage
 
 
 <!--
@@ -49,9 +47,9 @@ On va également voir quelques techniques de programmation et de débogage.
 - Introduction à la dichotomie
 - Introduction à l'instrumentation de code
 - Introduction à l'algorithme Newton Raphson
-- Histoire des bugs et du debugging
+- Histoire des bugs et du débogage
 - Techniques pour déboguer manuellement
-- Utilisation d'un debugger avec points d'arrêt
+- Utilisation d'un "debugger" avec points d'arrêt
 
 ---
 
@@ -71,7 +69,7 @@ On va également voir quelques techniques de programmation et de débogage.
 
 # <!--fit--> Introduction à la technique "devine-et-vérifie"
 
-##### Guess-and-Check
+##### Guess-and-check :uk:
 
 ---
 
@@ -85,6 +83,8 @@ Nous souhaitons résoudre les problèmes suivants :
 Nous allons aborder différentes techniques. La plus simple est "devine-et-vérifie".
 
 ---
+
+<!-- _class: smaller-text -->
 
 # <!--fit--> Retrouver un nombre dans un interval
 
@@ -107,6 +107,8 @@ A chaque étape, on tente de deviner la valeur et on vérifie si c'est la bonne.
 -->
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Nombre premier
 
@@ -135,6 +137,8 @@ Au final, si on a trouvé un diviseur, c'est que le nombre n'est pas premier.
 -->
 
 ---
+
+<!-- _class: smaller-text -->
 
 #  <!--fit--> Nombre premier (plus rapide)
 
@@ -168,15 +172,20 @@ C'est un compromis classique : complexité d'implémentation pour meilleure vite
 
 ---
 
-# Notion d'heuristique
+## Notion d'heuristique (1/2)
 
-- On pourrait encore accélérer l'algorithme précédent avec des **heuristiques** supplémentaires.
-- Une heuristique est une astuce permettant de simplifier un problème.
-- Par exemple :
+* On pourrait encore accélérer l'algorithme précédent avec des **heuristiques** supplémentaires.
+* Une heuristique est une **astuce** permettant de simplifier un problème ou d'accélérer sa résolution.
+
+---
+
+## Notion d'heuristique (2/2)
+
+* Par exemple :
     * on sait qu'un nombre dont le dernier chiffre est 5 est divisible par 5.
     * on sait que si la somme des chiffres d'un nombre est divisible par 3, alors ce nombre est divisible par 3.
     * on sait qu'il n'est pas nécessaire de tester les nombres supérieurs à $\sqrt{x}$.
-- Ainsi, on peut éliminer très rapidement les nombres divisibles par 2, 3 ou 5.
+* Ainsi, on peut éliminer très rapidement les nombres divisibles par 2, 3 ou 5.
 
 ---
 
@@ -201,7 +210,7 @@ Cependant, elle est très limitée : on ne peut trouver que les carrés parfaits
 
 ---
 
-# <!--fit--> Racine carrée à petits pas
+## Racine carrée à petits pas
 
 ```python
 x = float(input("Entrez un nombre entier positif : "))
@@ -224,13 +233,13 @@ Par ailleurs, la précision n'est pas garantie pour les grands nombres.
 
 # <!--fit--> Limites de l'approche devine-et-vérifie
 
-- Cette approche est basée sur une **énumération exhaustive**.
+* Cette approche est basée sur une **énumération exhaustive**.
 
-- Limites :
+* Limites :
     * Effectue un *grand nombre* de tests.
     * Si le nombre recherché n'est pas énuméré, l'erreur n'est pas complètement maîtrisée.
 
-- D'autres approches existent.
+* D'autres approches existent.
 
 ---
 
@@ -238,20 +247,18 @@ Par ailleurs, la précision n'est pas garantie pour les grands nombres.
 
 # <!--fit--> Introduction à la dichotomie
 
-##### Bisection Search
+##### Bisection search :uk:
 
 ---
 
-# Le juste prix
+### Le juste prix
 
-### Contexte et règles
-
-- Jeu télévisé des années 1990.
-- Le présentateur demandait au joueur de trouver un prix entre **1 et 1000** francs.
-- Le joueur propose un prix.
-- Le présentateur dit si c'est **supérieur, inférieur ou égal**.
-- Le joueur propose un nouveau prix, et le présentateur répond à nouveau.
-- Le joueur a **une minute** pour trouver le juste prix.
+* Jeu télévisé des années 1990.
+* Le présentateur demandait au joueur de trouver un prix entre **1 et 1000** francs.
+* Le joueur propose un prix.
+* Le présentateur dit si c'est **supérieur, inférieur ou égal**.
+* Le joueur propose un nouveau prix, et le présentateur répond à nouveau.
+* Le joueur a **une minute** pour trouver le juste prix.
 
 <!--
 Tirer au sort un édudiant et le faire jouer pour voir si elle utilise naturellement une énumération exhaustive ou une dichotomie.
@@ -267,6 +274,8 @@ Faire éventuellement passer un autre apprenant si la première n'a pas trouvé 
 - A chaque étape, on divise l'espace de travail par 2, jusqu'à converger vers une solution satisfaisante.
 
 --- 
+
+<!-- _class: smaller-text -->
 
 # <!--fit--> Retrouver un nombre dans un interval
 
@@ -297,6 +306,8 @@ Par conséquent, début et fin convergent rapidement vers la valeur recherchée.
 -->
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Racine carrée
 
@@ -331,14 +342,14 @@ De plus, on contrôle mieux l'erreur grâce à un epsilon indépendant du pas d'
 
 ---
 
-# <!--fit--> Comparaison entre dichotomie et énumération exhaustive
+### Comparaison entre dichotomie et énumération exhaustive
 
-- Intuitivement, pour les 3 problèmes qui nous préoccupent :
+* Intuitivement, pour les 3 problèmes qui nous préoccupent :
     * Retrouver un nombre dans un interval : la **dichotomie** gagne.
     * Déterminer si un nombre est premier : l'**énumération exhaustive** gagne.
     * Calculer une racine carrée : la **dichotomie** gagne.
 
-- S'il est nécessaire de tester toutes les valeurs, la dichotomie n'apporte rien.
+* S'il est nécessaire de tester toutes les valeurs, la dichotomie n'apporte rien.
 
 <!--
 Dans le cas des nombres premiers, il est de toutes façons nécessaires de tester toutes les valeurs.
@@ -348,7 +359,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 <!-- _class: title-section -->
 
-# TD : Utilisation de la dichotomie pour calculer des racines et des logarithmes
+## TD : Utilisation de la dichotomie pour calculer des racines et des logarithmes
 
 ---
 
@@ -384,6 +395,8 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 ---
 
+<!-- _class: smaller-text -->
+
 # <!--fit--> Observation de valeurs en cour d'exécution
 
 ```python
@@ -413,7 +426,9 @@ En revanche, pour comprendre un algorithme, il est utile de l'instrumenter de ce
 
 ---
 
-# <!--fit--> Compte du nombre d'itérations
+<!-- _class: smaller-text -->
+
+### Compte du nombre d'itérations
 
 ```python
 x = float(input("Entrez un nombre positif : "))
@@ -447,7 +462,7 @@ L'algorithme qui parvient au résultat en un nombre d'itérations minimum est me
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Chronométrage de l'exécution
+### Chronométrage de l'exécution
 
 ```python
 import time
@@ -456,17 +471,10 @@ x = float(input("Entrez un nombre positif : "))
 
 chrono_debut = time.process_time() # démarrage du chronomètre
 
-debut = 0
-fin = max(1, x)
-milieu = (fin + debut) / 2
-epsilon = 0.0001
-
-while abs(milieu ** 2 - x) >= epsilon:
-    if milieu ** 2 > x:
-        fin = milieu
-    else:
-        debut = milieu
-    milieu = (fin + debut) / 2
+#
+# Corps du code à chronométrer
+# (voir diapositives précédentes pour les détails)
+#
 
 chrono_fin = time.process_time()         # arrêt du chronomètre
 temps_ecoule = chrono_fin - chrono_debut # calcul du temps écoulé
@@ -485,13 +493,18 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 ---
 
-# Benchmark
+# Benchmark (1/2)
 
-* La comparaison du temps d'exécution de 2 algorithmes s'appelle un **benchmark**.
+* La comparaison du temps d'exécution de 2 algorithmes (ou plus) s'appelle un **benchmark**.
 * Les processus s'exécutant sur un système d'exploitation sont en compétition pour les ressources de la machine.
-* Les mesures effectuées avec `time.process_time` ne sont pas précises car elles sont impactées par les autres processus s'exécutant sur la machine.
-* Si un processus gourmant en ressources (tel qu'un jeu vidéo) est exécuté en même temps, la mesure peut être fortement impactée.
-* Lorsque l'on souhaite être précis, il faut que les mesures soient indépendantes des autres processus.
+* Les mesures effectuées avec `time.process_time` ne sont **pas précises** car elles sont impactées par les autres processus s'exécutant sur la machine.
+
+---
+
+# Benchmark (2/2)
+
+* Si un processus gourmant en ressources (tel qu'un jeu vidéo) est exécuté en même temps, la mesure peut être fortement **impactée**.
+* Lorsque l'on souhaite être précis, il faut que les mesures soient **indépendantes** des autres processus.
 * Dans les prochains cours et TPs, nous verrons des méthodes plus précises.
 
 
@@ -505,20 +518,31 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 # <!--fit--> Algorithme d'approximation numérique
 
-* En utilisant la dichotomie pour résoudre une racine carrée, on a utilisé une méthode d'**approximations successives**.
+* On a utilisé une méthode d'**approximations successives** avec la dichotomie pour résoudre $\sqrt{x}$.
 * A chaque itération :
-    * on fait une supposition,
-    * on calcul l'erreur par rapport au résultat théorique,
-    * si l'erreur est inférieur à un $\delta$ suffisamment petit, on s'arrête,
+    * on fait une **supposition** ;
+    * on calcul l'**erreur** par rapport au résultat théorique ;
+    * si l'erreur est inférieure à un $\delta$ suffisamment petit, on s'arrête ;
     * sinon, on fait une nouvelle supposition plus proche que la supposition précédente.
-* Un autre algorithme d'approximation est également célèbre : **Newton-Raphson**.
 
 ---
 
-# Principe (1/2)
+# Newtown Raphson (1/4)
 
-- L'algorithme de Newton-Raphson peut être utilisé pour trouver les racines de nombreuses fonctions.
+- Un autre algorithme d'approximation est également célèbre : **Newton-Raphson**.
+- L'algorithme de Newton-Raphson peut être utilisé pour trouver les **racines** de nombreuses fonctions.
+- La racine $r$ d'une fonction $f$ est telle que :
+
+$$
+f(r) = 0
+$$
+
 - On s'intéresse au cas des fonctions polynomiales à une variable.
+
+---
+
+## Newtown Raphson (2/4)
+
 - On note notre fonction polynomiale $P(x)$ :
 
 $$
@@ -532,13 +556,11 @@ $$
 P'(x) = \sum_{k=0}^n a_k kx^{k-1}
 $$
 
-- On cherche à trouver la racine $r$ telle que $P(r) = 0$.
-
 ---
 
-# Principe (2/2)
+# Newtown Raphson (3/4)
 
-
+- On cherche à trouver la racine $r$ telle que $P(r) = 0$.
 - On note $s_1$ et $s_2$ des approximations de $r$ pour $P(r) = 0$.
 - On souhaite que $s_2$ soit une meilleure approximation de $r$ que $s_1$, soit :
 
@@ -546,11 +568,20 @@ $$
 P(r) \le P(s_2) \lt P(s_1)
 $$
 
-- Un théorème prouvé par Newtown montre que $s_2$ peut être calculé de la manière suivante :
+
+---
+
+# Newtown Raphson (4/4)
+
+- Un **théorème** prouvé par Newtown montre que $s_2$ peut être calculé de la manière suivante :
 
 $$
 s_2 = s_1 - \frac{P(s_1)}{P'(s_1)}
 $$
+
+<!--
+La démonstration de ce théorème est en-dehors de la portée de ce cours.
+-->
 
 ---
 
@@ -606,7 +637,7 @@ C'est un algorithme simple, élégant et performant.
 
 <!-- _class: title-section -->
 
-# TP : Comparaison d'algorithmes ayant le même objectif
+## TP : Comparaison d'algorithmes ayant le même objectif
 
 ---
 
@@ -618,7 +649,7 @@ C'est un algorithme simple, élégant et performant.
 
 <!-- _class: title-section -->
 
-# Histoire des bugs et du debugging dans la culture anglo-saxonne
+### Histoire des bugs et du débogage dans la culture anglo-saxonne
 
 ---
 
@@ -634,18 +665,21 @@ C'est un algorithme simple, élégant et performant.
 
 - Le terme "bug" était déjà utilisé dans la langue anglaise pour désigner un problème.
 - 1896 : Le livre *Nouveau Catéchisme de l'Electricité* de *Hawkins* emploie cette terminologie.
-- En ancien anglais, le terme "bugbear" signifie "tout ce qui peut causer une peur ou une anxiété excessive sans que cela soit nécessaire".
+- En ancien anglais, le terme "*bugbear*" signifie "*tout ce qui peut causer une peur ou une anxiété excessive sans que cela soit nécessaire*".
 
 ---
 
-# Eviter les bugs
-
-#### Introduction à la qualité logicielle
+# Eviter les bugs (1/2)
 
 - **Problème d'arrêt** (Halting Problem) : il n'est pas possible de prouver la validité d'un programme de manière générique.
 - **Preuve de programme** : 
     - Prouver le bon fonctionnement d'un algorithme est ardu.
     - Prouver le fonctionnement d'un programme complexe est presque toujours trop coûteux.
+
+---
+
+# Eviter les bugs (2/2)
+
 - **Solution** : mettre en place de **bonnes pratiques** de développement logiciel.
 
 - Nous aborderons quelques unes de ces bonnes pratiques dans les prochains cours.
@@ -695,8 +729,7 @@ Si ces problèmes surviennent rarement, il arrive que certaines entreprises déc
 
 # <!--fit--> Pourquoi le faire manuellement ?
 
-* Le **jour de l'examen**, une partie du temps se fait sur papier.
-* Vous devez donc vous préparer pour l'examen.
+* Vous devez donc vous préparer pour l'**examen**.
 * Les entreprises les plus prestigieuses demandent aux candidats de **développer sur un tableau blanc**.
 * En pratique, même en entreprise, on continue à **résoudre les problèmes les plus complexes** par des brouillons sur papier ou sur tableau blanc avant de passer sur machine.
 
@@ -713,7 +746,7 @@ Si ces problèmes surviennent rarement, il arrive que certaines entreprises déc
 
 # Exemple
 
-![bg right:45% 90%](./assets/tableau-debug.jpg)
+![bg right:45% 90%](./assets/tableau-débogage.jpg)
 
 ```python
 a0 = 16
@@ -745,15 +778,15 @@ La nouvelle valeur de s apparaît sur la ligne suivante.
 
 # La puissance d'un EDI
 
-* Tout bon Environnement de Développement Intégré (EDI) propose un **debugger** pour les langages supportés.
+* Tout bon **E**nvironnement de **D**éveloppement **I**ntégré (EDI) propose un **debugger**.
 * Visual Studio Code, avec l'extension Python, propose un bon debugger.
 * L'objectif d'un debugger est d'arrêter l'exécution d'un processus pour regarder son état.
-* On doit lancer le processus depuis l'EDI en **mode debug**, et utiliser des **points d'arrêt**.
+* On doit lancer le processus depuis l'EDI en **mode débogage**, et utiliser des **points d'arrêt**.
 * Un point d'arrêt se nomme *breakpoint* en anglais.
 
 ---
 
-# <!--fit--> Lancer en mode debug
+### Lancer en mode débogage
 
 ![bg right:50% 80%](./assets/00-menu-debug.png)
 
@@ -761,7 +794,7 @@ A gauche de l'interface se trouve le menu *Run and Debug*.
 
 ---
 
-# <!--fit--> Choisir le mode de debug
+### Choisir le mode de débogage
 
 ![bg right:50% 80%](./assets/01-choisir-fichier-python.png)
 
@@ -769,31 +802,38 @@ Dans le cadre de ce cours, vous choisirez toujours de déboguer le fichier coura
 
 ---
 
-# <!--fit--> La barre d'outils de debug
+### La barre d'outils de débogage
 
 ![bg right:30% 80%](./assets/02-toolbar-debug.png)
 
-Lorsque le programme s'exécute (non arrêté sur un point d'arrêt), la barre d'outils de debug, qui se trouve en haut de l'éditeur, a cet aspect.
+Lorsque le programme s'exécute (non arrêté sur un point d'arrêt), la barre d'outils de débogage, qui se trouve en haut de l'éditeur, a cet aspect.
 
 ---
 
-# <!--fit--> Barre d'outils de debug sur un point d'arrêt
+#### Barre d'outils de débogage sur un point d'arrêt
 
-![bg right:30% 80%](./assets/03-toolbar-debug-break.png)
+![bg right:30% 90%](./assets/03-toolbar-debug-break.png)
 
 - L'aspect change lorsque l'exécution arrive sur un point d'arrêt.
 - Il devient alors possible d'exécuter pas à pas les instructions.
+
+---
+
+### Options de la barre d'outils
+
+![bg right:20% 90%](./assets/03-toolbar-debug-break.png)
+
 - Les icônes permettent respectivement :
-    - Continuer l'exécution (F5),
-    - Exécuter l'instruction courante (F10),
-    - Rentrer dans la fonction (F11),
+    - Continuer l'exécution (**F5**),
+    - Exécuter l'instruction courante (**F10**),
+    - Rentrer dans la fonction (**F11**),
     - Exécuter toutes les instructions jusqu'à la fin de la fonction,
     - Recommencer l'exécution depuis le début,
     - Stopper l'exécution;
 
 ---
 
-# <!--fit--> Comment poser un point d'arrêt ?
+### Comment poser un point d'arrêt ?
 
 ![bg right:50% 80%](./assets/04-avant-breakpoint.png)
 
@@ -801,55 +841,52 @@ Aspect d'une ligne avant de poser un point d'arrêt.
 
 ---
 
-# <!--fit--> Point d'arrêt classique
+### Point d'arrêt classique
 
-![bg right:50% 80%](./assets/05-apres-breakpoint.png)
+![bg right:30% 98%](./assets/05-apres-breakpoint.png)
 
-Il suffit de cliquer à gauche de la ligne pour poser un point d'arrêt.
-
-Un rond rouge apparaît.
-
-Il est également possible d'utiliser le raccourci F9.
-
-Pour supprimer un point d'arrêt, il suffit de cliquer dessus à nouveau (ou d'utiliser F9 une seconde fois).
+- Il suffit de **cliquer à gauche de la ligne** pour poser un point d'arrêt.
+- Un **rond rouge** apparaît.
+- Il est également possible d'utiliser le raccourci **F9**.
+- Pour supprimer un point d'arrêt, il suffit de cliquer dessus à nouveau (ou d'utiliser F9 une seconde fois).
 
 ---
 
-# <!--fit--> Arrêt sur point d'arrêt
+#### Arrêt sur point d'arrêt
 
 ![bg right:45% 80%](./assets/06-pendant-execution.png)
 
-La ligne est mise en surbrillance lorsqu'un point d'arrêt est atteint.
-
-Il devient alors possible d'examiner toutes les variables locales et globales. Pour cela, positionnez le curseur de la souris au-dessus de la variable qui vous intéresse et attendez 1s.
+- La ligne est mise **en surbrillance** lorsqu'un point d'arrêt est atteint.
+- Il devient alors possible d'**examiner toutes les variables** locales et globales.
+- Pour cela, positionnez le curseur de la souris au-dessus d'une variable.
 
 ---
 
-# <!--fit--> Autre méthode pour lancer en mode debug
+### Autre méthode pour lancer en mode débogage
 
 ![bg right:30% 80%](./assets/07-raccourci.png)
 
-En haut à droite de l'éditeur se trouve un bouton avec une flêche. Si on sélectionne la flêche avec un insecte, on lance l'exécution en mode debug.
+En haut à droite de l'éditeur se trouve un bouton avec une flêche. Si on sélectionne la flêche avec un insecte, on lance l'exécution en mode débogage.
 
 ---
 
-# <!--fit--> Point d'arrêt conditionnel
+#### Point d'arrêt conditionnel
 
-![bg right:50% 80%](./assets/08-breakpoint-conditionnel.png)
+![bg right:35% 98%](./assets/08-breakpoint-conditionnel.png)
 
-Parfois, on souhaite arrêter l'exécution uniquement lorsqu'une condition bien particulière est remplie.
+Parfois, on souhaite arrêter l'exécution **uniquement lorsqu'une condition bien particulière est remplie**.
 
 Pour cela, on commencer par créer un point d'arrêt classique. Ensuite, on fait un clic droit sur ce point d'arrêt pour l'éditer.
 
 ---
 
-## Expression Booléenne sur un point d'arrêt
+#### Expression Booléenne sur un point d'arrêt
 
-![bg right:50% 80%](./assets/09-condition-booleenne.png)
+![bg right:35% 98%](./assets/09-condition-booleenne.png)
 
 Si on souhaite arrêter l'exécution uniquement si la valeur de la variable P est inférieur à 20, il suffit de rentrer l'expression `P < 20`.
 
-Il est possible de rentrer n'importe quelle expression Booléenne valide en Python.
+Il est possible de rentrer **n'importe quelle expression Booléenne valide** en Python.
 
 ---
 
@@ -869,25 +906,27 @@ On peut obtenir l'arborescence de toutes les valeurs de toutes les variables dan
 
 ---
 
-# <!--fit--> Point d'arrêt avec un compteur
+### Avec un compteur
 
-![bg right:50% 80%](./assets/12-cond-breakpoint-hit.png)
+![bg right:25% 98%](./assets/12-cond-breakpoint-hit.png)
 
-Parfois, on souhaite arrêter l'exécution à une itération particulière. On peut alors créer un point d'arrêt conditionnel en spécifiant "Hit" puis le numéro d'itération souhaité.
-
-En pratique, l'arrêt s'effectuera lorsque le pointeur de stack sera passé le nombre de fois spécifié sur la ligne de code spécifiée.
+- Parfois, on souhaite arrêter l'exécution à une **itération particulière**.
+- On créé un point d'**arrêt conditionnel** en spécifiant "Hit" puis le numéro d'itération souhaité.
+- L'arrêt s'effectuera lorsque le pointeur de stack sera passé le nombre de fois spécifié sur la ligne de code spécifiée.
 
 ---
 
 ## Logs supplémentaires
 
-![bg right:50% 80%](./assets/13-breakpoint-log.png)
+![bg right:25% 98%](./assets/13-breakpoint-log.png)
 
-Parfois, on souhaite rajouter des logs supplémentaires sans pour autant changer le programme. Dans ce cas, on peut créer un point d'arrêt très particulier. Le point d'arrêt Log n'arrête pas l'exécution du programme, mais il affiche le contenud de la f-string spécifiée à chaque fois que la ligne est atteinte.
+- Parfois, on souhaite rajouter des **logs supplémentaires** sans pour autant changer le programme.
+- Le point d'arrêt Log **n'arrête pas** l'exécution du programme
+- il affiche le contenu de la f-string spécifiée à chaque fois que la ligne est atteinte.
 
 ---
 
-# <!--fit--> Aspect d'un point d'arrêt Log
+### Aspect d'un point d'arrêt Log
 
 ![bg right:50% 80%](./assets/14-aspect-break-log.png)
 
@@ -895,17 +934,29 @@ Un point d'arrêt Log est un losange à la place d'un cercle.
 
 ---
 
-# <!--fit--> Autres options de débogage
+### Autres options de débogage (1/2)
 
-- Il existe de nombreuses autres options de débogage :
-    - Voir la pile d'appels de fonctions et changer de contexte,
-    - Créer un point d'arrêt lors de l'entrée dans une fonction,
-    - Activation et désactivation de tous les points d'arrêt,
-    - Suivre la valeur d'expressions particulières,
-    - Afficher différents threads d'exécution,
-    - etc.
+* Il existe de nombreuses autres options de débogage.
+* Par exemple :
+    * Voir la pile d'appels de fonctions et changer de contexte ;
+    * Créer un point d'arrêt lors de l'entrée dans une fonction ;
 
-- Nous ne rentrerons pas dans ces détails dans le cadre de ce cours.
+
+---
+
+### Autres options de débogage (2/2)
+
+#### Autres exemples
+
+- Activation et désactivation de tous les points d'arrêt,
+- Suivre la valeur d'expressions particulières,
+- Afficher différents threads d'exécution,
+- etc.
+
+<!--
+Nous ne rentrerons pas dans ces détails dans le cadre de ce cours.
+Le cours de méthodologie et les prochains cours de programmation en JavaScript, PHP, etc. vous apporteront des outils supplémentaires.
+-->
 
 ---
 
