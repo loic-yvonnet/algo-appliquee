@@ -1586,7 +1586,7 @@ print(liste)
 Les compréhensions sont faites pour rendre le code plus simple, et non plus complexe.
 Ici, la liste interne est créée avec un range(3) donc comportera 3 élément.
 La compréhension externe est composée de 2 boucles.
-La première boucle, sur j est limitée aux éléments 0 et 3 car ce sont les seuls éléments dont le reste de la division par 3 est égal à 0 sur l'interval [0 ; 6[.
+La première boucle, sur j est limitée aux éléments 0 et 3 car ce sont les seuls éléments dont le reste de la division par 3 est égal à 0 sur l'intervalle [0 ; 6[.
 La deuxième boucle, sur k, est limitée aux éléments 0 et 1.
 La liste externe est donc composée de 2x2 = 4 listes internes.
 Les 2 premières listes internes sont obtenues pour j == 0 et respectivement k == 0 et k == 1.

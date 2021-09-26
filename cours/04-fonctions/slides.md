@@ -1578,15 +1578,15 @@ a = 1 ; b = 2
 def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
     """Cacule la racine r telle que f(r) - x = 0 par dichotomie.
 
-    Généralisation de l'algorithme de dichotomie sur un interval [debut ; fin]
+    Généralisation de l'algorithme de dichotomie sur un intervalle [debut ; fin]
     avec une fonction d'évaluation f pour le calcul d'une racine r. La racine r
-    doit être dans l'interval de recherche, sinon la condition de fin de
+    doit être dans l'intervalle de recherche, sinon la condition de fin de
     l'algorithme n'est pas garantie.
     x - nombre flottant dont on recherche la racine | f(r) - x | < epsilon.
     f - fonction d'évaluation prenant et renvoyant un flottant. Cette fonction
-        doit être dérivable sur l'interval [debut ; fin].
-    debut - début de l'interval de recherche de r.
-    fin - fin de l'interval de recherche de r.
+        doit être dérivable sur l'intervalle [debut ; fin].
+    debut - début de l'intervalle de recherche de r.
+    fin - fin de l'intervalle de recherche de r.
     epsilon - erreur acceptable qui doit être strictement supérieure à 0.
     Renvoie la racine r telle que | f(r) - x | < epsilon.
     """
@@ -1602,7 +1602,7 @@ def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
 
 ---
 
-#### Recherche dans un interval avec dichotomie d'ordre supérieur
+#### Recherche dans un intervalle avec dichotomie d'ordre supérieur
 
 ```python
 def affine(x):

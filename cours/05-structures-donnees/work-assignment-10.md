@@ -82,7 +82,6 @@ tandis que :
 v4 = [1, 2]
 v5 = [1, 2, 3]
 v6 = ajoute_vecteurs(v4, v5)
-affiche_vecteur(v6)
 ```
 
 doit afficher :
@@ -134,7 +133,6 @@ m5 = [
     [4, 8]
 ]
 m6 = ajoute_matrices(m4, m5)
-affiche_matrice(m6)
 ```
 
 doit afficher :
@@ -348,8 +346,8 @@ a
 + c
 \left|
     \begin{matrix}
-    e & f \\
-    h & i
+    d & e \\
+    g & h
     \end{matrix}
 \right|
 =
@@ -412,24 +410,22 @@ doit afficher :
 ```
 M11 =
 ╭           ╮
-│   5   6   │
-│   8   9   │
+│   1   3   │
+│   7   9   │
 ╰           ╯
 M12 =
 ╭           ╮
-│   4   6   │
-│   7   9   │
+│   1   2   │
+│   7   8   │
 ╰           ╯
 ```
-
-*Astuce* : En informatique, on utilise des index à partir de 0, tandis qu'en algèbre, on utilise des index à partir de 1. Donc l'indice 1 en entrée de la fonction `enleve_ligne_et_colonne` correspond à l'indice 0 dans la liste.
 
 On peut alors développer le calcul du déterminant de $M$ suivant une ligne. Pour le calcul du déterminant d'une matrice 3x3 avec une matrice 2x2, on a suivi la 1ière ligne. On peut faire de même ainsi :
 
 $$
 \left| M \right|
 =
-\sum_{j=1}^{n} m_{1,j} (-1)^{1+j} \left| M_{1,j} \right|
+\sum_{j=0}^{n-1} m_{0,j} (-1)^{j} \left| M_{0,j} \right|
 $$
 
 Pour implémenter cette version généralisée, on devrait utiliser la récursivité en vérifiant les dimensions des sous-matrices et en appelant au final `determinant_2x2` et/ou `determinant_3x3`. Nous gardons cet exercice pour plus tard.

@@ -385,7 +385,7 @@ Le principe est encore mieux visible sous forme d'arbre.
 
 * A chaque itération :
     * Soit on trouve la clé et l'algorithme s'arrête.
-    * Soit l'interval de recherche est réduit de moitié et converge vers la clé car la collection est triée :
+    * Soit l'intervalle de recherche est réduit de moitié et converge vers la clé car la collection est triée :
         * Soit la borne de fin va au milieu,
         * Soit la borne de début va au milieu.
 
@@ -1051,7 +1051,7 @@ C'est le principe du tri d'un jeu de cartes dans notre main.
 On insère chaque carte au "bon endroit" une à une.
 Autrement dit, pour chaque carte, on l'insère à sa position finale dans la partie déjà triée de la main.
 Ici, la boucle externe parcourt chaque élément.
-La boucle interne positionne le ième élément à sa position finale dans l'interval [0 ; i].
+La boucle interne positionne le ième élément à sa position finale dans l'intervalle [0 ; i].
 -->
 
 ---
@@ -1115,7 +1115,7 @@ Sur le principe, c'est exactement la même chose que le tri insertion.
 La différence essentielle, c'est que l'on tente d'améliorer le cas moyen de l'algorithme en utilisant un coefficient h.
 Ce coefficient h est calculé de telle sorte qu'il soit inférieur au tier de la taille du tableau (c'est une heuristique).
 Les valeurs que peut prendre h sont : 1, 4, 13, 40, 121, 364, 1093...
-Plutôt que de travailler uniquement sur l'interval [0 ; i] et décrémenter j de un en un, on effectue à chaque fois des déplacements plus larges d'une valeur h.
+Plutôt que de travailler uniquement sur l'intervalle [0 ; i] et décrémenter j de un en un, on effectue à chaque fois des déplacements plus larges d'une valeur h.
 La valeur de h est réduite progressivement. Si h commence à 40, il sera ensuite : 40 // 3 = 13, puis 4, 1, et 0.
 Lorsque h == 1, on a précisément le tri insertion. Il s'agit de l'étape de "finition".
 -->
@@ -1398,7 +1398,7 @@ def partition(a, debut, fin):
 
 <!--
 On effectue simplement quelques ajustements à l'algorithme de partitionnement que nous venons de voir.
-En pratique, plutôt que de supposer que l'on partitionne sur l'interval [0 ; N], on partitionne sur l'interval [debut ; fin].
+En pratique, plutôt que de supposer que l'on partitionne sur l'intervalle [0 ; N], on partitionne sur l'intervalle [debut ; fin].
 Par ailleurs, on renvoie aussi l'indice j correspondant au nouvelle emplacement de la "valeur" de partition.
 -->
 
@@ -1474,7 +1474,7 @@ Entre les 4e et 10e partitions, on voit le travail effectué au tout début.
 ![](./assets/tri-rapide-diapo-2.png)
 
 <!--
-Sur des étapes plus avancées, on voit également se former puis résoudre les intervals de partitionnement.
+Sur des étapes plus avancées, on voit également se former puis résoudre les intervalles de partitionnement.
 -->
 
 ---
@@ -1575,13 +1575,13 @@ def fusion(a, debut, milieu, fin):
 <!--
 On commence par faire une copie du tableau "a" dans "auxiliaire".
 Cette copie est nécessaire pour choisir les éléments depuis leur ordre d'origine.
-Ensuite, l'index k parcourt de la gauche vers la droite l'interval [debut ; fin].
-Cet interval est coupé en deux par "milieu".
-L'index i parcourt de la gauche vers la droite l'interval [debut ; milieu].
-L'index j parcourt de la gauche vers la droite l'interval ]milieu ; fin].
-On considère que les intervals [debut ; milieu] et ]milieu ; fin] sont triés.
+Ensuite, l'index k parcourt de la gauche vers la droite l'intervalle [debut ; fin].
+Cet intervalle est coupé en deux par "milieu".
+L'index i parcourt de la gauche vers la droite l'intervalle [debut ; milieu].
+L'index j parcourt de la gauche vers la droite l'intervalle ]milieu ; fin].
+On considère que les intervalles [debut ; milieu] et ]milieu ; fin] sont triés.
 A chaque etape, on choisi le plus petit élément parmis [debut ; milieu] ou ]milieu ; fin].
-Une fois que l'on a épuisé un interval, on va piocher dans l'autre.
+Une fois que l'on a épuisé un intervalle, on va piocher dans l'autre.
 -->
 
 ---
@@ -1619,7 +1619,7 @@ def tri_fusion(a):
 ```
 
 <!--
-Comme pour le tri rapide, on peut se contenter d'initialiser la récursion avec l'interval [0, N - 1].
+Comme pour le tri rapide, on peut se contenter d'initialiser la récursion avec l'intervalle [0, N - 1].
 -->
 
 ---
@@ -1633,7 +1633,7 @@ Comme pour le tri rapide, on peut se contenter d'initialiser la récursion avec 
 <!--
 Plus l'algorithme avance, plus les fusions sont larges.
 On voit de mieux en mieux les opérations de fusion.
-Ceci jusqu'à la fusion ultime qui réunit les 2 intervals [0 ; milieu] et ]milieu, N].
+Ceci jusqu'à la fusion ultime qui réunit les 2 intervalles [0 ; milieu] et ]milieu, N].
 -->
 
 ---
@@ -1676,10 +1676,10 @@ Entre la fusion 98 et 99 (nommée "trié"), on voit le résultat typique d'une f
 ---
 
 <!--
-Concernant la fusion, la preuve est immédiate : on a une boucle for dans l'interval [debut, fin + 1].
+Concernant la fusion, la preuve est immédiate : on a une boucle for dans l'intervalle [debut, fin + 1].
 Or, au minimum, debut = 0, et au maximum fin = N.
-Donc la fusion a dans le pire cas un parcourt sur l'interval [0 ; N], dons O(N)
-Dans le cas du tri fusion, on sait que la dernière fusion se fait sur l'interval [0 ; N].
+Donc la fusion a dans le pire cas un parcourt sur l'intervalle [0 ; N], dons O(N)
+Dans le cas du tri fusion, on sait que la dernière fusion se fait sur l'intervalle [0 ; N].
 Par conséquent, on est à la fois O(N) et Oméga(N), donc Théta(N).
 -->
 

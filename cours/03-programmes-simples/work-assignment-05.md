@@ -32,22 +32,22 @@ L'algorithme suit les étapes suivantes :
 
 Ecrivez un script qui calcule une racine carrée $x \approx \sqrt{N} \pm \varepsilon$ en utilisant la dichotomie.
 
-Le principe consiste à réduire progressivement un interval $\left[ \inf ; \sup \right]$ de telle sorte que cet interval converge vers $\left[ \sqrt{N} - \varepsilon ; \sqrt{N} + \varepsilon \right]$. N'importe quelle valeur dans cet interval est considérée comme un $x$ valable.
+Le principe consiste à réduire progressivement un intervalle $\left[ \inf ; \sup \right]$ de telle sorte que cet intervalle converge vers $\left[ \sqrt{N} - \varepsilon ; \sqrt{N} + \varepsilon \right]$. N'importe quelle valeur dans cet intervalle est considérée comme un $x$ valable.
 
-De manière intuitive, l'interval va commencer à $[0 ; N]$, puis à chaque étape, on teste la valeur au milieu de cet interval. A chacune de ces étapes, soit on augmente la borne inférieure $\inf$, soit on diminue la borne supérieure $\sup$.
+De manière intuitive, l'intervalle va commencer à $[0 ; N]$, puis à chaque étape, on teste la valeur au milieu de cet intervalle. A chacune de ces étapes, soit on augmente la borne inférieure $\inf$, soit on diminue la borne supérieure $\sup$.
 
 Par exemple, pour $N = 9$ :
-* On commence sur l'interval $[0 ; 9]$ et on teste $4.5$.
-* L'interval devient $[0 ; 4.5]$ et on teste donc $2.25$.
-* L'interval devient $[2.25 ; 4.5]$ et on teste donc $\frac{2.25 + 4.5}{2} = 3.375$.
-* L'interval devient $[2.25 ; 3.375]$ et on teste donc $\frac{2.25 + 3.375}{2} = 2.8125$.
-* L'interval devient $[2.8125 ; 3.375]$ et on teste donc $\frac{2.8125 + 3.375}{2} = 3.09375$.
-* L'interval devient $[2.8125 ; 3.09375]$ et on teste donc $\frac{2.8125 + 3.09375}{2} = 2.953125$.
-* L'interval devient $[2.953125 ; 3.09375]$ et on teste donc $\frac{2.953125 + 3.09375}{2} = 3.0234375$.
-* L'interval devient $[2.953125 ; 3.0234375]$ et on teste donc $\frac{2.953125 + 3.0234375}{2} = 2.98828125$.
-* L'interval devient $[2.98828125 ; 3.0234375]$ et on teste donc $\frac{2.98828125 + 3.0234375}{2} = 3.005859375$.
-* L'interval devient $[2.98828125 ; 3.005859375]$ et on teste donc $\frac{2.98828125 + 3.005859375}{2} = 2.997070312$.
-* L'interval devient $[2.997070312 ; 3.005859375]$ et on teste donc $\frac{2.997070312 + 3.005859375}{2} = 3.001464843$.
+* On commence sur l'intervalle $[0 ; 9]$ et on teste $4.5$.
+* L'intervalle devient $[0 ; 4.5]$ et on teste donc $2.25$.
+* L'intervalle devient $[2.25 ; 4.5]$ et on teste donc $\frac{2.25 + 4.5}{2} = 3.375$.
+* L'intervalle devient $[2.25 ; 3.375]$ et on teste donc $\frac{2.25 + 3.375}{2} = 2.8125$.
+* L'intervalle devient $[2.8125 ; 3.375]$ et on teste donc $\frac{2.8125 + 3.375}{2} = 3.09375$.
+* L'intervalle devient $[2.8125 ; 3.09375]$ et on teste donc $\frac{2.8125 + 3.09375}{2} = 2.953125$.
+* L'intervalle devient $[2.953125 ; 3.09375]$ et on teste donc $\frac{2.953125 + 3.09375}{2} = 3.0234375$.
+* L'intervalle devient $[2.953125 ; 3.0234375]$ et on teste donc $\frac{2.953125 + 3.0234375}{2} = 2.98828125$.
+* L'intervalle devient $[2.98828125 ; 3.0234375]$ et on teste donc $\frac{2.98828125 + 3.0234375}{2} = 3.005859375$.
+* L'intervalle devient $[2.98828125 ; 3.005859375]$ et on teste donc $\frac{2.98828125 + 3.005859375}{2} = 2.997070312$.
+* L'intervalle devient $[2.997070312 ; 3.005859375]$ et on teste donc $\frac{2.997070312 + 3.005859375}{2} = 3.001464843$.
 * Or $3.001464843^2 = 9.008791207$, donc si $\varepsilon = 0.01$, alors on a notre résultat.
 
 Le nombre $N$ est obtenu via la fonction `input` et le résultat $x$ est affiché dans la sortie standard.
@@ -57,13 +57,13 @@ L'algorithme suit les étapes suivantes :
 * On initialise $\varepsilon$ à `0.01`.
 * On initialise $\inf$ à `0`.
 * On initialise $\sup$ à $\begin{cases}N, si N > 1 \\ 1, sinon\end{cases}$.
-* On initialise $x$ à $\frac{\inf + \sup}{2}$ : on prend le milieu de l'interval.
+* On initialise $x$ à $\frac{\inf + \sup}{2}$ : on prend le milieu de l'intervalle.
 * Dans une boucle :
     * Si $\left| x^2 - N \right| \leq \varepsilon$, alors la boucle s'arrête et on affiche le résultat $x$.
     * Sinon :
-        * Si $x^2 < N$, alors la borne $\inf$ prend la valeur $x$. On est donc dans l'interval $[x ; \sup]$.
-        * Sinon, la borne $\sup$ prend la valeur $x$. On est donc dans l'interval $[\inf ; x]$.
-        * On met à jour $x$ en calculant à nouveau $\frac{\inf + \sup}{2}$ : on prend le milieu du nouvel interval réduit.
+        * Si $x^2 < N$, alors la borne $\inf$ prend la valeur $x$. On est donc dans l'intervalle $[x ; \sup]$.
+        * Sinon, la borne $\sup$ prend la valeur $x$. On est donc dans l'intervalle $[\inf ; x]$.
+        * On met à jour $x$ en calculant à nouveau $\frac{\inf + \sup}{2}$ : on prend le milieu du nouvel intervalle réduit.
 
 ## Exercice 3 - Comparaison des approches
 
@@ -86,16 +86,16 @@ Ecrivez un script qui calcule un logarithme $x \approx \log_2(N) \pm \varepsilon
 Pour rappel, un logarithme en base 2 est tel que $2^x = N$. Il s'agit donc, algorithmiquement parlant, d'un problème similaire à celui du calcul d'une racine carrée (pour lequel on avait $x^2 = N$).
 
 Par exemple, pour $N = 8$ :
-* On commence sur l'interval $[0 ; 8]$ et on teste $4$.
-* L'interval devient $[0 ; 4]$ et on teste donc $2$.
-* L'interval devient $[2 ; 4]$ et on teste donc $3$.
+* On commence sur l'intervalle $[0 ; 8]$ et on teste $4$.
+* L'intervalle devient $[0 ; 4]$ et on teste donc $2$.
+* L'intervalle devient $[2 ; 4]$ et on teste donc $3$.
 * Bingo, $2^3 = 8$ et on a trouvé le résultat exact.
 
 ## Exercice 6 - Accélération du calcul de logarithme
 
-Dans l'exercice précédent, nous avons utilisé l'interval de départ $[0 ; N]$ pour commencer la dichotomie. En pratique, il est possible de trouver très rapidement un interval de recherche beaucoup plus petit. Plus l'interval est petit, plus on diminue le nombre d'itérations nécessaires pour trouver un résultat, et plus l'exécution est rapide.
+Dans l'exercice précédent, nous avons utilisé l'intervalle de départ $[0 ; N]$ pour commencer la dichotomie. En pratique, il est possible de trouver très rapidement un intervalle de recherche beaucoup plus petit. Plus l'intervalle est petit, plus on diminue le nombre d'itérations nécessaires pour trouver un résultat, et plus l'exécution est rapide.
 
-Intuitivement, la raison pour laquelle on peut trouver un meilleur interval de départ est la vitesse à laquelle la fonction puissance évolue :
+Intuitivement, la raison pour laquelle on peut trouver un meilleur intervalle de départ est la vitesse à laquelle la fonction puissance évolue :
 
  $x$  |  $2^x$
 :----:|--------:
@@ -123,12 +123,12 @@ Intuitivement, la raison pour laquelle on peut trouver un meilleur interval de d
 
 On peut donc commencer par rechercher le plus grand nombre entier $borne$ tel que $2^{borne} < N$.
 
-On pourra ainsi commencer la dichotomie avec l'interval $[borne - 1 ; borne + 1]$ à la place de l'interval $[0 ; N]$.
+On pourra ainsi commencer la dichotomie avec l'intervalle $[borne - 1 ; borne + 1]$ à la place de l'intervalle $[0 ; N]$.
 
 Par exemple, si on recherche $x = \log_2(N)$ pour $N = 80000$, on peut voir dans le tableau ci-dessus que  $2^{16} = 65536$.
 
-On pourra donc commencer la dichotomie avec l'interval $[15 ; 17]$ à la place de l'interval $[0 ; 80000]$.
+On pourra donc commencer la dichotomie avec l'intervalle $[15 ; 17]$ à la place de l'intervalle $[0 ; 80000]$.
 
-Cette technique porte le nom d'**approximations successives** : on trouve d'abord l'interval $[15 ; 17]$ puis on recherche la valeur $x$ par dichotomie, soit environ $16.2877123$.
+Cette technique porte le nom d'**approximations successives** : on trouve d'abord l'intervalle $[15 ; 17]$ puis on recherche la valeur $x$ par dichotomie, soit environ $16.2877123$.
 
 Réécrivez votre script de calcul de logarithme pour y intégrer l'optimisation initiale sur les bornes.
