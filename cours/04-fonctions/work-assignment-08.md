@@ -481,7 +481,7 @@ Dans notre cas :
 * $\overrightarrow{OK} = \vec{k}$.
 
 
-Or par définition, on a $ \left| \vec{k} \right| = 1$ puisque $\vec{k}$ est normalisé et que la norme d'un vecteur normalisé est égal à 1.
+Or par définition, on a $ \left| \vec{k} \right| = 1$ puisque $\vec{k}$ est normalisé et que la norme d'un vecteur normalisé est égale à 1.
 
 On obtient donc directement la distance :
 $$
