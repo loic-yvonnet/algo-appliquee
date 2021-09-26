@@ -593,16 +593,16 @@ Scratch, Brainfuck et Python sont des langages impératifs. Python supporte éga
 
 ---
 
-# <!--fit--> Compilé ou interprêté
+# <!--fit--> Compilé ou interprété
 
 * Langage **compilé** : le code source du programme est traduit en *code machine binaire* exécuté directement par le matériel (processeur, carte graphique, etc.).
   * *Exemples* : Java, C, C++, Rust.
-* Langage **interprêté** : le code source du programme est lu par un programme appelé *interpréteur* qui exécute ce code.
+* Langage **interprété** : le code source du programme est lu par un programme appelé *interpréteur* qui exécute ce code.
   * *Exemples* : Python, Scratch, JavaScript, HTML, CSS.
 
 <!--
 Le temps de compilation et la traduction en code machine permet d'obtenir de meilleures performances.
-Les langages interprêtés sont souvent plus simples et plus pratiques, mais moins performants.
+Les langages interprétés sont souvent plus simples et plus pratiques, mais moins performants.
 -->
 
 ---
@@ -639,7 +639,7 @@ Les langages interprêtés sont souvent plus simples et plus pratiques, mais moi
 
 ![bg right:30% 100%](./assets/Python_logo_and_wordmark.svg.png)
 
-* Langage généraliste, interprêté, de haut niveau, et multi-paradigmes (impératif et orienté-objet).
+* Langage généraliste, interprété, de haut niveau, et multi-paradigmes (impératif et orienté-objet).
 * Langage simple à apprendre.
 * Communauté très active : très nombreux outils, tutoriels et très bonne documentation.
 * Hommage aux Monty Python.
@@ -701,7 +701,7 @@ print("Bonjour tout le monde")
 :arrow_right: demande à l'interpréteur d'afficher `Bonjour tout le monde`.
 
 <!--
-Nous allons commencer à nous intéresser à la manière de former des déclarations interprêtables par l'interpréteur Python.
+Nous allons commencer à nous intéresser à la manière de former des déclarations interprétables par l'interpréteur Python.
 Pour cela, on va commencer par regarder les objets.
 -->
 
