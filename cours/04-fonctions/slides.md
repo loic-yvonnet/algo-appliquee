@@ -41,6 +41,8 @@ Nous allons voir dans ce cours en quoi les fonctions sont importantes et comment
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Plan
 
 - Procédures : définition et appel
@@ -49,7 +51,7 @@ Nous allons voir dans ce cours en quoi les fonctions sont importantes et comment
 - Variables locales et globales
 - Fonctions
 - Spécifications et contrat
-- Nombre variable d'argument
+- Nombre variable d'arguments
 - Retour de plusieurs résultats
 - Un mot sur la récursivité
 - Fonctions d'ordre supérieur
@@ -65,7 +67,7 @@ Nous allons voir dans ce cours en quoi les fonctions sont importantes et comment
 
 ---
 
-# Comment réutiliser ce code ?
+## Comment réutiliser ce code ?
 
 ```python
 a0 = 16
@@ -91,12 +93,10 @@ Vous n'avez pas besoin de changer le code source de votre calculatrice pour fair
 
 <!-- _class: smaller-text -->
 
-# Comment combiner des algorithmes ?
+##### Comment combiner des algorithmes ?
 
 ```python
-a0 = 16
-b0 = -27
-epsilon = 0.001
+a0, b0, epsilon = 16, -27, 0.001
 
 # Racine carrée
 sa = a0 / 2
@@ -108,8 +108,7 @@ while abs(sa ** 2 - a0) >= epsilon:
 # Racine cubique
 positif = True
 if b0 < 0:
-    positif = False
-    b0 = -b0
+    positif, b0 = False, -b0
 sb = b0 / 2
 while abs(sb ** 3 - b0) >= epsilon:
     P = sb ** 3 - b0
@@ -175,7 +174,7 @@ On ne fait que définir une procédure.
 
 ---
 
-# Appel d'une procédure (invocation)
+### Appel d'une procédure (invocation)
 
 ```python
 def procedure():
@@ -203,14 +202,13 @@ Par conséquent, le message est affiché 3 fois dans la sortie standard.
 
 <!-- _class: smaller-text -->
 
-# Suite d'instructions
+**Exemple avec racine cubique**
 
 ```python
 def racine_cubique_27():
     """Affiche la racine cubique de 27."""
     b0 = 27
     epsilon = 0.001
-
     positif = True
     if b0 < 0:
         positif = False
@@ -222,7 +220,6 @@ def racine_cubique_27():
         sb = sb - P / P_prime
     if not positif:
         sb = -sb
-
     print(sb)
 
 racine_cubique_27()
@@ -275,12 +272,11 @@ De même, pour carre(3), on a x == 3.
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Argument pour le calcul de la racine cubique
+**Argument pour le calcul de la racine cubique**
 
 ```python
 def racine_cubique(x):
     epsilon = 0.001
-
     positif = True
     if x < 0:
         positif = False
@@ -292,7 +288,6 @@ def racine_cubique(x):
         s = s - P / P_prime
     if not positif:
         s = -s
-
     print(s)
 
 racine_cubique(27)
@@ -336,15 +331,18 @@ On peut évidemment passer autant d'arguments que nécessaire.
 
 ---
 
-<!-- _class: smaller-text -->
-
-# <!--fit--> Passage par valeur et passage par référence
+### Passage par valeur et passage par référence (1/2)
 
 - Certains langages (comme C++ ou C#) font la distinction entre le passage d'arguments **par valeur** et le passage **par référence**.
-- En Python, seul le passage par valeur existe.
+- **En Python, seul le passage par valeur existe**.
 - En C#, par défaut, les arguments sont également passés par valeur, comme en Python.
 - Le passage par référence permet de modifier le paramètre d'entrée.
-- L'exemple suivant est en C# :
+
+---
+
+<!-- _class: smaller-text -->
+
+##### Passage par valeur et passage par référence en C# (2/2)
 
 ```csharp
 static void passage_par_valeur(int a)
@@ -370,6 +368,11 @@ static void Main()
     Console.WriteLine(x);         // affiche 1
 }
 ```
+
+<!--
+Cet exemple est en C#.
+On doit utiliser un autre langage de programmation car le Python ne supporte pas le passage par référence.
+-->
 
 ---
 
@@ -405,7 +408,9 @@ puissance(2, 3)
 
 ---
 
-# Racine cubique avec $\lambda$
+<!-- _class: smaller-text -->
+
+**Racine cubique avec $\varepsilon$**
 
 ```python
 def racine_cubique(x, epsilon=0.0000001):
@@ -436,7 +441,7 @@ racine_cubique(27, 1)
 
 ---
 
-# Tous les arguments sont éligibles
+## Tous les arguments sont éligibles
 
 ```python
 def bonjour(prenom="Amélie", nom="Poulain"):
@@ -484,7 +489,9 @@ Un argument sans valeur par défaut ne peut pas succéder à un argument avec un
 
 ---
 
-# Portée des variables
+<!-- _class: smaller-text -->
+
+### Portée des variables
 
 ```python
 def f(a):
@@ -547,7 +554,7 @@ La différence ici est que la variable globale a n'affecte pas le contexte de f.
 
 ---
 
-# Accès en lecture à une variable globale
+### Accès en lecture à une variable globale
 
 ```python
 a = 3
@@ -574,7 +581,7 @@ On dit que la variable est globale car elle n'est locale à aucune procédure.
 
 ---
 
-# Accès en écriture à une variable globale
+### Accès en écriture à une variable globale
 
 ```python
 a = 3
@@ -666,7 +673,7 @@ En pratique, vous avez déjà utilisé de nombreuses fonctions : range, int, flo
 
 ---
 
-# Définition formelle (1/2)
+# Définition formelle (1/3)
 
 ```python
 def nom_de_la_fonction(liste_de_parametres):
@@ -675,16 +682,25 @@ def nom_de_la_fonction(liste_de_parametres):
 
 ---
 
-# Définition formelle (2/2)
+# Définition formelle (2/3)
 
 - Lorsque l'on appelle (ou *invoque*) une fonction :
     - les expressions qui forment les paramètres sont évalués.
     - les paramètres formels de la fonction sont liés aux valeurs de ces expressions (passage par valeur).
     - le point d'exécution est déplacé depuis le point d'invocation à la première instruction du corps de la fonction.
+    - *cf. diapositive suivante...*
+    
+
+
+---
+
+# Définition formelle (3/3)
+
+- Lorsque l'on appelle (ou *invoque*) une fonction :
+    - *cf. diapositive précédente...*
     - le corps de la fonction est exécuté :
         - jusqu'à une instruction `return`, auquel cas la valeur de la fonction devient la valeur de cette expression `return`,
         - ou alors jusqu'à ce qu'il n'y ait plus d'instruction à exécuter, auquel cas `None` est retourné.
-
 ---
 
 # Fonction racine carrée
@@ -716,7 +732,9 @@ Cela offre plus de flexibilité et est plus évolutif.
 
 ---
 
-# Fonction racine cubique
+<!-- _class: smaller-text -->
+
+### Fonction racine cubique
 
 ```python
 def racine_cubique(x, epsilon=0.000001):
@@ -732,7 +750,6 @@ def racine_cubique(x, epsilon=0.000001):
         s = s - P / P_prime
     if not positif:
         s = -s
-
     return s
 
 resultat = racine_cubique(-27)
@@ -771,6 +788,8 @@ Le code initial pour résoudre ce problème était beaucoup plus conséquent, co
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Plusieurs retours
 
 ```python
@@ -804,7 +823,7 @@ En effet, une fonction équivalente avec un unique return devrait employer au mo
 
 ---
 
-# Retour de plusieurs résultats
+### Retour de plusieurs résultats
 
 ```python
 def ajoute_soustrait_et_multiplie(a, b):
@@ -841,13 +860,15 @@ Nous verrons d'autres exemples plus loin dans ce cours.
 
 ### Intérêt de la documentation des spécifications
 
-* Vous avez étudié lors du dernier cours l'algorithme de Newtown-Raphson.
+* Vous avez étudié, lors du dernier cours, l'algorithme de Newtown-Raphson.
 * Cet algorithme n'est pas trivial.
-* De manière générale, il faut considérer qu'aucun algorithme n'est trivial.
-* Il faut documenter son code.
+* De manière générale, il faut considérer qu'**aucun algorithme n'est trivial**.
+* Il faut **documenter son code**.
 * En particulier, il faut documenter chacune de ses fonctions.
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Les docstrings
 
@@ -885,7 +906,7 @@ Il faut faire attention à bien garder les commentaires synchronisés avec l'imp
 
 ---
 
-# Exemple avec la fonction `racine_carree`
+### Exemple avec la fonction $\sqrt{x}$
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -909,6 +930,8 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Aide (1/2)
 
 ```python
@@ -930,6 +953,8 @@ Il s'agit de la docstring de la fonction native round.
 -->
 
 ---
+
+<!-- _class: smaller-text -->
 
 # Aide (2/2)
 
@@ -1027,15 +1052,16 @@ En pratique, de nombreuses fonctions en Python offre cette possibilité.
  
 ---
 
-# Syntaxe
+<!-- _class: smaller-text -->
 
-On utilise l'**opérateur \* de déballage** (*unpacking operator* en anglais).
+##### Opérateur \* de déballage (*unpacking operator* :uk:).
 
 ```python
 def moyenne(*arguments):
     """Renvoie la moyenne des arguments.
 
-    arguments - doit comporter au moins une valeur et toutes les valeurs sont numériques.
+    arguments - doit comporter au moins une valeur et toutes 
+                les valeurs sont numériques.
     Retourne la moyenne de ces arguments.
     """
     total = 0
@@ -1056,7 +1082,9 @@ print(resultat)
 
 ---
 
-# Autre exemple
+<!-- _class: smaller-text -->
+
+#### Autre exemple
 
 ```python
 def log(message, *valeurs):
@@ -1085,15 +1113,20 @@ Mes valeurs : 7, 42, 3.14
 ```
 
 <!--
-Contrairement au précédent exemple, celui-ci supporte le cas où la liste variable d'argument est vide.
+Contrairement au précédent exemple, celui-ci supporte le cas où la liste variable d'arguments est vide.
 -->
 
 ---
 
-# Arguments positionnels et nommés
+#### Arguments positionnels et nommés (1/2)
 
-- Il est possible d'appeler une fonction avec les arguments dans l'ordre de leur déclaration. Il s'agit d'arguments positionnels.
-- Il est également possible d'appeler une fonction en spécifiant les noms des arguments et leurs valeurs. Il s'agit d'arguments nommés.
+- Il est possible d'appeler une fonction avec les arguments dans l'ordre de leur déclaration. Il s'agit d'**arguments positionnels**.
+- Il est également possible d'appeler une fonction en **spécifiant les noms des arguments et leurs valeurs**. Il s'agit d'**arguments nommés**.
+
+
+---
+
+#### Arguments positionnels et nommés (2/2)
 
 ```python
 def debit(diff_poids, diff_temps, periode=1, unites_par_kg=1):
@@ -1105,7 +1138,9 @@ def debit(diff_poids, diff_temps, periode=1, unites_par_kg=1):
 
 ---
 
-# Nombre variable d'arguments nommés
+<!-- _class: smaller-text -->
+
+### Nombre variable d'arguments nommés
 
 ```python
 def affiche_parametres(**kwargs):
@@ -1127,6 +1162,11 @@ prenom : Louise
 nom : Clark
 ```
 
+<!--
+On emploie ici une étoile supplémentaire.
+Cette syntaxe deviendra plus claire lorsque nous parlerons des dictionnaires lors d'un prochain cours.
+-->
+
 ---
 
 <!-- _class: title-section -->
@@ -1143,7 +1183,7 @@ nom : Clark
 
 ---
 
-# Un autre exemple de retour de plusieurs résultats
+## Un autre exemple de retour de plusieurs résultats
 
 ```python
 def echange(premier, second):
@@ -1163,7 +1203,9 @@ print(f"{un}, {deux}")
 
 ---
 
-# Inintérêt d'un sous-ensemble de résultats
+<!-- _class: smaller-text -->
+
+### Inintérêt d'un sous-ensemble de résultats
 
 - Il peut arriver que certains résultats ne soient pas pertinents dans notre contexte d'appel.
 - Une convention en Python consiste à utiliser `_` (underscore) pour une variable dont la valeur ne nous intéresse pas.
@@ -1184,7 +1226,7 @@ un : 1 ; trois : 3
 
 ---
 
-# Opérateur de déballage pour retours de fonction
+### Opérateur de déballage pour retours de fonction
 
 Vous pouvez utiliser l'unpacking operator lorsqu'une fonction retourne un grand nombre de résultats.
 
@@ -1240,13 +1282,17 @@ un : 1 ; deux : 2 ; nombre d'autres : 7
 La récursivité est un concept avec lequel les étudiants ont souvent des difficultés au départ.
 Il est utile d'introduire cette notion avec une intuition géométrique puis un exemple plus textuel avant de passer à une définition plus formelle.
 Attention : cette page contient un git animé inactif dans la version pdf.
+Images de Wikipedia.
+Liens :
+- https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Mandel_zoom_00_mandelbrot_set.jpg/640px-Mandel_zoom_00_mandelbrot_set.jpg
+- https://upload.wikimedia.org/wikipedia/commons/a/a4/Mandelbrot_sequence_new.gif
 -->
 
 ---
 
-# Fractal et récursivité
+### Fractal et récursivité
 
-![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif)
+![bg right:35% 90%](https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif)
 
 - Un fractal est récursif dans le sens où il se répète lui-même.
 - Le flocon de Von Koch ci-contre part d'un triangle et lui applique plusieurs fois la même fonction.
@@ -1254,29 +1300,31 @@ Attention : cette page contient un git animé inactif dans la version pdf.
 
 <!--
 Attention : cette page contient un git animé inactif dans la version pdf.
+Images de Wikipedia.
+Lien : https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif
 -->
 
 ---
 
 # Accronymes récursifs
 
-- Ces accronymes sont récursifs :
-    - **G**NU is **N**ot **U**nix
-    - **W**INE **I**s **N**ot an **E**mulator
-    - **C**URL **U**RL **R**equest **L**ibrary
-    - **P**HP **H**ypertext **P**reprocessor
-    - **G**RPC **R**emote **P**rocedure **C**all
-    - **Y**AML **A**in't **M**arkup **L**anguage
-- On les dit récursifs car ils se répètent indéfiniment.
+* Ces accronymes sont récursifs :
+    * **G**NU is **N**ot **U**nix
+    * **W**INE **I**s **N**ot an **E**mulator
+    * **C**URL **U**RL **R**equest **L**ibrary
+    * **P**HP **H**ypertext **P**reprocessor
+    * **G**RPC **R**emote **P**rocedure **C**all
+    * **Y**AML **A**in't **M**arkup **L**anguage
+* On les dit récursifs car ils se répètent indéfiniment.
 
 ---
 
-# Définition : fonction récursive
+## Définition : fonction récursive
 
-- Une fonction est **récursive** si **elle s'appelle elle-même**.
-- La récursion peut être **directe** si la fonction s'appelle elle-même directement.
-- La récursion peut être **indirecte** si la fonction appelle une séquence de fonctions qui fini par appeler la fonction initiale.
-- Une fonction doit avoir une **condition de fin**. Sinon, son exécution prendrait un temps infini.
+* Une fonction est **récursive** si **elle s'appelle elle-même**.
+* La récursion peut être **directe** si la fonction s'appelle elle-même directement.
+* La récursion peut être **indirecte** si la fonction appelle une séquence de fonctions qui fini par appeler la fonction initiale.
+* La récursion doit avoir une **condition de fin**. Sinon, son exécution prendrait un temps infini.
 
 ---
 
@@ -1301,9 +1349,9 @@ On défini la valeur d'un élément par rapport aux éléments précédents.
 
 ---
 
-# En Python
+<!-- _class: smaller-text -->
 
-- En reprenant la définition de la suite mathématiques :
+# En Python
 
 ```python
 def f(N, a=1, b=0, c=1, b0=0):
@@ -1331,15 +1379,17 @@ On va simplifier cette définition avant de la tester puis de l'instrumenter.
 
 ---
 
+<!-- _class: smaller-text -->
+
 # <!--fit--> Simplification de l'exemple précédent
 
-- Pour a = 2, b = 1, b0 = 0, c = 1 :
+Pour a = 2, b = 1, b0 = 0, c = 1 :
 
 ```python
 def f(N):
     """Calcule la Nième valeur de la suite arithmético-géométrique f.
 
-    f est définie telle que f(0) = 0, et f(N) = 2 . f(N-1) + 1 sinon.
+    f est définie telle que f(0) = 0, et f(N) = 2 * f(N-1) + 1 sinon.
     Retourne la Nième valeur de la suite.    
     """
     if N == 0:
@@ -1358,6 +1408,8 @@ print(resultat)
 ```
 
 ---
+
+<!-- _class: smaller-text -->
 
 # <!--fit--> Instrumentation de l'exemple précédent
 
@@ -1395,6 +1447,8 @@ On calcule enfin f(3) = 2 * 3 + 1 = 7, et on l'affiche.
 
 ---
 
+<!-- _class: smaller-text -->
+
 # Limites de la pile
 
 ```python
@@ -1428,14 +1482,14 @@ Ce type de problème s'appelle : stack overflow (surchage de pile d'appels).
 
 ---
 
-# Notes concernant la récursivité
+#### Notes concernant la récursivité
 
-- Certains problèmes ont une définition naturellement récursive.
-- Ces problèmes sont plus faciles à résoudre en utilisant la récursivité.
-- Parfois, les solutions itératives équivalentes sont très difficiles à trouver.
-- Les solutions itératives sont presque toujours meilleures car :
-    - Elles n'engendrent pas de *stack overflow*.
-    - Elles nécessitent souvent moins de mémoire car le contexte d'appel n'a pas à être sauvegardé.
+* Certains problèmes ont une **définition naturellement récursive**.
+* Ces problèmes sont **plus faciles** à résoudre en utilisant la récursivité.
+* Parfois, les solutions itératives équivalentes sont très difficiles à trouver.
+* Les **solutions itératives** sont presque toujours **meilleures** car :
+    * Elles n'engendrent pas de *stack overflow*.
+    * Elles nécessitent souvent moins de mémoire car le contexte d'appel n'a pas à être sauvegardé.
 
 ---
 
@@ -1450,7 +1504,7 @@ Ce type de problème s'appelle : stack overflow (surchage de pile d'appels).
 # Intérêt
 
 * Un **code propre** est écrit en fonction d'algorithmes et de structures de données.
-* Lorsque l'on écrit des bibliothèques de fonctions, on souhaite que les fonctions fournies puissent être utilisées dans une grande variété de contexte.
+* Lorsque l'on écrit des bibliothèques de fonctions, on souhaite que les fonctions fournies puissent être utilisées dans une grande variété de contextes.
 * Les **fonctions d'ordre supérieur** sont un outil puissant pour **réutiliser** des algorithmes et à les **généraliser**.
 
 <!--
@@ -1470,7 +1524,7 @@ On va voir ce que sont ces fonctions d'ordre supérieur.
 # Tout est objet
 
 - En Python, tout est objet.
-- En particulier, une fonction est un objet.
+- En particulier, **une fonction est un objet**.
 
 ```python
 def foo():
@@ -1488,7 +1542,9 @@ print(f"{foo_type}")
 
 ---
 
-# Assignation d'une fonction à une variable
+<!-- _class: smaller-text -->
+
+#### Assignation d'une fonction à une variable
 
 ```python
 def f():
@@ -1497,10 +1553,10 @@ def f():
 def g():
     return 2
 
-fonction = f   # la variable "function" est liée à f
+fonction = f   # la variable "fonction" est liée à f
 a = fonction() # f est appelée
 
-fonction = g   # la variable "function" est liée à g
+fonction = g   # la variable "fonction" est liée à g
 b = fonction() # g est appelée
 
 print(f"a = {a} ; b = {b}")
@@ -1516,22 +1572,22 @@ a = 1 ; b = 2
 
 <!-- _class: smaller-text -->
 
-# Généralisation de la dichotomie
+**Généralisation de la dichotomie**
 
 ```python
 def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
     """Cacule la racine r telle que f(r) - x = 0 par dichotomie.
 
-    Généralisation de l'algorithme de dichotomie sur un interval [debut ; fin] avec 
-    une fonction d'évaluation f pour le calcul d'une racine r. La racine r doit être 
-    dans l'interval de recherche, sinon la condition de fin de l'algorithme n'est
-    pas garantie.
+    Généralisation de l'algorithme de dichotomie sur un interval [debut ; fin]
+    avec une fonction d'évaluation f pour le calcul d'une racine r. La racine r
+    doit être dans l'interval de recherche, sinon la condition de fin de
+    l'algorithme n'est pas garantie.
     x - nombre flottant dont on recherche la racine | f(r) - x | < epsilon.
-    f - fonction d'évaluation prenant et renvoyant un flottant. Cette fonction doit
-        être dérivable sur l'interval [debut ; fin].
+    f - fonction d'évaluation prenant et renvoyant un flottant. Cette fonction
+        doit être dérivable sur l'interval [debut ; fin].
     debut - début de l'interval de recherche de r.
     fin - fin de l'interval de recherche de r.
-    epsilon - erreur acceptable qui doit être strictement supérieur à 0.
+    epsilon - erreur acceptable qui doit être strictement supérieure à 0.
     Renvoie la racine r telle que | f(r) - x | < epsilon.
     """
     r = (debut + fin) / 2
@@ -1546,7 +1602,7 @@ def dichotomie(x, f, debut=0, fin=1000, epsilon=0.001):
 
 ---
 
-# Recherche dans un interval avec dichotomie d'ordre supérieur
+#### Recherche dans un interval avec dichotomie d'ordre supérieur
 
 ```python
 def affine(x):
@@ -1565,7 +1621,9 @@ print(resultat)
 
 ---
 
-# Racine carrée avec dichotomie d'ordre supérieur
+<!-- _class: smaller-text -->
+
+#### Racine carrée avec dichotomie d'ordre supérieur
 
 ```python
 def racine_carree(x, epsilon=0.001):
@@ -1598,16 +1656,16 @@ Ces fonctions internes ne devraient jamais faire plus de 1 à 3 lignes.
 
 ---
 
-# Générateur de fonction (1/2)
+## Générateur de fonction (1/3)
 
-- Le principe d'un générateur de fonction : on retourne une nouvelle fonction en capturant les entrées.
+- Le principe d'un générateur de fonction : on **retourne une nouvelle fonction** en capturant les entrées.
 - Exemple : série mathématiques paramétrable.
 
 ---
 
 <!-- _class: smaller-text -->
 
-# Générateur de fonction (2/2)
+## Générateur de fonction (2/3)
 
 ```python
 def suite(a=1, b=0, c=1, b0=0):
@@ -1624,11 +1682,19 @@ def suite(a=1, b=0, c=1, b0=0):
         return b0 if N == 0 else a * (f(N - 1) ** c) + b
 
     return f
+```
 
+
+---
+
+## Générateur de fonction (3/3)
+
+```python
 suite_arithmetique = suite(b=2)
 print(f"f(0) = {suite_arithmetique(0)}")
 print(f"f(1) = {suite_arithmetique(1)}")
 print(f"f(2) = {suite_arithmetique(2)}")
+print(f"f(3) = {suite_arithmetique(3)}")
 ```
 
 :arrow_down:
@@ -1637,6 +1703,7 @@ print(f"f(2) = {suite_arithmetique(2)}")
 f(0) = 0
 f(1) = 2
 f(2) = 4
+f(3) = 6
 ```
 
 ---
@@ -1649,7 +1716,7 @@ f(2) = 4
 
 # Origine
 
-* Le **calcul lambda**, noté $\lambda$-calcul is un système mathématiques formel pour exprimer des calculs quelconques à partir des concepts de **fonction** et d'application.
+* Le **calcul lambda**, noté $\lambda$-calcul est un système mathématiques formel pour exprimer des calculs quelconques à partir des concepts de **fonction** et d'application.
 * Il est inventé dans les année 1930 par Alonzo Church.
 * Ce système est **Turing-complet**.
 * Dans ce système, tout est fonction.
@@ -1663,7 +1730,7 @@ Les fonction lambda sont intéressantes et pratiques.
 
 ---
 
-# Fonctions lambda dans les langages impératifs
+## Fonctions lambda dans les langages impératifs
 
 * Une fonction lambda :
     * n'a pas de nom - elle est **anonyme**.
@@ -1673,7 +1740,7 @@ Les fonction lambda sont intéressantes et pratiques.
 
 ---
 
-# Fonction lambda en Python
+## Fonction lambda en Python
 
 - Le mot clé `lambda` est suivi d'une liste de paramètres puis d'une expression.
 - Cette expression est la valeur de retour de la fonction lambda.
@@ -1685,7 +1752,7 @@ lambda x : x ** 2
 
 ---
 
-# Racine carrée avec dichotomie et lambda
+# <!--fit--> Racine carrée avec dichotomie et lambda
 
 ```python
 def racine_carree(x, epsilon=0.001):
@@ -1710,7 +1777,7 @@ print(resultat)
 
 <!-- _class: smaller-text --->
 
-# Générateur de suite avec lambda
+# <!--fit--> Générateur de suite avec lambda (1/2)
 
 ```python
 def suite(a=1, b=0, b0=0):
@@ -1728,7 +1795,20 @@ def suite(a=1, b=0, b0=0):
         # Calcul du terme général dans le cas général
         r = b / (1 - a)
         return lambda N : (a ** N) * (b0 - r) + r
+```
 
+<!--
+Il n'est évidemment pas possible de définir une fonction lambda récursive.
+En effet, une fonction lambda n'a pas de nom et ne peut donc pas savoir comment s'appeler elle-même.
+C'est la raison pour laquelle nous utilisons ici le calcul du terme général d'une suite arithmético-géométrique.
+Il s'agit de la version itérative de l'algorithme récursif vu dans les diapositives précédentes.
+-->
+
+---
+
+# <!--fit--> Générateur de suite avec lambda (2/2)
+
+```python
 ma_suite = suite(a=2, b=1)
 print(f"f(1) = {ma_suite(1)}")
 print(f"f(2) = {ma_suite(2)}")
@@ -1742,13 +1822,6 @@ f(1) = 1.0
 f(2) = 3.0
 f(3) = 7.0
 ```
-
-<!--
-Il n'est évidemment pas possible de définir une fonction lambda récursive.
-En effet, une fonction lambda n'a pas de nom et ne peut donc pas savoir comment s'appeler elle-même.
-C'est la raison pour laquelle nous utilisons ici le calcul du terme général d'une suite arithmético-géométrique.
-Il s'agit de la version itérative de l'algorithme récursif vu dans les diapositives précédentes.
--->
 
 ---
 
@@ -1766,15 +1839,15 @@ Il s'agit de la version itérative de l'algorithme récursif vu dans les diaposi
 
 <!-- _class: title-section -->
 
-# <!--fit--> Programmation impérative
-### :vs:
-# <!--fit--> Programmation fonctionnelle 
+### Programmation impérative
+##### :vs:
+### Programmation fonctionnelle 
 
-##### Notions de pureté et d'immutabilité
+###### Notions de pureté et d'immutabilité
 
 ---
 
-# <!--fit--> Contraintes des langages fonctionnels
+# <!--fit--> Contraintes des langages fonctionnels (1/2)
 
 * Dans un langage fonctionnel :
     * Les variables sont **immutables**. Elles ne peuvent pas changer de valeur.
@@ -1782,8 +1855,13 @@ Il s'agit de la version itérative de l'algorithme récursif vu dans les diaposi
         * Les sorties ne dépendent que des entrées.
         * Il n'y a donc pas d'accès possible à une variable globale.
         * Il n'y a pas d'effet de bord : lecture depuis un fichier, entrée console, etc.
-* Python n'est pas un langage fonctionnel : on peut changer les valeurs des variables et accéder à des variables globales.
-* Il est possible d'écrire du code fonctionnel avec Python en appliquant les principes ci-dessus.
+
+---
+
+# <!--fit--> Contraintes des langages fonctionnels (2/2)
+
+* **Python** n'est **pas un langage fonctionnel** : on peut changer les valeurs des variables et accéder à des variables globales.
+* Il est possible d'écrire du code fonctionnel avec Python en appliquant les principes fonctionnels.
 
 ---
 
@@ -1796,13 +1874,18 @@ Il s'agit de la version itérative de l'algorithme récursif vu dans les diaposi
 
 ---
 
-# Programmation impérative
+### Programmation impérative
 
-![bg right:45% 90%](https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghettata.JPG)
+![bg right:25% 90%](https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghettata.JPG)
 
 * Etat **global** et **effets de bords** parfois difficiles à maîtriser.
 * Pour comprendre une fonction : il faut potentiellement comprendre l'état global du programme.
 * Un code non maîtrisé peut devenir un "plat de spaghetti".
+
+<!--
+Image de Wikipedia.
+Lien : https://upload.wikimedia.org/wikipedia/commons/3/33/Spaghettata.JPG
+-->
 
 ---
 
@@ -1812,29 +1895,36 @@ Il s'agit de la version itérative de l'algorithme récursif vu dans les diaposi
 
 ---
 
-# <!--fit--> Pourquoi tout le monde ne fait pas du fonctionnel ?
+### Pourquoi tout le monde ne fait pas du fonctionnel ? (1/2)
 
 * **Performances** :
-    - Les langages fonctionnels sont interprétés et comportent tous un garbage collector.
-    - Un langage fonctionnel ne peut pas être aussi performant que C++ ou Rust.
-    - Un langage fonctionnel peut être aussi performant que Python.
+    * Les langages fonctionnels sont interprétés et comportent tous un *garbage collector*.
+    * Un langage fonctionnel ne peut pas être aussi performant que C++ ou Rust.
+    * Un langage fonctionnel peut être aussi performant que Python.
+
+---
+
+### Pourquoi tout le monde ne fait pas du fonctionnel ? (2/2)
+
 * **Complexité** :
-    - Les contraintes supplémentaires et le rattachement à la théorie des catégories peut sembler plus complexe à appréhender.
-    - Les langages impératifs (ou multi-paradigmes) comme Python sont plus anciens et ont une plus grande communauté d'utilisateurs.
+    * Les contraintes supplémentaires et le rattachement à la théorie des catégories peut sembler plus complexe à appréhender.
+    * Les langages impératifs (ou multi-paradigmes) comme Python sont plus anciens et ont une plus grande communauté d'utilisateurs.
 * **Bibliothèques** : Il existe moins de bibliothèques disponibles avec les langages fonctionnels.
 
 <!--
 On peut espérer que les 2 dernier points vont évoluer dans le bon sens.
-Les langages fonctionnels sont extrêmement intéressants mais certains cas d'usage.
+Les langages fonctionnels sont extrêmement intéressants mais certains cas d'usage ne sont pas supportés, comme la programmation temps réelle embarquée.
 -->
 
 ---
 
-# Les langages impératifs sont-il condamnés à produire du mauvais code ?
+#### Les langages impératifs sont-il condamnés à produire du mauvais code ?
 
 * **Non**.
 * Le langage de programmation C est impératif et il est très facile à utiliser de manière incorrecte.
 * L'interpréteur **CPython** est implémenté dans le langage de programmation C.
+* CPython est de très bonne qualité et fait environ 1 million de lignes de code.
+
 
 ---
 
@@ -1864,7 +1954,7 @@ Les langages fonctionnels sont extrêmement intéressants mais certains cas d'us
 
 ---
 
-# Méthodes sur `str` (1/2)
+### Méthodes sur `str` (1/2)
 
 ```python
 chaine = "bonjour, monde"
@@ -1889,7 +1979,7 @@ Bonjour, monde
 
 ---
 
-# Méthodes sur `str` (2/2)
+### Méthodes sur `str` (2/2)
 
 * Les chaînes de caractères sont représentées par le type `str`.
 * On a utilisé une syntaxe particulière pour appeler les fonctions `upper`, `capitalize` et `find` qui sont rattachées au type `str`.
