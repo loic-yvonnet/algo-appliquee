@@ -685,7 +685,7 @@ def nom_de_la_fonction(liste_de_parametres):
 # Définition formelle (2/3)
 
 - Lorsque l'on appelle (ou *invoque*) une fonction :
-    - les expressions qui forment les paramètres sont évalués.
+    - les expressions qui forment les paramètres sont évaluées.
     - les paramètres formels de la fonction sont liés aux valeurs de ces expressions (passage par valeur).
     - le point d'exécution est déplacé depuis le point d'invocation à la première instruction du corps de la fonction.
     - *cf. diapositive suivante...*
@@ -1207,7 +1207,7 @@ print(f"{un}, {deux}")
 
 ### Inintérêt d'un sous-ensemble de résultats
 
-- Il peut arriver que certains résultats ne soient pas pertinents dans notre contexte d'appel.
+- Il peut arriver que certains résultats ne soient pas pertinants dans notre contexte d'appel.
 - Une convention en Python consiste à utiliser `_` (underscore) pour une variable dont la valeur ne nous intéresse pas.
 
 ```python
@@ -1323,7 +1323,7 @@ Lien : https://upload.wikimedia.org/wikipedia/commons/f/fd/Von_Koch_curve.gif
 
 * Une fonction est **récursive** si **elle s'appelle elle-même**.
 * La récursion peut être **directe** si la fonction s'appelle elle-même directement.
-* La récursion peut être **indirecte** si la fonction appelle une séquence de fonctions qui fini par appeler la fonction initiale.
+* La récursion peut être **indirecte** si la fonction appelle une séquence de fonctions qui finit par appeler la fonction initiale.
 * La récursion doit avoir une **condition de fin**. Sinon, son exécution prendrait un temps infini.
 
 ---
@@ -1505,7 +1505,7 @@ Ce type de problème s'appelle : stack overflow (surchage de pile d'appels).
 
 * Un **code propre** est écrit en fonction d'algorithmes et de structures de données.
 * Lorsque l'on écrit des bibliothèques de fonctions, on souhaite que les fonctions fournies puissent être utilisées dans une grande variété de contextes.
-* Les **fonctions d'ordre supérieur** sont un outil puissant pour **réutiliser** des algorithmes et à les **généraliser**.
+* Les **fonctions d'ordre supérieur** sont un outil puissant pour **réutiliser** des algorithmes et les **généraliser**.
 
 <!--
 On va voir ce que sont ces fonctions d'ordre supérieur.
@@ -1513,7 +1513,7 @@ On va voir ce que sont ces fonctions d'ordre supérieur.
 
 ---
 
-# Definition
+# Définition
 
 - Une **fonction d'ordre supérieur** est une fonction qui fait au moins l'une des 2 choses suivantes :
     * Prend une fonction comme argument.
@@ -1659,7 +1659,7 @@ Ces fonctions internes ne devraient jamais faire plus de 1 à 3 lignes.
 ## Générateur de fonction (1/3)
 
 - Le principe d'un générateur de fonction : on **retourne une nouvelle fonction** en capturant les entrées.
-- Exemple : série mathématiques paramétrable.
+- Exemple : série mathématique paramétrable.
 
 ---
 
@@ -1716,7 +1716,7 @@ f(3) = 6
 
 # Origine
 
-* Le **calcul lambda**, noté $\lambda$-calcul est un système mathématiques formel pour exprimer des calculs quelconques à partir des concepts de **fonction** et d'application.
+* Le **calcul lambda**, noté $\lambda$-calcul est un système mathématique formel pour exprimer des calculs quelconques à partir des concepts de **fonction** et d'application.
 * Il est inventé dans les année 1930 par Alonzo Church.
 * Ce système est **Turing-complet**.
 * Dans ce système, tout est fonction.
@@ -1984,7 +1984,7 @@ Bonjour, monde
 * Les chaînes de caractères sont représentées par le type `str`.
 * On a utilisé une syntaxe particulière pour appeler les fonctions `upper`, `capitalize` et `find` qui sont rattachées au type `str`.
 * Ces fonctions rattachées à un type spécifiques s'appellent des **méthodes**.
-* Chaque type peut définir son propre jeu de méthodes qui lui sont propres.
+* Chaque type peut définir son propre jeu de méthodes.
 
 ---
 
