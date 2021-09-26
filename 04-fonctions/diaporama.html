@@ -1240,7 +1240,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <ul>
 <li>Lorsque l'on appelle (ou <em>invoque</em>) une fonction :
 <ul>
-<li>les expressions qui forment les paramètres sont évalués.</li>
+<li>les expressions qui forment les paramètres sont évaluées.</li>
 <li>les paramètres formels de la fonction sont liés aux valeurs de ces expressions (passage par valeur).</li>
 <li>le point d'exécution est déplacé depuis le point d'invocation à la première instruction du corps de la fonction.</li>
 <li><em>cf. diapositive suivante...</em></li>
@@ -2272,7 +2272,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 ;">
 <h3>Inintérêt d'un sous-ensemble de résultats</h3>
 <ul>
-<li>Il peut arriver que certains résultats ne soient pas pertinents dans notre contexte d'appel.</li>
+<li>Il peut arriver que certains résultats ne soient pas pertinants dans notre contexte d'appel.</li>
 <li>Une convention en Python consiste à utiliser <code>_</code> (underscore) pour une variable dont la valeur ne nous intéresse pas.</li>
 </ul>
 <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">quelques_elements</span>():</span>
@@ -2563,7 +2563,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <ul>
 <li data-marpit-fragment="1">Une fonction est <strong>récursive</strong> si <strong>elle s'appelle elle-même</strong>.</li>
 <li data-marpit-fragment="2">La récursion peut être <strong>directe</strong> si la fonction s'appelle elle-même directement.</li>
-<li data-marpit-fragment="3">La récursion peut être <strong>indirecte</strong> si la fonction appelle une séquence de fonctions qui fini par appeler la fonction initiale.</li>
+<li data-marpit-fragment="3">La récursion peut être <strong>indirecte</strong> si la fonction appelle une séquence de fonctions qui finit par appeler la fonction initiale.</li>
 <li data-marpit-fragment="4">La récursion doit avoir une <strong>condition de fin</strong>. Sinon, son exécution prendrait un temps infini.</li>
 </ul>
 </section>
@@ -2874,7 +2874,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <ul>
 <li data-marpit-fragment="1">Un <strong>code propre</strong> est écrit en fonction d'algorithmes et de structures de données.</li>
 <li data-marpit-fragment="2">Lorsque l'on écrit des bibliothèques de fonctions, on souhaite que les fonctions fournies puissent être utilisées dans une grande variété de contextes.</li>
-<li data-marpit-fragment="3">Les <strong>fonctions d'ordre supérieur</strong> sont un outil puissant pour <strong>réutiliser</strong> des algorithmes et à les <strong>généraliser</strong>.</li>
+<li data-marpit-fragment="3">Les <strong>fonctions d'ordre supérieur</strong> sont un outil puissant pour <strong>réutiliser</strong> des algorithmes et les <strong>généraliser</strong>.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="78" data-marpit-fragments="2" data-paginate="true" data-theme="uncover" data-style="section {
@@ -2902,7 +2902,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
   font-size: 0.6em;
 }
 ;">
-<h1>Definition</h1>
+<h1>Définition</h1>
 <ul>
 <li>Une <strong>fonction d'ordre supérieur</strong> est une fonction qui fait au moins l'une des 2 choses suivantes :
 <ul>
@@ -3025,15 +3025,15 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">dichotomie</span>(<span class="hljs-params">x, f, debut=<span class="hljs-number">0</span>, fin=<span class="hljs-number">1000</span>, epsilon=<span class="hljs-number">0.001</span></span>):</span>
     <span class="hljs-string">&quot;&quot;&quot;Cacule la racine r telle que f(r) - x = 0 par dichotomie.
 
-    Généralisation de l&#x27;algorithme de dichotomie sur un interval [debut ; fin]
+    Généralisation de l&#x27;algorithme de dichotomie sur un intervalle [debut ; fin]
     avec une fonction d&#x27;évaluation f pour le calcul d&#x27;une racine r. La racine r
-    doit être dans l&#x27;interval de recherche, sinon la condition de fin de
+    doit être dans l&#x27;intervalle de recherche, sinon la condition de fin de
     l&#x27;algorithme n&#x27;est pas garantie.
     x - nombre flottant dont on recherche la racine | f(r) - x | &lt; epsilon.
     f - fonction d&#x27;évaluation prenant et renvoyant un flottant. Cette fonction
-        doit être dérivable sur l&#x27;interval [debut ; fin].
-    debut - début de l&#x27;interval de recherche de r.
-    fin - fin de l&#x27;interval de recherche de r.
+        doit être dérivable sur l&#x27;intervalle [debut ; fin].
+    debut - début de l&#x27;intervalle de recherche de r.
+    fin - fin de l&#x27;intervalle de recherche de r.
     epsilon - erreur acceptable qui doit être strictement supérieure à 0.
     Renvoie la racine r telle que | f(r) - x | &lt; epsilon.
     &quot;&quot;&quot;</span>
@@ -3072,7 +3072,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
   font-size: 0.6em;
 }
 ;">
-<h4>Recherche dans un interval avec dichotomie d'ordre supérieur</h4>
+<h4>Recherche dans un intervalle avec dichotomie d'ordre supérieur</h4>
 <pre><code class="language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">affine</span>(<span class="hljs-params">x</span>):</span>
     <span class="hljs-string">&quot;&quot;&quot;Renvoie la valeur en entrée.&quot;&quot;&quot;</span>
     <span class="hljs-keyword">return</span> x
@@ -3156,7 +3156,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <h2>Générateur de fonction (1/3)</h2>
 <ul>
 <li>Le principe d'un générateur de fonction : on <strong>retourne une nouvelle fonction</strong> en capturant les entrées.</li>
-<li>Exemple : série mathématiques paramétrable.</li>
+<li>Exemple : série mathématique paramétrable.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="85" data-paginate="true" data-class="smaller-text" data-theme="uncover" data-style="section {
@@ -3294,7 +3294,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 ;">
 <h1>Origine</h1>
 <ul>
-<li data-marpit-fragment="1">Le <strong>calcul lambda</strong>, noté <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span>-calcul est un système mathématiques formel pour exprimer des calculs quelconques à partir des concepts de <strong>fonction</strong> et d'application.</li>
+<li data-marpit-fragment="1">Le <strong>calcul lambda</strong>, noté <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span>-calcul est un système mathématique formel pour exprimer des calculs quelconques à partir des concepts de <strong>fonction</strong> et d'application.</li>
 <li data-marpit-fragment="2">Il est inventé dans les année 1930 par Alonzo Church.</li>
 <li data-marpit-fragment="3">Ce système est <strong>Turing-complet</strong>.</li>
 <li data-marpit-fragment="4">Dans ce système, tout est fonction.</li>
@@ -4039,7 +4039,7 @@ section.smaller-text p, section.smaller-text pre, section.smaller-text ul, secti
 <li data-marpit-fragment="1">Les chaînes de caractères sont représentées par le type <code>str</code>.</li>
 <li data-marpit-fragment="2">On a utilisé une syntaxe particulière pour appeler les fonctions <code>upper</code>, <code>capitalize</code> et <code>find</code> qui sont rattachées au type <code>str</code>.</li>
 <li data-marpit-fragment="3">Ces fonctions rattachées à un type spécifiques s'appellent des <strong>méthodes</strong>.</li>
-<li data-marpit-fragment="4">Chaque type peut définir son propre jeu de méthodes qui lui sont propres.</li>
+<li data-marpit-fragment="4">Chaque type peut définir son propre jeu de méthodes.</li>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="110" data-paginate="true" data-class="title-section" data-theme="uncover" data-style="section {
