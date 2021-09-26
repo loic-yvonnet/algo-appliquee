@@ -13,13 +13,11 @@ _paginate: false
 style: |
   section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
-    font-size: 1.8rem;
   }
 
   section.title-section {
     background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
     color: #fff;
-    font-size: 2rem;
   }
 
   section.smaller-text p, section.smaller-text pre, section.smaller-text ul, section.smaller-text table {
