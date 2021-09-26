@@ -11,6 +11,8 @@ Dans ce TP, vous allez déboguer un programme mal écrit et comportant des bugs.
 
 ## Exercice 1 - Prendre connaissance du code
 
+### Exercice 1.1 - Reformatter et commenter
+
 On vous donne le code suivant et on vous demande simplement de le faire fonctionner sans vous donner plus de précision.
 
 Prenez connaissance de ce code, exécutez-le et mettez des points d'arrêt pour tenter de comprendre le flot d'exécution.
@@ -64,6 +66,8 @@ final_code+=apres
 print(final_code)
 ```
 
+### Exercice 1.2 - Hypothèse 1
+
 Que se passe-t-il si vous changez l'entrée de la manière suivante ?
 ```py
 entree = """
@@ -76,6 +80,8 @@ print(somme)
 print(mult)
 """
 ```
+
+### Exercice 1.3 - Hypothèse 2
 
 Que se passe-t-il si vous changez l'entrée de la manière suivante ?
 ```py
@@ -103,7 +109,7 @@ Que se passe-t-il si vous changez l'entrée de la manière suivante :
 ```py
 entree = """
 somme = 0
-for i in range(3:10):
+for i in range(3, 10):
     somme += i
 print(somme)
 """
@@ -116,7 +122,7 @@ Que se passe-t-il si vous changez l'entrée de la manière suivante ?
 ```py
 entree = """
 somme = 0
-for i in range(0:10:2):
+for i in range(1, 10, 2):
     somme += i
 print(somme)
 """
