@@ -274,9 +274,9 @@ ERREUR_BLEU = 3
 
 MESSAGES = {
     SUCCES : "OK",
-    ERREUR_ROUGE : "Rouge à l'extérieur de l'interval [0 ; 255]",
-    ERREUR_VERT : "Vert à l'extérieur de l'interval [0 ; 255]",
-    ERREUR_BLEU : "Bleu à l'extérieur de l'interval [0 ; 255]"
+    ERREUR_ROUGE : "Rouge à l'extérieur de l'intervalle [0 ; 255]",
+    ERREUR_VERT : "Vert à l'extérieur de l'intervalle [0 ; 255]",
+    ERREUR_BLEU : "Bleu à l'extérieur de l'intervalle [0 ; 255]"
 }
 
 def niveau_gris(rouge, vert, bleu):
@@ -319,7 +319,7 @@ IndexError: list index out of range
 <!--
 Dans certains langages de programmation, comme le C++, les exceptions sont réservées aux cas exceptionnels.
 En Python, les exceptions ne sont pas rares et on les trouve partout pour gérer les erreurs.
-Ici, IndexError est un type d'exception levée par Python alors que l'on tente d'accéder à un élément en-dehors de l'interval.
+Ici, IndexError est un type d'exception levée par Python alors que l'on tente d'accéder à un élément en-dehors de l'intervalle.
 -->
 
 ---
