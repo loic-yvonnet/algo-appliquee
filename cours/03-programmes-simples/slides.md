@@ -76,7 +76,7 @@ On va également voir quelques techniques de programmation et de débogage.
 # Devine-et-vérifie
 
 Nous souhaitons résoudre les problèmes suivants :
-- Retrouver un nombre dans un interval,
+- Retrouver un nombre dans un intervalle,
 - Déterminer si un nombre est premier,
 - Calculer une racine carrée.
 
@@ -86,7 +86,7 @@ Nous allons aborder différentes techniques. La plus simple est "devine-et-véri
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Retrouver un nombre dans un interval
+# <!--fit--> Retrouver un nombre dans un intervalle
 
 ```python
 valeur_recherchee = int(input("Entrez un nombre entre 0 et 1 000 000 : "))
@@ -277,7 +277,7 @@ Faire éventuellement passer un autre apprenant si la première n'a pas trouvé 
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Retrouver un nombre dans un interval
+# <!--fit--> Retrouver un nombre dans un intervalle
 
 ```python
 valeur_recherchee = int(input("Entrez un nombre entre 0 et 1 000 000 : "))
@@ -298,10 +298,10 @@ else:
 ```
 
 <!--
-L'interval est représenté par [début ; fin].
-A chaque itération, on regarde si la valeur au milieu de l'interval est la bonne.
-Si la valeur recherchée est plus petite que le milieu, l'interval devient [début ; milieu].
-Sinon, l'interval devient [milieu ; fin].
+L'intervalle est représenté par [début ; fin].
+A chaque itération, on regarde si la valeur au milieu de l'intervalle est la bonne.
+Si la valeur recherchée est plus petite que le milieu, l'intervalle devient [début ; milieu].
+Sinon, l'intervalle devient [milieu ; fin].
 Par conséquent, début et fin convergent rapidement vers la valeur recherchée.
 -->
 
@@ -331,10 +331,10 @@ print(f"La racine carrée de {x} est {milieu} à {erreur} près")
 ```
 
 <!--
-On travaille dans l'interval [0 ; x] si x > 1 ou dans [0 ; 1] si 0 < x < 1.
-A chaque itération, on regarde si la valeur au milieu de l'interval est proche de la valeur souhaitée, à un epsilon près.
-Si la valeur recherchée est plus petite que le milieu, l'interval devient [début ; milieu].
-Sinon, l'interval devient [milieu ; fin].
+On travaille dans l'intervalle [0 ; x] si x > 1 ou dans [0 ; 1] si 0 < x < 1.
+A chaque itération, on regarde si la valeur au milieu de l'intervalle est proche de la valeur souhaitée, à un epsilon près.
+Si la valeur recherchée est plus petite que le milieu, l'intervalle devient [début ; milieu].
+Sinon, l'intervalle devient [milieu ; fin].
 Par conséquent, début et fin convergent rapidement vers la valeur recherchée.
 Cet algorithme basé sur la dichotomie converge beaucoup plus rapidement que la version avec énumération exhaustive.
 De plus, on contrôle mieux l'erreur grâce à un epsilon indépendant du pas d'itération.
@@ -345,7 +345,7 @@ De plus, on contrôle mieux l'erreur grâce à un epsilon indépendant du pas d'
 ### Comparaison entre dichotomie et énumération exhaustive
 
 * Intuitivement, pour les 3 problèmes qui nous préoccupent :
-    * Retrouver un nombre dans un interval : la **dichotomie** gagne.
+    * Retrouver un nombre dans un intervalle : la **dichotomie** gagne.
     * Déterminer si un nombre est premier : l'**énumération exhaustive** gagne.
     * Calculer une racine carrée : la **dichotomie** gagne.
 
@@ -379,7 +379,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 * Nous avons vu que différents algorithmes permettent de résoudre un même problème.
 * Nous avons tenté de comparer ces algorithmes en utilisant notre intuition.
-* L'intuition est utile mais pas très *mathématiques*.
+* L'intuition est utile mais pas très *mathématique*.
 * On souhaite effectuer des **mesures** et **obserser l'exécution**.
 
 ---
@@ -397,7 +397,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 <!-- _class: smaller-text -->
 
-# <!--fit--> Observation de valeurs en cour d'exécution
+# <!--fit--> Observation de valeurs en cours d'exécution
 
 ```python
 x = float(input("Entrez un nombre positif : "))
@@ -503,7 +503,7 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 # Benchmark (2/2)
 
-* Si un processus gourmant en ressources (tel qu'un jeu vidéo) est exécuté en même temps, la mesure peut être fortement **impactée**.
+* Si un processus gourmand en ressources (tel qu'un jeu vidéo) est exécuté en même temps, la mesure peut être fortement **impactée**.
 * Lorsque l'on souhaite être précis, il faut que les mesures soient **indépendantes** des autres processus.
 * Dans les prochains cours et TPs, nous verrons des méthodes plus précises.
 
@@ -627,7 +627,7 @@ C'est un algorithme simple, élégant et performant.
 # Problèmes et algorithmes
 
 - En résumé :
-    - Retrouver un nombre dans un interval : la **dichotomie** gagne,
+    - Retrouver un nombre dans un intervalle : la **dichotomie** gagne,
     - Déterminer si un nombre est premier : l'**énumération exhaustive** gagne,
     - Calculer une racine carrée : **Newton-Raphson** gagne.
     
@@ -698,13 +698,13 @@ Le programme peut fonctionner correctement pendant plusieurs jours sans problèm
 
 ---
 
-# <!--fit--> Bugs persistents et intermittents
+# <!--fit--> Bugs persistants et intermittents
 
-- **Bug persistent** : il survient de manière systématique et il est facile à reproduire.
+- **Bug persistant** : il survient de manière systématique et il est facile à reproduire.
 - **Bug intermittent** : il semble survenir de manière aléatoire et il est difficile à reproduire.
 
 <!--
-Les bugs manifestes et persistents sont les plus simples à analyser et à corriger.
+Les bugs manifestes et persistants sont les plus simples à analyser et à corriger.
 Les bugs cachés et intermittents peuvent se révéler très complexes à déboguer.
 Si ces problèmes surviennent rarement, il arrive que certaines entreprises décident malheureusement de ne pas les traiter.
 -->
@@ -876,7 +876,7 @@ En haut à droite de l'éditeur se trouve un bouton avec une flêche. Si on sél
 
 Parfois, on souhaite arrêter l'exécution **uniquement lorsqu'une condition bien particulière est remplie**.
 
-Pour cela, on commencer par créer un point d'arrêt classique. Ensuite, on fait un clic droit sur ce point d'arrêt pour l'éditer.
+Pour cela, on commence par créer un point d'arrêt classique. Ensuite, on fait un clic droit sur ce point d'arrêt pour l'éditer.
 
 ---
 
@@ -884,7 +884,7 @@ Pour cela, on commencer par créer un point d'arrêt classique. Ensuite, on fait
 
 ![bg right:35% 98%](./assets/09-condition-booleenne.png)
 
-Si on souhaite arrêter l'exécution uniquement si la valeur de la variable P est inférieur à 20, il suffit de rentrer l'expression `P < 20`.
+Si on souhaite arrêter l'exécution uniquement si la valeur de la variable P est inférieure à 20, il suffit de rentrer l'expression `P < 20`.
 
 Il est possible de rentrer **n'importe quelle expression Booléenne valide** en Python.
 
@@ -921,8 +921,8 @@ On peut obtenir l'arborescence de toutes les valeurs de toutes les variables dan
 ![bg right:25% 98%](./assets/13-breakpoint-log.png)
 
 - Parfois, on souhaite rajouter des **logs supplémentaires** sans pour autant changer le programme.
-- Le point d'arrêt Log **n'arrête pas** l'exécution du programme
-- il affiche le contenu de la f-string spécifiée à chaque fois que la ligne est atteinte.
+- Le point d'arrêt Log **n'arrête pas** l'exécution du programme.
+- Il affiche le contenu de la f-string spécifiée à chaque fois que la ligne est atteinte.
 
 ---
 

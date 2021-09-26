@@ -234,7 +234,7 @@ Les compétences attendues sont évaluées notamment sur la base des critères s
 Autres critères :
 * Pertinence de l'utilisation des **composants logiciels disponibles**.
 * Adéquation des **tests de validation** effectués.
-* Aptitude à proposer des **éléments de correction pertinents**.
+* Aptitude à proposer des **éléments de correction pertinants**.
 
 <!--
 La grille officielle d'évaluation n'a pas été communiquée.
