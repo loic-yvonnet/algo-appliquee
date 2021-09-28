@@ -44,8 +44,8 @@ style: |
 - Lists
 - Clonage et copie profonde
 - Sets
-- Dictionaries
-- Technique "Pythonic": comprehensions
+- Dictionnaires
+- Technique "Pythonic": compréhensions
 - Structure personnalisée
 
 ---
@@ -150,7 +150,7 @@ On voudrait aussi pouvoir manipuler des données hétérogènes.
 # Opérations de base
 
 * **Création** : Création d'un nouveau conteneur.
-* **Lecture** : Lecture de tout ou parti du contenu du conteneur.
+* **Lecture** : Lecture de tout ou partie du contenu du conteneur.
 * **Mise à Jour** :
     * Modification d'une valeur.
     * Insertion d'une valeur.
@@ -232,7 +232,7 @@ Une fois que la chaine est mise à None, les caractères ne sont plus référenc
 
 * La **mutabilité** est la capacité à mettre à jour un objet.
 * Cela signifie qu'il est possible de modifier sa valeur, d'insérer des éléments, ou d'en supprimer.
-* L'**immutabilité** est donc l'impossibilité à mettre à jour un objet.
+* L'**immutabilité** est donc l'impossibilité de mettre à jour un objet.
 
 ---
 
@@ -1097,7 +1097,7 @@ Ainsi, on a maintenant liste1 et liste2 qui sont liés à des structures totalem
 
 * Comme en mathématiques, un ensemble, noté `set`, est une collection **non-ordonnée** d'**éléments uniques**.
 * Les éléments individuels peuvent être de **types différents**.
-* Ils doivent être **hashables**, c'est-à-dire fournir une définition pour les méthodes :
+* Ils doivent être ***hashables***, c'est-à-dire fournir une définition pour les méthodes :
     * `__hash__` : génère un `int` unique pour un objet.
     * `__eq__` : égalité entre 2 objets.
 
@@ -1672,7 +1672,7 @@ x, y, z = point[0], point[1], point[2]
 - Il faut garder le modèle mental de correspondance :
     - 0 pour l'abscisse x,
     - 1 pour l'ordonnée y,
-    - 2 pour l'ordonnée z.
+    - 2 pour la profondeur z.
 - Cette correspondance complexifie le code.
 
 <!--
