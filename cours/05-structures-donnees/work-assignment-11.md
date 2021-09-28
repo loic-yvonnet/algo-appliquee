@@ -55,8 +55,8 @@ La fonction `menu_principal` renvoie le choix de l'utilisateur sous la forme d'u
 Ecrivez une fonction `prepare_dico` qui créé et retourne le dictionnaire suivant :
 ```py
 dico = {
-    "patients": {},
-    "medecins": {}
+    "patients": [],
+    "medecins": []
 }
 ```
 
@@ -65,7 +65,7 @@ Cette fonction `prepare_dico` doit être appelée depuis __main__. Ce dictionnai
 In fine, après utilisation des différents menus, le dictionnaire pourra contenir par exemple :
 ```py
 dico = {
-    "patients": {
+    "patients": [
         {
             "id": 0,
             "prenom": "Rob",
@@ -86,8 +86,8 @@ dico = {
             "email": "sansa.stark@winterfell.ws",
             "soins": [ "vitamines", "gelules" ]
         }
-    },
-    "medecins": {
+    ],
+    "medecins": [
         {
             "id": 0,
             "prenom": "Tyrion",
@@ -108,7 +108,7 @@ dico = {
             "email": "cercei.lannister@trust.com",
             "patients": [ 1 ]
         }
-    }
+    ]
 }
 ```
 
