@@ -63,13 +63,18 @@ Vous devriez maintenant gagner au jeu automatiquement.
 ### Exercice 2.1 - Majuscules et Minuscules <span class="fs-5 fw-lighter">(2 points)</span>
 
 Ecrivez un script qui demande à l'utilisateur d'entrer une chaîne de caractères :
-* Si la chaîne de caractère ne comporte que des majuscules, affichez `"MAJ"`.
-* Si la chaîne de caractère ne comporte que des minuscules, affichez `"MIN"`.
+* Si la chaîne de caractères ne comporte que des majuscules, affichez `"MAJ"`.
+* Si la chaîne de caractères ne comporte que des minuscules, affichez `"MIN"`.
 * Sinon, affichez `"MIX"`.
 
 *Astuces* :
-* Utilisez une boucle pour parcourir et tester, un à un, les caractères de la chaine.
-* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : `if ("A" <= char) and (char <= "Z")`.
+* Utilisez une boucle pour parcourir et tester, un à un, les caractères de la chaîne.
+* Utilisez la comparaison lexicographique pour savoir si un caractère est entre "A" et "Z" (ou respectivement "a" et "z") : 
+```python
+caractere = "T"
+if ("A" <= caractere) and (caractere <= "Z"):
+    print("T est entre A et Z")
+```
 * Utilisez des variables et des conditions.
 
 ### Exercice 2.2 - Palindrome <span class="fs-5 fw-lighter">(4 points)</span>
