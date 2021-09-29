@@ -746,7 +746,7 @@ Si ces problèmes surviennent rarement, il arrive que certaines entreprises déc
 
 # Exemple
 
-![bg right:45% 90%](./assets/tableau-débogage.jpg)
+![bg right:45% 90%](./assets/tableau-debug.jpg)
 
 ```python
 a0 = 16

@@ -9,26 +9,26 @@ layout: layouts/site.njk
 
 Ce 2ième TD va vous emmener vers l'implémentation, sur papier, de quelques algorithmes géométriques simples.
 
-## Exercice 1 - Calcul du périmètre d'un rectangle
+## Exercice 1 - Calcul de l'aire d'un rectangle
 
-Ecrivez une fonction qui calcule le périmètre d'un rectangle à côté de sa longueur `L` et sa largueur `l`.
+Ecrivez une fonction qui calcule l'aire d'un rectangle de longueur `L` et de largeur `l`.
 
-Pour rappel, le périmètre $P$ d'un rectangle se calcule de la manière suivante : $P = L \times l$.
+Pour rappel, l'aire $A$ d'un rectangle se calcule de la manière suivante : $A = L \times l$.
 
 ```py
-def calcule_perimetre_rectangle(L, l):
-    """Renvoie le périmètre du rectangle.
+def calcule_aire_rectangle(L, l):
+    """Renvoie l'aire du rectangle.
 
     L - longueur du rectangle (int ou float).
     l - largueur du rectangle (int ou float).
-    Retourne le périmètre.
+    Retourne l'aire.
     """
     pass
 ```
 
-Ecrivez le code qui appelle cette fonction pour `L = 5` et `l = 2` et affiche dans la sortie standard `"Le périmètre pour L = 5 et l = 2 est de {valeur}"`.
+Ecrivez le code qui appelle cette fonction pour `L = 5` et `l = 2`, c'est à dire : `calcule_aire_rectangle(5, 2)`. Affichez dans la sortie standard `"L'aire pour L = 5 et l = 2 est de {valeur}"`, `valeur` était la valeur retournée par la fonction.
 
-## Exercice 2 - Cacul d'aire d'un cercle
+## Exercice 2 - Cacul de l'aire d'un cercle
 
 Ecrivez une fonction qui calcule l'aire d'un cercle de rayon `r`.
 
@@ -46,7 +46,7 @@ def calcule_aire_cercle(r):
     pass
 ```
 
-## Exercice 3 - Calcul de volume d'une sphère
+## Exercice 3 - Calcul du volume d'une sphère
 
 Ecrivez une fonction qui calcule le volume d'une sphère de rayon `r`.
 
@@ -116,10 +116,10 @@ def calcule_aabb(*args):
 On peut calculer le cosinus de `x` à l'aide d'une série infinie :
 
 $$
-\begin{align}
+\begin{aligned}
 \cos x & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[6mu]
        & = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
-\end{align}
+\end{aligned}
 $$
 
 Plutôt que d'avoir une boucle infinie, on va calculer la différence entre 2 résultats consécutifs et s'arrêter lorsque cette différence est inférieure à $\varepsilon = 10^{-9}$.
@@ -250,7 +250,7 @@ def normalise(x, y, z):
 Ecrivez une fonction qui calcule le produit scalaire $PS$ de 2 vecteurs $\overrightarrow{V_1}$ et $\overrightarrow{V_2}$.
 
 $$
-\begin{align}
+\begin{aligned}
 \forall \overrightarrow{V_1}
 \begin{pmatrix} 
 x_1 \\
@@ -291,7 +291,7 @@ PS & = \overrightarrow{V_1} \cdot \overrightarrow{V_2} \\[6mu]
           + 2 z_1 z_2
         \right) \\[6mu]
    & = x_1 x_2 + y_1 y_2 + z_1 z_2
-\end{align}
+\end{aligned}
 $$
 
 ```py
@@ -312,7 +312,7 @@ def produit_scalaire(x1, y1, z1, x2, y2, z2):
 Ecrivez une fonction qui calcule le produit vectoriel $PV$ de 2 vecteurs $\overrightarrow{V_1}$ et $\overrightarrow{V_2}$.
 
 $$
-\begin{align}
+\begin{aligned}
 \forall \overrightarrow{V_1}
 \begin{pmatrix} 
 x_1 \\
@@ -332,7 +332,7 @@ PV & = \overrightarrow{V_1} \wedge \overrightarrow{V_2} \\[6mu]
             z_1 x_2 - x_1 z_2 \\
             x_1 y_2 - y_1 x_2
        \end{pmatrix}
-\end{align}
+\end{aligned}
 $$
 
 ```py
@@ -485,7 +485,7 @@ Or par définition, on a $ \left| \vec{k} \right| = 1$ puisque $\vec{k}$ est nor
 
 On obtient donc directement la distance :
 $$
-\begin{align}
+\begin{aligned}
 \overrightarrow{OK} \cdot \overrightarrow{OC} 
     & = \left| \overrightarrow{OK} \right| \times \left| \overrightarrow{OH} \right| \\[6mu]
 \vec{k} \cdot \overrightarrow{OC_S}
@@ -493,7 +493,7 @@ $$
 \vec{k} \cdot \overrightarrow{AC_S}
     & = 1 \times \left| \overrightarrow{OH} \right| \\[6mu]
 \left| \overrightarrow{OH} \right| & = \vec{k} \cdot \overrightarrow{AC_S}
-\end{align}
+\end{aligned}
 $$
 
 Ecrivez la fonction `distance` de la manière suivante :
