@@ -11,4 +11,4 @@ Dans ce TP, vous allez revisiter quelques algorithmes de tri d'une collection.
 
 Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F09-recherche-et-tri%2Fwork-assignment-19.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
 
-Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : [lien de téléchargement](https://github.com/loic-yvonnet/algo-appliquee/raw/master/cours/09-recherche-et-tri/work-assignment-19.ipynb).
+Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : <a href="./work-assignment-19.ipynb" download="tp-15.ipynb">lien de téléchargement</a>.

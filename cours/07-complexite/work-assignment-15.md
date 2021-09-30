@@ -13,4 +13,4 @@ Dans ce TP, vous allez effectuer un benchmark pour tenter de vérifier l'utilit�
 
 Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F07-complexite%2Fwork-assignment-15.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
 
-Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : [lien de téléchargement](https://github.com/loic-yvonnet/algo-appliquee/raw/master/cours/07-complexite/work-assignment-15.ipynb).
+Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : <a href="./work-assignment-15.ipynb" download="tp-11.ipynb">lien de téléchargement</a>.

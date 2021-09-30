@@ -11,4 +11,4 @@ Dans ce TP, vous allez utiliser MatPlotLib, NumPy et SciImage pour tracer des co
 
 Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F10-python-avance%2Fwork-assignment-21.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
 
-Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : [lien de téléchargement](https://github.com/loic-yvonnet/algo-appliquee/raw/master/cours/10-python-avance/work-assignment-21.ipynb).
+Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : <a href="./work-assignment-21.ipynb" download="tp-17.ipynb">lien de téléchargement</a>.

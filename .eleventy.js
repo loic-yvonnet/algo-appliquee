@@ -52,6 +52,9 @@ module.exports = function (config) {
     // The ico files are special
     config.addPassthroughCopy("cours/**/*.ico");
 
+    // Passthrough for jupyter notebooks (because of same-origin download links)
+    config.addPassthroughCopy("cours/**/*.ipynb");
+
     return {
         templateFormats: [
             "md",
