@@ -13,4 +13,4 @@ Ce TP vise à vous familiariser avec l'écriture de tests unitaires suivant le p
 
 Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F08-tests%2Fwork-assignment-17.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
 
-Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : [lien de téléchargement](https://github.com/loic-yvonnet/algo-appliquee/raw/master/cours/08-tests/work-assignment-17.ipynb).
+Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : <a href="./work-assignment-17.ipynb" download="tp-13.ipynb">lien de téléchargement</a>.
