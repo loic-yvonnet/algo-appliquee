@@ -949,7 +949,7 @@ print(egaux)
 :arrow_down:
 
 ```
-[1, 2, 3, 4]
+True
 ```
 
 <!--
