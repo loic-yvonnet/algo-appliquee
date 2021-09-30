@@ -31,7 +31,7 @@ De nombreux MOOCs sur le sujet sont proposés par le MIT. Le premier de cette li
 * [Introduction to Algorithms (6.046)](https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-introduction-to-algorithms-sma-5503-fall-2005/).
 
 MOOC du collège de France sur l'algorithmique quantique :
-* [Algorithmes qantiques - Sciences et Technologies - Collège de France](https://www.college-de-france.fr/site/frederic-magniez/inaugural-lecture-2021-04-01-18h00.htm).
+* [Algorithmes quantiques - Sciences et Technologies - Collège de France](https://www.college-de-france.fr/site/frederic-magniez/inaugural-lecture-2021-04-01-18h00.htm).
 
 ### Python
 
