@@ -1,13 +1,21 @@
 ---
-title: "Devoir à la Maison 5 - Plus de modules"
-summary: "Devoirs à la Maison : Utilisation de MatPlotLib, Panda et de requête HTTP pour effectuer des opérations de base."
+title: "Devoir à la Maison 5 - Approfondissement sur les modules Python"
+summary: "Devoirs à la Maison : Utilisation de MatPlotLib, Panda et de requête HTTP pour résoudre des problèmes communs."
 category: 10-python-avance
 permalink: "{{ category }}/dm-05.html"
 url: "{{ url_prefix }}/{{ permalink }}"
 layout: layouts/site.njk
 ---
 
+![Entête CCI](./assets/entete-cci.png)
+
+Ce devoir à la maison va donner lieu à une note sur 20. Il doit être rendu avant le début du prochain cours.
+
 Ce 5e DM vous amène à revoir des éléments de cours vu aujourd'hui concernant les modules.
+
+Pour les autres exercices, vous devez créer un fichier nommé `dm05_exercice_X.py` où X est le numéro de l'exercice.
+
+Vous devrez créer une archive `dm05.zip` contenant tous vos fichiers et l'envoyer à [loic@yvo.solutions](mailto:loic@yvo.solutions).
 
 ## Exercice 1 - Moteur de recherche en ligne de commande
 
