@@ -5,7 +5,7 @@ url: "{{ url_prefix }}/eval-finale.html"
 layout: layouts/site.njk
 ---
 
-![](../assets/entete-cci.png)
+![](./assets/entete-cci.png)
 
 Cette évaluation finale donnera lieu à une note sur 20, coefficient 2.
 
@@ -158,7 +158,7 @@ for cle, valeur in dico.items():
 
 ## Exercice 6 - Débogage <span class="fs-4 fw-lighter">(1 point)</span>
 
-Commentez le code suivant.
+Décrivez le comportement du code suivant et corrigez-le si nécessaire.
 
 ```python
 N = int(input("Affichez les entiers positifs à partir de : "))
@@ -204,7 +204,7 @@ def f(a=2, b=3):
 
 ## Exercice 8 - Tri <span class="fs-4 fw-lighter">(3 points)</span>
 
-Un jeune enfant possède une collection de cubes. Chacun des cubes a une étiquette libellée soit `"A"`, `"B"` ou `"C"`.
+Un jeune enfant possède une collection de cubes. Chacun des cubes comporte une étiquette libellée soit `"A"`, `"B"` ou `"C"`.
 
 On peut donc représenter la collection de cubes avec une chaîne de caractères telle que : `"BCAABBCACCBABBC"`.
 
@@ -248,8 +248,8 @@ Par exemple, la matrice $M$ :
 $$
 M =
 \begin{pmatrix}
-    1 && 2 \\
-    3 && 4
+    1 & 2 \\
+    3 & 4
 \end{pmatrix}
 $$
 
@@ -269,21 +269,21 @@ Pour rappel :
 $$
 M =
 \begin{pmatrix}
-    a && b \\
-    c && d
+    a & b \\
+    c & d
 \end{pmatrix}
 ,\quad
 N =
 \begin{pmatrix}
-    e && f \\
-    g && h
+    e & f \\
+    g & h
 \end{pmatrix}
 $$
 $$
 S = M + N =
 \begin{pmatrix}
-    a + e && b + f \\
-    c + g && d + h
+    a + e & b + f \\
+    c + g & d + h
 \end{pmatrix}
 $$
 
