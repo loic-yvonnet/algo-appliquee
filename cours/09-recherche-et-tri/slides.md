@@ -1338,7 +1338,7 @@ Les éléments qui ne sont pas plus petits que 6 vont dans le 1er sous-ensemble.
 # Complexité
 
 * On a $N + 1$ comparaisons.
-* On est donc en $\thicksim N^$, et $O(N)$.
+* On est donc en $\thicksim N$, et $O(N)$.
 
 <!--
 On a certes des boucles imbriquées, mais elles ne parcourent pas [0 ; N].
@@ -1548,9 +1548,7 @@ Même si le pire cas est rare, avoir une forte disproportion entre les sous-ense
 
 <!-- _class: smaller-text -->
 
-# Tri Fusion
-
-### Fusion
+### Tri Fusion - Fusion
 
 ```python
 def fusion(a, debut, milieu, fin):
