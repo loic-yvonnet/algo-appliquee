@@ -1,13 +1,21 @@
 ---
-title: "Devoir à la Maison 5 - Plus de modules"
-summary: "Devoirs à la Maison : Utilisation de MatPlotLib, Panda et de requête HTTP pour effectuer des opérations de base."
+title: "Devoir à la Maison 5 - Approfondissement sur les modules Python"
+summary: "Devoirs à la Maison : Utilisation de MatPlotLib, Pandas et de requête HTTP pour résoudre des problèmes communs."
 category: 10-python-avance
 permalink: "{{ category }}/dm-05.html"
 url: "{{ url_prefix }}/{{ permalink }}"
 layout: layouts/site.njk
 ---
 
+![Entête CCI](./assets/entete-cci.png)
+
+Ce devoir à la maison va donner lieu à une note sur 20. Il doit être rendu avant le début du prochain cours.
+
 Ce 5e DM vous amène à revoir des éléments de cours vu aujourd'hui concernant les modules.
+
+Pour les autres exercices, vous devez créer un fichier nommé `dm05_exercice_X.py` où X est le numéro de l'exercice.
+
+Vous devrez créer une archive `dm05.zip` contenant tous vos fichiers et l'envoyer à [loic@yvo.solutions](mailto:loic@yvo.solutions).
 
 ## Exercice 1 - Moteur de recherche en ligne de commande
 
@@ -22,7 +30,7 @@ A l'aide de `pip`, installez les paquets `requests` et `inscriptis` depuis un te
 
 A l'aide de la fonction `input`, demandez à l'utilisateur de rentrer ses termes de recherche.
 
-Ensuite, concatenez ces termes en utilisant un `"+"` comme séparateur. La chaîne de caractères ne doit plus comporter d'espace ni de caractères spéciaux.
+Ensuite, concatenez ces termes en utilisant un `"+"` comme séparateur. La chaîne de caractères ne doit plus comporter d'espace ni de caractères accentués (é, è, ê, ë, à, â, etc.).
 
 Par exemple, si l'utilisateur a rentré `"chat gris"`, votre chaîne de caractères doit devenir `"chat+gris"`.
 
@@ -91,21 +99,21 @@ Le résultat attendu est :
 
 ### Exercice 3.1 - Récupération d'une base de données de films
 
-En suivant la même approche que dans l'exercice 1, écrivez une requête HTTP qui récupère le fichier CSV à l'adresse : [https://raw.githubusercontent.com/PacktPublishing/Pandas-Cookbook/master/data/movie.csv](https://raw.githubusercontent.com/PacktPublishing/Pandas-Cookbook/master/data/movie.csv).
+En suivant la même approche que dans l'exercice 1, écrivez une requête HTTP qui récupère le fichier CSV à l'adresse : [https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/master/data/movie.csv](https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/master/data/movie.csv).
+
+Ecrivez le contenu dans un fichier local.
 
 En suivant la même approche que dans l'exercice 2, affichez les 20 premières lignes dans la sortie standard.
 
-En utilisant le module `os`, écrivez le contenu dans un fichier csv.
+### Exercice 3.2 - Lecture et affichage avec Pandas
 
-### Exercice 3.2 - Lecture et affichage avec Panda
+Pandas, tout comme NumPy et MatPlotLib, fait parti des bibliothèques qui font la popularité du langage Python ces dernières années. Il s'agit d'une bibliothèque de gestion de données tabulaires. Il est possible de faire les mêmes opérations que dans un tableur Excel, mais plus facilement et sans avoir à utiliser Visual Basic for Applications (VBA), qui est un langage de programmation ancien.
 
-Panda, tout comme NumPy et MatPlotLib, fait parti des bibliothèques qui font la popularité du langage Python ces dernières années. Il s'agit d'une bibliothèque de gestion de données tabulaires. Il est possible de faire les mêmes opérations que dans un tableur Excel, mais plus facilement et sans avoir à utiliser Visual Basic for Applications (VBA), qui est un langage de programmation ancien.
+A l'aide pip, installez la bibliothèque `pandas` (attention au **s** à la fin).
 
-A l'aide pip, installez la bibliothèque `panda`.
+Utilisez la fonction `read_csv` de `pandas` pour relire le fichier csv sauvegardé précédemment. Utilisez la fonction `head` pour afficher les 20 premières lignes.
 
-Utilisez la fonction `read_csv` de `panda` pour relire le fichier csv sauvegardé précédemment. Utilisez la fonction `head` pour afficher les 20 premières lignes.
-
-### Exercice 3.3 - Analyse avec Panda
+### Exercice 3.3 - Analyse avec Pandas
 
 Avec la propriété `shape`, affichez le nombre de lignes et le nombre de colonnes de votre tableau.
 
@@ -117,17 +125,17 @@ Avec la fonction `corr`, affichez la corrélation entre chaque variable continue
 
 En utilisant l'opérateur `[]` pour sélectionner la colonne `genres`, et en utilisant la fonction `value_counts`, affichez le nombre de films répertoriés par genre.
 
-### Exercice 3.4 - Requêtes avancées avec Panda
+### Exercice 3.4 - Requêtes avancées avec Pandas
 
 Dans l'exercice précédent, nous avons vu comment sélectionner une colonne.
 
-Il est possible de filtrer le contenu en suivant la même logique. Par exemple, si la variable panda s'appelle `movies`, on peut utiliser `movies[(movies["title_year"] == 2006)]` pour n'affichez que la liste des films parus en 2006.
+Il est possible de filtrer le contenu en suivant la même logique. Par exemple, si la variable pandas s'appelle `films`, on peut utiliser `films[(films["title_year"] == 2006)]` pour n'affichez que la liste des films parus en 2006.
 
 On peut combiner des filtres avec l'opérateur `&`. Ainsi :
 ```python
-movies[
-    (movies["title_year"] >= 2006)
-    & (movies["title_year"] <= 2008)
+films[
+    (films["title_year"] >= 2006)
+    & (films["title_year"] <= 2008)
 ]
 ```
 
@@ -137,6 +145,15 @@ Affichez la liste des films d'Action sortis après 2010, ayant au moins 10000 li
 
 Avec la fonction `value_counts`, affichez leur nombre.
 
-### Exercice 3.5 - Affichage de graphiques avec Panda et MatPlotLib
+### Exercice 3.5 - Affichage de graphiques avec Pandas et MatPlotLib
 
 Affichez la courbe de l'évolution du budget médian par année aux USA.
+
+Le résultat attendu est :
+![Courbe](./assets/budget-median.png)
+
+*Astuces* :
+* Utilisez un filtre comme dans l'exercice précédent pour limiter les résultats aux USA.
+* Appliquez un `pivot_table` sur le budget indexé par année en utilisant une médiane comme fonction d'aggrégation.
+* Utilisez la fonction `plot` sur la `DataFrame`.
+* Utilisez MatPlotLib pour formatter le graphique et l'afficher avec `plot.show()`.

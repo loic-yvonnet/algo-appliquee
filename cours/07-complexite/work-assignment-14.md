@@ -7,7 +7,7 @@ url: "{{ url_prefix }}/{{ permalink }}"
 layout: layouts/site.njk
 ---
 
-Ce 4ième TD va vous ammener à évaluer la compléxité de certains algorithmes. Vous utiliserez à chaque foix la notation O, et justifierez votre réponse.
+Ce 4ième TD va vous ammener à évaluer la compléxité de certains algorithmes. Vous utiliserez à chaque foix la notation $O$, et justifierez votre réponse.
 
 ## Exercice 1 - Complexité d'une recherche dichotomique
 
