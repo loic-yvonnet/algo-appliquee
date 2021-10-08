@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1189.3269mm"
+   height="727.49072mm"
+   viewBox="0 0 1189.3269 727.49073"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="pyramide-tests.svg"
+   inkscape:export-filename="/home/lyvonnet/Dev/algo-appliquee/cours/08-tests/assets/pyramide-tests.png"
+   inkscape:export-xdpi="17.188236"
+   inkscape:export-ydpi="17.188236">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.34"
+     inkscape:cx="2646.9615"
+     inkscape:cy="883.6047"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     showborder="false"
+     showguides="true"
+     inkscape:window-width="3773"
+     inkscape:window-height="2088"
+     inkscape:window-x="67"
+     inkscape:window-y="35"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid815"
+       originx="736.46317"
+       originy="193.49998" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(736.46322,236.99073)">
+    <path
+       style="fill:#000000;fill-opacity:0.13986015;stroke:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M -730.24999,487.5 -158.75,-232.16666 412.75,487.5 Z"
+       id="path817"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -587.37505,307.58336 857.25,0"
+       id="path836"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -444.50005,127.66669 h 571.5"
+       id="path836-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -301.62505,-52.249973 h 285.75"
+       id="path836-3-9"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="225.2738"
+       y="226.54637"
+       id="text900"><tspan
+         sodipodi:role="line"
+         id="tspan898"
+         x="225.2738"
+         y="226.54637"
+         style="font-size:16.93333244px;stroke-width:0.26458332">Interfaces</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-370.48282"
+       y="424.75595"
+       id="text904"><tspan
+         sodipodi:role="line"
+         id="tspan902"
+         x="-370.48282"
+         y="424.75595"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:50.79999924px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.26458332">Tests Unitaires</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-410.02145"
+       y="231.91245"
+       id="text904-5"><tspan
+         sodipodi:role="line"
+         id="tspan902-0"
+         x="-410.02145"
+         y="231.91245"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:42.33333206px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.26458332">Tests de Composants</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-344.7507"
+       y="59.252426"
+       id="text904-5-9"><tspan
+         sodipodi:role="line"
+         id="tspan902-0-6"
+         x="-344.7507"
+         y="59.252426"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:35.27777863px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.26458332">Tests d'Intégration</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-159.30811"
+       y="-112.42332"
+       id="text904-5-9-3"><tspan
+         sodipodi:role="line"
+         id="tspan902-0-6-8"
+         x="-159.30811"
+         y="-112.42332"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:1;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332">Tests</tspan><tspan
+         sodipodi:role="line"
+         x="-159.30811"
+         y="-87.023315"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:25.39999962px;line-height:1;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.26458332"
+         id="tspan960">Exploratoires</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="372.83545"
+       y="412.13037"
+       id="text900-5"><tspan
+         sodipodi:role="line"
+         id="tspan898-6"
+         x="372.83545"
+         y="412.13037"
+         style="font-size:16.93333244px;stroke-width:0.26458332">Fonctions</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="88.144028"
+       y="55.386505"
+       id="text900-1"><tspan
+         sodipodi:role="line"
+         id="tspan898-1"
+         x="88.144028"
+         y="55.386505"
+         style="font-size:16.93333244px;stroke-width:0.26458332">GUI, BD, API</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-40.065491"
+       y="-100.02718"
+       id="text900-1-5"><tspan
+         sodipodi:role="line"
+         id="tspan898-1-9"
+         x="-40.065491"
+         y="-100.02718"
+         style="font-size:16.93333244px;stroke-width:0.26458332">Tests manuels</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-724.12653"
+       y="411.98154"
+       id="text900-5-8"><tspan
+         sodipodi:role="line"
+         id="tspan898-6-4"
+         x="-724.12653"
+         y="411.98154"
+         style="font-size:16.93333244px;stroke-width:0.26458332">100%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-576.11157"
+       y="226.39754"
+       id="text900-5-8-8"><tspan
+         sodipodi:role="line"
+         id="tspan898-6-4-1"
+         x="-576.11157"
+         y="226.39754"
+         style="font-size:16.93333244px;stroke-width:0.26458332">50%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-435.50446"
+       y="55.115555"
+       id="text900-5-8-8-0"><tspan
+         sodipodi:role="line"
+         id="tspan898-6-4-1-3"
+         x="-435.50446"
+         y="55.115555"
+         style="font-size:16.93333244px;stroke-width:0.26458332">25%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-306.99255"
+       y="-100.176"
+       id="text900-5-8-8-0-0"><tspan
+         sodipodi:role="line"
+         id="tspan898-6-4-1-3-4"
+         x="-306.99255"
+         y="-100.176"
+         style="font-size:16.93333244px;stroke-width:0.26458332">5%</tspan></text>
+  </g>
+</svg>
