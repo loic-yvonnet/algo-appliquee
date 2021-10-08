@@ -95,7 +95,7 @@ def affiche_arrete(parent, enfant):
 
 def tests():
     """Fonction de tests."""
-    arbre = creer_arbre_binaire_avec_liste([5, 1, 6, 7, 8])
+    arbre = creer_arbre_binaire_avec_liste([5, 2, 6, 7, 8, 10, 15, 1, 3, 9])
     noeud = trouve_valeur_dans_arbre_binaire(arbre, 7)
     print(noeud.valeur)
     print("---")
