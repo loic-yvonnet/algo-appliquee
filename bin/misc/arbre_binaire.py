@@ -1,5 +1,6 @@
 # Bibliothèque standard
 from dataclasses import dataclass
+from typing import Any
 
 # Bibliothèque externe
 import pygraphviz as pgv
@@ -7,9 +8,9 @@ import pygraphviz as pgv
 @dataclass
 class Noeud:
     """Noeud d'un arbre binaire."""
-    valeur = None
-    gauche = None
-    droite = None
+    valeur: Any = None
+    gauche: Any = None
+    droite: Any = None
 
 @dataclass
 class ArbreBinaire:
@@ -83,6 +84,29 @@ def convertir_arbre_vers_graphviz(arbre, G):
         G.add_node(valeur, shape="circle")
 
     def ajoute_arete(valeur_parent, valeur_enfant):
-        G.add_edge()
+        G.add_edge(valeur_parent, valeur_enfant)
 
     parcourt_arbre(arbre, ajoute_noeud)
+    parcourt_arbre_avec_parent(arbre, ajoute_arete)
+
+def affiche_arrete(parent, enfant):
+    """Aide pour la fonction de tests."""
+    print(f"{parent} -> {enfant}")
+
+def tests():
+    """Fonction de tests."""
+    arbre = creer_arbre_binaire_avec_liste([5, 1, 6, 7, 8])
+    noeud = trouve_valeur_dans_arbre_binaire(arbre, 7)
+    print(noeud.valeur)
+    print("---")
+    noeud = trouve_valeur_dans_arbre_binaire(arbre, -1)
+    if noeud != None:
+        raise ValueError("-1")
+    print("-1")
+    print("---")
+    parcourt_arbre(arbre, print)
+    print("---")
+    parcourt_arbre_avec_parent(arbre, affiche_arrete)
+
+if __name__ == "__main__":
+    tests()
