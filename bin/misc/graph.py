@@ -79,41 +79,13 @@ def resize_canvas(image_path, width, height):
 
     x = int(floor((width - old_width) / 2))
     y = 0
-    transparent = (255, 255, 255, 0)
+    whitebg = (255, 255, 255, 255)
 
-    blank_image = Image.new("RGBA", (width, height), transparent)
+    blank_image = Image.new("RGBA", (width, height), whitebg)
     blank_image.paste(img, (x, y, x + old_width, y + old_height))
     img.close()
-    blank_image.save(image_path, optimize=False)
+    blank_image.save(image_path)
     blank_image.close()
-
-def generate_gif_frame(image_path):
-    """Generate a transparent gif frame.
-    
-    Source: https://stackoverflow.com/questions/46850318/transparent-background-in-gif-using-python-imageio
-    """
-    img = Image.open(image_path)
-    alpha = img.getchannel('A')
-
-    # Convert the image into P mode but only use 255 colors in the palette out of 256
-    img = img.convert('RGB').convert('P', palette=Image.ADAPTIVE, colors=255)
-
-    # Set all pixel values below 128 to 255 , and the rest to 0
-    mask = Image.eval(alpha, lambda a: 255 if a <=128 else 0)
-
-    # Paste the color of index 255 and use alpha as a mask
-    img.paste(255, mask)
-
-    # The transparency index is 255
-    img.info['transparency'] = 255
-
-    return img
-
-def create_gif(images_paths):
-    """Create a gif from a list of images paths."""
-    images = [generate_gif_frame(img_path) for img_path in images_paths]
-    first = images.pop(0)
-    first.save('GIF.gif', save_all=True, append_images=images, loop=5, duration=200)
 
 def illustrate_insertion_in_binary_tree():
     """Create a git to illustrate the insertion in a binary tree."""  
@@ -130,28 +102,30 @@ def illustrate_insertion_in_binary_tree():
         G.draw(file_path, prog="dot")
         i += 1
 
-    def step(*args):
+    def step(nodes, new_value):
         """One step in the algorithm."""
-        G = create_binary_tree(*args)
-        highlight_node(G, args[len(args) - 1])
+        nodes.append(new_value)
+        G = create_binary_tree(*nodes)
+        highlight_node(G, nodes[len(nodes) - 1])
         flush_image(G)
 
     # Simulation steps
-    step(42)
-    step(42, 7)
-    step(42, 7, 108)
-    step(42, 7, 108, 21)
-    step(42, 7, 108, 21, 1)
-    step(42, 7, 108, 21, 1, 88)    
-    step(42, 7, 108, 21, 1, 88, 128)
-    step(42, 7, 108, 21, 1, 88, 128, 50)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256, 125)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256, 125, 3)
-    step(42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256, 125, 3, 15)
+    nodes = []
+    step(nodes, 42)
+    step(nodes, 7)
+    step(nodes, 108)
+    step(nodes, 21)
+    step(nodes, 1)
+    step(nodes, 88)    
+    step(nodes, 128)
+    step(nodes, 50)
+    step(nodes, 100)
+    step(nodes, 0)
+    step(nodes, 25)
+    step(nodes, 256)
+    step(nodes, 125)
+    step(nodes, 3)
+    step(nodes, 15)
 
     # Get the largest dimensions
     images = [imageio.imread(file_path) for file_path in images_paths]
@@ -164,10 +138,12 @@ def illustrate_insertion_in_binary_tree():
         resize_canvas(image_path, max_width, max_height)
 
     # Create the gif
-    create_gif(images_paths, "005-insertion-arbre-binaire.gif")
+    images = [imageio.imread(file_path) for file_path in images_paths]
+    target = os.path.join(target_dir, "005-insertion-arbre-binaire.gif")
+    imageio.mimsave(target, images, fps=1)
 
     # Optimize the gif size
-    #optimize(target)
+    optimize(target)
     
 generate_png_from_dot()
 create_temp_dir()
