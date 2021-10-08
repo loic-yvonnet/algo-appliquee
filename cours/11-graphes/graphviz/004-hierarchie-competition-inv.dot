@@ -1,0 +1,49 @@
+digraph G {
+    splines="FALSE";
+    bgcolor="transparent";
+
+    /* Entities */
+    Winner [label="Gagnante", shape="rectangle"]
+    
+    Finaliste1 [label="Finaliste", shape="rectangle"]
+    Finaliste2 [label="Finaliste", shape="rectangle"]
+
+    DemiFinaliste1 [label="Demi-Finaliste", shape="rectangle"]
+    DemiFinaliste2 [label="Demi-Finaliste", shape="rectangle"]
+    DemiFinaliste3 [label="Demi-Finaliste", shape="rectangle"]
+    DemiFinaliste4 [label="Demi-Finaliste", shape="rectangle"]
+
+    QuartFinaliste1 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste2 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste3 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste4 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste5 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste6 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste7 [label="Quart de Finaliste", shape="rectangle"]
+    QuartFinaliste8 [label="Quart de Finaliste", shape="rectangle"]
+   
+    /* Relationships */
+    QuartFinaliste1 -> DemiFinaliste1
+    QuartFinaliste2 -> DemiFinaliste1
+
+    QuartFinaliste3 -> DemiFinaliste2
+    QuartFinaliste4 -> DemiFinaliste2
+
+    QuartFinaliste5 -> DemiFinaliste3
+    QuartFinaliste6 -> DemiFinaliste3
+
+    QuartFinaliste7 -> DemiFinaliste4
+    QuartFinaliste8 -> DemiFinaliste4
+
+    DemiFinaliste1 -> Finaliste1
+    DemiFinaliste2 -> Finaliste1
+
+    DemiFinaliste3 -> Finaliste2
+    DemiFinaliste4 -> Finaliste2
+
+    Finaliste1 -> Winner
+    Finaliste2 -> Winner
+
+    /* Ranks */
+    { rank=same; };
+}

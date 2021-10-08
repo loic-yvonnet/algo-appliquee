@@ -1,0 +1,7 @@
+digraph G {
+    splines="FALSE";
+    bgcolor="transparent";
+
+    /* Ranks */
+    { rank=same; };
+}
