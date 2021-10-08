@@ -160,7 +160,14 @@ def gui():
         if evenement == sg.WIN_CLOSED:
             break
 
-        valeur0, valeur1, op = gere_evenement(evenement, valeur0, valeur1, op, resultat)
+        try:
+            valeur0, valeur1, op = gere_evenement(evenement, 
+                                                  valeur0,
+                                                  valeur1,
+                                                  op,
+                                                  resultat)
+        except Exception as e:
+            resultat.Update(e)
 
     # Lorsque la boucle de gestion des événements est terminée, cela signifie
     # que l'utilisateur a cliqué sur le bouton de fermeture de l'application.

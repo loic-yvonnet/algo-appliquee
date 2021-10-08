@@ -1001,7 +1001,7 @@ $$
 
 <!--
 On parle ici de latence, qui est le temps pour terminer une tâche.
-On ne parle pas de "throughput", qui est la quantité d'actions que l'on peut effectuer dans un interval de temps.
+On ne parle pas de "throughput", qui est la quantité d'actions que l'on peut effectuer dans un intervalle de temps.
 Que vaut f si p = 1 ?
 Qu'est-ce que cela signifie ?
 Si p = 1, cela veut dire que l'intégralité du code est parallélisable, ou que 100% du temps est passé dans du code parallélisable.
