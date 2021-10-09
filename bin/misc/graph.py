@@ -35,6 +35,7 @@ target_dir = f"{lecture_dir}/assets"
 temp_dir = "/home/lyvonnet/Dev/algo-appliquee/dist/tmp/"
 empty_dot_file_name = "000-vide.dot"
 empty_dot_path = f"{source_dir}/{empty_dot_file_name}"
+force_transparent = False
 
 def generate_png_from_dot():
     """Generate the png files from the dot files in target directory."""
@@ -57,7 +58,10 @@ def create_binary_tree(*args):
     tree = binary_tree.creer_arbre_binaire_avec_liste(args)
     
     # Initialize from a empty dot file with the right parameters
-    G = pgv.AGraph(empty_dot_path)
+    if force_transparent:
+        G = pgv.AGraph(empty_dot_path, bgcolor="transparent")
+    else:
+        G = pgv.AGraph(empty_dot_path)
 
     # Fill in the graph
     binary_tree.convertir_arbre_vers_graphviz(tree, G)
@@ -70,7 +74,10 @@ def create_red_black_tree(*args):
     tree = red_black_bst.creer_arbre_rouge_noir_avec_liste(args)
     
     # Initialize from a empty dot file with the right parameters
-    G = pgv.AGraph(empty_dot_path)
+    if force_transparent:
+        G = pgv.AGraph(empty_dot_path, bgcolor="transparent")
+    else:
+        G = pgv.AGraph(empty_dot_path)
 
     # Fill in the graph
     red_black_bst.convertir_arbre_vers_graphviz(tree, G)
@@ -93,9 +100,12 @@ def resize_canvas_top(image_path, width, height):
 
     x = int(floor((width - old_width) / 2))
     y = 0
-    whitebg = (255, 255, 255, 255)
+    if force_transparent:
+        background = (255, 255, 255, 0)
+    else:
+        background = (255, 255, 255, 255) # white
 
-    blank_image = Image.new("RGBA", (width, height), whitebg)
+    blank_image = Image.new("RGBA", (width, height), background)
     blank_image.paste(img, (x, y, x + old_width, y + old_height))
     img.close()
     blank_image.save(image_path)
@@ -113,13 +123,15 @@ def resize_to_top_and_create_gif(images_paths, target):
     for image_path in images_paths:
         resize_canvas_top(image_path, max_width, max_height)
 
-    # Create the gif
-    images = [imageio.imread(file_path) for file_path in images_paths]
-    target = os.path.join(target_dir, target)
-    imageio.mimsave(target, images, fps=0.75)
+    # Transparent gif does not work well so we skip it in this case
+    if not force_transparent:
+        # Create the gif
+        images = [imageio.imread(file_path) for file_path in images_paths]
+        target = os.path.join(target_dir, target)
+        imageio.mimsave(target, images, fps=0.75)
 
-    # Optimize the gif size
-    optimize(target)
+        # Optimize the gif size
+        optimize(target)
 
 def flush_image(G, basename, images_paths):
     """Internal helper to create an intermediary image with the current 
