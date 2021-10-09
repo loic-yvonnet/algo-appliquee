@@ -25,7 +25,8 @@ import pygraphviz as pgv
 from pygifsicle import optimize
 
 # Local libraries
-from arbre_binaire import *
+import arbre_binaire as binary_tree
+import arbre_rouge_noir as red_black_bst
 
 # Globals
 lecture_dir = "/home/lyvonnet/Dev/algo-appliquee/cours/11-graphes"
@@ -53,13 +54,26 @@ def create_temp_dir():
 def create_binary_tree(*args):
     """Create a binary tree from the list of arguments"""
     # Initialize a binary tree with the input list
-    binary_tree = creer_arbre_binaire_avec_liste(args)
+    tree = binary_tree.creer_arbre_binaire_avec_liste(args)
     
     # Initialize from a empty dot file with the right parameters
     G = pgv.AGraph(empty_dot_path)
 
     # Fill in the graph
-    convertir_arbre_vers_graphviz(binary_tree, G)
+    binary_tree.convertir_arbre_vers_graphviz(tree, G)
+
+    return G
+
+def create_red_black_tree(*args):
+    """Create a red-black tree from the list of arguments"""
+    # Initialize a binary tree with the input list
+    tree = red_black_bst.creer_arbre_rouge_noir_avec_liste(args)
+    
+    # Initialize from a empty dot file with the right parameters
+    G = pgv.AGraph(empty_dot_path)
+
+    # Fill in the graph
+    red_black_bst.convertir_arbre_vers_graphviz(tree, G)
 
     return G
 
@@ -191,12 +205,45 @@ def illustrate_unbalanced_binary_tree():
 
     resize_to_top_and_create_gif(images_paths, "009-arbre-binaire-non-equilibre.gif")
 
+def illustrate_balanced_red_black_binary_tree():
+    """Create a gif to illustrate a balanced red-black binary search tree."""  
+    images_paths = []
+
+    def step(nodes, new_value):
+        """One step in the algorithm."""
+        nonlocal images_paths
+        nodes.append(new_value)
+        G = create_red_black_tree(*nodes)
+        highlight_node(G, new_value)
+        flush_image(G, "balanced-tree", images_paths)
+
+    # Simulation steps
+    nodes = []
+    step(nodes, 0)
+    step(nodes, 1)
+    step(nodes, 3)
+    step(nodes, 7)
+    step(nodes, 15)
+    step(nodes, 21)
+    step(nodes, 25)
+    step(nodes, 42)
+    step(nodes, 50)
+    step(nodes, 88)
+    step(nodes, 100)
+    step(nodes, 108)
+    step(nodes, 125)
+    step(nodes, 128)
+    step(nodes, 256)
+
+    resize_to_top_and_create_gif(images_paths, "011-arbre-rouge-noir.gif")
+
 def main():
     generate_png_from_dot()
     create_temp_dir()
     illustrate_search_in_binary_tree()
     illustrate_insertion_in_binary_tree()
     illustrate_unbalanced_binary_tree()
+    illustrate_balanced_red_black_binary_tree()
 
 if __name__ == "__main__":
     main()
