@@ -68,7 +68,7 @@ def highlight_node(G, value):
     G.get_node(value).attr["color"] = "red"
     G.get_node(value).attr["fontcolor"] = "red"
 
-def resize_canvas(image_path, width, height):
+def resize_canvas_top(image_path, width, height):
     """Resize the image canvas (like Gimp > Set Image Canvas Size).
 
     The resulting image is centered at the top since the trees stick
@@ -87,27 +87,65 @@ def resize_canvas(image_path, width, height):
     blank_image.save(image_path)
     blank_image.close()
 
-def illustrate_insertion_in_binary_tree():
-    """Create a git to illustrate the insertion in a binary tree."""  
-    # Closure variables for the flush_image internal function
-    images_paths = []
-    i = 0
+def resize_to_top_and_create_gif(images_paths, target):
+    """Resize the input images and create an animated gif from them."""
+    # Get the largest dimensions
+    images = [imageio.imread(file_path) for file_path in images_paths]
+    shapes = [img.shape for img in images]
+    max_height = max([shape[0] for shape in shapes])
+    max_width = max([shape[1] for shape in shapes])
 
-    def flush_image(G):
-        """Internal helper to create an intermediary image with the current 
-        state of the graph."""
-        nonlocal i, images_paths
-        file_path = os.path.join(temp_dir, f"insert-binary-tree-{i}.png")
-        images_paths.append(file_path)
-        G.draw(file_path, prog="dot")
-        i += 1
+    # Resize the canvas of all images
+    for image_path in images_paths:
+        resize_canvas_top(image_path, max_width, max_height)
+
+    # Create the gif
+    images = [imageio.imread(file_path) for file_path in images_paths]
+    target = os.path.join(target_dir, target)
+    imageio.mimsave(target, images, fps=0.75)
+
+    # Optimize the gif size
+    optimize(target)
+
+def flush_image(G, basename, images_paths):
+    """Internal helper to create an intermediary image with the current 
+    state of the graph."""
+    i = len(images_paths)
+    file_path = os.path.join(temp_dir, f"{basename}-{i}.png")
+    images_paths.append(file_path)
+    G.draw(file_path, prog="dot")
+
+def illustrate_search_in_binary_tree():
+    """Create a gif to illustrate the search in a binary tree."""
+    images_paths = []
+
+    def step(highligth_value):
+        """One step in the algorithm."""
+        nonlocal images_paths
+        G = create_binary_tree(42, 7, 108, 21, 1, 88, 128, 50, 
+                               100, 0, 25, 256, 125, 2, 15)
+        highlight_node(G, highligth_value)
+        flush_image(G, "search-binary-tree", images_paths)
+
+    # Simulation steps
+    step(42)
+    step(7)
+    step(21)
+    step(25)
+
+    resize_to_top_and_create_gif(images_paths, "005-recherche-arbre-binaire.gif")
+
+def illustrate_insertion_in_binary_tree():
+    """Create a gif to illustrate the insertion in a binary tree."""  
+    images_paths = []
 
     def step(nodes, new_value):
         """One step in the algorithm."""
+        nonlocal images_paths
         nodes.append(new_value)
         G = create_binary_tree(*nodes)
         highlight_node(G, nodes[len(nodes) - 1])
-        flush_image(G)
+        flush_image(G, "insert-binary-tree", images_paths)
 
     # Simulation steps
     nodes = []
@@ -116,7 +154,7 @@ def illustrate_insertion_in_binary_tree():
     step(nodes, 108)
     step(nodes, 21)
     step(nodes, 1)
-    step(nodes, 88)    
+    step(nodes, 88)
     step(nodes, 128)
     step(nodes, 50)
     step(nodes, 100)
@@ -127,24 +165,38 @@ def illustrate_insertion_in_binary_tree():
     step(nodes, 3)
     step(nodes, 15)
 
-    # Get the largest dimensions
-    images = [imageio.imread(file_path) for file_path in images_paths]
-    shapes = [img.shape for img in images]
-    max_height = max([shape[0] for shape in shapes])
-    max_width = max([shape[1] for shape in shapes])
+    resize_to_top_and_create_gif(images_paths, "007-insertion-arbre-binaire.gif")
 
-    # Resize the canvas of all images
-    for image_path in images_paths:
-        resize_canvas(image_path, max_width, max_height)
+def illustrate_unbalanced_binary_tree():
+    """Create a gif to illustrate a unbalanced binary tree."""  
+    images_paths = []
 
-    # Create the gif
-    images = [imageio.imread(file_path) for file_path in images_paths]
-    target = os.path.join(target_dir, "005-insertion-arbre-binaire.gif")
-    imageio.mimsave(target, images, fps=1)
+    def step(nodes, new_value):
+        """One step in the algorithm."""
+        nonlocal images_paths
+        nodes.append(new_value)
+        G = create_binary_tree(*nodes)
+        highlight_node(G, nodes[len(nodes) - 1])
+        flush_image(G, "unbalanced-tree", images_paths)
 
-    # Optimize the gif size
-    optimize(target)
-    
-generate_png_from_dot()
-create_temp_dir()
-illustrate_insertion_in_binary_tree()
+    # Simulation steps
+    nodes = []
+    step(nodes, 0)
+    step(nodes, 1)
+    step(nodes, 3)
+    step(nodes, 7)
+    step(nodes, 15)
+    step(nodes, 21)
+    step(nodes, 25)
+
+    resize_to_top_and_create_gif(images_paths, "009-arbre-binaire-non-equilibre.gif")
+
+def main():
+    generate_png_from_dot()
+    create_temp_dir()
+    illustrate_search_in_binary_tree()
+    illustrate_insertion_in_binary_tree()
+    illustrate_unbalanced_binary_tree()
+
+if __name__ == "__main__":
+    main()
