@@ -47,8 +47,8 @@ L'examen final contient en général des questions sur les algorithmes de tri, d
 
 - Discussion sur les hiérarchies
 - Arbre binaire
-- Arbre N-aire
 - Insertion et recherche
+- Arbre N-aire
 - Discussion concernant les graphes
 - Théorie des graphes
 - Digraph
@@ -76,7 +76,31 @@ L'examen final contient en général des questions sur les algorithmes de tri, d
 
 # <!--fit--> Discussion sur les hiérarchies
 
-##### Exemples en entreprises, structure produits, compétitions, etc.
+---
+
+### Hiérarchie en entreprise
+
+![](./assets/001-hierarchie-entreprise.png)
+
+---
+
+### Structure produit
+
+![](./assets/002-structure-produit.png)
+
+---
+
+### Compétition (1/2)
+
+![w:1150](./assets/004-hierarchie-competition-inv.png)
+
+Il est possible d'inverser la représentation pour obtenir une hiérarchie.
+
+---
+
+### Compétition (2/2)
+
+![w:1150](./assets/003-hierarchie-competition.png)
 
 ---
 
@@ -86,15 +110,103 @@ L'examen final contient en général des questions sur les algorithmes de tri, d
 
 ---
 
-<!-- _class: title-section -->
+### Notion d'arbre
 
-# <!--fit--> Arbre N-aire : représentation
+* Une **hiérarchie** peut être représentée sous la forme d'un **arbre**.
+* Un **arbre binaire** ne comporte que **2 branches**.
+* Chaque noeud peut avoir un sous-noeud à gauche et/ou à droite.
+
+---
+
+### Exemple avec 2 noeuds
+
+![](./assets/arbre-binaire-2-noeuds.png)
+
+
+---
+
+### Exemple avec 3 noeuds
+
+![](./assets/arbre-binaire-3-noeuds.png)
+
+---
+
+### Relation d'ordre
+
+* La valeur du noeud à **gauche** est **plus petite** que celle du parent.
+* La valeur du noeud à **droite** est **plus grande** que celle du parent.
+
+---
+
+### Exemple : $7 < 42 < 108$
+
+![](./assets/arbre-binaire-exemple-slt-noeuds.png)
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 90%](./assets/arbre-binaire-noeud-repr.png)
+
+```python
+from dataclasses import dataclass
+from typing import Any
+
+@dataclass
+class Noeud:
+    """Noeud d'un arbre binaire."""
+    valeur: Any = None
+    gauche: Any = None
+    droite: Any = None
+```
+
+---
+
+# Noeud de départ
+
+* Comment identifier le **noeud de départ** de l'arbre binaire ?
+* On souhaite que chaque noeud ait la **même représentation**.
+* On introduit un nouveau type, `ArbreBinaire`, qui référence le noeud de départ.
+* Un `ArbreBinaire` **n'a pas de valeur**.
+
+---
+
+#### Noeud de départ identifié par l'`ArbreBinaire`
+
+![](./assets/arbre-binaire-intro.png)
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 70%](./assets/arbre-binaire-repr.png)
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class ArbreBinaire:
+    """Arbre binaire."""
+    noeud: Noeud = None
+```
+
+---
+
+### Exemple complet
+
+![](./assets/arbre-binaire-exemple.png)
 
 ---
 
 <!-- _class: title-section -->
 
 # <!--fit--> Insertion et recherche dans un arbre binaire
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Arbre N-aire : représentation
 
 ---
 
