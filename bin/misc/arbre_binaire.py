@@ -93,6 +93,13 @@ def affiche_arrete(parent, enfant):
     """Aide pour la fonction de tests."""
     print(f"{parent} -> {enfant}")
 
+def profondeur(noeud):
+    if noeud == None:
+        return 0
+
+    return 1 + max(profondeur(noeud.gauche),
+                   profondeur(noeud.droite))
+
 def tests():
     """Fonction de tests."""
     arbre = creer_arbre_binaire_avec_liste([5, 2, 6, 7, 8, 10, 15, 1, 3, 9])

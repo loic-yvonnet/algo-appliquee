@@ -373,20 +373,21 @@ Dans un arbre rouge-noir, la recherche et l'insertion sont en $O(\log N)$.
 
 ---
 
+<!-- _class: smaller-text -->
+
 # <!--fit--> Structure de données
 
 ![bg right:30% 90%](./assets/arbre-n-aire-noeud-repr.png)
 
 ```python
-from dataclasses import dataclass
-from typing import Any
+from dataclasses import dataclass, field
+from typing import Any, List
 
 @dataclass
 class Noeud:
-    """Noeud d'un arbre binaire."""
+    """Noeud d'un arbre n-aire."""
     valeur: Any = None
-    gauche: Any = None
-    droite: Any = None
+    descendants: List = field(default_factory=list)
 ```
 
 ---
