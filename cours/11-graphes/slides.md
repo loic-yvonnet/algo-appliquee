@@ -204,9 +204,190 @@ class ArbreBinaire:
 
 ---
 
+### Recherche : principe
+
+* On part du noeud à la **racine**.
+* On utilise la **relation d'ordre** pour savoir si on doit aller à gauche ou à droite.
+* On **descend** dans l'arbre jusqu'à trouver la valeur ou ne plus avoir de descendants.
+
+---
+
+### Illustration de la recherche
+
+###### Valeur recherchée : 25
+
+![](./assets/005-recherche-arbre-binaire.gif)
+
+---
+
+### Etapes de recherche
+
+![w:800](./assets/006-recherche-arbre-binaire.png)
+
+---
+
+
+### Algorithme de recherche dans un arbre binaire
+
+```python
+def trouve_valeur_dans_arbre_binaire(arbre, valeur):
+    """Trouve une valeur dans l'arbre binaire."""
+    noeud = arbre.noeud
+    while noeud != None and noeud.valeur != valeur:
+        if valeur < noeud.valeur:
+            noeud = noeud.gauche
+        else:
+            noeud = noeud.droite
+
+    return noeud
+```
+
+---
+
+### Complexité
+
+* Le nombre d'étapes est fonction de la profondeur $p$.
+* Pour un arbre binaire *équilibré* de $N$ noeuds, la recherche prend $O(\log N)$.
+* Pour un arbre binaire *non-équilibré* de $N$ noeuds, la recherche prend $O(N)$.
+
+---
+
+### Insertion : principe
+
+* Si le noeud racine est vide, la nouvelle valeur est positionnée à la racine.
+* Sinon :
+    * On utilise la **relation d'ordre** pour descendre dans l'arbre.
+    * On créé un nouveau noeud dans un nouvel emplacement.
+
+---
+
+### Illustration de l'insertion
+
+![](./assets/007-insertion-arbre-binaire.gif)
+
+---
+
+### Etapes d'insertion
+
+![w:800](./assets/008-insertion-arbre-binaire.png)
+
+---
+
+<!-- _class: smaller-text -->
+
+### Algorithme d'insertion
+
+```python
+def insere_noeud_dans_arbre_binaire(arbre, valeur):
+    """Insère un nouveau noeud dans un arbre binaire."""
+    if arbre.noeud == None:
+        arbre.noeud = Noeud(valeur=valeur)
+        return arbre.noeud
+
+    noeud = arbre.noeud
+    while noeud.valeur != valeur:
+        if valeur < noeud.valeur:
+            if noeud.gauche == None:
+                noeud.gauche = Noeud(valeur=valeur)
+            noeud = noeud.gauche
+        else:
+            if noeud.droite == None:
+                noeud.droite = Noeud(valeur=valeur)           
+            noeud = noeud.droite
+
+    return noeud
+```
+
+---
+
+#### :warning: Problème :warning:
+
+![w:50](./assets/009-arbre-binaire-non-equilibre.gif)
+
+
+---
+
+#### Etapes arbre binaire non-équilibré
+
+![w:500](./assets/010-arbre-binaire-non-equilibre.png)
+
+---
+
+### Arbre non-équilibré
+
+* Si on insère toujours des valeurs à droite (ou à gauche), on obtient l'équivalent d'une **liste chaînée**.
+* On perd alors l'équilibre de l'arbre, et la **complexité** d'insertion et de recherche **augmente**.
+* La complexité passe de logarithmique à linéaire dans les 2 cas.
+
+---
+
+### Solution : rééquilibrage
+
+* Un **arbre binaire rouge-noir** (red-black binary search tree :uk:) rééquilibre l'arbre à chaque insertion.
+* Des **rotations** sont effectuées pour échanger des noeuds.
+
+---
+
+### Illustration d'un arbre rouge-noir
+
+![](./assets/011-arbre-rouge-noir.gif)
+
+---
+
+#### Etapes d'insertion dans un arbre rouge-noir
+
+![w:850](./assets/012-arbre-rouge-noir.png)
+
+---
+
+### Complexité
+
+Dans un arbre rouge-noir, la recherche et l'insertion sont en $O(\log N)$.
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Arbre N-aire : représentation
+
+---
+
+### Généralisation
+
+* Les arbres binaires ont de nombreuses propriétés intéressantes (complexité logarithmique).
+* Toute hiérarchie ne peut être représentée avec un arbre binaire.
+* Les arbres n-aires peuvent avoir **$n$ descendants**.
+* Les descendants peuvent être une `list`.
+
+---
+
+### Illustration d'un arbre n-aire
+
+![](./assets/arbre-n-aire-qlq-noeuds.png)
+
+---
+
+### Exemple avec une structure produit
+
+![](./assets/arbre-n-aire-exemple.png)
+
+---
+
+# <!--fit--> Structure de données
+
+![bg right:30% 90%](./assets/arbre-n-aire-noeud-repr.png)
+
+```python
+from dataclasses import dataclass
+from typing import Any
+
+@dataclass
+class Noeud:
+    """Noeud d'un arbre binaire."""
+    valeur: Any = None
+    gauche: Any = None
+    droite: Any = None
+```
 
 ---
 
