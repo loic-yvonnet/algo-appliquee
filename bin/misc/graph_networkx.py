@@ -53,4 +53,15 @@ def barabasi_albert_graph():
     nx.draw(G, **options)
     plt.show()
 
-barabasi_albert_graph()
+def star_graph():
+    G = nx.star_graph(20)
+
+    options = {
+        'width': 1
+    }
+    nx.draw(G, with_labels=True, **options)
+    plt.show()
+
+#random_graph()
+#barabasi_albert_graph()
+star_graph()
