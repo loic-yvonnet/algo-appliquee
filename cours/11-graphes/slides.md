@@ -452,6 +452,10 @@ Comment représenter les relations entre des utilisateurs ?
     * un ensemble $S$ de **sommets** (*vertices* ou *vertex* :uk:).
     * un ensemble $A$ d'**arcs** (*edges* :uk:).
 
+<!--
+Vertices est le pluriel de vertex en anglais.
+Le terme digraph est très souvent employé, même en français.
+-->
 
 ---
 
@@ -461,6 +465,12 @@ Comment représenter les relations entre des utilisateurs ?
 * On note $s \xrightarrow{a} t$, un arc $a$ d'origine $s$ et de but $t$.
 * $t$ est un **successeur** de $s$.
 * $s$ est un **prédécesseur** de $t$.
+
+---
+
+### Exemple de graphe orienté
+
+![](./assets/016-graphe-oriente.png)
 
 ---
 
