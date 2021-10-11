@@ -42,7 +42,7 @@ def insere_noeud_dans_arbre_binaire(arbre, valeur):
             noeud = noeud.gauche
         else:
             if noeud.droite == None:
-                noeud.droite = Noeud(valeur=valeur)           
+                noeud.droite = Noeud(valeur=valeur)
             noeud = noeud.droite
 
     return noeud
@@ -182,6 +182,80 @@ def affiche_arbre(arbre):
     chaine = serialise_noeud(arbre.noeud)
     print(chaine)
 
+def plus_petite(noeud):
+    """Renvoie le noeud avec la plus petite valeur."""
+    if noeud == None:
+        return None
+
+    n = noeud
+    while n.gauche != None:
+        n = n.gauche
+
+    return n
+
+GAUCHE = True
+DROITE = False
+
+def met_a_jour(arbre, precedent, precedent_direction, noeud):
+    """Remplace le suivant du précédent par le noeud en entrée."""
+    # S'il n'y a pas de précédent, on est en haut de l'arbre
+    if precedent == None:
+        arbre.noeud = noeud
+
+    # Si le noeud à supprimer se trouvait à gauche
+    elif precedent_direction == GAUCHE:
+        precedent.gauche = noeud
+
+    # Si le noeud à supprimer se trouvait à droite
+    elif precedent_direction == DROITE:
+        precedent.droite = noeud
+
+def effectue_la_suppression(arbre, precedent, precedent_direction, noeud):
+    """Une fois que le noeud à supprimé est trouvé, on doit le supprimer."""
+    # Cas où il n'y a pas de descendant
+    if noeud.gauche == None and noeud.droite == None:
+        met_a_jour(arbre, precedent, precedent_direction, None)
+
+    # Cas où il y a un unique descendant
+    elif noeud.gauche == None:
+        met_a_jour(arbre, precedent, precedent_direction, noeud.droite)
+    elif noeud.droite == None:
+        met_a_jour(arbre, precedent, precedent_direction, noeud.gauche)
+
+    # Cas où il y a plusieurs descendants
+    else:
+        petit_noeud = plus_petite(noeud.droite)
+        petite_valeur = petit_noeud.valeur
+        supprime_noeud(arbre, petite_valeur)
+        noeud.valeur = petite_valeur
+
+def supprime_noeud(arbre, valeur):
+    """Supprime le noeud avec la valeur indiquée."""
+    # On cherche le noeud à supprimer
+    noeud = arbre.noeud
+    precedent = None
+    precedent_direction = GAUCHE
+    while True:
+        if noeud == None:
+            raise ValueError("Erreur : valeur non trouvée")
+
+        # On vient de trouver le noeud à supprimer
+        if noeud.valeur == valeur:
+            effectue_la_suppression(arbre, precedent, precedent_direction, noeud)
+
+            # Fin de la recherche
+            break
+
+        # On passe à la suite dans la recherche
+        if valeur < noeud.valeur:
+            precedent = noeud
+            precedent_direction = GAUCHE
+            noeud = noeud.gauche
+        else:
+            precedent = noeud
+            precedent_direction = DROITE
+            noeud = noeud.droite
+
 def tests():
     """Fonction de tests."""
     bloc1 =  "       5        \n"
@@ -215,6 +289,13 @@ def tests():
     parcourt_arbre(arbre, print)
     print("---")
     parcourt_arbre_avec_parent(arbre, affiche_arrete)
+    print("---")
+    liste = [42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256, 125, 3, 15]
+    arbre = creer_arbre_binaire_avec_liste(liste)
+    affiche_arbre(arbre)
+    print("Supprime 7")
+    supprime_noeud(arbre, 7)
+    affiche_arbre(arbre)
 
 if __name__ == "__main__":
     tests()
