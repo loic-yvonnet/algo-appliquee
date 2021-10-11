@@ -2,7 +2,7 @@ graph G {
     bgcolor="transparent";
 
     /* Entities */
-    Serveur [label="Serveur", shape="rectangle"];
+    Hyperviseur [label="Hyperviseur", shape="rectangle"];
     C1 [label="Noeud 1", shape="rectangle"];
     C2 [label="Noeud 2", shape="rectangle"];
     C3 [label="Noeud 3", shape="rectangle"];
@@ -17,18 +17,18 @@ graph G {
     C12 [label="Noeud 12", shape="rectangle"];
    
     /* Relationships */
-    Serveur -- C1
-    Serveur -- C2
-    Serveur -- C3
-    Serveur -- C4
-    Serveur -- C5
-    Serveur -- C6
-    Serveur -- C7
-    Serveur -- C8
-    Serveur -- C9
-    Serveur -- C10
-    Serveur -- C11
-    Serveur -- C12
+    Hyperviseur -- C1
+    Hyperviseur -- C2
+    Hyperviseur -- C3
+    Hyperviseur -- C4
+    Hyperviseur -- C5
+    Hyperviseur -- C6
+    Hyperviseur -- C7
+    Hyperviseur -- C8
+    Hyperviseur -- C9
+    Hyperviseur -- C10
+    Hyperviseur -- C11
+    Hyperviseur -- C12
 
     C1 -- C2
     C2 -- C4

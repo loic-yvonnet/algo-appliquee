@@ -408,7 +408,35 @@ class Noeud:
 
 # <!--fit--> Discussion concernant les problèmes impliquant des graphes
 
-###### GPS, réseaux sociaux, etc
+---
+
+### Chemin le plus rapide
+
+![](./assets/013-gps.png)
+
+<!--
+Quel est le chemin le plus rapide entre Saumur et Paris ?
+-->
+
+---
+
+### Réseau
+
+![](./assets/014-reseau.png)
+
+<!--
+Par quel chemin faire transiter des paquets entre des noeuds de calcul pour optimiser le flux global d'informations ?
+-->
+
+---
+
+### Réseau social
+
+![h:600](./assets/015-reseau-social.png)
+
+<!--
+Comment représenter les relations entre des utilisateurs ?
+-->
 
 ---
 
@@ -416,13 +444,45 @@ class Noeud:
 
 # <!--fit--> Introduction à la théorie des graphes
 
-##### Sommet, arc, cycle, digraph
+---
+
+### Graphe orienté (1/2)
+
+* Un **graphe orienté** (*directed graph* ou *digraph* :uk:) est caractérisé par :
+    * un ensemble $S$ de **sommets** (*vertices* ou *vertex* :uk:).
+    * un ensemble $A$ d'**arcs** (*edges* :uk:).
+
+
+---
+
+### Graphe orienté (2/2)
+
+* Chaque arc a une **origine** (*source* :uk:) et un **but** (*target* :uk:).
+* On note $s \xrightarrow{a} t$, un arc $a$ d'origine $s$ et de but $t$.
+* $t$ est un **successeur** de $s$.
+* $s$ est un **prédécesseur** de $t$.
 
 ---
 
 <!-- _class: title-section -->
 
-# <!--fit--> Digraph : représentation
+# <!--fit--> Représentations des graphes
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Recherche en profondeur
+
+##### Depth-First Search :uk:
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Recherche en largeur
+
+##### Breadth-First Search :uk:
 
 ---
 
@@ -434,29 +494,25 @@ class Noeud:
 
 <!-- _class: title-section -->
 
-# <!--fit--> Recherche en profondeur
-
-##### Depth-First Search
-
----
-
-<!-- _class: title-section -->
-
-# <!--fit--> Recherche en largeur
-
-##### Breadth-First Search
-
----
-
-<!-- _class: title-section -->
-
 # <!--fit--> Graphe pondéré : représentation
 
 ---
 
 <!-- _class: title-section -->
 
+# <!--fit--> Plus court chemin
+
+---
+
+<!-- _class: title-section -->
+
 # <!--fit--> Recherche de chemin critique
+
+---
+
+<!-- _class: title-section -->
+
+# <!--fit--> Flot maximal
 
 ---
 

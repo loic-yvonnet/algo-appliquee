@@ -19,7 +19,7 @@ graph G {
 
     Gennes -- Angers [label="0h30"];
 
-    Angers -- Paris [label="0h20"];
+    Angers -- Paris [label="2h30"];
     Angers -- Nantes [label="0h20"];
 
     Tours -- Paris [label="3h00"];
