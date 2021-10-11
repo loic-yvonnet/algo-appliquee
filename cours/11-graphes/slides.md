@@ -474,6 +474,32 @@ Le terme digraph est très souvent employé, même en français.
 
 ---
 
+### Graphe non-orienté (1/2)
+
+* Un graphe **non-orienté** (*undirected graph* :uk:) ou graphe **symétrique** est caractérisé par :
+    * un ensemble $S$ de **sommets**.
+    * un ensemble $A$ d'**arêtes**.
+
+---
+
+### Graphe non-orienté (2/2)
+
+* Chaque arête a 2 **extrémités** (éventuellement confondues).
+* Tout graphe orienté admet un graphe non-orienté **sous-jacent**.
+* Le graphe sous-jacent est composé de l'ensemble des arêtes correspondant aux arcs du digraph.
+
+---
+
+### Exemple de graphe non-orienté
+
+![](./assets/017-graphe-non-oriente.png)
+
+<!--
+Il s'agit du graphe sous-jacent à celui présenté précédemment.
+-->
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Représentations des graphes
