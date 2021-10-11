@@ -94,15 +94,116 @@ def affiche_arrete(parent, enfant):
     print(f"{parent} -> {enfant}")
 
 def profondeur(noeud):
+    """Renvoie la profondeur de l'arbre à partir du noeud."""
     if noeud == None:
         return 0
 
     return 1 + max(profondeur(noeud.gauche),
                    profondeur(noeud.droite))
 
+def nb_descendants(noeud):
+    """Renvoie le nombre de descendants à partir du noeud."""
+    if noeud == None:
+        return 0
+
+    return 1 + nb_descendants(noeud.gauche) + nb_descendants(noeud.droite)
+
+def fusionne_blocs(bloc1, bloc2):
+    """Fusionne 2 blocs de texte."""
+    resultat = ""
+    max1, max2 = 0, 0
+
+    # Fusionne les lignes
+    while len(bloc1) > 0 and len(bloc2) > 0:
+        i = bloc1.find("\n")
+        resultat += bloc1[:i]
+        max1 = max(max1, len(bloc1[:i]))
+        bloc1 = bloc1[i+1:]
+        
+        i = bloc2.find("\n")
+        resultat += bloc2[:i+1]
+        max2 = max(max2, len(bloc2[:i]))
+        bloc2 = bloc2[i+1:]
+
+    # Restant à gauche
+    while len(bloc1) > 0:
+        i = bloc1.find("\n")
+        resultat += bloc1[:i]
+        resultat += max2 * " " + "\n"
+        bloc1 = bloc1[i+1:]
+
+    # Restant à droite
+    while len(bloc2) > 0:
+        i = bloc2.find("\n")
+        resultat += max1 * " "
+        resultat += bloc2[:i+1]
+        bloc2 = bloc2[i+1:]
+
+    return resultat
+
+def serialise_noeud(noeud):
+    """Sérialise récursivement l'arbre à partir du noeud.
+    
+    A chaque niveau, on créé un bloc de texte rectangulaire.
+    On fusionne chaque bloc récursivement.
+    """
+    # Fin de la récursivité
+    if noeud == None:
+        return ""
+
+    # Créé une chaîne de caractères pour chaque bloc
+    bloc_gauche = serialise_noeud(noeud.gauche)
+    bloc_droite = serialise_noeud(noeud.droite)
+
+    # On calcule l'espacement
+    i = bloc_gauche.find("\n")
+    j = bloc_droite.find("\n")
+    nb_espaces_gauche = len(bloc_gauche[:i]) if i > 0 else 0
+    nb_espaces_droite = len(bloc_droite[:j]) if j > 0 else 0
+    nb_espaces = nb_espaces_gauche + nb_espaces_droite
+    nb_espaces = max(4, nb_espaces)
+
+    # On rajoute le début du nouveau bloc
+    resultat = str(noeud.valeur).center(nb_espaces) + "\n"
+    if nb_espaces_gauche > 0:
+        resultat += "/".center(nb_espaces_gauche)
+    if nb_espaces_droite > 0:
+        resultat += "\\".center(nb_espaces_droite)
+    if nb_espaces_gauche > 0 or nb_espaces_droite > 0:
+        resultat += "\n"
+
+    # On fusionne les 2 sous-blocs
+    resultat += fusionne_blocs(bloc_gauche, bloc_droite)
+
+    return resultat
+
+def affiche_arbre(arbre):
+    """Affiche un arbre binaire."""
+    chaine = serialise_noeud(arbre.noeud)
+    print(chaine)
+
 def tests():
     """Fonction de tests."""
+    bloc1 =  "       5        \n"
+    bloc1 += "    /     \\     \n"
+    bloc1 += "  4         6   \n"
+    bloc2 =  "       8        \n"
+    bloc2 += "    /     \\     \n"
+    bloc2 += "  7         9   \n"
+    bloc2 += " /\\        /\\   \n"
+    bloc2 += "0  1      2  3  \n"
+    print(fusionne_blocs(bloc1, bloc2))
+    print(fusionne_blocs(bloc2, bloc1))
+    print("---")
+    arbre = creer_arbre_binaire_avec_liste([5, 2, 6])
+    affiche_arbre(arbre)
+    print("---")
+    arbre = creer_arbre_binaire_avec_liste([42, 7, 108, 21, 1, 88, 128, 50, 100, 0, 25, 256, 125, 3, 15])
+    affiche_arbre(arbre)
+    print("---")
     arbre = creer_arbre_binaire_avec_liste([5, 2, 6, 7, 8, 10, 15, 1, 3, 9])
+    affiche_arbre(arbre)
+    print("---")
     noeud = trouve_valeur_dans_arbre_binaire(arbre, 7)
     print(noeud.valeur)
     print("---")
