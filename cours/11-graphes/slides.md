@@ -507,7 +507,7 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 | ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/018-graphe-oriente-partiel.png) |
 |:-----------------------------------------:|:-------------------------------------------------:|
-|        Graphe orienté $G_0$               |  $G_1$ : graphe partiel de $G_0$                  |
+|        Graphe orienté $G_0$               |        $G_1$ : graphe partiel de $G_0$            |
 
 ---
 
@@ -518,7 +518,50 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 | ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/019-graphe-oriente-induit.png) |
 |:-----------------------------------------:|:------------------------------------------------:|
-|        Graphe orienté $G_0$               |  $G_2$ : graphe induit de $G_0$                  |
+|        Graphe orienté $G_0$               |        $G_2$ : graphe induit de $G_0$            |
+
+---
+
+### Graphe simple
+
+* Un graphe est dit **simple** s'il existe au plus un arc (ou arête) entre une origine et un but.
+* Dans ce cas, un arc $(s, t)$ est noté $s \longrightarrow t$.
+
+| ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/020-graphe-oriente-simple.png) |
+|:-----------------------------------------:|:------------------------------------------------:|
+|     Graphe orienté $G_0$ (non simple)     |           $G_3$ : graphe simple                  |
+
+---
+
+### Graphe antisymétrique
+
+* Un graphe orienté simple est dit **antisymétrique** si, pour tout arc $s \longrightarrow t$, il n'existe pas d'arc $t \longrightarrow s$.
+
+| ![h:300](./assets/020-graphe-oriente-simple.png) | ![h:300](./assets/021-graphe-antisymetrique.png) |
+|:------------------------------------------------:|:------------------------------------------------:|
+|     Graphe simple $G_3$ (non antisymétrique)     |           $G_4$ : graphe antisymétrique          |
+
+---
+
+### Chemin
+
+* Un **chemin** d'un graphe orienté est une suite d'arcs.
+* L'origine d'un arc est le but de l'arc prédécédent.
+* Le chemin $s_0 \xrightarrow{a_1} s_1 \xrightarrow{a_2} s_2 \cdots s_{n-1} \xrightarrow{a_n} s_n$ désigne un chemin d'**origine** $s_0$, de **but** $s_n$ et de longueur $n$.
+
+|                                  ![h:250](./assets/022-chemin.png)                                   |
+|:----------------------------------------------------------------------------------------------------:|
+| Chemin $A \xrightarrow{a} B \xrightarrow{b} C \xrightarrow{d} D \xrightarrow{e} A \xrightarrow{f} E$ |
+
+---
+
+### Chemin simple
+
+* Un **chemin simple** ne passe pas 2 fois par le même arc.
+
+| ![h:300](./assets/022-chemin.png) | ![h:300](./assets/023-chemin-simple.png) |
+|:---------------------------------:|:----------------------------------------:|
+|        Chemin non simple          |           Chemin simple                  |
 
 ---
 
