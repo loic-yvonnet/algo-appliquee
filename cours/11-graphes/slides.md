@@ -502,8 +502,8 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Graphe partiel
 
-* On peut restreindre un graphe (orienté ou non) à une partie de ses arcs ou arêtes.
-* Il s'agit d'un **graphe partiel**.
+- On peut restreindre un graphe (orienté ou non) à une partie de ses arcs ou arêtes.
+- Il s'agit d'un **graphe partiel**.
 
 | ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/018-graphe-oriente-partiel.png) |
 |:-----------------------------------------:|:-------------------------------------------------:|
@@ -513,8 +513,8 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Graphe induit
 
-* On peut restreindre un graphe (orienté ou non) à une partie de ses sommets.
-* Il s'agit d'un **graphe induit** (ou **sous-graphe**).
+- On peut restreindre un graphe (orienté ou non) à une partie de ses sommets.
+- Il s'agit d'un **graphe induit** (ou **sous-graphe**).
 
 | ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/019-graphe-oriente-induit.png) |
 |:-----------------------------------------:|:------------------------------------------------:|
@@ -524,8 +524,8 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Graphe simple
 
-* Un graphe est dit **simple** s'il existe au plus un arc (ou arête) entre une origine et un but.
-* Dans ce cas, un arc $(s, t)$ est noté $s \longrightarrow t$.
+- Un graphe est dit **simple** s'il existe au plus un arc (ou arête) entre une origine et un but.
+- Dans ce cas, un arc $(s, t)$ est noté $s \longrightarrow t$.
 
 | ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/020-graphe-oriente-simple.png) |
 |:-----------------------------------------:|:------------------------------------------------:|
@@ -535,7 +535,7 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Graphe antisymétrique
 
-* Un graphe orienté simple est dit **antisymétrique** si, pour tout arc $s \longrightarrow t$, il n'existe pas d'arc $t \longrightarrow s$.
+- Un graphe orienté simple est dit **antisymétrique** si, pour tout arc $s \longrightarrow t$, il n'existe pas d'arc $t \longrightarrow s$.
 
 | ![h:300](./assets/020-graphe-oriente-simple.png) | ![h:300](./assets/021-graphe-antisymetrique.png) |
 |:------------------------------------------------:|:------------------------------------------------:|
@@ -545,9 +545,9 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Chemin
 
-* Un **chemin** d'un graphe orienté est une suite d'arcs.
-* L'origine d'un arc est le but de l'arc prédécédent.
-* Le chemin $s_0 \xrightarrow{a_1} s_1 \xrightarrow{a_2} s_2 \cdots s_{n-1} \xrightarrow{a_n} s_n$ désigne un chemin d'**origine** $s_0$, de **but** $s_n$ et de longueur $n$.
+- Un **chemin** d'un graphe orienté est une suite d'arcs.
+- L'origine d'un arc est le but de l'arc prédécédent.
+- Le chemin $s_0 \xrightarrow{a_1} s_1 \xrightarrow{a_2} s_2 \cdots s_{n-1} \xrightarrow{a_n} s_n$ désigne un chemin d'**origine** $s_0$, de **but** $s_n$ et de longueur $n$.
 
 |                                  ![h:250](./assets/022-chemin.png)                                   |
 |:----------------------------------------------------------------------------------------------------:|
@@ -557,11 +557,51 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ### Chemin simple
 
-* Un **chemin simple** ne passe pas 2 fois par le même arc.
+- Un **chemin simple** ne passe pas 2 fois par le même arc.
 
 | ![h:300](./assets/022-chemin.png) | ![h:300](./assets/023-chemin-simple.png) |
 |:---------------------------------:|:----------------------------------------:|
 |        Chemin non simple          |           Chemin simple                  |
+
+---
+
+### Cycle (ou circuit)
+
+- Dans un graphe orienté, un **circuit** est un chemin dont l'origine et le but sont confondus.
+- Dans un graphe non-orienté, un **cycle** est un chemin dont l'origine et le but sont confondus.
+
+| ![h:250](./assets/024-circuit.png) | ![h:250](./assets/025-cycle.png)  |
+|:----------------------------------:|:---------------------------------:|
+|        Circuit                     | Cycle dans le graphe sous-jacent  |
+
+---
+
+### Circuit élémentaire
+
+- Un circuit est **élémentaire** s'il ne passe pas 2 fois par le même sommet (sauf l'origine et le but).
+
+| ![h:300](./assets/026-circuit-non-elementaire.png) | ![h:300](./assets/027-circuit-elementaire.png) |
+|:--------------------------------------------------:|:----------------------------------------------:|
+|            Circuit non élémentaire                 |           Circuit élémentaire                  |
+
+---
+
+### Boucle
+
+- Une **boucle** est un circuit composé d'un seul arc.
+
+![](./assets/028-boucle.png)
+
+---
+
+## DAG (Directed Acyclic Graph :uk:)
+
+- Un **DAG** est un graphe orienté sans circuit.
+- Ce type de graphe est courant.
+
+| ![h:250](./assets/029-non-dag.png) | ![h:250](./assets/030-dag.png) |
+|:----------------------------------:|:------------------------------:|
+|    $G_5$ n'est pas un DAG          |               DAG              |
 
 ---
 
