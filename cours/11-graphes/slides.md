@@ -664,6 +664,35 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ---
 
+![bg right:30% 80%](./assets/037-arbre.png)
+
+### Arbre
+
+- En théorie des graphes, un **arbre** est un graphe non-orienté simple, connexe et sans cycle.
+- Deux sommets quelconques ne sont reliés que par un unique chemin.
+- Le nombre d'arcs est relié au nombre de sommets par la relation : $|A| = |S| - 1$.
+
+---
+
+### Forêt
+
+- Une fôret est un graphe non-orienté dont les composantes connexes sont des arbres.
+
+![](./assets/038-foret.png)
+
+---
+
+![bg right:30% 80%](./assets/039-arborescence.png)
+
+### Arborescence
+
+- Une **arborescence** est un graphe orienté possédant un sommet privilégié, la **racine**.
+- Il existe un unique chemin de la racine à tout autre sommet.
+- La racine n'a pas de prédécesseur.
+- Tout autre sommet a un unique prédécesseur : son **parent**.
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Représentations des graphes
