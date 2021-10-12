@@ -1,0 +1,50 @@
+digraph G {
+    bgcolor="transparent";
+    
+    subgraph cluster_0 {
+        style=dashed;
+
+        A [label="A", shape="circle"];
+    }
+
+    subgraph cluster_1 {
+        style=dashed;
+
+        B [label="B", shape="circle"];
+    }
+
+    A -> B [label="a"];
+    A -> B [label="b"];
+
+    subgraph cluster_2 {
+        style=dashed;
+
+        E [label="E", shape="circle"];
+
+        E -> E [label="f"];
+    }
+
+    subgraph cluster_3 {
+        style=dashed;
+
+        C [label="C", shape="circle"];
+        D [label="D", shape="circle"];
+        F [label="F", shape="circle"];
+
+        C -> D [label="c"];
+        D -> C [label="h"];
+        D -> F [label="e"];
+        F -> C [label="g"];
+    }
+
+    D -> E [label="d"];
+    
+    subgraph cluster_4 {
+        style=dashed;
+
+        G [label="G", shape="circle"];
+    }
+
+    /* Ranks */
+    { rank=same; };
+}

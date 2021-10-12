@@ -586,7 +586,7 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ---
 
-### Boucle
+## Boucle
 
 - Une **boucle** est un circuit composé d'un seul arc.
 
@@ -602,6 +602,65 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 | ![h:250](./assets/029-non-dag.png) | ![h:250](./assets/030-dag.png) |
 |:----------------------------------:|:------------------------------:|
 |    $G_5$ n'est pas un DAG          |               DAG              |
+
+---
+
+### Fermeture transitive - définition (1/2)
+
+* La **fermeture transitive** (ou clôture transitive) d'un graphe simple $G$ comporte les sommets et les arcs de $G$. On y ajoute d'autres arcs.
+* Pour tout couple de sommets $s$ et $t$ de $G$, s'il existe un chemin entre $s$ et $t$ mais pas d'arc $s \longrightarrow t$, alors on ajoute l'arc $s \longrightarrow t$.
+
+---
+
+### Fermeture transitive - exemple (2/2)
+
+| ![h:400](./assets/031-graphe-simple.png) | ![h:400](./assets/032-fermeture-transitive.png) |
+|:----------------------------------------:|:-----------------------------------------------:|
+|              Graphe simple               |               Fermeture transitive              |
+
+---
+
+### Graphe connexe
+
+- Un graphe non-orienté est **connexe** s'il existe un chemin entre chaque couple de sommets de ce graphe.
+
+| ![h:300](./assets/017-graphe-non-oriente.png)    | ![h:300](./assets/033-graphe-connexe.png) |
+|:------------------------------------------------:|:-----------------------------------------:|
+|              Graphe non connexe                  |               Graphe connexe              |
+
+---
+
+### Composante connexe
+
+- La **composante connexe** d'un sommet $s$ est l'ensemble des sommets qui lui sont reliés.
+
+![h:400](./assets/034-composantes-connexes.png)
+
+<!--
+3 composantes connexes de G (graphe non-orienté).
+-->
+
+---
+
+### Graphe fortement connexe
+
+- Un graphe orienté est **fortement connexe** s'il existe un chemin entre chaque couple de sommets de ce graphe.
+
+| ![h:250](./assets/016-graphe-oriente.png)    | ![h:250](./assets/035-graphe-fortement-connexe.png) |
+|:--------------------------------------------:|:---------------------------------------------------:|
+|         Graphe non fortement connexe         |               Graphe fortement connexe              |
+
+---
+
+### Composante fortement connexe
+
+- La **composante fortement connexe** d'un sommet $s$ est l'ensemble des sommets $t$ tels qu'il existe un chemin de $s$ à $t$, et un chemin de $t$ à $s$.
+
+![h:350](./assets/036-composantes-fortement-connexes.png)
+
+<!--
+5 composantes fortement connexes du graphe orienté.
+-->
 
 ---
 
