@@ -500,6 +500,28 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 
 ---
 
+### Graphe partiel
+
+* On peut restreindre un graphe (orienté ou non) à une partie de ses arcs ou arêtes.
+* Il s'agit d'un **graphe partiel**.
+
+| ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/018-graphe-oriente-partiel.png) |
+|:-----------------------------------------:|:-------------------------------------------------:|
+|        Graphe orienté $G_0$               |  $G_1$ : graphe partiel de $G_0$                  |
+
+---
+
+### Graphe induit
+
+* On peut restreindre un graphe (orienté ou non) à une partie de ses sommets.
+* Il s'agit d'un **graphe induit** (ou **sous-graphe**).
+
+| ![h:300](./assets/016-graphe-oriente.png) | ![h:300](./assets/019-graphe-oriente-induit.png) |
+|:-----------------------------------------:|:------------------------------------------------:|
+|        Graphe orienté $G_0$               |  $G_2$ : graphe induit de $G_0$                  |
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Représentations des graphes
