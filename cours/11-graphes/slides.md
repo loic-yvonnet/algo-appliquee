@@ -444,6 +444,11 @@ Comment représenter les relations entre des utilisateurs ?
 
 # <!--fit--> Introduction à la théorie des graphes
 
+<!--
+Il y a beaucoup de définitions dans cette partie, mais rien de complexe en réalité.
+Regardez bien les exemples qui illustrent chaque définition.
+-->
+
 ---
 
 ### Graphe orienté (1/2)
@@ -696,6 +701,61 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 <!-- _class: title-section -->
 
 # <!--fit--> Représentations des graphes
+
+---
+
+### Plusieurs représentations
+
+* Il existe **plusieurs manières** de représenter un graphe en informatique.
+* Chaque représentation a des **avantages** et des **inconvénients**.
+* Un type de représentation **ne convient pas** à tous les types de graphes.
+
+---
+
+### Liste de listes d'arcs (1/4)
+
+* Le graphe orienté peut être caractérisé par une **liste de sommets**.
+* Chaque sommet est caractérisé par une **liste d'arcs** et une éventuelle étiquette.
+
+---
+
+![bg right:30% 40%](./assets/040-graphe-oriente-repr.png)
+
+### Liste de listes d'arcs (2/4)
+
+- sommet 0 : $0 \longrightarrow 1$
+- sommet 1 : $1 \longrightarrow 3$, $1 \longrightarrow 4$
+- sommet 2 : $2 \longrightarrow 4$
+- sommet 3 : $3 \longrightarrow 0$, $3 \longrightarrow 2$
+- sommet 4 : $\varnothing$
+
+---
+
+![bg right:30% 40%](./assets/040-graphe-oriente-repr.png)
+
+### Liste de listes d'arcs (3/4)
+
+```python
+G = [
+    [1],      # 0 -> 1
+    [3, 4],   # 1 -> 3, 1 -> 4
+    [4],      # 2 -> 4
+    [0, 2],   # 3 -> 0, 3 -> 2
+    []        # aucun
+]
+```
+
+---
+
+### Liste de listes d'arcs (4/4)
+
+* Il est possible également de représenter un **graphe non-orienté** en dupliquant les arcs pour former les arêtes.
+* **Avantages** : simplicité de mise à jour et de parcours.
+* **Inconvénients** : difficulté d'obtention de la liste des prédécesseurs sans dupliquer les arcs (pour avoir les arcs "retour").
+
+---
+
+
 
 ---
 
