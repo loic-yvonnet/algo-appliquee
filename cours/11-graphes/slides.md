@@ -989,11 +989,7 @@ def parcours_en_profondeur(m, f):
 * Donc chaque sommet est visité exactement 1 fois.
 * Chaque arc d'origine est visité 1 fois.
 * Dans le pire cas, le nombre maximal d'opérations sera limité soit par le nombre de sommets, soit par le nombre d'arcs.
-* La complexité est donc $O(\max(|A|, |S|))$.
-
-<!--
-Pour rappel, |A| est le nombre d'arc, tandis que |S| est le nombre de sommets.
--->
+* La complexité est donc $O(|A| + |S|)$, où $|A|$ est le nombre d'arc et $|S|$ est le nombre de sommets.
 
 ---
 
@@ -1068,7 +1064,7 @@ def parcours_en_largeur(m, f):
 ### Complexité
 
 * On parcourt chaque sommet exactement une fois.
-* La complexité est en $O(\max(|A|, |S|))$.
+* La complexité est en $O(|A| + |S|)$, où $|A|$ est le nombre d'arc et $|S|$ est le nombre de sommets.
 
 ---
 
@@ -1157,7 +1153,7 @@ print(cycle)
 
 ### Complexité
 
-- La complexité est la même que pour le parcours en profondeur : $O(\max(|A|, |S|))$.
+- La complexité est la même que pour le parcours en profondeur : $O(|A| + |S|)$.
 
 ---
 
@@ -1478,6 +1474,14 @@ Coûts = `[0, 42, 55, 63, -14.7]`
 |              Graphe pondéré                     |     Arbre de distances minimales pour $s_0$     |
 
 Coûts = `[0, 4, 9, 4, 2, 6, 8, 12, 13, 12, 3, 5, 14, 13, 14]`
+
+---
+
+### Complexité
+
+* La complexité de l'algorithme **Bellman-Ford** est en $O(|A| |S|)$, où $|A|$ est le nombre d'arcs et $|S|$ le nombre de sommets.
+* Cet algorithme est applicable dans de nombreux cas en pratique, sa complexité est correcte et son implémentation est relativement simple.
+* L'algorithme de **Dijkstra** offre une meilleure complexité en $O(|A| |S| \log |S|)$, mais son implémentation implique souvent une queue de priorité, que nous n'avons pas abordé.
 
 ---
 
