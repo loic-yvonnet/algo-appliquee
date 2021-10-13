@@ -755,7 +755,144 @@ G = [
 
 ---
 
+### Matrice d'adjacence (1/6)
 
+* Un graphe simple à $n$ sommets numérotés peut être représenté par une **matrice carrée** $M_{n, n}$ d'entiers.
+* L'élément $M[i][j]$ vaut 1 si l'arc $i \longrightarrow j$ existe, et 0 sinon.
+
+---
+
+![bg right:30% 40%](./assets/040-graphe-oriente-repr.png)
+
+### Matrice d'adjacence (2/6)
+
+sommets    | 0 | 1 | 2 | 3 | 4 |
+:----------|:-:|:-:|:-:|:-:|:-:|
+sommet 0 : | 0 | 1 | 0 | 0 | 0 |
+sommet 1 : | 0 | 0 | 0 | 1 | 1 |
+sommet 2 : | 0 | 0 | 0 | 0 | 1 |
+sommet 3 : | 1 | 0 | 1 | 0 | 0 |
+sommet 4 : | 0 | 0 | 0 | 0 | 0 |
+
+---
+
+![bg right:30% 40%](./assets/040-graphe-oriente-repr.png)
+
+### Matrice d'adjacence (3/6)
+
+$$
+M = 
+\begin{pmatrix}
+    0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 0 & 0 & 1 \\
+    1 & 0 & 1 & 0 & 0 \\
+    0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix}
+$$
+
+---
+
+![bg right:30% 40%](./assets/040-graphe-oriente-repr.png)
+
+### Matrice d'adjacence (4/6)
+
+```python
+M = [
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 1],
+    [0, 0, 0, 0, 1],
+    [1, 0, 1, 0, 0],
+    [0, 0, 0, 0, 0]
+]
+```
+
+---
+
+![bg right:30% 40%](./assets/041-graphe-oriente-etiquette-repr.png)
+
+### Matrice d'adjacence (5/6)
+
+- Si les arcs sont étiquettés, on peut utiliser ce type de représentation :
+
+```python
+M = [
+    [None,  "a", None, None, None],
+    [None, None, None,  "b",  "c"],
+    [None, None, None, None,  "e"],
+    [ "f", None,  "g", None, None],
+    [None, None, None, None, None]
+]
+```
+
+---
+
+### Matrice d'adjacence (6/6)
+
+* **Avantages** : représentation compacte, rapidité des recherches (notamment des prédécesseurs) et simplicité des algorithmes de calcul.
+* **Inconvénients** : nombreux zéros dans la matrice (information "inutile"), redondance des informations pour les graphes non-orientés, ne convient que pour les graphes simples.
+
+---
+
+### Matrice d'incidence (1/5)
+
+* Un graphe non-orienté à $n$ sommets numérotés et $p$ arêtes numérotées peut être représenté par une **matrice carrée** $M_{n, p}$ d'entiers.
+* L'élément $M[i][j]$ vaut 1 si le sommet $i$ est l'une des 2 extrémités de l'arête $j$, et 0 sinon.
+* Une colonne de cette matrice comporte donc toujours deux éléments à 1 : les 2 extrémités de l'arête.
+
+---
+
+![bg right:30% 40%](./assets/042-graphe-non-oriente-repr.png)
+
+### Matrice d'incidence (2/5)
+
+arêtes     | a | b | c | d | e | f |
+:----------|:-:|:-:|:-:|:-:|:-:|:-:|
+sommet 0 : | 1 | 0 | 0 | 0 | 1 | 0 |
+sommet 1 : | 1 | 1 | 1 | 0 | 0 | 0 |
+sommet 2 : | 0 | 0 | 0 | 1 | 0 | 1 |
+sommet 3 : | 0 | 1 | 0 | 0 | 1 | 1 |
+sommet 4 : | 0 | 0 | 1 | 1 | 0 | 0 |
+
+---
+
+![bg right:30% 40%](./assets/042-graphe-non-oriente-repr.png)
+
+### Matrice d'incidence (3/5)
+
+$$
+M = 
+\begin{pmatrix}
+    1 & 0 & 0 & 0 & 1 & 0 \\
+    1 & 1 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 0 & 1 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 1 & 1 \\
+    0 & 0 & 1 & 1 & 0 & 0 \\
+\end{pmatrix}
+$$
+
+---
+
+![bg right:30% 40%](./assets/042-graphe-non-oriente-repr.png)
+
+### Matrice d'incidence (4/5)
+
+```python
+M = [
+    [1, 0, 0, 0, 1, 0],
+    [1, 1, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0, 1],
+    [0, 1, 0, 0, 1, 1],
+    [0, 0, 1, 1, 0, 0]
+]
+```
+
+---
+
+### Matrice d'incidence (5/5)
+
+* **Avantages** : informations non redondantes pour les graphes non-orientés, représentation compacte, rapidité des recherches.
+* **Inconvénients** : nombreux zéros dans la matrice (information "inutile"), certaines opérations matricielles ne s'appliquent pas.
 
 ---
 

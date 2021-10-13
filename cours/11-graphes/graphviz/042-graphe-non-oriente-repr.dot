@@ -1,4 +1,4 @@
-digraph G {
+graph G {
     bgcolor="transparent";
 
     /* Entities */
@@ -9,15 +9,15 @@ digraph G {
     E [label="4", shape="circle"];
 
     /* Relationships */
-    A -> B;
+    A -- B [label="a"];
 
-    B -> D;
-    B -> E;
+    B -- D [label="b"];
+    B -- E [label="c"];
 
-    C -> E;
+    C -- E [label="d"];
 
-    D -> A;
-    D -> C;
+    D -- A [label="e"];
+    D -- C [label="f"];
 
     /* Ranks */
     { rank=same; };

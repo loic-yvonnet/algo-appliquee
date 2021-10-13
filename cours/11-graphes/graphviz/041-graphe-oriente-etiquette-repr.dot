@@ -9,15 +9,15 @@ digraph G {
     E [label="4", shape="circle"];
 
     /* Relationships */
-    A -> B;
+    A -> B [label="a"];
 
-    B -> D;
-    B -> E;
+    B -> D [label="b"];
+    B -> E [label="c"];
 
-    C -> E;
+    C -> E [label="e"];
 
-    D -> A;
-    D -> C;
+    D -> A [label="f"];
+    D -> C [label="g"];
 
     /* Ranks */
     { rank=same; };
