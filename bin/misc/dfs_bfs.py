@@ -38,8 +38,16 @@ def parcours_arcs(m, f):
     """La fonction f est appelée avec les couples de sommets formant des arcs."""
     for i in range(len(m)):
         for j in range(len(m[i])):
-            if m[i][j] == 1:
+            if m[i][j] != 0:
                 f(i, j)
+
+def parcours_arcs_ponderes(m, f):
+    """La fonction f est appelée avec les couples de sommets formant des arcs,
+    ainsi que le poids associé."""
+    for i in range(len(m)):
+        for j in range(len(m[i])):
+            if m[i][j] != None:
+                f(i, j, m[i][j])
 
 def parcours_en_largeur(m, f):
     """Applique la fonction f à chaque sommet du graphe.
@@ -144,13 +152,77 @@ class Arc:
     """Arc d'un graphe orienté"""
     origine: int = 0
     but: int = 0
-    valeur: float = 0.
+    poids: float = 0.
 
 @dataclass
 class GraphePondere:
     """Graphe orienté pondéré."""
     sommets: List = field(default=list)
     arcs: List = field(default=list)
+
+def adjacents(m, s):
+    """Renvoie les arcs adjacents à s dans m."""
+    adj = []
+    for j in range(len(m[s])):
+        if m[s][j] != None:
+            adj.append(Arc(origine=s, but=j, poids=m[s][j]))
+
+    return adj
+
+def recalcule_bellman_ford(m, s, dist_a, arc_vers, queue):
+    """Recalcule la distance minimale en considérant les successeurs de s.
+    
+    m - matrice d'adjacence pondérée.
+    s - sommet dans les successeurs sont considérés.
+    dist_a - liste des distances minimales aux autres sommets.
+    arc_vers - liste des arcs conservés pour aller à un sommet donné.
+    queue - queue pour le parcours en largeur.
+    """
+    adj = adjacents(m, s)
+    for arc in adj:
+        w = arc.but
+        if dist_a[w] == None or dist_a[w] > dist_a[s] + arc.poids:
+            dist_a[w] = dist_a[s] + arc.poids
+            arc_vers[w] = arc
+            if w not in queue:
+                queue.append(w)
+
+def bellman_ford_impl(m, s):
+    """Implémentation de Bellman-Ford sans gestion de cycles négatifs.
+    
+    m - matrice d'adjacence pondérée.
+    s - sommet de départ.
+    Renvoie la liste des distances aux autres sommets et la liste des
+    arcs constituant les plus courts chemins.
+    """
+    dist_a = [None for _ in range(len(m))]   # distances à l'infini
+    dist_a[s] = 0                            # distance à lui-même
+    arc_vers = [None for _ in range(len(m))] # résultat
+    queue = [s]
+    while len(queue) != 0:
+        v = queue.pop(0)
+        recalcule_bellman_ford(m, v, dist_a, arc_vers, queue)
+
+    return dist_a, arc_vers
+
+def bellman_ford(m, s):
+    """Renvoie une matrice d'adjacence correspondant au shortest path
+    tree (SPT) et la liste des distances minimales."""
+    dist_a, arc_vers = bellman_ford_impl(m, s)
+    spt = [[None for _ in range(len(m))] for _ in range(len(m))]
+    for arc in arc_vers:
+        if arc != None:
+            spt[arc.origine][arc.but] = arc.poids
+
+    return spt, dist_a
+
+def affiche_sommet(i):
+    """Aide pour les tests."""
+    print(f"s{i} [label=\"{i}\", shape=\"circle\"];")
+
+def affiche_arc_pondere(i, j, poids):
+    """Aide pour les tests."""
+    print(f"s{i} -> s{j} [label=\"{poids}\"];")
 
 def tests():
     M = [
@@ -199,15 +271,52 @@ def tests():
     s2 = Sommet(2)
     s3 = Sommet(3)
     s4 = Sommet(4)
-    a0 = Arc(origine=0, but=1, valeur=42)
-    a1 = Arc(origine=1, but=3, valeur=21)
-    a2 = Arc(origine=1, but=4, valeur=-56.7)
-    a3 = Arc(origine=2, but=4, valeur=7)
-    a4 = Arc(origine=3, but=2, valeur=-8)
-    a5 = Arc(origine=3, but=0, valeur=3.14)
+    a0 = Arc(origine=0, but=1, poids=42)
+    a1 = Arc(origine=1, but=3, poids=21)
+    a2 = Arc(origine=1, but=4, poids=-56.7)
+    a3 = Arc(origine=2, but=4, poids=7)
+    a4 = Arc(origine=3, but=2, poids=-8)
+    a5 = Arc(origine=3, but=0, poids=3.14)
     G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
                       arcs=[a0, a1, a2, a3, a4, a5])
     print(G)
+    print("---")
+    M = [
+        [None,   42, None, None,  None],
+        [None, None, None,   21, -56.7],
+        [None, None, None, None,   7  ],
+        [3.14, None,   -8, None,  None],
+        [None, None, None, None,  None]
+    ]
+    parcours_sommets(M, affiche_sommet)
+    parcours_arcs_ponderes(M, affiche_arc_pondere)
+    print("---")
+    spt, dist = bellman_ford(M, 0)
+    parcours_sommets(spt, affiche_sommet)
+    parcours_arcs_ponderes(spt, affiche_arc_pondere)
+    print(dist)
+    print("---")
+    M = [[None for _ in range(15)] for _ in range(15)]
+    M[0][3] = 4; M[0][4] = 2
+    M[1][0] = 1; M[1][5] = 2; M[1][6] = 15
+    M[2][0] = 1; M[2][7] = 3
+    M[3][2] = 5; M[3][8] = 9; M[3][9] = 8
+    M[4][1] = 2; M[4][5] = 9; M[4][10] = 1; M[4][11] = 3
+    M[5][11] = 1
+    M[7][12] = 2; M[7][13] = 1; M[7][14] = 9
+    M[8][7] = 1; M[8][9] = 3
+    M[10][0] = 2
+    M[11][6] = 3
+    M[12][11] = 1
+    M[13][14] = 1
+    M[14][9] = 1
+    parcours_sommets(M, affiche_sommet)
+    parcours_arcs_ponderes(M, affiche_arc_pondere)
+    print("---")
+    spt, dist = bellman_ford(M, 0)
+    parcours_sommets(spt, affiche_sommet)
+    parcours_arcs_ponderes(spt, affiche_arc_pondere)
+    print(dist)
 
 if __name__ == "__main__":
     tests()

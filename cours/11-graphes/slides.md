@@ -1346,15 +1346,145 @@ G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
 
 ---
 
-<!-- _class: title-section -->
+### Principe
 
-# <!--fit--> Recherche de chemin critique
+* La recherche du chemin le plus court dans un graphe pondéré est un problème classique.
+* Le poids d'un chemin est égal à la somme des poids des arcs sur ce chemin.
+* Il existe différents algorithmes pour résoudre ce problème.
+* Nous étudierons uniquement l'algorithme **Bellman-Ford** dans ce cours.
+
+---
+
+### Bellman-Ford - principe (1/2)
+
+* L'algorithme **Bellman-Ford** permet de construire un **arbre des plus courts chemins** (**SPT** - shortest path tree :uk:).
+* Cet algorithme considère les graphes orientés pondérés sans circuit négatif.
+
+---
+
+### Bellman-Ford - principe (2/2)
+
+* Cet algorithme part d'un sommet $s$ donné.
+* Au départ, on évalue toutes les distances de $s$ aux autres sommets à l'infini.
+* On effectue, sur le principe, un parcours en largeur pour réévaluer à chaque étape la distance minimale de $s$ à chaque autre sommet.
+* L'implémentation utilise une matrice d'adjacence.
+
+---
+
+### Bellman-Ford - algorithme (1/4)
+
+```python
+def adjacents(m, s):
+    """Renvoie les arcs adjacents à s dans m."""
+    adj = []
+    for j in range(len(m[s])):
+        if m[s][j] != None:
+            adj.append(Arc(origine=s, but=j, poids=m[s][j]))
+
+    return adj
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+### Bellman-Ford - algorithme (2/4)
+
+```python
+def recalcule_bellman_ford(m, s, dist_a, arc_vers, queue):
+    """Recalcule la distance minimale en considérant les successeurs de s.
+    
+    m - matrice d'adjacence pondérée.
+    s - sommet dans les successeurs sont considérés.
+    dist_a - liste des distances minimales aux autres sommets.
+    arc_vers - liste des arcs conservés pour aller à un sommet donné.
+    queue - queue pour le parcours en largeur.
+    """
+    adj = adjacents(m, s)
+    for arc in adj:
+        w = arc.but
+        if dist_a[w] == None or dist_a[w] > dist_a[s] + arc.poids:
+            dist_a[w] = dist_a[s] + arc.poids
+            arc_vers[w] = arc
+            if w not in queue:
+                queue.append(w)
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+### Bellman-Ford - algorithme (3/4)
+
+```python
+def bellman_ford_impl(m, s):
+    """Implémentation de Bellman-Ford sans gestion de cycles négatifs.
+    
+    m - matrice d'adjacence pondérée.
+    s - sommet de départ.
+    Renvoie la liste des distances aux autres sommets et la liste des
+    arcs constituant les plus courts chemins.
+    """
+    dist_a = [None for _ in range(len(m))]   # distances à l'infini
+    dist_a[s] = 0                            # distance à lui-même
+    arc_vers = [None for _ in range(len(m))] # résultat
+    queue = [s]
+    while len(queue) != 0:
+        v = queue.pop(0)
+        recalcule_bellman_ford(m, v, dist_a, arc_vers, queue)
+
+    return dist_a, arc_vers
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+### Bellman-Ford - algorithme (4/4)
+
+```python
+def bellman_ford(m, s):
+    """Renvoie une matrice d'adjacence correspondant au shortest path
+    tree (SPT) et la liste des distances minimales."""
+    dist_a, arc_vers = bellman_ford_impl(m, s)
+    spt = [[None for _ in range(len(m))] for _ in range(len(m))]
+    for arc in arc_vers:
+        if arc != None:
+            spt[arc.origine][arc.but] = arc.poids
+
+    return spt, dist_a
+```
+
+---
+
+<!-- _class: smaller-text -->
+
+### Bellman-Ford - exemple (1/2)
+
+| ![h:400](./assets/050-graphe-pondere-repr.png) | ![h:400](./assets/051-graphe-pondere-bellman.png) |
+|:----------------------------------------------:|:-------------------------------------------------:|
+|              Graphe pondéré                    |     Arbre de distances minimales pour $s_0$       |
+
+Coûts = `[0, 42, 55, 63, -14.7]`
+
+---
+
+<!-- _class: smaller-text -->
+
+### Bellman-Ford - exemple (2/2)
+
+| ![h:400](./assets/052-autre-graphe-pondere.png) | ![h:400](./assets/053-autre-graphe-bellman.png) |
+|:-----------------------------------------------:|:-----------------------------------------------:|
+|              Graphe pondéré                     |     Arbre de distances minimales pour $s_0$     |
+
+Coûts = `[0, 4, 9, 4, 2, 6, 8, 12, 13, 12, 3, 5, 14, 13, 14]`
 
 ---
 
 <!-- _class: title-section -->
 
-# <!--fit--> Flot maximal
+# <!--fit--> Recherche de chemin critique
+
 
 ---
 
