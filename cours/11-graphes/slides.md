@@ -37,6 +37,8 @@ style: |
 Cours très important pour l'examen final mais également fondamental car il s'agit d'une introduction au domaine passionant de la recherche opérationnelle.
 Soyez très attentifs et faites les TPs avec sérieux.
 L'examen final contient en général des questions sur les algorithmes de tri, de calcul matriciel et de graphes.
+
+Note d'implémentation : les graphes sont générés avec GraphViz via le script bin/misc/graph.py.
 -->
 
 ---
@@ -904,6 +906,13 @@ M = [
 
 ---
 
+### Intérêt
+
+* Tous les algorithmes d'analyse de graphes ont besoin de parcourir les graphes.
+* Les algorithmes de parcours constituent le socle de ces algorithmes plus avancés.
+
+---
+
 ### Principe
 
 * On parcourt chaque sommet du graphe.
@@ -1069,9 +1078,94 @@ def parcours_en_largeur(m, f):
 
 ---
 
+### Intérêt
+
+* De nombreux algorithmes ne fonctionnent qu'avec des graphes acycliques.
+* Il faut donc pouvoir identifier si un cycle existe avant d'utiliser de tels algorithmes.
+
+---
+
+### Principe
+
+* Pour identifier un cycle, on peut utiliser le parcours en profondeur.
+* On ajoute un argument à la fonction récursive pour identifier le chemin courant.
+* Si on cherche à revisiter un sommet dans ce chemin, on a identifier un cycle.
+* Il ne reste plus qu'à retourner ce cycle.
+
+---
+
+<!-- _class: smaller-text -->
+
+#### Algorithme
+
+```python
+def cherche_cycle_en_profondeur(m, s, marque, chemin):
+    """Recherche en profondeur un cycle.
+    
+    m - matrice d'adjacence.
+    s - sommet à visiter.
+    marque - liste de sommets marqués.
+    chemin - chemin jusqu'à s.
+    """
+    cs = chemin + [s]      # On construit le nouveau chemin cs
+    if s in chemin:        # Si un cycle est identifié dans le chemin,
+        return cs          # on le renvoie.
+    if s not in marque:    # Parcours en profondeur
+        marque.append(s)              # On marque le sommet s
+        suivants = successeurs(m, s)  # On prend les successeurs de s
+        for suivant in suivants:      # On vérifie les sous-chemins
+            cycle = cherche_cycle_en_profondeur(m, suivant, marque, cs)
+            if cycle != None:         # Si un cycle a été identifié dans
+                return cycle          # un sous-chemin, on le renvoie.
+    return None # Pas de cycle identifié
+```
+
+---
+
+### Interface
+
+```python
+def identifie_cycle(m):
+    """Retourne le premier cycle identifié ou None."""
+    marque = []
+    for s in range(len(m)):
+        cycle = identifie_cycle_dans_chemin(m, s, marque, [])
+        if cycle != None:
+            return cycle
+
+    return None
+```
+
+---
+
+![bg right:30% 30%](./assets/049-cycle-identifie.png)
+
+### Exemple
+
+```python
+cycle = identifie_cycle(G)
+print(cycle)
+```
+
+:arrow_down:
+
+```bash
+[0, 1, 3, 0]
+```
+
+---
+
+### Complexité
+
+- La complexité est la même que pour le parcours en profondeur : $O(\max(|A|, |S|))$.
+
+---
+
 <!-- _class: title-section -->
 
 # <!--fit--> Graphe pondéré : représentation
+
+
 
 ---
 

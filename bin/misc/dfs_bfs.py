@@ -90,6 +90,45 @@ def convertir_matrice_adjacence_vers_graphviz(m, G):
     parcours_sommets(m, ajoute_noeud)
     parcours_arcs(m, ajoute_arete)
 
+def identifie_cycle_dans_chemin(m, s, marque, chemin):
+    """Retourne le 1er cycle trouvé dans le chemin.
+    
+    m - matrice d'adjacence.
+    s - sommet à visiter.
+    marque - liste de sommets marqués.
+    chemin - chemin jusqu'à s.
+    """
+    nouveau_chemin = chemin + [s]
+
+    # Si un cycle est identifié dans le chemin, on le renvoie
+    if s in chemin:
+        return nouveau_chemin
+
+    # Parcours en profondeur
+    if s not in marque:
+        marque.append(s)
+        suivants = successeurs(m, s)
+        for suivant in suivants:
+            # On vérifie les sous-chemins
+            cycle = identifie_cycle_dans_chemin(m, suivant, marque, nouveau_chemin)
+            
+            # Si un cycle a été identifié dans un sous-chemin, on le renvoie
+            if cycle != None:
+                return cycle
+
+    # Pas de cycle identifié
+    return None
+
+def identifie_cycle(m):
+    """Retourne le premier cycle identifié ou None."""
+    marque = []
+    for s in range(len(m)):
+        cycle = identifie_cycle_dans_chemin(m, s, marque, [])
+        if cycle != None:
+            return cycle
+
+    return None
+
 def tests():
     M = [
         [0, 1, 0, 0, 0],
@@ -110,6 +149,8 @@ def tests():
     parcours_en_largeur(M, print)
     print("---")
     parcours_en_profondeur(M, print)
+    print("---")
+    print(identifie_cycle(M))
 
 if __name__ == "__main__":
     tests()

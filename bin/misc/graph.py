@@ -36,7 +36,7 @@ target_dir = f"{lecture_dir}/assets"
 temp_dir = "/home/lyvonnet/Dev/algo-appliquee/dist/tmp/"
 empty_dot_file_name = "000-vide.dot"
 empty_dot_path = f"{source_dir}/{empty_dot_file_name}"
-force_transparent = False # gifs are not generated if True
+force_transparent = True # gifs are not generated if True
 
 def generate_png_from_dot():
     """Generate the png files from the dot files in target directory."""
