@@ -53,8 +53,8 @@ L'examen final contient en général des questions sur les algorithmes de tri, d
 - Théorie des graphes
 - Digraph
 - Identification d'un cycle
-- Recherche en profondeur
-- Recherche en largeur
+- Parcours en profondeur
+- Parcours en largeur
 - Graphe pondéré
 - Recherche de chemin critique
 
@@ -898,17 +898,168 @@ M = [
 
 <!-- _class: title-section -->
 
-# <!--fit--> Recherche en profondeur
+# <!--fit--> Parcours en profondeur
 
 ##### Depth-First Search :uk:
 
 ---
 
+### Principe
+
+* On parcourt chaque sommet du graphe.
+* Les ordres de parcours dépendent de l'ordre des sommets et de l'ordre des successeurs de chaque sommet.
+* Il existe 2 algorithmes principaux de parcours d'un graphe :
+    * le parcours en profondeur,
+    * le parcours en largeur.
+
+---
+
+### Parcours en profondeur
+
+* Le **parcours en profondeur** (**DFS** - Depth-First Search :uk:) consiste à aller aussi profondément que possible dans le graphe à chaque étape.
+* On visite le 1er successeur du 1er sommet, puis son 1er successeur, puis son 1er successeur, etc.
+* On remonte ensuite la chaîne pour visiter le 2e successeur du dernier sommet visité, puis le 1er successeur de ce nouveau sommet, etc.
+
+---
+
+### Exemple avec une arborescence
+
+![](./assets/043-dfs-arbre.gif)
+
+Ordre de visite : 0, 1, 4, 10, 11, 5, 6, 2, 7, 12, 13, 14, 3, 8, 9.
+
+---
+
+### Exemple avec un graphe simple
+
+![](./assets/044-dfs-simple-graphe.gif)
+
+Ordre de visite : 0, 1, 3, 2, 4.
+
+---
+
+### Exemple avec un graphe non-connexe
+
+![](./assets/045-dfs-graphe.gif)
+
+Ordre de visite : 0, 3, 2, 7, 12, 11, 6, 13, 14, 9, 10, 8, 4, 1, 5, 11, 15, 16, 17, 18, 19.
+
+---
+
+<!-- _class: smaller-text -->
+
+### Algorithme DFS (récursif)
+
+```python
+def parcours_en_profondeur(m, f):
+    """Applique la fonction f à chaque sommet du graphe.
+    
+    m - matrice d'adjacence.
+    f - fonction prenant un sommet en argument.
+    """
+    def parcours_successeurs(m, s, f, marque):
+        """Traitement récursif."""
+        if s not in marque:
+            marque.append(s)
+            f(s)
+            suivants = successeurs(m, s)
+            for suivant in suivants:
+                parcours_successeurs(m, suivant, f, marque)
+
+    marque = []
+    for s in range(len(m)):
+        parcours_successeurs(m, s, f, marque)
+```
+
+---
+
+### Complexité
+
+* Chaque sommet est visité.
+* Or, les sommets déjà visités sont marqués pour ne pas être traités à nouveau.
+* Donc chaque sommet est visité exactement 1 fois.
+* Chaque arc d'origine est visité 1 fois.
+* Dans le pire cas, le nombre maximal d'opérations sera limité soit par le nombre de sommets, soit par le nombre d'arcs.
+* La complexité est donc $O(\max(|A|, |S|))$.
+
+<!--
+Pour rappel, |A| est le nombre d'arc, tandis que |S| est le nombre de sommets.
+-->
+
+---
+
 <!-- _class: title-section -->
 
-# <!--fit--> Recherche en largeur
+# <!--fit--> Parcours en largeur
 
 ##### Breadth-First Search :uk:
+
+---
+
+### Parcours en largeur
+
+* Le **parcours en largeur** (**BFS** - Breath-First Search) consiste à visiter d'abord tous les successeurs directs.
+* Une fois que tous les successeurs directs ont été visités, on passe aux successeurs du 1er successeur, etc.
+
+---
+
+### Exemple avec une arborescence
+
+![](./assets/046-bfs-arbre.gif)
+
+Ordre de visite : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14.
+
+---
+
+### Exemple avec un graphe simple
+
+![](./assets/047-bfs-simple-graphe.gif)
+
+Ordre de visite : 0, 1, 3, 4, 2.
+
+---
+
+### Exemple avec un graphe non-connexe
+
+![](./assets/048-bfs-graphe.gif)
+
+Ordre de visite : 0, 3, 4, 2, 8, 9, 1, 5, 11, 7, 6, 12, 13, 14, 10, 15, 16, 18, 17, 19.
+
+---
+
+<!-- _class: smaller-text -->
+
+### Algorithme BFS
+
+```python
+def parcours_en_largeur(m, f):
+    """Applique la fonction f à chaque sommet du graphe.
+    
+    m - matrice d'adjacence.
+    f - fonction prenant un sommet en argument.
+    """
+    marque = [] # On ne souhaite pas traiter plusieurs fois un sommet
+    queue = []  # On utilise une queue pour traiter d'abord les plus proches
+    for s in range(len(m)): # Visite chaque sommet pour les graphes non-connexes
+        if s not in marque: # Evite de traiter 2 fois un sommet
+            marque.append(s)    # Marque le sommet courant à traiter
+            queue.append(s)     # Empile dans la queue des sommets à traiter
+            while len(queue) != 0:              # Tant que la queue est non vide
+                s_i = queue.pop(0)              # On prend le 1er sommet
+                f(s_i)                          # On traite s_i
+                suivants = successeurs(m, s_i)  # On prend les successeurs
+                for suivant in suivants:        # On parcourt les successeurs
+                    if suivant not in marque:   # Les successeurs non marqués
+                        marque.append(suivant)  # sont marqués
+                        queue.append(suivant)   # et empilés.
+```
+
+---
+
+### Complexité
+
+* On parcourt chaque sommet exactement une fois.
+* La complexité est en $O(\max(|A|, |S|))$.
 
 ---
 
