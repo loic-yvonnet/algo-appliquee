@@ -1165,7 +1165,178 @@ print(cycle)
 
 # <!--fit--> Graphe pondéré : représentation
 
+---
 
+### Principe
+
+* On associe un **poids** à chaque arc ou arête.
+* Le poids est un **nombre flottant**.
+* Le poids peut donc être positif ou négatif.
+* *Exemple* : 
+    * un sommet peut représenter une ville,
+    * une arête pondérée peut représenter le temps de trajet entre ces villes.
+
+---
+
+### Liste de listes de listes (1/3)
+
+* Pour un graphe non-pondéré, on pouvait utiliser une liste de listes.
+* Chaque sous-liste représente les successeurs d'un sommet.
+* Pour ajouter les poids, on ajoute une dimension.
+* On obtient la hiérarchie suivante :
+    * liste de sommets
+        * liste de successeurs
+            * liste des labels et poids
+
+---
+
+<!-- _class: smaller-text -->
+
+![bg right:30% 35%](./assets/050-graphe-pondere-repr.png)
+
+#### Liste de listes de listes (2/3)
+
+```python
+G = [
+    [ # 0 -> 1 (poids = 42)
+        [1, 42]
+    ],      
+    [ # 1 -> 3 (poids = 21), 1 -> 4 (poids = -56.7)
+        [3, 21],
+        [4, -56.7]
+    ],
+    [ # 2 -> 4 (poids = 7)
+        [4, 7]
+    ],
+    [ # 3 -> 0 (poids = 3.14), 3 -> 2 (poids = -8)
+        [0, 3.14],
+        [2, -8]
+    ],
+    [] # aucun
+]
+```
+
+---
+
+### Liste de listes de listes (3/3)
+
+* **Avantages** : évolution simple d'une représentation non-pondérée.
+* **Inconvénient** : mêmes inconvénients qu'avec une liste de listes, plus difficile à comprendre et à maintenir.
+
+---
+
+### Matrice d'adjacence (1/5)
+
+- On peut représenter un graphe orienté valué à $n$ sommets avec une matrice carrée $M_{n, n}$ telle que $M[i][j]$ a pour valeur le poids de l'arc $i \longrightarrow j$ si cet arc existe, ou $+\infty$ sinon.
+
+---
+
+![bg right:15% 60%](./assets/050-graphe-pondere-repr.png)
+
+### Matrice d'adjacence (2/5)
+
+sommets    |     0     |     1     |     2     |     3     |     4     |
+:----------|:---------:|:---------:|:---------:|:---------:|:---------:|
+sommet 0 : | $+\infty$ |     42    | $+\infty$ | $+\infty$ | $+\infty$ |
+sommet 1 : | $+\infty$ | $+\infty$ | $+\infty$ |     21    |   -56.7   |
+sommet 2 : | $+\infty$ | $+\infty$ | $+\infty$ | $+\infty$ |     7     |
+sommet 3 : |  3.14     | $+\infty$ |     -8    | $+\infty$ | $+\infty$ |
+sommet 4 : | $+\infty$ | $+\infty$ | $+\infty$ | $+\infty$ | $+\infty$ |
+
+---
+
+![bg right:25% 40%](./assets/050-graphe-pondere-repr.png)
+
+### Matrice d'adjacence (3/5)
+
+$$
+M = 
+\begin{pmatrix}
+    +\infty &     42  & +\infty & +\infty & +\infty \\
+    +\infty & +\infty & +\infty &     21  &   -56.7 \\
+    +\infty & +\infty & +\infty & +\infty &     7   \\
+     3.14   & +\infty &     -8  & +\infty & +\infty \\
+    +\infty & +\infty & +\infty & +\infty & +\infty \\
+\end{pmatrix}
+$$
+
+---
+
+![bg right:25% 40%](./assets/050-graphe-pondere-repr.png)
+
+### Matrice d'adjacence (4/5)
+
+```python
+M = [
+    [None,   42, None, None,  None],
+    [None, None, None,   21, -56.7],
+    [None, None, None, None,   7  ],
+    [3.14, None,   -8, None,  None],
+    [None, None, None, None,  None]
+]
+```
+
+---
+
+### Matrice d'adjacence (5/5)
+
+* **Avantages** : mêmes avantages qu'une matrice d'adjacence non-pondérée.
+* **Inconvénients** : mêmes inconvénients qu'une matrice d'adjacence non-pondérée (mais pas d'inconvénient supplémentaire contrairement à la liste de listes de listes).
+
+---
+
+### Structures de données (1/3)
+
+```python
+@dataclass
+class Sommet:
+    """Sommet d'un graphe."""
+    label: int = 0
+
+@dataclass
+class Arc:
+    """Arc d'un graphe orienté"""
+    origine: int = 0
+    but: int = 0
+    poids: float = 0.
+
+@dataclass
+class GraphePondere:
+    """Graphe orienté pondéré."""
+    sommets: List = field(default=list)
+    arcs: List = field(default=list)
+```
+
+---
+
+![bg right:25% 40%](./assets/050-graphe-pondere-repr.png)
+
+### Structures de données (2/3)
+
+```python
+s0 = Sommet(0)
+s1 = Sommet(1)
+s2 = Sommet(2)
+s3 = Sommet(3)
+s4 = Sommet(4)
+
+a0 = Arc(origine=0, but=1, poids=42)
+a1 = Arc(origine=1, but=3, poids=21)
+a2 = Arc(origine=1, but=4, poids=-56.7)
+a3 = Arc(origine=2, but=4, poids=7)
+a4 = Arc(origine=3, but=2, poids=-8)
+a5 = Arc(origine=3, but=0, poids=3.14)
+
+G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
+                  arcs=[a0, a1, a2, a3, a4, a5])
+```
+
+---
+
+### Structures de données (3/3)
+
+* **Avantages** : Les données sont plus structurées qu'avec une liste de liste de listes.
+* **Inconvénients** : On a les mêmes inconvénients qu'avec une liste de listes.
 
 ---
 
