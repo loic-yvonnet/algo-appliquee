@@ -1,0 +1,36 @@
+graph G {
+    bgcolor="transparent";
+
+    subgraph cluster_0 {
+        style=dashed;
+
+        A [label="1", shape="circle"];
+        B [label="2", shape="circle"];
+        C [label="3", shape="circle"];
+        D [label="4", shape="circle"];
+        E [label="5", shape="circle"];
+        F [label="6", shape="circle"];
+        G [label="7", shape="circle"];
+
+        A -- B;
+        B -- C;
+        A -- E;
+        E -- F;
+        E -- G;
+        E -- D;
+    }
+
+    subgraph cluster_1 {
+        style=dashed;
+
+        H [label="8", shape="circle"];
+        I [label="9", shape="circle"];
+        J [label="10", shape="circle"];
+
+        I -- H
+        I -- J
+    }    
+
+    /* Ranks */
+    { rank=same; };
+}

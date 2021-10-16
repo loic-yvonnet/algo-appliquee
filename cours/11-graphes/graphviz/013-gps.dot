@@ -1,0 +1,33 @@
+graph G {
+    bgcolor="transparent";
+
+    /* Entities */
+    Saumur [label="Saumur", shape="rectangle"];
+    Cholet [label="Cholet", shape="rectangle"];
+    Angers [label="Angers", shape="rectangle"];
+    Tours [label="Tours", shape="rectangle"];
+    Gennes [label="Gennes", shape="rectangle"];
+    Nantes [label="Nantes", shape="rectangle"];
+    Paris [label="Paris", shape="rectangle"];
+   
+    /* Relationships */
+    Saumur -- Angers [label="0h45"];
+    Saumur -- Tours [label="1h00"];
+    Saumur -- Cholet [label="1h05"];
+    Saumur -- Nantes [label="1h45"];
+    Saumur -- Gennes [label="0h20"];
+
+    Gennes -- Angers [label="0h30"];
+
+    Angers -- Paris [label="2h30"];
+    Angers -- Nantes [label="0h20"];
+
+    Tours -- Paris [label="3h00"];
+
+    Cholet -- Nantes [label="1h00"];
+
+    Nantes -- Paris [label="2h30"];
+
+    /* Ranks */
+    { rank=same; };
+}

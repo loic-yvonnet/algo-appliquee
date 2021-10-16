@@ -1,0 +1,33 @@
+digraph G {
+    splines="FALSE";
+    bgcolor="transparent";
+
+    /* Entities */
+    Skateboard [label="Skateboard", shape="rectangle"]
+
+    Planche [label="Planche", shape="rectangle"]
+
+    EssieuAvant [label="Essieu Avant", shape="rectangle"]
+    RoueAvantGauche [label="Roue Gauche", shape="rectangle"]
+    RoueAvantDroite [label="Roue Droite", shape="rectangle"]
+
+    EssieuArriere [label="Essieu Arrière", shape="rectangle"]
+    RoueArriereGauche [label="Roue Gauche", shape="rectangle"]
+    RoueArriereDroite [label="Roue Droite", shape="rectangle"]
+
+
+    /* Relationships */
+    Skateboard -> Planche
+
+    Skateboard -> EssieuAvant
+    Skateboard -> EssieuArriere
+
+    EssieuAvant -> RoueAvantGauche
+    EssieuAvant -> RoueAvantDroite
+
+    EssieuArriere -> RoueArriereGauche
+    EssieuArriere -> RoueArriereDroite
+
+    /* Ranks */
+    { rank=same; };
+}

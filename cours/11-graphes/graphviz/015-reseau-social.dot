@@ -1,0 +1,99 @@
+graph G {
+    bgcolor="transparent";
+
+    /* Entities */
+    Nicolas [label="Nicolas", shape="rectangle"];
+    Francois [label="François", shape="rectangle"];
+    Bernard [label="Bernard", shape="rectangle"];
+    Sylvie [label="Sylvie", shape="rectangle"];
+    Agathe [label="Agathe", shape="rectangle"];
+    Amelie [label="Amélie", shape="rectangle"];
+    Coralie [label="Coralie", shape="rectangle"];
+    Emeline [label="Emeline", shape="rectangle"];
+    Audrey [label="Audrey", shape="rectangle"];
+    Celine [label="Celine", shape="rectangle"];
+    Barack [label="Barack", shape="rectangle"];
+    Donald [label="Donald", shape="rectangle"];
+    Dounia [label="Dounia", shape="rectangle"];
+    Fatima [label="Fatima", shape="rectangle"];
+    Jamel [label="Jamel", shape="rectangle"];
+    Jing [label="Jing", shape="rectangle"];
+    Ngueng [label="Ngueng", shape="rectangle"];
+    Xi [label="Xi", shape="rectangle"];
+    Akira [label="Akira", shape="rectangle"];
+    Tetsuo [label="Tetsuo", shape="rectangle"];
+    Kaneda [label="Kaneda", shape="rectangle"];
+    Emmanuel [label="Emmanuel", shape="rectangle"];
+   
+    /* Relationships */
+    Nicolas -- Bernard
+    Nicolas -- Francois
+    Nicolas -- Barack
+    Nicolas -- Agathe
+    Nicolas -- Emeline
+    Nicolas -- Amelie
+    Nicolas -- Coralie
+    Nicolas -- Audrey
+
+    Francois -- Barack
+    Francois -- Jamel
+    
+    Sylvie -- Agathe
+    Sylvie -- Jamel
+    Sylvie -- Amelie
+
+    Amelie -- Coralie
+    Amelie -- Emeline
+    Amelie -- Audrey
+    Amelie -- Celine
+    Amelie -- Jamel
+
+    Coralie -- Jamel
+    Coralie -- Emeline
+    Coralie -- Audrey
+    Coralie -- Celine
+
+    Emeline -- Jamel
+    Emeline -- Audrey
+    Emeline -- Celine
+
+    Audrey -- Jamel
+    Celine -- Jamel
+
+    Barack -- Donald
+    Barack -- Dounia
+    Barack -- Fatima
+    Barack -- Jamel
+
+    Dounia -- Fatima
+    Dounia -- Jamel
+
+    Fatima -- Jamel
+    Fatima -- Jing
+    Fatima -- Kaneda
+
+    Jing -- Ngueng
+    Jing -- Xi
+    Jing -- Akira
+
+    Ngueng -- Xi
+    Ngueng -- Akira
+
+    Akira -- Tetsuo
+    Akira -- Kaneda
+    Akira -- Xi
+
+    Tetsuo -- Kaneda
+    Tetsuo -- Xi
+
+    Kaneda -- Jamel
+    Kaneda -- Xi
+
+    Emmanuel -- Nicolas
+    Emmanuel -- Francois
+    Emmanuel -- Barack
+    Emmanuel -- Donald
+
+    /* Ranks */
+    { rank=same; };
+}

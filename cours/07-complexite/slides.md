@@ -49,7 +49,7 @@ Branchez vos neurones et c'est parti !
 - Notation $O(...)$
 - Classes de complexité
 - Comparaison des classes de complexité
-- Limites de l'étude de complexité
+- Limites de l'étude de la complexité
 - Approche pragmatique
 - Discussion concernant la parallélisation
 - Discussion sur la distribution
@@ -145,8 +145,8 @@ def recherche(liste, x):
     return False
 ```
 
-Si la taille de la liste est de 10 éléments on aura au maximum 10 comparaisons.
-Si la taille de la liste est de 1 000 000 éléments on aura au maximum 1 000 000 comparaisons.
+Si la taille de la liste est de 10 éléments, on aura au maximum 10 comparaisons.
+Si la taille de la liste est de 1 000 000 éléments, on aura au maximum 1 000 000 comparaisons.
 
 ---
 
@@ -316,11 +316,11 @@ On y ajoute l'initialisation de y à la première ligne du corps de la fonction 
 
 ---
 
-# Notation Grand O (1/2)
+# Notation Grand $O$ (1/2)
 
 * On l'appelle **notation de Landau**.
 * Il s'agit de la **notation la plus utilisée** en algorithmique pour comparer des algorithmes.
-* Cette notation se lit : **Grand O de [...]**.
+* Cette notation se lit : **Grand $O$ de [...]**.
 * On l'appelle également **ordre de grandeur**, ou ordre de croissance.
 
 <!--
@@ -330,23 +330,23 @@ Il décède en 1938.
 
 ---
 
-# Notation Grand O (2/2)
+# Notation Grand $O$ (2/2)
 
 * Soit $f(n)$ et $g(n)$ deux suites positives indexées sur $\mathbb{N}$.
-* On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n).
+* On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n)$.
 * Autrement dit, $g$ est dominé par $f$ à partir d'un certain rang.
 
 
 ---
 
-# Exemples avec $\thicksim$ et O
+# Exemples avec $\thicksim$ et $O$
 
-| Fonction          | Approximation $\thicksim$ |       Grand O     |
+| Fonction          | Approximation $\thicksim$ |       Grand $O$   |
 |-------------------|:-------------------------:|:-----------------:|
-| $2N^2 + N + 100$  |      $\thicksim 2N^2$     |       O($N^2$)    |
-| $3N^3 + 3N + 3$   |     $\thicksim 3N^3$      |       O($N^3$)    |
-| $\log(N) + 10$    |    $\thicksim \log(N)$    |     O($\log(N)$)  |
-| $300$             |      $\thicksim 300$      |         O(1)      |
+| $2N^2 + N + 100$  |      $\thicksim 2N^2$     |       $O(N^2)$    |
+| $3N^3 + 3N + 3$   |     $\thicksim 3N^3$      |       $O(N^3)$    |
+| $\log(N) + 10$    |    $\thicksim \log(N)$    |     $O(\log(N))$  |
+| $300$             |      $\thicksim 300$      |         $O(1)$    |
 
 ---
 
@@ -356,7 +356,7 @@ Il décède en 1938.
 * Cette notation se lit : **g est un petit o de f**.
 * Autrement dit, g est négligable devant f.
 * Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
-* C'est tout simplement l'**inverse de Grand O**.
+* C'est tout simplement l'**inverse de Grand $O$**.
 * Notation alternative : $g = o(f) \Longleftrightarrow g = \Omega(f)$.
 
 <!--
@@ -383,10 +383,10 @@ De la même manière, la notation asymptotique est peut-être plus utilisée en 
 
 # Comparaison
 
-|                  |  Approximation Tilde  |      Grand O     |    Grand Oméga   |  Grand Théta |
+|                  |  Approximation Tilde  |      Grand $O$   |    Grand Oméga   |  Grand Théta |
 |------------------|:---------------------:|:----------------:|:----------------:|:------------:|
-| Notation algo    |      $\thicksim$      |         O        |     $\Omega$     |   $\Theta$   |
-| Notation maths   |      $\thicksim$      |         O        |          o       |   $\asymp$   |
+| Notation algo    |      $\thicksim$      |        $O$       |     $\Omega$     |   $\Theta$   |
+| Notation maths   |      $\thicksim$      |        $O$       |          o       |   $\asymp$   |
 | Définition       | Asymptotiquement égal | Borne supérieure | Borne inférieure | Borne serrée |
 | Utilité pratique |       Très rare       |  **Très élevée** |     Très rare    |    Elevée    |
 
@@ -394,7 +394,7 @@ De la même manière, la notation asymptotique est peut-être plus utilisée en 
 
 # Abus de langage fréquent
 
-On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et place de Grand $\Theta$.
+On utilise si souvent la notation Grand $O$ qu'on l'utilise parfois en lieu et place de Grand $\Theta$.
 
 ---
 
@@ -421,7 +421,7 @@ On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et pla
 
 ---
 
-# Résumé
+### Résumé
 
 * $O(1)$ désigne une complexité **constante**.
 * $O(\log N)$ désigne une complexité **logarithmique**.
@@ -853,7 +853,7 @@ De même, tout le monde fait des mesures pour vérifier ses hypothèses.
 
 ---
 
-# Rappel sur `time`
+## Rappel sur `time`
 
 ```python
 import time
@@ -873,7 +873,7 @@ print(f"Temps d'exécution : {temps_ecoule}s")
 
 ---
 
-# Même chose avec `datetime`
+### Même chose avec `datetime`
 
 ```python
 from datetime import datetime
@@ -1053,8 +1053,8 @@ Nos smartphones actuels sont plus puissants que les supercalculateurs des année
 # Noeuds de calcul
 
 * La parallélisation sur le CPU et GPU d'une machine se fait **localement**.
-* Il est possible de **distribuer** un calcul sur un **cluster de machines** mis en réseau.
-* Chaque machine s'appelle dans ce contexte un **noeud de calcul**.
+* Il est possible de **distribuer** un calcul sur un **cluster de machines** mises en réseau.
+* Chaque machine s'appelle, dans ce contexte, un **noeud de calcul**.
 
 ---
 
@@ -1069,12 +1069,12 @@ Quelques acteurs du Cloud en 2021 : Heroku, Google, AWS.
 
 ---
 
-# Avantages
+### Avantages
 
 * Le **coût** :
     * Un supercalculateur est généralement trop onéreux.
     * Mettre en réseau des ordinateurs du marché est généralement moins coûteux.
-    * **Location** de noeuds de calcul dans le Cloud et de payer **à l'usage**.
+    * Possibilité de **location** de noeuds de calcul dans le Cloud et de payer **à l'usage**.
 * L'**évolutivité horizontale** (scalability :uk:) : On peut facilement augmenter les capacités de calcul en rajoutant simplement une machine supplémentaire.
 
 <!--
@@ -1198,11 +1198,11 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 ---
 
-# Machine de Turing déterministe
+### Machine de Turing déterministe
 
 * Sur nos machines actuelles, un bit a pour valeur 0 ou 1.
 * Un octet est codé sur 8 bits.
-* Un octet peut donc prendre des valeurs entre $[0 ; 2^8-1]$, soit $[O ; 255]$.
+* Un octet peut donc prendre des valeurs entre $[0 ; 2^8-1]$, soit $[0 ; 255]$.
 * Les opérations principales sur un bit sont celles de la logique Booléenne : AND, OR, XOR, NOT, SHIFT.
 
 <!--
@@ -1233,9 +1233,7 @@ On appelle le fait d'être potentiellement dans 2 états en même temps la "supe
 
 ---
 
-# Bit quantique (1/2)
-
-##### Qubit
+### Bit quantique - Qubit (1/2)
 
 * Un bit quantique est représenté par un vecteur $(p, q)$.
 * $p$ est la probabilité pour que le bit soit égal à 0.
@@ -1250,17 +1248,13 @@ Les opérations les plus intéressantes ont lieu dans cet état superposé.
 
 ---
 
-<!-- _class: smaller-text -->
-
-# Bit quantique (2/2)
-
-##### Qubit
+### Bit quantique - Qubit (2/2)
 
 * On a : $p + q = 1$, puisque soit $p$, soit $q$ est vérifié.
 * On pose le vecteur d'amplitudes $(\alpha, \beta)$ tel que $p = \alpha^2, q = \beta^2$.
 * On a donc $\alpha^2 + \beta^2 = 1$.
-* On peut donc l'espace d'amplitude sur un cercle trigonométrique.
-* Les opérations principale sur un bit quantique sont : rotation, symmétrie, porte d'Hadamar, etc.
+* On peut donc représenter l'espace d'amplitude sur un cercle trigonométrique.
+* Les opérations principales sur un bit quantique sont : rotation, symmétrie, porte d'Hadamar, etc.
 
 <!--
 Le vecteur (p, q) est dans un espace de probabilité.

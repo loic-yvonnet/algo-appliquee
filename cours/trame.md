@@ -170,19 +170,20 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 ### 11. Introduction aux graphes
 
 * Correction du travail à la maison.
-* Discussion sur les hiérarchies.
-* Arbre binaire.
-* Arbre N-aire.
-* Insertion et recherche dans un arbre binaire.
+* Discussion sur les hiérarchies
+* Arbre de recherche binaire
+* Insertion et recherche
+* Arbre de recherche N-aire
 * **TP** : Arbres binaires.
-* Discussion sur les graphes.
-* Introduction à la théorie des graphes.
-* Digraph.
-* Identification d'un cycle.
-* Recherche en profondeur.
-* Recherche en largeur.
-* Graphe pondéré.
-* Recherche de chemin critique.
+* Discussion concernant les graphes
+* Théorie des graphes
+* Représentations des graphes
+* Parcours en profondeur
+* Parcours en largeur
+* Identification d'un cycle
+* Graphe pondéré : représentation
+* Plus court chemin
+* Chemin critique
 * **TP** : Graphes.
 
 ### 12. Conclusion
