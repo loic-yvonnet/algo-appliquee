@@ -6,20 +6,20 @@ digraph G {
     /* Entities */
     debut [label="début", shape="circle"];
     fin [label="fin", shape="circle"];
-    s0 [label="", shape="circle"];
-    s1 [label="", shape="circle"];
-    s2 [label="", shape="circle"];
-    s4 [label="", shape="circle"];
-    s5 [label="", shape="circle"];
-    s6 [label="", shape="circle"];
-    s7 [label="", shape="circle"];
-    s8 [label="", shape="circle"];
-    s9 [label="", shape="circle"];
-    s10 [label="", shape="circle"];
-    s11 [label="", shape="circle"];
-    s12 [label="", shape="circle"];
-    s13 [label="", shape="circle"];
-    s14 [label="", shape="circle"];
+    s0 [label=" ", shape="circle"];
+    s1 [label=" ", shape="circle"];
+    s2 [label=" ", shape="circle"];
+    s4 [label=" ", shape="circle"];
+    s5 [label=" ", shape="circle"];
+    s6 [label=" ", shape="circle"];
+    s7 [label=" ", shape="circle"];
+    s8 [label=" ", shape="circle"];
+    s9 [label=" ", shape="circle"];
+    s10 [label=" ", shape="circle"];
+    s11 [label=" ", shape="circle"];
+    s12 [label=" ", shape="circle"];
+    s13 [label=" ", shape="circle"];
+    s14 [label=" ", shape="circle"];
 
     /* Relationships */
     debut -> s0 [color="grey"];

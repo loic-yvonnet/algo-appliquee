@@ -48,17 +48,18 @@ Note d'implémentation : les graphes sont générés avec GraphViz via le script
 # Plan
 
 - Discussion sur les hiérarchies
-- Arbre binaire
+- Arbre de recherche binaire
 - Insertion et recherche
-- Arbre N-aire
+- Arbre de recherche N-aire
 - Discussion concernant les graphes
 - Théorie des graphes
-- Digraph
-- Identification d'un cycle
+- Représentations des graphes
 - Parcours en profondeur
 - Parcours en largeur
-- Graphe pondéré
-- Recherche de chemin critique
+- Identification d'un cycle
+- Graphe pondéré : représentation
+- Plus court chemin
+- Chemin critique
 
 ---
 
@@ -108,15 +109,21 @@ Il est possible d'inverser la représentation pour obtenir une hiérarchie.
 
 <!-- _class: title-section -->
 
-# <!--fit--> Arbre binaire : représentation
+# <!--fit--> Arbre de recherche binaire
+
+### Binary Search Tree :uk:
 
 ---
 
 ### Notion d'arbre
 
 * Une **hiérarchie** peut être représentée sous la forme d'un **arbre**.
-* Un **arbre binaire** ne comporte que **2 branches**.
+* Un **arbre de recherche binaire** (BST - binary search tree :uk:) ne comporte que **2 branches**.
 * Chaque noeud peut avoir un sous-noeud à gauche et/ou à droite.
+
+<!--
+En pratique, on abrège par "arbre binaire", plutôt que "arbre de recherche binaire".
+-->
 
 ---
 
@@ -202,7 +209,7 @@ class ArbreBinaire:
 
 <!-- _class: title-section -->
 
-# <!--fit--> Insertion et recherche dans un arbre binaire
+## Insertion et recherche dans un arbre binaire
 
 ---
 
@@ -350,7 +357,7 @@ Dans un arbre rouge-noir, la recherche et l'insertion sont en $O(\log N)$.
 
 <!-- _class: title-section -->
 
-# <!--fit--> Arbre N-aire : représentation
+# <!--fit--> Arbre de recherche N-aire
 
 ---
 
@@ -408,11 +415,11 @@ class Noeud:
 
 <!-- _class: title-section -->
 
-# <!--fit--> Discussion concernant les problèmes impliquant des graphes
+### Discussion concernant les problèmes impliquant des graphes
 
 ---
 
-### Chemin le plus rapide
+### Trajet le plus rapide
 
 ![](./assets/013-gps.png)
 
@@ -678,6 +685,14 @@ Il s'agit du graphe sous-jacent à celui présenté précédemment.
 - En théorie des graphes, un **arbre** est un graphe non-orienté simple, connexe et sans cycle.
 - Deux sommets quelconques ne sont reliés que par un unique chemin.
 - Le nombre d'arcs est relié au nombre de sommets par la relation : $|A| = |S| - 1$.
+
+<!--
+Dans la première partie de ce cours, nous nous sommes concentrés sur les arbres de recherche, et plus particulièrement sur les arbres de recherche binaires.
+Dans les arbres de recherche, un noeud doit avoir une valeur plus grande que les noeuds enfants à gauche et plus petite que les enfants à droite.
+La notion d'arbre en théorie des graphes est plus générale et décrit simplement la structure d'arbre.
+Cette notion n'intègre pas de relation d'ordre entre les parents et les enfants.
+Cette distinction est importante à comprendre.
+-->
 
 ---
 
@@ -1338,7 +1353,7 @@ G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
 
 <!-- _class: title-section -->
 
-# <!--fit--> Plus court chemin
+# Plus court chemin
 
 ---
 
@@ -1497,7 +1512,7 @@ Coûts = `[0, 4, 9, 4, 2, 6, 8, 12, 13, 12, 3, 5, 14, 13, 14]`
 
 * Un **problème d'ordonnancement** *simple* est caractérisé par un ensemble de **tâches** à exécuter.
 * Chaque tâche a une **durée** déterminée.
-* Chaque tâche a des **contraintes de précédence** : pour exécuter une tâche, ses prédecesseurs doivent être exécuter préalablement.
+* Chaque tâche a des **contraintes de précédence** : pour exécuter une tâche, ses prédecesseurs doivent être exécutés préalablement.
 
 <!--
 Dans un vrai projet, les durées d'exécution peuvent être imprécises : données sous forme d'intervalle, de loi de probabilité, etc.
@@ -1528,9 +1543,11 @@ De nouvelles contraintes peuvent éventuellement surgir en cours de projet.
 
 ---
 
+<!-- _class: smaller-text -->
+
 ### Exemple (1/3)
 
-|          Tâches             | Durée (jours) | Prédecesseurs |
+|          Tâches             | Durée (jours) | Prédécesseurs |
 |:----------------------------|:-------------:|:--------------|
 | T1 : Architecturer Solution |      2        |               |
 | T2 : Configurer Serveurs    |      1        |               |
@@ -1538,21 +1555,19 @@ De nouvelles contraintes peuvent éventuellement surgir en cours de projet.
 | T4 : Plan de Tests          |      2        |               |
 | T5 : Coder Front End        |      5        | T1            |
 | T6 : Coder Backend          |      7        | T1, T2, T3    |
-| T7 : Tests                  |      3        | T5, T6, T7    |
+| T7 : Tests                  |      3        | T4, T5, T6    |
 
 ---
 
 ### Exemple (2/3)
 
-![](./assets/054-pert.png)
+![w:1160](./assets/054-pert.png)
 
 ---
 
 <!-- _class: smaller-text -->
 
-![bg right:25% 80%](./assets/054-pert.png)
-
-### Exemple (3/3)
+#### Exemple (3/3)
 
 ```python
 NA = None # Non Applicable
@@ -1587,11 +1602,15 @@ M = [
 * Toute tâche sur un chemin critique est une **tâche critique**.
 * Nous cherchons à trouver un chemin critique.
 
+<!--
+Pour trouver tous les chemins critiques, il faudrait modifier notre implémentation de Bellman-Ford pour qu'il créé un graphe des plus courts chemins, plutôt qu'un arbre des plus courts chemins.
+-->
+
 ---
 
 ### Exemple de chemin critique
 
-![](./assets/055-chemin-critique.png)
+![w:1160](./assets/055-chemin-critique.png)
 
 ---
 
@@ -1617,6 +1636,8 @@ M = [
 ![](./assets/056-plus-long-chemin.png)
 
 ---
+
+<!-- _class: smaller-text -->
 
 ### Algorithme (1/3)
 
@@ -1704,7 +1725,7 @@ Il n'y a aucune difficulté ici.
 
 ---
 
-![bg right:60% 90%](./assets/056-plus-long-chemin.png)
+![bg right:60% 90%](./assets/057-plus-long-chemin-res.png)
 
 ### Exemple
 
