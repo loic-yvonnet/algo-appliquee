@@ -1363,7 +1363,7 @@ G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
 * Cet algorithme part d'un sommet $s$ donné.
 * Au départ, on évalue toutes les distances de $s$ aux autres sommets à l'infini.
 * On effectue, sur le principe, un parcours en largeur pour réévaluer à chaque étape la distance minimale de $s$ à chaque autre sommet.
-* L'implémentation utilise une matrice d'adjacence.
+* L'implémentation suivante utilise une matrice d'adjacence.
 
 ---
 
@@ -1451,6 +1451,8 @@ def bellman_ford(m, s):
     return spt, dist_a
 ```
 
+*Note : Nous omettons la recherche de circuit négatif pour simplifier l'implémentation.*
+
 ---
 
 <!-- _class: smaller-text -->
@@ -1479,15 +1481,70 @@ Coûts = `[0, 4, 9, 4, 2, 6, 8, 12, 13, 12, 3, 5, 14, 13, 14]`
 
 ### Complexité
 
-* La complexité de l'algorithme **Bellman-Ford** est en $O(|A| |S|)$, où $|A|$ est le nombre d'arcs et $|S|$ le nombre de sommets.
+* La complexité de l'algorithme **Bellman-Ford** est en $O(|A| \cdot |S|)$, où $|A|$ est le nombre d'arcs et $|S|$ le nombre de sommets.
 * Cet algorithme est applicable dans de nombreux cas en pratique, sa complexité est correcte et son implémentation est relativement simple.
-* L'algorithme de **Dijkstra** offre une meilleure complexité en $O(|A| |S| \log |S|)$, mais son implémentation implique souvent une queue de priorité, que nous n'avons pas abordé.
+* L'algorithme de **Dijkstra** offre une meilleure complexité en $O(|A| \log |S|)$, mais son implémentation implique souvent une queue de priorité, que nous n'avons pas abordé.
 
 ---
 
 <!-- _class: title-section -->
 
 # <!--fit--> Recherche de chemin critique
+
+---
+
+### Problème d'ordonnancement
+
+* Un **problème d'ordonnancement** *simple* est caractérisé par un ensemble de **tâches** à exécuter.
+* Chaque tâche a une **durée** déterminée.
+* Chaque tâche a des **contraintes de précédence** : pour exécuter une tâche, ses prédecesseurs doivent être exécuter préalablement.
+
+<!--
+Dans un vrai projet, les durées d'exécution peuvent être imprécises : données sous forme d'intervalle, de loi de probabilité, etc.
+De nouvelles contraintes peuvent éventuellement surgir en cours de projet.
+-->
+
+---
+
+### Caractérisation des tâches
+
+* **Tâche critique** : son exécution ne peut être allongée ou différée sans allonger la durée du projet.
+* **Marge libre d'une tâche** : temps maximal dont cette tâche peut être allongée ou différée sans retarder le projet, indépendamment des autres tâches.
+
+---
+
+### Méthode PERT (1/2)
+
+* La méthode **PERT** (Project Evaluation and Review Technique :uk:) utilise un **DAG** (graphe orienté acyclique) pour représenter et solutionner un problème d'ordonnancement.
+* Le sommet **début** est à la racine du graphe.
+* Le sommet **fin** marque la fin du projet.
+
+---
+
+### Méthode PERT (2/2)
+
+* Chaque tâche est représenté par un **arc pondéré** par la durée de la tâche.
+* Les relations de précédences sont représentées par des **arcs de poids nul**.
+
+---
+
+### Exemple (1/2)
+
+|          Tâches             | Durée (jours) | Prédecesseurs |
+|:----------------------------|:-------------:|:--------------|
+| T1 : Architecturer Solution |      2        |               |
+| T2 : Configurer Serveurs    |      1        |               |
+| T3 : Configurer BD          |      3        |               |
+| T4 : Plan de Tests          |      2        |               |
+| T5 : Coder Front End        |      5        | T1            |
+| T6 : Coder Backend          |      7        | T1, T2, T3    |
+| T7 : Tests                  |      3        | T5, T6, T7    |
+
+---
+
+### Exemple (2/2)
+
+
 
 
 ---
