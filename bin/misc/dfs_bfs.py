@@ -224,6 +224,55 @@ def affiche_arc_pondere(i, j, poids):
     """Aide pour les tests."""
     print(f"s{i} -> s{j} [label=\"{poids}\"];")
 
+def oppose_poids(m):
+    """Renvoie une matrice d'adjacence dont les poids sont opposés."""
+    resultat = []
+
+    for i in range(len(m)):
+        ligne = []
+        for j in range(len(m)):
+            if m[i][j] == None:
+                ligne.append(None)
+            else:
+                ligne.append(-m[i][j])
+        resultat.append(ligne)
+
+    return resultat
+
+def chemin_vers(s, dist_a, arc_vers):
+    """Renvoie le chemin vers le sommet s."""
+    if dist_a[s] == None:
+        return None
+
+    chemin = []
+    arc = arc_vers[s]
+    while arc != None:
+        predecesseur = arc.origine
+        chemin.insert(0, predecesseur)
+        arc = arc_vers[predecesseur]
+
+    return chemin
+
+def chemin_critique(m):
+    """Renvoie le chemin critique en utilisant PERT.
+    
+    Utilise Bellman-Ford sur l'opposé de la matrice d'adjacence.
+    La matrice d'adjacence doit représenter un DAG.
+    Par convention, le début est supposé être le 1er sommer, et
+    la fin est supoosée être le dernier sommet.
+    """
+    # Construit une matrice d'adjacence avec les poids opposés
+    m_p = oppose_poids(m)
+
+    # Calcule l'arbre des plus courts chemins
+    dist_a, arc_vers = bellman_ford_impl(m_p, 0)
+
+    # Le chemin vers la fin est le chemin critique
+    fin = len(m) - 1
+    chemin = chemin_vers(fin, dist_a, arc_vers)
+
+    return chemin
+
 def tests():
     M = [
         [0, 1, 0, 0, 0],
@@ -317,6 +366,30 @@ def tests():
     parcours_sommets(spt, affiche_sommet)
     parcours_arcs_ponderes(spt, affiche_arc_pondere)
     print(dist)
+    print("---")
+    NA = None # Non Applicable
+    M = [
+        # 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+        [NA,  0,  0,  0, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA], #  0
+        [NA, NA, NA, NA,  2, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  1
+        [NA, NA, NA, NA, NA,  1, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  2
+        [NA, NA, NA, NA, NA, NA,  3, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  3
+        [NA, NA, NA, NA, NA, NA, NA,  0,  0, NA, NA, NA, NA, NA, NA, NA], #  4
+        [NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA, NA, NA, NA], #  5
+        [NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA, NA, NA, NA], #  6
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA,  5, NA, NA, NA, NA, NA, NA], #  7
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  7, NA, NA, NA, NA, NA], #  8
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], #  9
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], # 10
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, NA], # 11
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], # 12
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  3, NA], # 13
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0], # 14
+        [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA]  # 15
+        # 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+    ]
+    c = chemin_critique(M)
+    print(c)
 
 if __name__ == "__main__":
     tests()

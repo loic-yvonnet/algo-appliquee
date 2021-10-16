@@ -1523,12 +1523,12 @@ De nouvelles contraintes peuvent éventuellement surgir en cours de projet.
 
 ### Méthode PERT (2/2)
 
-* Chaque tâche est représenté par un **arc pondéré** par la durée de la tâche.
+* Chaque tâche est représentée par un **arc pondéré** par la durée de la tâche.
 * Les relations de précédences sont représentées par des **arcs de poids nul**.
 
 ---
 
-### Exemple (1/2)
+### Exemple (1/3)
 
 |          Tâches             | Durée (jours) | Prédecesseurs |
 |:----------------------------|:-------------:|:--------------|
@@ -1542,10 +1542,188 @@ De nouvelles contraintes peuvent éventuellement surgir en cours de projet.
 
 ---
 
-### Exemple (2/2)
+### Exemple (2/3)
+
+![](./assets/054-pert.png)
+
+---
+
+<!-- _class: smaller-text -->
+
+![bg right:25% 80%](./assets/054-pert.png)
+
+### Exemple (3/3)
+
+```python
+NA = None # Non Applicable
+M = [
+    # 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+    [NA,  0,  0,  0, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA], #  0
+    [NA, NA, NA, NA,  2, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  1
+    [NA, NA, NA, NA, NA,  1, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  2
+    [NA, NA, NA, NA, NA, NA,  3, NA, NA, NA, NA, NA, NA, NA, NA, NA], #  3
+    [NA, NA, NA, NA, NA, NA, NA,  0,  0, NA, NA, NA, NA, NA, NA, NA], #  4
+    [NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA, NA, NA, NA], #  5
+    [NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA, NA, NA, NA, NA, NA], #  6
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA,  5, NA, NA, NA, NA, NA, NA], #  7
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  7, NA, NA, NA, NA, NA], #  8
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], #  9
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], # 10
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, NA], # 11
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0, NA, NA], # 12
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  3, NA], # 13
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  0], # 14
+    [NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA]  # 15
+    # 0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15
+]
+```
+
+---
+
+### Chemin critique
+
+* Un **chemin critique** est un chemin de **poids maximal** allant de `début` à `fin`.
+* Il peut y avoir **plusieurs chemins critiques**.
+* Toute tâche sur un chemin critique est une **tâche critique**.
+* Nous cherchons à trouver un chemin critique.
+
+---
+
+### Exemple de chemin critique
+
+![](./assets/055-chemin-critique.png)
+
+---
+
+### Plus long chemin (1/2)
+
+* Un chemin critique est donc un **plus long chemin** de `début` à `fin`.
+* Il est possible d'utiliser un algorithme de **plus court chemin** pour calculer un plus long chemin.
+* L'astuce consiste à créer un DAG équivalent avec des **poids négatifs**.
+* Un poids de `2` devient donc un poids de `-2` par exemple.
+
+---
+
+### Plus long chemin (2/2)
+
+* Avec des poids négatifs, le plus court chemin va trouver le plus long chemin en valeur absolue.
+* Comme PERT utilise un DAG, on va pouvoir utiliser **Bellman-Ford**.
+* En effet, un DAG ne contient pas de circuit et par conséquent, il ne contient pas de circuit négatif.
+
+---
+
+### Exemple de plus long chemin
+
+![](./assets/056-plus-long-chemin.png)
+
+---
+
+### Algorithme (1/3)
+
+```python
+def oppose_poids(m):
+    """Renvoie une matrice d'adjacence dont les poids sont opposés."""
+    resultat = []
+
+    for i in range(len(m)):
+        ligne = []
+        for j in range(len(m)):
+            if m[i][j] == None:
+                ligne.append(None)
+            else:
+                ligne.append(-m[i][j])
+        resultat.append(ligne)
+
+    return resultat
+```
+
+<!--
+On prend l'opposé des poids qui ne sont pas None.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+### Algorithme (2/3)
+
+```python
+def chemin_vers(s, dist_a, arc_vers):
+    """Renvoie le chemin vers le sommet s."""
+    if dist_a[s] == None:
+        return None
+
+    chemin = []
+    arc = arc_vers[s]
+    while arc != None:
+        predecesseur = arc.origine
+        chemin.insert(0, predecesseur)
+        arc = arc_vers[predecesseur]
+
+    return chemin
+```
+
+<!--
+Cet algorithme est utilisable de manière générale également avec les résultats de Bellman-Ford.
+On obtient ainsi la liste des sommets par lesquels on passe pour atteindre le sommet de fin en passant par des tâches critiques.
+-->
+
+---
+
+<!-- _class: smaller-text -->
+
+### Algorithme (3/3)
 
 
+```python
+def chemin_critique(m):
+    """Renvoie le chemin critique en utilisant PERT.
+    
+    Utilise Bellman-Ford sur l'opposé de la matrice d'adjacence.
+    La matrice d'adjacence doit représenter un DAG.
+    Par convention, le début est supposé être le 1er sommer, et
+    la fin est supoosée être le dernier sommet.
+    """
+    # Construit une matrice d'adjacence avec les poids opposés
+    m_p = oppose_poids(m)
 
+    # Calcule l'arbre des plus courts chemins
+    dist_a, arc_vers = bellman_ford_impl(m_p, 0)
+
+    # Le chemin vers la fin est le chemin critique
+    fin = len(m) - 1
+    chemin = chemin_vers(fin, dist_a, arc_vers)
+
+    return chemin
+```
+
+<!--
+On utilise tout simplement les fonctions précédentes.
+Il n'y a aucune difficulté ici.
+-->
+
+---
+
+![bg right:60% 90%](./assets/056-plus-long-chemin.png)
+
+### Exemple
+
+```python
+c = chemin_critique(M)
+print(c)
+```
+
+:arrow_down:
+
+```bash
+[0, 3, 6, 8, 10, 13, 14]
+```
+
+---
+
+### Complexité
+
+- On utilise Bellman-Ford, et donc la complexité est similaire : $O(|A| \cdot |S|)$, où $|A|$ est le nombre d'arcs et $|S|$ le nombre de sommets.
 
 ---
 

@@ -1,0 +1,59 @@
+digraph G {
+    bgcolor="transparent";
+    rankdir="LR";
+    splines="False";
+
+    /* Entities */
+    debut [label="0", shape="circle", color="red", fontcolor="red"];
+    s0 [label="1", shape="circle"];
+    s1 [label="2", shape="circle"];
+    s2 [label="3", shape="circle", color="red", fontcolor="red"];
+    s4 [label="4", shape="circle"];
+    s5 [label="5", shape="circle"];
+    s6 [label="6", shape="circle", color="red", fontcolor="red"];
+    s7 [label="7", shape="circle"];
+    s8 [label="8", shape="circle", color="red", fontcolor="red"];
+    s9 [label="9", shape="circle"];
+    s10 [label="10", shape="circle", color="red", fontcolor="red"];
+    s11 [label="11", shape="circle"];
+    s12 [label="12", shape="circle"];
+    s13 [label="13", shape="circle", color="red", fontcolor="red"];
+    s14 [label="14", shape="circle", color="red", fontcolor="red"];
+    fin [label="15", shape="circle", color="red", fontcolor="red"];
+
+    /* Relationships */
+    debut -> s0 [label="0"];
+    debut -> s1 [label="0"];
+    debut -> s2 [label="0", color="red", fontcolor="red"];
+    debut -> s11 [label="0"];
+
+    s0 -> s4 [label="-2"];
+
+    s1 -> s5 [label="-1"];
+
+    s2 -> s6 [label="-3", color="red", fontcolor="red"];
+
+    s4 -> s7 [label="0"];
+
+    s4 -> s8 [label="0"];
+    s5 -> s8 [label="0"];
+    s6 -> s8 [label="0", color="red", fontcolor="red"];
+
+    s7 -> s9 [label="-5"];
+
+    s8 -> s10 [label="-7", color="red", fontcolor="red"];
+
+    s11 -> s12 [label="-2"];
+
+    s9 -> s13 [label="0"];
+    s10 -> s13 [label="0", color="red", fontcolor="red"];
+    s12 -> s13 [label="0"];
+
+    s13 -> s14 [label="-3", color="red", fontcolor="red"];
+
+    s14 -> fin [label="0", color="red", fontcolor="red"];
+
+    /* Ranks */
+    { rank=same; s0, s1, s2, s11 };
+    { rank=same; s9, s10, s12 };
+}
