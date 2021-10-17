@@ -114,7 +114,7 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 * **TD** : Evaluation de compléxité.
 * Limites de l'étude de complexité.
 * Approche pragmatique.
-* Discussion concernant la parallélisation sur CPU et GPU
+* Discussion concernant la parallélisation sur CPU et GPU.
 * Discussion sur la distribution de calcul dans un cluster et sur le Cloud.
 * Problèmes NP-complet.
 * Discussion sur les machines quantiques.
@@ -154,7 +154,7 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 * Tri Fusion.
 * **TP** : Tri de collections.
 
-### 10. Code modulaire et « Pythonic »
+### 10. Code modulaire et "Pythonic"
 
 * Modules.
 * Tour d'horizon de la librairie standard Python.
@@ -170,20 +170,20 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 ### 11. Introduction aux graphes
 
 * Correction du travail à la maison.
-* Discussion sur les hiérarchies
-* Arbre de recherche binaire
-* Insertion et recherche
-* Arbre de recherche N-aire
+* Discussion sur les hiérarchies.
+* Arbre de recherche binaire.
+* Insertion et recherche.
+* Arbre de recherche N-aire.
 * **TP** : Arbres binaires.
-* Discussion concernant les graphes
-* Théorie des graphes
-* Représentations des graphes
-* Parcours en profondeur
-* Parcours en largeur
-* Identification d'un cycle
-* Graphe pondéré : représentation
-* Plus court chemin
-* Chemin critique
+* Discussion concernant les graphes.
+* Théorie des graphes.
+* Représentations des graphes.
+* Parcours en profondeur.
+* Parcours en largeur.
+* Identification d'un cycle.
+* Graphe pondéré : représentation.
+* Plus court chemin.
+* Chemin critique.
 * **TP** : Graphes.
 
 ### 12. Conclusion
@@ -192,5 +192,4 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 * Conseils pour l'examen.
 * Questions/réponses sur l'ensemble du cours.
 * Discussion concernant le travail dans une base de code réelle.
-* Retour sur la qualité logicielle et l'optimisation.
 * Discussion concernant la recherche opérationnelle et l'algorithmique plus avancée.
