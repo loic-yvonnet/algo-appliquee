@@ -192,5 +192,4 @@ Chaque partie correspond à une demi-journée de cours, comportant chacune en mo
 * Conseils pour l'examen.
 * Questions/réponses sur l'ensemble du cours.
 * Discussion concernant le travail dans une base de code réelle.
-* Retour sur la qualité logicielle et l'optimisation.
 * Discussion concernant la recherche opérationnelle et l'algorithmique plus avancée.

@@ -51,7 +51,6 @@ A l'issue de ce cours, il y a un devoir sur table noté (DS) pour évaluer les a
 - Conseils pour l'examen
 - Questions/réponses
 - Travail dans une base de code réelle
-- Qualité logicielle
 - Recherche opérationnelle
 
 ---
@@ -125,18 +124,18 @@ A l'issue de ce cours, il y a un devoir sur table noté (DS) pour évaluer les a
 ### Critères d'évaluation (1/2)
 
 Les compétences attendues sont évaluées notamment sur la base des critères suivants :
-* **Maîtrise des connaissances** liées au module d'Algorithmique Appliquée.
-* **Efficacité** et **pertinence** de la solution proposée.
-* **Qualité de la mise œuvre**, notamment la lisibilité, l'indentation, et les commentaires.
+- **Maîtrise des connaissances** liées au module d'Algorithmique Appliquée.
+- **Efficacité** et **pertinence** de la solution proposée.
+- **Qualité de la mise œuvre**, notamment la lisibilité, l'indentation, et les commentaires.
 
 ---
 
 ### Critères d'évaluation (2/2)
 
 Autres critères :
-* Pertinence de l'utilisation des **composants logiciels disponibles**.
-* Adéquation des **tests de validation** effectués.
-* Aptitude à proposer des **éléments de correction pertinants**.
+- Pertinence de l'utilisation des **composants logiciels disponibles**.
+- Adéquation des **tests de validation** effectués.
+- Aptitude à proposer des **éléments de correction pertinants**.
 
 <!--
 La grille officielle d'évaluation n'a pas été communiquée.
@@ -151,38 +150,68 @@ Encore une fois, c'est la première année que ce cours est donné, et certains 
 
 ---
 
-Lisez **très attentivement** l'énoncé.
-Identifiez quelles parties du cours sont abordées : graphe, arbre binaire, tri, complexité, etc.
-Utilisez un brouillon.
-Prenez un exemple : déroulez l'approche avec cet exemple pour arriver au résultat souhaité.
-Faites une ébauche d'algorithme.
-Exécutez manuellement votre algorithme sur votre exemple en notant les valeurs de vos variables à chaque itération dans un tableau.
-Utilisez des noms de variable pertinents et sémantiquement riches.
-Commentez chaque fonction avec une docstring.
-Commentez votre code.
-Ajoutez au moins un test unitaire par fonction.
-A minima, si vous manquez de temps, rappelez que vous ajouteriez des tests unitaires dans une base de code industrielle.
+### Conseils (1/4)
+
+- Lisez **très attentivement** l'énoncé jusqu'au bout.
+- Identifiez **quelles parties du cours** sont abordées : graphe, arbre binaire, tri, complexité, etc.
+- Utilisez un **brouillon**.
+- Prenez un **exemple** : déroulez l'approche avec cet exemple pour arriver au résultat souhaité.
+
+---
+
+### Conseils (2/4)
+
+- Faites une **ébauche d'algorithme** au brouillon.
+- **Exécutez manuellement** votre algorithme sur votre exemple.
+- Notez les valeurs de vos variables à chaque itération dans **un tableau**.
+- **Corrigez** si nécessaire votre algorithme suite à vos observations pendant l'exécution.
+
+---
+
+### Conseils (3/4)
+
+- Utilisez des **noms de variable pertinents** et sémantiquement riches.
+- **Commentez** chaque fonction avec une docstring.
+- Commentez votre code.
+
+
+---
+
+### Conseils (4/4)
+
+- Ajoutez au moins un **test unitaire** par fonction.
+- A minima, si vous manquez de temps, indiquez que vous ajouteriez des tests unitaires dans une base de code industrielle.
+- Enfin, **reportez au propre votre solution**.
 
 ---
 
 ### Sujets récurrents
 
-Multiplication matricielle
-Utilisation de la dichotomie
-Parcours d'un graphe (en profondeur ou en largeur)
-Tri d'une collection (liste ou chaîne de caractères)
-Plus court chemin
-Chemin critique
+- Multiplication matricielle.
+- Utilisation de la dichotomie.
+- Parcours d'un graphe (en profondeur ou en largeur).
+- Tri d'une collection (liste ou chaîne de caractères).
+- Plus court chemin.
+- Chemin critique.
+
+<!--
+Cette liste n'est pas exhaustive.
+Il est tout à fait possible qu'un autre sujet soit abordé le jour de l'examen.
+Il s'agit ici d'exemples qui doivent simplement faire prendre conscience du niveau de difficulté attendu.
+Il s'agit donc des sujets les plus difficiles abordés dans ce cours.
+-->
 
 ---
 
 <!-- _class: title-section -->
 
-# <!--fit--> Questions/Réponses
+# Questions/Réponses
 
 ##### Sur l'ensemble du cours
 
-Ask Me Anything
+---
+
+# Des questions ?
 
 ---
 
@@ -190,15 +219,81 @@ Ask Me Anything
 
 # <!--fit--> Travail dans une base de code réelle
 
-##### Discussion
+---
+
+### Un million de lignes de code
+
+* Les projets de plus d'un million de lignes de code **ne sont pas rares**.
+* On a souvent une **compréhension partielle** d'une base de code.
+* On utilise des outils dédiés pour **naviguer dans le code**.
+* On documente l'**architecture logicielle** dans des formalismes tels que **UML** ou **Archimate**.
+
+<!--
+Google aurait dépassé le milliard de lignes de code au total.
+-->
 
 ---
 
-<!-- _class: title-section -->
+### Base de code "legacy"
 
-# <!--fit--> Retour sur la qualité logicielle
+* De nombreuses bases de code n'ont pas du tout, ou **très peu de tests automatiques**.
+* Les bases de code de produits qui ont du succès ne sont **pas toujours écrites par des informaticiens**.
+* Il existe des techniques pour *rentrer* dans une base de code.
+* Ces techniques sont basés sur la **rétro-ingénierie**.
 
-##### Discussion
+<!--
+On regarde par exemple les fonctionnalités dans l'interface utilisateur et on recherche dans le code où elles sont implémentées.
+Autre exemple : construire un "diagramme de classes" (l'un des diagrammes dans UML) à partir du code pour voir les relations et les interactions entre les différentes parties du code.
+-->
+
+---
+
+### Amélioration continue
+
+* Chaque modification de code doit **améliorer** la base de code.
+* La **qualité logicielle** nécessite de l'attention et de la discipline.
+* Il est toujours possible d'ajouter des tests automatiques, même dans une base de code qui n'en comporte aucun.
+* Il faut avoir un **tableau de bord** et des **indicateurs de performance clés**.
+
+---
+
+### Quelques outils essentiels
+
+* Gestionnaire de contrôle de version (ex: `git`).
+* Environnement de développement intégré (ex : VS Code).
+* Outil d'intégration continue (ex : Jenkins).
+* Outil de déploiement continu (ex : Bamboo).
+
+---
+
+### Processus classique (1/2)
+
+* **Collection des besoins** : une enquête auprès des utilisateurs finaux permet de collecter les besoin.
+* **Spécifications fonctionnelles** : on traduit les besoins en un ensemble de fonctionnalités.
+* **Besoins non-fonctionnelles** : certains besoins sont transversaux (ex : performance).
+* **Cahier des charges** : on écrit un document formel qui ressemblent les spécifications fonctionnelles et non-fonctionnnelles.
+
+<!--
+Il s'agit d'une version simplifiée du cycle en V.
+Dans l'industrie française, cette approche reste très largement majoritaire.
+-->
+
+---
+
+### Processus classique (2/2)
+
+* **Décompositions** : on décompose les fonctionnalités en ensemble de fonctions élémentaires que l'on peut programmer.
+* **Plan de tests** : on établi un plan pour vérifier et valider le bon fonctionnement de chaque fonctionnalité.
+* **Implémentation** : 
+
+
+Requirements/Specs fonctionnelles/non-fonctionnelles/Cahier des Charges/SPlit en features/Breakdown structure en composants puis fonctions.
+
+---
+
+### Agile
+
+
 
 ---
 
@@ -206,4 +301,6 @@ Ask Me Anything
 
 # Recherche opérationnelle
 
-##### Discussion
+---
+
+### 
