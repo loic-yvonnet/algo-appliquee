@@ -331,8 +331,9 @@ Dans l'industrie française, cette approche reste très largement majoritaire.
 * Data Mining.
 * Compilateurs, Moteurs d'inférences.
 * Solveurs d'équations numériques ou formels.
-* Modeleur 3D (lancé de rayon).
+* Modeleur 3D (lancé de rayon, etc.) ou géométrique.
 * Réseaux de neurones (profonds, convolutionnels, etc.).
+* Etc.
 
 ---
 
