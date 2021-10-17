@@ -219,6 +219,10 @@ Il s'agit donc des sujets les plus difficiles abordés dans ce cours.
 
 # <!--fit--> Travail dans une base de code réelle
 
+<!--
+Il s'agit ici de discuter quelques approches du monde du travail pour apporter nuance et profondeur aux approches théoriques de l'algorithmique. 
+-->
+
 ---
 
 ### Un million de lignes de code
@@ -284,16 +288,33 @@ Dans l'industrie française, cette approche reste très largement majoritaire.
 
 * **Décompositions** : on décompose les fonctionnalités en ensemble de fonctions élémentaires que l'on peut programmer.
 * **Plan de tests** : on établi un plan pour vérifier et valider le bon fonctionnement de chaque fonctionnalité.
-* **Implémentation** : 
-
-
-Requirements/Specs fonctionnelles/non-fonctionnelles/Cahier des Charges/SPlit en features/Breakdown structure en composants puis fonctions.
+* **Implémentation** : implémentation du code.
+* **Tests** : déroulement des tests.
+* **Déploiement** : mise en production de la solution.
 
 ---
 
 ### Agile
 
+* Des méthodologies comme **SCRUM** ou **XP** peuvent booster certaines typologies de projets.
+* On rassemble les différents métiers au sein d'une **équipe projet**.
+* On effectue des **itérations courtes** (nommée "sprints") pour converger progressivement vers une solution qui convient à tous.
+* On suit de **bonnes pratiques** et on favorise un environnement de travail bienveillant.
 
+---
+
+### Ne pas refaire la roue
+
+* Connaître les algorithmes est une excellente chose.
+* Il vaut mieux chercher une bibliothèque Open Source plutôt que de toujours tout réimplémenter.
+
+---
+
+### Performance ou clarté du code ?
+
+* On privilégie par défaut la **clarté du code**.
+* Il faut garder à l'esprit le **ratio 80/20**.
+* Seul 20% du code doit être optimisé.
 
 ---
 
@@ -303,4 +324,21 @@ Requirements/Specs fonctionnelles/non-fonctionnelles/Cahier des Charges/SPlit en
 
 ---
 
-### 
+### Ce n'est qu'un début...
+
+* Flot maximal, recouvrement, etc.
+* Algorithmes spécialisés dans les chaînes de caractères.
+* Data Mining.
+* Compilateurs, Moteurs d'inférences.
+* Solveurs d'équations numériques ou formels.
+* Modeleur 3D (lancé de rayon).
+* Réseaux de neurones (profonds, convolutionnels, etc.).
+
+---
+
+# <!--fit--> Merci
+
+<!--
+Vous êtes arrivés au terme de ce cours.
+Merci pour votre attention et bravo pour vos efforts.
+-->
