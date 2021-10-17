@@ -1,0 +1,50 @@
+graph G {
+    bgcolor="transparent";
+
+    /* Entities */
+    Hyperviseur [label="Hyperviseur", shape="rectangle"];
+    C1 [label="Noeud 1", shape="rectangle"];
+    C2 [label="Noeud 2", shape="rectangle"];
+    C3 [label="Noeud 3", shape="rectangle"];
+    C4 [label="Noeud 4", shape="rectangle"];
+    C5 [label="Noeud 5", shape="rectangle"];
+    C6 [label="Noeud 6", shape="rectangle"];
+    C7 [label="Noeud 7", shape="rectangle"];
+    C8 [label="Noeud 8", shape="rectangle"];
+    C9 [label="Noeud 9", shape="rectangle"];
+    C10 [label="Noeud 10", shape="rectangle"];
+    C11 [label="Noeud 11", shape="rectangle"];
+    C12 [label="Noeud 12", shape="rectangle"];
+   
+    /* Relationships */
+    Hyperviseur -- C1
+    Hyperviseur -- C2
+    Hyperviseur -- C3
+    Hyperviseur -- C4
+    Hyperviseur -- C5
+    Hyperviseur -- C6
+    Hyperviseur -- C7
+    Hyperviseur -- C8
+    Hyperviseur -- C9
+    Hyperviseur -- C10
+    Hyperviseur -- C11
+    Hyperviseur -- C12
+
+    C1 -- C2
+    C2 -- C4
+    C3 -- C4
+
+    C5 -- C6
+    C6 -- C8
+    C7 -- C8
+
+    C9 -- C10
+    C9 -- C12
+    C11 -- C12
+
+    C4 -- C8
+    C8 -- C10
+
+    /* Ranks */
+    { rank=same; };
+}

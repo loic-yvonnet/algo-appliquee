@@ -256,7 +256,23 @@ Encore une fois, c'est la première année que ce cours est donné, et certains 
 
 * A l'issue de chaque journée de formation, il y aura un DM à rendre.
 * Les DMs devront être rendus et seront évalués.
-* L'évaluation des DMs sera prise en compte dans le dossier.
+* Il y aura un DS final durant la dernière demie-journée de formation.
+* L'évaluation des DMs et du DS sera prise en compte dans le dossier.
+* Les DMs sont coefficient 1, et le DS est coefficient 2.
+
+---
+
+### Règles concernant les DMs
+
+* Les DMs doivent être rendus au plus tard en début de matinée, le jour indiqué sur NetYParéo.
+* Toute journée de retard est pénalisée par 5 points en moins.
+* Il s'agit d'un travail individuel.
+* Si des similitudes sont découvertes entre les exercices rendus de plusieurs étudiants, la note sera divisée par le nombre d'étudiants ayant la même réponse.
+
+<!--
+L'évaluation de ce qui constitue la similarité des réponses est discrétionnaire.
+Elle est basée à la fois sur des outils de comparaison/fusion de code (git merge, kdiff3, etc.), et sur l'expérience propre du correcteur.
+-->
 
 ---
 
