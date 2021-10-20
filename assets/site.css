@@ -67,7 +67,14 @@ main {
 
 @media (min-width:992px) {
     #sidebarMenu {
+        position: sticky;
         display: block;
+        top: 65px;
+        padding-top: 5px;
+        bottom: auto;
+        height: calc(100vh - 65px);
+        width: 25%;
+        overflow: auto;
     }
 }
 
