@@ -10,11 +10,27 @@
     <meta property="og:title" content="{{ title }}"/>
     <meta property="og:description" content="{{ summary }}"/>
     <meta property="og:image" content="{{ url_prefix }}/assets/logo.png"/>
+    
+    {# Bootsrap CSS
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    #}
+    <link href="{{ url_prefix }}/assets/vendor/bootstrap.min.css" rel="stylesheet">
+
+    {# KaTeX CSS
     <link href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" rel="stylesheet" integrity="sha256-55Ddc47WvWTK5vYVejnAuSK7USJaL7FQXrzQ4HiQ1WY=" crossorigin="anonymous">
+    #}
+    <link href="{{ url_prefix }}/assets/vendor/katex.min.css" rel="stylesheet">
+    
+    {# Prism Code Syntax Highlighter CSS
     <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-okaidia.css" rel="stylesheet" integrity="sha256-nwDipdLn93O1CZGoRDor0i4CLmDQb+mdg/yaYMUCuLM=" crossorigin="anonymous">
+    #}
+    <link href="{{ url_prefix }}/assets/vendor/prism-okaidia.css" rel="stylesheet">
+    
+    {# Specific CSS #}
     <link href="{{ url_prefix }}/assets/site.css" rel="stylesheet">
+    
     <title>{{ title }}</title>
+    
     {# KaTeX fonts #}
     <script>
       window.WebFontConfig = {
@@ -26,9 +42,16 @@
         },
       };
     </script>
+
+    {# Web Fonts Loader (mainly for KaTeX)
     <script defer src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    #}
+    <script defer src="{{ url_prefix }}/assets/vendor/webfontloader.js"></script>
+
   </head>
   <body class="bg-dark">
+
+    {# Main Content #}
     {% include "layouts/header.njk" %}
     <div class="container-fluid">
       <div class="row">
@@ -42,15 +65,24 @@
       </div>
     </div>
     {% include "layouts/footer.njk" %}
-    {# Bootstrap #}
+
+    {# Bootstrap JS
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    {# Feather icons (for the menu) #}
+    #}
+    <script src="{{ url_prefix }}/assets/vendor/bootstrap.bundle.min.js"></script>
+
+    {# Feather icons (for the menu)
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+    #}
+    <script src="{{ url_prefix }}/assets/vendor/feather.min.js"></script>
     <script>
       feather.replace();
     </script>
-    {# KaTeX #}
+
+    {# KaTeX JS
     <script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha256-qVJed55YB6+tZ9LzJ0xVZTArcMw2XXxjFeeRIEUmwOk=" crossorigin="anonymous"></script>
+    #}
+    <script src="{{ url_prefix }}/assets/vendor/katex.min.js"></script>
     <script>
       katexOptions = {
         delimiters: [
@@ -59,7 +91,11 @@
         ]
       };
     </script>
+
+    {# Auto-Render for KaTeX equations
     <script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+    #}
+    <script src="{{ url_prefix }}/assets/vendor/auto-render.min.js"
       onload="renderMathInElement(document.body, katexOptions);">
     </script>
   </body>

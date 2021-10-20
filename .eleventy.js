@@ -55,6 +55,9 @@ module.exports = function (config) {
     // Passthrough for jupyter notebooks (because of same-origin download links)
     config.addPassthroughCopy("cours/**/*.ipynb");
 
+    // Passthrough for vendor libraries (due to cross-origin limitations on CCI internal network)
+    config.addPassthroughCopy("assets/vendor/**/*.*");
+
     return {
         templateFormats: [
             "md",
