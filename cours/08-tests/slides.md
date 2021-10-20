@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 
 # <!--fit--> Algorithmique Appliquée
@@ -61,7 +66,7 @@ Dans ce cours, on va aborder 2 points importants et complémentaires :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Gestion d'erreurs avec des codes de retour
 
@@ -297,7 +302,7 @@ Par conséquent, l'approche vue dans ces dernières diapositives peut continuer 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Notion d'exception
 
@@ -522,7 +527,7 @@ On passe ici
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Gestion d'exceptions et classes d'exception
 
@@ -742,7 +747,7 @@ Trop vert : Vert en dehors de [0 ; 255]
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Invariants
 
@@ -780,7 +785,7 @@ Trop vert : Vert en dehors de [0 ; 255]
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Programmation offensive et défensive
 
@@ -877,7 +882,7 @@ Par ailleurs, le code devient plus difficile à lire et à comprendre.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Assertions
 
@@ -957,7 +962,7 @@ Les prochaines parties de ce cours vont introduire le concept de tests unitaires
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Exceptions dans une calculatrice
 
@@ -971,7 +976,7 @@ Les prochaines parties de ce cours vont introduire le concept de tests unitaires
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests en boîte opaque
 
@@ -1112,7 +1117,7 @@ Il consomme donc un temps très important.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests en boîte transparente
 
@@ -1183,7 +1188,7 @@ while len(L) > 0 and (L[i] == "ok" or est_vrai):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Automatisation des tests
 
@@ -1233,7 +1238,7 @@ Les tests exploratoires se font manuellement. Les tests manuels ne devraient pas
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tests unitaires
 
@@ -1399,7 +1404,7 @@ def test_racine_carree_negatif():
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests pilotant le développement 
 
@@ -1598,7 +1603,7 @@ Cela sort du cadre de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Ecriture de tests unitaires
 
@@ -1610,7 +1615,7 @@ Cela sort du cadre de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 04
 

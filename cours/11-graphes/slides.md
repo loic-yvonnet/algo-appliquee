@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -63,7 +68,7 @@ Note d'implémentation : les graphes sont générés avec GraphViz via le script
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Correction du travail à la maison
 
@@ -75,7 +80,7 @@ Note d'implémentation : les graphes sont générés avec GraphViz via le script
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les hiérarchies
 
@@ -107,7 +112,7 @@ Il est possible d'inverser la représentation pour obtenir une hiérarchie.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Arbre de recherche binaire
 
@@ -207,7 +212,7 @@ class ArbreBinaire:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ## Insertion et recherche dans un arbre binaire
 
@@ -355,7 +360,7 @@ Dans un arbre rouge-noir, la recherche et l'insertion sont en $O(\log N)$.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Arbre de recherche N-aire
 
@@ -401,7 +406,7 @@ class Noeud:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Arbres binaires
 
@@ -413,7 +418,7 @@ class Noeud:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### Discussion concernant les problèmes impliquant des graphes
 
@@ -449,7 +454,7 @@ Comment représenter les relations entre des utilisateurs ?
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction à la théorie des graphes
 
@@ -715,7 +720,7 @@ Cette distinction est importante à comprendre.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Représentations des graphes
 
@@ -913,7 +918,7 @@ M = [
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Parcours en profondeur
 
@@ -1008,7 +1013,7 @@ def parcours_en_profondeur(m, f):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Parcours en largeur
 
@@ -1083,7 +1088,7 @@ def parcours_en_largeur(m, f):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Identification d'un cycle
 
@@ -1172,7 +1177,7 @@ print(cycle)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Graphe pondéré : représentation
 
@@ -1351,7 +1356,7 @@ G = GraphePondere(sommets=[s0, s1, s2, s3, s4],
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Plus court chemin
 
@@ -1502,7 +1507,7 @@ Coûts = `[0, 4, 9, 4, 2, 6, 8, 12, 13, 12, 3, 5, 14, 13, 14]`
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Recherche de chemin critique
 
@@ -1748,7 +1753,7 @@ print(c)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Graphes
 

@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -58,7 +63,7 @@ Branchez vos neurones et c'est parti !
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Correction du travail à la maison
 
@@ -70,7 +75,7 @@ Branchez vos neurones et c'est parti !
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Intuition sur la complexité
 
@@ -206,7 +211,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Réflexion sur la complexité temporelle et spatiale
 
@@ -233,7 +238,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Notation $O(...)$
 
@@ -415,7 +420,7 @@ On utilise si souvent la notation Grand $O$ qu'on l'utilise parfois en lieu et p
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Classes de complexité
 
@@ -650,7 +655,7 @@ def fibonacci(N):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Comparaison des classes de complexité
 
@@ -736,7 +741,7 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TD : Evaluation de compléxité
 
@@ -748,7 +753,7 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Limites de l'étude de complexité
 
@@ -831,7 +836,7 @@ En effet, dans la notation O, on s'intéresse au final uniquement au nombre de f
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Approche pragmatique
 
@@ -925,7 +930,7 @@ timeit(test, number=1)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion concernant la parallélisation
 
@@ -1042,7 +1047,7 @@ Nos smartphones actuels sont plus puissants que les supercalculateurs des année
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur la distribution de calcul
 
@@ -1122,7 +1127,7 @@ Etc.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Problèmes NP-complet
 
@@ -1190,7 +1195,7 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les machines quantiques
 
@@ -1297,7 +1302,7 @@ Voir les références du cours pour aller plus loin.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Benchmark et complexité
 
