@@ -114,7 +114,7 @@ Cela signifie que l'on s'appuie sur la puissance de la machine plutôt que sur s
 # Approximation
 
 * Combien de temps va prendre mon programme ?
-* Objectif : **comparer** les algorithmes **indépendemment d'une machine**.
+* Objectif : **comparer** les algorithmes **indépendamment d'une machine**.
 * La comparaison ne doit pas se baser sur des mesures.
 * Approximation : **compter le nombre d'instructions**.
 
@@ -219,7 +219,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 # Complexité temporelle
 
-* C'est le type de complexité algorithmique que nous avons discuté jusqu'à présent.
+* C'est le type de complexité algorithmique dont nous avons discuté jusqu'à présent.
 * On s'attache à évaluer le temps d'exécution sur une machine théorique.
 
 ---
@@ -359,7 +359,7 @@ Il décède en 1938.
 
 * On dit que $g = o(f)$ si pour tout $\varepsilon > 0$, il existe $n_{\varepsilon}$ tel que si $n > n_{\varepsilon}$, alors $g(n) \le \varepsilon f(n)$.
 * Cette notation se lit : **g est un petit o de f**.
-* Autrement dit, g est négligable devant f.
+* Autrement dit, g est négligeable devant f.
 * Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
 * C'est tout simplement l'**inverse de Grand $O$**.
 * Notation alternative : $g = o(f) \Longleftrightarrow g = \Omega(f)$.
@@ -775,7 +775,7 @@ Un algorithme quadratique restera plus lent en exécution qu'un algorithme liné
 # Exemples
     
 * **Prédiction de branche** : un CPU peut prédire statistiquement quel code devra être exécuté, et l'exécuter en avance.
-* **Hiérarchie de mémoires** : certains algorithmes compactes en mémoire permettent d'utiliser efficacement les hiérarchies de cache et de pagination.
+* **Hiérarchie de mémoires** : certains algorithmes compacts en mémoire permettent d'utiliser efficacement les hiérarchies de cache et de pagination.
 * **Appels systèmes** : par exemple, les allocations mémoires peuvent avoir des impacts importants.
 
 ---
@@ -901,7 +901,7 @@ print(f"Temps d'exécution : {temps_ecoule.total_seconds()}s")
 # Problèmes
 
 * Les mesures avec `time` et `datetime` ne sont **pas indépendantes**.
-* Ces mesures sont fortement impactées par les autres processus exécuté par la machine au même moment.
+* Ces mesures sont fortement impactées par les autres processus exécutés par la machine au même moment.
 
 ---
 
@@ -998,7 +998,7 @@ La classe de complexité reste, de loin, le facteur le plus important.
 
 # Loi d'Amdahl
 
-Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0 ; 1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl défini la fonction $f$ d'**accélération théorique maximale** :
+Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0 ; 1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl définit la fonction $f$ d'**accélération théorique maximale** :
 
 $$
 f(s, p) = \frac{1}{1 - p + \frac{p}{s}}
@@ -1065,8 +1065,8 @@ Nos smartphones actuels sont plus puissants que les supercalculateurs des année
 
 # <!--fit--> On-Premise ou dans le Cloud
 
-* **On-Premise** : exécution dans un cluster appartenant à l'entité (entreprise/personne) effectuant le calcul.
-* **Cloud Computing** : exécution dans un cluster localisé dans un datacenter appartement à un fournisseur tiers.
+* **On-Premise** :uk: : exécution dans un cluster appartenant à l'entité (entreprise/personne) effectuant le calcul.
+* **Cloud Computing** :uk: : exécution dans un cluster localisé dans un datacenter appartenant à un fournisseur tiers.
 
 <!--
 Quelques acteurs du Cloud en 2021 : Heroku, Google, AWS.
@@ -1190,7 +1190,7 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 * Il existe certains problèmes pour lesquels **on n'a aujourd'hui pas de meilleure solution** que :
     * un algorithme exponentiel,
-    * une solution en force brute consistant à explorer tout l'espace de solution (quant il est fini).
+    * une solution en force brute consistant à explorer tout l'espace de solution (quand il est fini).
 * **On n'est pas encore capable de prouver l'existence, ou non, de meilleures solutions**.
 
 ---
@@ -1282,14 +1282,14 @@ Voir les références du cours pour aller plus loin.
 
 * Il existe déjà près d'**une centaine d'algorithmes quantiques**.
 * Les applications possibles sont variées : cryptographie, apprentissage par machine, calcul scientifique.
-* La recherche sur le sujet est très actif.
+* La recherche sur le sujet est très active.
 
 ---
 
 # Etat de l'art (2/3)
 
 * Les machines quantiques actuelles :
-    * coûtent **très chers**,
+    * coûtent **très cher**,
     * ne comportent que **quelques qubits**,
     * **ne permettent pas d'exécuter** la plupart des algorithmes quantiques.
 
