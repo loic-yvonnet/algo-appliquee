@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -53,7 +58,7 @@ On va également voir quelques techniques de programmation et de débogage.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Correction du travail à la maison
 
@@ -65,7 +70,7 @@ On va également voir quelques techniques de programmation et de débogage.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction à la technique "devine-et-vérifie"
 
@@ -243,7 +248,7 @@ Par ailleurs, la précision n'est pas garantie pour les grands nombres.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction à la dichotomie
 
@@ -357,7 +362,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ## TD : Utilisation de la dichotomie pour calculer des racines et des logarithmes
 
@@ -369,7 +374,7 @@ Dans le cas des nombres premiers, il est de toutes façons nécessaires de teste
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction à l'instrumentation de code
 
@@ -510,7 +515,7 @@ Néanmoins, cette technique offre un moyen rapide de se faire une idée.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction à l'algorithme Newton Raphson
 
@@ -635,7 +640,7 @@ C'est un algorithme simple, élégant et performant.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ## TP : Comparaison d'algorithmes ayant le même objectif
 
@@ -647,7 +652,7 @@ C'est un algorithme simple, élégant et performant.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### Histoire des bugs et du débogage dans la culture anglo-saxonne
 
@@ -711,7 +716,7 @@ Si ces problèmes surviennent rarement, il arrive que certaines entreprises déc
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Techniques pour déboguer manuellement un programme sur papier
 
@@ -770,7 +775,7 @@ La nouvelle valeur de s apparaît sur la ligne suivante.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Utilisation d'un debugger avec points d'arrêt
 
@@ -960,7 +965,7 @@ Le cours de méthodologie et les prochains cours de programmation en JavaScript,
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Déboguer un programme mal écrit et comportant des bugs
 

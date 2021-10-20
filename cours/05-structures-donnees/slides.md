@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -50,7 +55,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Correction du travail à la maison
 
@@ -62,7 +67,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Notion de conteneur
 
@@ -139,7 +144,7 @@ On voudrait aussi pouvoir manipuler des données hétérogènes.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Notion d'opérations CRUD 
 
@@ -252,7 +257,7 @@ Cette chaîne n'est tout simplement plus référencée par la variable chaine.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tuples
 
@@ -407,7 +412,7 @@ print(t2)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Bornes et itérateurs
 
@@ -543,7 +548,7 @@ On parle ici d'évaluation gourmande (greedy evaluation), qui est l'inverse de l
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Listes
 
@@ -863,7 +868,7 @@ print(liste)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TD : Implémenter les opérations matricielles les plus classiques
 
@@ -876,7 +881,7 @@ print(liste)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Clonage et copie profonde
 
@@ -1085,7 +1090,7 @@ Ainsi, on a maintenant liste1 et liste2 qui sont liés à des structures totalem
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Ensembles
 
@@ -1292,7 +1297,7 @@ print(sous_ensemble) # True
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Dictionnaires
 
@@ -1509,7 +1514,7 @@ print(heros)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Technique "Pythonic" : compréhensions
 
@@ -1640,7 +1645,7 @@ print(dico)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### TP : Utiliser un dictionnaire pour gérer un hôpital avec des patients, des médecins et des soins à apporter
 
@@ -1652,7 +1657,7 @@ print(dico)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Structure personnalisée
 

@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -55,7 +60,7 @@ On terminera par quelques conseils pour réussir au mieux.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tour de table
 
@@ -95,7 +100,7 @@ Au passage, demander d'écrire leur nom sur une étiquette.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Evaluation initiale
 
@@ -116,7 +121,7 @@ Une version PDF imprimée du sujet sera distribuée.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Organisation du cours
 
@@ -187,7 +192,7 @@ Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Evaluation du cours
 
@@ -276,7 +281,7 @@ Elle est basée à la fois sur des outils de comparaison/fusion de code (git mer
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Conseils
 

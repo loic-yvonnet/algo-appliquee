@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -51,7 +56,7 @@ Ensuite, on prépare le terrain pour le Devoir à la Maison n°3 qui nécessite 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Listes chaînées
 
@@ -276,7 +281,7 @@ Une liste doublement chaînée conserve une référence vers le noeud précéden
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Manipulation d'une liste chaînée
 
@@ -288,7 +293,7 @@ Une liste doublement chaînée conserve une référence vers le noeud précéden
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Queue et FIFO
 
@@ -469,7 +474,7 @@ print(queue)           # deque([3, 7, 10])
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Pile et LIFO
 
@@ -645,7 +650,7 @@ print(pile)            # deque([6, 3, 7])
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Comparaison entre FIFO et LIFO
 
@@ -692,7 +697,7 @@ A droite : LIFO (stack).
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Queues de messages simples
 
@@ -704,7 +709,7 @@ A droite : LIFO (stack).
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Rappels sur la théorie des ensembles
 
@@ -774,7 +779,7 @@ On l'appelle vulgairement un patatoïde.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Rappels sur le calcul matriciel
 
@@ -1408,7 +1413,7 @@ $$
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 03
 

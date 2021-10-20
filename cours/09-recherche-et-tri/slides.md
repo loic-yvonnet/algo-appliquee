@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -49,7 +54,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Correction du travail à la maison
 
@@ -61,7 +66,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### Retour sur les classes de problèmes usuelles en algorithmique
 
@@ -110,7 +115,7 @@ Lors d'un cours précédent, nous avons abordé l'algorithme de l'élimination d
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Recherche en Python
 
@@ -225,7 +230,7 @@ La méthode get rempli ce rôle.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Recherche linéaire
 
@@ -301,7 +306,7 @@ Utilisez plutôt la version itérative de l'algorithme.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Recherche binaire
 
@@ -560,7 +565,7 @@ Retenez simplement qu'elle existe et offre une base mathématiques pour prouver 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Recherche dans une collection
 
@@ -572,7 +577,7 @@ Retenez simplement qu'elle existe et offre une base mathématiques pour prouver 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tri en Python
 
@@ -870,7 +875,7 @@ Pour le nom, on tri dans l'ordre croissant.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Algorithmes de tri en $O(N^2)$
 
@@ -1205,7 +1210,7 @@ La raison pour laquelle le gif du tri coquille prend plus de temps est qu'il a �
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Partition : diviser et conquérir
 
@@ -1351,7 +1356,7 @@ L'algorithme s'arrête dès que les indices se croisent, donc :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tri Rapide
 
@@ -1528,7 +1533,7 @@ Même si le pire cas est rare, avoir une forte disproportion entre les sous-ense
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tri Fusion
 
@@ -1735,7 +1740,7 @@ On s'intéresse à la profondeur maximale p de l'arbre, puisque c'est le nombre 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Tri de collections
 

@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -55,7 +60,7 @@ A l'issue de ce cours, il y a un devoir sur table noté (DS) pour évaluer les a
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Retours sur les points essentiels et attendus pour l'examen
 
@@ -144,7 +149,7 @@ Encore une fois, c'est la première année que ce cours est donné, et certains 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Conseils pour l'examen
 
@@ -203,7 +208,7 @@ Il s'agit donc des sujets les plus difficiles abordés dans ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Questions/Réponses
 
@@ -215,7 +220,7 @@ Il s'agit donc des sujets les plus difficiles abordés dans ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Travail dans une base de code réelle
 
@@ -318,7 +323,7 @@ Dans l'industrie française, cette approche reste très largement majoritaire.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Recherche opérationnelle
 
