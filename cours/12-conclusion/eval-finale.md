@@ -161,7 +161,7 @@ for cle, valeur in dico.items():
 Décrivez le comportement du code suivant et corrigez-le si nécessaire.
 
 ```python
-N = int(input("Affichez les entiers positifs à partir de : "))
+N = int(input("Affichez les entiers positifs jusqu'à : "))
 i = 0
 while i < N:
     print(i + 1)
