@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -49,7 +54,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Conditions
 
@@ -204,7 +209,7 @@ print(texte)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Chaînes de caractères et encodage de caractères
 
@@ -541,7 +546,7 @@ Nous reviendrons plus tard sur le type binaire.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Entrée et sortie standard
 
@@ -660,7 +665,7 @@ Prix (TTC) : 83.40€
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### TP 03 - Initiation aux Environnements de Développement Intégrés avec pour but de manipuler des chaînes de caractères
 
@@ -693,7 +698,7 @@ Est utilisé notamment pour l'édition de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Boucles "Tant que"
 
@@ -930,7 +935,7 @@ while i < 4:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Boucles "Pour" et "Bornes"
 
@@ -1131,7 +1136,7 @@ for i in range(debut, fin, pas):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### TP 04 - Quelques algorithmes simples pour prendre en main les fondamentaux de l'algorithmique
 
@@ -1160,7 +1165,7 @@ Est utilisé notamment pour l'édition de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Différences entre Python et Scratch
 
@@ -1196,7 +1201,7 @@ PyGame est plus complexe que Scratch, mais il permet d'aller beaucoup plus loin,
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Style, commentaires et PEP 8
 
@@ -1386,7 +1391,7 @@ revenus = (salaire_net
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 01
 

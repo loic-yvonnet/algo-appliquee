@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -51,7 +56,7 @@ Afin que vous puissiez être efficaces rapidement dans vos entreprises en altern
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Programmation modulaire
 
@@ -330,7 +335,7 @@ if __name__ == "__main__":
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ## Tour d'horizon de la bibliothèque standard Python
 
@@ -831,7 +836,7 @@ On peut voir comment l'interpréteur Python lit et représente en interne ce mor
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Focus sur les fichiers
 
@@ -959,7 +964,7 @@ with open("fichier.txt") as fichier:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Initiation aux fichiers
 
@@ -971,7 +976,7 @@ with open("fichier.txt") as fichier:
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction aux paquets
 
@@ -1043,7 +1048,7 @@ python3.9 -m pip install -U paquet
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les licences
 
@@ -1132,7 +1137,7 @@ En effet, il est tout à fait possible que votre besoin soit déjà adressé dif
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Courbes et traitement d'images
 
@@ -1144,7 +1149,7 @@ En effet, il est tout à fait possible que votre besoin soit déjà adressé dif
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Programmation Orientée Object
 
@@ -1170,7 +1175,7 @@ On peut parler de :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 05
 

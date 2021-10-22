@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,8 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
-
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -52,7 +56,7 @@ style: |
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Intérêt du cours
 
@@ -118,7 +122,7 @@ L'automatisation est la clé du succès de très nombreux projets car elle perme
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les algorithmes
 
@@ -227,7 +231,7 @@ Aborder ces quelques exemples permet d'avoir une première intuition sur la natu
 ---
 
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Histoire de l'algorithmique
 
@@ -328,7 +332,7 @@ Etre bon en algorithmique, c'est la garantie d'un succès professionnel.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Définition formelle
 
@@ -344,7 +348,7 @@ On note que cette définition n'implique pas nécessairement de déterminisme pa
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Architecture simplifiée d'un ordinateur
 
@@ -446,7 +450,7 @@ Un ordinateur comporte :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> TP 01 - Démarrer avec Scratch
 
@@ -477,7 +481,7 @@ C'est un langage parfait pour apprendre la programmation.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les langages de programmation
 
@@ -627,7 +631,7 @@ Les langages interprétés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Introduction au langage Python
 
@@ -683,7 +687,7 @@ Les langages interprétés sont souvent plus simples et plus pratiques, mais moi
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Types numériques, expressions et objets en Python
 
@@ -811,7 +815,7 @@ Demander aux étudiants leur avis sur la valeur des expressions avant de les év
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Variables et assignation
 
@@ -863,7 +867,7 @@ Les raisons pour lesquelles c'est déconseillé :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> TP 02 - Python avec Jupyter Notebook
 

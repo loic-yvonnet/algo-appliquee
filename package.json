@@ -1,6 +1,6 @@
 {
   "name": "algo-appliquee",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "Loïc Yvonnet <loic@yvo.solutions>",
   "license": "MIT",
   "private": true,
@@ -80,9 +80,9 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
     "@iktakahiro/markdown-it-katex": "^4.0.1",
-    "@marp-team/marp-cli": "^1.4.0",
+    "@marp-team/marp-cli": "^1.4.1",
     "cpy-cli": "^3.1.1",
     "html-minifier": "^4.0.0",
     "katex": "^0.13.18",

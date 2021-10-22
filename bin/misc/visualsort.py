@@ -1,8 +1,16 @@
+"""
+Generate the images and animated gifs for the lecture 9.
+"""
+
+# Standard library
 import os
-import matplotlib.pyplot as plt
-import numpy as np
 import imageio
 
+# External libraries
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Globals
 dir_path = "/home/lyvonnet/Dev/algo-appliquee/dist/tmp/"
 
 def gen_data():

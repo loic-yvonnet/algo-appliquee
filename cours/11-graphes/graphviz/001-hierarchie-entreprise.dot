@@ -1,0 +1,45 @@
+digraph G {
+    splines="FALSE";
+    bgcolor="transparent";
+
+    /* Entities */
+    PDG [label="Présidente Directrice Générale", shape="rectangle"]
+    Marketing [label="Directrice Marketing", shape="rectangle"]
+    DRH [label="Directrice des Ressources Humaines", shape="rectangle"]
+    DSI [label="Directrice des Systèmes d'Information", shape="rectangle"]
+    RnD [label="Directrice Recherche et Développement", shape="rectangle"]
+
+    Isabelle [label="Isabelle", shape="rectangle"]
+    Joe [label="Joe", shape="rectangle"]
+    Bob [label="Bob", shape="rectangle"]
+    Robert [label="Robert", shape="rectangle"]
+    Mohamed [label="Mohamed", shape="rectangle"]
+    Beatrice [label="Béatrice", shape="rectangle"]
+    Cecile [label="Cécile", shape="rectangle"]
+    Nathalie [label="Nathalie", shape="rectangle"]
+    Caroline [label="Caroline", shape="rectangle"]
+    Fatima [label="Fatima", shape="rectangle"]
+
+    /* Relationships */
+    PDG -> Marketing
+    PDG -> DRH
+    PDG -> RnD
+    PDG -> DSI
+
+    RnD -> Caroline
+    RnD -> Nathalie
+    RnD -> Bob
+
+    DSI -> Cecile
+    DSI -> Mohamed
+    DSI -> Isabelle
+
+    DRH -> Robert
+    DRH -> Beatrice
+
+    Marketing -> Joe
+    Marketing -> Fatima
+
+    /* Ranks */
+    { rank=same; };
+}

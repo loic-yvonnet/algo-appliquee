@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -61,7 +66,7 @@ Nous allons voir dans ce cours en quoi les fonctions sont importantes et comment
  
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Procédures : définition et appel
 
@@ -239,7 +244,7 @@ Une procédure possède son propre contexte d'exécution.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Arguments
 
@@ -376,7 +381,7 @@ On doit utiliser un autre langage de programmation car le Python ne supporte pas
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Valeurs par défaut
 
@@ -481,7 +486,7 @@ Un argument sans valeur par défaut ne peut pas succéder à un argument avec un
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Variables locales et globales
 
@@ -635,7 +640,7 @@ On doit informer explicitement que l'on souhaite réutiliser la variable a du co
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Fonctions
 
@@ -852,7 +857,7 @@ Nous verrons d'autres exemples plus loin dans ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Spécifications et contrat
 
@@ -982,7 +987,7 @@ On peut utiliser la même commande pour obtenir les docstring que l'on a défini
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TD : Fonctions géométriques simples
 
@@ -994,7 +999,7 @@ On peut utiliser la même commande pour obtenir les docstring que l'on a défini
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Nombre variable d'arguments
 
@@ -1169,7 +1174,7 @@ Cette syntaxe deviendra plus claire lorsque nous parlerons des dictionnaires lor
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Retour de plusieurs résultats
 
@@ -1264,7 +1269,7 @@ un : 1 ; deux : 2 ; nombre d'autres : 7
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Un mot sur la récursivité
 
@@ -1493,7 +1498,7 @@ Ce type de problème s'appelle : stack overflow (surchage de pile d'appels).
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Fonctions d'ordre supérieur
 
@@ -1708,7 +1713,7 @@ f(3) = 6
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Fonctions lambda
 
@@ -1825,7 +1830,7 @@ f(3) = 7.0
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> TP : Fonctions d'ordre supérieur
 
@@ -1837,7 +1842,7 @@ f(3) = 7.0
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 ### Programmation impérative
 ##### :vs:
@@ -1937,7 +1942,7 @@ Les langages fonctionnels sont extrêmement intéressants mais certains cas d'us
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Un mot sur les méthodes
 
@@ -1988,7 +1993,7 @@ Bonjour, monde
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 02
 

@@ -1,0 +1,24 @@
+digraph G {
+    bgcolor="transparent";
+
+    /* Entities */
+    C [label="C", shape="circle"];
+    D [label="D", shape="circle"];
+    E [label="E", shape="circle"];
+    F [label="F", shape="circle"];
+
+    /* Relationships */
+    C -> D [label="c"];
+    
+    D -> C [label="h"];
+    D -> E [label="d"];
+    D -> F [label="e"];
+
+    E -> E [label="f"];
+    E -> F [label="i"];
+
+    F -> C [label="g"];
+
+    /* Ranks */
+    { rank=same; };
+}

@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -49,7 +54,7 @@ Branchez vos neurones et c'est parti !
 - Notation $O(...)$
 - Classes de complexité
 - Comparaison des classes de complexité
-- Limites de l'étude de complexité
+- Limites de l'étude de la complexité
 - Approche pragmatique
 - Discussion concernant la parallélisation
 - Discussion sur la distribution
@@ -58,7 +63,7 @@ Branchez vos neurones et c'est parti !
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Correction du travail à la maison
 
@@ -70,7 +75,7 @@ Branchez vos neurones et c'est parti !
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Intuition sur la complexité
 
@@ -109,7 +114,7 @@ Cela signifie que l'on s'appuie sur la puissance de la machine plutôt que sur s
 # Approximation
 
 * Combien de temps va prendre mon programme ?
-* Objectif : **comparer** les algorithmes **indépendemment d'une machine**.
+* Objectif : **comparer** les algorithmes **indépendamment d'une machine**.
 * La comparaison ne doit pas se baser sur des mesures.
 * Approximation : **compter le nombre d'instructions**.
 
@@ -145,8 +150,8 @@ def recherche(liste, x):
     return False
 ```
 
-Si la taille de la liste est de 10 éléments on aura au maximum 10 comparaisons.
-Si la taille de la liste est de 1 000 000 éléments on aura au maximum 1 000 000 comparaisons.
+Si la taille de la liste est de 10 éléments, on aura au maximum 10 comparaisons.
+Si la taille de la liste est de 1 000 000 éléments, on aura au maximum 1 000 000 comparaisons.
 
 ---
 
@@ -206,7 +211,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Réflexion sur la complexité temporelle et spatiale
 
@@ -214,7 +219,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 # Complexité temporelle
 
-* C'est le type de complexité algorithmique que nous avons discuté jusqu'à présent.
+* C'est le type de complexité algorithmique dont nous avons discuté jusqu'à présent.
 * On s'attache à évaluer le temps d'exécution sur une machine théorique.
 
 ---
@@ -233,7 +238,7 @@ Nous n'étudierons pas l'algorithme de Strassen dans ce cours, mais on peut ress
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Notation $O(...)$
 
@@ -316,11 +321,11 @@ On y ajoute l'initialisation de y à la première ligne du corps de la fonction 
 
 ---
 
-# Notation Grand O (1/2)
+# Notation Grand $O$ (1/2)
 
 * On l'appelle **notation de Landau**.
 * Il s'agit de la **notation la plus utilisée** en algorithmique pour comparer des algorithmes.
-* Cette notation se lit : **Grand O de [...]**.
+* Cette notation se lit : **Grand $O$ de [...]**.
 * On l'appelle également **ordre de grandeur**, ou ordre de croissance.
 
 <!--
@@ -330,23 +335,23 @@ Il décède en 1938.
 
 ---
 
-# Notation Grand O (2/2)
+# Notation Grand $O$ (2/2)
 
 * Soit $f(n)$ et $g(n)$ deux suites positives indexées sur $\mathbb{N}$.
-* On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n).
+* On dit que $g = O(f)$ s'il existe $n_0$ et $C > 0$ tels que pour tout $n > n_0$, on a $g(n) \le C f(n)$.
 * Autrement dit, $g$ est dominé par $f$ à partir d'un certain rang.
 
 
 ---
 
-# Exemples avec $\thicksim$ et O
+# Exemples avec $\thicksim$ et $O$
 
-| Fonction          | Approximation $\thicksim$ |       Grand O     |
+| Fonction          | Approximation $\thicksim$ |       Grand $O$   |
 |-------------------|:-------------------------:|:-----------------:|
-| $2N^2 + N + 100$  |      $\thicksim 2N^2$     |       O($N^2$)    |
-| $3N^3 + 3N + 3$   |     $\thicksim 3N^3$      |       O($N^3$)    |
-| $\log(N) + 10$    |    $\thicksim \log(N)$    |     O($\log(N)$)  |
-| $300$             |      $\thicksim 300$      |         O(1)      |
+| $2N^2 + N + 100$  |      $\thicksim 2N^2$     |       $O(N^2)$    |
+| $3N^3 + 3N + 3$   |     $\thicksim 3N^3$      |       $O(N^3)$    |
+| $\log(N) + 10$    |    $\thicksim \log(N)$    |     $O(\log(N))$  |
+| $300$             |      $\thicksim 300$      |         $O(1)$    |
 
 ---
 
@@ -354,9 +359,9 @@ Il décède en 1938.
 
 * On dit que $g = o(f)$ si pour tout $\varepsilon > 0$, il existe $n_{\varepsilon}$ tel que si $n > n_{\varepsilon}$, alors $g(n) \le \varepsilon f(n)$.
 * Cette notation se lit : **g est un petit o de f**.
-* Autrement dit, g est négligable devant f.
+* Autrement dit, g est négligeable devant f.
 * Si $f(n) \ne 0$, alors $\lim\limits_{\infty} \frac{g}{f} = 0$.
-* C'est tout simplement l'**inverse de Grand O**.
+* C'est tout simplement l'**inverse de Grand $O$**.
 * Notation alternative : $g = o(f) \Longleftrightarrow g = \Omega(f)$.
 
 <!--
@@ -383,10 +388,10 @@ De la même manière, la notation asymptotique est peut-être plus utilisée en 
 
 # Comparaison
 
-|                  |  Approximation Tilde  |      Grand O     |    Grand Oméga   |  Grand Théta |
+|                  |  Approximation Tilde  |      Grand $O$   |    Grand Oméga   |  Grand Théta |
 |------------------|:---------------------:|:----------------:|:----------------:|:------------:|
-| Notation algo    |      $\thicksim$      |         O        |     $\Omega$     |   $\Theta$   |
-| Notation maths   |      $\thicksim$      |         O        |          o       |   $\asymp$   |
+| Notation algo    |      $\thicksim$      |        $O$       |     $\Omega$     |   $\Theta$   |
+| Notation maths   |      $\thicksim$      |        $O$       |          o       |   $\asymp$   |
 | Définition       | Asymptotiquement égal | Borne supérieure | Borne inférieure | Borne serrée |
 | Utilité pratique |       Très rare       |  **Très élevée** |     Très rare    |    Elevée    |
 
@@ -394,7 +399,7 @@ De la même manière, la notation asymptotique est peut-être plus utilisée en 
 
 # Abus de langage fréquent
 
-On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et place de Grand $\Theta$.
+On utilise si souvent la notation Grand $O$ qu'on l'utilise parfois en lieu et place de Grand $\Theta$.
 
 ---
 
@@ -415,13 +420,13 @@ On utilise si souvent la notation Grand O qu'on l'utilise parfois en lieu et pla
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Classes de complexité
 
 ---
 
-# Résumé
+### Résumé
 
 * $O(1)$ désigne une complexité **constante**.
 * $O(\log N)$ désigne une complexité **logarithmique**.
@@ -650,7 +655,7 @@ def fibonacci(N):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Comparaison des classes de complexité
 
@@ -736,7 +741,7 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TD : Evaluation de compléxité
 
@@ -748,7 +753,7 @@ Si on doit exécuter ce programme un nombre de fois proportionnel à l'une des c
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Limites de l'étude de complexité
 
@@ -770,7 +775,7 @@ Un algorithme quadratique restera plus lent en exécution qu'un algorithme liné
 # Exemples
     
 * **Prédiction de branche** : un CPU peut prédire statistiquement quel code devra être exécuté, et l'exécuter en avance.
-* **Hiérarchie de mémoires** : certains algorithmes compactes en mémoire permettent d'utiliser efficacement les hiérarchies de cache et de pagination.
+* **Hiérarchie de mémoires** : certains algorithmes compacts en mémoire permettent d'utiliser efficacement les hiérarchies de cache et de pagination.
 * **Appels systèmes** : par exemple, les allocations mémoires peuvent avoir des impacts importants.
 
 ---
@@ -831,7 +836,7 @@ En effet, dans la notation O, on s'intéresse au final uniquement au nombre de f
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Approche pragmatique
 
@@ -853,7 +858,7 @@ De même, tout le monde fait des mesures pour vérifier ses hypothèses.
 
 ---
 
-# Rappel sur `time`
+## Rappel sur `time`
 
 ```python
 import time
@@ -873,7 +878,7 @@ print(f"Temps d'exécution : {temps_ecoule}s")
 
 ---
 
-# Même chose avec `datetime`
+### Même chose avec `datetime`
 
 ```python
 from datetime import datetime
@@ -896,7 +901,7 @@ print(f"Temps d'exécution : {temps_ecoule.total_seconds()}s")
 # Problèmes
 
 * Les mesures avec `time` et `datetime` ne sont **pas indépendantes**.
-* Ces mesures sont fortement impactées par les autres processus exécuté par la machine au même moment.
+* Ces mesures sont fortement impactées par les autres processus exécutés par la machine au même moment.
 
 ---
 
@@ -925,7 +930,7 @@ timeit(test, number=1)
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion concernant la parallélisation
 
@@ -993,7 +998,7 @@ La classe de complexité reste, de loin, le facteur le plus important.
 
 # Loi d'Amdahl
 
-Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0 ; 1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl défini la fonction $f$ d'**accélération théorique maximale** :
+Pour tout $s \in \mathbb{N}$ représentant le nombre de coeurs exploitables, et $p \in [0 ; 1]$ le pourcentage de temps d'exécution passé dans le code parallélisable *avant* la parallélisation, la loi d'Amdahl définit la fonction $f$ d'**accélération théorique maximale** :
 
 $$
 f(s, p) = \frac{1}{1 - p + \frac{p}{s}}
@@ -1042,7 +1047,7 @@ Nos smartphones actuels sont plus puissants que les supercalculateurs des année
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur la distribution de calcul
 
@@ -1053,15 +1058,15 @@ Nos smartphones actuels sont plus puissants que les supercalculateurs des année
 # Noeuds de calcul
 
 * La parallélisation sur le CPU et GPU d'une machine se fait **localement**.
-* Il est possible de **distribuer** un calcul sur un **cluster de machines** mis en réseau.
-* Chaque machine s'appelle dans ce contexte un **noeud de calcul**.
+* Il est possible de **distribuer** un calcul sur un **cluster de machines** mises en réseau.
+* Chaque machine s'appelle, dans ce contexte, un **noeud de calcul**.
 
 ---
 
 # <!--fit--> On-Premise ou dans le Cloud
 
-* **On-Premise** : exécution dans un cluster appartenant à l'entité (entreprise/personne) effectuant le calcul.
-* **Cloud Computing** : exécution dans un cluster localisé dans un datacenter appartement à un fournisseur tiers.
+* **On-Premise** :uk: : exécution dans un cluster appartenant à l'entité (entreprise/personne) effectuant le calcul.
+* **Cloud Computing** :uk: : exécution dans un cluster localisé dans un datacenter appartenant à un fournisseur tiers.
 
 <!--
 Quelques acteurs du Cloud en 2021 : Heroku, Google, AWS.
@@ -1069,12 +1074,12 @@ Quelques acteurs du Cloud en 2021 : Heroku, Google, AWS.
 
 ---
 
-# Avantages
+### Avantages
 
 * Le **coût** :
     * Un supercalculateur est généralement trop onéreux.
     * Mettre en réseau des ordinateurs du marché est généralement moins coûteux.
-    * **Location** de noeuds de calcul dans le Cloud et de payer **à l'usage**.
+    * Possibilité de **location** de noeuds de calcul dans le Cloud et de payer **à l'usage**.
 * L'**évolutivité horizontale** (scalability :uk:) : On peut facilement augmenter les capacités de calcul en rajoutant simplement une machine supplémentaire.
 
 <!--
@@ -1122,7 +1127,7 @@ Etc.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Problèmes NP-complet
 
@@ -1185,12 +1190,12 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 * Il existe certains problèmes pour lesquels **on n'a aujourd'hui pas de meilleure solution** que :
     * un algorithme exponentiel,
-    * une solution en force brute consistant à explorer tout l'espace de solution (quant il est fini).
+    * une solution en force brute consistant à explorer tout l'espace de solution (quand il est fini).
 * **On n'est pas encore capable de prouver l'existence, ou non, de meilleures solutions**.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Discussion sur les machines quantiques
 
@@ -1198,11 +1203,11 @@ L'idée de Non-Déterminisme vient du fait qu'introduire un caractère aléatoir
 
 ---
 
-# Machine de Turing déterministe
+### Machine de Turing déterministe
 
 * Sur nos machines actuelles, un bit a pour valeur 0 ou 1.
 * Un octet est codé sur 8 bits.
-* Un octet peut donc prendre des valeurs entre $[0 ; 2^8-1]$, soit $[O ; 255]$.
+* Un octet peut donc prendre des valeurs entre $[0 ; 2^8-1]$, soit $[0 ; 255]$.
 * Les opérations principales sur un bit sont celles de la logique Booléenne : AND, OR, XOR, NOT, SHIFT.
 
 <!--
@@ -1233,9 +1238,7 @@ On appelle le fait d'être potentiellement dans 2 états en même temps la "supe
 
 ---
 
-# Bit quantique (1/2)
-
-##### Qubit
+### Bit quantique - Qubit (1/2)
 
 * Un bit quantique est représenté par un vecteur $(p, q)$.
 * $p$ est la probabilité pour que le bit soit égal à 0.
@@ -1250,17 +1253,13 @@ Les opérations les plus intéressantes ont lieu dans cet état superposé.
 
 ---
 
-<!-- _class: smaller-text -->
-
-# Bit quantique (2/2)
-
-##### Qubit
+### Bit quantique - Qubit (2/2)
 
 * On a : $p + q = 1$, puisque soit $p$, soit $q$ est vérifié.
 * On pose le vecteur d'amplitudes $(\alpha, \beta)$ tel que $p = \alpha^2, q = \beta^2$.
 * On a donc $\alpha^2 + \beta^2 = 1$.
-* On peut donc l'espace d'amplitude sur un cercle trigonométrique.
-* Les opérations principale sur un bit quantique sont : rotation, symmétrie, porte d'Hadamar, etc.
+* On peut donc représenter l'espace d'amplitude sur un cercle trigonométrique.
+* Les opérations principales sur un bit quantique sont : rotation, symmétrie, porte d'Hadamar, etc.
 
 <!--
 Le vecteur (p, q) est dans un espace de probabilité.
@@ -1283,14 +1282,14 @@ Voir les références du cours pour aller plus loin.
 
 * Il existe déjà près d'**une centaine d'algorithmes quantiques**.
 * Les applications possibles sont variées : cryptographie, apprentissage par machine, calcul scientifique.
-* La recherche sur le sujet est très actif.
+* La recherche sur le sujet est très active.
 
 ---
 
 # Etat de l'art (2/3)
 
 * Les machines quantiques actuelles :
-    * coûtent **très chers**,
+    * coûtent **très cher**,
     * ne comportent que **quelques qubits**,
     * **ne permettent pas d'exécuter** la plupart des algorithmes quantiques.
 
@@ -1303,7 +1302,7 @@ Voir les références du cours pour aller plus loin.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Benchmark et complexité
 

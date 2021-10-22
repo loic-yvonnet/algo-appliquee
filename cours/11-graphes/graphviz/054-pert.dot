@@ -1,0 +1,60 @@
+digraph G {
+    bgcolor="transparent";
+    rankdir="LR";
+    splines="False";
+
+    /* Entities */
+    debut [label="début", shape="circle"];
+    fin [label="fin", shape="circle"];
+    s0 [label=" ", shape="circle"];
+    s1 [label=" ", shape="circle"];
+    s2 [label=" ", shape="circle"];
+    s4 [label=" ", shape="circle"];
+    s5 [label=" ", shape="circle"];
+    s6 [label=" ", shape="circle"];
+    s7 [label=" ", shape="circle"];
+    s8 [label=" ", shape="circle"];
+    s9 [label=" ", shape="circle"];
+    s10 [label=" ", shape="circle"];
+    s11 [label=" ", shape="circle"];
+    s12 [label=" ", shape="circle"];
+    s13 [label=" ", shape="circle"];
+    s14 [label=" ", shape="circle"];
+
+    /* Relationships */
+    debut -> s0 [color="grey"];
+    debut -> s1 [color="grey"];
+    debut -> s2 [color="grey"];
+    debut -> s11 [color="grey"];
+
+    s0 -> s4 [label="Architecturer Solution : 2"];
+
+
+    s1 -> s5 [label="Configurer Serveurs : 1"];
+
+    s2 -> s6 [label="Configurer BD : 3"];
+
+    s4 -> s7 [color="grey"];
+
+    s4 -> s8 [color="grey"];
+    s5 -> s8 [color="grey"];
+    s6 -> s8 [color="grey"];
+
+    s7 -> s9 [label="Coder Front End : 5"];
+
+    s8 -> s10 [label="Coder Backend : 7"];
+
+    s11 -> s12 [label="Plan de Tests : 2"];
+
+    s9 -> s13 [color="grey"];
+    s10 -> s13 [color="grey"];
+    s12 -> s13 [color="grey"];
+
+    s13 -> s14 [label="Tests : 3"];
+
+    s14 -> fin [color="grey"];
+
+    /* Ranks */
+    { rank=same; s0, s1, s2, s11 };
+    { rank=same; s9, s10, s12 };
+}

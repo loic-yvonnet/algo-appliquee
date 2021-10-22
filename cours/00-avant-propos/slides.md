@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 # <!--fit--> Algorithmique Appliquée
 
@@ -55,7 +60,7 @@ On terminera par quelques conseils pour réussir au mieux.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tour de table
 
@@ -95,7 +100,7 @@ Au passage, demander d'écrire leur nom sur une étiquette.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Evaluation initiale
 
@@ -116,7 +121,7 @@ Une version PDF imprimée du sujet sera distribuée.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Organisation du cours
 
@@ -187,7 +192,7 @@ Ces horaires de base sont donnés à titre indicatif. Les seuls horaires stricts
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Evaluation du cours
 
@@ -256,11 +261,27 @@ Encore une fois, c'est la première année que ce cours est donné, et certains 
 
 * A l'issue de chaque journée de formation, il y aura un DM à rendre.
 * Les DMs devront être rendus et seront évalués.
-* L'évaluation des DMs sera prise en compte dans le dossier.
+* Il y aura un DS final durant la dernière demie-journée de formation.
+* L'évaluation des DMs et du DS sera prise en compte dans le dossier.
+* Les DMs sont coefficient 1, et le DS est coefficient 2.
 
 ---
 
-<!-- _class: title-section -->
+### Règles concernant les DMs
+
+* Les DMs doivent être rendus au plus tard en début de matinée, le jour indiqué sur NetYParéo.
+* Toute journée de retard est pénalisée par 5 points en moins.
+* Il s'agit d'un travail individuel.
+* Si des similitudes sont découvertes entre les exercices rendus de plusieurs étudiants, la note sera divisée par le nombre d'étudiants ayant la même réponse.
+
+<!--
+L'évaluation de ce qui constitue la similarité des réponses est discrétionnaire.
+Elle est basée à la fois sur des outils de comparaison/fusion de code (git merge, kdiff3, etc.), et sur l'expérience propre du correcteur.
+-->
+
+---
+
+<!-- _class: title-header -->
 
 # <!--fit--> Conseils
 

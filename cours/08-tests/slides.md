@@ -12,11 +12,16 @@ paginate: true
 _paginate: false
 style: |
   section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_normal.jpg");
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_normal.jpg");
   }
 
-  section.title-section {
-    background-image: url("https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/bg_title.jpg");
+  section.title-title {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_title.jpg");
+    color: #fff;
+  }
+
+  section.title-header {
+    background-image: url("https://loic-yvonnet.github.io/algo-appliquee/assets/bg_header.jpg");
     color: #fff;
   }
 
@@ -25,7 +30,7 @@ style: |
   }
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-title -->
 
 
 # <!--fit--> Algorithmique Appliquée
@@ -61,7 +66,7 @@ Dans ce cours, on va aborder 2 points importants et complémentaires :
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Gestion d'erreurs avec des codes de retour
 
@@ -297,7 +302,7 @@ Par conséquent, l'approche vue dans ces dernières diapositives peut continuer 
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Notion d'exception
 
@@ -522,7 +527,7 @@ On passe ici
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Gestion d'exceptions et classes d'exception
 
@@ -530,7 +535,7 @@ On passe ici
 
 # Levée d'exception
 
-* On est possible de **lever explicitement** des exceptions.
+* Il est possible de **lever explicitement** des exceptions.
 * Cela permet de stopper le flot de contrôle pour rentrer dans un mode de gestion d'erreur.
 * La pile d'appels de fonction est déroulée (*unwind* :uk:) jusqu'à trouver un `except` adapté.
 
@@ -742,7 +747,7 @@ Trop vert : Vert en dehors de [0 ; 255]
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Invariants
 
@@ -780,7 +785,7 @@ Trop vert : Vert en dehors de [0 ; 255]
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Programmation offensive et défensive
 
@@ -877,7 +882,7 @@ Par ailleurs, le code devient plus difficile à lire et à comprendre.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Assertions
 
@@ -948,7 +953,7 @@ Si l'expression est Vraie, le flot de contrôle continue.
 
 # Intérêts
 
-* Les assertions peuvent être utilisés dans la **programmation défensive**.
+* Les assertions peuvent être utilisées dans la **programmation défensive**.
 * Elles peuvent également être utilisées dans le cadre de **tests unitaires**.
 
 <!--
@@ -957,7 +962,7 @@ Les prochaines parties de ce cours vont introduire le concept de tests unitaires
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Exceptions dans une calculatrice
 
@@ -971,7 +976,7 @@ Les prochaines parties de ce cours vont introduire le concept de tests unitaires
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests en boîte opaque
 
@@ -1112,7 +1117,7 @@ Il consomme donc un temps très important.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests en boîte transparente
 
@@ -1122,7 +1127,7 @@ Il consomme donc un temps très important.
 
 * Certains bugs sont cachés dans le code.
 * Pour le trouver, il faut regarder le code.
-* Avec la connaissance dece code, on sait que l'on doit tester la valeur 424242 :
+* Avec la connaissance de ce code, on sait que l'on doit tester la valeur 424242 :
 
 ```python
 def min(a, b):
@@ -1135,7 +1140,7 @@ def min(a, b):
 
 ## Chemins d'exécution
 
-* On cherche à empreinter chaque **chemin d'exécution** possible.
+* On cherche à emprunter chaque **chemin d'exécution** possible.
 * On souhaite passer dans chaque branche de chaque condition.
 * On souhaite rentrer dans chaque exception.
 * On souhaite rentrer dans chaque boucle.
@@ -1174,7 +1179,7 @@ while len(L) > 0 and (L[i] == "ok" or est_vrai):
 
 ---
 
-## couverture de code
+## Couverture de code
 
 * La couverture de code est le pourcentage de lignes de code couvertes par les tests sur le nombre de lignes de code totales du programme.
 * C'est un **indicateur** de la qualité logicielle.
@@ -1183,7 +1188,7 @@ while len(L) > 0 and (L[i] == "ok" or est_vrai):
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Automatisation des tests
 
@@ -1210,7 +1215,7 @@ while len(L) > 0 and (L[i] == "ok" or est_vrai):
 # Fonctionnement
 
 * L'environnement d'exécution se lance (via potentiellement de la virtualisation).
-* Le programmes de test sont invoqués avec un jeu de données prédéfini et/ou généré aléatoirement.
+* Le programmes de test sont invoqués avec un jeu de données prédéfinies et/ou générées aléatoirement.
 * Le résultat des invocations est sauvegardé.
 * L'acceptabilité des résultats est vérifié.
 * Un rapport de test est généré.
@@ -1233,9 +1238,7 @@ Les tests exploratoires se font manuellement. Les tests manuels ne devraient pas
 
 ---
 
----
-
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Tests unitaires
 
@@ -1283,7 +1286,7 @@ Retenez simplement que des outils existent pour conserver l'indépendance des te
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (1/6)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1302,7 +1305,7 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (2/6)
 
 ```python
 def test_racine_carree_25():
@@ -1320,7 +1323,7 @@ def test_racine_carree_25():
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (3/6)
 
 ```python
 def test_racine_carree_25_grand_epsilon():
@@ -1338,7 +1341,7 @@ def test_racine_carree_25_grand_epsilon():
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (4/6)
 
 ```python
 def test_racine_carree_0():
@@ -1356,7 +1359,7 @@ def test_racine_carree_0():
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (5/6)
 
 ```python
 def test_racine_carree_1():
@@ -1374,7 +1377,7 @@ def test_racine_carree_1():
 
 ---
 
-### Exemple : tests unitaires pour la racine carrée
+### <!--fit--> Exemple : tests unitaires pour la racine carrée (6/6)
 
 ```python
 def test_racine_carree_negatif():
@@ -1401,7 +1404,7 @@ def test_racine_carree_negatif():
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # <!--fit--> Tests pilotant le développement 
 
@@ -1432,7 +1435,7 @@ Le TDD est une méthodologie qui permet d'éviter de finir avec une base de code
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (1/10)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1442,7 +1445,7 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (2/10)
 
 ```python
 def test_racine_carree_25():
@@ -1460,7 +1463,7 @@ def test_racine_carree_25():
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (3/10)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1470,7 +1473,7 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (4/10)
 
 ```python
 def test_racine_carree_25_grand_epsilon():
@@ -1492,7 +1495,7 @@ Cela fonction toujours !
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (5/10)
 
 ```python
 def test_racine_carree_0():
@@ -1510,7 +1513,7 @@ def test_racine_carree_0():
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (6/10)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1520,7 +1523,7 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (7/10)
 
 ```python
 def test_racine_carree_1():
@@ -1538,7 +1541,7 @@ def test_racine_carree_1():
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (8/10)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1553,7 +1556,7 @@ def racine_carree(x, epsilon=0.000001):
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (9/10)
 
 ```python
 def test_racine_carree_negatif():
@@ -1573,7 +1576,7 @@ def test_racine_carree_negatif():
 
 ---
 
-# Exemple de TDD avec la racine carrée
+### <!--fit--> Exemple de TDD avec la racine carrée (10/10)
 
 ```python
 def racine_carree(x, epsilon=0.000001):
@@ -1600,7 +1603,7 @@ Cela sort du cadre de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # TP : Ecriture de tests unitaires
 
@@ -1612,7 +1615,7 @@ Cela sort du cadre de ce cours.
 
 ---
 
-<!-- _class: title-section -->
+<!-- _class: title-header -->
 
 # Devoir à la Maison 04
 
