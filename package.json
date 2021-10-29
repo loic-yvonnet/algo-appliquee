@@ -85,7 +85,7 @@
     "@marp-team/marp-cli": "^1.4.1",
     "cpy-cli": "^3.1.1",
     "html-minifier": "^4.0.0",
-    "katex": "^0.13.18",
+    "katex": "^0.13.20",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
