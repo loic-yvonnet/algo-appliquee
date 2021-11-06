@@ -1092,7 +1092,7 @@ Ainsi, le bug en 0 ne serait jamais vu par le développeur (avant qu'un client n
 * **Biais psychologique** :
     * Un développeur a intérêt à dire que son programme fonctionne dans tous les cas.
     * Un testeur a intérêt à montrer qu'il trouve des bugs dans le code du développeur.
-* **Concurrence bénéfique** : cette concurrence entre développeur et testeur créé une émulation et booste les projets.
+* **Concurrence bénéfique** : cette concurrence entre développeur et testeur crée une émulation et booste les projets.
 
 <!--
 Le développeur doit respecter des délais de livraison et doit aller vite.
@@ -1161,7 +1161,7 @@ def min(a, b):
 
 - Il faut tester les mêmes cas qu'une boucle `for`.
 - Par ailleurs, il faut exercer toutes les conditions de fin de boucle.
-- Dans cet exemple, les 3 conditions de fin doivent être testées indépendemment.
+- Dans cet exemple, les 3 conditions de fin doivent être testées indépendamment.
 
 ```python
 while len(L) > 0 and (L[i] == "ok" or est_vrai):
@@ -1215,9 +1215,9 @@ while len(L) > 0 and (L[i] == "ok" or est_vrai):
 # Fonctionnement
 
 * L'environnement d'exécution se lance (via potentiellement de la virtualisation).
-* Le programmes de test sont invoqués avec un jeu de données prédéfinies et/ou générées aléatoirement.
+* Les programmes de test sont invoqués avec un jeu de données prédéfinies et/ou générées aléatoirement.
 * Le résultat des invocations est sauvegardé.
-* L'acceptabilité des résultats est vérifié.
+* L'acceptabilité des résultats est vérifiée.
 * Un rapport de test est généré.
 
 ---

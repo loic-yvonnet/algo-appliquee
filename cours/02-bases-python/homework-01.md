@@ -19,7 +19,7 @@ Vous devrez créer une archive `dm01.zip` contenant tous vos fichiers et l'envoy
 
 ## Exercice 1 - Déplacements circulaires automatisés <span class="fs-4 fw-lighter">(5 points)</span>
 
-On souhaite que la cycliste se déplace de manière rotative indépendemment des entrées utilisateurs :
+On souhaite que la cycliste se déplace de manière rotative indépendamment des entrées utilisateurs :
 * Rouvrez votre fichier de sauvegarde du TP 01, et enregistrez-le sous `dm01_exercice_1.sb3`.
 * Sélectionnez le sprite de cycliste nommé glamour en bas à droite.
 * Changez sa position initial pour qu'elle soit centrée.

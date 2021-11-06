@@ -316,7 +316,7 @@ En Python, tout est objet.
 ## La fonction principale (1/2)
 
 - Lorsque l'on exécute un script en ligne de commande, l'interpréteur assigne la chaîne de caractère `"__main__"` à la variable globale `__name__`.
-- Cela permet de distinguer le cas où un script est importé avec `import`, du cas où un script est exécuté indépendemment.
+- Cela permet de distinguer le cas où un script est importé avec `import`, du cas où un script est exécuté indépendamment.
 
 ---
 
@@ -367,7 +367,7 @@ La bibliothèqe standard de Python est riche et constitue l'une de ses grandes f
 ### Services offerts (2/4)
 
 * Système de fichiers.
-* Persistence dans une base de données.
+* Persistance dans une base de données.
 * Algorithmes de compression.
 * Algorithmes de cryptographie.
 * Services de gestion de système d'exploitation.
@@ -497,7 +497,7 @@ La bibliothèque de nombres complexes de Python utilise j à la place.
 
 <!-- _class : smaller-text -->
 
-#### SQLite - Exemple de persistence (1/2)
+#### SQLite - Exemple de persistance (1/2)
 
 ```python
 import sqlite3
@@ -530,7 +530,7 @@ Vous verrez en cours de méthodologie les détails sur cette syntaxe, qui s'appe
 
 <!-- _class : smaller-text -->
 
-#### SQLite - Exemple de persistence (2/2)
+#### SQLite - Exemple de persistance (2/2)
 
 ```python
 # Parcourt des personnages dans la BD
@@ -844,7 +844,7 @@ On peut voir comment l'interpréteur Python lit et représente en interne ce mor
 
 # Fichiers
 
-* Tous les principaux systèmes d'exploitation offre un **système de fichiers**.
+* Tous les principaux systèmes d'exploitation offrent un **système de fichiers**.
 * Cela permet de **sauvegarder** des données.
 * Python offre de nombreux services pour **manipuler les fichiers**.
 
@@ -996,7 +996,7 @@ with open("fichier.txt") as fichier:
 ### Gestionnaire de paquets
 
 * Les différentes bibliothèques sont distribuées sous forme de **paquets**.
-* L'**installation d'un paquet** permet l'utilisation de la biobliothèque.
+* L'**installation d'un paquet** permet l'utilisation de la bibliothèque.
 * On peut alors `import`er les modules de la bibliothèque tierce.
 * L'installation se fait via un **gestionnaire de paquets**.
 
