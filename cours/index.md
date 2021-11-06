@@ -64,3 +64,13 @@ Quelques exemples non-exhaustifs :
 * Les images et le logo d'Anjou Vélo Vintage.
 * Le plan du centre de Saumur en 1814.
 * Les images issues de Wikipedia et Wikimedia.
+
+### Remerciements
+
+Merci à :
+* Mr MOREAU Philippe et l'équipe pédagogique de la CCI de Saumur pour leur confiance.
+* Mme MANNESSIER Cindy pour ses relectures.
+
+### RGPD
+
+Aucune donnée n'est collectée sur ce site.
