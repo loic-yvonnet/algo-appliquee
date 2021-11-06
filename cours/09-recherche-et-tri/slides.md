@@ -1489,7 +1489,7 @@ Sur des étapes plus avancées, on voit également se former puis résoudre les 
 ### Complexité
 
 * On a $\thicksim 2 N \log N$ comparaisons en moyenne.
-* On a $\thicksim \frac{N^2}{N}$ comparaisons dans le pire cas.
+* On a $\thicksim \frac{N^2}{2}$ comparaisons dans le pire cas.
 * Comme on peut facilement se prévenir du pire cas, on admet $O(N \log N)$ en pratique.
 
 <!--
@@ -1720,7 +1720,7 @@ Même si le principe entre ces 2 algorithmes repose sur des fondements similaire
 * Autrement dit, existe-t-il un algorithme ayant une meilleure complexité que $O(N \log N)$ pour trier une collection ?
 * **Non**, il est possible de prouver que **la meilleure complexité** pour le tri est $O(N \log N)$.
 * En revanche, les implémentations peuvent recevoir de **petites améliorations**.
-* Par exemple, il existe possible de **paralléliser** tri rapide ou tri fusion.
+* Par exemple, il est possible de **paralléliser** tri rapide ou tri fusion.
 
 ---
 
