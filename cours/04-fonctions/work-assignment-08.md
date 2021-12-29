@@ -117,8 +117,8 @@ On peut calculer le cosinus de `x` à l'aide d'une série infinie :
 
 $$
 \begin{aligned}
-\cos x & = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[6mu]
-       & = \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
+\cos x &= 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \cdots \\[1em]
+       &= \sum_{n=0}^\infty \frac{(-1)^n x^{2n}}{(2n)!}
 \end{aligned}
 $$
 
@@ -264,33 +264,33 @@ y_2 \\
 z_2
 \end{pmatrix}
 ,
-PS & = \overrightarrow{V_1} \cdot \overrightarrow{V_2} \\[6mu]
-   & = \frac{1}{2} \left( 
+PS &= \overrightarrow{V_1} \cdot \overrightarrow{V_2} \\[1em]
+   &= \frac{1}{2} \left( 
             \left| \overrightarrow{V_1} + \overrightarrow{V_2} \right|^2 
           - \left| \overrightarrow{V_1} \right|^2 
           - \left| \overrightarrow{V_2} \right|^2  
-       \right) \\[6mu]
-   & = \frac{1}{2} \left(
+       \right) \\[1em]
+   &= \frac{1}{2} \left(
             \left( \sqrt{(x_1 + x_2)^2 + (y_1 + y_2)^2 + (z_1 + z_2)^2}^2 \right)
           - \left( \sqrt{x_1^2 + y_1^2 + z_1^2}^2 \right)
           - \left( \sqrt{x_2^2 + y_2^2 + z_2^2}^2 \right)
-        \right) \\[6mu]
-   & = \frac{1}{2} \left(
+        \right) \\[1em]
+   &= \frac{1}{2} \left(
             \left( (x_1 + x_2)^2 + (y_1 + y_2)^2 + (z_1 + z_2)^2 \right)
           - \left( x_1^2 + y_1^2 + z_1^2 \right)
           - \left( x_2^2 + y_2^2 + z_2^2 \right)
-        \right) \\[6mu]
-   & = \frac{1}{2} \left(
+        \right) \\[1em]
+   &= \frac{1}{2} \left(
             (x_1 + x_2)^2 + (y_1 + y_2)^2 + (z_1 + z_2)^2
           - x_1^2 - y_1^2 - z_1^2
           - x_2^2 - y_2^2 - z_2^2
-        \right) \\[6mu]
-   & = \frac{1}{2} \left(
+        \right) \\[1em]
+   &= \frac{1}{2} \left(
             2 x_1 x_2
           + 2 y_1 y_2
           + 2 z_1 z_2
-        \right) \\[6mu]
-   & = x_1 x_2 + y_1 y_2 + z_1 z_2
+        \right) \\[1em]
+   &= x_1 x_2 + y_1 y_2 + z_1 z_2
 \end{aligned}
 $$
 
@@ -326,8 +326,8 @@ y_2 \\
 z_2
 \end{pmatrix}
 ,
-PV & = \overrightarrow{V_1} \wedge \overrightarrow{V_2} \\[6mu]
-   & = \begin{pmatrix}
+PV &= \overrightarrow{V_1} \wedge \overrightarrow{V_2} \\[1em]
+   &= \begin{pmatrix}
             y_1 z_2 - z_1 y_2 \\
             z_1 x_2 - x_1 z_2 \\
             x_1 y_2 - y_1 x_2
@@ -487,12 +487,12 @@ On obtient donc directement la distance :
 $$
 \begin{aligned}
 \overrightarrow{OK} \cdot \overrightarrow{OC} 
-    & = \left| \overrightarrow{OK} \right| \times \left| \overrightarrow{OH} \right| \\[6mu]
+    &= \left| \overrightarrow{OK} \right| \times \left| \overrightarrow{OH} \right| \\[1em]
 \vec{k} \cdot \overrightarrow{OC_S}
-    & = \left| \vec{k} \right| \times \left| \overrightarrow{OH} \right| \\[6mu]
+    &= \left| \vec{k} \right| \times \left| \overrightarrow{OH} \right| \\[1em]
 \vec{k} \cdot \overrightarrow{AC_S}
-    & = 1 \times \left| \overrightarrow{OH} \right| \\[6mu]
-\left| \overrightarrow{OH} \right| & = \vec{k} \cdot \overrightarrow{AC_S}
+    &= 1 \times \left| \overrightarrow{OH} \right| \\[1em]
+\left| \overrightarrow{OH} \right| &= \vec{k} \cdot \overrightarrow{AC_S}
 \end{aligned}
 $$
 
