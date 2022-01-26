@@ -30,6 +30,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Check versions of Ubuntu and npm (some versions have issues)
+        run: |
+          uname -a
+          npm --version
+
       - name: Remove macOS-specific requirement from package dependencies
         run: |
           grep -v "\"fsevents\": \"" ./package-lock.json > ./tmp_json
