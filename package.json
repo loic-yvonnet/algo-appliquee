@@ -89,6 +89,6 @@
     "rimraf": "^3.0.2"
   },
   "dependencies": {
-    "@marp-team/marpit": "^2.2.1"
+    "@marp-team/marpit": "^2.2.2"
   }
 }
