@@ -81,6 +81,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.2.2",
+    "@babel/helper-compilation-targets": "^7.16.7",
     "@iktakahiro/markdown-it-katex": "^4.0.1",
     "@marp-team/marp-cli": "^1.5.2",
     "@marp-team/marpit": "^2.2.2",
