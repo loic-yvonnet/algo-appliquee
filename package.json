@@ -88,5 +88,8 @@
     "html-minifier": "^4.0.0",
     "katex": "^0.15.2",
     "rimraf": "^3.0.2"
+  },
+  "exports": {
+    "./package.json": "./package.json"
   }
 }
