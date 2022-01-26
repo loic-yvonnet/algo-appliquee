@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
 
@@ -32,7 +32,10 @@ jobs:
 
       - name: Check versions of Ubuntu and npm (some versions have issues)
         run: |
+          echo "OS version:"
           uname -a
+          lsb_release -a
+          echo "npm version:"
           npm --version
 
       - name: Remove macOS-specific requirement from package dependencies
