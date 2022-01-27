@@ -1,0 +1,129 @@
+body {
+    font-size: .875rem;
+}
+
+main {
+    background-color: white;
+}
+
+.feather {
+    width: 16px;
+    height: 16px;
+    vertical-align: text-bottom;
+}
+
+/**
+ * Sidebar
+ */
+
+.sidebar {
+    z-index: 100;
+    padding: 0;
+    box-shadow: inset -1px -1px 0 rgba(0, 0, 0, .1);
+    font-size: 0.625rem;
+}
+
+.sidebar .nav-link {
+    font-weight: 500;
+    color: #333;
+}
+
+.sidebar .nav-link .feather {
+    margin-right: 4px;
+    color: #727272;
+}
+
+.sidebar .nav-link.active {
+    color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather, .sidebar .nav-link.active .feather {
+    color: inherit;
+}
+
+.sidebar-heading {
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+/**
+ * Navbar
+ */
+
+.navbar-brand {
+    font-size: .75rem;
+}
+
+.navbar .navbar-toggler {
+    top: .25rem;
+    right: 1rem;
+}
+
+.navbar .form-control {
+    padding: .75rem 1rem;
+    border-width: 0;
+    border-radius: 0;
+}
+
+@media (min-width:991.98px) {
+    #sidebarMenu {
+        position: sticky;
+        display: block;
+        top: 40px;
+        padding-top: 20px;
+        bottom: auto;
+        height: calc(100vh - 40px);
+        width: 300px;
+        overflow: auto;
+    }
+
+    #mainContent {
+        max-width: calc(100% - 300px);
+    }
+
+    .mainFooter {
+        padding-left: calc(300px + 1.5rem);
+    }
+}
+
+/**
+ * iFrame
+ */
+iframe {
+    width: 100%;
+    height: 60vh;
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+/**
+ * Images and titles
+ */
+
+main img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
+main img.inline {
+    display: inline;
+}
+
+main h2, main h3, main h4, main h5, main h6 {
+    padding-top: 0.7rem;
+}
+
+main {
+    padding-bottom: 3rem;
+}
+
+/**
+ * KaTeX CSS fix (from https://katex.org/docs/issues.html)
+ * The aim is to allow vertical scrolling of equations (especially on mobile)
+ * Safari mobile does not take it into account without !important
+ */
+.katex-display {
+     overflow: auto hidden !important;
+}
