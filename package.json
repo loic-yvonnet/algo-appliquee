@@ -7,8 +7,8 @@
   "scripts": {
     "build_site": "eleventy",
     "build_all_but_pdf": "npm run -s clean && npm run -s build_site && npm run -s all_dia  && npm run -s all_dia_bare && npm run -s all_dia_img",
-    "prepare_dev_env": "cpy includes/layouts/root.dev.njk  includes/layouts --rename=root.njk",
-    "prepare_prod_env": "cpy includes/layouts/root.prod.njk includes/layouts --rename=root.njk",
+    "prepare_dev_env": "cpy includes/layouts/root.dev.njk  . --rename=root.njk",
+    "prepare_prod_env": "cpy includes/layouts/root.prod.njk . --rename=root.njk",
     "build_local": "npm run -s prepare_dev_env && npm run -s build_all_but_pdf",
     "build": "npm run -s prepare_prod_env && npm run -s build_all_but_pdf && npm run -s all_pdfs",
     "clean": "rimraf dist",
