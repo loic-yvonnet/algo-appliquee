@@ -18,7 +18,9 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    env:
+      PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
-          node-version-file: '.nvmrc'
+          node-version-file: ".nvmrc"
 
       - name: Install dependencies
         run: npm ci
@@ -35,7 +37,7 @@ jobs:
       - name: Build Marp slide deck
         run: CHROME_PATH=$(npx -y @puppeteer/browsers@latest install chrome@stable --path $(realpath ./tmp) | awk '{print $2}') npm run build
         env:
-          URL: https://${{ github.event.repository.owner.name }}.github.io/${{ github.event.repository.name }}
+          URL: ${{ env.PAGE_URL }}
 
       - name: Upload page artifacts
         uses: actions/upload-pages-artifact@v3
