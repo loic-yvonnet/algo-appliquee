@@ -1,6 +1,9 @@
 name: GitHub Pages
 
 on:
+  pull_request:
+    branches:
+      - master
   push:
     branches:
       - master
@@ -15,12 +18,13 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-    env:
-      PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+  environment:
+    name: github-pages
+    url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+  env:
+    PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -45,6 +49,13 @@ jobs:
         with:
           path: dist
 
+  deploy:
+    if: github.event_name == 'push'
+
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
