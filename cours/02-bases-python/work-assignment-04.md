@@ -11,6 +11,6 @@ Le TP précédent vous a introduit à l'utilisation d'un environnement de dével
 
 Cependant, pour des raisons pratiques, nous allons retourner dans Jupyter Notebook pour la plupart des TP suivants.
 
-Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F02-bases-python%2Fwork-assignment-04.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
+Vous avez la possibilité d'utiliser Binder dans votre navigateur web : <a href="https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/main?filepath=cours%2F02-bases-python%2Fwork-assignment-04.ipynb"><img class="inline" src="https://mybinder.org/badge_logo.svg" alt="Binder"></a>.
 
 Vous pouvez également télécharger le carnet Jupyter et l'ouvrir sur votre machine avec Visual Studio Code : <a href="./work-assignment-04.ipynb" download="tp-04.ipynb">lien de téléchargement</a>.

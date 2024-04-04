@@ -879,7 +879,7 @@ Les raisons pour lesquelles c'est déconseillé :
 * **Jupyter Notebook** est un environnement de développement Python.
 * Adapté pour la recherche, l'enseignement, le prototypage, etc.
 * **Binder** offre la possibilité d'exécuter un carnet Jupyter dans une page web.
-* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/master?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb)
+* **Démo** : [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/loic-yvonnet/algo-appliquee/main?filepath=cours%2F01-intro-programmation%2Fwork-assignment-02.ipynb)
 
 ---
 
