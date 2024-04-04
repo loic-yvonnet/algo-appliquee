@@ -8,23 +8,29 @@ on:
     branches:
       - master
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow only one concurrent deployment, skipping runs queued between the run 
+# in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production 
+# deployments to complete.
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  environment:
-    name: github-pages
-    url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-  env:
-    PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
-
   build:
+    environment:
+      name: github-pages
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    env:
+      PAGE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -51,6 +57,10 @@ jobs:
 
   deploy:
     if: github.event_name == 'push'
+
+    environment:
+      name: github-pages
+      url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
 
     needs: build
     runs-on: ubuntu-latest
