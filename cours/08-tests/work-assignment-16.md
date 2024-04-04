@@ -32,7 +32,7 @@ python3.9 -m pip install -U PySimpleGUIQt
 
 En fonction de votre système d'exploitation, vous pourriez avoir à modifier ces commandes. Par exemple, sur Windows, vous pouvez invoquer `python` à la place de `python3.9`.
 
-Ensuite, [télécharger le script calculatrice.py](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/cours/08-tests/assets/calculatrice.py). Ouvrez ce script dans votre IDE préféré (par exemple, Visual Studio Code).
+Ensuite, [télécharger le script calculatrice.py](https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/main/cours/08-tests/assets/calculatrice.py). Ouvrez ce script dans votre IDE préféré (par exemple, Visual Studio Code).
 
 Lisez le code, exécutez le, mettez des points d'arrêt.
 

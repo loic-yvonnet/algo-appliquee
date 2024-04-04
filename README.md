@@ -2,7 +2,7 @@
 
 <div style="margin: auto; text-align: center;">
   <a href="https://loic-yvonnet.github.io/algo-appliquee/">
-    <img src="https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/master/assets/logo.png" width="50%" />
+    <img src="https://raw.githubusercontent.com/loic-yvonnet/algo-appliquee/main/assets/logo.png" width="50%" />
   </a>
 </div>
 
@@ -42,7 +42,7 @@ bin/run.sh
 
 ## Deploy
 
-The [yhatt/marp-cli-example](https://github.com/yhatt/marp-cli-example) template uses Continuous Integration and Continuous Deployment thanks to GitHub Actions. Whenever a Pull Request is merged to the `master` branch, the CI runs and deploys the website to the `gh-pages` branch. In turn, the [GitHub Pages](https://loic-yvonnet.github.io/algo-appliquee/) are automatically updaded with the content of this branch.
+The [yhatt/marp-cli-example](https://github.com/yhatt/marp-cli-example) template uses Continuous Integration and Continuous Deployment thanks to GitHub Actions. Whenever a Pull Request is merged to the `main` branch, the CI runs and deploys the website to the `gh-pages` branch. In turn, the [GitHub Pages](https://loic-yvonnet.github.io/algo-appliquee/) are automatically updaded with the content of this branch.
 
 ## Known bugs
 

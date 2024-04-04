@@ -78,7 +78,7 @@ Par ailleurs, il faut être conscient qu'il s'agit d'un hack et non pas d'une vr
 
 ## Exercice 2 - Tableau de points
 
-Téléchargez un [fichier de points au format CSV](https://github.com/loic-yvonnet/algo-appliquee/raw/master/cours/10-python-avance/assets/random-curve.csv).
+Téléchargez un [fichier de points au format CSV](https://github.com/loic-yvonnet/algo-appliquee/raw/main/cours/10-python-avance/assets/random-curve.csv).
 
 Le format CSV (pour Comma Separated Values) est un format de fichier commun pour décrire le contenu d'un tableur ou d'une base de données.
 
@@ -99,7 +99,7 @@ Le résultat attendu est :
 
 ### Exercice 3.1 - Récupération d'une base de données de films
 
-En suivant la même approche que dans l'exercice 1, écrivez une requête HTTP qui récupère le fichier CSV à l'adresse : [https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/master/data/movie.csv](https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/master/data/movie.csv).
+En suivant la même approche que dans l'exercice 1, écrivez une requête HTTP qui récupère le fichier CSV à l'adresse : [https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/main/data/movie.csv](https://raw.githubusercontent.com/PacktPublishing/Pandass-Cookbook/main/data/movie.csv).
 
 Ecrivez le contenu dans un fichier local.
 

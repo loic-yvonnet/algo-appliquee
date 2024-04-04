@@ -68,7 +68,7 @@ On terminera par quelques conseils pour réussir au mieux.
 
 # Formateur
 
-![bg right:40% 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/master/src/img/yvo_logo/landing_page_logo_400.png)
+![bg right:40% 80%](https://raw.githubusercontent.com/loic-yvonnet/dev-www-yvo-solutions/main/src/img/yvo_logo/landing_page_logo_400.png)
 
 
 * Loïc Yvonnet
